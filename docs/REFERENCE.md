@@ -1,8 +1,12 @@
-# Repository reference
+# Repository references
 
-The owner selected [mattpocock/skills](https://github.com/mattpocock/skills) for repository management and README organization. Reviewed at [commit 4ae2317](https://github.com/mattpocock/skills/tree/4ae2317ddb22b046e26455e4f9c9b3aaaf62212d) on 2026-11-06; license evidence and other reuse candidates are in [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md).
+References for documentation and project management are recorded here, with inspected revisions and the practices adopted or omitted.
 
-## Structure and adaptation
+## mattpocock/skills
+
+[mattpocock/skills](https://github.com/mattpocock/skills) informs repository organization, documentation, and contributor guidance. Reviewed at [commit 4ae2317](https://github.com/mattpocock/skills/tree/4ae2317ddb22b046e26455e4f9c9b3aaaf62212d) on 2026-11-06; license evidence and other reuse candidates are in [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md).
+
+### Structure and adaptation
 
 | Upstream pattern | This project |
 | --- | --- |

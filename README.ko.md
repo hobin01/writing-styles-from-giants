@@ -64,13 +64,10 @@ git diff --check
 | [docs/COMPATIBILITY.md](docs/COMPATIBILITY.md) | 지원 대상 도구와 검증 근거 |
 | [docs/DECISIONS.md](docs/DECISIONS.md) | 확정된 선택과 제안 |
 | [docs/RELEASING.md](docs/RELEASING.md) | CI, 버전 관리, 소스 릴리스 초안 |
+| [docs/REFERENCE.md](docs/REFERENCE.md) | 문서 작성·프로젝트 관리 참고 자료 |
 | [templates/method/](templates/method/), [evals/](evals/) | 작성·평가 예제. 배포된 방법론이나 모델 평가 결과가 아닙니다 |
 | [scripts/](scripts/), [tests/](tests/) | 저장소 검사와 테스트 |
 | [.github/](.github/) | 협업·자동화 설정 |
-
-## 참고 프로젝트
-
-저장소 구성과 기여 안내는 [mattpocock/skills](https://github.com/mattpocock/skills)를 참고합니다. 검토한 구조와 적용 방식은 [참고 저장소 검토](docs/REFERENCE.md)에 기록했습니다.
 
 ## 라이선스와 출처
 
