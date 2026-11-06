@@ -1,0 +1,11 @@
+{
+  "method": "example-method",
+  "methodVersion": "0.1.0",
+  "locale": "en",
+  "status": "experimental",
+  "reviewedSourceRules": [],
+  "rules": {
+    "preserve-meaning": {"instruction": "Keep facts, scope, and uncertainty unchanged.", "adaptation": false},
+    "remove-redundancy": {"instruction": "Suggest removing repetition only when the reader loses no necessary information.", "adaptation": false}
+  }
+}

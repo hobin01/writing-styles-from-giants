@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "example-method",
+  "version": "0.1.0",
+  "status": "draft",
+  "title": "Original authoring example",
+  "kind": "sentence",
+  "applicability": {
+    "genres": ["explanation"],
+    "audiences": ["general"],
+    "exclusions": ["verbatim quotations", "code syntax"]
+  },
+  "sources": [],
+  "rules": [
+    {
+      "id": "preserve-meaning",
+      "intent": "Keep factual meaning, scope, and uncertainty unchanged when editing.",
+      "classification": "invariant",
+      "provenance": "project-original",
+      "rationale": "Original baseline example, not attributed to an external author.",
+      "sourceIds": [],
+      "exceptions": [],
+      "check": "human-review",
+      "levels": {"light": "error", "standard": "error", "strict": "error"}
+    },
+    {
+      "id": "remove-redundancy",
+      "intent": "Suggest removing repeated information when nothing necessary is lost.",
+      "classification": "guideline",
+      "provenance": "project-original",
+      "rationale": "Original example to demonstrate level and exception fields.",
+      "sourceIds": [],
+      "exceptions": ["Repetition needed for safety, orientation, or the requested voice."],
+      "check": "judgment",
+      "levels": {"light": "advisory", "standard": "warning", "strict": "warning"}
+    }
+  ]
+}

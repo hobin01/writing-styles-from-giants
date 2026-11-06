@@ -1,0 +1,29 @@
+name: Bug or documentation error
+description: Report one reproducible problem in a document, example, or skill.
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Affected file or method
+      description: Include the version or commit when known.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps or smallest example
+      description: Describe what happened. Use synthetic text and remove private information.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+      description: For translation errors, include the English and Korean passages.
+    validations:
+      required: true
+  - type: input
+    id: context
+    attributes:
+      label: Runtime context, if applicable
+      description: Host/version, model, method/locale/level, and installation path type.

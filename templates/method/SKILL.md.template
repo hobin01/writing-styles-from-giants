@@ -1,0 +1,14 @@
+---
+name: example-method
+description: "Edit explanatory prose using the explicitly selected example method and level. This authoring template is not a production skill."
+---
+
+# Example method
+
+Read `method.example.json` and the requested output locale under `locales/` before applying rules. These filenames must be changed to the production contract when creating a real method.
+
+Preserve source facts, quantities, negation, conditions, uncertainty, quotations, citations, and code. Apply the selected level's eligible guidelines and their exceptions. If a required locale, reference, or check is unavailable, report that limitation; do not claim a pass.
+
+Return the requested finished text. When an audit is requested, provide rule IDs, source locations, reasons, proposed changes, and exceptions. Do not place internal selection metadata into finished prose without a reason.
+
+This template's example rules are project-original. Replace their metadata, provenance, applicability, and cases with source-reviewed content before adding a production skill.

@@ -1,0 +1,24 @@
+name: Method, language, or project proposal
+description: Propose one focused addition or change before implementing it.
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: Writing task or observed problem
+      description: Who is the reader, and what should become easier?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: State the smallest useful change and any overlap with existing methods.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources and review needs
+      description: For a method, link the source and identify what was read and any reuse limits. For a language, identify adaptation and reviewer needs.
+    validations:
+      required: true

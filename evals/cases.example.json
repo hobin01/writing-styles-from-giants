@@ -1,0 +1,32 @@
+[
+  {
+    "id": "uncertainty-en",
+    "method": "example-method",
+    "locale": "en",
+    "level": "strict",
+    "source": "The cache might reduce latency in some workloads.",
+    "ruleIds": ["preserve-meaning"],
+    "expectations": ["Retain possibility rather than certainty.", "Retain the limited scope of some workloads."],
+    "knownBadRewrite": "The cache reduces latency in all workloads."
+  },
+  {
+    "id": "condition-ko",
+    "method": "example-method",
+    "locale": "ko",
+    "level": "light",
+    "source": "백업을 확인한 경우에만 이전 파일을 지워도 됩니다.",
+    "ruleIds": ["preserve-meaning"],
+    "expectations": ["백업 확인 조건을 유지한다.", "허용을 의무 명령으로 바꾸지 않는다."],
+    "knownBadRewrite": "이전 파일을 지우세요."
+  },
+  {
+    "id": "necessary-repetition-en",
+    "method": "example-method",
+    "locale": "en",
+    "level": "strict",
+    "source": "Keep the backup. Before you delete the old file, check that you still have the backup.",
+    "ruleIds": ["preserve-meaning", "remove-redundancy"],
+    "expectations": ["Do not remove a necessary prerequisite simply to reduce repetition.", "Allow the guideline exception when repetition supports safe action."],
+    "knownBadRewrite": "Delete the old file."
+  }
+]
