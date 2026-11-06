@@ -9,7 +9,7 @@ AI-agent skills for documented writing and explanation methods. Foundation only;
 - Read [docs/METHOD_AUTHORING.md](docs/METHOD_AUTHORING.md) and [docs/LOCALIZATION.md](docs/LOCALIZATION.md) before adding a method or language.
 - Read [CONTRIBUTING.md](CONTRIBUTING.md) before preparing a PR; [docs/RELEASING.md](docs/RELEASING.md) before changing delivery automation.
 - Read [docs/DECISIONS.md](docs/DECISIONS.md) for confirmed choices and proposals; keep those statuses distinct.
-- Read [docs/REFERENCE.md](docs/REFERENCE.md) when changing repository organization or contributor documentation; it records how this project adapts the selected reference repository.
+- Read [docs/REFERENCE.md](docs/REFERENCE.md) for the project bibliography. Add or update consulted sources in the same PR, linking method-specific evidence and license records.
 
 ## Product invariants
 

@@ -12,6 +12,8 @@ Open with what the method does, when to use it, and observable success criteria.
 
 For each method, record its author or responsible company/institution, source title, edition/date, URL, access date, and what was actually read. Distinguish original text, official educational explanation, publisher excerpt, and secondary summary. A search snippet or a catalog entry alone is not source verification.
 
+Index consulted sources in the project-wide [REFERENCE.md](REFERENCE.md), linking the method's detailed evidence. Reuse an existing bibliography entry when several methods share a source; retain each method's source-to-rule mapping and read scope.
+
 Label each rule `faithful-summary`, `adaptation`, or `project-original`. Preserve the source's exceptions. If only an excerpt was read, do not claim to reproduce the whole book. Do not present an adaptation as an official author, publisher, company, or institution skill or imply endorsement.
 
 Write original operational questions; do not bundle books, dictionaries, proprietary checklists, long quotations, or images without rights. Follow [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md) for reuse and file-level license exceptions.

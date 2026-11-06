@@ -11,6 +11,7 @@ Read [AGENTS.md](AGENTS.md) and [PROJECT.md](docs/PROJECT.md). Development is so
 - Keep both READMEs aligned in structure, links, commands, and meaning. Record user-visible changes in CHANGELOG.md without artificial version bumps for wording corrections.
 - Keep local history, credentials, and caches out of commits and remove task-owned temporary files under [SECURITY.md](SECURITY.md).
 - Reuse existing implementations under [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Original contributions use MIT; retain required upstream notices.
+- Add or update consulted projects, sites, papers, books, and guides in [docs/REFERENCE.md](docs/REFERENCE.md) in the same PR, linking detailed method evidence and rights records.
 
 ## Validation
 
