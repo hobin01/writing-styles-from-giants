@@ -7,6 +7,7 @@ Read [AGENTS.md](AGENTS.md) and [PROJECT.md](docs/PROJECT.md). Development is so
 - Small documentation fixes can go straight to a PR. Discuss new methods, locales, dependencies, public behavior, or adapters in an issue first. Use one reproducible problem per bug report and source evidence for proposals.
 - Branch from current `main` using `feat/`, `fix/`, or `docs/`. Commit validated changes promptly, push, and open/update the PR in the same task under the owner's standing instruction.
 - Keep one coherent change per PR. Use a Conventional Commit title and explain breaking changes. Preserve unrelated work and shared history; squash-merge after checks and review rather than pushing directly to protected `main`.
+- After merging, update local `main`, delete the completed branch locally and remotely, and prune stale remote-tracking refs. Automatic head-branch deletion is enabled on GitHub; verify it happened. For squash merges, verify the branch head matches the merged PR and has no later work before deleting it. Keep branches with open PRs or unmerged work.
 - Keep both READMEs aligned in structure, links, commands, and meaning. Record user-visible changes in CHANGELOG.md without artificial version bumps for wording corrections.
 - Keep local history, credentials, and caches out of commits and remove task-owned temporary files under [SECURITY.md](SECURITY.md).
 - Reuse existing implementations under [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Original contributions use MIT; retain required upstream notices.
