@@ -1,4 +1,5 @@
 import importlib.util
+import subprocess
 import tempfile
 import unittest
 from pathlib import Path
@@ -10,6 +11,47 @@ spec.loader.exec_module(checks)
 
 
 class RepositoryChecksTest(unittest.TestCase):
+    def test_local_history_credentials_and_caches_are_rejected(self):
+        paths = [
+            '.local/history/session.md', '.local/credentials/account.json',
+            '.history/change.json', '.credentials/token.json',
+            'credentials.json', 'credentials.yaml', 'credentials.yml',
+            'secrets.json', 'secrets.yaml', 'secrets.yml',
+            '.cache/catalog.json', '.pytest_cache/state', '.mypy_cache/state',
+            '.ruff_cache/state', '.coverage', '.coverage.worker', '.DS_Store',
+        ]
+        for path in paths:
+            with self.subTest(path=path):
+                self.assertTrue(checks.public_path_errors([path]))
+        self.assertEqual(checks.public_path_errors([
+            '.github/workflows/ci.yml', '.gitignore', '.env.example',
+            '.public-note.md', 'credentials.example.json', 'docs/PROJECT.md',
+        ]), [])
+
+    def test_ignore_rules_exclude_local_files_without_hiding_public_dotfiles(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            (root / '.gitignore').write_text((MODULE_PATH.parents[1] / '.gitignore').read_text())
+            subprocess.run(['git', 'init', '--quiet', '--template='], cwd=root, check=True)
+            local = [
+                '.local/history/session.md', '.local/credentials/account.json',
+                '.history/change.json', '.credentials/token.json', 'credentials.json',
+                'secrets.yaml', '.cache/catalog.json', '.ruff_cache/state', '.coverage.worker',
+            ]
+            result = subprocess.run(
+                ['git', '-c', 'core.excludesFile=/dev/null', 'check-ignore', '--no-index', '--stdin'],
+                cwd=root, input='\n'.join(local) + '\n', capture_output=True, text=True,
+            )
+            self.assertEqual(set(result.stdout.splitlines()), set(local))
+            public = ['.github/workflows/ci.yml', '.gitignore', '.env.example', '.public-note.md',
+                      'credentials.example.json', 'scratch.tmp', 'work/check.md', 'outputs/debug.txt']
+            result = subprocess.run(
+                ['git', '-c', 'core.excludesFile=/dev/null', 'check-ignore', '--no-index', '--stdin'],
+                cwd=root, input='\n'.join(public) + '\n', capture_output=True, text=True,
+            )
+            self.assertEqual(result.returncode, 1)
+            self.assertEqual(result.stdout, '')
+
     def test_private_paths_are_rejected_but_public_examples_are_allowed(self):
         paths = ["private/draft.md", ".local/install.json", ".env.production", "id.key", "AGENTS.local.md"]
         self.assertEqual(len(checks.public_path_errors(paths)), len(paths))

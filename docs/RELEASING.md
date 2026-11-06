@@ -1,42 +1,27 @@
-# Branches, automation, and releases
+# CI and releases
 
-Status: Foundation CI has passed on GitHub; the source-release workflow has not been run or verified. The repository is private during preparation. Branch/tag protection and public visibility are separate hosting settings.
+Foundation CI is verified; the source-release workflow is not. Branch/tag protection and visibility remain hosting settings, not guarantees of local configuration.
 
-## CI and repository settings
+## CI
 
-[Foundation CI](../.github/workflows/ci.yml) is configured for PRs and pushes to `main`, with read-only permissions and no model keys. It runs unit tests, the repository checker, and a whitespace check across the tracked source tree. Actions are pinned to commit SHAs; [Dependabot](../.github/dependabot.yml) is configured for monthly Actions updates. [The initial main-branch run](https://github.com/hobin01/writing-styles-from-giants/actions/runs/42237615689) passed on commit `6f1689d`, verified on 2026-11-06. This is repository-check evidence, not a source-release or host-compatibility test.
+[Foundation CI](../.github/workflows/ci.yml) runs tests, repository checks, and tracked-source whitespace checks on PRs and `main`, with read-only permissions and no model keys. Actions use SHA pins; [Dependabot](../.github/dependabot.yml) proposes monthly updates. [The first main run](https://github.com/hobin01/writing-styles-from-giants/actions/runs/42237615689) passed on `6f1689d`.
 
-Use `main` and short-lived PR branches, with prompt commits and PR handling under [CONTRIBUTING.md](../CONTRIBUTING.md). Development is solo before `0.0.1`; private-stage self-merges follow that policy. Before public collaboration, configure the rules and review requirements in [DECISIONS.md](DECISIONS.md). Local YAML files do not enforce branch protection. Contributor CI must not use privileged `pull_request_target` execution.
+Use the branch/PR policy in [CONTRIBUTING.md](../CONTRIBUTING.md). Configure public-stage protections from [DECISIONS.md](DECISIONS.md); do not run contributor code through privileged `pull_request_target` jobs.
 
-## Version policy
+## Versions
 
-`VERSION` records the source version. The first stable release is planned as `0.0.1`; the current `0.0.1-dev` is unreleased. Keep version changes and release notes in reviewed PRs. The current source-release workflow accepts exact stable `vMAJOR.MINOR.PATCH` tags, with no leading zeros; prerelease tags are unsupported.
+The first stable release is `0.0.1`; [VERSION](../VERSION) remains unreleased until preparation. Keep version and changelog changes in a PR. Before 1.0, breaking changes and additions increment minor, corrections patch; from 1.0, incompatible public changes increment major. Rule/locale changes can be behavior changes even when only Markdown/JSON changes.
 
-Before 1.0, breaking changes and compatible additions increment minor; corrections increment patch. From 1.0, incompatible public behavior increments major. Substantive rule and locale changes are behavior changes, even if only Markdown/JSON changes.
-
-When methods exist, keep their content versions in metadata and record the included versions in a source release. Manual VERSION/CHANGELOG updates are sufficient now; Changesets and npm publishing are not required to release repository content.
+Method metadata carries its own content version. Record included method versions in release notes. Manual VERSION/CHANGELOG updates suffice; a runtime package or Changesets is not required.
 
 ## Draft source release
 
-The [source-release workflow](../.github/workflows/release.yml) is configured for `v*` tag pushes and creates a draft, never a published release. Verify its hosted behavior before the first public release.
+The [workflow](../.github/workflows/release.yml) accepts stable `vMAJOR.MINOR.PATCH` tags without leading zeros; prerelease tags are unsupported. Verify its hosted behavior before the first public release.
 
-1. Open a release PR with a stable `VERSION` and matching `## [<version>]` changelog section. Include delivered content, limitations, and migration notes; run foundation checks.
-2. Merge after review. An authorized maintainer creates the matching tag on current `main`. The workflow requires the tagged commit to equal `origin/main` at checkout time; if `main` has advanced, follow a new reviewed release process rather than moving an existing tag.
-3. The workflow reruns tests and tag/version/changelog checks, rejects private tracked paths, and creates a tracked-source `tar.gz` with a SHA-256 checksum.
-4. It uses the GitHub token to create a draft release with the archive, checksum, and generated notes. Review the draft and archive before publishing it.
-5. On failure, inspect the run and any existing draft before rerunning. The workflow does not replace existing assets. Published corrections use a new version.
+1. Prepare a stable VERSION and matching `## [<version>]` changelog section in a reviewed PR, including limitations and migration notes. Run foundation and applicable method/host checks.
+2. Tag current `main` through an authorized maintainer. The workflow requires the tagged commit to equal `origin/main` at checkout; never move an existing release tag to work around a mismatch.
+3. The job reruns tests, tag/version/changelog and public-path checks, then creates a tracked-source `tar.gz` and SHA-256 checksum. Include required upstream licenses/notices under [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md).
+4. GitHub creates a draft with the archive, checksum, and generated notes. Inspect them before publication. The job has `contents: write`; PR CI remains read-only. No npm package is published.
+5. Inspect failed runs and existing drafts before retrying. Existing assets are not silently replaced; published corrections use a new version.
 
-The release job has `contents: write` for draft creation; PR CI is read-only. It publishes no npm package and uploads no working-directory snapshot. `git archive` includes tracked files only, so the public-path check and rights review remain necessary. The checker recognizes configured private-path patterns; it is not a general secret scanner.
-
-## Future delivery changes
-
-Test an existing installer before adding a project-owned package or native plugin. Keep installation evidence in [COMPATIBILITY.md](COMPATIBILITY.md). If a runtime package is later justified, decide its identity, package allowlist, publishing authority, and tests separately. Never infer publication permission from a local documentation or configuration change.
-
-Rollback selects a known prior version and preserves user modifications. It does not rewrite a published tag, replace an immutable artifact, or delete a user's global skill directory.
-
-## References
-
-- [GitHub Actions secure use](https://docs.github.com/en/actions/reference/security/secure-use)
-- [GitHub rulesets](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets)
-- [Semantic Versioning](https://semver.org/)
-- [Repository reference and adaptations](REFERENCE.md)
+`git archive` includes tracked files only, so review still matters: path checks are not a general secret scanner. Rollback selects a prior version while preserving user modifications, rather than rewriting tags or deleting user skill roots. A local change does not authorize release publication or hosting-setting changes.

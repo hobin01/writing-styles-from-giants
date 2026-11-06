@@ -1,12 +1,10 @@
 # Localization and language adaptation
 
-English and Korean are the first target languages. English contributor documentation is canonical; keep the Korean README aligned. This choice does not make English writing rules authoritative for other languages.
+Start with English and Korean. Contributor documents are canonical English; writing rules belong to the output locale.
 
 ## README parity
 
-Keep README.md and README.ko.md aligned in heading hierarchy and section order, table rows, link destinations, commands, candidate status, and limitations. Translate meaning rather than English sentence order. Add material clarifications to both versions in the same change. A structural check cannot establish translation accuracy; compare the prose as well.
-
-Only the README currently has a full Korean counterpart. Contributor/design documents remain canonical English. Locale rule files intentionally differ when a language needs an adaptation; their stable rule IDs and declared coverage must still agree.
+Keep both READMEs aligned in headings/order, tables, links, commands, status, and limitations. Translate meaning and add clarifications to both in the same change; structural checks do not establish translation accuracy. Only the README has a full Korean counterpart. Locale rules may differ through declared adaptations, while stable IDs and coverage agree.
 
 ## Separate the language layers
 
@@ -19,7 +17,7 @@ Use BCP 47 locale identifiers. An exact reviewed variant is preferred. A parent-
 
 ## Measurement
 
-English words, Korean eojeol, characters, syllables, and model tokens measure different things. Do not adopt an English-10/Korean-5 conversion. An eojeol count does not measure syntax or comprehension by itself.
+English words, Korean eojeol, characters, syllables, and model tokens are different units; there is no fixed cross-language conversion. Counts alone do not establish comprehension.
 
 A numeric rule must specify unit, segmentation, normalization, punctuation/code/quotation treatment, scope, threshold, rationale, and evidence status. Mark uncalibrated thresholds experimental. Mixed-language text requires an explicit measurement policy, not a guessed language ratio. Preserve technical names, units, and code.
 
