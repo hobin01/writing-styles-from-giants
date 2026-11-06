@@ -1,45 +1,33 @@
-# Decision log
+# Decisions
 
-The user's requirements are in [PROJECT.md](PROJECT.md).
+## Confirmed by the owner
 
-## User-defined identity — 2026-11-06
-
-- Project name: `writing-styles-from-giants`, replacing the temporary name Writing Methods.
-- Purpose: let AI agents draw on documented writing and explanation methods from earlier thinkers, historical figures, influential books, and well-known companies and institutions. The name evokes standing on the shoulders of giants.
-- Scope: extract attributable, actionable methods, including expression, structure, and explanation. Preserve the distinction between applying a method and impersonating its source.
-
-The repository remote is `https://github.com/hobin01/writing-styles-from-giants.git`, configured during private preparation. The project name does not reserve an npm package name. Source categories do not constitute a reviewed method catalog.
-
-## User-selected repository reference: 2026-11-06
-
-Use [mattpocock/skills](https://github.com/mattpocock/skills) as a reference for repository management and README organization. The [reference review](REFERENCE.md) pins the inspected commit and separates observed upstream practices from our adaptations.
+- Name: `writing-styles-from-giants`, evoking learning from earlier thinkers, historical figures, books, companies, and institutions.
+- License: MIT for original project content. Prefer vetted permissive reuse; preserve third-party licenses and notices under [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md). GPL/AGPL code is not accepted into the distributed project.
+- First stable release: `0.0.1`; development is solo before it. Keep `VERSION` unreleased until release preparation.
+- Workflow: branch from current `main`, commit validated work promptly, handle the PR, and delete completed local/remote branches in the same task. Private-stage self-merges and cleanup follow [CONTRIBUTING.md](../CONTRIBUTING.md).
+- Publication: prepare every commit for eventual public release. Keep local task history, credentials, and caches ignored; delete task-owned temporary files. [SECURITY.md](../SECURITY.md) owns the paths and cleanup policy.
+- Repository reference: [mattpocock/skills](REFERENCE.md), selected on 2026-11-06. Current remote: `https://github.com/hobin01/writing-styles-from-giants.git`.
 
 ## Proposed implementation defaults
 
-The following are assistant-proposed starter defaults, open to change before runtime implementation. Their presence in the skeleton is not evidence of user approval.
+These remain proposals, not implemented behavior or user-approved defaults.
 
-| Topic | Proposed default | Reason |
-| --- | --- | --- |
-| Original-content license | MIT | Permissive contribution and reuse; external content keeps its rights |
-| Delivery | Portable method content; evaluate an existing installer first | A custom CLI or adapter needs evidence of an unmet requirement |
-| Runtime | None required for the portable catalog; keep Python foundation checks | Choose another runtime only when actual product logic requires it |
-| Method storage | Complete `skills/<id>/` directories | References travel with each skill |
-| Initial catalog | Review one method first; Orwell, Federal Plain Language, and Minto-inspired structure are candidates | Prove one complete method before expanding the catalog or tooling |
-| Levels | light / standard / strict | Observable rule coverage instead of a fictitious compliance percentage |
-| Mode and scope | recommend, standard, project installation | Explicit opt-in to automatic application/global installation |
-| Languages | en and ko; reviewed adaptations | No hardcoded cross-language word-count conversion |
-| Git workflow | main + short-lived branches, squash merge | Small maintainer/community workflow without a permanent develop branch |
-| Releases | Reviewed tags produce draft GitHub source releases | Foundation can release source without pretending npm exists |
-| Privacy | ignored private/ and .local/ | Separate personal material; tracking and artifact checks still matter |
+| Topic | Proposal |
+| --- | --- |
+| Delivery | Complete portable method directories; evaluate an existing installer first |
+| Runtime | Keep Python foundation checks; add product runtime code only for an observed unmet need |
+| Initial catalog | Review one method first; Orwell, Federal Plain Language, and Minto-inspired structure are candidates |
+| Selection | Recommendation mode, `standard` level, explicit automatic-application opt-in |
+| Languages | English/Korean, each with reviewed adaptations and its own measurements |
+| Installation | Project scope by default; global changes require selection |
+| Releases | Reviewed tags create draft GitHub source releases |
 
 ## Before public launch
 
-- Confirm maintainer/reviewer ownership and public visibility before launch. Choose a package identity only if a project-owned package is needed; npm name availability is unverified.
-- Confirm or change the proposed license before accepting external contributions under it.
-- Configure a `main` ruleset requiring `foundation` CI, a review, resolved conversations, and blocked force pushes/deletion. Adjust maintainer bypass deliberately.
-- Enable private vulnerability reporting and choose the conduct-report contact. Do not publish invented email addresses.
-- Set an actual review owner before adding CODEOWNERS. The skeleton intentionally has no fake GitHub handle.
-- Protect release tags and configure release authority. GitHub repository settings are not configured by these local files.
-- Select the first method sources and locale reviewers; evaluate actual host versions before claiming support.
+- Revisit collaboration and independent review when preparing `0.0.1` or accepting public contributions. Confirm maintainer and language-review ownership.
+- Configure `foundation` CI, review requirements, protected `main`/tags, and deliberate maintainer bypass. Local files do not enforce hosting settings.
+- Establish private vulnerability/conduct reporting and release authority.
+- Verify method rights and the actual supported host/version/OS matrix. Choose a package identity only if a project-owned package is needed.
 
-Product behavior, rule changes, locale measurement, or installer ownership changes need a short dated entry here or a focused design document. Routine implementation choices may be made by the builder with tests; do not turn every small change into an approval ritual.
+Record material changes here or in the document that owns the contract; keep local task logs out of public policy documents.

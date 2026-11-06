@@ -12,10 +12,14 @@ REQUIRED = (
     "LICENSE", "SECURITY.md", "THIRD_PARTY_NOTICES.md", "VERSION", "CHANGELOG.md",
     "docs/PROJECT.md", "docs/ARCHITECTURE.md", "docs/METHOD_AUTHORING.md",
     "docs/LOCALIZATION.md", "docs/COMPATIBILITY.md", "docs/DECISIONS.md",
-    "docs/RELEASING.md", "docs/superpowers/plans/2026-11-06-mvp.md",
+    "docs/RELEASING.md",
     ".gitignore", ".github/workflows/ci.yml", ".github/workflows/release.yml",
 )
-PRIVATE_DIRS = {"private", ".local", "work", "outputs", "node_modules", "dist", "__pycache__", ".venv", ".git"}
+PRIVATE_DIRS = {
+    "private", ".local", ".history", ".credentials", ".cache", ".pytest_cache",
+    ".mypy_cache", ".ruff_cache", "work", "outputs", "node_modules", "dist",
+    "__pycache__", ".venv", ".git",
+}
 LEVELS = {"light", "standard", "strict"}
 SEVERITIES = {"off", "advisory", "warning", "error"}
 
@@ -24,13 +28,18 @@ def public_path_errors(paths):
     errors = []
     for value in paths:
         path = PurePosixPath(value)
-        secret_name = (
-            path.name in {".env", ".npmrc", "AGENTS.local.md"}
+        local_name = (
+            path.name in {
+                ".env", ".npmrc", "AGENTS.local.md", ".coverage", ".DS_Store",
+                "credentials.json", "credentials.yaml", "credentials.yml",
+                "secrets.json", "secrets.yaml", "secrets.yml",
+            }
             or (path.name.startswith(".env.") and path.name != ".env.example")
+            or path.name.startswith(".coverage.")
             or path.suffix in {".key", ".pem"}
             or path.name.endswith((".local.json", ".local.yaml", ".local.yml"))
         )
-        if PRIVATE_DIRS.intersection(path.parts) or secret_name:
+        if PRIVATE_DIRS.intersection(path.parts) or local_name:
             errors.append(f"Private/generated path must not be tracked: {value}")
     return errors
 
