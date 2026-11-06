@@ -7,7 +7,7 @@
 - First stable release: `0.0.1`; development is solo before it. Keep `VERSION` unreleased until release preparation.
 - Workflow: branch from current `main`, commit validated work promptly, handle the PR, and delete completed local/remote branches in the same task. Private-stage self-merges and cleanup follow [CONTRIBUTING.md](../CONTRIBUTING.md).
 - Publication: prepare every commit for eventual public release. Keep local task history, credentials, and caches ignored; delete task-owned temporary files. [SECURITY.md](../SECURITY.md) owns the paths and cleanup policy.
-- Repository references: keep documentation and project-management references in [REFERENCE.md](REFERENCE.md). Current remote: `https://github.com/hobin01/writing-styles-from-giants.git`.
+- References: maintain a project-wide bibliography in [REFERENCE.md](REFERENCE.md), with read scope, versions/dates, use, and links to skill-specific evidence and license records. Update it whenever external sources inform a change. Current remote: `https://github.com/hobin01/writing-styles-from-giants.git`.
 
 ## Proposed implementation defaults
 
