@@ -1,16 +1,16 @@
 # Branches, automation, and releases
 
-Status: local workflow definitions exist; no hosted run or release is verified. The repository is private during preparation. Branch/tag protection and public visibility are separate hosting settings.
+Status: Foundation CI has passed on GitHub; the source-release workflow has not been run or verified. The repository is private during preparation. Branch/tag protection and public visibility are separate hosting settings.
 
 ## CI and repository settings
 
-[Foundation CI](../.github/workflows/ci.yml) is configured for PRs and pushes to `main`, with read-only permissions and no model keys. It runs unit tests, the repository checker, and a whitespace check across the tracked source tree. Actions are pinned to commit SHAs; [Dependabot](../.github/dependabot.yml) is configured for monthly Actions updates. These files take effect only after being pushed and enabled on GitHub.
+[Foundation CI](../.github/workflows/ci.yml) is configured for PRs and pushes to `main`, with read-only permissions and no model keys. It runs unit tests, the repository checker, and a whitespace check across the tracked source tree. Actions are pinned to commit SHAs; [Dependabot](../.github/dependabot.yml) is configured for monthly Actions updates. [The initial main-branch run](https://github.com/hobin01/writing-styles-from-giants/actions/runs/42237615689) passed on commit `6f1689d`, verified on 2026-11-06. This is repository-check evidence, not a source-release or host-compatibility test.
 
-Use `main` and short-lived PR branches. Before public collaboration, configure the rules and review requirements in [DECISIONS.md](DECISIONS.md). Local YAML files do not enforce branch protection. Contributor CI must not use privileged `pull_request_target` execution.
+Use `main` and short-lived PR branches, with prompt commits and PR handling under [CONTRIBUTING.md](../CONTRIBUTING.md). Development is solo before `0.0.1`; private-stage self-merges follow that policy. Before public collaboration, configure the rules and review requirements in [DECISIONS.md](DECISIONS.md). Local YAML files do not enforce branch protection. Contributor CI must not use privileged `pull_request_target` execution.
 
 ## Version policy
 
-`VERSION` records the source version. `0.1.0-dev` is unreleased. Keep version changes and release notes in reviewed PRs. The current source-release workflow accepts exact stable `vMAJOR.MINOR.PATCH` tags, with no leading zeros; prerelease tags are unsupported.
+`VERSION` records the source version. The first stable release is planned as `0.0.1`; the current `0.0.1-dev` is unreleased. Keep version changes and release notes in reviewed PRs. The current source-release workflow accepts exact stable `vMAJOR.MINOR.PATCH` tags, with no leading zeros; prerelease tags are unsupported.
 
 Before 1.0, breaking changes and compatible additions increment minor; corrections increment patch. From 1.0, incompatible public behavior increments major. Substantive rule and locale changes are behavior changes, even if only Markdown/JSON changes.
 

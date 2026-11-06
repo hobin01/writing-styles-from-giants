@@ -6,7 +6,13 @@ Writing and explanation methods from thinkers, historical figures, influential b
 
 The name evokes **standing on the shoulders of giants**: drawing on the knowledge and practices of those who came before us. Here, style includes sentence expression, argument structure, explanation, and document-writing practices. The goal is **documented source → attributed method → agent skill → task-specific application**.
 
-**Status: foundation only.** Project documents, authoring examples, local checks, and CI/release workflow definitions exist. There are no installable method skills, recommendation workflow, or project installer yet. Hosted workflow execution and host compatibility have not been verified.
+**Status: foundation only.** Project documents, authoring examples, local checks, and CI/release workflow definitions exist. There are no installable method skills, recommendation workflow, or project installer yet. Foundation CI has passed on GitHub; the release workflow and host compatibility remain unverified.
+
+## Why I started this project
+
+I often asked AI to “be concise” or “summarize the key points” without making the writing requirements clear. The result was a summary that differed from what I had in mind, or “AI slop” that I did not want to read.
+
+This project grew out of that frustration. I want to draw on the writing and explanation methods of earlier thinkers and the writing guides of recognized institutions, turning them into skills with clear sources and application criteria. The aim is to make requests concrete: how to organize ideas, explain them to a reader, and choose what to emphasize.
 
 ## Methods
 
@@ -37,6 +43,8 @@ The proposed first delivery evaluates an existing skill installer before buildin
 ## Contributing
 
 Start with [CONTRIBUTING.md](CONTRIBUTING.md). Keep each issue or PR focused on one problem; method and language changes need source evidence and examples. English contributor documents are canonical; keep this README and the Korean README aligned in section order, tables, commands, and meaning.
+
+Development is solo until the first stable `0.0.1` release. Completed changes still go through a separate branch, prompt commits, a PR, and CI before merging. While the repository is private, owner-authorized self-merges are allowed under the [review policy](CONTRIBUTING.md).
 
 Use Python 3.12 or newer for the dependency-free repository checks, from the repository root:
 
