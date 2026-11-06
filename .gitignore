@@ -1,13 +1,14 @@
+# Local work history and credentials
 private/
 .local/
-work/
-outputs/
-__pycache__/
-*.py[cod]
-.venv/
-node_modules/
-dist/
-.DS_Store
+.history/
+.credentials/
+credentials.json
+credentials.yaml
+credentials.yml
+secrets.json
+secrets.yaml
+secrets.yml
 .env
 .env.*
 !.env.example
@@ -18,3 +19,17 @@ AGENTS.local.md
 *.local.json
 *.local.yaml
 *.local.yml
+
+# Tool caches, dependencies, and build outputs
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+dist/
+.DS_Store

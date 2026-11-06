@@ -2,11 +2,9 @@
 
 ## [Unreleased]
 
-- Establish `writing-styles-from-giants` as the project name and explain its purpose: AI-agent skills drawn from documented methods of thinkers, historical figures, books, companies, and institutions.
-- Establish project instructions, product/design contracts, authoring/localization policy, and the draft MVP plan.
-- Add English/Korean entry documentation, contribution/release rules, and public/private file conventions.
-- Adapt repository organization and contributor guidance from the pinned mattpocock/skills reference; align English/Korean README sections, tables, commands, and status.
-- Prioritize one complete method and evaluation of existing installation tools; keep custom runtime/CLI work conditional on an observed gap.
-- Add dependency-free foundation checks, ignore rules, issue forms, a PR template, SHA-pinned CI/draft source-release workflows, and Dependabot configuration. Hosted workflows have not been verified.
+- Add English/Korean project documentation, method/localization templates, and evaluation examples.
+- Add foundation checks, collaboration templates, CI, and a draft source-release workflow; Foundation CI is verified, source releases and host compatibility are not.
+- Confirm MIT for original content and prioritize compatible permissive reuse with preserved notices.
+- Keep local history, credentials, and caches ignored and rejected by repository checks; delete task-owned temporary files.
 
-No product runtime or production skill has been released.
+Current source version: `0.0.1-dev`. No production method or runtime has been released.

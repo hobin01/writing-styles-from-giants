@@ -1,64 +1,33 @@
-# writing-styles-from-giants: project definition
+# Project definition
 
-Status: documentation foundation, 2026-11-06. User-defined direction and implementation proposals are distinguished below.
+## Purpose and requirements
 
-## Identity and purpose
+Make documented writing and explanation methods usable as AI-agent skills. The [README](../README.md) records the founder's motivation and initial candidates.
 
-The user-defined project name is `writing-styles-from-giants`. It evokes standing on the shoulders of giants: learning from earlier thinkers, historical figures, influential books, and well-known companies and institutions.
+- Draw from thinkers, historical figures, books, companies, and institutions, with source evidence and attribution.
+- Respect explicit method choice, recommendation requests, opt-out, and selected application scope.
+- Provide `light`, `standard`, and `strict` levels without changing facts or qualifications.
+- Start with English/Korean adaptations and target the six hosts in [COMPATIBILITY.md](COMPATIBILITY.md).
+- Evaluate existing installers for an `npx`-style, project/global delivery path before writing one.
+- Use MIT for original content and reuse vetted permissive implementations under the [license policy](../THIRD_PARTY_NOTICES.md).
 
-The project turns their documented writing and explanation methods into skills that AI agents can use. A method can guide sentence expression, argument structure, reader-oriented explanation, or a document-writing process. Recognition helps discover candidate sources; source evidence and evaluation determine what a skill may claim.
+The repository is private during solo development before stable `0.0.1`, but every commit must be suitable for eventual public release. Follow [CONTRIBUTING.md](../CONTRIBUTING.md) for branch/commit/PR handling and [SECURITY.md](../SECURITY.md) for local history, credentials, caches, and cleanup.
 
-The user selected [mattpocock/skills](https://github.com/mattpocock/skills) as the repository-management reference. [REFERENCE.md](REFERENCE.md) records the inspected structure and our adaptations. The repository is currently private; public collaboration remains a goal.
+## Proposed delivery sequence and acceptance
 
-## Product requirements
+1. **One complete method.** Create a real `skills/<method-id>/` with source/version, read scope, rights notes, stable rules, exceptions, per-level behavior, and reviewed en/ko adaptations. Add ordinary-use, important-exception, and meaning-preservation cases. Follow [METHOD_AUTHORING.md](METHOD_AUTHORING.md); extend existing checks with behavioral tests when catalog validation needs them.
+2. **Observed writing behavior.** Verify explicit choice, opt-out, all levels, uncertain/conditional statements, and unavailable locales in a host. Record prompts, outputs, model/host versions, method/locale/level, failures, and judging process. Recommendations must explain fit and respect overrides; add a router only when real choices need one.
+3. **Tested distribution.** Evaluate the existing [reuse candidates](../THIRD_PARTY_NOTICES.md) against [ARCHITECTURE.md](ARCHITECTURE.md). Verify complete references, scope, conflicts, durable link/copy behavior, modified files, shared roots, interrupted updates, and removal preservation. Publish installation instructions and support claims only for tested host/version/OS combinations; Windows needs its own evidence.
+4. **Source release.** Resolve semantic and ownership failures, inspect archive rights/content, and follow [RELEASING.md](RELEASING.md) for the first `0.0.1` draft. Expand methods and host coverage from evidence.
 
-1. Make documented methods from thinkers, historical figures, books, companies, and institutions usable as AI-agent skills, with attribution.
-2. Recommend a suitable method or apply one automatically within a selected scope; respect explicit choices and opt-out.
-3. Vary guideline coverage and enforcement by level while preserving meaning at every level.
-4. Target Codex, Claude Code, OpenCode, Antigravity, Pi, and Cline without tying portable content to one host.
-5. Plan an `npx`-style installation experience with target selection, symlinks, and project/global scope. This does not require a project-owned npm package or installer.
-6. Prepare for public GitHub contributions with documented PR, branch, CI, and release rules.
-7. Start with English and Korean and expand with language-specific adaptations.
-8. Separate public project content from private local material.
+The proposed initial mode is recommendation at `standard` level, with project-scoped installation. Method review, model evaluations, and host evidence are distinct from repository tests. Public CI requires no model keys; optional model evaluations use bounded cost and sanitized inputs.
 
-## Terms
+## Current state
 
-| Term | Meaning |
-| --- | --- |
-| Source | The document or other evidence that establishes a writing practice |
-| Method | Attributed operational rules derived from a source, with applicability and exceptions |
-| Skill | A portable directory containing the agent instructions, method data, locale rules, and references |
-| Locale | Language-specific rules and measurements, not just translated instructions |
-| Level | `light`, `standard`, or `strict` guideline coverage/enforcement; invariants stay active |
-| Recommendation / application | Suggesting a method / using its rules on text; neither follows merely from installation |
+Present: documentation, authoring/evaluation examples, Python foundation checks, collaboration templates, ignore rules, and CI/draft-release workflow definitions. [Foundation CI has passed on GitHub](RELEASING.md).
 
-## Proposed delivery sequence
-
-1. Author and evaluate one complete method with English/Korean variants. Orwell, Federal Plain Language, and Minto-inspired structure are candidates, not reviewed or shipped skills. Choose the first after source and rights review.
-2. Demonstrate explicit method selection and level behavior in a host. Use a short skill workflow for recommendations before adding a scripted router or configuration loader.
-3. Evaluate an existing skill installer against the installation contract. Record gaps before proposing a custom CLI or adapter. Publish only the host/OS combinations actually tested.
-4. Expand the catalog and host coverage from evidence. All six hosts remain targets; Windows, native plugin wrappers, and post-edit hooks need their own tests before support claims.
-
-This is an implementation proposal, not user approval of new defaults. The proposed starting mode is recommendation at `standard` level, with project-scoped installation. STE-inspired support is a later candidate and cannot imply verified ASD-STE100 compliance.
-
-## Acceptance criteria
-
-- Every released method has source/version, summary-vs-adaptation labels, rights notes, stable rule IDs, applicable tasks, exceptions, and locale review status.
-- Recommendations explain fit and limitations. Explicit method selection wins; incompatibility is explained rather than silently substituting another method.
-- Every level has observable cases. No level may discard a fact, alter its scope, or strengthen its certainty.
-- A supported installation path preserves the whole skill directory, defaults to project scope, and exposes scope, conflicts, link/copy behavior, updates, and removal. Modified or unowned content is preserved.
-- A detected path is not proof of activation. Report actual host/version/OS evidence and unsupported combinations.
-- Model evaluations record model/version, prompt, method/locale/level, cases, failures, and unperformed checks. Repository tests do not prove writing quality.
-- Public CI needs no model API keys or external account. Optional model evaluations run separately with bounded cost and sanitized inputs.
-
-## Current foundation
-
-Present: project and contributor documents, authoring examples, foundation-check scripts and unit tests, ignore rules, issue forms, a PR template, SHA-pinned CI/release workflow definitions, and Dependabot configuration.
-
-Not implemented: production methods, recommendation/application workflow, runtime router, installer integration, custom CLI, native plugins, npm publishing, automatic hooks, and model evaluations. Hosted workflows, repository protection settings, and runtime host compatibility have not been verified.
+Pending: production methods, recommendation/application workflow, installer integration, model evaluations, release workflow verification, host runtime tests, and repository protection settings. The examples are not production skills or model results.
 
 ## Boundaries
 
-Keep the first deliverable focused on an actual writing method. A dedicated runtime, custom installer, host adapter framework, or plugin marketplace is justified only by an observed requirement existing tools cannot satisfy.
-
-No dashboard, paid service, remote content upload, model hosting, arbitrary plugin execution, person impersonation, authorship detector, or certified-STE claim is planned. Source books, dictionaries, and proprietary checklists keep their own rights and must not be bundled without permission.
+Reuse host capabilities and existing tools. A custom runtime, CLI, adapter, or plugin needs evidence of a gap first. No dashboard, paid service, remote content upload, model hosting, arbitrary plugin execution, person impersonation, authorship detector, or certified-STE claim is planned. STE-inspired work is a later candidate, with no verified ASD-STE100 compliance claim.
