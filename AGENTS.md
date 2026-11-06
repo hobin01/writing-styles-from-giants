@@ -1,6 +1,6 @@
 # Working in writing-styles-from-giants
 
-This repository develops AI-agent writing and explanation skills derived from documented methods of thinkers, historical figures, books, companies, and institutions. Its name evokes standing on the shoulders of giants. It is currently a documentation foundation: the router, installer, production skills, and npm package do not exist yet.
+AI-agent skills for documented writing and explanation methods. Foundation only; no production skills or installer yet.
 
 ## Start here
 
@@ -8,7 +8,7 @@ This repository develops AI-agent writing and explanation skills derived from do
 - Read [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) before changing routing, levels, configuration, or installation.
 - Read [docs/METHOD_AUTHORING.md](docs/METHOD_AUTHORING.md) and [docs/LOCALIZATION.md](docs/LOCALIZATION.md) before adding a method or language.
 - Read [CONTRIBUTING.md](CONTRIBUTING.md) before preparing a PR; [docs/RELEASING.md](docs/RELEASING.md) before changing delivery automation.
-- Proposed defaults are recorded in [docs/DECISIONS.md](docs/DECISIONS.md). Do not describe proposals as user-approved or implemented behavior.
+- Read [docs/DECISIONS.md](docs/DECISIONS.md) for confirmed choices and proposals; keep those statuses distinct.
 - Read [docs/REFERENCE.md](docs/REFERENCE.md) when changing repository organization or contributor documentation; it records how this project adapts the selected reference repository.
 
 ## Product invariants
@@ -24,12 +24,11 @@ This repository develops AI-agent writing and explanation skills derived from do
 ## Make changes
 
 - Implement the smallest complete change within the current request. Update callers, examples, tests, and affected documentation together.
-- Reuse a working implementation or platform feature before adding a dependency. Do not build a general framework before a concrete method needs it.
+- Reuse existing implementations or platform features before writing equivalents. Original content is MIT; follow [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for permissive reuse and required notices. Do not introduce a framework before a method needs it.
 - Do not create placeholder production skills, fake compatibility badges, or working-looking install commands for unpublished packages.
 - Keep `AGENTS.md` concise. Put detailed policy in the linked document that owns it. `CLAUDE.md` is a pointer, not a second policy.
 - Use English for stable IDs and canonical contributor documentation. Keep [README.ko.md](README.ko.md) aligned with the English README; communicate with the user in their language.
-- Do not read `private/`, `.local/`, or ignored personal drafts unless the current task explicitly needs them. Never include them in a commit, fixture, log, or release archive.
-- Treat each commit as future public open-source content. Register retained private files in `.gitignore` before creating or using them; delete task-owned temporary files when finished instead of hiding them with ignore rules. See [SECURITY.md](SECURITY.md) for file handling.
+- Keep local work history, credentials, and caches ignored under [SECURITY.md](SECURITY.md); read them only when the task needs them. Keep private content out of public fixtures, logs, commits, and releases. Delete task-owned temporary files when finished.
 - Installations default to project scope. Global writes, conflicting files, or modified installed files require explicit handling; never silently overwrite or delete them. Retain the entire skill directory and its references.
 - Preserve other contributors' work. Do not discard unrelated edits or rewrite shared branch history. Use a short-lived branch from `main`.
 - Commit validated work promptly, push the branch, and handle its PR in the same task. Follow [CONTRIBUTING.md](CONTRIBUTING.md) for the solo stage before `0.0.1` and the owner-authorized private-repository self-merge policy.
