@@ -64,13 +64,10 @@ These checks cover the repository foundation, not writing quality or host activa
 | [docs/COMPATIBILITY.md](docs/COMPATIBILITY.md) | Planned hosts and verification evidence |
 | [docs/DECISIONS.md](docs/DECISIONS.md) | Confirmed choices and proposals |
 | [docs/RELEASING.md](docs/RELEASING.md) | CI, versioning, and draft source releases |
+| [docs/REFERENCE.md](docs/REFERENCE.md) | Documentation and project-management references |
 | [templates/method/](templates/method/), [evals/](evals/) | Authoring and evaluation examples, not released methods or model results |
 | [scripts/](scripts/), [tests/](tests/) | Foundation checker and tests |
 | [.github/](.github/) | Collaboration and automation configuration |
-
-## Project reference
-
-The [mattpocock/skills](https://github.com/mattpocock/skills) repository informs our organization and contributor guidance. The [reference review](docs/REFERENCE.md) records the inspected structure and adaptations.
 
 ## License and attribution
 
