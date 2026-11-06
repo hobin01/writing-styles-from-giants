@@ -31,6 +31,7 @@ This repository develops AI-agent writing and explanation skills derived from do
 - Do not read `private/`, `.local/`, or ignored personal drafts unless the current task explicitly needs them. Never include them in a commit, fixture, log, or release archive.
 - Installations default to project scope. Global writes, conflicting files, or modified installed files require explicit handling; never silently overwrite or delete them. Retain the entire skill directory and its references.
 - Preserve other contributors' work. Do not discard unrelated edits or rewrite shared branch history. Use a short-lived branch from `main`.
+- Commit validated work promptly, push the branch, and handle its PR in the same task. Follow [CONTRIBUTING.md](CONTRIBUTING.md) for the solo stage before `0.0.1` and the owner-authorized private-repository self-merge policy.
 
 ## Verify and report
 

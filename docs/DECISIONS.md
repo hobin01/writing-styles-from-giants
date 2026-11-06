@@ -14,6 +14,13 @@ The repository remote is `https://github.com/hobin01/writing-styles-from-giants.
 
 Use [mattpocock/skills](https://github.com/mattpocock/skills) as a reference for repository management and README organization. The [reference review](REFERENCE.md) pins the inspected commit and separates observed upstream practices from our adaptations.
 
+## User-defined development workflow: 2026-11-06
+
+- The first stable release is `0.0.1`; development is solo before that milestone. `VERSION` remains `0.0.1-dev` until a release is prepared.
+- Work on a separate short-lived branch from current `main`, commit validated changes promptly, and create or update the PR in the same task.
+- While the repository is private, the owner permits agent self-merges after final-diff review and passing CI. GitHub author self-approval is unavailable; record an author review and self-merge instead. The full policy is in [CONTRIBUTING.md](../CONTRIBUTING.md).
+- Revisit collaboration and independent-review requirements when preparing `0.0.1` or opening public contributions. Repository protections remain separate hosting settings.
+
 ## Proposed implementation defaults
 
 The following are assistant-proposed starter defaults, open to change before runtime implementation. Their presence in the skeleton is not evidence of user approval.
@@ -28,7 +35,6 @@ The following are assistant-proposed starter defaults, open to change before run
 | Levels | light / standard / strict | Observable rule coverage instead of a fictitious compliance percentage |
 | Mode and scope | recommend, standard, project installation | Explicit opt-in to automatic application/global installation |
 | Languages | en and ko; reviewed adaptations | No hardcoded cross-language word-count conversion |
-| Git workflow | main + short-lived branches, squash merge | Small maintainer/community workflow without a permanent develop branch |
 | Releases | Reviewed tags produce draft GitHub source releases | Foundation can release source without pretending npm exists |
 | Privacy | ignored private/ and .local/ | Separate personal material; tracking and artifact checks still matter |
 

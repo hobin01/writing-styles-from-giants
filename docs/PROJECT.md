@@ -10,6 +10,12 @@ The project turns their documented writing and explanation methods into skills t
 
 The user selected [mattpocock/skills](https://github.com/mattpocock/skills) as the repository-management reference. [REFERENCE.md](REFERENCE.md) records the inspected structure and our adaptations. The repository is currently private; public collaboration remains a goal.
 
+The founder's motivation is recorded in the [README](../README.md): vague requests for concise summaries produced writing that missed the intended result or felt like AI slop. The project aims to make writing requirements concrete through documented methods.
+
+## Development stage
+
+The owner will work alone before the first stable `0.0.1` release. Use separate branches and handle commits and PRs promptly, including during solo development. While the repository is private, the agent may self-merge after final-diff review and passing CI under [CONTRIBUTING.md](../CONTRIBUTING.md). This is a user-defined workflow, separate from the product implementation proposals below.
+
 ## Product requirements
 
 1. Make documented methods from thinkers, historical figures, books, companies, and institutions usable as AI-agent skills, with attribution.
@@ -55,7 +61,7 @@ This is an implementation proposal, not user approval of new defaults. The propo
 
 Present: project and contributor documents, authoring examples, foundation-check scripts and unit tests, ignore rules, issue forms, a PR template, SHA-pinned CI/release workflow definitions, and Dependabot configuration.
 
-Not implemented: production methods, recommendation/application workflow, runtime router, installer integration, custom CLI, native plugins, npm publishing, automatic hooks, and model evaluations. Hosted workflows, repository protection settings, and runtime host compatibility have not been verified.
+Not implemented: production methods, recommendation/application workflow, runtime router, installer integration, custom CLI, native plugins, npm publishing, automatic hooks, and model evaluations. Foundation CI has passed on GitHub; see [RELEASING.md](RELEASING.md) for the evidence. Release workflow execution, repository protection settings, and runtime host compatibility have not been verified.
 
 ## Boundaries
 
