@@ -29,6 +29,7 @@ This repository develops AI-agent writing and explanation skills derived from do
 - Keep `AGENTS.md` concise. Put detailed policy in the linked document that owns it. `CLAUDE.md` is a pointer, not a second policy.
 - Use English for stable IDs and canonical contributor documentation. Keep [README.ko.md](README.ko.md) aligned with the English README; communicate with the user in their language.
 - Do not read `private/`, `.local/`, or ignored personal drafts unless the current task explicitly needs them. Never include them in a commit, fixture, log, or release archive.
+- Treat each commit as future public open-source content. Register retained private files in `.gitignore` before creating or using them; delete task-owned temporary files when finished instead of hiding them with ignore rules. See [SECURITY.md](SECURITY.md) for file handling.
 - Installations default to project scope. Global writes, conflicting files, or modified installed files require explicit handling; never silently overwrite or delete them. Retain the entire skill directory and its references.
 - Preserve other contributors' work. Do not discard unrelated edits or rewrite shared branch history. Use a short-lived branch from `main`.
 - Commit validated work promptly, push the branch, and handle its PR in the same task. Follow [CONTRIBUTING.md](CONTRIBUTING.md) for the solo stage before `0.0.1` and the owner-authorized private-repository self-merge policy.

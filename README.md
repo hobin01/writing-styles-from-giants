@@ -54,7 +54,7 @@ python3 scripts/check_repository.py
 git diff --check
 ```
 
-These check the repository foundation, not LLM writing quality, source rights, or host activation. Keep private drafts in ignored `private/` or `.local/` directories. Ignore rules do not make already tracked files private.
+These check the repository foundation, not LLM writing quality, source rights, or host activation. Keep every commit ready for eventual public open-source reuse. Register retained private files in `.gitignore` before creating or using them; `private/` and `.local/` are designated local directories. Delete task-owned temporary files when finished instead of adding ignore rules for them. Ignore rules do not make already tracked files private.
 
 ## Repository guide
 

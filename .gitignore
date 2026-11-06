@@ -1,13 +1,6 @@
+# Retained private files and local configuration
 private/
 .local/
-work/
-outputs/
-__pycache__/
-*.py[cod]
-.venv/
-node_modules/
-dist/
-.DS_Store
 .env
 .env.*
 !.env.example
@@ -18,3 +11,11 @@ AGENTS.local.md
 *.local.json
 *.local.yaml
 *.local.yml
+
+# Tool caches, dependencies, and build outputs
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+dist/
+.DS_Store

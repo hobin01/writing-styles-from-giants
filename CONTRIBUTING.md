@@ -20,6 +20,7 @@ Acceptance follows [PROJECT.md](docs/PROJECT.md), with method evidence owned by 
 - PRs describe the concrete behavior, source/rights implications, tests actually run, and limitations. Do not post private drafts or real client inputs as examples.
 - Update the changelog for user-visible behavior or delivered content. Documentation corrections that do not change behavior need no artificial version bump.
 - Keep both READMEs aligned in section order, tables, links, commands, and meaning. The language switch link is intentionally different; locale-specific method rules need their own review rather than literal matching.
+- Keep commits suitable for eventual public release: ignore retained private files before creating or using them, and delete task-owned temporary files when finished. Check staged content and follow [SECURITY.md](SECURITY.md); private repository visibility is not a substitute for these rules.
 
 ## Required evidence
 
