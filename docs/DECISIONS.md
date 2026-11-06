@@ -21,6 +21,10 @@ Use [mattpocock/skills](https://github.com/mattpocock/skills) as a reference for
 - While the repository is private, the owner permits agent self-merges after final-diff review and passing CI. GitHub author self-approval is unavailable; record an author review and self-merge instead. The full policy is in [CONTRIBUTING.md](../CONTRIBUTING.md).
 - Revisit collaboration and independent-review requirements when preparing `0.0.1` or opening public contributions. Repository protections remain separate hosting settings.
 
+## User-defined public-source policy
+
+The repository is intended to become public open source. Prepare commit contents for that from the start, regardless of current visibility. Register retained private files in `.gitignore` before creating or using them. Delete task-owned temporary files after the task instead of adding ignore rules to retain them. [SECURITY.md](../SECURITY.md) owns the handling and cleanup details.
+
 ## Proposed implementation defaults
 
 The following are assistant-proposed starter defaults, open to change before runtime implementation. Their presence in the skeleton is not evidence of user approval.
@@ -36,7 +40,6 @@ The following are assistant-proposed starter defaults, open to change before run
 | Mode and scope | recommend, standard, project installation | Explicit opt-in to automatic application/global installation |
 | Languages | en and ko; reviewed adaptations | No hardcoded cross-language word-count conversion |
 | Releases | Reviewed tags produce draft GitHub source releases | Foundation can release source without pretending npm exists |
-| Privacy | ignored private/ and .local/ | Separate personal material; tracking and artifact checks still matter |
 
 ## Before public launch
 

@@ -2,6 +2,7 @@
 
 ## [Unreleased]
 
+- Treat every commit as future public open-source content; distinguish retained private files managed by ignore rules from task-owned temporary files that must be deleted. Remove blanket `work/` and `outputs/` ignores.
 - Explain the founder's motivation in both READMEs: replace vague writing requests and unwanted AI slop with concrete, source-backed writing requirements.
 - Record solo development before `0.0.1`, prompt branch/commit/PR handling, and owner-authorized private-stage self-merges after checks. Align the unreleased source version to `0.0.1-dev`.
 - Establish `writing-styles-from-giants` as the project name and explain its purpose: AI-agent skills drawn from documented methods of thinkers, historical figures, books, companies, and institutions.
