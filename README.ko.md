@@ -65,6 +65,7 @@ git diff --check
 | [docs/DECISIONS.md](docs/DECISIONS.md) | 확정된 선택과 제안 |
 | [docs/RELEASING.md](docs/RELEASING.md) | CI, 버전 관리, 소스 릴리스 초안 |
 | [docs/REFERENCE.md](docs/REFERENCE.md) | 프로젝트 참고 자료 목록과 검토 기록 |
+| [docs/INITIAL_CATALOG_RESEARCH.md](docs/INITIAL_CATALOG_RESEARCH.md) | 요청한 25개 방법과 유사 프로젝트의 1차 조사 |
 | [templates/method/](templates/method/), [evals/](evals/) | 작성·평가 예제. 배포된 방법론이나 모델 평가 결과가 아닙니다 |
 | [scripts/](scripts/), [tests/](tests/) | 저장소 검사와 테스트 |
 | [.github/](.github/) | 협업·자동화 설정 |
