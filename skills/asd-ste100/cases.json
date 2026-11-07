@@ -79,5 +79,93 @@
       "Review English sentence length without deleting either condition."
     ],
     "knownBadRewrite": "Transmission altered the reading. Open the valve."
+  },
+  {
+    "id": "glossary-consistency",
+    "type": "ordinary",
+    "locale": "en",
+    "level": "standard",
+    "source": "Glossary: filter housing = the removable casing around the filter. Source: Remove the filter housing. Clean the filter casing with water. Both sentences refer to the same casing.",
+    "ruleIds": [
+      "consistent-terms",
+      "explicit-action"
+    ],
+    "sourceIds": [
+      "asd-faq",
+      "asd-issue9-selected"
+    ],
+    "expectations": [
+      "Use filter housing consistently for the explicitly identical component.",
+      "Keep the water cleaning instruction and avoid introducing an unsupplied solvent."
+    ],
+    "knownBadRewrite": "Remove the filter. Clean it with solvent.",
+    "method": "asd-ste100",
+    "migratedFrom": {
+      "method": "caterpillar-technical-english",
+      "caseId": "glossary-consistency",
+      "ruleIds": [
+        "controlled-terms",
+        "resolve-ambiguity"
+      ]
+    }
+  },
+  {
+    "id": "approved-polysemy",
+    "type": "exception",
+    "locale": "en",
+    "level": "strict",
+    "source": "The project glossary approves charge as electrical charge in sensor descriptions and charge as a billing amount in service invoices. This paragraph describes the sensor charge.",
+    "ruleIds": [
+      "consistent-terms",
+      "dictionary-boundary"
+    ],
+    "sourceIds": [
+      "asd-faq",
+      "asd-issue9-selected"
+    ],
+    "expectations": [
+      "Preserve the approved electrical sense and distinguish its context.",
+      "Do not prohibit charge merely because another approved domain sense exists.",
+      "Project glossary approval does not establish official ASD dictionary approval; leave that strict check unverified without the required source."
+    ],
+    "knownBadRewrite": "Replace charge everywhere because every word must have exactly one meaning.",
+    "method": "asd-ste100",
+    "migratedFrom": {
+      "method": "caterpillar-technical-english",
+      "caseId": "approved-polysemy",
+      "ruleIds": [
+        "controlled-terms",
+        "reusable-review"
+      ]
+    }
+  },
+  {
+    "id": "conditional-markup",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "standard",
+    "source": "<warning>Only if the pressure is below 5 kPa may a trained operator remove cover A. Do not remove cover B.</warning>",
+    "ruleIds": [
+      "technical-profile",
+      "preserve-meaning"
+    ],
+    "sourceIds": [
+      "asd-faq",
+      "asd-issue9-selected"
+    ],
+    "expectations": [
+      "Preserve warning markup, below 5 kPa, trained operator, cover A permission, and cover B prohibition.",
+      "Do not turn permission into an unconditional instruction."
+    ],
+    "knownBadRewrite": "Remove covers A and B.",
+    "method": "asd-ste100",
+    "migratedFrom": {
+      "method": "caterpillar-technical-english",
+      "caseId": "conditional-markup",
+      "ruleIds": [
+        "retain-technical-relations",
+        "preserve-meaning"
+      ]
+    }
   }
 ]

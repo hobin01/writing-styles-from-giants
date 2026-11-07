@@ -1,6 +1,6 @@
 {
   "method": "minto-pyramid",
-  "methodVersion": "0.1.0",
+  "methodVersion": "0.2.0",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -24,6 +24,10 @@
     "proportionate-shape": {
       "instruction": "Use only the hierarchy needed by the material; repair overlaps or gaps that undermine the argument without imposing a fixed count of reasons.",
       "adaptation": false
+    },
+    "scq-opening": {
+      "instruction": "For a requested decision opening, connect relevant shared situation, an evidenced complication if present, the reader question, and a supported answer; keep the rest of the document outside scope.",
+      "adaptation": true
     }
   }
 }

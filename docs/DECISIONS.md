@@ -10,14 +10,16 @@
 - References: maintain a project-wide bibliography in [REFERENCE.md](REFERENCE.md), with read scope, versions/dates, use, and links to skill-specific evidence and license records. Update it whenever external sources inform a change. Current remote: `https://github.com/hobin01/writing-styles-from-giants.git`.
 - Initial catalog: investigate the owner's initial candidates and comparable projects before authoring; ask about undefined methods rather than inventing their behavior. The [initial research](INITIAL_CATALOG_RESEARCH.md) records evidence, clarified intent, and remaining source limits, with implementation evidence recorded separately in [CATALOG_REVIEW.md](CATALOG_REVIEW.md).
 - Skill authoring: write instructions primarily in English. Add a separate Korean-specific skill only when Korean linguistic differences justify it; translated instructions alone do not justify a duplicate. This does not restrict the requested output language. Structural rules can be language-independent; English grammar is not Korean grammar.
-- Method scope: ASD normal follows the named Karpathy post's informal 80% inspiration, excluding HTML/video; `normal` aliases `standard`; `strict` applies the full eligible project profile, without a conformance guarantee. Hunminjeongeum emphasizes purpose-first introduction/body/conclusion. John von Neumann is excluded at the owner’s request. Use CTE, not CFE, and NIST Technical Series Publications Author Instructions. See the [research](INITIAL_CATALOG_RESEARCH.md) for attribution boundaries.
+- Method scope: ASD normal follows the named Karpathy post's informal 80% inspiration, excluding HTML/video; `normal` aliases `standard`; `strict` applies the full eligible project profile, without a conformance guarantee. Hunminjeongeum emphasizes purpose-first introduction/body/conclusion. John von Neumann is excluded at the owner’s request. The initial research selected CTE rather than CFE; its standalone adaptation was later retired in favor of ASD. Use NIST Technical Series Publications Author Instructions. See the [research](INITIAL_CATALOG_RESEARCH.md) for attribution boundaries.
 - Review: apply Ponytail to every completed skill and remove unnecessary content while retaining source evidence, exceptions, and meaning-preservation checks.
 
 ## Implemented catalog
 
-- 24 requested methods plus `korean-plain-language`, all experimental at content version `0.1.0`. The companion handles Korean referents, particles/endings, register, terminology, and modality rather than duplicating structural methods.
+- 21 methods plus `korean-plain-language`, all experimental. Minto is `0.2.0`, ASD/Orwell `0.1.1`, and the remaining profiles `0.1.0`. The companion handles Korean referents, particles/endings, register, terminology, and modality rather than duplicating structural methods.
 - Portable instructions and evidence only; no runtime router, installer, or host adapter. Default level is `standard` when a method is selected without a level.
 - New Hart’s Rules is source-assisted: unverified edition-specific choices require relevant text, not invented prescriptions.
+
+- Catalog cleanup: at the owner’s request, retain Minto instead of a standalone SCQA opening, ASD instead of the overlapping CTE-inspired implementation, and Orwell instead of the factual Hemingway adaptation. Preserve distinct tasks and all nine regression cases; see [comparison and migration](CATALOG_CONSOLIDATION.md).
 
 ## Proposed implementation defaults
 

@@ -22,7 +22,7 @@
       "version": "Public course outline accessed 2026-11-07",
       "accessed": "2026-11-07",
       "evidenceType": "primary",
-      "accessScope": "Full public outline read; not course materials.",
+      "accessScope": "Full public course outline reread for this consolidation; problem definition and reader question, plus the site’s SCQ Framework naming. No paid course materials or complete book read.",
       "rights": "No paid materials or copied checklist bundled."
     }
   ],
@@ -117,16 +117,39 @@
         "standard": "warning",
         "strict": "warning"
       }
+    },
+    {
+      "id": "scq-opening",
+      "intent": "For a requested decision opening, connect relevant shared situation, an evidenced complication if present, the reader question, and a supported answer; keep the rest of the document outside scope.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Consolidates the former SCQA skill into the broader Minto method. The public site names SCQ; the explicit four-part opening is this project’s operational adaptation, not a verified full-book recipe.",
+      "sourceIds": [
+        "minto-public",
+        "minto-course"
+      ],
+      "exceptions": [
+        "Apply this framing only when an introduction is requested; keep direct answers to short questions without a mandatory SCQ preamble.",
+        "If no complication is supported, use a factual opening or flag the missing decision context rather than inventing a crisis.",
+        "An opening-only request does not authorize restructuring the whole document."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "off",
+        "standard": "warning",
+        "strict": "warning"
+      }
     }
   ],
   "schemaVersion": 1,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "status": "experimental",
   "applicability": {
     "genres": [
       "decision memo",
       "recommendation",
-      "business argument"
+      "business argument",
+      "decision-document opening"
     ],
     "audiences": [
       "decision-makers",

@@ -1,6 +1,8 @@
 # Initial skill catalog research
 
-Research accessed on 2026-11-07 for the owner's 24 retained methods (John von Neumann was subsequently withdrawn). This is a pre-authoring assessment, not a released catalog. It distinguishes documented practices, project-original methods, and names whose intended scope needed clarification. Proposed operational steps below are adaptations unless explicitly identified as source summaries.
+Research accessed on 2026-11-07 for the owner's 24 initial methods after John von Neumann was withdrawn. This is a pre-authoring assessment, not a released catalog. It distinguishes documented practices, project-original methods, and names whose intended scope needed clarification. Proposed operational steps below are adaptations unless explicitly identified as source summaries.
+
+The original research is preserved below. The later [consolidation](CATALOG_CONSOLIDATION.md) retired standalone SCQA, CTE, and the factual Hemingway adaptation; the current catalog is in [README.md](../README.md). Historical scope decisions below are not active installation choices.
 
 ## Authoring decisions
 
@@ -182,7 +184,7 @@ In [Plato, *Phaedrus*, 229e–230a, Jowett translation](https://classics.mit.edu
 
 [Minto's home](https://www.barbaraminto.com/), [concept](https://www.barbaraminto.com/concept), and [course](https://www.barbaraminto.com/course) pages explain a single governing point, grouped supporting ideas, and identifying the reader's question. Minto's site explicitly calls it the **SCQ Framework**, and the site describes the 1996 textbook as superseding the earlier book. These pages alone do not establish all rules of an official four-part SCQA implementation.
 
-**Operational adaptation:** establish relevant shared context; show the change/tension; identify the decision question; state a supported answer. Avoid manufacturing conflict or presenting an unproven recommendation as a fact. Keep the separately requested SCQA candidate focused on the opening; Minto covers the complete argument. Share provenance and avoid duplicating the whole Pyramid workflow.
+**Operational adaptation:** establish relevant shared context; show the change/tension; identify the decision question; state a supported answer. Avoid manufacturing conflict or presenting an unproven recommendation as a fact. The initial separate SCQA candidate focused on the opening; consolidation now keeps that optional framing inside Minto. Share provenance and avoid duplicating the whole Pyramid workflow.
 
 **Korean need:** natural context and conclusion placement, explicit distinction between fact and proposal; no English sentence quotas.
 
@@ -269,6 +271,6 @@ The owner selected CTE rather than CFE and the NIST Author Instructions linked a
 
 The initial implementation selects explicit ASD-inspired profiles and maps `normal` to `standard`. Full standard/dictionary checks, book-wide coverage, rights to bundle source material, and Korean-specific adaptations remain unverified wherever marked. Ask only when a missing choice materially changes the method; ordinary task parameters and the bounded interpretations stated above do not require another interview.
 
-Keep methods distinct even where they overlap: ELI5 targets audience knowledge; Feynman-inspired explanation tests explanatory completeness; Minto organizes an argument; SCQA frames its opening; IMRaD organizes a research report; Diátaxis selects documentation types; HTML determines delivery. Combine them only through an explicit compatible request.
+Keep methods distinct even where they overlap: ELI5 targets audience knowledge; Feynman-inspired explanation tests explanatory completeness; Minto organizes an argument and can frame its opening; IMRaD organizes a research report; Diátaxis selects documentation types; HTML determines delivery. Combine them only through an explicit compatible request.
 
 The initial catalog uses English-first instructions and one separately justified Korean companion, with source-linked cases. Routing and installation machinery remain outside this implementation. Preserve the entire method directory when distribution is tested.

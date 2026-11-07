@@ -55,5 +55,88 @@
     "locale": "en",
     "knownBadRewrite": "The treatment helps patients.",
     "method": "orwell-six-rules"
+  },
+  {
+    "id": "concrete-observation",
+    "type": "ordinary",
+    "locale": "en",
+    "level": "standard",
+    "source": "The pressure was at a very low level. The gauge read 0 kPa.",
+    "ruleIds": [
+      "necessary-words",
+      "preserve-meaning"
+    ],
+    "sourceIds": [
+      "orwell-essay"
+    ],
+    "expectations": [
+      "Prefer the exact gauge reading over the vague description.",
+      "Do not infer that the gauge or equipment has failed."
+    ],
+    "knownBadRewrite": "The gauge was broken.",
+    "method": "orwell-six-rules",
+    "migratedFrom": {
+      "method": "hemingway-writing",
+      "caseId": "concrete-observation",
+      "ruleIds": [
+        "concrete-detail",
+        "preserve-meaning"
+      ]
+    }
+  },
+  {
+    "id": "necessary-condition",
+    "type": "exception",
+    "locale": "en",
+    "level": "strict",
+    "source": "Open the valve only after the pressure reaches 0 kPa; trapped pressure can remain after shutdown.",
+    "ruleIds": [
+      "necessary-words",
+      "sense-over-rule",
+      "preserve-meaning"
+    ],
+    "sourceIds": [
+      "orwell-essay"
+    ],
+    "expectations": [
+      "Keep the prerequisite and the warning.",
+      "Do not hide safety information under informed omission."
+    ],
+    "knownBadRewrite": "After shutdown, open the valve.",
+    "method": "orwell-six-rules",
+    "migratedFrom": {
+      "method": "hemingway-writing",
+      "caseId": "necessary-condition",
+      "ruleIds": [
+        "informed-omission",
+        "preserve-meaning"
+      ]
+    }
+  },
+  {
+    "id": "uncertain-finding",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "standard",
+    "source": "The cracked seal may explain some leaks, but we have not tested it. [A]",
+    "ruleIds": [
+      "preserve-meaning"
+    ],
+    "sourceIds": [
+      "orwell-essay"
+    ],
+    "expectations": [
+      "Retain may, some, the lack of testing, and citation [A]."
+    ],
+    "knownBadRewrite": "The cracked seal caused the leaks.",
+    "method": "orwell-six-rules",
+    "migratedFrom": {
+      "method": "hemingway-writing",
+      "caseId": "uncertain-finding",
+      "ruleIds": [
+        "supported-implication",
+        "preserve-meaning"
+      ]
+    }
   }
 ]
