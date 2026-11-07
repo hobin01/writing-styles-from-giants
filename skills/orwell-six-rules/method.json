@@ -11,7 +11,7 @@
       "version": "Horizon, April 1946",
       "accessed": "2026-11-07",
       "evidenceType": "primary",
-      "accessScope": "Complete reproduced essay, six rules, and surrounding qualifications read in prior research.",
+      "accessScope": "Complete reproduced essay, six rules, and surrounding qualifications read in prior research. Precision, omission, six rules, and their qualifications reread for consolidation.",
       "rights": "Copyright remains in some jurisdictions, including the US; original operational summaries only."
     }
   ],
@@ -145,7 +145,7 @@
     }
   ],
   "schemaVersion": 1,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "status": "experimental",
   "applicability": {
     "genres": [

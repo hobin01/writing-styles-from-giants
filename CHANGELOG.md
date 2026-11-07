@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Consolidate 25 skills to 22: retire standalone SCQA in favor of Minto, CTE-inspired editing in favor of ASD, and the factual Hemingway adaptation in favor of Orwell. Retain all nine cases, document distinct methods, and preserve the original evaluation snapshot.
+
 - Implement 24 experimental methods and one Korean linguistic companion, with portable instructions, source-to-rule metadata, level policies, and ordinary/exception/meaning-preservation cases.
 - Exclude John von Neumann; map ASD `normal` to `standard` and distinguish strict STE-inspired checks from official compliance.
 - Validate catalog evidence and level contracts in CI; record per-skill Ponytail review and bounded model exercises.

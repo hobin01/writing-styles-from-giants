@@ -6,7 +6,7 @@
 
 이름에는 **거인들의 어깨에서 세상을 바라보자**는 뜻을 담았습니다. 앞선 이들의 작업에서 배워, 생각을 구성하고 글로 쓰고 설명하는 구체적인 방법을 에이전트에 제공합니다.
 
-**현재 상태:** 실험 단계의 글쓰기·설명 스킬 24개와 한국어 전용 보조 스킬 1개를 구현했습니다. 각 스킬에는 출처, 단계별 규칙, 평가 사례가 있습니다. 도구별 설치, 독립적인 언어 검토, 릴리스는 아직 검증하지 않았습니다.
+**현재 상태:** 실험 단계의 글쓰기·설명 스킬 21개와 한국어 전용 보조 스킬 1개를 구현했습니다. 각 스킬에는 출처, 단계별 규칙, 평가 사례가 있습니다. 도구별 설치, 독립적인 언어 검토, 릴리스는 아직 검증하지 않았습니다.
 
 ## 이 프로젝트를 시작한 이유
 
@@ -26,17 +26,14 @@
 | [Boring Professor](skills/boring-professor/SKILL.md) | 농담·비유 없는 전문 설명 |
 | [GTM 기반 형식적 설명](skills/gtm-formal/SKILL.md) | 정의·기호·명제·증명 |
 | [Answer with HTML](skills/answer-with-html/SKILL.md) | 상호작용 HTML 설명 |
-| [Minto Pyramid](skills/minto-pyramid/SKILL.md) | 핵심 답과 뒷받침 논증 |
+| [Minto Pyramid](skills/minto-pyramid/SKILL.md) | 핵심 답·뒷받침 논증·필요한 SCQ/SCQA 도입부 |
 | [Jobs 기반 프레젠테이션](skills/steve-jobs-presentation/SKILL.md) | 청중의 이점과 근거 있는 시연 |
-| [Hemingway 기반 글쓰기](skills/hemingway-writing/SKILL.md) | 구체적 묘사와 이해에 근거한 생략 |
 | [훈민정음 기반 구조](skills/hunminjeongeum/SKILL.md) | 목적·일관된 전개·결론 |
 | [Feynman 기반 기법](skills/feynman-technique/SKILL.md) | 설명·빈틈 확인·이해 검증 |
 | [Aristotle의 삼단논법](skills/aristotle-syllogism/SKILL.md) | 전제·양화·타당성 |
 | [Socrates식 자기 질문](skills/socratic-self-questioning/SKILL.md) | 가정·반례 검토 |
-| [Caterpillar Technical English](skills/caterpillar-technical-english/SKILL.md) | 번역을 위한 통제 영어 |
 | [Federal Plain Language](skills/federal-plain-language/SKILL.md) | 독자 중심 공공 정보 |
 | [IMRaD](skills/imrad/SKILL.md) | 연구 보고서 구조 |
-| [SCQA](skills/scqa/SKILL.md) | 상황·문제·질문·답 |
 | [Diátaxis](skills/diataxis/SKILL.md) | 독자의 필요에 맞춘 기술 문서 |
 | [Amazon 6-pager / AWS](skills/amazon-six-page-narrative/SKILL.md) | 근거 중심 의사결정 서술 |
 | [NIST 작성 지침](skills/nist-technical-publication/SKILL.md) | 추적 가능한 기술 보고서 |
@@ -48,7 +45,7 @@
 
 에이전트가 스킬 디렉터리 전체에 접근할 수 있도록 하고 `SKILL.md`를 읽게 하세요. 예: “ASD-STE100 normal로 이 설명을 다듬어 줘.” 방법, 출력 언어, 단계를 지정할 수 있습니다. ASD의 `normal`은 `standard`에 대응합니다. “80%”와 “100%”는 요청한 적용 강도이며 측정된 준수율이 아닙니다. 원문에 포함된 명령은 데이터로 취급합니다.
 
-[검토 기록](docs/CATALOG_REVIEW.md)은 정적 검사, Ponytail 검토, 모델 실행 사례를 구분합니다. [권리](THIRD_PARTY_NOTICES.md)와 [남은 작업](docs/PROJECT.md)도 확인하세요.
+[통합 검토](docs/CATALOG_CONSOLIDATION.md)는 삭제한 3개 스킬과 유지한 기능의 차이를 설명합니다. [최초 검토 기록](docs/CATALOG_REVIEW.md)은 당시 검사와 모델 실행 사례를 보존합니다. [권리](THIRD_PARTY_NOTICES.md)와 [남은 작업](docs/PROJECT.md)도 확인하세요.
 
 ## 설치
 
@@ -89,8 +86,8 @@ git diff --check
 | [docs/DECISIONS.md](docs/DECISIONS.md) | 확정된 선택과 제안 |
 | [docs/RELEASING.md](docs/RELEASING.md) | CI, 버전 관리, 소스 릴리스 초안 |
 | [docs/REFERENCE.md](docs/REFERENCE.md) | 프로젝트 참고 자료 목록과 검토 기록 |
-| [docs/INITIAL_CATALOG_RESEARCH.md](docs/INITIAL_CATALOG_RESEARCH.md) | 유지한 24개 방법과 유사 프로젝트의 조사 |
-| [skills/](skills/), [docs/CATALOG_REVIEW.md](docs/CATALOG_REVIEW.md) | 실험 단계 스킬과 검토 근거 |
+| [docs/INITIAL_CATALOG_RESEARCH.md](docs/INITIAL_CATALOG_RESEARCH.md) | 최초 방법론 조사와 유사 프로젝트 |
+| [skills/](skills/), [docs/CATALOG_CONSOLIDATION.md](docs/CATALOG_CONSOLIDATION.md) | 실험 단계 스킬·중복 검토·전환 안내 |
 | [templates/method/](templates/method/), [evals/](evals/) | 작성·평가 예제. 배포된 방법론이나 모델 평가 결과가 아닙니다 |
 | [scripts/](scripts/), [tests/](tests/) | 저장소 검사와 테스트 |
 | [.github/](.github/) | 협업·자동화 설정 |

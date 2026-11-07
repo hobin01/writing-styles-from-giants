@@ -11,7 +11,7 @@
       "version": "Issue 9 context, January 2025",
       "accessed": "2026-11-07",
       "evidenceType": "primary",
-      "accessScope": "Complete public FAQ read in prior research. Selected Issue 9 writing passages now read separately; complete dictionary unverified.",
+      "accessScope": "Complete public FAQ read in prior research. Selected Issue 9 writing passages now read separately; complete dictionary unverified. Terminology and translation-support passages reread for consolidation.",
       "rights": "Standard and dictionary rights reserved; no source text or dictionary bundled."
     },
     {
@@ -209,7 +209,7 @@
     }
   ],
   "schemaVersion": 1,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "status": "experimental",
   "applicability": {
     "genres": [
