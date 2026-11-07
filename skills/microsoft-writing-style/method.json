@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "id": "microsoft-writing-style",
+  "version": "0.1.0",
+  "status": "experimental",
+  "title": "Microsoft-inspired technology writing",
+  "kind": "sentence",
+  "applicability": {
+    "genres": [
+      "technology explanation",
+      "user instructions",
+      "UI help"
+    ],
+    "audiences": [
+      "product users",
+      "technical readers"
+    ],
+    "exclusions": [
+      "automatic product renaming",
+      "mandatory Microsoft brand voice",
+      "English grammar rules applied to Korean"
+    ]
+  },
+  "sources": [
+    {
+      "id": "ms-welcome",
+      "title": "Microsoft Writing Style Guide: Welcome",
+      "author": "Microsoft",
+      "url": "https://learn.microsoft.com/en-us/style-guide/welcome/",
+      "version": "Updated 2025-01-08",
+      "accessed": "2026-11-07",
+      "evidenceType": "primary-explanation",
+      "accessScope": "Welcome and online-guide scope read.",
+      "rights": "Microsoft Learn and source-specific notices apply; no source prose copied."
+    },
+    {
+      "id": "ms-top-ten",
+      "title": "Top 10 tips for Microsoft style and voice",
+      "author": "Microsoft",
+      "url": "https://learn.microsoft.com/en-us/style-guide/top-10-tips-style-voice",
+      "version": "Updated 2026-07-06",
+      "accessed": "2026-11-07",
+      "evidenceType": "primary-explanation",
+      "accessScope": "Top ten tips page read; not the complete style-guide corpus.",
+      "rights": "Archived documentation source has CC BY 4.0 terms; not a blanket license for current Learn assets. Original operational summary only."
+    },
+    {
+      "id": "ms-global",
+      "title": "Writing tips for global communications",
+      "author": "Microsoft",
+      "url": "https://learn.microsoft.com/en-us/style-guide/global-communications/writing-tips",
+      "version": "Updated 2023-06-14",
+      "accessed": "2026-11-07",
+      "evidenceType": "primary-explanation",
+      "accessScope": "Global writing tips page read.",
+      "rights": "Microsoft Learn/source-specific notices apply; original summary, no copied examples."
+    }
+  ],
+  "rules": [
+    {
+      "id": "preserve-meaning",
+      "intent": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code at every level.",
+      "classification": "invariant",
+      "provenance": "project-original",
+      "rationale": "Shared project meaning-preservation requirement; style never authorizes factual change.",
+      "sourceIds": [],
+      "exceptions": [],
+      "check": "human-review",
+      "levels": {
+        "light": "error",
+        "standard": "error",
+        "strict": "error"
+      }
+    },
+    {
+      "id": "reader-action",
+      "intent": "Lead with what the reader needs to know or do, with necessary prerequisites adjacent.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Original operational guidance adapted from the identified source scope.",
+      "sourceIds": [
+        "ms-top-ten"
+      ],
+      "exceptions": [
+        "An essential warning or condition may need to precede the action."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "advisory",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "concise-helpful-wording",
+      "intent": "Use direct, helpful wording and remove redundancy only when no needed meaning is lost.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Original operational guidance adapted from the identified source scope.",
+      "sourceIds": [
+        "ms-top-ten"
+      ],
+      "exceptions": [
+        "Keep technical terms, qualifiers, and repeated safety information when needed."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "advisory",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "consistent-terms",
+      "intent": "Use consistent product, technical, and UI terms; preserve actual interface labels and code.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Original operational guidance adapted from the identified source scope.",
+      "sourceIds": [
+        "ms-top-ten",
+        "ms-global"
+      ],
+      "exceptions": [
+        "Do not normalize a literal label into wording the product does not display."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "advisory",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "global-comprehension",
+      "intent": "Prefer literal, context-independent wording over culture-bound idioms and unexplained references.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Original operational guidance adapted from the identified source scope.",
+      "sourceIds": [
+        "ms-global"
+      ],
+      "exceptions": [
+        "Preserve quotations, requested voice, and necessary domain expressions."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "off",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    }
+  ],
+  "languageScope": "en"
+}

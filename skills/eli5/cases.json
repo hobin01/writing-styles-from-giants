@@ -1,0 +1,60 @@
+[
+  {
+    "id": "freezing",
+    "type": "ordinary",
+    "source": "Explain why a puddle freezes when it gets cold enough.",
+    "ruleIds": [
+      "familiar-start",
+      "show-mechanism"
+    ],
+    "expectations": [
+      "Start from a visible puddle or water.",
+      "Explain that sufficiently cold water becomes solid; avoid unexplained molecular jargon."
+    ],
+    "sourceIds": [
+      "eli5-community"
+    ],
+    "level": "standard",
+    "locale": "en",
+    "method": "eli5"
+  },
+  {
+    "id": "literal-better",
+    "type": "exception",
+    "source": "Explain a bicycle brake without a metaphor.",
+    "ruleIds": [
+      "bounded-model",
+      "show-mechanism"
+    ],
+    "expectations": [
+      "Use the lever, cable, and pads as a literal sequence.",
+      "Do not add a metaphor or compulsory quiz."
+    ],
+    "sourceIds": [
+      "eli5-community"
+    ],
+    "level": "standard",
+    "locale": "en",
+    "method": "eli5"
+  },
+  {
+    "id": "medicine-limit",
+    "type": "meaning-preservation",
+    "source": "Some medicines may help people feel better, but only a grown-up following medical instructions should give them to a child.",
+    "ruleIds": [
+      "preserve-meaning",
+      "bounded-model"
+    ],
+    "expectations": [
+      "Preserve some and may.",
+      "Retain the adult and medical-instruction condition in child-understandable words."
+    ],
+    "sourceIds": [
+      "eli5-community"
+    ],
+    "level": "standard",
+    "locale": "en",
+    "knownBadRewrite": "Medicine always makes you better, so take some.",
+    "method": "eli5"
+  }
+]

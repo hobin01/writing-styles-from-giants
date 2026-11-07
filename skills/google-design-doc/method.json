@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "id": "google-design-doc",
+  "version": "0.1.0",
+  "status": "experimental",
+  "title": "Google-inspired design document",
+  "kind": "document",
+  "applicability": {
+    "genres": [
+      "software design proposal",
+      "architecture decision proposal"
+    ],
+    "audiences": [
+      "engineering reviewers",
+      "implementers"
+    ],
+    "exclusions": [
+      "mandatory Google template",
+      "implementation without request",
+      "fabricated accepted decisions"
+    ]
+  },
+  "sources": [
+    {
+      "id": "ubl-design",
+      "title": "Design Docs at Google",
+      "author": "Malte Ubl",
+      "url": "https://www.industrialempathy.com/posts/design-docs-at-google/",
+      "version": "2020-07-06",
+      "accessed": "2026-11-07",
+      "evidenceType": "firsthand-practitioner-account",
+      "accessScope": "Opening, anatomy through alternatives, and review/conclusions inspected; firsthand practitioner account, not a mandatory corporate template.",
+      "rights": "No permissive license verified. No article prose or template copied."
+    },
+    {
+      "id": "google-docguide",
+      "title": "Documentation Best Practices",
+      "author": "Google",
+      "url": "https://google.github.io/styleguide/docguide/best_practices.html",
+      "version": "Living documentation, accessed 2026-11-07",
+      "accessed": "2026-11-07",
+      "evidenceType": "primary-explanation",
+      "accessScope": "Design-doc description as a proposal for feedback and later decision archive inspected.",
+      "rights": "Source-specific notices apply; no source text copied."
+    }
+  ],
+  "rules": [
+    {
+      "id": "preserve-meaning",
+      "intent": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code at every level.",
+      "classification": "invariant",
+      "provenance": "project-original",
+      "rationale": "Shared project meaning-preservation requirement; style never authorizes factual change.",
+      "sourceIds": [],
+      "exceptions": [],
+      "check": "human-review",
+      "levels": {
+        "light": "error",
+        "standard": "error",
+        "strict": "error"
+      }
+    },
+    {
+      "id": "context-and-goals",
+      "intent": "State the problem, constraints, goals, and non-goals that determine the design decision.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Original operational guidance adapted from the identified source scope.",
+      "sourceIds": [
+        "ubl-design"
+      ],
+      "exceptions": [
+        "Do not invent requirements or constraints to fill headings."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "advisory",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "proposed-design",
+      "intent": "Describe the proposed behavior, major components, interfaces, and dependencies at decision-relevant detail.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Original operational guidance adapted from the identified source scope.",
+      "sourceIds": [
+        "ubl-design"
+      ],
+      "exceptions": [
+        "Complete code, exhaustive schemas, and incidental implementation details are not required unless they change the decision."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "advisory",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "alternatives-and-tradeoffs",
+      "intent": "Compare plausible alternatives against the stated goals and explain consequential trade-offs.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Original operational guidance adapted from the identified source scope.",
+      "sourceIds": [
+        "ubl-design"
+      ],
+      "exceptions": [
+        "Do not manufacture inferior alternatives or numerical comparisons without evidence."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "off",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "review-and-open-questions",
+      "intent": "Separate proposals, accepted decisions, open questions, and review evidence.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Original operational guidance adapted from the identified source scope.",
+      "sourceIds": [
+        "ubl-design",
+        "google-docguide"
+      ],
+      "exceptions": [
+        "A requested final decision record may use confirmed outcomes, but missing approval remains missing."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "off",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    }
+  ],
+  "languageScope": "language-independent"
+}

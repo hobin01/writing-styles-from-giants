@@ -1,0 +1,55 @@
+[
+  {
+    "id": "even-squares",
+    "type": "ordinary",
+    "source": "Prove that the square of an even integer is even.",
+    "ruleIds": [
+      "define-objects",
+      "logical-scope",
+      "justify-steps"
+    ],
+    "expectations": [
+      "Declare the integer domain and represent an even integer as 2k.",
+      "Show why its square has the required even form."
+    ],
+    "sourceIds": [],
+    "level": "standard",
+    "locale": "en",
+    "method": "gtm-formal"
+  },
+  {
+    "id": "empirical",
+    "type": "exception",
+    "source": "Our benchmark found that algorithm A was faster than B for n=1000 on this machine. Explain formally.",
+    "ruleIds": [
+      "logical-scope",
+      "justify-steps"
+    ],
+    "expectations": [
+      "Keep the benchmark result conditional and empirical.",
+      "Do not claim A is always asymptotically faster from this observation."
+    ],
+    "sourceIds": [],
+    "level": "standard",
+    "locale": "en",
+    "method": "gtm-formal"
+  },
+  {
+    "id": "quantifier",
+    "type": "meaning-preservation",
+    "source": "For every positive integer n, there exists an integer m such that m > n.",
+    "ruleIds": [
+      "preserve-meaning",
+      "logical-scope"
+    ],
+    "expectations": [
+      "Retain positive-integer n and the dependent existential choice of m.",
+      "Do not exchange quantifier order."
+    ],
+    "sourceIds": [],
+    "level": "strict",
+    "locale": "en",
+    "knownBadRewrite": "There exists an integer m larger than every positive integer n.",
+    "method": "gtm-formal"
+  }
+]

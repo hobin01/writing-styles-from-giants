@@ -1,0 +1,62 @@
+[
+  {
+    "id": "queue-narrative",
+    "type": "ordinary",
+    "locale": "en",
+    "level": "standard",
+    "source": "Decide whether to trial a queue. Peak traffic is 200 requests/s. Errors occurred during 3 of 10 observed peaks. A queue might absorb bursts; cost and latency are not yet measured.",
+    "ruleIds": [
+      "decision-and-context",
+      "evidence-and-reasoning",
+      "coherent-narrative"
+    ],
+    "sourceIds": [
+      "aws-narrative"
+    ],
+    "expectations": [
+      "Present a decision narrative with the observed numbers.",
+      "Keep queue benefits conditional and identify unmeasured cost/latency."
+    ],
+    "method": "amazon-six-page-narrative"
+  },
+  {
+    "id": "unrendered-budget",
+    "type": "exception",
+    "locale": "en",
+    "level": "strict",
+    "source": "Produce a six-pager in this chat. No page size, font, margins, renderer, or pagination is available.",
+    "ruleIds": [
+      "readable-page-budget"
+    ],
+    "sourceIds": [
+      "aws-narrative"
+    ],
+    "expectations": [
+      "Provide a concise narrative without claiming exactly six physical pages.",
+      "Identify page-limit verification as unavailable."
+    ],
+    "knownBadRewrite": "This is exactly six pages.",
+    "method": "amazon-six-page-narrative"
+  },
+  {
+    "id": "appendix-risk",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "strict",
+    "source": "The pilot may save $20,000/year only if demand stays above 1,000 orders/month. Below that level, it may lose money.",
+    "ruleIds": [
+      "preserve-meaning",
+      "evidence-and-reasoning",
+      "readable-page-budget"
+    ],
+    "sourceIds": [
+      "aws-narrative"
+    ],
+    "expectations": [
+      "Keep the demand condition and downside in the decision narrative.",
+      "Do not remove them to meet the page target."
+    ],
+    "knownBadRewrite": "The pilot saves $20,000/year.",
+    "method": "amazon-six-page-narrative"
+  }
+]

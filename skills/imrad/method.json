@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "id": "imrad",
+  "version": "0.1.0",
+  "status": "experimental",
+  "title": "IMRaD research-report structure",
+  "kind": "document",
+  "applicability": {
+    "genres": [
+      "original research report",
+      "research manuscript"
+    ],
+    "audiences": [
+      "researcher",
+      "scientific reader"
+    ],
+    "exclusions": [
+      "fabricated study content",
+      "all document genres forced into IMRaD",
+      "journal submission certification"
+    ]
+  },
+  "sources": [
+    {
+      "id": "icmje-manuscript",
+      "title": "Recommendations: Preparing a Manuscript for Submission to a Medical Journal",
+      "author": "International Committee of Medical Journal Editors",
+      "version": "January 2026 recommendations update",
+      "url": "https://icmje.org/recommendations/browse/manuscript-preparation/preparing-for-submission.html",
+      "accessed": "2026-11-07",
+      "evidenceType": "institutional-guidance",
+      "accessScope": "General Principles, Reporting Guidelines, and Introduction–Discussion sections; not every linked reporting standard. Recommendations index: https://www.icmje.org/recommendations/ .",
+      "rights": "ICMJE states all rights reserved. Original summaries only; no checklist or full recommendations bundled."
+    }
+  ],
+  "rules": [
+    {
+      "id": "preserve-meaning",
+      "intent": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code; distinguish supplied evidence from inference.",
+      "classification": "invariant",
+      "provenance": "project-original",
+      "rationale": "Project-wide meaning-preservation requirement; style never authorizes a factual change.",
+      "sourceIds": [],
+      "exceptions": [],
+      "check": "human-review",
+      "levels": {
+        "light": "error",
+        "standard": "error",
+        "strict": "error"
+      }
+    },
+    {
+      "id": "question-and-context",
+      "intent": "Use the introduction to establish context, the knowledge gap, and the research question or objective.",
+      "classification": "guideline",
+      "provenance": "faithful-summary",
+      "rationale": "Faithful summary of the selected manuscript-preparation guidance.",
+      "sourceIds": [
+        "icmje-manuscript"
+      ],
+      "exceptions": [
+        "A review, case report, or other genre may need a different organization."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "advisory",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "reproducible-methods",
+      "intent": "Describe the actual design, materials/participants, procedures, and analysis sufficiently to interpret and reproduce the work.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Operational adaptation of methods guidance without study-design-specific completeness claims.",
+      "sourceIds": [
+        "icmje-manuscript"
+      ],
+      "exceptions": [
+        "Mark missing information or request it; do not invent ethics approval, participants, procedures, or analysis."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "off",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "findings-vs-interpretation",
+      "intent": "Report supplied findings in Results and interpret their implications, limitations, and bounded conclusions in Discussion.",
+      "classification": "guideline",
+      "provenance": "faithful-summary",
+      "rationale": "Faithful summary of IMRaD section roles.",
+      "sourceIds": [
+        "icmje-manuscript"
+      ],
+      "exceptions": [
+        "The target journal may combine sections; preserve the conceptual distinction even when headings differ."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "off",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "report-consistency",
+      "intent": "Check that abstract, methods, results, tables, and discussion agree on quantities, analyses, scope, and uncertainty.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Project adaptation of manuscript and reporting-guideline consistency review.",
+      "sourceIds": [
+        "icmje-manuscript"
+      ],
+      "exceptions": [
+        "Use the target journal and appropriate study-design reporting guideline when supplied; their full requirements are not bundled here."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "off",
+        "standard": "off",
+        "strict": "warning"
+      }
+    }
+  ],
+  "languageScope": "language-independent"
+}

@@ -1,0 +1,29 @@
+{
+  "method": "new-harts-rules",
+  "methodVersion": "0.1.0",
+  "locale": "en",
+  "status": "experimental",
+  "reviewedSourceRules": [],
+  "rules": {
+    "preserve-meaning": {
+      "instruction": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code at every level.",
+      "adaptation": false
+    },
+    "edition-and-house-style": {
+      "instruction": "Identify the edition and editorial scope; record explicit house-style decisions and conflicts.",
+      "adaptation": false
+    },
+    "verify-applicable-passage": {
+      "instruction": "Apply an attributed book rule only after reading its relevant passage, including qualifications; otherwise mark it unverified.",
+      "adaptation": false
+    },
+    "consistent-decisions": {
+      "instruction": "Apply a verified editorial decision consistently to editable prose while preserving quotations, code, citations, and intentional exceptions.",
+      "adaptation": false
+    },
+    "bounded-attribution": {
+      "instruction": "Separate verified source-based changes, user house-style choices, and unresolved questions in an optional audit.",
+      "adaptation": false
+    }
+  }
+}

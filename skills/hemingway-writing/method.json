@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "id": "hemingway-writing",
+  "version": "0.1.0",
+  "status": "experimental",
+  "title": "Hemingway-inspired concrete writing",
+  "kind": "sentence",
+  "applicability": {
+    "genres": [
+      "nonfiction",
+      "narrative explanation"
+    ],
+    "audiences": [
+      "general",
+      "specialist"
+    ],
+    "exclusions": [
+      "author impersonation",
+      "Hemingway Editor scoring",
+      "verbatim quotation edits"
+    ]
+  },
+  "sources": [
+    {
+      "id": "paris-review-1958",
+      "title": "The Art of Fiction No. 21: Ernest Hemingway",
+      "author": "George Plimpton interviewing Ernest Hemingway",
+      "version": "The Paris Review 18, Spring 1958",
+      "url": "https://www.theparisreview.org/interviews/4825/the-art-of-fiction-no-21-ernest-hemingway",
+      "accessed": "2026-11-07",
+      "evidenceType": "primary-text",
+      "accessScope": "Omission/observation discussion and revision exchange; no Hemingway book or full author corpus reviewed.",
+      "rights": "Copyright retained by source holders; no permissive redistribution established. Original operational summaries only."
+    }
+  ],
+  "rules": [
+    {
+      "id": "preserve-meaning",
+      "intent": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code; distinguish supplied evidence from inference.",
+      "classification": "invariant",
+      "provenance": "project-original",
+      "rationale": "Project-wide meaning-preservation requirement; style never authorizes a factual change.",
+      "sourceIds": [],
+      "exceptions": [],
+      "check": "human-review",
+      "levels": {
+        "light": "error",
+        "standard": "error",
+        "strict": "error"
+      }
+    },
+    {
+      "id": "concrete-detail",
+      "intent": "Prefer supplied, specific observations over vague intensifiers or evaluative filler.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Adapts Hemingway's account of observation to factual prose.",
+      "sourceIds": [
+        "paris-review-1958"
+      ],
+      "exceptions": [
+        "Abstract language needed to state a definition or general result."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "advisory",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "informed-omission",
+      "intent": "Remove exposition only when the remaining text still supports the intended interpretation and action.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Adapts informed literary omission to nonfiction under meaning-preservation limits.",
+      "sourceIds": [
+        "paris-review-1958"
+      ],
+      "exceptions": [
+        "Conditions, evidence, safety information, citations, and needed explanation remain explicit."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "off",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "supported-implication",
+      "intent": "Let concrete details carry implications only where the evidence supports them; state critical conclusions directly.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Project adaptation of omission, without treating literary suggestion as factual evidence.",
+      "sourceIds": [
+        "paris-review-1958"
+      ],
+      "exceptions": [
+        "Instructions, scientific conclusions, and unfamiliar contexts need explicit explanation."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "off",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "revision-pass",
+      "intent": "Revise for an exact referent and a clear sequence; retain a longer sentence when shortening would sever its logical relation.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Adapts the interview's emphasis on revision; no universal sentence cap or adverb ban.",
+      "sourceIds": [
+        "paris-review-1958"
+      ],
+      "exceptions": [
+        "Required quotations and deliberate genre conventions."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "off",
+        "standard": "off",
+        "strict": "warning"
+      }
+    }
+  ],
+  "languageScope": "language-independent"
+}

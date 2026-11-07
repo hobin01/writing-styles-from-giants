@@ -13,9 +13,9 @@ Make documented writing and explanation methods usable as AI-agent skills. The [
 
 The repository is private during solo development before stable `0.0.1`, but every commit must be suitable for eventual public release. Follow [CONTRIBUTING.md](../CONTRIBUTING.md) for branch/commit/PR handling and [SECURITY.md](../SECURITY.md) for local history, credentials, caches, and cleanup.
 
-## Proposed delivery sequence and acceptance
+## Delivery sequence and acceptance
 
-1. **One complete method.** Create a real `skills/<method-id>/` with source/version, read scope, rights notes, stable rules, exceptions, per-level behavior, and reviewed en/ko adaptations. Add ordinary-use, important-exception, and meaning-preservation cases. Follow [METHOD_AUTHORING.md](METHOD_AUTHORING.md); extend existing checks with behavioral tests when catalog validation needs them.
+1. **Complete method content.** Maintain a real `skills/<method-id>/` with source/version, read scope, rights notes, stable rules, exceptions, per-level behavior, and applicable language rules. English-first instructions and the Korean companion follow the owner’s policy. Add ordinary-use, important-exception, and meaning-preservation cases. Follow [METHOD_AUTHORING.md](METHOD_AUTHORING.md); extend existing checks with behavioral tests when catalog validation needs them.
 2. **Observed writing behavior.** Verify explicit choice, opt-out, all levels, uncertain/conditional statements, and unavailable locales in a host. Record prompts, outputs, model/host versions, method/locale/level, failures, and judging process. Recommendations must explain fit and respect overrides; add a router only when real choices need one.
 3. **Tested distribution.** Evaluate the existing [reuse candidates](../THIRD_PARTY_NOTICES.md) against [ARCHITECTURE.md](ARCHITECTURE.md). Verify complete references, scope, conflicts, durable link/copy behavior, modified files, shared roots, interrupted updates, and removal preservation. Publish installation instructions and support claims only for tested host/version/OS combinations; Windows needs its own evidence.
 4. **Source release.** Resolve semantic and ownership failures, inspect archive rights/content, and follow [RELEASING.md](RELEASING.md) for the first `0.0.1` draft. Expand methods and host coverage from evidence.
@@ -24,10 +24,10 @@ The proposed initial mode is recommendation at `standard` level, with project-sc
 
 ## Current state
 
-Present: documentation, authoring/evaluation examples, Python foundation checks, collaboration templates, ignore rules, and CI/draft-release workflow definitions. [Foundation CI has passed on GitHub](RELEASING.md).
+Present: 24 experimental methods plus a Korean-specific linguistic companion, source-to-rule metadata, per-level policies, ordinary/exception/meaning-preservation cases, per-skill Ponytail review, and catalog validation with behavioral unit tests. [CATALOG_REVIEW.md](CATALOG_REVIEW.md) records bounded manual-loading model exercises separately from source, language, and host verification. Existing foundation documentation, CI, and release definitions remain.
 
-Pending: production methods, recommendation/application workflow, installer integration, model evaluations, release workflow verification, host runtime tests, and repository protection settings. The examples are not production skills or model results.
+Pending: installed host discovery/activation, installer lifecycle integration, independent native-language and reader review, broader comparative model evaluations, release workflow verification, and repository protection settings. No skill is marked `reviewed`; no release or host compatibility is claimed. There is no runtime router: a selected skill follows its own applicability and level instructions.
 
 ## Boundaries
 
-Reuse host capabilities and existing tools. A custom runtime, CLI, adapter, or plugin needs evidence of a gap first. No dashboard, paid service, remote content upload, model hosting, arbitrary plugin execution, person impersonation, authorship detector, or certified-STE claim is planned. STE-inspired work is a later candidate, with no verified ASD-STE100 compliance claim.
+Reuse host capabilities and existing tools. A custom runtime, CLI, adapter, or plugin needs evidence of a gap first. No dashboard, paid service, remote content upload, model hosting, arbitrary plugin execution, person impersonation, authorship detector, or certified-STE claim is planned. The ASD profile is STE-inspired; full ASD-STE100 compliance remains unverified.

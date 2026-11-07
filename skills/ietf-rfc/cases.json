@@ -1,0 +1,61 @@
+[
+  {
+    "id": "retry-requirement",
+    "type": "ordinary",
+    "locale": "en",
+    "level": "standard",
+    "source": "Draft an internal specification: the client must stop after 3 retries. Retries are permitted only after a timeout. No IANA action is needed. Use BCP 14 notation.",
+    "ruleIds": [
+      "scope-and-terms",
+      "requirement-strength",
+      "specification-structure"
+    ],
+    "sourceIds": [
+      "rfc7322",
+      "bcp14"
+    ],
+    "expectations": [
+      "Declare the chosen BCP 14 keyword role without pretending official submission.",
+      "Preserve retry limit and timeout-only condition; state IANA is not applicable."
+    ],
+    "method": "ietf-rfc"
+  },
+  {
+    "id": "ordinary-prose",
+    "type": "exception",
+    "locale": "en",
+    "level": "standard",
+    "source": "Keep ordinary prose. A server may be unavailable during maintenance; this expresses possibility, not protocol permission.",
+    "ruleIds": [
+      "requirement-strength"
+    ],
+    "sourceIds": [
+      "bcp14"
+    ],
+    "expectations": [
+      "Retain ordinary prose and possibility.",
+      "Do not convert may into normative MAY."
+    ],
+    "method": "ietf-rfc"
+  },
+  {
+    "id": "recommendation-strength",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "strict",
+    "source": "The client SHOULD retry after 5 seconds unless the response includes a later Retry-After value. Some deployments cannot retry.",
+    "ruleIds": [
+      "preserve-meaning",
+      "requirement-strength"
+    ],
+    "sourceIds": [
+      "bcp14"
+    ],
+    "expectations": [
+      "Retain SHOULD strength, 5 seconds, and the later Retry-After exception.",
+      "Do not turn the recommendation into unconditional MUST."
+    ],
+    "knownBadRewrite": "The client MUST retry after 5 seconds.",
+    "method": "ietf-rfc"
+  }
+]

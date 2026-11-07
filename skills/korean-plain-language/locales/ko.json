@@ -1,0 +1,29 @@
+{
+  "method": "korean-plain-language",
+  "methodVersion": "0.1.0",
+  "locale": "ko",
+  "status": "experimental",
+  "reviewedSourceRules": [],
+  "rules": {
+    "preserve-meaning": {
+      "instruction": "사실·수치·단위·부정·조건·예외·불확실성·인용·출처·코드를 보존한다. 의무와 허용도 구별한다.",
+      "adaptation": false
+    },
+    "referents-and-particles": {
+      "instruction": "생략된 주어나 지시 대상 때문에 뜻이 모호한 경우만 보완한다. 조사·수식 범위를 확인하고, 알 수 없는 행위자는 추정하지 않는다.",
+      "adaptation": true
+    },
+    "register-and-modality": {
+      "instruction": "요청한 말투나 기존 종결 방식을 유지한다. 공손하게 바꾸어도 의무·허용·가능성·금지의 강도는 바꾸지 않는다.",
+      "adaptation": true
+    },
+    "reader-terminology": {
+      "instruction": "낯선 용어는 필요한 만큼 풀어 쓰되, 전문 용어·법정 명칭·화면의 실제 이름은 정확히 유지한다.",
+      "adaptation": true
+    },
+    "logical-sentences": {
+      "instruction": "문장 성분의 호응과 조건의 적용 범위를 확인한다. 문장을 나눌 때도 어느 조건이 어느 행동에 적용되는지 보존한다.",
+      "adaptation": true
+    }
+  }
+}

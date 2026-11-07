@@ -5,6 +5,7 @@
   "status": "draft",
   "title": "Original authoring example",
   "kind": "sentence",
+  "languageScope": "language-independent",
   "applicability": {
     "genres": ["explanation"],
     "audiences": ["general"],

@@ -1,0 +1,29 @@
+{
+  "method": "scqa",
+  "methodVersion": "0.1.0",
+  "locale": "en",
+  "status": "experimental",
+  "reviewedSourceRules": [],
+  "rules": {
+    "preserve-meaning": {
+      "instruction": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code at every level.",
+      "adaptation": false
+    },
+    "shared-situation": {
+      "instruction": "State only the shared context needed to understand the decision.",
+      "adaptation": false
+    },
+    "real-complication": {
+      "instruction": "Identify an evidenced change, obstacle, or tension that makes a decision necessary.",
+      "adaptation": false
+    },
+    "decision-question": {
+      "instruction": "Formulate the reader question raised by that complication.",
+      "adaptation": false
+    },
+    "supported-answer": {
+      "instruction": "Answer that question with a supported recommendation and retain its conditions.",
+      "adaptation": false
+    }
+  }
+}

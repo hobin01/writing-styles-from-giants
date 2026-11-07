@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ui-instruction",
+    "type": "ordinary",
+    "locale": "en",
+    "level": "standard",
+    "source": "Rewrite: In order to perform the configuration of notifications, it is necessary for the user to select the UI button labelled \"Alerts\".",
+    "ruleIds": [
+      "reader-action",
+      "concise-helpful-wording",
+      "consistent-terms"
+    ],
+    "sourceIds": [
+      "ms-top-ten"
+    ],
+    "expectations": [
+      "Make the action direct.",
+      "Keep the actual UI label Alerts."
+    ],
+    "method": "microsoft-writing-style"
+  },
+  {
+    "id": "exact-label",
+    "type": "exception",
+    "locale": "en",
+    "level": "standard",
+    "source": "The displayed menu item is \"Utilize legacy mode\". The requested help text must tell the user which item to select.",
+    "ruleIds": [
+      "consistent-terms"
+    ],
+    "sourceIds": [
+      "ms-top-ten",
+      "ms-global"
+    ],
+    "expectations": [
+      "Retain the exact label despite its word choice.",
+      "Simplify surrounding prose without inventing a different UI label."
+    ],
+    "method": "microsoft-writing-style"
+  },
+  {
+    "id": "qualified-action",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "strict",
+    "source": "Only administrators may delete the archive after a verified backup. Retention rules might prevent deletion. Command: `archive rm --id=42`.",
+    "ruleIds": [
+      "preserve-meaning",
+      "reader-action",
+      "consistent-terms"
+    ],
+    "sourceIds": [
+      "ms-top-ten"
+    ],
+    "expectations": [
+      "Keep administrator scope, verified-backup prerequisite, and possible retention block.",
+      "Preserve the command exactly."
+    ],
+    "knownBadRewrite": "Delete the archive with `archive rm --id=42`.",
+    "method": "microsoft-writing-style"
+  }
+]

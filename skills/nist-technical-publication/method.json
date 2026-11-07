@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "id": "nist-technical-publication",
+  "version": "0.1.0",
+  "status": "experimental",
+  "title": "NIST-inspired technical publication",
+  "kind": "document",
+  "applicability": {
+    "genres": [
+      "technical report",
+      "measurement report",
+      "scientific explanation"
+    ],
+    "audiences": [
+      "technical readers",
+      "research reviewers"
+    ],
+    "exclusions": [
+      "NIST seals or identifiers",
+      "agency submission and clearance",
+      "claims of NIST endorsement"
+    ]
+  },
+  "sources": [
+    {
+      "id": "nist-authors",
+      "title": "NIST Technical Series Publications Author Instructions",
+      "author": "NIST Research Library",
+      "url": "https://www.nist.gov/nist-research-library/nist-technical-series-publications-author-instructions",
+      "version": "Created 2021-02-16; page update 2026-11-06; figures section 2026-06-05",
+      "accessed": "2026-11-07",
+      "evidenceType": "primary-explanation",
+      "accessScope": "Relevant organization, plain-language, accessibility, and measurement sections read; not all linked standards or institutional procedures.",
+      "rights": "Check individual NIST and third-party rights. No source template, seal, or external standard copied."
+    }
+  ],
+  "rules": [
+    {
+      "id": "preserve-meaning",
+      "intent": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code at every level.",
+      "classification": "invariant",
+      "provenance": "project-original",
+      "rationale": "Shared project meaning-preservation requirement; style never authorizes factual change.",
+      "sourceIds": [],
+      "exceptions": [],
+      "check": "human-review",
+      "levels": {
+        "light": "error",
+        "standard": "error",
+        "strict": "error"
+      }
+    },
+    {
+      "id": "traceable-report",
+      "intent": "Organize the report around its purpose, method or basis, findings, and bounded conclusions, with traceable headings and references.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Original operational guidance adapted from the identified source scope.",
+      "sourceIds": [
+        "nist-authors"
+      ],
+      "exceptions": [
+        "Use components appropriate to the report; do not invent absent experimental content."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "advisory",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "precise-technical-language",
+      "intent": "Use consistent technical terminology and define reader-relevant terms without reducing scientific precision.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Original operational guidance adapted from the identified source scope.",
+      "sourceIds": [
+        "nist-authors"
+      ],
+      "exceptions": [
+        "Retain agreed domain terms where a familiar substitute would change meaning."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "advisory",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "measurement-integrity",
+      "intent": "Preserve quantities, symbols, SI units, measurement conditions, and reported uncertainty; flag missing definitions rather than infer them.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Original operational guidance adapted from the identified source scope.",
+      "sourceIds": [
+        "nist-authors"
+      ],
+      "exceptions": [],
+      "check": "judgment",
+      "levels": {
+        "light": "advisory",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "accessible-evidence",
+      "intent": "Make figures and tables understandable through descriptive titles, labels, units, captions, and appropriate text alternatives.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Original operational guidance adapted from the identified source scope.",
+      "sourceIds": [
+        "nist-authors"
+      ],
+      "exceptions": [
+        "The alternative should convey purpose and relevant information; do not duplicate decorative content unnecessarily."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "off",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    }
+  ],
+  "languageScope": "language-independent"
+}

@@ -1,0 +1,64 @@
+[
+  {
+    "id": "valid-chain",
+    "type": "ordinary",
+    "locale": "en",
+    "level": "standard",
+    "source": "All calibrated sensors in batch B passed test T. All sensors in tray C are calibrated sensors in batch B. Therefore all sensors in tray C passed test T.",
+    "ruleIds": [
+      "premises-and-terms",
+      "quantifier-scope",
+      "validity-separate-support"
+    ],
+    "sourceIds": [
+      "prior-analytics-i"
+    ],
+    "expectations": [
+      "Identify the valid universal chain under the stated premises.",
+      "Do not infer that tray C contains any sensors or that the premises are empirically verified."
+    ],
+    "knownBadRewrite": "Therefore tray C contains sensors that passed test T.",
+    "method": "aristotle-syllogism"
+  },
+  {
+    "id": "empty-class",
+    "type": "exception",
+    "locale": "en",
+    "level": "strict",
+    "source": "All unicorns are horned. Therefore some horned creatures are unicorns. No existence premise is supplied.",
+    "ruleIds": [
+      "quantifier-scope",
+      "countermodel-check"
+    ],
+    "sourceIds": [
+      "prior-analytics-i"
+    ],
+    "expectations": [
+      "State that the inference needs a nonempty-unicorn assumption.",
+      "Allow an empty unicorn class as a countermodel under modern predicate semantics."
+    ],
+    "knownBadRewrite": "The conclusion follows from the universal premise alone.",
+    "method": "aristotle-syllogism"
+  },
+  {
+    "id": "some-not-all",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "standard",
+    "source": "Some devices with fault F restart. Unit A has fault F. Therefore unit A must restart.",
+    "ruleIds": [
+      "quantifier-scope",
+      "validity-separate-support",
+      "preserve-meaning"
+    ],
+    "sourceIds": [
+      "prior-analytics-i"
+    ],
+    "expectations": [
+      "Reject the move from some devices to this particular device necessarily restarting.",
+      "Retain the supplied fault premise without inventing a frequency."
+    ],
+    "knownBadRewrite": "All devices with fault F restart.",
+    "method": "aristotle-syllogism"
+  }
+]

@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "id": "diataxis",
+  "version": "0.1.0",
+  "status": "experimental",
+  "title": "Diátaxis documentation",
+  "kind": "document",
+  "applicability": {
+    "genres": [
+      "tutorial",
+      "how-to guide",
+      "reference",
+      "explanation",
+      "documentation review"
+    ],
+    "audiences": [
+      "learners",
+      "practitioners"
+    ],
+    "exclusions": [
+      "mandatory four-folder architecture",
+      "rewriting every document when only one is requested"
+    ]
+  },
+  "sources": [
+    {
+      "id": "diataxis-start",
+      "title": "Diátaxis: Start here",
+      "author": "Daniele Procida",
+      "url": "https://diataxis.fr/start-here/",
+      "version": "Living framework; repository revision 957c09ca40b4a1edc23874f713e01937d50d54d5, 2026-08-06",
+      "accessed": "2026-11-07",
+      "evidenceType": "primary-explanation",
+      "accessScope": "Start here read through its compass table; colophon and translation guidance inspected.",
+      "rights": "Upstream text and diagrams CC BY-SA 4.0. These instructions are original operational summaries; no upstream text, translation, or diagram imported."
+    }
+  ],
+  "rules": [
+    {
+      "id": "preserve-meaning",
+      "intent": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code at every level.",
+      "classification": "invariant",
+      "provenance": "project-original",
+      "rationale": "Shared project meaning-preservation requirement; style never authorizes factual change.",
+      "sourceIds": [],
+      "exceptions": [],
+      "check": "human-review",
+      "levels": {
+        "light": "error",
+        "standard": "error",
+        "strict": "error"
+      }
+    },
+    {
+      "id": "reader-need",
+      "intent": "Select the document type from the reader need and preserve an explicit type choice.",
+      "classification": "guideline",
+      "provenance": "faithful-summary",
+      "rationale": "Original operational guidance adapted from the identified source scope.",
+      "sourceIds": [
+        "diataxis-start"
+      ],
+      "exceptions": [
+        "If the requested type conflicts with the task, explain the conflict and ask only if the choice changes the deliverable."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "advisory",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "type-contract",
+      "intent": "Keep the selected type focused on learning, task completion, factual lookup, or understanding.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Original operational guidance adapted from the identified source scope.",
+      "sourceIds": [
+        "diataxis-start"
+      ],
+      "exceptions": [
+        "Brief context or a safety prerequisite can remain where needed."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "advisory",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "separate-and-link",
+      "intent": "Move substantial material serving another need into a linked destination only within the requested restructuring scope.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Original operational guidance adapted from the identified source scope.",
+      "sourceIds": [
+        "diataxis-start"
+      ],
+      "exceptions": [
+        "For a single-file request, use clearly separated sections instead of inventing a documentation site."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "off",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "reader-check",
+      "intent": "Check the result against the actual reader activity rather than the presence of four headings.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Original operational guidance adapted from the identified source scope.",
+      "sourceIds": [
+        "diataxis-start"
+      ],
+      "exceptions": [],
+      "check": "judgment",
+      "levels": {
+        "light": "off",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    }
+  ],
+  "languageScope": "language-independent"
+}

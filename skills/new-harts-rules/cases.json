@@ -1,0 +1,62 @@
+[
+  {
+    "id": "house-style-consistency",
+    "type": "ordinary",
+    "locale": "en",
+    "level": "standard",
+    "source": "Edit this English draft. User house style explicitly requires \"email\" in editable prose. Draft: \"Send an e-mail. Email support if needed.\" No relevant book passage is available.",
+    "ruleIds": [
+      "edition-and-house-style",
+      "verify-applicable-passage",
+      "consistent-decisions",
+      "bounded-attribution"
+    ],
+    "sourceIds": [
+      "hart-preview"
+    ],
+    "expectations": [
+      "Use email consistently as a user house-style decision.",
+      "Do not claim that the decision was verified in New Hart’s Rules."
+    ],
+    "method": "new-harts-rules"
+  },
+  {
+    "id": "quote-preservation",
+    "type": "exception",
+    "locale": "en",
+    "level": "standard",
+    "source": "House style uses modern spelling in prose. A source quotation reads \"colour\" and must remain verbatim, although surrounding prose uses \"color\".",
+    "ruleIds": [
+      "consistent-decisions"
+    ],
+    "sourceIds": [
+      "hart-preview"
+    ],
+    "expectations": [
+      "Keep the quotation unchanged.",
+      "Allow the deliberate difference rather than enforce uniform spelling inside a quotation."
+    ],
+    "method": "new-harts-rules"
+  },
+  {
+    "id": "unknown-rule",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "strict",
+    "source": "The user asks whether New Hart’s Rules second edition mandates a particular serial-comma treatment. The relevant passage is unavailable.",
+    "ruleIds": [
+      "preserve-meaning",
+      "verify-applicable-passage",
+      "bounded-attribution"
+    ],
+    "sourceIds": [
+      "hart-preview"
+    ],
+    "expectations": [
+      "Mark the book-specific rule unverified and request the relevant passage if needed for the edit.",
+      "Do not invent an absolute rule or silently substitute a different Oxford guide."
+    ],
+    "knownBadRewrite": "New Hart’s Rules always requires the serial comma in every sentence.",
+    "method": "new-harts-rules"
+  }
+]

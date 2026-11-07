@@ -1,0 +1,29 @@
+{
+  "method": "amazon-six-page-narrative",
+  "methodVersion": "0.1.0",
+  "locale": "en",
+  "status": "experimental",
+  "reviewedSourceRules": [],
+  "rules": {
+    "preserve-meaning": {
+      "instruction": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code at every level.",
+      "adaptation": false
+    },
+    "decision-and-context": {
+      "instruction": "Explain the purpose, reader decision, and essential background for reviewers outside the immediate team.",
+      "adaptation": false
+    },
+    "evidence-and-reasoning": {
+      "instruction": "Connect important claims and proposed actions to evidence while distinguishing assumptions and uncertainty.",
+      "adaptation": false
+    },
+    "coherent-narrative": {
+      "instruction": "Develop the argument in connected prose with headings and supporting tables only where useful.",
+      "adaptation": false
+    },
+    "readable-page-budget": {
+      "instruction": "Use a six-page main-body ceiling only with a specified and inspected rendered layout; put supporting detail in appendices without hiding decision-critical limits.",
+      "adaptation": false
+    }
+  }
+}

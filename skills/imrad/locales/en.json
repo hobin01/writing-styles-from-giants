@@ -1,0 +1,29 @@
+{
+  "method": "imrad",
+  "methodVersion": "0.1.0",
+  "locale": "en",
+  "status": "experimental",
+  "reviewedSourceRules": [],
+  "rules": {
+    "preserve-meaning": {
+      "instruction": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code; distinguish supplied evidence from inference.",
+      "adaptation": false
+    },
+    "question-and-context": {
+      "instruction": "Use the introduction to establish context, the knowledge gap, and the research question or objective.",
+      "adaptation": false
+    },
+    "reproducible-methods": {
+      "instruction": "Describe the actual design, materials/participants, procedures, and analysis sufficiently to interpret and reproduce the work.",
+      "adaptation": false
+    },
+    "findings-vs-interpretation": {
+      "instruction": "Report supplied findings in Results and interpret their implications, limitations, and bounded conclusions in Discussion.",
+      "adaptation": false
+    },
+    "report-consistency": {
+      "instruction": "Check that abstract, methods, results, tables, and discussion agree on quantities, analyses, scope, and uncertainty.",
+      "adaptation": false
+    }
+  }
+}

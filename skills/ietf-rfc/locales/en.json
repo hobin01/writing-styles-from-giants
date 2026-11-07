@@ -1,0 +1,29 @@
+{
+  "method": "ietf-rfc",
+  "methodVersion": "0.1.0",
+  "locale": "en",
+  "status": "experimental",
+  "reviewedSourceRules": [],
+  "rules": {
+    "preserve-meaning": {
+      "instruction": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code at every level.",
+      "adaptation": false
+    },
+    "scope-and-terms": {
+      "instruction": "Define scope, terminology, actors, and assumptions before normative behavior.",
+      "adaptation": false
+    },
+    "requirement-strength": {
+      "instruction": "Preserve obligation strength and use BCP 14 uppercase keywords only with an explicit declaration of their meaning.",
+      "adaptation": false
+    },
+    "specification-structure": {
+      "instruction": "Use suitable abstract, introduction, technical sections, security considerations, and IANA applicability statements without inventing facts or registrations.",
+      "adaptation": false
+    },
+    "reference-role": {
+      "instruction": "Distinguish documents needed to implement the specification from contextual or explanatory references.",
+      "adaptation": false
+    }
+  }
+}

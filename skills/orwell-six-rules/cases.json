@@ -1,0 +1,59 @@
+[
+  {
+    "id": "inflated-prose",
+    "type": "ordinary",
+    "source": "At this moment in time, we are undertaking an investigation into the cause.",
+    "ruleIds": [
+      "short-accurate-word",
+      "necessary-words"
+    ],
+    "expectations": [
+      "Remove empty time phrasing where context permits.",
+      "Keep investigation as ongoing rather than complete."
+    ],
+    "sourceIds": [
+      "orwell-essay"
+    ],
+    "level": "standard",
+    "locale": "en",
+    "method": "orwell-six-rules"
+  },
+  {
+    "id": "unknown-actor",
+    "type": "exception",
+    "source": "The sensor was damaged during shipping; the responsible party is unknown.",
+    "ruleIds": [
+      "useful-active",
+      "sense-over-rule"
+    ],
+    "expectations": [
+      "Keep passive voice if no actor is known.",
+      "Do not blame the shipper without evidence."
+    ],
+    "sourceIds": [
+      "orwell-essay"
+    ],
+    "level": "strict",
+    "locale": "en",
+    "method": "orwell-six-rules"
+  },
+  {
+    "id": "qualified-claim",
+    "type": "meaning-preservation",
+    "source": "The treatment may help some patients, but evidence remains limited [1].",
+    "ruleIds": [
+      "preserve-meaning",
+      "necessary-words"
+    ],
+    "expectations": [
+      "Retain may, some, the evidence limitation, and [1]."
+    ],
+    "sourceIds": [
+      "orwell-essay"
+    ],
+    "level": "standard",
+    "locale": "en",
+    "knownBadRewrite": "The treatment helps patients.",
+    "method": "orwell-six-rules"
+  }
+]

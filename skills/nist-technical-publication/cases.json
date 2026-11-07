@@ -1,0 +1,60 @@
+[
+  {
+    "id": "measurement-summary",
+    "type": "ordinary",
+    "locale": "en",
+    "level": "standard",
+    "source": "Draft a report summary: sensor A measured 12.0 mV at 20 °C. Reported uncertainty is ±0.2 mV; its coverage basis is not supplied. Three readings were taken.",
+    "ruleIds": [
+      "traceable-report",
+      "measurement-integrity"
+    ],
+    "sourceIds": [
+      "nist-authors"
+    ],
+    "expectations": [
+      "Keep 12.0 mV, ±0.2 mV, 20 °C, and three readings.",
+      "Flag missing uncertainty basis rather than label it a 95% interval."
+    ],
+    "method": "nist-technical-publication"
+  },
+  {
+    "id": "technical-term",
+    "type": "exception",
+    "locale": "en",
+    "level": "standard",
+    "source": "The audience is electrical engineers. Keep the term impedance; replacing it with resistance would change the technical claim.",
+    "ruleIds": [
+      "precise-technical-language"
+    ],
+    "sourceIds": [
+      "nist-authors"
+    ],
+    "expectations": [
+      "Retain impedance and explain it if necessary.",
+      "Do not replace the term solely for everyday vocabulary."
+    ],
+    "method": "nist-technical-publication"
+  },
+  {
+    "id": "figure-scope",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "strict",
+    "source": "A figure shows only tests at 20 °C, with n=3. The observed trend may not extend to colder conditions.",
+    "ruleIds": [
+      "preserve-meaning",
+      "accessible-evidence",
+      "measurement-integrity"
+    ],
+    "sourceIds": [
+      "nist-authors"
+    ],
+    "expectations": [
+      "Carry test temperature, sample count, and limited generalization into the caption or accompanying text.",
+      "Do not claim performance at all temperatures."
+    ],
+    "knownBadRewrite": "The device performs this way at every temperature.",
+    "method": "nist-technical-publication"
+  }
+]

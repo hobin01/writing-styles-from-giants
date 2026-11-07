@@ -1,0 +1,60 @@
+[
+  {
+    "id": "timeout-reference",
+    "type": "ordinary",
+    "locale": "en",
+    "level": "standard",
+    "source": "Write a reference entry for timeout_ms: integer, default 500, allowed range 1–30000, applies only to read operations.",
+    "ruleIds": [
+      "reader-need",
+      "type-contract",
+      "reader-check"
+    ],
+    "sourceIds": [
+      "diataxis-start"
+    ],
+    "expectations": [
+      "Use factual lookup structure.",
+      "Preserve integer type, default, range, unit, and read-only scope."
+    ],
+    "method": "diataxis"
+  },
+  {
+    "id": "safety-context",
+    "type": "exception",
+    "locale": "en",
+    "level": "standard",
+    "source": "Write a how-to for replacing a test battery. Before opening the enclosure, disconnect power; the stored charge may remain for 5 minutes.",
+    "ruleIds": [
+      "type-contract"
+    ],
+    "sourceIds": [
+      "diataxis-start"
+    ],
+    "expectations": [
+      "Keep the safety prerequisite beside the action.",
+      "Do not move the warning out merely because it contains explanation."
+    ],
+    "method": "diataxis"
+  },
+  {
+    "id": "unverified-tutorial",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "strict",
+    "source": "The supplied command is a draft and has not been run. Expected output is \"ready\", but the system may instead report an error.",
+    "ruleIds": [
+      "preserve-meaning",
+      "reader-check"
+    ],
+    "sourceIds": [
+      "diataxis-start"
+    ],
+    "expectations": [
+      "Mark the procedure and expected output as unverified.",
+      "Retain possible error behavior rather than promise success."
+    ],
+    "knownBadRewrite": "Run it; you will see ready.",
+    "method": "diataxis"
+  }
+]

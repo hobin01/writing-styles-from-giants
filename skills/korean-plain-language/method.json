@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "id": "korean-plain-language",
+  "version": "0.1.0",
+  "status": "experimental",
+  "title": "Korean plain-language companion",
+  "kind": "sentence",
+  "languageScope": "ko",
+  "applicability": {
+    "genres": [
+      "Korean explanation",
+      "Korean instructions",
+      "Korean public information"
+    ],
+    "audiences": [
+      "general readers",
+      "technical readers with declared prerequisites"
+    ],
+    "exclusions": [
+      "certified Korean readability level",
+      "ASD-STE100 or CTE compliance",
+      "historical orthographic reconstruction",
+      "unrequested translation or register normalization"
+    ]
+  },
+  "sources": [
+    {
+      "id": "nikl-guide",
+      "title": "쉬운 공문서 쓰기 길잡이",
+      "author": "National Institute of Korean Language (국립국어원)",
+      "url": "https://korean.go.kr/front/etcData/etcDataView.do?etc_seq=700&mn_id=208&pageIndex=1",
+      "version": "2022; official attachment revised 2023-07-17",
+      "accessed": "2026-11-07",
+      "evidenceType": "official-guide-selected-pages",
+      "accessScope": "Official item description and reuse notice; PDF foreword, contents and printed/PDF pp.8,12,15,21–23 visually inspected; extracted text pp.28–32 read. Most image-only pages were not inspected.",
+      "rights": "Item states KOGL Type3 (attribution/no derivatives). No guide text, adapted examples, page images, or translated checklist redistributed. These are independently worded operational rules about underlying language principles with synthetic examples; not an official NIKL skill."
+    }
+  ],
+  "rules": [
+    {
+      "id": "preserve-meaning",
+      "intent": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code, including obligation versus permission.",
+      "classification": "invariant",
+      "provenance": "project-original",
+      "rationale": "Project meaning-preservation requirement, independent of any editorial source.",
+      "sourceIds": [],
+      "exceptions": [],
+      "check": "human-review",
+      "levels": {
+        "light": "error",
+        "standard": "error",
+        "strict": "error"
+      }
+    },
+    {
+      "id": "referents-and-particles",
+      "intent": "Resolve ambiguous omitted subjects, referents, particles, and modifier scope while retaining natural Korean omission.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Extends the guide’s sentence agreement and grammatical-accuracy guidance to explanatory editing; examples and operational questions are original.",
+      "sourceIds": [
+        "nikl-guide"
+      ],
+      "exceptions": [
+        "Keep an omitted subject when context is unambiguous.",
+        "If the actor or modifier scope is unknown, flag it rather than invent it."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "advisory",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "register-and-modality",
+      "intent": "Preserve or follow the requested speech level; maintain distinctions among 의무, 허용, 가능성, and prohibition when revising endings.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "The guide discusses audience-facing endings; preserving task-selected register and modal force is a project adaptation, not a mandated public-document register.",
+      "sourceIds": [
+        "nikl-guide"
+      ],
+      "exceptions": [
+        "Quoted wording and exact UI labels retain their form.",
+        "A legal duty must not become an optional request merely to sound polite."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "off",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "reader-terminology",
+      "intent": "Explain unfamiliar Korean or borrowed terms where needed; simplify only with equivalent meaning and preserve exact technical/legal names.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Applies reader-oriented terminology principles from pp.8 and12; it does not import the guide’s substitution tables.",
+      "sourceIds": [
+        "nikl-guide"
+      ],
+      "exceptions": [
+        "Use a precise specialist term for an audience that needs it.",
+        "A familiar Sino-Korean word need not be replaced because of its origin."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "advisory",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "logical-sentences",
+      "intent": "Repair predicate agreement and group conditions with the action they govern; split or reorder only when the logical relation remains clear.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Original operational interpretation of pp.15 and28–32 about visible organization and grammatical accuracy. English active-voice and word-count rules do not transfer literally.",
+      "sourceIds": [
+        "nikl-guide"
+      ],
+      "exceptions": [
+        "Korean passive/causative forms can express necessary meaning.",
+        "Preserve condition, exception, and negation scope through any split."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "off",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "method": "microsoft-writing-style",
+  "methodVersion": "0.1.0",
+  "locale": "en",
+  "status": "experimental",
+  "reviewedSourceRules": [],
+  "rules": {
+    "preserve-meaning": {
+      "instruction": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code at every level.",
+      "adaptation": false
+    },
+    "reader-action": {
+      "instruction": "Lead with what the reader needs to know or do, with necessary prerequisites adjacent.",
+      "adaptation": false
+    },
+    "concise-helpful-wording": {
+      "instruction": "Use direct, helpful wording and remove redundancy only when no needed meaning is lost.",
+      "adaptation": false
+    },
+    "consistent-terms": {
+      "instruction": "Use consistent product, technical, and UI terms; preserve actual interface labels and code.",
+      "adaptation": false
+    },
+    "global-comprehension": {
+      "instruction": "Prefer literal, context-independent wording over culture-bound idioms and unexplained references.",
+      "adaptation": false
+    }
+  }
+}

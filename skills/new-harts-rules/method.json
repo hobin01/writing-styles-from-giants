@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "id": "new-harts-rules",
+  "version": "0.1.0",
+  "status": "experimental",
+  "title": "New Hart’s Rules source-assisted editing",
+  "kind": "process",
+  "applicability": {
+    "genres": [
+      "English copyediting",
+      "house-style review",
+      "editorial decision log"
+    ],
+    "audiences": [
+      "editors",
+      "publication authors"
+    ],
+    "exclusions": [
+      "full-book coverage without source access",
+      "unverified Oxford style claims",
+      "Korean grammar prescriptions"
+    ]
+  },
+  "sources": [
+    {
+      "id": "hart-preview",
+      "title": "New Hart’s Rules: The Oxford Style Guide",
+      "author": "Anne Waddingham, editor; Oxford University Press",
+      "url": "https://api.pageplace.de/preview/DT0400.9780191649134_A23591405/preview-9780191649134_A23591405.pdf",
+      "version": "Second edition, 2014; print ISBN 9780199570027",
+      "accessed": "2026-11-07",
+      "evidenceType": "publisher-preview",
+      "accessScope": "Title/copyright pages, preface, contents, and beginning of chapter 1 inspected in an OUP-origin preview. Most operational rules and the complete book were not read.",
+      "rights": "OUP copyright 2005/2014; all rights reserved. No preview, book text, dictionary, or reproduced checklist bundled."
+    }
+  ],
+  "rules": [
+    {
+      "id": "preserve-meaning",
+      "intent": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code at every level.",
+      "classification": "invariant",
+      "provenance": "project-original",
+      "rationale": "Shared project meaning-preservation requirement; style never authorizes factual change.",
+      "sourceIds": [],
+      "exceptions": [],
+      "check": "human-review",
+      "levels": {
+        "light": "error",
+        "standard": "error",
+        "strict": "error"
+      }
+    },
+    {
+      "id": "edition-and-house-style",
+      "intent": "Identify the edition and editorial scope; record explicit house-style decisions and conflicts.",
+      "classification": "guideline",
+      "provenance": "project-original",
+      "rationale": "Source-assisted workflow designed by this project; the preview establishes edition identity, not a complete operational method.",
+      "sourceIds": [
+        "hart-preview"
+      ],
+      "exceptions": [],
+      "check": "judgment",
+      "levels": {
+        "light": "advisory",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "verify-applicable-passage",
+      "intent": "Apply an attributed book rule only after reading its relevant passage, including qualifications; otherwise mark it unverified.",
+      "classification": "guideline",
+      "provenance": "project-original",
+      "rationale": "Prevents presenting familiar UK editorial habits as verified New Hart’s Rules.",
+      "sourceIds": [
+        "hart-preview"
+      ],
+      "exceptions": [
+        "Ask for a lawful relevant excerpt or access only when the missing rule changes the requested edit."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "advisory",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "consistent-decisions",
+      "intent": "Apply a verified editorial decision consistently to editable prose while preserving quotations, code, citations, and intentional exceptions.",
+      "classification": "guideline",
+      "provenance": "project-original",
+      "rationale": "Project editing workflow, not a claim that a book-wide checklist was inspected.",
+      "sourceIds": [
+        "hart-preview"
+      ],
+      "exceptions": [
+        "An explicit user/house-style override takes precedence and must not be described as the book rule."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "off",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "bounded-attribution",
+      "intent": "Separate verified source-based changes, user house-style choices, and unresolved questions in an optional audit.",
+      "classification": "guideline",
+      "provenance": "project-original",
+      "rationale": "Original project provenance reporting for source-limited editorial work.",
+      "sourceIds": [
+        "hart-preview"
+      ],
+      "exceptions": [],
+      "check": "judgment",
+      "levels": {
+        "light": "off",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    }
+  ],
+  "languageScope": "en"
+}

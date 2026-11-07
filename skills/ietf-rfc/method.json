@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "id": "ietf-rfc",
+  "version": "0.1.0",
+  "status": "experimental",
+  "title": "RFC-style technical specification",
+  "kind": "document",
+  "applicability": {
+    "genres": [
+      "internal RFC",
+      "protocol specification",
+      "technical proposal"
+    ],
+    "audiences": [
+      "implementers",
+      "technical reviewers"
+    ],
+    "exclusions": [
+      "automatic RFC submission",
+      "Internet Standard status claims",
+      "unrequested protocol requirements"
+    ]
+  },
+  "sources": [
+    {
+      "id": "rfc7322",
+      "title": "RFC 7322: RFC Style Guide",
+      "author": "Heather Flanagan and Sandy Ginoza",
+      "url": "https://www.rfc-editor.org/rfc/rfc7322.html",
+      "version": "September 2014; Informational; updated by later RFCs",
+      "accessed": "2026-11-07",
+      "evidenceType": "primary-explanation",
+      "accessScope": "Status, introduction/philosophy, style/structure overview, and requirements/reference sections read.",
+      "rights": "IETF Trust and BCP 78 document terms; no RFC boilerplate copied."
+    },
+    {
+      "id": "rfc-style-current",
+      "title": "RFC Editor Style Guide: current updates",
+      "author": "RFC Editor",
+      "url": "https://www.rfc-editor.org/authors/rfc-style-guide/",
+      "version": "Living guide, accessed 2026-11-07",
+      "accessed": "2026-11-07",
+      "evidenceType": "primary-explanation",
+      "accessScope": "Author-choice and XML guidance read; not every linked submission procedure.",
+      "rights": "RFC Editor/IETF notices apply; original summary only."
+    },
+    {
+      "id": "bcp14",
+      "title": "RFC 2119 and RFC 8174: requirement-keyword meanings",
+      "author": "Scott Bradner; Barry Leiba",
+      "url": "https://www.rfc-editor.org/rfc/rfc8174.html",
+      "version": "RFC 2119, March 1997; RFC 8174, May 2017",
+      "accessed": "2026-11-07",
+      "evidenceType": "primary-explanation",
+      "accessScope": "Both documents read for BCP 14 keyword semantics, including uppercase qualification.",
+      "rights": "IETF Trust/BCP 78 terms apply; no boilerplate or source wording bundled."
+    }
+  ],
+  "rules": [
+    {
+      "id": "preserve-meaning",
+      "intent": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code at every level.",
+      "classification": "invariant",
+      "provenance": "project-original",
+      "rationale": "Shared project meaning-preservation requirement; style never authorizes factual change.",
+      "sourceIds": [],
+      "exceptions": [],
+      "check": "human-review",
+      "levels": {
+        "light": "error",
+        "standard": "error",
+        "strict": "error"
+      }
+    },
+    {
+      "id": "scope-and-terms",
+      "intent": "Define scope, terminology, actors, and assumptions before normative behavior.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Original operational guidance adapted from the identified source scope.",
+      "sourceIds": [
+        "rfc7322"
+      ],
+      "exceptions": [],
+      "check": "judgment",
+      "levels": {
+        "light": "advisory",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "requirement-strength",
+      "intent": "Preserve obligation strength and use BCP 14 uppercase keywords only with an explicit declaration of their meaning.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Original operational guidance adapted from the identified source scope.",
+      "sourceIds": [
+        "bcp14"
+      ],
+      "exceptions": [
+        "Normative requirements can use ordinary prose; do not introduce keywords or stronger obligations without intent."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "advisory",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "specification-structure",
+      "intent": "Use suitable abstract, introduction, technical sections, security considerations, and IANA applicability statements without inventing facts or registrations.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Original operational guidance adapted from the identified source scope.",
+      "sourceIds": [
+        "rfc7322",
+        "rfc-style-current"
+      ],
+      "exceptions": [
+        "For an internal proposal, explain when IANA is not applicable; do not pretend an external allocation exists."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "off",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "reference-role",
+      "intent": "Distinguish documents needed to implement the specification from contextual or explanatory references.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Original operational guidance adapted from the identified source scope.",
+      "sourceIds": [
+        "rfc7322"
+      ],
+      "exceptions": [
+        "A URL alone does not prove the source is authoritative or normative."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "off",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    }
+  ],
+  "languageScope": "language-independent"
+}

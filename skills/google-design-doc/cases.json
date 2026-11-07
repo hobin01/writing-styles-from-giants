@@ -1,0 +1,61 @@
+[
+  {
+    "id": "cache-design",
+    "type": "ordinary",
+    "locale": "en",
+    "level": "standard",
+    "source": "Write a design proposal for a read cache. Goal: reduce repeated database reads. Non-goal: changing writes. Cache staleness up to 30 seconds is acceptable; no latency benchmark exists.",
+    "ruleIds": [
+      "context-and-goals",
+      "proposed-design",
+      "alternatives-and-tradeoffs"
+    ],
+    "sourceIds": [
+      "ubl-design"
+    ],
+    "expectations": [
+      "Keep writes out of scope and preserve the 30-second limit.",
+      "Compare plausible alternatives without fabricating benchmark results."
+    ],
+    "method": "google-design-doc"
+  },
+  {
+    "id": "small-design",
+    "type": "exception",
+    "locale": "en",
+    "level": "standard",
+    "source": "A small CLI needs to select one of two output formats. The user requests a short design note, not code or a complete architecture document.",
+    "ruleIds": [
+      "proposed-design"
+    ],
+    "sourceIds": [
+      "ubl-design"
+    ],
+    "expectations": [
+      "Scale the note to the decision.",
+      "Do not require complete schemas, implementation, or irrelevant distributed-system sections."
+    ],
+    "method": "google-design-doc"
+  },
+  {
+    "id": "pending-review",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "strict",
+    "source": "The team proposes asynchronous writes if the durability review succeeds. The review is pending, and data loss under power failure has not been evaluated.",
+    "ruleIds": [
+      "preserve-meaning",
+      "review-and-open-questions"
+    ],
+    "sourceIds": [
+      "ubl-design",
+      "google-docguide"
+    ],
+    "expectations": [
+      "Keep the proposal conditional and approval pending.",
+      "Retain the unresolved durability/data-loss question."
+    ],
+    "knownBadRewrite": "The team approved asynchronous writes, which are durable.",
+    "method": "google-design-doc"
+  }
+]

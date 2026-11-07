@@ -1,0 +1,29 @@
+{
+  "method": "socratic-self-questioning",
+  "methodVersion": "0.1.0",
+  "locale": "en",
+  "status": "experimental",
+  "reviewedSourceRules": [],
+  "rules": {
+    "preserve-meaning": {
+      "instruction": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code; distinguish supplied evidence from inference.",
+      "adaptation": false
+    },
+    "define-claim": {
+      "instruction": "State the claim and clarify terms whose meaning changes its truth or usefulness.",
+      "adaptation": false
+    },
+    "test-assumptions": {
+      "instruction": "Identify supporting reasons and assumptions; test a consequential one with a counterexample or alternative explanation.",
+      "adaptation": false
+    },
+    "revise-calibration": {
+      "instruction": "Revise the claim to the strongest version supported by the evidence, or retain a specific uncertainty.",
+      "adaptation": false
+    },
+    "bounded-stop": {
+      "instruction": "Stop when further questions would not materially change the answer; present the resulting claim, reasons, and material limits.",
+      "adaptation": false
+    }
+  }
+}

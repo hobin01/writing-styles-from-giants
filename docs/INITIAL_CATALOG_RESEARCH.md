@@ -1,14 +1,14 @@
 # Initial skill catalog research
 
-Research accessed on 2026-11-07 for the owner's 25 requested methods. This is a pre-authoring assessment, not a released catalog. It distinguishes documented practices, project-original methods, and names whose intended scope needed clarification. Proposed operational steps below are adaptations unless explicitly identified as source summaries.
+Research accessed on 2026-11-07 for the owner's 24 retained methods (John von Neumann was subsequently withdrawn). This is a pre-authoring assessment, not a released catalog. It distinguishes documented practices, project-original methods, and names whose intended scope needed clarification. Proposed operational steps below are adaptations unless explicitly identified as source summaries.
 
 ## Authoring decisions
 
-Write skill instructions primarily in English. English instructions can support Korean output; instruction language does not determine output language. Create an additional Korean-specific skill only when a linguistic difference requires its own rules. Structural methods do not need a Korean duplicate merely because their examples are translated. The Korean notes below identify review issues, not a decision to create 25 Korean variants. English controlled vocabularies, word counts, articles, and grammatical-voice rules cannot establish Korean compliance.
+Write skill instructions primarily in English. English instructions can support Korean output; instruction language does not determine output language. Create an additional Korean-specific skill only when a linguistic difference requires its own rules. Structural methods do not need a Korean duplicate merely because their examples are translated. The Korean notes below identify review issues, not a decision to create Korean variants for every method. English controlled vocabularies, word counts, articles, and grammatical-voice rules cannot establish Korean compliance.
 
-Each completed skill must receive a Ponytail review: remove instructions that do not affect the requested behavior, duplicated guidance, speculative options, and unused resources. Keep necessary source attribution, exceptions, meaning-preservation rules, and observable evaluation cases. No skill was implemented in this research change.
+Each completed skill must receive a Ponytail review: remove instructions that do not affect the requested behavior, duplicated guidance, speculative options, and unused resources. Keep necessary source attribution, exceptions, meaning-preservation rules, and observable evaluation cases. This document records the pre-authoring research; implementation evidence is in [CATALOG_REVIEW.md](CATALOG_REVIEW.md).
 
-ASD's requested `normal` and `strict` names need a documented relationship to the repository's existing `light`, `standard`, and `strict` levels. An informal 80% preference cannot become a measured compliance score. Resolve this before implementation rather than changing shared level behavior implicitly.
+ASD's `normal` aliases `standard`; `strict` applies the full eligible project profile. An informal 80% preference cannot become a measured compliance score. See the implemented [ASD skill](../skills/asd-ste100/SKILL.md) for selected rules.
 
 ## Method findings
 
@@ -16,7 +16,7 @@ ASD's requested `normal` and `strict` names need a documented relationship to th
 
 **Meaning and operational core.** A controlled English standard for technical documentation, maintained by the ASD Simplified Technical English Maintenance Group (STEMG). Its writing rules and controlled dictionary operate together; an ordinary plain-language prompt is insufficient for verified conformity. Use consistent terms, explicit actors, direct instructions, staged information, and unambiguous meanings. Respect procedural/descriptive distinctions and documented exceptions. The official FAQ permits adopting principles for other genres while distinguishing the standard's intended technical-documentation scope. [Official FAQ](https://www.asd-ste100.org/STE_faq.html).
 
-**Evidence and read scope.** Read the complete public FAQ and downloads notice using direct HTTPS retrieval after the browser fetch returned 403. Current issue: Issue 9, January 2025. The [official Issue 9 PDF](https://www.asd-ste100.org/assets/files/ASD-STE100_ISSUE9.pdf) was located and fetched temporarily, but its contents were **not read**: local PDF text extraction was unavailable. Consequently this note does not independently verify every numbered writing rule or dictionary entry. [Official downloads](https://www.asd-ste100.org/STE_downloads.html).
+**Evidence and read scope.** Read the complete public FAQ and downloads notice using direct HTTPS retrieval after the browser fetch returned 403. Current issue: Issue 9, January 2025. The [official Issue 9 PDF](https://www.asd-ste100.org/assets/files/ASD-STE100_ISSUE9.pdf) was located and fetched temporarily, but its contents were not read in the research-only change. During implementation, selected writing/counting and copyright passages were read; see [the exact ASD evidence record](../skills/asd-ste100/method.json). The complete dictionary and every writing rule were not reviewed. This assessment does not independently verify every numbered writing rule or dictionary entry. [Official downloads](https://www.asd-ste100.org/STE_downloads.html).
 
 **80% / 100%.** Neither is an established compliance measure in the official pages read. Treat them as the user's intended intensity labels until concrete project rules are selected. `strict` can mean the project's strongest supported checks, with a review record; it cannot promise 100% ASD conformity from a prompt. `normal` can adopt selected principles without inventing a mathematical denominator. All levels preserve meaning.
 
@@ -144,18 +144,6 @@ In [Plato, *Phaedrus*, 229e–230a, Jowett translation](https://classics.mit.edu
 
 **Read/rights:** identified passages in hosted translations, not all dialogues. Attribute the historical practice via Plato; review translation rights before redistribution.
 
-### John von Neumann: calculation checks and game-theoretic modeling
-
-**Confirmed intent:** two functions: iterative calculation with organized intermediate results and consistency checks, and mathematical/game-theoretic modeling of social problems. The owner associated the first with an imagined infinite white sheet; no reliable original source for that anecdote was verified.
-
-[Von Neumann, *The Mathematician* (1947), reproduced opening part](https://mathshistory.st-andrews.ac.uk/Extras/Von_Neumann_Part_1/) discusses mathematical abstraction's relationship with empirical inquiry and cautions about oversimplified accounts. [Princeton's *Theory of Games and Economic Behavior* page](https://press.princeton.edu/books/paperback/9780691130613/theory-of-games-and-economic-behavior) identifies **von Neumann and Oskar Morgenstern**, 1944 original, 60th-anniversary edition, 2007 paperback/2004 copyright. Its contents cover rational behavior, utility, strategic games, and explicit theoretical limits. The accessible publisher PDF is Kuhn's introduction, not the original book chapters.
-
-**Operational adaptation:** for calculation, maintain explicit assumptions, symbols, units, intermediate results, and checks; revise dependent results when an earlier result changes. This is a user-inspired `project-original` procedure, not a claim about von Neumann's private cognition or a demand for an internal thought transcript. For social modeling, define actors, choices, information, objectives/payoffs, constraints, and model limits; distinguish a conditional model result from a prediction. Attribute game theory to the documented joint work with Morgenstern; generic optimization and strategic interaction are distinct. Whether these become two skills or two explicitly selected modes remains an implementation design choice, not an undefined user intent.
-
-**Korean need:** consistent utility/payoff/strategy terminology, units, and distinction between 수리 모형 and reality.
-
-**Read/rights:** reproduced opening essay, publisher overview/contents, introduction excerpt; no whole-book claim. No permissive redistribution established.
-
 ### Caterpillar Technical English (CTE)
 
 **English meaning:** controlled source English for consistent technical documentation and translation.
@@ -275,12 +263,12 @@ These are implementation references, not evidence that their attributed methods 
 
 Other inspected references were not advanced for reuse: [tamdogood's Orwell skill](https://github.com/tamdogood/builder-essential-skills/blob/1be9984bdafbb68eaff400bdd82773a1d41ee7ec/skills/orwell-writing/SKILL.md) mixes Orwell and STE (skill read; root license text unread); [sysmatt's STE summary](https://github.com/sysmatt/ste-rules/blob/c18369e275a6873e09a417ac93219499190a2059/STE100-writing-rules.md) has no verified license (summary read); [LeadGrowGTM/feynman-skill](https://github.com/LeadGrowGTM/feynman-skill) had an MIT marketing claim but no verified license text in the inspected listing (README only, revision unrecorded).
 
-## Before implementation
+## Implementation boundaries
 
-The owner selected CTE rather than CFE and the NIST Author Instructions linked above. Hunminjeongeum means purpose-first writing with a clear introduction, body, and conclusion; von Neumann means iterative calculation/consistency checking plus game-theoretic social modeling. The named Karpathy post, now read in full, is the intended source for the informal 80% intensity, with HTML/video outside the ASD skill's scope. These clarify scope without approving unverified historical claims or compliance percentages.
+The owner selected CTE rather than CFE and the NIST Author Instructions linked above. Hunminjeongeum means purpose-first writing with a clear introduction, body, and conclusion. The named Karpathy post, now read in full, is the intended source for the informal 80% intensity, with HTML/video outside the ASD skill's scope. These clarify scope without approving unverified historical claims or compliance percentages.
 
-Before production authoring, select explicit ASD rules for `normal` and `strict` and document their relationship to the repository's existing levels. Full standard/dictionary checks, book-wide coverage, rights to bundle source material, and Korean-specific adaptations remain unverified wherever marked. Ask only when a missing choice materially changes the method; ordinary task parameters and the bounded interpretations stated above do not require another interview.
+The initial implementation selects explicit ASD-inspired profiles and maps `normal` to `standard`. Full standard/dictionary checks, book-wide coverage, rights to bundle source material, and Korean-specific adaptations remain unverified wherever marked. Ask only when a missing choice materially changes the method; ordinary task parameters and the bounded interpretations stated above do not require another interview.
 
 Keep methods distinct even where they overlap: ELI5 targets audience knowledge; Feynman-inspired explanation tests explanatory completeness; Minto organizes an argument; SCQA frames its opening; IMRaD organizes a research report; Diátaxis selects documentation types; HTML determines delivery. Combine them only through an explicit compatible request.
 
-Before adding production files, align the authoring and localization contracts with the English-first and conditional Korean-specific policy. Add the first complete method with source-linked cases before adding routing or installation machinery. Preserve the entire method directory when distribution is eventually tested.
+The initial catalog uses English-first instructions and one separately justified Korean companion, with source-linked cases. Routing and installation machinery remain outside this implementation. Preserve the entire method directory when distribution is tested.

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "compound-interest",
+    "type": "ordinary",
+    "source": "Create HTML explaining compound interest with adjustable principal, annual rate, and years. Use P(1+r)^t; r is an annual fraction and t is whole years.",
+    "ruleIds": [
+      "explanatory-question",
+      "consistent-model",
+      "accessible-fallback",
+      "exercise-artifact"
+    ],
+    "expectations": [
+      "Show a meaningful initial result and labeled controls.",
+      "Convert rate percentage to a fraction consistently.",
+      "Check initial, changed, zero-rate, and invalid-input states."
+    ],
+    "sourceIds": [],
+    "level": "standard",
+    "locale": "en",
+    "method": "answer-with-html"
+  },
+  {
+    "id": "static-request",
+    "type": "exception",
+    "source": "Give one HTML diagram showing the three states of water. No controls are needed.",
+    "ruleIds": [
+      "explanatory-question",
+      "accessible-fallback"
+    ],
+    "expectations": [
+      "Deliver the requested static diagram and readable text.",
+      "Do not add sliders or a framework."
+    ],
+    "sourceIds": [],
+    "level": "standard",
+    "locale": "en",
+    "method": "answer-with-html"
+  },
+  {
+    "id": "input-data",
+    "type": "meaning-preservation",
+    "source": "Display this literal source: <img src=x onerror=\"alert(1)\">. Explain a model that may reduce cost by 5% only above 100 units.",
+    "ruleIds": [
+      "preserve-meaning",
+      "safe-portable-artifact",
+      "consistent-model"
+    ],
+    "expectations": [
+      "Display source markup as text, without executing it.",
+      "Keep may, 5%, and the above-100 condition in all views."
+    ],
+    "sourceIds": [],
+    "level": "strict",
+    "locale": "en",
+    "knownBadRewrite": "Inject the image markup into innerHTML and label the model as always reducing cost by 5%.",
+    "method": "answer-with-html"
+  }
+]
