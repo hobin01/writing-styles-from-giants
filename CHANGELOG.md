@@ -2,6 +2,7 @@
 
 ## [Unreleased]
 
+- Research the initial 25 skill candidates, comparable implementations, source limitations, and unresolved scope choices; confirm English-first authoring and per-skill Ponytail review.
 - Add English/Korean project documentation, method/localization templates, and evaluation examples.
 - Add foundation checks, collaboration templates, CI, and a draft source-release workflow; Foundation CI is verified, source releases and host compatibility are not.
 - Confirm MIT for original content and prioritize compatible permissive reuse with preserved notices.
