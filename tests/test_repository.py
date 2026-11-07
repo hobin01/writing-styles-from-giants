@@ -1,4 +1,6 @@
+import copy
 import importlib.util
+import json
 import subprocess
 import tempfile
 import unittest
@@ -103,6 +105,75 @@ class RepositoryChecksTest(unittest.TestCase):
         errors = checks.example_errors(method, {"en": locale}, cases)
         self.assertTrue(any("invariant" in error for error in errors))
         self.assertTrue(any("unknown rule" in error for error in errors))
+
+    def catalog_fixture(self):
+        method = json.loads((MODULE_PATH.parents[1] / "templates/method/method.example.json").read_text())
+        locales = {"en": json.loads((MODULE_PATH.parents[1] / "templates/method/locales/en.json").read_text())}
+        cases = [{"id": kind, "type": kind, "method": method["id"], "locale": "en", "level": "strict",
+                  "source": "Only remove the old file after verifying the backup.", "ruleIds": ["preserve-meaning"],
+                  "sourceIds": [], "expectations": ["Retain the backup verification condition."]}
+                 for kind in ("ordinary", "exception", "meaning-preservation")]
+        return method, locales, cases
+
+    def test_catalog_rejects_broken_evidence_and_unverifiable_errors(self):
+        method, locales, cases = self.catalog_fixture()
+        self.assertEqual(checks.method_errors(method, locales, cases), [])
+        mutations = (
+            lambda m, l, c: m["rules"][1].update(provenance="faithful-summary"),
+            lambda m, l, c: m["rules"][1]["levels"].update(strict="error"),
+            lambda m, l, c: c[0].update(sourceIds=["unknown"]),
+            lambda m, l, c: c.pop(),
+            lambda m, l, c: l["en"].update(methodVersion="9.0.0"),
+            lambda m, l, c: m["rules"][0].update(classification="guideline"),
+            lambda m, l, c: m.update(languageScope="all-certified"),
+        )
+        for mutate in mutations:
+            with self.subTest(mutation=mutate):
+                m, l, c = copy.deepcopy((method, locales, cases))
+                mutate(m, l, c)
+                self.assertTrue(checks.method_errors(m, l, c))
+
+    def test_catalog_checks_portable_unit_and_directory_identity(self):
+        method, locales, cases = self.catalog_fixture()
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            unit = root / "skills/example-method"
+            (unit / "locales").mkdir(parents=True)
+            (unit / "SKILL.md").write_text("---\nname: example-method\ndescription: \"Edit explanatory prose.\"\n---\nApply the selected rules.\n")
+            (unit / "method.json").write_text(json.dumps(method))
+            (unit / "locales/en.json").write_text(json.dumps(locales["en"]))
+            (unit / "cases.json").write_text(json.dumps(cases))
+            files = [p for p in root.rglob("*") if p.is_file()]
+            self.assertEqual(checks.catalog_errors(root, files), [])
+            skill = unit / "SKILL.md"
+            valid = skill.read_text()
+            for bad in ("Edit: clear prose", "true", "null", "[\"use\", \"clear\"]"):
+                skill.write_text(valid.replace('"Edit explanatory prose."', bad))
+                self.assertTrue(checks.catalog_errors(root, files))
+            skill.write_text(valid + "[external local file](../../README.md)\n")
+            self.assertTrue(any("escapes" in e for e in checks.catalog_errors(root, files)))
+            skill.write_text(valid)
+            method["id"] = "another-method"
+            (unit / "method.json").write_text(json.dumps(method))
+            self.assertTrue(any("directory" in e for e in checks.catalog_errors(root, files)))
+            self.assertTrue(any("missing" in e for e in checks.catalog_errors(root, [p for p in files if p.name != "cases.json"])))
+            (unit / "method.json").write_text("null")
+            self.assertTrue(checks.catalog_errors(root, files))
+
+    def test_catalog_does_not_read_unadmitted_locale_paths(self):
+        method, locales, cases = self.catalog_fixture()
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            unit = root / "skills/example-method"
+            (unit / "locales").mkdir(parents=True)
+            (unit / "SKILL.md").write_text("---\nname: example-method\ndescription: \"Edit prose.\"\n---\nApply rules.\n")
+            (unit / "method.json").write_text(json.dumps(method))
+            (unit / "cases.json").write_text(json.dumps(cases))
+            (unit / "locales/en.json").symlink_to(root / "private-missing.json")
+            files = [unit / name for name in ("SKILL.md", "method.json", "cases.json")]
+            errors = checks.catalog_errors(root, files)
+            self.assertTrue(any("at least one locale" in e for e in errors))
+            self.assertFalse(any("cannot load" in e for e in errors))
 
 
 if __name__ == "__main__":

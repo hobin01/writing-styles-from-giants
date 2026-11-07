@@ -1,0 +1,67 @@
+[
+  {
+    "id": "purpose-and-answer",
+    "type": "ordinary",
+    "locale": "en",
+    "level": "standard",
+    "source": "Readers cannot tell which manual version matches their device. The new cover will list supported model numbers. We have not tested whether readers find it faster.",
+    "ruleIds": [
+      "purpose-opening",
+      "connected-development",
+      "bounded-conclusion"
+    ],
+    "sourceIds": [
+      "annals-1446",
+      "nomination"
+    ],
+    "expectations": [
+      "Open with the matching problem and reader task.",
+      "Explain how the model list addresses it.",
+      "Conclude with the proposed benefit while retaining the untested status."
+    ],
+    "knownBadRewrite": "The new cover solves manual selection for everyone.",
+    "method": "hunminjeongeum"
+  },
+  {
+    "id": "short-direct-explanation",
+    "type": "exception",
+    "locale": "en",
+    "level": "strict",
+    "source": "Explain in two sentences why a sensor needs calibration: its measured output drifts over time, and calibration compares it with a reference.",
+    "ruleIds": [
+      "purpose-opening",
+      "connected-development",
+      "bounded-conclusion"
+    ],
+    "sourceIds": [
+      "annals-1446",
+      "nomination"
+    ],
+    "expectations": [
+      "Meet the two-sentence scope without three forced headings.",
+      "Connect drift, comparison, and the purpose of calibration."
+    ],
+    "knownBadRewrite": "Introduction\nBody\nConclusion",
+    "method": "hunminjeongeum"
+  },
+  {
+    "id": "bounded-result",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "standard",
+    "source": "In tests on model A, the guide reduced setup errors from 8 to 5 out of 20 attempts. Other models were not tested.",
+    "ruleIds": [
+      "bounded-conclusion",
+      "preserve-meaning"
+    ],
+    "sourceIds": [
+      "nomination"
+    ],
+    "expectations": [
+      "Retain model A, both counts, denominator, and untested other models.",
+      "Do not claim universal improvement."
+    ],
+    "knownBadRewrite": "The guide eliminates setup errors on every model.",
+    "method": "hunminjeongeum"
+  }
+]

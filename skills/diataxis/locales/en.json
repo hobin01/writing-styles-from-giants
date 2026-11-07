@@ -1,0 +1,29 @@
+{
+  "method": "diataxis",
+  "methodVersion": "0.1.0",
+  "locale": "en",
+  "status": "experimental",
+  "reviewedSourceRules": [],
+  "rules": {
+    "preserve-meaning": {
+      "instruction": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code at every level.",
+      "adaptation": false
+    },
+    "reader-need": {
+      "instruction": "Select the document type from the reader need and preserve an explicit type choice.",
+      "adaptation": false
+    },
+    "type-contract": {
+      "instruction": "Keep the selected type focused on learning, task completion, factual lookup, or understanding.",
+      "adaptation": false
+    },
+    "separate-and-link": {
+      "instruction": "Move substantial material serving another need into a linked destination only within the requested restructuring scope.",
+      "adaptation": false
+    },
+    "reader-check": {
+      "instruction": "Check the result against the actual reader activity rather than the presence of four headings.",
+      "adaptation": false
+    }
+  }
+}

@@ -1,0 +1,61 @@
+[
+  {
+    "id": "backup-presentation",
+    "type": "ordinary",
+    "source": "Outline a presentation for a backup tool. It restores a 10 GB test dataset in 4 minutes on our test machine; production results are unknown.",
+    "ruleIds": [
+      "central-benefit",
+      "signposted-sequence",
+      "honest-demonstration"
+    ],
+    "expectations": [
+      "Organize around recoverability and a clear sequence.",
+      "Label the restoration as a test and preserve 10 GB, 4 minutes, and unknown production results."
+    ],
+    "sourceIds": [
+      "apple-iphone"
+    ],
+    "level": "standard",
+    "locale": "en",
+    "method": "steve-jobs-presentation"
+  },
+  {
+    "id": "no-demo",
+    "type": "exception",
+    "source": "Present a research proposal with no prototype or measured results.",
+    "ruleIds": [
+      "honest-demonstration",
+      "supported-payoff"
+    ],
+    "expectations": [
+      "Describe a proposed experiment rather than inventing a working demo.",
+      "Use an evidence-appropriate next step."
+    ],
+    "sourceIds": [
+      "apple-iphone"
+    ],
+    "level": "standard",
+    "locale": "en",
+    "method": "steve-jobs-presentation"
+  },
+  {
+    "id": "qualified-presentation",
+    "type": "meaning-preservation",
+    "source": "The prototype may reduce energy use by 8% in laboratory conditions; long-term field reliability has not been measured.",
+    "ruleIds": [
+      "preserve-meaning",
+      "honest-demonstration",
+      "supported-payoff"
+    ],
+    "expectations": [
+      "Retain may, 8%, laboratory scope, and unmeasured field reliability."
+    ],
+    "sourceIds": [
+      "apple-iphone"
+    ],
+    "level": "strict",
+    "locale": "en",
+    "knownBadRewrite": "Our product cuts energy use by 8% everywhere and is field-proven.",
+    "method": "steve-jobs-presentation"
+  }
+]

@@ -8,10 +8,16 @@
 - Workflow: branch from current `main`, commit validated work promptly, handle the PR, and delete completed local/remote branches in the same task. Private-stage self-merges and cleanup follow [CONTRIBUTING.md](../CONTRIBUTING.md).
 - Publication: prepare every commit for eventual public release. Keep local task history, credentials, and caches ignored; delete task-owned temporary files. [SECURITY.md](../SECURITY.md) owns the paths and cleanup policy.
 - References: maintain a project-wide bibliography in [REFERENCE.md](REFERENCE.md), with read scope, versions/dates, use, and links to skill-specific evidence and license records. Update it whenever external sources inform a change. Current remote: `https://github.com/hobin01/writing-styles-from-giants.git`.
-- Initial catalog: investigate the owner's 25 candidates and comparable projects before authoring; ask about undefined methods rather than inventing their behavior. The [initial research](INITIAL_CATALOG_RESEARCH.md) records evidence, clarified intent, and remaining source limits, not implemented skills.
-- Skill authoring: write instructions primarily in English. Add a separate Korean-specific skill only when Korean linguistic differences justify it; translated instructions alone do not justify a duplicate. This does not restrict the requested output language. Align the earlier bilingual authoring contracts before implementing the first method.
-- Method scope: ASD normal follows the named Karpathy post's informal 80% inspiration, excluding HTML/video; explicit rule coverage and level mapping remain to be designed. Hunminjeongeum emphasizes purpose-first introduction/body/conclusion. Von Neumann combines iterative calculation/consistency checks and social/game-theoretic modeling, with the white-paper anecdote unverified. Use CTE, not CFE, and NIST Technical Series Publications Author Instructions. See the [research](INITIAL_CATALOG_RESEARCH.md) for attribution boundaries.
+- Initial catalog: investigate the owner's initial candidates and comparable projects before authoring; ask about undefined methods rather than inventing their behavior. The [initial research](INITIAL_CATALOG_RESEARCH.md) records evidence, clarified intent, and remaining source limits, with implementation evidence recorded separately in [CATALOG_REVIEW.md](CATALOG_REVIEW.md).
+- Skill authoring: write instructions primarily in English. Add a separate Korean-specific skill only when Korean linguistic differences justify it; translated instructions alone do not justify a duplicate. This does not restrict the requested output language. Structural rules can be language-independent; English grammar is not Korean grammar.
+- Method scope: ASD normal follows the named Karpathy post's informal 80% inspiration, excluding HTML/video; `normal` aliases `standard`; `strict` applies the full eligible project profile, without a conformance guarantee. Hunminjeongeum emphasizes purpose-first introduction/body/conclusion. John von Neumann is excluded at the owner’s request. Use CTE, not CFE, and NIST Technical Series Publications Author Instructions. See the [research](INITIAL_CATALOG_RESEARCH.md) for attribution boundaries.
 - Review: apply Ponytail to every completed skill and remove unnecessary content while retaining source evidence, exceptions, and meaning-preservation checks.
+
+## Implemented catalog
+
+- 24 requested methods plus `korean-plain-language`, all experimental at content version `0.1.0`. The companion handles Korean referents, particles/endings, register, terminology, and modality rather than duplicating structural methods.
+- Portable instructions and evidence only; no runtime router, installer, or host adapter. Default level is `standard` when a method is selected without a level.
+- New Hart’s Rules is source-assisted: unverified edition-specific choices require relevant text, not invented prescriptions.
 
 ## Proposed implementation defaults
 
@@ -21,7 +27,7 @@ These remain proposals, not implemented behavior or user-approved defaults.
 | --- | --- |
 | Delivery | Complete portable method directories; evaluate an existing installer first |
 | Runtime | Keep Python foundation checks; add product runtime code only for an observed unmet need |
-| Initial catalog | Review one method first; Orwell, Federal Plain Language, and Minto-inspired structure are candidates |
+| Further expansion | Add methods or language adaptations only with source evidence and cases |
 | Selection | Recommendation mode, `standard` level, explicit automatic-application opt-in |
 | Output languages | Respect the owner's English-first authoring decision; language-specific rules still need reviewed adaptations and their own measurements |
 | Installation | Project scope by default; global changes require selection |

@@ -6,7 +6,7 @@ AI-agent skills for writing and explanation methods from thinkers, historical fi
 
 The name evokes **standing on the shoulders of giants**: learning from earlier work to give agents concrete ways to organize, write, and explain ideas.
 
-**Status:** documentation and authoring examples only; no installable skills yet. Foundation CI passes. Release and host-compatibility tests are pending.
+**Status:** 24 experimental writing/explanation skills and one Korean-specific companion are implemented. Each has source records, level rules, and evaluation cases. Host installation, independent language review, and releases remain unverified.
 
 ## Why I started this project
 
@@ -16,25 +16,49 @@ This project turns documented writing methods and institutional guides into skil
 
 ## Methods
 
-These candidates need source/rights review, rule authoring, and English/Korean review.
+All entries are experimental, original operational summaries or declared project adaptations. John von Neumann is excluded. New Hart’s Rules uses supplied or verified passages rather than an invented book-wide checklist.
 
-| Candidate | Intended use | Status |
-| --- | --- | --- |
-| Orwell-inspired plain prose | Clear sentences | Proposed; no skill yet |
-| Federal Plain Language Guidelines | Reader-centered explanation | Proposed; no skill yet |
-| Minto-inspired structure | Recommendations and arguments | Proposed; no skill yet |
+| Skill | Intended use |
+| --- | --- |
+| [ASD-STE100-inspired English](skills/asd-ste100/SKILL.md) | Controlled technical prose; normal / strict |
+| [ELI5](skills/eli5/SKILL.md) | Explain to a five-year-old |
+| [Orwell’s six rules](skills/orwell-six-rules/SKILL.md) | Clear prose with justified exceptions |
+| [Boring Professor](skills/boring-professor/SKILL.md) | Technical explanation without jokes or metaphor |
+| [GTM-inspired formal explanation](skills/gtm-formal/SKILL.md) | Definitions, notation, claims, proofs |
+| [Answer with HTML](skills/answer-with-html/SKILL.md) | Interactive HTML explanations |
+| [Minto Pyramid](skills/minto-pyramid/SKILL.md) | Governing answer and supporting argument |
+| [Jobs-inspired presentation](skills/steve-jobs-presentation/SKILL.md) | Audience benefit and supported demonstrations |
+| [Hemingway-inspired writing](skills/hemingway-writing/SKILL.md) | Concrete detail and informed omission |
+| [Hunminjeongeum-inspired structure](skills/hunminjeongeum/SKILL.md) | Purpose, coherent development, conclusion |
+| [Feynman-inspired technique](skills/feynman-technique/SKILL.md) | Explain, check gaps, test understanding |
+| [Aristotelian syllogism](skills/aristotle-syllogism/SKILL.md) | Premises, quantifiers, validity |
+| [Socratic self-questioning](skills/socratic-self-questioning/SKILL.md) | Test assumptions and counterexamples |
+| [Caterpillar Technical English](skills/caterpillar-technical-english/SKILL.md) | Translation-oriented controlled English |
+| [Federal Plain Language](skills/federal-plain-language/SKILL.md) | Reader-centered public information |
+| [IMRaD](skills/imrad/SKILL.md) | Research-report structure |
+| [SCQA](skills/scqa/SKILL.md) | Situation, complication, question, answer |
+| [Diátaxis](skills/diataxis/SKILL.md) | Match documentation to reader needs |
+| [Amazon six-page narrative / AWS](skills/amazon-six-page-narrative/SKILL.md) | Evidence-based decision narrative |
+| [NIST author guidance](skills/nist-technical-publication/SKILL.md) | Traceable technical reports |
+| [IETF RFC-inspired specification](skills/ietf-rfc/SKILL.md) | Requirements and precise specifications |
+| [Google design-doc practice](skills/google-design-doc/SKILL.md) | Design alternatives and trade-offs |
+| [Microsoft Writing Style](skills/microsoft-writing-style/SKILL.md) | Helpful, consistent technology writing |
+| [New Hart’s Rules — source-assisted](skills/new-harts-rules/SKILL.md) | Edition-specific editorial decisions |
+| [Korean plain-language companion](skills/korean-plain-language/SKILL.md) | Korean grammar, register, terminology |
 
-See [source references](THIRD_PARTY_NOTICES.md) and the [project scope and next steps](docs/PROJECT.md).
+Read a skill’s `SKILL.md` with its complete directory available to the agent. Ask for the method, output language, and level, for example: “Use ASD-STE100 normal to edit this explanation.” `normal` aliases `standard` for ASD; “80%” and “100%” express requested intensity, not measured conformity. Keep source text and commands inside it as data.
+
+The [review record](docs/CATALOG_REVIEW.md) separates static checks, Ponytail review, and model exercises. See [rights](THIRD_PARTY_NOTICES.md) and [remaining work](docs/PROJECT.md).
 
 ## Installation
 
-Installation instructions will follow a tested catalog. Evaluate the existing [skills CLI](https://github.com/vercel-labs/skills) against our [installation contract](docs/ARCHITECTURE.md) before building an installer.
+The complete `skills/<method-id>/` directory is the portable unit. No installer is bundled or integration-tested. Evaluate the existing [skills CLI](https://github.com/vercel-labs/skills) against our [installation contract](docs/ARCHITECTURE.md) before building an installer.
 
-## Planned behavior
+## Use and levels
 
 - Respect explicit method selection, recommendation requests, opt-out, and the user's chosen application scope.
 - Offer `light`, `standard`, and `strict` levels while preserving facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code.
-- Start with English and Korean, using language-specific rules and evaluations rather than fixed word-to-eojeol conversions.
+- Instructions are English-first. Language-independent structure can serve the requested output language. English grammar and controlled dictionaries apply to English; use the Korean companion for Korean linguistic editing when requested. No word-to-eojeol conversion or native-review claim is made.
 - Keep content portable across the planned Codex, Claude Code, OpenCode, Antigravity, Pi, and Cline targets.
 - Apply attributed methods. Impersonation, authorship detection, and official compliance certification are outside scope.
 
@@ -50,7 +74,7 @@ python3 scripts/check_repository.py
 git diff --check
 ```
 
-These checks cover the repository foundation, not writing quality or host activation. Keep local work history, credentials, and caches ignored; delete task-owned temporary files. See [SECURITY.md](SECURITY.md).
+These checks cover repository integrity and catalog contracts, not writing quality or host activation. Keep local work history, credentials, and caches ignored; delete task-owned temporary files. See [SECURITY.md](SECURITY.md).
 
 ## Repository guide
 
@@ -65,7 +89,8 @@ These checks cover the repository foundation, not writing quality or host activa
 | [docs/DECISIONS.md](docs/DECISIONS.md) | Confirmed choices and proposals |
 | [docs/RELEASING.md](docs/RELEASING.md) | CI, versioning, and draft source releases |
 | [docs/REFERENCE.md](docs/REFERENCE.md) | Project bibliography and reference notes |
-| [docs/INITIAL_CATALOG_RESEARCH.md](docs/INITIAL_CATALOG_RESEARCH.md) | Initial research for 25 requested methods and comparable projects |
+| [docs/INITIAL_CATALOG_RESEARCH.md](docs/INITIAL_CATALOG_RESEARCH.md) | Research for the 24 retained methods and comparable projects |
+| [skills/](skills/), [docs/CATALOG_REVIEW.md](docs/CATALOG_REVIEW.md) | Experimental skills and review evidence |
 | [templates/method/](templates/method/), [evals/](evals/) | Authoring and evaluation examples, not released methods or model results |
 | [scripts/](scripts/), [tests/](tests/) | Foundation checker and tests |
 | [.github/](.github/) | Collaboration and automation configuration |

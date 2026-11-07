@@ -1,0 +1,83 @@
+[
+  {
+    "id": "procedure",
+    "type": "ordinary",
+    "source": "After the pressure reaches 0 kPa, the valve may be opened by the operator.",
+    "ruleIds": [
+      "explicit-action",
+      "technical-profile"
+    ],
+    "expectations": [
+      "Retain 0 kPa as the prerequisite.",
+      "Identify the operator and preserve may as permission."
+    ],
+    "sourceIds": [
+      "asd-faq"
+    ],
+    "level": "standard",
+    "locale": "en",
+    "method": "asd-ste100"
+  },
+  {
+    "id": "necessary-term",
+    "type": "exception",
+    "source": "The bearing has an interference fit. Explain this to maintenance technicians.",
+    "ruleIds": [
+      "consistent-terms",
+      "direct-sentences"
+    ],
+    "expectations": [
+      "Retain interference fit if a replacement would change the engineering meaning.",
+      "Explain the term without asserting dictionary approval."
+    ],
+    "sourceIds": [
+      "asd-faq"
+    ],
+    "level": "standard",
+    "locale": "en",
+    "method": "asd-ste100"
+  },
+  {
+    "id": "uncertainty",
+    "type": "meaning-preservation",
+    "source": "The cache may reduce latency by about 10 ms for warm reads; it does not improve every workload.",
+    "ruleIds": [
+      "preserve-meaning",
+      "direct-sentences"
+    ],
+    "expectations": [
+      "Retain possibility, approximate 10 ms, warm-read scope, and the negative limit.",
+      "Do not use the social infographic as an approved dictionary."
+    ],
+    "sourceIds": [
+      "asd-faq",
+      "karpathy-post"
+    ],
+    "level": "strict",
+    "locale": "en",
+    "knownBadRewrite": "The cache reduces latency by 10 ms for all reads.",
+    "method": "asd-ste100"
+  },
+  {
+    "id": "unknown-agent-and-permission",
+    "type": "exception",
+    "method": "asd-ste100",
+    "locale": "en",
+    "level": "strict",
+    "source": "The reading was altered during transmission; the cause is unknown. When pressure is 0 kPa, the operator may open the valve.",
+    "ruleIds": [
+      "preserve-meaning",
+      "strict-syntax",
+      "strict-length"
+    ],
+    "sourceIds": [
+      "asd-issue9-selected"
+    ],
+    "expectations": [
+      "Keep the unknown-agent exception instead of blaming transmission.",
+      "Preserve may as permission and 0 kPa as its prerequisite.",
+      "Review English sentence length without deleting either condition."
+    ],
+    "knownBadRewrite": "Transmission altered the reading. Open the valve."
+  }
+]

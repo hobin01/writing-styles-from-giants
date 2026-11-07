@@ -1,0 +1,62 @@
+[
+  {
+    "id": "storage-choice",
+    "type": "ordinary",
+    "source": "Recommend whether to upgrade storage. Current utilization is 92%; forecasts show 98% next month. Expansion costs $800. Deletion would remove required records.",
+    "ruleIds": [
+      "reader-question",
+      "supporting-groups",
+      "evidence-links"
+    ],
+    "expectations": [
+      "Lead with a supported storage decision.",
+      "Connect capacity and retention facts to the recommendation; preserve cost."
+    ],
+    "sourceIds": [
+      "minto-public"
+    ],
+    "level": "standard",
+    "locale": "en",
+    "method": "minto-pyramid"
+  },
+  {
+    "id": "insufficient-evidence",
+    "type": "exception",
+    "source": "Should we launch? We have no reliability data and no agreed launch criteria.",
+    "ruleIds": [
+      "reader-question",
+      "evidence-links"
+    ],
+    "expectations": [
+      "State the unresolved choice and missing decision evidence.",
+      "Do not invent launch criteria or a confident go/no-go answer."
+    ],
+    "sourceIds": [
+      "minto-public",
+      "minto-course"
+    ],
+    "level": "standard",
+    "locale": "en",
+    "method": "minto-pyramid"
+  },
+  {
+    "id": "pilot-limit",
+    "type": "meaning-preservation",
+    "source": "A pilot with 12 users suggests onboarding may be faster; no control group was used.",
+    "ruleIds": [
+      "preserve-meaning",
+      "evidence-links"
+    ],
+    "expectations": [
+      "Retain pilot size, may/suggests, and absence of a control group.",
+      "Keep the recommendation conditional."
+    ],
+    "sourceIds": [
+      "minto-public"
+    ],
+    "level": "strict",
+    "locale": "en",
+    "knownBadRewrite": "The pilot proves faster onboarding.",
+    "method": "minto-pyramid"
+  }
+]

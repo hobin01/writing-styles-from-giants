@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "id": "socratic-self-questioning",
+  "version": "0.1.0",
+  "status": "experimental",
+  "title": "Socratic self-questioning",
+  "kind": "process",
+  "applicability": {
+    "genres": [
+      "argument revision",
+      "decision explanation",
+      "concept examination"
+    ],
+    "audiences": [
+      "general",
+      "specialist"
+    ],
+    "exclusions": [
+      "mandatory user interrogation",
+      "Socrates impersonation",
+      "claims of certain truth after questioning"
+    ]
+  },
+  "sources": [
+    {
+      "id": "plato-apology",
+      "title": "Apology",
+      "author": "Plato; Benjamin Jowett translation",
+      "version": "Hosted English translation",
+      "url": "https://classics.mit.edu/Plato/apology.html",
+      "accessed": "2026-11-07",
+      "evidenceType": "primary-text",
+      "accessScope": "Passages 21b–23b and 38a on examination of claimed knowledge and self/others; not all dialogues.",
+      "rights": "Ancient original and modern translation/site edition have distinct rights; no source passage bundled."
+    },
+    {
+      "id": "plato-phaedrus",
+      "title": "Phaedrus",
+      "author": "Plato; Benjamin Jowett translation",
+      "version": "Hosted English translation",
+      "url": "https://classics.mit.edu/Plato/phaedrus.html",
+      "accessed": "2026-11-07",
+      "evidenceType": "primary-text",
+      "accessScope": "Passage 229e–230a referring to self-knowledge as a Delphic inscription.",
+      "rights": "No translation text bundled; rights of the hosted edition remain separate."
+    }
+  ],
+  "rules": [
+    {
+      "id": "preserve-meaning",
+      "intent": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code; distinguish supplied evidence from inference.",
+      "classification": "invariant",
+      "provenance": "project-original",
+      "rationale": "Project-wide meaning-preservation requirement; style never authorizes a factual change.",
+      "sourceIds": [],
+      "exceptions": [],
+      "check": "human-review",
+      "levels": {
+        "light": "error",
+        "standard": "error",
+        "strict": "error"
+      }
+    },
+    {
+      "id": "define-claim",
+      "intent": "State the claim and clarify terms whose meaning changes its truth or usefulness.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Modern self-examination procedure inspired by Plato's depiction of Socrates.",
+      "sourceIds": [
+        "plato-apology"
+      ],
+      "exceptions": [
+        "Do not demand definitions of terms that do not affect the task."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "advisory",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "test-assumptions",
+      "intent": "Identify supporting reasons and assumptions; test a consequential one with a counterexample or alternative explanation.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Bounded operational adaptation of examination of knowledge claims.",
+      "sourceIds": [
+        "plato-apology"
+      ],
+      "exceptions": [
+        "Use only evidence available or explicitly marked as missing; do not invent a refutation."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "off",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "revise-calibration",
+      "intent": "Revise the claim to the strongest version supported by the evidence, or retain a specific uncertainty.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Project adaptation of recognizing limits to claimed knowledge.",
+      "sourceIds": [
+        "plato-apology"
+      ],
+      "exceptions": [
+        "A claim can remain unchanged when the challenge fails; questioning does not guarantee a different answer."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "off",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "bounded-stop",
+      "intent": "Stop when further questions would not materially change the answer; present the resulting claim, reasons, and material limits.",
+      "classification": "guideline",
+      "provenance": "project-original",
+      "rationale": "Project-original stopping rule for practical agent self-review, not an ancient prescribed algorithm.",
+      "sourceIds": [],
+      "exceptions": [
+        "A requested teaching dialogue can continue at the learner's pace within the task."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "off",
+        "standard": "off",
+        "strict": "warning"
+      }
+    }
+  ],
+  "languageScope": "language-independent"
+}

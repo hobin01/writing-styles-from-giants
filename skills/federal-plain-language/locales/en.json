@@ -1,0 +1,29 @@
+{
+  "method": "federal-plain-language",
+  "methodVersion": "0.1.0",
+  "locale": "en",
+  "status": "experimental",
+  "reviewedSourceRules": [],
+  "rules": {
+    "preserve-meaning": {
+      "instruction": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code; distinguish supplied evidence from inference.",
+      "adaptation": false
+    },
+    "reader-task": {
+      "instruction": "Identify what the intended reader needs to find, understand, and do; organize around that task.",
+      "adaptation": false
+    },
+    "usable-organization": {
+      "instruction": "Put the answer and required action where the reader can find them; group prerequisites, steps, and exceptions coherently.",
+      "adaptation": false
+    },
+    "clear-expression": {
+      "instruction": "Prefer familiar, direct wording and manageable sentences while retaining actors and logical connections.",
+      "adaptation": false
+    },
+    "reader-check": {
+      "instruction": "Check whether a representative reader can locate the answer, explain its conditions, and identify the next step.",
+      "adaptation": false
+    }
+  }
+}

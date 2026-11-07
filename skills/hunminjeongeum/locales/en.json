@@ -1,0 +1,29 @@
+{
+  "method": "hunminjeongeum",
+  "methodVersion": "0.1.0",
+  "locale": "en",
+  "status": "experimental",
+  "reviewedSourceRules": [],
+  "rules": {
+    "preserve-meaning": {
+      "instruction": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code; distinguish supplied evidence from inference.",
+      "adaptation": false
+    },
+    "purpose-opening": {
+      "instruction": "Open with the reader's problem, why the document is needed, and the intended benefit.",
+      "adaptation": false
+    },
+    "connected-development": {
+      "instruction": "Develop principles, analysis, and examples that address the opening problem in dependency order.",
+      "adaptation": false
+    },
+    "bounded-conclusion": {
+      "instruction": "Conclude with what the explanation establishes, its scope, and relevant unresolved limits.",
+      "adaptation": false
+    },
+    "purpose-trace": {
+      "instruction": "Check that major body claims support the stated purpose and that the conclusion adds no unsupported promise.",
+      "adaptation": false
+    }
+  }
+}

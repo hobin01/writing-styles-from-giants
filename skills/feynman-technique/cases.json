@@ -1,0 +1,64 @@
+[
+  {
+    "id": "explain-feedback",
+    "type": "ordinary",
+    "locale": "en",
+    "level": "standard",
+    "source": "A thermostat compares measured room temperature with a target. In heating mode, it requests heat below the lower threshold and stops above the upper threshold. The gap reduces frequent switching.",
+    "ruleIds": [
+      "audience-prerequisites",
+      "mechanism-and-gaps",
+      "bounded-simplification"
+    ],
+    "sourceIds": [
+      "young-2011",
+      "goodstein-1996"
+    ],
+    "expectations": [
+      "Define threshold and show how two thresholds reduce switching.",
+      "Keep the heating-mode scope."
+    ],
+    "knownBadRewrite": "A thermostat knows when everyone is comfortable.",
+    "method": "feynman-technique"
+  },
+  {
+    "id": "finished-answer-without-quiz",
+    "type": "exception",
+    "locale": "en",
+    "level": "strict",
+    "source": "Give a finished explanation of a cache hit. A hit occurs when the requested item is already in the cache; a miss requires another lookup. Do not ask me questions.",
+    "ruleIds": [
+      "transfer-check",
+      "audience-prerequisites"
+    ],
+    "sourceIds": [
+      "young-2017"
+    ],
+    "expectations": [
+      "Give a worked new lookup rather than forcing the user to answer a quiz.",
+      "Do not claim that the user has demonstrated mastery."
+    ],
+    "knownBadRewrite": "Before I explain, answer these five questions.",
+    "method": "feynman-technique"
+  },
+  {
+    "id": "avoid-causal-invention",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "standard",
+    "source": "This study found an association between sleep duration and test scores; it did not establish a causal effect.",
+    "ruleIds": [
+      "mechanism-and-gaps",
+      "preserve-meaning"
+    ],
+    "sourceIds": [
+      "young-2017"
+    ],
+    "expectations": [
+      "Keep the distinction between association and causation.",
+      "Do not invent a causal mechanism as established study evidence."
+    ],
+    "knownBadRewrite": "Sleeping longer causes higher scores.",
+    "method": "feynman-technique"
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "id": "reader-action",
+    "type": "ordinary",
+    "locale": "en",
+    "level": "standard",
+    "source": "Applicants are advised that submission of the form is to be completed by 30 June. A signature is required. Submit through the portal.",
+    "ruleIds": [
+      "reader-task",
+      "usable-organization",
+      "clear-expression"
+    ],
+    "sourceIds": [
+      "plain-intro",
+      "plain-sentences"
+    ],
+    "expectations": [
+      "State the submission action, deadline, signature requirement, and portal clearly.",
+      "Do not invent a year, fee, eligibility condition, or alternative channel."
+    ],
+    "knownBadRewrite": "You can apply any time by email.",
+    "method": "federal-plain-language"
+  },
+  {
+    "id": "technical-term-needed",
+    "type": "exception",
+    "locale": "en",
+    "level": "strict",
+    "source": "For cardiology staff: record the QTc interval and the correction formula used. Do not replace the term with an imprecise lay synonym.",
+    "ruleIds": [
+      "reader-task",
+      "clear-expression"
+    ],
+    "sourceIds": [
+      "plain-intro",
+      "plain-sentences"
+    ],
+    "expectations": [
+      "Retain QTc interval and the formula requirement for the specified expert audience.",
+      "Simplify surrounding wording only when precision is preserved."
+    ],
+    "knownBadRewrite": "Record the heart number.",
+    "method": "federal-plain-language"
+  },
+  {
+    "id": "permission-and-condition",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "standard",
+    "source": "You may request a review within 14 days only if the notice contains an error; this does not suspend the payment deadline.",
+    "ruleIds": [
+      "usable-organization",
+      "clear-expression",
+      "preserve-meaning"
+    ],
+    "sourceIds": [
+      "plain-intro",
+      "plain-sentences"
+    ],
+    "expectations": [
+      "Retain permission, 14-day limit, error condition, and unchanged payment deadline."
+    ],
+    "knownBadRewrite": "Request a review to suspend payment.",
+    "method": "federal-plain-language"
+  }
+]

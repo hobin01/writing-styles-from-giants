@@ -1,0 +1,62 @@
+[
+  {
+    "id": "separate-sections",
+    "type": "ordinary",
+    "locale": "en",
+    "level": "standard",
+    "source": "Question: does timer T reduce missed checks? Method: 20 synthetic trials with T and 20 without T. Result: 2 missed checks with T, 5 without. Limitation: one simulated workflow only.",
+    "ruleIds": [
+      "question-and-context",
+      "reproducible-methods",
+      "findings-vs-interpretation"
+    ],
+    "sourceIds": [
+      "icmje-manuscript"
+    ],
+    "expectations": [
+      "Separate question, actual design, observed counts, and interpretation.",
+      "Retain synthetic-trial status and single-workflow limit."
+    ],
+    "knownBadRewrite": "The clinical trial proves timer T prevents errors.",
+    "method": "imrad"
+  },
+  {
+    "id": "missing-method-details",
+    "type": "exception",
+    "locale": "en",
+    "level": "strict",
+    "source": "Write an IMRaD outline from these notes: a pilot recorded lower latency after an update. Sample size, procedure, estimates, and uncertainty were not supplied.",
+    "ruleIds": [
+      "reproducible-methods",
+      "report-consistency"
+    ],
+    "sourceIds": [
+      "icmje-manuscript"
+    ],
+    "expectations": [
+      "Mark missing methods and results precisely.",
+      "Do not invent sample size, measurements, significance, approval, or procedures to fill headings."
+    ],
+    "knownBadRewrite": "We enrolled 100 participants and found p < 0.05.",
+    "method": "imrad"
+  },
+  {
+    "id": "uncertainty-and-scope",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "standard",
+    "source": "Among 40 simulated runs, the mean difference was 2 ms (95% CI -1 to 5 ms). The data do not establish a reduction in deployment latency.",
+    "ruleIds": [
+      "findings-vs-interpretation",
+      "preserve-meaning"
+    ],
+    "sourceIds": [
+      "icmje-manuscript"
+    ],
+    "expectations": [
+      "Retain n=40, simulation, 2 ms, CI bounds, and the unsupported deployment conclusion."
+    ],
+    "knownBadRewrite": "The update reduces deployment latency by 2 ms.",
+    "method": "imrad"
+  }
+]

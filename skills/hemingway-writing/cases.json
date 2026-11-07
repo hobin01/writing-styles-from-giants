@@ -1,0 +1,61 @@
+[
+  {
+    "id": "concrete-observation",
+    "type": "ordinary",
+    "locale": "en",
+    "level": "standard",
+    "source": "The pressure was at a very low level. The gauge read 0 kPa.",
+    "ruleIds": [
+      "concrete-detail",
+      "preserve-meaning"
+    ],
+    "sourceIds": [
+      "paris-review-1958"
+    ],
+    "expectations": [
+      "Prefer the exact gauge reading over the vague description.",
+      "Do not infer that the gauge or equipment has failed."
+    ],
+    "knownBadRewrite": "The gauge was broken.",
+    "method": "hemingway-writing"
+  },
+  {
+    "id": "necessary-condition",
+    "type": "exception",
+    "locale": "en",
+    "level": "strict",
+    "source": "Open the valve only after the pressure reaches 0 kPa; trapped pressure can remain after shutdown.",
+    "ruleIds": [
+      "informed-omission",
+      "preserve-meaning"
+    ],
+    "sourceIds": [
+      "paris-review-1958"
+    ],
+    "expectations": [
+      "Keep the prerequisite and the warning.",
+      "Do not hide safety information under informed omission."
+    ],
+    "knownBadRewrite": "After shutdown, open the valve.",
+    "method": "hemingway-writing"
+  },
+  {
+    "id": "uncertain-finding",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "standard",
+    "source": "The cracked seal may explain some leaks, but we have not tested it. [A]",
+    "ruleIds": [
+      "supported-implication",
+      "preserve-meaning"
+    ],
+    "sourceIds": [
+      "paris-review-1958"
+    ],
+    "expectations": [
+      "Retain may, some, the lack of testing, and citation [A]."
+    ],
+    "knownBadRewrite": "The cracked seal caused the leaks.",
+    "method": "hemingway-writing"
+  }
+]

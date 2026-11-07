@@ -1,6 +1,6 @@
 # Architecture and behavior contracts
 
-Proposed behavior; no production catalog or runtime exists. Scope and delivery sequence are in [PROJECT.md](PROJECT.md).
+Portable content is implemented as experimental skills. Selection and levels operate through instructions; no runtime router or installer exists. Scope and delivery sequence are in [PROJECT.md](PROJECT.md).
 
 ## Portable content
 
@@ -10,11 +10,11 @@ The complete `skills/<method-id>/` directory is the distribution unit:
 skills/<method-id>/
   SKILL.md
   method.json
-  locales/en.json
-  locales/ko.json
+  locales/en.json          # canonical English rule wording for most methods
+  cases.json               # synthetic observable expectations
 ```
 
-`SKILL.md` owns discovery and concise agent steps. `method.json` owns intent, sources, applicability, stable rule IDs, and level policies. Locales own wording, measurements, and justified adaptations. Include references/scripts only when needed; host metadata stays outside the portable core. The [templates](../templates/method/) are authoring examples.
+`SKILL.md` owns discovery and concise agent steps. `method.json` owns intent, sources, applicability, stable rule IDs, and level policies. Locale records own rule wording, measurements, and justified linguistic adaptations. Only the Korean companion requires `locales/ko.json`; an English-written language-independent rule does not need a Korean clone. Include references/scripts only when needed; host metadata stays outside the portable core. The [templates](../templates/method/) are authoring examples; [skills](../skills/) contains the experimental implementations. Each skill directory is self-contained, including its evidence and cases.
 
 Use the host's model and existing installers/validators from the [reuse review](../THIRD_PARTY_NOTICES.md). Add custom runtime, adapters, categories, or plugins only for a demonstrated gap. Extend the Python foundation checks for project-specific rules rather than duplicating a standard-format validator.
 
@@ -28,7 +28,7 @@ Inputs are purpose, genre, audience, output language, optional method/level, and
 4. Recommend one fit with reasons and limitations. Start with one method; combine only explicitly compatible methods when needed. Record conflicts as exceptions or choices.
 5. Auto mode applies within selected scope; it grants no file-writing permission or global instruction changes.
 
-Audit output records method/version, locale, level, assumptions, fit, skipped rules, and unresolved checks. Keep it out of finished prose unless requested.
+Audit output records method/version, locale, level, assumptions, fit, skipped rules, and unresolved checks. Keep it out of finished prose unless requested. Explicit application does not require a separate audit; automatic selection must expose at least the method and level in a status or audit view.
 
 ## Levels
 
@@ -38,7 +38,7 @@ Audit output records method/version, locale, level, assumptions, fit, skipped ru
 | `standard` | Ordinary applicable guidelines; explain relevant exceptions |
 | `strict` | Full eligible profile; run available checks and account for unresolved applicable rules |
 
-Meaning-preservation invariants and justified exceptions apply at every level. Use hard errors only for reliably checkable violations. Unverified checks stay unverified; strictness is neither a compliance percentage nor official certification. Numeric readability limits require locale-specific evidence under [LOCALIZATION.md](LOCALIZATION.md).
+Meaning-preservation invariants and justified exceptions apply at every level. Selected skills default to `standard` without a level; ASD `normal` is an alias for `standard`. Its 80%/100% descriptions are intensity labels, not scores. Use hard errors only for reliably checkable violations. Unverified checks stay unverified; strictness is neither a compliance percentage nor official certification. Numeric readability limits require locale-specific evidence under [LOCALIZATION.md](LOCALIZATION.md).
 
 Explicit choices work without configuration files. If persistent settings become necessary, proposed precedence is request/CLI, nearest project settings, user settings, then defaults. Follow output language when locale is unspecified; reject unsupported values, expose host discovery conflicts, and never persist inferred preferences or search unrelated parent/private files. Arbitrary command hooks are excluded.
 

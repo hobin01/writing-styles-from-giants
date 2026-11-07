@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "id": "amazon-six-page-narrative",
+  "version": "0.1.0",
+  "status": "experimental",
+  "title": "Amazon six-page narrative",
+  "kind": "document",
+  "applicability": {
+    "genres": [
+      "planning narrative",
+      "decision memo",
+      "strategy proposal"
+    ],
+    "audiences": [
+      "cross-functional reviewers",
+      "decision makers"
+    ],
+    "exclusions": [
+      "PRFAQ substitution",
+      "six-page claims without rendering",
+      "Amazon internal approval procedures"
+    ]
+  },
+  "sources": [
+    {
+      "id": "aws-narrative",
+      "title": "How to Use Amazon’s Narrative Process to Improve Your Writing, Communications and Decision-making",
+      "author": "Richard Howard, AWS Startup Business Development",
+      "url": "https://aws.amazon.com/blogs/startups/startup-advice-how-to-write-a-narrative/",
+      "version": "2019-09-25",
+      "accessed": "2026-11-07",
+      "evidenceType": "primary-explanation",
+      "accessScope": "Introduction, narrative definition, starting guidance, and beginning of fictional example read.",
+      "rights": "Public explanatory article; no permissive license verified. Original summary only; fictional example not copied."
+    }
+  ],
+  "rules": [
+    {
+      "id": "preserve-meaning",
+      "intent": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code at every level.",
+      "classification": "invariant",
+      "provenance": "project-original",
+      "rationale": "Shared project meaning-preservation requirement; style never authorizes factual change.",
+      "sourceIds": [],
+      "exceptions": [],
+      "check": "human-review",
+      "levels": {
+        "light": "error",
+        "standard": "error",
+        "strict": "error"
+      }
+    },
+    {
+      "id": "decision-and-context",
+      "intent": "Explain the purpose, reader decision, and essential background for reviewers outside the immediate team.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Original operational guidance adapted from the identified source scope.",
+      "sourceIds": [
+        "aws-narrative"
+      ],
+      "exceptions": [],
+      "check": "judgment",
+      "levels": {
+        "light": "advisory",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "evidence-and-reasoning",
+      "intent": "Connect important claims and proposed actions to evidence while distinguishing assumptions and uncertainty.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Original operational guidance adapted from the identified source scope.",
+      "sourceIds": [
+        "aws-narrative"
+      ],
+      "exceptions": [
+        "If evidence is missing, name the gap instead of fabricating support."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "advisory",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "coherent-narrative",
+      "intent": "Develop the argument in connected prose with headings and supporting tables only where useful.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Original operational guidance adapted from the identified source scope.",
+      "sourceIds": [
+        "aws-narrative"
+      ],
+      "exceptions": [
+        "A table, figure, or list may be clearer for genuinely parallel information."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "off",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    },
+    {
+      "id": "readable-page-budget",
+      "intent": "Use a six-page main-body ceiling only with a specified and inspected rendered layout; put supporting detail in appendices without hiding decision-critical limits.",
+      "classification": "guideline",
+      "provenance": "adaptation",
+      "rationale": "Original operational guidance adapted from the identified source scope.",
+      "sourceIds": [
+        "aws-narrative"
+      ],
+      "exceptions": [
+        "For chat or Markdown without rendering, describe the page budget as unverified and use a concise narrative."
+      ],
+      "check": "judgment",
+      "levels": {
+        "light": "off",
+        "standard": "warning",
+        "strict": "warning"
+      }
+    }
+  ],
+  "languageScope": "language-independent"
+}

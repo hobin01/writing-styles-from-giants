@@ -1,0 +1,29 @@
+{
+  "method": "aristotle-syllogism",
+  "methodVersion": "0.1.0",
+  "locale": "en",
+  "status": "experimental",
+  "reviewedSourceRules": [],
+  "rules": {
+    "preserve-meaning": {
+      "instruction": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code; distinguish supplied evidence from inference.",
+      "adaptation": false
+    },
+    "premises-and-terms": {
+      "instruction": "Separate premises from conclusion and use each term consistently; expose implicit premises as assumptions.",
+      "adaptation": false
+    },
+    "quantifier-scope": {
+      "instruction": "Retain universal/particular scope, negation, modality, and existence assumptions when formalizing.",
+      "adaptation": false
+    },
+    "validity-separate-support": {
+      "instruction": "Ask whether the conclusion follows if the premises hold, then separately assess support for those premises.",
+      "adaptation": false
+    },
+    "countermodel-check": {
+      "instruction": "For a disputed inference, construct a possible case where the premises hold and conclusion fails, or give the explicit valid form.",
+      "adaptation": false
+    }
+  }
+}

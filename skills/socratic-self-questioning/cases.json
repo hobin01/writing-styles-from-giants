@@ -1,0 +1,64 @@
+[
+  {
+    "id": "challenge-universal",
+    "type": "ordinary",
+    "locale": "en",
+    "level": "standard",
+    "source": "Remote work always increases productivity because our team closed more tickets last month. Team size also increased last month.",
+    "ruleIds": [
+      "define-claim",
+      "test-assumptions",
+      "revise-calibration"
+    ],
+    "sourceIds": [
+      "plato-apology"
+    ],
+    "expectations": [
+      "Clarify productivity and challenge the causal universal.",
+      "Retain team-size change as an alternative explanation.",
+      "Offer a bounded statement supported by the observation."
+    ],
+    "knownBadRewrite": "Remote work always increases productivity.",
+    "method": "socratic-self-questioning"
+  },
+  {
+    "id": "no-compulsory-dialogue",
+    "type": "exception",
+    "locale": "en",
+    "level": "strict",
+    "source": "Rewrite this recommendation after checking its assumptions; give me the finished paragraph. We should add a retry because a test request failed once; the failure cause is unknown.",
+    "ruleIds": [
+      "test-assumptions",
+      "bounded-stop"
+    ],
+    "sourceIds": [
+      "plato-apology"
+    ],
+    "expectations": [
+      "Perform self-review and deliver a paragraph rather than an unsolicited interview.",
+      "Keep the unknown cause and avoid treating retries as proven effective."
+    ],
+    "knownBadRewrite": "First answer ten questions before I write anything.",
+    "method": "socratic-self-questioning"
+  },
+  {
+    "id": "preserve-uncertainty",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "standard",
+    "source": "The survey suggests that some users prefer the new navigation; only 12 volunteers responded.",
+    "ruleIds": [
+      "revise-calibration",
+      "preserve-meaning"
+    ],
+    "sourceIds": [
+      "plato-apology"
+    ],
+    "expectations": [
+      "Preserve suggests, some, volunteer sampling, and n=12.",
+      "Do not claim a representative preference for all users."
+    ],
+    "knownBadRewrite": "Users prefer the new navigation.",
+    "method": "socratic-self-questioning"
+  }
+]

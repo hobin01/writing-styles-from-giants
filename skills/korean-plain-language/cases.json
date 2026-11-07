@@ -1,0 +1,86 @@
+[
+  {
+    "id": "conditional-permission",
+    "type": "ordinary",
+    "method": "korean-plain-language",
+    "locale": "ko",
+    "level": "strict",
+    "source": "백업이 확인된 경우에만 이전 파일을 삭제해도 돼요.",
+    "ruleIds": [
+      "preserve-meaning",
+      "register-and-modality",
+      "logical-sentences"
+    ],
+    "sourceIds": [
+      "nikl-guide"
+    ],
+    "expectations": [
+      "백업 확인 조건을 유지한다.",
+      "삭제 허용을 삭제 의무로 바꾸지 않는다.",
+      "요체를 유지한다."
+    ],
+    "knownBadRewrite": "이전 파일을 삭제하세요.",
+    "request": "자연스럽게 다듬고 요체를 유지해 주세요."
+  },
+  {
+    "id": "natural-omission",
+    "type": "exception",
+    "method": "korean-plain-language",
+    "locale": "ko",
+    "level": "strict",
+    "source": "설정 화면을 여세요. 그다음 저장을 누르세요. 사용자에게 직접 설명하는 안내문입니다.",
+    "ruleIds": [
+      "referents-and-particles",
+      "reader-terminology"
+    ],
+    "sourceIds": [
+      "nikl-guide"
+    ],
+    "expectations": [
+      "독자가 행위자임이 분명하므로 매 문장에 사용자는을 추가할 필요가 없다.",
+      "화면 이름과 동작을 유지한다."
+    ],
+    "knownBadRewrite": "사용자는 설정 화면을 엽니다. 사용자는 저장을 누릅니다."
+  },
+  {
+    "id": "uncertain-estimate",
+    "type": "meaning-preservation",
+    "method": "korean-plain-language",
+    "locale": "ko",
+    "level": "strict",
+    "source": "이 설정은 일부 작업에서 지연 시간을 약 20ms 줄일 수 있지만, 효과는 아직 검증되지 않았습니다. [R2]",
+    "ruleIds": [
+      "preserve-meaning",
+      "register-and-modality"
+    ],
+    "sourceIds": [
+      "nikl-guide"
+    ],
+    "expectations": [
+      "일부 작업과 가능성을 유지한다.",
+      "약 20ms와 검증되지 않았다는 한계를 보존한다.",
+      "[R2]를 유지한다."
+    ],
+    "knownBadRewrite": "이 설정은 모든 작업의 지연을 20ms 줄입니다."
+  },
+  {
+    "id": "missing-actor",
+    "type": "exception",
+    "method": "korean-plain-language",
+    "locale": "ko",
+    "level": "strict",
+    "source": "담당자와 신청자의 승인 후 제출할 수 있습니다. 누구의 승인이 필요한지는 자료에 없습니다.",
+    "ruleIds": [
+      "referents-and-particles",
+      "preserve-meaning"
+    ],
+    "sourceIds": [
+      "nikl-guide"
+    ],
+    "expectations": [
+      "승인 주체나 결합 범위를 임의로 확정하지 않고 모호함을 표시한다.",
+      "허용을 의무로 바꾸지 않는다."
+    ],
+    "knownBadRewrite": "담당자와 신청자가 모두 승인하면 반드시 제출해야 합니다."
+  }
+]

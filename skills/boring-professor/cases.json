@@ -1,0 +1,54 @@
+[
+  {
+    "id": "tcp",
+    "type": "ordinary",
+    "source": "Explain TCP retransmission to a systems engineering student.",
+    "ruleIds": [
+      "technical-foundation",
+      "dependency-order",
+      "literal-delivery"
+    ],
+    "expectations": [
+      "Define relevant segments, acknowledgments, and timers.",
+      "Explain loss detection and retransmission literally without a postal analogy."
+    ],
+    "sourceIds": [],
+    "level": "standard",
+    "locale": "en",
+    "method": "boring-professor"
+  },
+  {
+    "id": "shared-knowledge",
+    "type": "exception",
+    "source": "Explain a database isolation anomaly to experienced database engineers in one paragraph.",
+    "ruleIds": [
+      "technical-foundation",
+      "scope-and-evidence"
+    ],
+    "expectations": [
+      "Use established terminology without an elementary glossary.",
+      "Respect the one-paragraph scope and preserve relevant isolation assumptions."
+    ],
+    "sourceIds": [],
+    "level": "standard",
+    "locale": "en",
+    "method": "boring-professor"
+  },
+  {
+    "id": "conditional-gain",
+    "type": "meaning-preservation",
+    "source": "Under the tested workload, changing the queue size from 64 to 128 reduced the median by 2 ms; p99 latency did not improve.",
+    "ruleIds": [
+      "preserve-meaning",
+      "scope-and-evidence"
+    ],
+    "expectations": [
+      "Retain tested-workload scope, both queue sizes, 2 ms median change, and unchanged p99."
+    ],
+    "sourceIds": [],
+    "level": "standard",
+    "locale": "en",
+    "knownBadRewrite": "Increasing the queue always improves latency.",
+    "method": "boring-professor"
+  }
+]

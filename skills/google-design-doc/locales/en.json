@@ -1,0 +1,29 @@
+{
+  "method": "google-design-doc",
+  "methodVersion": "0.1.0",
+  "locale": "en",
+  "status": "experimental",
+  "reviewedSourceRules": [],
+  "rules": {
+    "preserve-meaning": {
+      "instruction": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code at every level.",
+      "adaptation": false
+    },
+    "context-and-goals": {
+      "instruction": "State the problem, constraints, goals, and non-goals that determine the design decision.",
+      "adaptation": false
+    },
+    "proposed-design": {
+      "instruction": "Describe the proposed behavior, major components, interfaces, and dependencies at decision-relevant detail.",
+      "adaptation": false
+    },
+    "alternatives-and-tradeoffs": {
+      "instruction": "Compare plausible alternatives against the stated goals and explain consequential trade-offs.",
+      "adaptation": false
+    },
+    "review-and-open-questions": {
+      "instruction": "Separate proposals, accepted decisions, open questions, and review evidence.",
+      "adaptation": false
+    }
+  }
+}

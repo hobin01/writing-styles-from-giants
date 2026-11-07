@@ -1,0 +1,29 @@
+{
+  "method": "feynman-technique",
+  "methodVersion": "0.1.0",
+  "locale": "en",
+  "status": "experimental",
+  "reviewedSourceRules": [],
+  "rules": {
+    "preserve-meaning": {
+      "instruction": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code; distinguish supplied evidence from inference.",
+      "adaptation": false
+    },
+    "audience-prerequisites": {
+      "instruction": "Set the intended audience and prerequisites; explain required terms rather than replacing every technical word.",
+      "adaptation": false
+    },
+    "mechanism-and-gaps": {
+      "instruction": "Explain how the parts produce the result; identify missing links and verify them with relevant evidence before revising.",
+      "adaptation": false
+    },
+    "bounded-simplification": {
+      "instruction": "Use examples or analogies only with their relevant correspondence and limits; retain conditions and uncertainty.",
+      "adaptation": false
+    },
+    "transfer-check": {
+      "instruction": "Check the explanation with a new application or counterexample; distinguish a proposed test from demonstrated mastery.",
+      "adaptation": false
+    }
+  }
+}

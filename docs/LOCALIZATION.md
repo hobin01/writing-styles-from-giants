@@ -1,6 +1,6 @@
 # Localization and language adaptation
 
-Start with English and Korean. Contributor documents are canonical English; writing rules belong to the output locale.
+Author instructions primarily in English; implement a separate Korean-specific skill only when its linguistic rules are needed. Contributor documents are canonical English; writing rules belong to the output locale.
 
 ## README parity
 
@@ -13,7 +13,9 @@ Keep both READMEs aligned in headings/order, tables, links, commands, status, an
 - Output language is the language requested for the finished text.
 - Linguistic rules and evaluation belong to the output locale. Translating instructions alone does not validate a locale.
 
-Use BCP 47 locale identifiers. An exact reviewed variant is preferred. A parent-language fallback is allowed only when the method declares it suitable; disclose it. If no adequate variant exists, report the limitation or use recommendation-only mode. Never silently use English word limits for Korean output.
+Each method declares `languageScope`. A language-independent rule can be explained in canonical `locales/en.json` and used with the requested output language; this does not certify its Korean wording or readership. English grammatical/dictionary rules remain English-only. `korean-plain-language` has Korean rule wording and Korean synthetic cases, with independent native review pending.
+
+Use BCP 47 locale identifiers for actual linguistic profiles. An exact reviewed variant is preferred. A parent-language fallback is allowed only when the method declares it suitable; disclose it. If no adequate variant exists, report the limitation or use recommendation-only mode. Never silently use English word limits for Korean output.
 
 ## Measurement
 

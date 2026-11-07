@@ -1,0 +1,29 @@
+{
+  "method": "nist-technical-publication",
+  "methodVersion": "0.1.0",
+  "locale": "en",
+  "status": "experimental",
+  "reviewedSourceRules": [],
+  "rules": {
+    "preserve-meaning": {
+      "instruction": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code at every level.",
+      "adaptation": false
+    },
+    "traceable-report": {
+      "instruction": "Organize the report around its purpose, method or basis, findings, and bounded conclusions, with traceable headings and references.",
+      "adaptation": false
+    },
+    "precise-technical-language": {
+      "instruction": "Use consistent technical terminology and define reader-relevant terms without reducing scientific precision.",
+      "adaptation": false
+    },
+    "measurement-integrity": {
+      "instruction": "Preserve quantities, symbols, SI units, measurement conditions, and reported uncertainty; flag missing definitions rather than infer them.",
+      "adaptation": false
+    },
+    "accessible-evidence": {
+      "instruction": "Make figures and tables understandable through descriptive titles, labels, units, captions, and appropriate text alternatives.",
+      "adaptation": false
+    }
+  }
+}

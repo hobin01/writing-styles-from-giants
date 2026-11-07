@@ -1,6 +1,6 @@
 # Working in writing-styles-from-giants
 
-AI-agent skills for documented writing and explanation methods. Foundation only; no production skills or installer yet.
+AI-agent skills for documented writing and explanation methods. Experimental skill catalog; no installer or verified host integration yet.
 
 ## Start here
 
@@ -43,4 +43,4 @@ python3 scripts/check_repository.py
 git diff --check
 ```
 
-These check the foundation, not LLM writing quality or host compatibility. New nontrivial runtime logic needs a behavioral test. New method behavior needs source-linked cases; new localization needs language review. Report what changed, the checks actually run, and material limitations. Do not claim installation, activation, compliance, or quality improvement without evidence.
+These check repository integrity and method contracts, not LLM writing quality or host compatibility. New nontrivial runtime logic needs a behavioral test. New method behavior needs source-linked cases; new localization needs language review. Report what changed, the checks actually run, and material limitations. Do not claim installation, activation, compliance, or quality improvement without evidence.
