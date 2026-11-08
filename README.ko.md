@@ -21,7 +21,9 @@ $wsg docs ko
 - **고르기 어렵다면** `$wsg auto [단계] 요청`을 쓰세요. 요청의 목적과 독자에 맞는 스킬을 골라 이유를 알려 주고, 그 스킬로 답합니다.
 - **목록부터 보려면** `$wsg docs`를 쓰세요. 기본 언어는 영어입니다. `$wsg docs ko`는 한국어로, `$wsg docs en`은 영어로 각 스킬의 용도를 보여 줍니다.
 
-Claude Code에서는 각각 `/wsg`, `/wsg:auto`, `/wsg:docs ko`로 입력합니다. 이 저장소 안에서 쓰는 설정입니다. [도구별 확인 범위](docs/COMPATIBILITY.md)
+다른 프로젝트에서도 `$wsg`를 쓰려면 [Codex 전역 연결](docs/COMPATIBILITY.md#codex-user-scope)을 한 번 설정하세요. 이 저장소를 직접 가리키므로 스킬이나 명령이 로컬에서 바뀌면 다시 설치할 필요가 없습니다.
+
+Claude Code에서는 이 저장소 안에서 각각 `/wsg`, `/wsg:auto`, `/wsg:docs ko`로 입력합니다. [도구별 확인 범위](docs/COMPATIBILITY.md)
 
 ## 어느 스킬을 고르면 될까?
 

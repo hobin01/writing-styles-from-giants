@@ -1,15 +1,37 @@
 # Host compatibility
 
-Open this checkout in your agent. The adapters use the host's model and read the same [command guide](../commands/WSG.md). There is no package to install and no user settings to change.
+Open this checkout in your agent, or use the Codex user-scope setup below to work elsewhere. The adapters use the host's model and read the same [command guide](../commands/WSG.md).
 
 | Host | Status | Documentation starting point |
 | --- | --- | --- |
-| Codex CLI and app-server | Smoke-tested: `$wsg METHOD …`, `$wsg auto …`, `$wsg docs ko` | [Repo-scoped skills and explicit invocation](https://learn.chatgpt.com/docs/build-skills) · [CLI slash-command menu](https://learn.chatgpt.com/docs/developer-commands?surface=cli) |
+| Codex CLI and app-server | Smoke-tested in the checkout and via a user-scope link from an unrelated project | [Repository and user skills, directory symlinks and explicit invocation](https://learn.chatgpt.com/docs/build-skills) · [CLI slash-command menu](https://learn.chatgpt.com/docs/developer-commands?surface=cli) |
 | Claude Code | Project slash-command discovery and expansion verified: `/wsg`, `/wsg:auto`, `/wsg:docs`. Live Claude generation untested. | [Project command names and arguments](https://code.claude.com/docs/en/skills#how-a-skill-gets-its-command-name) |
 | OpenCode | No native slash adapter shipped | [Skills](https://opencode.ai/docs/skills/) and [V2 skills](https://opencode.ai/v2/docs/skills) |
 | Antigravity | planned | [Skills](https://antigravity.google/docs/skills) |
 | Pi | planned | [Skills](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/skills.md) |
 | Cline | planned | [Skills](https://docs.cline.bot/customization/skills) |
+
+## Codex user scope
+
+From the root of a checkout you intend to keep, link the adapter into Codex's user skills directory. Start a new Codex chat in another project and enter `$wsg docs ko` or `$wsg auto YOUR REQUEST`. Codex follows the link to the command guide and all 22 methods.
+
+```sh
+python3 - <<'PY'
+from pathlib import Path
+
+adapter = Path(".agents/skills/wsg").resolve(strict=True)
+link = Path.home() / ".agents/skills/wsg"
+link.parent.mkdir(parents=True, exist_ok=True)
+if link.is_symlink() and link.resolve() == adapter:
+    print("WSG already points to this checkout.")
+else:
+    link.symlink_to(adapter, target_is_directory=True)
+PY
+```
+
+An existing different file, directory or link causes the command to stop. The link follows the local checkout's current files, including working edits and branch switches. When a change is only on GitHub, fast-forward the clean source checkout on `main` with `git pull --ff-only origin main`. If a running Codex session still shows an old skill listing, start a new session. Keep the checkout in place for as long as you use the link.
+
+**Verified on 2026-11-09.** Codex app-server 0.167.0 on macOS discovered one enabled `wsg` skill at user scope from a separate Git repository. That repository had its own unrelated `commands/WSG.md`. A native `$wsg docs ko` turn read the WSG checkout’s Korean catalog and returned all 22 IDs. A separate `$wsg auto` turn read ELI5’s instructions, metadata and locale in that checkout and applied `standard`. The user link and source adapter referenced the same file after the adapter was edited.
 
 ## Checkout checks · 2026-11-08
 
