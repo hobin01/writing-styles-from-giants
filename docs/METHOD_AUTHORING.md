@@ -55,4 +55,6 @@ Set concrete checks before generation. Give the same source facts and request to
 
 To repeat one pair with a signed-in Codex CLI, save just the published prompt to a text file and run `python3 scripts/run_writing_pair.py METHOD < prompt.txt` from the checkout. The script emits both final texts as JSON. It sends the task to the selected model; use public example material. Model-backed generation is separate from CI.
 
+Publish an English comparison in `examples/standard.md` and a Korean comparison in `examples/standard.ko.md`. Prepare both requests and their checks before running either language. Preserve the real case, numbers, and reasoning demand. Generate each language directly: the baseline and standard sessions receive only their own request, with the skill supplied only to the standard session. Never provide an answer from the other language as input. Explain any scope difference, such as editing an English quotation for a Korean-speaking editor. Link both comparisons from the method’s examples README and rebuild both galleries.
+
 A method is `reviewed` only after provenance/rights review, rule review, and an evaluation record. This status is project review, not author endorsement, official certification, or proof of universal quality.

@@ -48,7 +48,8 @@
     ],
     "expectations": [
       "Display source markup as text, without executing it.",
-      "Keep may, 5%, and the above-100 condition in all views."
+      "Keep may, 5%, and the above-100 condition in all views.",
+      "Verify the prose and numeric display independently at 100 units and at 101 units; the threshold excludes exactly 100."
     ],
     "sourceIds": [],
     "level": "strict",

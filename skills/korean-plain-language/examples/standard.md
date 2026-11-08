@@ -1,60 +1,58 @@
 # Which months qualified for Seoul’s pilot refund?
 
-2026-11-08 · `korean-plain-language` 0.1.1 at first pass · `gpt-6-luna` · Codex CLI 0.167.0
+[한국어](standard.ko.md)
+
+2026-11-08 · `korean-plain-language` 0.1.2 · English · `gpt-6-luna`
 
 ### Case and sources
 
 - [서울특별시 내 손안에 서울, ‘월 5만원대’ 청년 맞춤형 기후동행카드 나온다 (2024-02-21)](https://mediahub.seoul.go.kr/archives/2010350). City's February 2024 announcement, especially the retrospective refund, separate registration rule and monthly eligibility conditions under the original pilot.
 
-**Reasoning task.** Intersect registration timing, completed 30-day periods and refund exclusions before calculating two riders' historical entitlements.
+**Language scope.** The editor’s explanation is in English; the object being edited is Korean. Quoted Korean phrases demonstrate tense, modality and polite endings.
 
 ### Prompt
 
-> 2024년 서울시 기후동행카드 시범사업을 돌아보는 전시 문구를 해요체 다섯 문장 이내로 써 주세요. 당시 원칙은 등록한 실물카드의 등록 이후 이용분 또는 별도 등록이 필요 없는 모바일카드 이용분 중, 환불 없이 30일 만기를 채운 달마다 7,000원이었고 두 종류 모두 별도 환급 신청이 필요했어요. 연령 등 나머지 조건은 충족했다고 가정해요. 가상 이용자 지우는 실물카드로 첫 30일권을 미등록 상태에서 끝까지 쓴 뒤 등록하고 둘째 권을 30일 만기로 썼지만 셋째 권은 18일째 환불했어요. 민서는 모바일카드로 30일권 두 장을 환불 없이 끝까지 썼어요. 각각 당시 얼마를 신청할 수 있었는지, 왜 금액이 달랐는지 독자가 따라갈 수 있게 해 주세요.
+> Write a brief editorial memo in English for an editor working on a Korean exhibit about Seoul’s 2024 youth Climate Card pilot. The draft says ‘지우와 민서는 지금 환급금을 받아요’. At the time, each completed 30-day pass used without a refund could qualify for a 7,000-won refund. Physical cards counted only after registration; mobile cards required no separate card registration. Both types required a refund application. Assume all other eligibility conditions were met. Jiwoo completed a first physical pass before registration, completed the second after registration, and refunded a third on day 18. Minseo completed two mobile passes without refund. Explain how much each could have applied for and why. Explain the time and payment implication in the draft and suggest a short Korean 해요체 phrase to fix it. Keep the editorial explanation in English; retain Korean where discussing the actual wording.
 
-### Without a skill
+### Without the skill
 
-> 실물카드를 쓴 지우는 첫 이용권을 다 쓴 뒤 등록했으므로, 등록 전 이용분은 환급 대상이 아니에요. 등록 이후 쓴 둘째 이용권은 30일 만기를 채워 7,000원을 신청할 수 있지만, 셋째 이용권은 18일째 환불해 대상이 아니에요. 따라서 지우가 신청할 수 있는 금액은 7,000원이에요. 모바일카드를 쓴 민서는 등록 없이도 이용분이 인정되므로, 환불 없이 만기를 채운 두 달에 대해 14,000원을 신청할 수 있어요. 두 사람 모두 별도 신청이 필요했고, 차이는 실물카드의 등록 시점과 만기·환불 조건을 충족한 달 수예요.
+> **Editorial memo**
+>
+> The statement ‘지우와 민서는 지금 환급금을 받아요’ implies that both are receiving refunds now. That is not supported: the amounts described are potential refunds they could have applied for, and both card types required an application.
+>
+> Jiwoo could have applied for **7,000 won** for the second pass only. The first physical pass was completed before the card was registered, so it did not count. The third pass was refunded on day 18, so it was not a completed 30-day pass used without a refund.
+>
+> Minseo could have applied for **14,000 won**: two completed 30-day mobile passes used without refunds, at 7,000 won each. Mobile cards did not need separate card registration, but still required a refund application.
+>
+> A concise 해요체 replacement is: **‘지우와 민서는 환급금을 신청할 수 있어요.’** This makes clear that the refunds were available to apply for, not necessarily already paid.
 
 ### With the skill at standard
 
-> 지우는 실물카드 첫 이용분을 다 쓴 뒤 등록했으므로, 등록 전에 이용한 첫 30일권은 환급 대상이 아니에요.\
-> 등록 후 이용한 둘째 30일권은 환불 없이 만기를 채웠으므로, 별도 신청을 하면 7,000원을 받을 수 있어요.\
-> 셋째 권은 18일째 환불했으므로 만기 조건을 채우지 못해 환급액에 포함되지 않아요.\
-> 민서는 등록이 필요 없는 모바일카드로 30일권 두 장을 모두 환불 없이 만기까지 이용해, 별도 신청으로 14,000원을 받을 수 있어요.\
-> 따라서 지우는 7,000원, 민서는 14,000원을 신청할 수 있었고, 실물카드는 등록 이후 이용분만 인정된 반면 모바일카드는 등록 전 이용분 제한이 없었기 때문에 금액이 달랐어요.
+> **Editorial memo**
+>
+> The draft, “지우와 민서는 지금 환급금을 받아요” (“Jiwoo and Minseo receive refunds now”), makes a past pilot sound current and suggests payment is automatic. Both are misleading: the refunds were available during the 2024 pilot, and eligible participants still had to apply.
+>
+> Jiwoo could have applied for **7,000 won**. The first physical pass was completed before registration, so it did not count; the second was completed after registration and was not refunded, so it qualified. The third pass was refunded on day 18 and was not a completed, unrefunded 30-day pass.
+>
+> Minseo could have applied for **14,000 won**. Both completed mobile passes were unrefunded and qualified; mobile cards did not require separate card registration. Minseo still needed to submit a refund application.
+>
+> A short 해요체 replacement is: **“2024년 시범사업 당시, 조건을 충족한 이용자는 환급을 신청할 수 있었어요.”** This makes the timing past and preserves the meaning as permission to apply, not a promise of payment.
 
-### First-pass assessment
+### What changed
 
 | Check fixed before generation | Without | Standard |
 | --- | --- | --- |
 | Correctly gives Jiwoo 7,000 won, counting only the second pass and explaining why the unregistered and refunded passes do not count. | Met | Met |
 | Correctly gives Minseo 14,000 won for two completed passes; distinguishes not having to register the mobile card from having to apply for either refund. | Met | Met |
-| Maintains 해요체 and the 2024 retrospective scope, without implying automatic payment or ongoing eligibility. | Missed | Missed |
+| Explains the draft's timing and payment implications in English and proposes Korean 해요체 wording that conveys past eligibility to apply without implying current entitlement or automatic payment. | Missed | Met |
 
-Both calculate 7,000 won for Jiwoo and 14,000 for Minseo, exclude the first and third physical passes for different reasons, and require an application for both. Both keep 해요체, but their statements about what a rider can receive mostly use the present tense without anchoring eligibility to the 2024 pilot. The skill answer closes with a retrospective phrase; the baseline gives the two riders' results in a more compact sequence.
-
-**차이.** 둘 다 지우 7,000원과 민서 14,000원을 정확히 계산하고, 별도 신청이 필요하다고 설명합니다. 스킬 답은 끝에서 과거형으로 정리하지만, 두 답 모두 환급 가능 여부를 주로 현재형으로 써서 2024년 시범사업에 한정된 조건임이 충분히 드러나지 않습니다.
+**Masked review** (Y = baseline; X = standard). Both calculate 7,000 won for Jiwoo and 14,000 for Minseo, distinguish registration from applying, and explain the draft’s misleading present tense in English. X proposes Korean wording anchored to the 2024 pilot and uses 신청할 수 있었어요. Y’s replacement uses 신청할 수 있어요, which can still suggest current eligibility despite the accurate English explanation.
 
 <details>
-<summary>Developmental retest · version 0.1.2</summary>
+<summary>Run record</summary>
 
-Carry the historical date into the Korean wording of permission and eligibility. This retest is excluded from the first-pass counts.
+Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
 
-The request and original baseline are unchanged.
-
-**New standard answer**
-
-> 2024년 서울시 기후동행카드 시범사업에서는 등록한 실물카드의 등록 이후 이용분이나 별도 등록이 필요 없는 모바일카드 이용분으로, 환불 없이 30일 만기를 채운 달마다 7,000원을 받을 수 있었어요. 다만 두 종류 모두 별도로 환급 신청을 해야 했어요. 지우는 첫 실물카드 이용분을 다 쓴 뒤 등록했기 때문에 그 이용분은 환급 대상이 아니었고, 둘째 권은 만기를 채워 7,000원을 신청할 수 있었어요. 셋째 권은 18일째 환불했으므로 환급 대상이 아니어서, 지우가 신청할 수 있는 금액은 총 7,000원이었어요. 민서는 모바일카드 두 장 모두 만기를 채우고 환불하지 않아 총 14,000원을 신청할 수 있었어요.
-
-| Check fixed before generation | Without | Standard |
-| --- | --- | --- |
-| Correctly gives Jiwoo 7,000 won, counting only the second pass and explaining why the unregistered and refunded passes do not count. | Met | Met |
-| Correctly gives Minseo 14,000 won for two completed passes; distinguishes not having to register the mobile card from having to apply for either refund. | Met | Met |
-| Maintains 해요체 and the 2024 retrospective scope, without implying automatic payment or ongoing eligibility. | Missed | Met |
-
-Both the skill answer and the baseline correctly count only Jiwoo’s second pass (₩7,000), both of Minseo’s passes (₩14,000), and a separate application for each person despite mobile cards needing no registration. Both use five 해요체 sentences. The skill answer names the 2024 pilot and describes what riders could claim then; the baseline omits the historical date and uses present-tense eligibility that can read as current policy.
-
-**차이.** 스킬 답과 미적용 답 모두 지우는 둘째 권만 7,000원, 민서는 두 권 합계 14,000원으로 계산한다. 모바일카드 등록 면제와 두 사람의 별도 환급 신청도 구분하고 해요체 다섯 문장을 쓴다. 스킬 답은 2024년 시범사업 당시 신청할 수 있었던 금액으로 서술한다. 미적용 답은 연도와 시범사업을 생략하고 ‘신청할 수 있어요’ 등 현재형을 써서 현행 제도로 읽힐 수 있다.
+SHA-256 prefixes (entrypoint / baseline answer / standard answer): `c0be7cf32505` / `b2b7f3a4df0d` / `cdfd5fc43c0c`.
 
 </details>

@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Publish English and Korean examples for all 22 methods. Each language has independently generated GPT-6 Luna baseline and standard answers, a local review and a full gallery.
+
 - Run all 22 matched writing comparisons on `gpt-6-luna` using tasks that require reasoning over supplied evidence. Publish the first answers and masked rubric judgments, including ties and regressions. Keep developmental reruns separate and provide a local tool to repeat a pair.
 
 - Replace the 22 synthetic gallery tasks with primary-source cases from computing, science and public policy. Preserve full fresh baseline and standard outputs, earlier attempts and the original gallery. Clarify how the RFC profile preserves conditional obligations and how IMRaD assigns observations and analyses to their actors.
