@@ -4,7 +4,7 @@
 
 AI한테 “쉽게 설명해 줘”라고 하면, 제가 궁금했던 부분까지 빼고 짧게 끝낼 때가 있어요. 다섯 살 아이에게 자전거 브레이크를 설명하는 것과, 엔지니어에게 브레이크의 작동 원리를 설명하는 건 꽤 다른 일이잖아요. 그래서 **누구에게, 어떤 방식으로 설명할지** 직접 고를 수 있게 만들었습니다. 앞선 사람들의 글쓰기 방식을 제 질문에 빌려 쓴다는 뜻에서 이름도 ‘거인의 어깨 위에 선다’는 말에서 따왔어요.
 
-어떤 차이가 나는지 먼저 보고 싶다면 [GPT-6 Luna로 푼 22개 예제](EXAMPLES.md)를 열어 보세요. [서로 다른 시각에 조회한 두 DNS 서버](skills/feynman-technique/examples/standard.md)는 왜 다른 답을 줄까요? [LIGO의 오경보율](skills/imrad/examples/standard.md)은 관측 한 건이 잡음일 확률과 어떻게 다를까요? [서울 지하철 노선도에서 길을 찾는 시간이 줄면](skills/hunminjeongeum/examples/standard.md) 전체 여정에서는 얼마나 절약될까요? 고등학생 이상이 자료를 읽고 판단해야 하는 문제를 목표로 삼았습니다. 각 예제에는 실제 출처, 스킬 없이 쓴 답과 `standard` 답, 두 답이 놓친 점을 함께 실었습니다.
+어떤 차이가 나는지 궁금하다면 [한국어 예제](EXAMPLES.ko.md)나 [영어 예제](EXAMPLES.md)를 열어 보세요. 22개 스킬 모두 GPT-6 Luna에 한국어로 직접 묻고, 영어는 별도 세션에서 다시 물었습니다. [서로 다른 시각에 조회한 두 DNS 서버](skills/feynman-technique/examples/standard.ko.md)는 왜 다른 답을 줄까요? [LIGO의 오경보율](skills/imrad/examples/standard.ko.md)로 관측 한 건이 잡음일 확률을 알 수 있을까요? [서울 지하철 노선도에서 길을 찾는 시간이 줄면](skills/hunminjeongeum/examples/standard.ko.md) 전체 여정에서는 얼마나 절약될까요? 고등학생 이상의 추론을 목표로 만든 각 문제에서 스킬 없이 쓴 답과 `standard` 답을 나란히 볼 수 있습니다.
 
 ## Codex에서 써 보기
 

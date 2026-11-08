@@ -4,7 +4,7 @@ Author instructions primarily in English; implement a separate Korean-specific s
 
 ## README parity
 
-Keep both READMEs aligned in headings/order, tables, links, commands, status, and limitations. Translate meaning and add clarifications to both in the same change; structural checks do not establish translation accuracy. Only the README has a full Korean counterpart. Locale rules may differ through declared adaptations, while stable IDs and coverage agree.
+Keep both READMEs aligned in headings/order, tables, links, commands, status, and limitations. Translate meaning and add clarifications to both in the same change; structural checks do not establish translation accuracy. The [English gallery](../EXAMPLES.md) and [Korean gallery](../EXAMPLES.ko.md) contain independently generated answers to matched tasks. Locale rules may differ through declared adaptations, while stable IDs and coverage agree.
 
 ## Separate the language layers
 

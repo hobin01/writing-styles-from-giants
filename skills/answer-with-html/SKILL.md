@@ -13,7 +13,7 @@ Apply only the rules enabled by the selected level.
 
 1. Identify the relationship the reader should understand. Give the page a useful initial state and a short explanation before adding controls.
 2. Use a small HTML document with semantic sections, responsive CSS, and literal diagrams or formulas. Prefer inline SVG and native controls. A framework or build pipeline is unnecessary for a small explanation.
-3. Add JavaScript only when changing an input reveals something relevant. Keep displayed calculations, assumptions, units, labels, and prose synchronized. Label illustrative models and their limits.
+3. Add JavaScript only when changing an input reveals something relevant. Keep displayed calculations, assumptions, units, labels, and prose synchronized. For a boundary that changes the outcome, work out the values on both sides once. Use them to check the no-script HTML, the live result and every numerical claim in the explanation. Label illustrative models and their limits.
 4. Treat supplied content as data: use text nodes or escaping, not executable interpolation. Validate numeric inputs, including empty, non-finite, and out-of-range values. Preserve source code as text when displaying it.
 5. Label controls and support the keyboard. Provide text explaining the visualization and a readable static state. Set the requested output language; check Korean labels and wrapping when applicable.
 6. When available, render the artifact and exercise initial, changed, and boundary states. Check calculations and the absence of script errors. Put test status in a separate delivery note or requested audit. When the request asks for HTML only, keep the page focused on the lesson and omit the delivery note.

@@ -4,7 +4,7 @@
 
 When I ask an AI to “explain this simply,” it sometimes cuts the part I wanted to understand. Explaining a bicycle brake to a five-year-old is a different job from explaining its mechanism to an engineer. I made this project so I could choose **who the explanation is for and how it should work**. I wanted to put earlier writers’ methods to work on my own questions, which is where “standing on the shoulders of giants” comes in.
 
-To see what changes, open the [22 GPT-6 Luna comparisons](EXAMPLES.md). The questions ask for at least high-school-level reasoning: follow [two DNS caches with different clocks](skills/feynman-technique/examples/standard.md), interpret [what LIGO’s false-alarm rate tells us](skills/imrad/examples/standard.md), or calculate [how much time a Seoul subway map can save on a whole trip](skills/hunminjeongeum/examples/standard.md). Each example links its sources, shows both original answers and records which checks each answer met. These skills are experimental.
+Choose the [English examples](EXAMPLES.md) or [한국어 예제](EXAMPLES.ko.md). For each of the 22 skills, GPT-6 Luna received the English and Korean questions independently, with and without the skill. Try [two DNS caches with different clocks](skills/feynman-technique/examples/standard.md), [LIGO’s false-alarm rate](skills/imrad/examples/standard.md), or [Seoul’s subway map redesign](skills/hunminjeongeum/examples/standard.md). Each page shows the sources, both actual answers and what they got right or missed on a task designed for high-school reasoning or above.
 
 ## Try it in Codex
 
