@@ -22,7 +22,7 @@ Use the host's model and existing installers/validators from the [reuse review](
 
 Inputs are purpose, genre, audience, output language, optional method/level, and `recommend | auto | off`. Ask only for missing information that changes the choice; otherwise disclose assumptions.
 
-Codex exposes one project-local entrypoint, `$wsg`. A method ID selects a method explicitly, `auto` selects a method by the request, and `docs` shows the English or Korean catalog. Slash-capable adapters forward their command spellings to the same contract. The dispatcher reads method instructions and applicable references; comparison outputs are for readers browsing examples.
+Codex exposes one entrypoint, `$wsg`, from this project or an optional [user-scope link](COMPATIBILITY.md#codex-user-scope) to its adapter. A method ID selects a method explicitly, `auto` selects a method by the request, and `docs` shows the English or Korean catalog. Resolve the catalog against the adapter's actual checkout; user inputs and requested artifacts belong to the caller's working project. Slash-capable adapters forward their command spellings to the same contract.
 
 1. `off` disables this project's method application, not host/system instructions.
 2. Explicit selection wins. Explain incompatibility rather than silently substituting a method.

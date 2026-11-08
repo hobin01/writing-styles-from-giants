@@ -21,7 +21,9 @@ $wsg docs en
 - **Want help choosing?** Use `$wsg auto [LEVEL] REQUEST`. It selects a skill for the task and reader, tells you why it fits and uses it to answer.
 - **Want to browse?** Use `$wsg docs`. English is the default. `$wsg docs ko` explains each skill in Korean and `$wsg docs en` does so in English.
 
-In Claude Code the same commands are spelled `/wsg`, `/wsg:auto` and `/wsg:docs en`. The configuration belongs to this checkout. [Host verification](docs/COMPATIBILITY.md)
+To use `$wsg` in other projects, [link the Codex skill once at user scope](docs/COMPATIBILITY.md#codex-user-scope). The link reads this checkout, so local updates to methods and commands take effect without reinstalling.
+
+In Claude Code the same commands are spelled `/wsg`, `/wsg:auto` and `/wsg:docs en` inside this checkout. [Host verification](docs/COMPATIBILITY.md)
 
 ## Which skill should I choose?
 

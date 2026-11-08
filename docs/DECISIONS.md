@@ -17,6 +17,7 @@
 
 - 21 methods plus `korean-plain-language`, all experimental. Each portable method records its content version in `method.json`. The companion handles Korean referents, particles/endings, register, terminology and modality.
 - The owner chose one checkout-scoped command with explicit selection, opt-in automatic matching, and bilingual help. Codex uses `$wsg`, `$wsg auto` and `$wsg docs`. The slash spellings are `/wsg`, `/wsg:auto` and `/wsg:docs`. Each writing invocation defaults to `standard`; documentation defaults to English. [Invocation contract](../commands/WSG.md)
+- For personal testing across projects, the owner chose a Codex user-scope link to the adapter in the long-lived checkout. Future edits and post-merge updates to that checkout reach the same link. [Setup and verification](COMPATIBILITY.md#codex-user-scope)
 - Keep independently generated English and Korean baseline/standard comparisons in each method's `examples/` directory. Collect the full texts in the [English](../EXAMPLES.md) and [Korean](../EXAMPLES.ko.md) galleries. Match prompts across languages and generate each answer in a fresh session without exposing any other answer.
 - Use `gpt-6-luna` to generate both evaluation answers. Give the task at least a high-school reasoning demand even when the final text serves a beginner. The method’s writing level remains `standard`. See [evaluation procedure](METHOD_AUTHORING.md).
 - New Hart’s Rules is source-assisted: unverified edition-specific choices require relevant text, not invented prescriptions.

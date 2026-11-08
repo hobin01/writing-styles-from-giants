@@ -20,7 +20,7 @@ The repository is private during solo development before stable `0.0.1`, but eve
 3. **Tested distribution.** Evaluate the existing [reuse candidates](../THIRD_PARTY_NOTICES.md) against [ARCHITECTURE.md](ARCHITECTURE.md). Verify complete references, scope, conflicts, durable link/copy behavior, modified files, shared roots, interrupted updates, and removal preservation. Publish installation instructions and support claims only for tested host/version/OS combinations; Windows needs its own evidence.
 4. **Source release.** Resolve semantic and ownership failures, inspect archive rights/content, and follow [RELEASING.md](RELEASING.md) for the first `0.0.1` draft. Expand methods and host coverage from evidence.
 
-The checkout commands default to `standard` on each writing request. Automatic selection is explicit. Method review, model evaluations, and host evidence are distinct from repository tests. Public CI requires no model keys; optional model evaluations use bounded cost and sanitized inputs.
+The commands default to `standard` on each writing request. Codex can also use the checkout from other projects through the [user-scope link](COMPATIBILITY.md#codex-user-scope). Automatic selection is explicit. Method review, model evaluations, and host evidence are distinct from repository tests. Public CI requires no model keys; optional model evaluations use bounded cost and sanitized inputs.
 
 ## Current state
 
