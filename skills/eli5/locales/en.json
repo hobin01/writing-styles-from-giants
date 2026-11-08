@@ -1,6 +1,6 @@
 {
   "method": "eli5",
-  "methodVersion": "0.1.1",
+  "methodVersion": "0.1.2",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -18,7 +18,7 @@
       "adaptation": true
     },
     "bounded-model": {
-      "instruction": "Use a concrete example or analogy only when it helps; state the important way the simplified model differs from reality.",
+      "instruction": "Use a concrete example or analogy only when it helps; state the important way the simplified model differs from reality. When amounts span different times or sample sizes, compare them on a common basis and explain what the example can actually show.",
       "adaptation": true
     },
     "child-check": {

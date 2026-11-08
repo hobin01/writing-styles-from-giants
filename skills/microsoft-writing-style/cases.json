@@ -58,5 +58,23 @@
     ],
     "knownBadRewrite": "Delete the archive with `archive rm --id=42`.",
     "method": "microsoft-writing-style"
+  },
+  {
+    "id": "filters-after-reset",
+    "type": "ordinary",
+    "source": "Write steps for a fictitious editor. Its Reset filters control removes every unsaved filter. Save filter protects a named filter from that reset. A reader wants to keep the unsaved Overdue filter and clear the two other unsaved filters without rebuilding Overdue.",
+    "expectations": [
+      "Use Save filter on Overdue before Reset filters; verify that Overdue remains and the two unwanted filters are gone."
+    ],
+    "ruleIds": [
+      "reader-action",
+      "consistent-terms"
+    ],
+    "sourceIds": [
+      "ms-top-ten"
+    ],
+    "method": "microsoft-writing-style",
+    "level": "standard",
+    "locale": "en"
   }
 ]

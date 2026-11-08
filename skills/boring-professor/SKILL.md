@@ -12,7 +12,7 @@ Give a technically precise, literal explanation. This project-original method us
 Apply only the rules enabled by the selected level.
 
 1. Define the problem and necessary terms. State assumptions, operating conditions, and notation needed for the account.
-2. Explain the mechanism or derivation in dependency order. Identify what each inference rests on.
+2. Explain the mechanism or derivation in dependency order. Identify what each inference rests on. For a requested total, state the sum and its unit after checking that the components are distinct and refer to the same conditions.
 3. Use literal descriptions, equations, diagrams, and numerical examples when they clarify the mechanism. Keep examples separate from general claims.
 4. Distinguish evidence from inference and state the conditions under which the account applies. Leave unknown details unresolved.
 

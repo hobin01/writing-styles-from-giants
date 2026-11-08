@@ -138,5 +138,26 @@
         "preserve-meaning"
       ]
     }
+  },
+  {
+    "id": "named-fault-location",
+    "type": "meaning-preservation",
+    "method": "orwell-six-rules",
+    "locale": "en",
+    "level": "standard",
+    "source": "LOG_READER decoded the timestamps in seconds although the interface specified milliseconds. The storage writer used the specified units.",
+    "request": "Make this incident note concise for a general reader.",
+    "ruleIds": [
+      "needed-terminology",
+      "preserve-meaning"
+    ],
+    "sourceIds": [
+      "orwell-essay"
+    ],
+    "expectations": [
+      "Retain LOG_READER as the component that misread the units and keep the writer separate.",
+      "Keep the direction of the seconds/milliseconds mismatch."
+    ],
+    "note": "Retaining an identifier that locates a fault is the project’s application of the needed-terminology rule to technical prose."
   }
 ]

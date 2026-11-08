@@ -13,7 +13,7 @@ Apply only the rules enabled by the selected level.
 
 1. Identify the decision or question the reader needs answered. State a supported answer, or the unresolved choice if evidence is insufficient.
 2. Group the supporting ideas by their logical relationship. Give each group an actual insight; a heading such as “three factors” does not explain what those factors imply.
-3. Check downward from each claim to its support and upward from each fact to the claim it warrants. Preserve contradictory evidence, assumptions, and uncertainty.
+3. Check downward from each claim to its support and upward from each fact to the claim it warrants. Preserve contradictory evidence, assumptions, and uncertainty. When asked how to test a forecast, identify the comparison that would show what changed locally. Similarity to prior sites helps judge transfer, but it does not measure the new result.
 4. Use a paragraph, sections, or a small hierarchy suited to the task. A fixed three-reason rule or a complete MECE checklist is not established by the sources read.
 
 For a requested introduction at `standard` or `strict`, apply `scq-opening`: establish the relevant situation, an evidenced complication if present, the reader's question, and a supported answer. Use a factual opening when no complication exists. Keep an opening-only edit within that scope; do not prepend this framing to every short answer. The public site calls its framework SCQ; the four-part SCQA wording is a project adaptation.

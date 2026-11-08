@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "socratic-self-questioning",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "status": "experimental",
   "title": "Socratic self-questioning",
   "kind": "process",
@@ -101,7 +101,7 @@
     },
     {
       "id": "revise-calibration",
-      "intent": "Revise the claim to the strongest version supported by the evidence, or retain a specific uncertainty.",
+      "intent": "Revise the claim to the strongest version supported by the evidence, or retain a specific uncertainty. Name the population and comparison behind an observed result when a claim extends it to other people or settings.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Project adaptation of recognizing limits to claimed knowledge.",

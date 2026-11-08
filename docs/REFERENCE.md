@@ -118,7 +118,7 @@ National Institute of Korean Language. [쉬운 공문서 쓰기 길잡이](https
 
 ## Primary sources for the real-world examples
 
-Consulted on 2026-11-08. These sources establish the facts of the writing tasks. Each comparison states what was consulted and which inputs are illustrative. Only links, facts and original descriptions are included; the sources retain their own terms.
+Consulted on 2026-11-08. These sources establish the facts of the writing tasks. Each comparison states what was consulted and which inputs are illustrative. The Luna exercises use these same sources with new worked quantities and decisions. For example, the Windows task uses the documented pinned-item exception and individual deletion control; the PostgreSQL task uses the index validity flag. Only links, facts and original descriptions are included; the sources retain their own terms.
 
 | Comparison | Primary source |
 | --- | --- |

@@ -40,6 +40,6 @@ Apply only within the requested scope. Honor explicit method, level, output lang
 
 The evidence is selected archived Federal Guidelines pages, not a full reviewed 2011 PDF or current legal certification. Reader/task structure can transfer to other languages. English-specific grammar and word counts do not become Korean rules; Korean particles, omitted subjects, bureaucratic terms, and register require their own language review.
 
-Before finishing, compare the result with the source and check the applicable rules. For automatic selection, expose the method and level in a separate status or audit; keep working notes out of finished prose. Report material unresolved checks without claiming mechanical verification.
+Before finishing, check the answer against the source. For an explicit request, deliver just the public notice or answer. Put method and level outside the deliverable only when applying the method automatically or providing a requested audit.
 
 Read [method.json](method.json) for source scope, provenance, exceptions, and rule-level policies; [locales/en.json](locales/en.json) contains English rule wording. [cases.json](cases.json) supplies evaluation cases, not model results. This is an experimental project adaptation, with no author or institution endorsement.

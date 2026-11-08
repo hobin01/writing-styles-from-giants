@@ -1,29 +1,33 @@
-# Finding a transfer on Seoul’s redesigned subway map
+# How much of a Seoul journey can a better map shorten?
 
-2026-11-08 · `hunminjeongeum` 0.1.1 · Korean · Codex CLI 0.167.0 / gpt-6.1-sol
+2026-11-08 · `hunminjeongeum` 0.1.1 at first pass · `gpt-6-luna` · Codex CLI 0.167.0
 
 ### Case and sources
 
 - [서울특별시, 시민의 발, 디자인을 입다…서울시, 지하철 노선도 40년 만에 변경 (2023-09-13)](https://news.seoul.go.kr/culture/archives/520933). Design release on interchange markings, the circular Line 2 reference, and maximum time reduction in the 20s–30s domestic/foreign eye-tracking experiment.
 
+**Reasoning task.** Apply a relative reduction to the measured component of a journey, recombine durations and judge whether the headline generalizes from an eye-tracking task.
+
 ### Prompt
 
-> 서울을 처음 방문한 승객에게 서울시가 2023년 9월 지하철 노선도 개선안을 내놓은 이유를 한국어 세 문장으로 설명해 주세요. 기존 지도에서는 환승역이 일반역과 잘 구분되지 않았어요. 개선안은 환승할 수 있는 노선의 색을 한 표시에 연결해 놓았고, 원형으로 그린 2호선을 지도의 기준점으로 삼았어요. 서울시가 20~30대 내국인·외국인을 대상으로 진행한 시선 추적 실험에서는 환승역 길을 찾는 데 걸린 시간이 최대 약 69% 줄었어요. 이 수치가 무엇을 측정했는지도 알려 주세요.
+> 서울 지하철을 처음 타는 사람에게, 서울시가 2023년에 노선도를 고치려 한 이유와 숫자의 의미를 한국어 네 문장 이내로 설명해 주세요. 기존 지도에서는 환승역이 일반역과 잘 구분되지 않았고, 개선안은 환승할 노선들의 색을 한 표시에 연결했어요. 20~30대 내국인·외국인의 시선 추적 실험에서 환승역 길 찾기 시간이 최대 약 69% 줄었어요. 설명용으로 어떤 승객이 예전 지도에서 길을 찾는 데 100초, 이후 열차를 타는 데 12분이 걸린다고 가정해요. 지도 보는 시간에 그 최대 감소율을 적용한다면 지도를 보고 열차를 타는 데 걸리는 합계는 얼마일까요? 누군가 ‘여정 전체가 69% 빨라진다’고 소개하려고 해요.
 
 ### Without a skill
 
-> 서울시가 2023년 9월 지하철 노선도 개선안을 내놓은 이유는 기존 지도에서 환승역과 일반역을 구분하기 어려워 서울을 처음 방문한 승객도 환승 경로를 쉽게 찾도록 돕기 위해서예요. 개선안은 환승 가능한 노선들의 색을 하나의 표시에 연결하고, 원형으로 그린 2호선을 지도의 기준점으로 삼았어요. 서울시가 20~30대 내국인과 외국인을 대상으로 진행한 시선 추적 실험에서 최대 약 69% 줄어든 것은 지도에서 환승역 길을 찾는 데 걸린 시간이며, 실제 지하철 이동 시간은 아니에요.
+> 서울시는 기존 노선도에서 환승역이 일반역과 잘 구분되지 않아 길을 찾기 어려운 점을 개선하려 했고, 개선안은 환승 노선들의 색을 하나의 표시에 연결했습니다. 20~30대 내국인·외국인 실험에서 환승역 길 찾기 시간이 최대 약 69% 줄었다는 뜻이지, 모든 승객이나 전체 여정의 시간이 69% 줄었다는 뜻은 아닙니다. 예전 지도에서 100초 걸렸다고 가정하면 지도 보는 시간은 31초로 줄고, 열차 탑승까지의 12분을 더하면 합계는 12분 31초입니다. 따라서 ‘여정 전체가 69% 빨라진다’고 소개하면 실험 결과의 범위를 과장하게 됩니다.
 
 ### With the skill at standard
 
-> 서울을 처음 방문한 승객은 기존 지하철 노선도에서 환승역과 일반역을 구분하기 어려웠기 때문에, 서울시는 환승역과 이동 경로를 더 쉽게 찾도록 2023년 9월 노선도 개선안을 내놓았어요.
-> 개선안은 환승할 수 있는 노선의 색을 하나의 표시에 연결해 보여 주고, 원형으로 그린 2호선을 지도의 기준점으로 삼아 위치를 파악하도록 했어요.
-> 서울시가 20~30대 내국인·외국인을 대상으로 진행한 시선 추적 실험에서는 환승역 길을 찾는 데 걸린 시간이 최대 약 69% 줄었는데, 이는 실험에서 노선도를 보고 길을 찾는 데 걸린 시간을 측정한 결과이며 실제 열차 이동 시간의 감소를 뜻하지는 않아요.
+> 서울 지하철을 처음 타면 기존 노선도에서 환승역이 일반역과 잘 구분되지 않아 갈아탈 곳을 찾기 어려울 수 있어요. 서울시는 2023년 개선안에서 환승할 노선들의 색을 하나의 표시에 연결해 환승역을 알아보기 쉽게 하려 했고, 20~30대 내국인·외국인의 시선 추적 실험에서는 환승역 길 찾기 시간이 최대 약 69% 줄었어요. 설명용 가정에서 지도 보는 시간 100초에 이 감소율을 적용하면 31초가 되고, 열차를 타는 데 걸리는 12분을 더한 합계는 **12분 31초**예요. 이 계산은 지도 보는 시간에만 적용되므로, ‘여정 전체가 69% 빨라진다’고 말할 근거는 없습니다.
 
-### What changed
+### First-pass assessment
 
-**Checks set before the run.** Begin with the first-time passenger's transfer difficulty. Connect linked line colours and circular Line 2 to finding the transfer. Keep the eye-tracking task, the participant ages and the 'up to about 69%' bound; do not turn it into a reduction in real journey time.
+| Check fixed before generation | Without | Standard |
+| --- | --- | --- |
+| Opens by connecting the passenger's difficulty finding transfers to the linked line-colour transfer symbol. | Met | Met |
+| Computes about 31 seconds looking at the new map and about 12 minutes 31 seconds for the hypothetical total (train ride remains 12 minutes). | Missed | Met |
+| Makes clear the up-to-about-69% result was for locating transfers in the map experiment, not a measured 69% reduction of actual whole journeys. | Met | Met |
 
-Both connect the transfer symbol and the circular Line 2 to the passenger's task. The baseline opens with the city announcing a change. The skill answer opens with the passenger struggling to distinguish stations. Both correctly identify the roughly 69% maximum as a map-reading result in the eye-tracking test; the skill's last sentence is longer without adding another finding.
+Both explain the transfer symbol and calculate 31 seconds of map reading and a total of 12 minutes 31 seconds; neither assigns the 69% reduction to the whole journey. The skill answer correctly describes the 12 minutes as the ride. The baseline calls it the time ‘until boarding’ (탑승까지), changing what that interval represents despite getting the sum right.
 
-**차이.** 미적용 답안은 서울시가 개선안을 낸 이유로, 스킬 답안은 처음 온 승객이 겪던 불편으로 시작합니다. 둘 다 최대 약 69% 줄어든 것은 열차 이동 시간이 아니라 실험에서 환승역 길을 찾는 데 걸린 시간이라고 설명합니다.
+**차이.** 둘 다 지도 보는 시간 31초와 합계 12분 31초를 계산했고, 69%는 지도 실험의 수치라고 밝힙니다. 스킬 답은 12분을 열차를 타는 시간으로 유지합니다. 미적용 답은 이를 ‘탑승까지의 12분’이라고 바꿔, 합계는 맞지만 그 시간이 의미하는 구간이 달라졌습니다.

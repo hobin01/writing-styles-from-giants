@@ -38,7 +38,7 @@
     },
     {
       "id": "dependency-order",
-      "intent": "Explain mechanism or derivation in dependency order, connecting each result to its assumptions or evidence.",
+      "intent": "Explain mechanism or derivation in dependency order, connecting each result to its assumptions or evidence. When a result is a requested total, combine the distinct contributions for the same scope and report the result with its unit.",
       "classification": "guideline",
       "provenance": "project-original",
       "rationale": "Operational form of the owner's logical technical explanation request.",
@@ -89,7 +89,7 @@
     }
   ],
   "schemaVersion": 1,
-  "version": "0.1.1",
+  "version": "0.1.2",
   "status": "experimental",
   "applicability": {
     "genres": [

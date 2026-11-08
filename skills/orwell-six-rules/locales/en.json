@@ -1,6 +1,6 @@
 {
   "method": "orwell-six-rules",
-  "methodVersion": "0.1.2",
+  "methodVersion": "0.1.3",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -26,7 +26,7 @@
       "adaptation": false
     },
     "needed-terminology": {
-      "instruction": "Replace needless jargon or foreign expressions with familiar equivalents while retaining necessary terms.",
+      "instruction": "Replace needless jargon or foreign expressions with familiar equivalents while retaining necessary terms. Keep an identifier when it tells readers which component produced, received, or misread information.",
       "adaptation": false
     },
     "sense-over-rule": {

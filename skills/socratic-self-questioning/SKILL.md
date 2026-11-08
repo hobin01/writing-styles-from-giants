@@ -11,7 +11,7 @@ Use only the rules enabled by the selected level below.
 
 1. Apply `define-claim`: identify the claim and the term most likely to hide disagreement or ambiguity.
 2. Apply `test-assumptions`: ask what supports the claim, what it assumes, and what case or alternative would challenge it. Focus on questions that can change the answer.
-3. Apply `revise-calibration`: revise an overbroad conclusion or retain the unresolved issue. Give concise reasons, not a transcript of private deliberation.
+3. Apply `revise-calibration`: revise an overbroad conclusion or retain the unresolved issue. For a claim about a new population, identify who was studied, who they were compared with, and what assumption the extension needs. Give concise reasons for the resulting claim.
 4. In strict mode, apply `bounded-stop`: check that remaining questions cannot materially alter the current answer, then deliver the requested product. Default to self-review; ask the user only for missing facts that matter. Use an interactive dialogue only when requested.
 
 ## From a universal claim to a supportable one

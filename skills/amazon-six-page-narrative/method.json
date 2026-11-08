@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "amazon-six-page-narrative",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "status": "experimental",
   "title": "Amazon six-page narrative",
   "kind": "document",
@@ -107,7 +107,7 @@
     },
     {
       "id": "readable-page-budget",
-      "intent": "Use a six-page main-body ceiling only with a specified and inspected rendered layout; put supporting detail in appendices without hiding decision-critical limits.",
+      "intent": "Use a six-page main-body ceiling only with a specified and inspected rendered layout; put supporting detail in appendices without hiding decision-critical limits. For an excerpt with its own word limit, deliver that excerpt within its limit and omit page-count commentary.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Original operational guidance adapted from the identified source scope.",
@@ -115,7 +115,8 @@
         "aws-narrative"
       ],
       "exceptions": [
-        "For chat or Markdown without rendering, describe the page budget as unverified and use a concise narrative."
+        "When six physical pages were requested but the output cannot be paginated, qualify the page check outside the narrative.",
+        "An opening, excerpt or fixed word budget follows the requested length."
       ],
       "check": "judgment",
       "levels": {

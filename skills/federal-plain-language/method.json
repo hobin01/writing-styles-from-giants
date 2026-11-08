@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "federal-plain-language",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "status": "experimental",
   "title": "Federal Plain Language-inspired explanation",
   "kind": "sentence",
@@ -82,7 +82,8 @@
         "plain-intro"
       ],
       "exceptions": [
-        "The audience can be expert; plain language does not require discarding necessary technical terms."
+        "The audience can be expert; plain language does not require discarding necessary technical terms.",
+        "For an explicitly requested edit or answer, return the reader-facing text. A method label belongs in a separately requested audit or automatic-selection status."
       ],
       "check": "judgment",
       "levels": {

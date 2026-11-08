@@ -1,6 +1,6 @@
 {
   "method": "microsoft-writing-style",
-  "methodVersion": "0.1.1",
+  "methodVersion": "0.1.2",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -10,7 +10,7 @@
       "adaptation": false
     },
     "reader-action": {
-      "instruction": "Lead with what the reader needs to know or do, with necessary prerequisites adjacent.",
+      "instruction": "Lead with what the reader needs to know or do, with necessary prerequisites adjacent. Trace each action from the reader's starting state to the requested result, including the items a bulk action preserves.",
       "adaptation": false
     },
     "concise-helpful-wording": {

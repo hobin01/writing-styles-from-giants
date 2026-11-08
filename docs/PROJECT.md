@@ -28,7 +28,7 @@ Present: 21 experimental methods plus a Korean-specific linguistic companion, so
 
 All 22 entrypoints now include authored examples. The [four paired writing trials](../evals/runs/2026-11-08-worked-examples.md) preserve outputs, including a failed check and fresh runs after a revision. The HTML example also has a rendered keyboard and no-script check.
 
-The [WSG commands](../commands/WSG.md) expose explicit selection, automatic matching and bilingual help. [EXAMPLES.md](../EXAMPLES.md) collects the standard-mode comparisons for all 22 methods. See [host verification](COMPATIBILITY.md) for tested discovery and invocation paths.
+The [WSG commands](../commands/WSG.md) expose explicit selection, automatic matching and bilingual help. [EXAMPLES.md](../EXAMPLES.md) collects GPT-6 Luna’s baseline and standard answers to 22 problems designed for high-school reasoning or above, their masked assessments, and separate developmental retests. See [host verification](COMPATIBILITY.md) for tested discovery and invocation paths.
 
 Pending: installer lifecycle integration, independent native-language and reader review, repeated comparative evaluations, release workflow verification, and repository protection settings. All methods retain experimental status.
 

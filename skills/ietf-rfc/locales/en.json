@@ -1,6 +1,6 @@
 {
   "method": "ietf-rfc",
-  "methodVersion": "0.1.2",
+  "methodVersion": "0.1.3",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -18,7 +18,7 @@
       "adaptation": false
     },
     "specification-structure": {
-      "instruction": "Use suitable abstract, introduction, technical sections, security considerations, and IANA applicability statements without inventing facts or registrations.",
+      "instruction": "Use suitable abstract, introduction, technical sections, security considerations, and IANA applicability statements without inventing facts or registrations. For a word-limited internal excerpt, prioritize the requested actor, condition and behavior; include a section only if it contributes to that excerpt.",
       "adaptation": false
     },
     "reference-role": {

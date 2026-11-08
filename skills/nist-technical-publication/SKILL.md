@@ -9,7 +9,7 @@ description: "Prepare a traceable and accessible technical report using transfer
 
 Start with the report's purpose and audience. Select the sections needed to carry the claim from its technical basis through the findings to the conclusion. Keep precise domain terms, defining them when the intended audience needs help. Distinguish what was observed from the interpretation offered.
 
-Read each summary claim back against its supporting text, table, or figure. Check the measured quantity, unit, conditions, and reported uncertainty together. If an interval is reported, look for any stated coverage factor or probability that explains how to interpret it. Preserve missing details as missing. For a table or figure, put units beside values, identify the comparison in the caption, and give a text equivalent for the finding when needed.
+Read each summary claim back against its supporting text, table, or figure. Check the measured quantity, unit, conditions, and reported uncertainty together. For a derived result, substitute the inputs with their units, round at the end and check the number by reversing the calculation or using an independent relation. For a projection, change only the inputs specified. If an interval is reported, look for any stated coverage factor or probability that explains how to interpret it. Preserve missing details as missing. For a table or figure, put units beside values, identify the comparison in the caption, and give a text equivalent for the finding when needed.
 
 ### Worked example · the NIST-4 measurement of the Planck constant
 
@@ -23,7 +23,7 @@ The digits in parentheses give the standard uncertainty in the final digits of t
 
 `light`: repair report traceability, terminology, and measurement meaning. `standard`: apply all applicable rules, including accessible evidence. `strict`: audit summary/body consistency, source traceability, and every supplied figure/table and quantity; record information that cannot be checked.
 
-For recommendation-only requests, explain the fit. When applying the method automatically or providing a requested audit, record method, version, level, assumptions, exceptions, and unresolved checks outside the finished text.
+For recommendation-only requests, explain the fit. For an explicit writing request, return the requested report. Include its scientific assumptions and limitations where they support a finding. Reserve the method name, version, level and review notes for a requested audit or a separate automatic-selection status.
 
 ## Scope and evidence
 

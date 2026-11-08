@@ -1,6 +1,6 @@
 {
   "method": "socratic-self-questioning",
-  "methodVersion": "0.1.1",
+  "methodVersion": "0.1.2",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -18,7 +18,7 @@
       "adaptation": false
     },
     "revise-calibration": {
-      "instruction": "Revise the claim to the strongest version supported by the evidence, or retain a specific uncertainty.",
+      "instruction": "Revise the claim to the strongest version supported by the evidence, or retain a specific uncertainty. Name the population and comparison behind an observed result when a claim extends it to other people or settings.",
       "adaptation": false
     },
     "bounded-stop": {

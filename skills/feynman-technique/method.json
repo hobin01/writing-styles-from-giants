@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "feynman-technique",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "status": "experimental",
   "title": "Feynman-inspired explanation and gap checking",
   "kind": "explanation",
@@ -85,7 +85,7 @@
     },
     {
       "id": "audience-prerequisites",
-      "intent": "Set the intended audience and prerequisites; explain required terms rather than replacing every technical word.",
+      "intent": "Set the intended audience and prerequisites; explain required terms rather than replacing every technical word. Fit the causal links and any relevant prediction into the requested answer format.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Modern audience-specific adaptation; no universal age target.",

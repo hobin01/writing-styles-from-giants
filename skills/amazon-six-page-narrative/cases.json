@@ -8,16 +8,19 @@
     "ruleIds": [
       "decision-and-context",
       "evidence-and-reasoning",
-      "coherent-narrative"
+      "coherent-narrative",
+      "readable-page-budget"
     ],
     "sourceIds": [
       "aws-narrative"
     ],
     "expectations": [
       "Present a decision narrative with the observed numbers.",
-      "Keep queue benefits conditional and identify unmeasured cost/latency."
+      "Keep queue benefits conditional and identify unmeasured cost/latency.",
+      "Honor the requested word budget; no pagination caveat belongs in this excerpt."
     ],
-    "method": "amazon-six-page-narrative"
+    "method": "amazon-six-page-narrative",
+    "request": "Write only the decision opening, in at most 65 words."
   },
   {
     "id": "unrendered-budget",

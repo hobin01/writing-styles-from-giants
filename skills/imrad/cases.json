@@ -65,7 +65,7 @@
     "method": "imrad",
     "locale": "en",
     "level": "standard",
-    "source": "Write a four-part abstract about NASA’s 11 October 2022 DART announcement. Ground-based observations put the orbital period of Dimorphos around Didymos at 11 h 23 min after impact, compared with 11 h 55 min before. The early estimate of the reduction was about 32 ± 2 minutes.",
+    "source": "Write a four-part abstract of at most 85 words, headings included, about NASA’s 11 October 2022 DART announcement. Ground-based observations put the orbital period of Dimorphos around Didymos at 11 h 23 min after impact, compared with 11 h 55 min before. The early estimate of the reduction was about 32 ± 2 minutes.",
     "ruleIds": [
       "findings-vs-interpretation",
       "preserve-meaning"
@@ -76,7 +76,9 @@
     ],
     "expectations": [
       "Keep the estimate, date and uncertainty in Results; distinguish the observation of this system from implications for other asteroids.",
-      "Attribute the telescope observations and the comparison of periods accurately."
-    ]
+      "Attribute the telescope observations and the comparison of periods accurately.",
+      "Respect the supplied 85-word maximum including headings while preserving the measured change and its uncertainty."
+    ],
+    "note": "The 85-word budget and counting of headings come from this exercise; the scientific source supplies the orbital-period measurement."
   }
 ]

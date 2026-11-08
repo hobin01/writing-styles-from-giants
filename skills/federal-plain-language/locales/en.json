@@ -1,6 +1,6 @@
 {
   "method": "federal-plain-language",
-  "methodVersion": "0.1.1",
+  "methodVersion": "0.1.2",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -10,7 +10,7 @@
       "adaptation": false
     },
     "reader-task": {
-      "instruction": "Identify what the intended reader needs to find, understand, and do; organize around that task.",
+      "instruction": "Identify what the intended reader needs to find, understand, and do; organize around that task. For an explicitly requested edit or answer, return the reader-facing text. A method label belongs in a separately requested audit or automatic-selection status.",
       "adaptation": false
     },
     "usable-organization": {

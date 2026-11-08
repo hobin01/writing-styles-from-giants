@@ -83,7 +83,7 @@
     },
     {
       "id": "evidence-links",
-      "intent": "Check that every supporting point answers the question above it and is supported by facts below it.",
+      "intent": "Check that every supporting point answers the question above it and is supported by facts below it. Distinguish evidence that justifies trying an option from a comparison that could show its effect in the proposed setting.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Original operational application of the identified source within the documented read scope.",
@@ -142,7 +142,7 @@
     }
   ],
   "schemaVersion": 1,
-  "version": "0.2.1",
+  "version": "0.2.2",
   "status": "experimental",
   "applicability": {
     "genres": [

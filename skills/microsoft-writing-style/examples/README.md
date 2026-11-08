@@ -1,3 +1,3 @@
 # Microsoft-inspired technology writing examples
 
-[Clearing Windows 11 Clipboard history without deleting a pinned entry](standard.md) contains the source material, one request, both full answers and the review in English and Korean. The baseline answered directly; the other session received [Microsoft-inspired technology writing](../SKILL.md) at `standard`. Tested entrypoint: version 0.1.1, SHA-256 prefix `83da546e41af`.
+[Clearing a Windows clipboard without losing two keepers](standard.md) includes the sources, request, full GPT-6 Luna answers and a check-by-check review. The first baseline and [standard method](../SKILL.md) ran in independent sessions; the method version was 0.1.1 (entrypoint SHA-256 prefix `83da546e41af`). The follow-up for version 0.1.2 is reported separately.

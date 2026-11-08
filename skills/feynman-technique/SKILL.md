@@ -9,7 +9,7 @@ Explain how one event leads to the next. A **gap** is the particular step you ca
 
 Use only the rules enabled by the selected level below.
 
-1. Apply `audience-prerequisites`: use the requested audience and state only the prerequisites that matter. This differs from ELI5; it need not target a child.
+1. Apply `audience-prerequisites`: use the requested audience and state only the prerequisites that matter. Fit the causal links into the requested form. In a short paragraph, let the example explain the mechanism without a second recap.
 2. Apply `mechanism-and-gaps`: draft the causal or logical links. Replace circular definitions with an actual relation. Check uncertain links against supplied evidence or appropriate sources; if unavailable, state the remaining gap.
 3. Apply `bounded-simplification`: revise the explanation using necessary terms with definitions and a concrete example. An analogy is optional; identify the point where it stops matching.
 4. In strict mode, apply `transfer-check` with a new worked example, prediction, or counterexample. When the mechanism depends on memory, follow the same input on both sides of a stated reset or change of state. Give the outcome on each side and identify any unknown. A worked prediction checks the explanation; an actual learner response is needed to assess understanding.

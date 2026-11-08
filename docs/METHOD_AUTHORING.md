@@ -49,4 +49,10 @@ Use an authored example to show a decision a reader might otherwise miss. Give e
 
 For the [public gallery](../EXAMPLES.md), choose an identifiable system, study or public decision. Link the primary source and name the specific behavior or observation it establishes. Mark worked inputs such as hostnames and clock times as illustrative. When a proof needs notation, first name the entities the symbols represent. Small synthetic fixtures can still isolate an edge case in `cases.json`.
 
+Generate gallery answers with **`gpt-6-luna`** for both arms. If the requested model is unavailable, report the failed run; substituting another model would change the comparison. Give each task a reasoning demand at roughly high-school level or above, such as comparing rates with different denominators, applying a rule to two contrasting cases, or identifying which conclusion the evidence supports. Keep the answer appropriate to the intended reader, including a child when ELI5 is selected.
+
+Set concrete checks before generation. Give the same source facts and request to both arms, then review the anonymized answers against those checks before revealing the conditions. Publish equal scores and regressions. If a retry follows a skill or prompt change, retain the original result and identify what changed.
+
+To repeat one pair with a signed-in Codex CLI, save just the published prompt to a text file and run `python3 scripts/run_writing_pair.py METHOD < prompt.txt` from the checkout. The script emits both final texts as JSON. It sends the task to the selected model; use public example material. Model-backed generation is separate from CI.
+
 A method is `reviewed` only after provenance/rights review, rule review, and an evaluation record. This status is project review, not author endorsement, official certification, or proof of universal quality.

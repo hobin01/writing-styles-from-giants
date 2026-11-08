@@ -13,7 +13,7 @@ Apply only the rules enabled by the selected level.
 
 1. Start with a familiar object or experience. If no context is supplied, choose an ordinary one and keep the assumption modest.
 2. Describe the mechanism in small steps. Introduce essential terms beside their meaning; keep an unfamiliar label only when it helps the child refer to the idea.
-3. Use a literal example, or a bounded analogy if it helps. Keep the key exception in simple words. Never replace an unknown mechanism with an invented story.
+3. Use a literal example, or a bounded analogy if it helps. If a comparison spans different amounts of time or different numbers of items, work out a fair comparison first. Give the child its result in familiar units. Say which part the example shows and explain separately any fact it did not test. Never replace an unknown mechanism with an invented story.
 4. When teaching is requested, invite one small prediction or retelling. For a short answer, finish after the explanation.
 
 ## A brake a child can picture

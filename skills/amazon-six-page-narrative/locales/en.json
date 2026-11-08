@@ -1,6 +1,6 @@
 {
   "method": "amazon-six-page-narrative",
-  "methodVersion": "0.1.1",
+  "methodVersion": "0.1.2",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -22,7 +22,7 @@
       "adaptation": false
     },
     "readable-page-budget": {
-      "instruction": "Use a six-page main-body ceiling only with a specified and inspected rendered layout; put supporting detail in appendices without hiding decision-critical limits.",
+      "instruction": "Use a six-page main-body ceiling only with a specified and inspected rendered layout; put supporting detail in appendices without hiding decision-critical limits. For an excerpt with its own word limit, deliver that excerpt within its limit and omit page-count commentary.",
       "adaptation": false
     }
   }
