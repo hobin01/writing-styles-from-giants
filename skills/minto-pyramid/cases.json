@@ -49,7 +49,8 @@
     ],
     "expectations": [
       "Retain pilot size, may/suggests, and absence of a control group.",
-      "Keep the recommendation conditional."
+      "Keep the recommendation conditional.",
+      "Propose a local comparison that could distinguish the onboarding change from what would have happened without it."
     ],
     "sourceIds": [
       "minto-public"
@@ -57,7 +58,8 @@
     "level": "strict",
     "locale": "en",
     "knownBadRewrite": "The pilot proves faster onboarding.",
-    "method": "minto-pyramid"
+    "method": "minto-pyramid",
+    "request": "Should we run a controlled follow-up, and which comparison would test the local result?"
   },
   {
     "id": "budget-opening",

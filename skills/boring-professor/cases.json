@@ -50,5 +50,21 @@
     "locale": "en",
     "knownBadRewrite": "Increasing the queue always improves latency.",
     "method": "boring-professor"
+  },
+  {
+    "id": "serial-duration",
+    "type": "ordinary",
+    "source": "A synthetic trace records 7 ms decoding a message and then 4 ms validating it. The intervals are disjoint and no other stage is included. Explain the total duration of these stages and whether end-to-end network time was measured.",
+    "expectations": [
+      "State the 11 ms combined duration; keep unmeasured network time outside that total."
+    ],
+    "ruleIds": [
+      "dependency-order",
+      "scope-and-evidence"
+    ],
+    "sourceIds": [],
+    "method": "boring-professor",
+    "level": "standard",
+    "locale": "en"
   }
 ]

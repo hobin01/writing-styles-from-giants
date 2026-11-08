@@ -16,10 +16,12 @@
     ],
     "expectations": [
       "State the submission action, deadline, signature requirement, and portal clearly.",
-      "Do not invent a year, fee, eligibility condition, or alternative channel."
+      "Do not invent a year, fee, eligibility condition, or alternative channel.",
+      "Deliver the public notice without a method label or internal review note."
     ],
     "knownBadRewrite": "You can apply any time by email.",
-    "method": "federal-plain-language"
+    "method": "federal-plain-language",
+    "request": "Return only the public notice."
   },
   {
     "id": "technical-term-needed",

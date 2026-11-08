@@ -1,3 +1,3 @@
 # Feynman-inspired explanation and gap checking examples
 
-[Why a new DNS name can still return NXDOMAIN](standard.md) contains the source material, one request, both full answers and the review in English and Korean. The baseline answered directly; the other session received [Feynman-inspired explanation and gap checking](../SKILL.md) at `standard`. Tested entrypoint: version 0.1.2, SHA-256 prefix `206509ff6ca7`.
+[Why two DNS resolvers disagree after a record is created](standard.md) includes the sources, request, full GPT-6 Luna answers and a check-by-check review. The first baseline and [standard method](../SKILL.md) ran in independent sessions; the method version was 0.1.2 (entrypoint SHA-256 prefix `206509ff6ca7`). The follow-up for version 0.1.3 is reported separately.

@@ -2,7 +2,7 @@
   {
     "id": "even-squares",
     "type": "ordinary",
-    "source": "Prove that the square of an even integer is even.",
+    "source": "Prove that the square of an even integer is even. Give the finished text in at most 45 words.",
     "ruleIds": [
       "define-objects",
       "logical-scope",
@@ -10,7 +10,8 @@
     ],
     "expectations": [
       "Declare the integer domain and represent an even integer as 2k.",
-      "Show why its square has the required even form."
+      "Show why its square has the required even form.",
+      "Give the requested proof in at most 45 words, with no method-status preface."
     ],
     "sourceIds": [],
     "level": "standard",

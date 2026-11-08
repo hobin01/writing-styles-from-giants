@@ -1,6 +1,6 @@
 {
   "method": "gtm-formal",
-  "methodVersion": "0.1.1",
+  "methodVersion": "0.1.2",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -18,7 +18,7 @@
       "adaptation": false
     },
     "justify-steps": {
-      "instruction": "Separate definitions, claims, proofs, and examples; justify nontrivial steps and name unproved assumptions.",
+      "instruction": "Separate definitions, claims, proofs, and examples; justify nontrivial steps and name unproved assumptions. Put the proof and its requested conclusions within the given length; keep working notes outside the mathematical text.",
       "adaptation": false
     },
     "test-boundaries": {

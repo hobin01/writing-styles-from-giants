@@ -25,16 +25,20 @@
     "type": "exception",
     "locale": "en",
     "level": "standard",
-    "source": "Keep ordinary prose. A server may be unavailable during maintenance; this expresses possibility, not protocol permission.",
+    "source": "Keep ordinary prose. A server may be unavailable during maintenance; this expresses possibility, not protocol permission. Give the finished text in one sentence.",
     "ruleIds": [
-      "requirement-strength"
+      "requirement-strength",
+      "specification-structure"
     ],
     "sourceIds": [
-      "bcp14"
+      "bcp14",
+      "rfc7322",
+      "rfc-style-current"
     ],
     "expectations": [
       "Retain ordinary prose and possibility.",
-      "Do not convert may into normative MAY."
+      "Do not convert may into normative MAY.",
+      "Keep the rewrite within the requested single sentence; omit document-level boilerplate."
     ],
     "method": "ietf-rfc"
   },

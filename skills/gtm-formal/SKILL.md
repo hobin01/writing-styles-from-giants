@@ -36,4 +36,4 @@ Respect the user's selected method, level, output language, and scope. `off` ski
 
 English instructions do not require English output. Structural steps transfer to the requested output language; this is not a reviewed language-specific adaptation.
 
-Read [method.json](method.json) for provenance, exceptions, and per-rule levels, and [locales/en.json](locales/en.json) for the English wording. [cases.json](cases.json) supplies synthetic review cases. For automatic application, show the method and level in a separate status or audit. A requested audit also records version, language, exceptions, and unresolved checks.
+Read [method.json](method.json) for provenance, exceptions, and per-rule levels, and [locales/en.json](locales/en.json) for the English wording. [cases.json](cases.json) supplies synthetic review cases. For an explicit proof request, start with the argument and fit it within the requested length. Give method and level separately only on automatic selection or in a requested audit; the audit also records version, language, exceptions, and unresolved checks.

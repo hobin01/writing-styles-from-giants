@@ -82,5 +82,25 @@
       "허용을 의무로 바꾸지 않는다."
     ],
     "knownBadRewrite": "담당자와 신청자가 모두 승인하면 반드시 제출해야 합니다."
+  },
+  {
+    "id": "closed-filing-period",
+    "type": "meaning-preservation",
+    "method": "korean-plain-language",
+    "locale": "ko",
+    "level": "standard",
+    "source": "지난해 시범 기간에는 영수증을 낸 참가자만 교재비를 돌려받을 수 있었다. 지금은 그 사업이 끝났다.",
+    "request": "옛 안내를 해요체로 다듬어 주세요.",
+    "ruleIds": [
+      "register-and-modality",
+      "preserve-meaning"
+    ],
+    "sourceIds": [
+      "nikl-guide"
+    ],
+    "expectations": [
+      "지난해의 허용 조건을 해요체 과거형으로 유지한다.",
+      "현재도 환급을 신청할 수 있다고 암시하지 않는다."
+    ]
   }
 ]

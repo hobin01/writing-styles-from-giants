@@ -56,5 +56,24 @@
     "locale": "en",
     "knownBadRewrite": "Medicine always makes you better, so take some.",
     "method": "eli5"
+  },
+  {
+    "id": "toy-train-comparison",
+    "type": "ordinary",
+    "locale": "en",
+    "level": "standard",
+    "source": "A child sees two toy trains moving at steady speeds: the red train travels 12 equal tiles in four clock beats, the blue one 10 tiles in two beats. Explain which is faster and whether this tells us which can pull a heavier wagon.",
+    "ruleIds": [
+      "show-mechanism",
+      "bounded-model"
+    ],
+    "sourceIds": [
+      "eli5-community"
+    ],
+    "expectations": [
+      "Compare the blue train’s five tiles per beat to the red train’s three using terms a child can picture.",
+      "Distance and time establish relative speed; this test gives no information about the weight each can pull."
+    ],
+    "method": "eli5"
   }
 ]

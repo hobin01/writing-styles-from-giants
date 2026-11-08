@@ -75,5 +75,24 @@
     "expectations": [
       "Attribute the historical estimate, instrument, unit and relative standard uncertainty. Do not label it a 95% interval."
     ]
+  },
+  {
+    "id": "position-magnitude",
+    "type": "ordinary",
+    "locale": "en",
+    "level": "standard",
+    "source": "A robot’s reported horizontal and vertical offsets are 6 mm and 8 mm. For a one-paragraph note, calculate their vector magnitude and project the magnitude if only the horizontal component falls to 3 mm.",
+    "ruleIds": [
+      "measurement-integrity",
+      "traceable-report"
+    ],
+    "sourceIds": [
+      "nist-authors"
+    ],
+    "expectations": [
+      "Calculate the observed offset magnitude as 10 mm, and the projected magnitude as the square root of 73 mm², about 8.54 mm.",
+      "State which value is hypothetical. Return just the technical note."
+    ],
+    "method": "nist-technical-publication"
   }
 ]

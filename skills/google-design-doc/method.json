@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "google-design-doc",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "status": "experimental",
   "title": "Google-inspired design document",
   "kind": "document",
@@ -100,7 +100,7 @@
     },
     {
       "id": "alternatives-and-tradeoffs",
-      "intent": "Compare plausible alternatives against the stated goals and explain consequential trade-offs.",
+      "intent": "Compare plausible alternatives against the stated goals and explain consequential trade-offs. Compare each option against every release constraint. When none currently qualifies, separate a proposed next experiment from authorization to deploy.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Original operational guidance adapted from the identified source scope.",

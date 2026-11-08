@@ -56,9 +56,11 @@
     ],
     "expectations": [
       "Preserve suggests, some, volunteer sampling, and n=12.",
-      "Do not claim a representative preference for all users."
+      "Do not claim a representative preference for all users.",
+      "Identify whom the survey observed before discussing the larger subscriber population."
     ],
     "knownBadRewrite": "Users prefer the new navigation.",
-    "method": "socratic-self-questioning"
+    "method": "socratic-self-questioning",
+    "request": "Revise a claim that this survey generalizes to all subscribers, giving the strongest supported conclusion."
   }
 ]

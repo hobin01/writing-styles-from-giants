@@ -1,6 +1,6 @@
 {
   "method": "korean-plain-language",
-  "methodVersion": "0.1.1",
+  "methodVersion": "0.1.2",
   "locale": "ko",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -14,7 +14,7 @@
       "adaptation": true
     },
     "register-and-modality": {
-      "instruction": "요청한 말투나 기존 종결 방식을 유지한다. 공손하게 바꾸어도 의무·허용·가능성·금지의 강도는 바꾸지 않는다.",
+      "instruction": "요청한 말투나 기존 종결 방식을 유지한다. 공손하게 바꾸어도 의무·허용·가능성·금지의 강도는 바꾸지 않는다. 과거 제도는 적용 시기를 밝히고 과거형 종결을 써서 지금도 신청할 수 있다는 뜻으로 바뀌지 않게 한다.",
       "adaptation": true
     },
     "reader-terminology": {

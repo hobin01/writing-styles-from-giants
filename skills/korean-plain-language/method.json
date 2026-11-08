@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "korean-plain-language",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "status": "experimental",
   "title": "Korean plain-language companion",
   "kind": "sentence",
@@ -74,7 +74,7 @@
     },
     {
       "id": "register-and-modality",
-      "intent": "Preserve or follow the requested speech level; maintain distinctions among 의무, 허용, 가능성, and prohibition when revising endings.",
+      "intent": "Preserve or follow the requested speech level; maintain distinctions among 의무, 허용, 가능성, and prohibition when revising endings. Keep the period and tense of a past permission or duty clear to a reader encountering the text on its own.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "The guide discusses audience-facing endings; preserving task-selected register and modal force is a project adaptation, not a mandated public-document register.",

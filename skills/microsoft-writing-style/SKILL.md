@@ -13,7 +13,7 @@ At every level preserve facts, numbers, units, negation, conditions, exceptions,
 
 Apply only the rules enabled by the selected level.
 
-1. Identify the reader task and knowledge. Put the useful action or answer early; retain its prerequisites, warning, and applicable conditions.
+1. Identify the reader task and knowledge. Put the useful action or answer early; retain its prerequisites, warning, and applicable conditions. For a sequence, trace what each action changes and preserves. Verify that the surviving items match the reader’s goal before giving the steps.
 2. Use direct, helpful wording. Remove empty openings and repetition only when the reader loses no information. Define needed technical terms instead of replacing them with inaccurate everyday words.
 3. Match actual product/UI labels and keep terminology consistent across steps. Preserve commands, paths, code, and identifiers verbatim unless the task explicitly asks to change them.
 4. Check whether literal wording, explicit referents, and familiar examples work for the intended audience. Apply English-specific grammar or punctuation choices only to English; do not introduce contractions, capitalization rules, or English word limits into Korean prose.

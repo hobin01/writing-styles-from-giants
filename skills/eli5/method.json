@@ -71,7 +71,7 @@
     },
     {
       "id": "bounded-model",
-      "intent": "Use a concrete example or analogy only when it helps; state the important way the simplified model differs from reality.",
+      "intent": "Use a concrete example or analogy only when it helps; state the important way the simplified model differs from reality. When amounts span different times or sample sizes, compare them on a common basis and explain what the example can actually show.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Original operational application of the identified source within the documented read scope.",
@@ -107,7 +107,7 @@
     }
   ],
   "schemaVersion": 1,
-  "version": "0.1.1",
+  "version": "0.1.2",
   "status": "experimental",
   "applicability": {
     "genres": [

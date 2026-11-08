@@ -9,7 +9,7 @@ description: "Develop an evidence-backed planning or decision narrative inspired
 
 Start with the decision the readers can make now. Give someone outside the team enough context to understand what happens if the team keeps its current approach. Put the recommendation, the evidence for it, and the uncertainty that could change it in connected prose. Label an estimate or proposed action as such. Name an owner or date only when supplied or explicitly proposed.
 
-Keep evidence that could reverse the decision in the main body. An appendix can hold supporting detail. When the request specifies six physical pages, use the agreed page size, font, margins, and appendix boundary. Inspect the rendered body before confirming its length. In an unpaginated response, describe the page count as unverified.
+Keep evidence that could reverse the decision in the main body. An appendix can hold supporting detail. When the request specifies six physical pages, use the agreed page size, font, margins, and appendix boundary. Inspect the rendered body before confirming its length. If six physical pages were requested but pagination is unavailable, report that limitation outside the narrative. For an opening paragraph or excerpt, use its stated word limit and return only the requested portion.
 
 ### Worked example · deciding whether to run a trial
 
@@ -21,7 +21,7 @@ The reader can approve a trial while reserving judgment on deployment. The unmea
 
 ## Levels and completion
 
-`light`: clarify decision/context and repair unsupported claims. `standard`: apply the complete narrative profile within the requested scope; qualify page-budget checks when rendering is unavailable. `strict`: trace each major conclusion to evidence or an explicit assumption and inspect the rendered page budget when the required layout and tools are available.
+`light`: clarify decision/context and repair unsupported claims. `standard`: keep supporting evidence, uncertainty and the decision within the requested scope and length. `strict`: trace each major conclusion to evidence or an explicit assumption and inspect the rendered page budget when the required layout and tools are available.
 
 For recommendation-only requests, explain the fit. When applying the method automatically or providing a requested audit, record method, version, level, assumptions, exceptions, and unresolved checks outside the finished text.
 

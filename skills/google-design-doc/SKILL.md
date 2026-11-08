@@ -9,7 +9,7 @@ description: "Draft or review a software design proposal using context, goals, a
 
 State what reviewers need to decide. A **goal** is the desired system behavior. A **constraint** sets a boundary the design must respect. A **non-goal** identifies work outside this decision. Use only those supported by the request.
 
-Describe one path through the proposed design, from input through any component or interface that changes the outcome. Follow a failure path when it changes the choice. Compare a viable alternative, including today's behavior where useful, against the same goals and constraints. Identify the measurement, disagreement, or assumption still blocking a decision. Preserve the actual approval status. Scale the document to the decision. Include code when it clarifies a choice, such as whether a caller receives an error or a stale value.
+Describe one path through the proposed design, from input through any component or interface that changes the outcome. Follow a failure path when it changes the choice. Compare a viable alternative, including today's behavior where useful, against the same goals and constraints. Test the proposed launch decision against every hard constraint. If no candidate passes, name the failed gate, what can proceed now, and what evidence could change the decision. Preserve the actual approval status. Scale the document to the decision. Include code when it clarifies a choice, such as whether a caller receives an error or a stale value.
 
 ### Worked example · a read cache
 

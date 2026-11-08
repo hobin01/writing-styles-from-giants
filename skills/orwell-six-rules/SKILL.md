@@ -16,7 +16,7 @@ Edit for clear, honest expression using original summaries of the six rules in O
 5. Translate needless jargon into familiar language, retaining indispensable terms (`needed-terminology`).
 6. Keep an exception whenever the preceding rules damage the sentence (`sense-over-rule`). This final rule applies at every level.
 
-Compare the edited text with its source before finishing. Do not invent an actor to avoid passive voice, replace a precise term with a vague short word, or remove qualifications to shorten a claim.
+Compare the edited text with its source before finishing. Keep a named component when it identifies where a fault arose; explain its job in ordinary words. Preserve qualifications and leave unknown actors unresolved.
 
 ## Worked edit · cutting words while keeping the unknown actor
 

@@ -26,18 +26,20 @@
     "type": "exception",
     "locale": "en",
     "level": "strict",
-    "source": "Give a finished explanation of a cache hit. A hit occurs when the requested item is already in the cache; a miss requires another lookup. Do not ask me questions.",
+    "source": "Give a finished explanation of a cache hit. A hit occurs when the requested item is already in the cache; a miss requires another lookup. Do not ask me questions. Give the finished text in a short paragraph.",
     "ruleIds": [
       "transfer-check",
       "audience-prerequisites"
     ],
     "sourceIds": [
-      "young-2017"
+      "young-2017",
+      "young-2011"
     ],
     "expectations": [
       "Give a worked new lookup rather than forcing the user to answer a quiz.",
       "Use the same item to show how a change in cache contents changes a hit into a miss, or a miss into a hit. Keep any unspecified storage policy conditional.",
-      "Do not claim that the user has demonstrated mastery."
+      "Do not claim that the user has demonstrated mastery.",
+      "Keep the worked prediction and explanation in the requested single short paragraph."
     ],
     "knownBadRewrite": "Before I explain, answer these five questions.",
     "method": "feynman-technique"

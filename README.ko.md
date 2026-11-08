@@ -4,7 +4,7 @@
 
 AI한테 “쉽게 설명해 줘”라고 하면, 제가 궁금했던 부분까지 빼고 짧게 끝낼 때가 있어요. 다섯 살 아이에게 자전거 브레이크를 설명하는 것과, 엔지니어에게 브레이크의 작동 원리를 설명하는 건 꽤 다른 일이잖아요. 그래서 **누구에게, 어떤 방식으로 설명할지** 직접 고를 수 있게 만들었습니다. 앞선 사람들의 글쓰기 방식을 제 질문에 빌려 쓴다는 뜻에서 이름도 ‘거인의 어깨 위에 선다’는 말에서 따왔어요.
 
-어떤 차이가 나는지 먼저 보고 싶다면 [22개 스킬의 적용 전후 예제](EXAMPLES.md)를 열어 보세요. [새 DNS 레코드를 추가해도 조회에 실패하는 이유](skills/feynman-technique/examples/standard.md), [LIGO가 블랙홀 병합 신호를 알아본 과정](skills/imrad/examples/standard.md), [서울 지하철 노선도를 다시 그린 이유](skills/hunminjeongeum/examples/standard.md)처럼 실제 자료를 바탕으로 했어요. 아직 실험 단계라서, 각 예제에 출처와 함께 스킬 없이 쓴 답과 `standard`로 쓴 답을 그대로 실었습니다.
+어떤 차이가 나는지 먼저 보고 싶다면 [GPT-6 Luna로 푼 22개 예제](EXAMPLES.md)를 열어 보세요. [서로 다른 시각에 조회한 두 DNS 서버](skills/feynman-technique/examples/standard.md)는 왜 다른 답을 줄까요? [LIGO의 오경보율](skills/imrad/examples/standard.md)은 관측 한 건이 잡음일 확률과 어떻게 다를까요? [서울 지하철 노선도에서 길을 찾는 시간이 줄면](skills/hunminjeongeum/examples/standard.md) 전체 여정에서는 얼마나 절약될까요? 고등학생 이상이 자료를 읽고 판단해야 하는 문제를 목표로 삼았습니다. 각 예제에는 실제 출처, 스킬 없이 쓴 답과 `standard` 답, 두 답이 놓친 점을 함께 실었습니다.
 
 ## Codex에서 써 보기
 

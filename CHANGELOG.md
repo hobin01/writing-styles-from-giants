@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Run all 22 matched writing comparisons on `gpt-6-luna` using tasks that require reasoning over supplied evidence. Publish the first answers and masked rubric judgments, including ties and regressions. Keep developmental reruns separate and provide a local tool to repeat a pair.
+
 - Replace the 22 synthetic gallery tasks with primary-source cases from computing, science and public policy. Preserve full fresh baseline and standard outputs, earlier attempts and the original gallery. Clarify how the RFC profile preserves conditional obligations and how IMRaD assigns observations and analyses to their actors.
 
 - Add project writing commands for explicit selection, automatic matching and English/Korean help. Rewrite both READMEs around those commands and publish standard-mode comparisons for all 22 skills.

@@ -1,6 +1,6 @@
 {
   "method": "minto-pyramid",
-  "methodVersion": "0.2.1",
+  "methodVersion": "0.2.2",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -18,7 +18,7 @@
       "adaptation": false
     },
     "evidence-links": {
-      "instruction": "Check that every supporting point answers the question above it and is supported by facts below it.",
+      "instruction": "Check that every supporting point answers the question above it and is supported by facts below it. Distinguish evidence that justifies trying an option from a comparison that could show its effect in the proposed setting.",
       "adaptation": true
     },
     "proportionate-shape": {

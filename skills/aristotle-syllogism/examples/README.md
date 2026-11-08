@@ -1,3 +1,3 @@
 # Aristotelian syllogistic argument checking examples
 
-[Does a new moon guarantee a total solar eclipse?](standard.md) contains the source material, one request, both full answers and the review in English and Korean. The baseline answered directly; the other session received [Aristotelian syllogistic argument checking](../SKILL.md) at `standard`. Tested entrypoint: version 0.1.2, SHA-256 prefix `d69f028ec500`.
+[Can new moon and central alignment alone establish a total solar eclipse?](standard.md) includes the sources, request, full GPT-6 Luna answers and a check-by-check review. The first baseline and [standard method](../SKILL.md) ran in independent sessions; the method version was 0.1.2 (entrypoint SHA-256 prefix `d69f028ec500`).

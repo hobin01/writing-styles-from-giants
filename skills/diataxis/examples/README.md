@@ -1,3 +1,3 @@
 # Diátaxis documentation examples
 
-[Watching a specific Kubernetes Deployment revision](standard.md) contains the source material, one request, both full answers and the review in English and Korean. The baseline answered directly; the other session received [Diátaxis documentation](../SKILL.md) at `standard`. Tested entrypoint: version 0.1.1, SHA-256 prefix `1bf8f74acf77`.
+[Which Kubernetes rollout did the green CI job actually observe?](standard.md) includes the sources, request, full GPT-6 Luna answers and a check-by-check review. The first baseline and [standard method](../SKILL.md) ran in independent sessions; the method version was 0.1.1 (entrypoint SHA-256 prefix `1bf8f74acf77`).
