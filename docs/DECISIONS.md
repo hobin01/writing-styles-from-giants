@@ -15,8 +15,9 @@
 
 ## Implemented catalog
 
-- 21 methods plus `korean-plain-language`, all experimental. Minto is `0.2.0`, ASD/Orwell `0.1.1`, and the remaining profiles `0.1.0`. The companion handles Korean referents, particles/endings, register, terminology, and modality rather than duplicating structural methods.
-- Portable instructions and evidence only; no runtime router, installer, or host adapter. Default level is `standard` when a method is selected without a level.
+- 21 methods plus `korean-plain-language`, all experimental. Each portable method records its content version in `method.json`. The companion handles Korean referents, particles/endings, register, terminology and modality.
+- The owner chose one checkout-scoped command with explicit selection, opt-in automatic matching, and bilingual help. Codex uses `$wsg`, `$wsg auto` and `$wsg docs`. The slash spellings are `/wsg`, `/wsg:auto` and `/wsg:docs`. Each writing invocation defaults to `standard`; documentation defaults to English. [Invocation contract](../commands/WSG.md)
+- Keep one real standard-mode comparison in each method's `examples/` directory and collect the complete pairs in [EXAMPLES.md](../EXAMPLES.md).
 - New Hart’s Rules is source-assisted: unverified edition-specific choices require relevant text, not invented prescriptions.
 
 - Catalog cleanup: at the owner’s request, retain Minto instead of a standalone SCQA opening, ASD instead of the overlapping CTE-inspired implementation, and Orwell instead of the factual Hemingway adaptation. Preserve distinct tasks and all nine regression cases; see [comparison and migration](CATALOG_CONSOLIDATION.md).
@@ -30,7 +31,6 @@ These remain proposals, not implemented behavior or user-approved defaults.
 | Delivery | Complete portable method directories; evaluate an existing installer first |
 | Runtime | Keep Python foundation checks; add product runtime code only for an observed unmet need |
 | Further expansion | Add methods or language adaptations only with source evidence and cases |
-| Selection | Recommendation mode, `standard` level, explicit automatic-application opt-in |
 | Output languages | Respect the owner's English-first authoring decision; language-specific rules still need reviewed adaptations and their own measurements |
 | Installation | Project scope by default; global changes require selection |
 | Releases | Reviewed tags create draft GitHub source releases |

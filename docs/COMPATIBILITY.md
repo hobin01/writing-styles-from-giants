@@ -1,17 +1,23 @@
 # Host compatibility
 
-**No host integration is runtime-verified in this project.** The following are planned targets. The linked upstream documentation is a starting point, not a recorded compatibility test.
+Open this checkout in your agent. The adapters use the host's model and read the same [command guide](../commands/WSG.md). There is no package to install and no user settings to change.
 
 | Host | Status | Documentation starting point |
 | --- | --- | --- |
-| Codex | planned | [Skills](https://learn.chatgpt.com/docs/build-skills) |
-| Claude Code | planned | [Skills](https://code.claude.com/docs/en/skills) |
-| OpenCode | planned | [Skills](https://opencode.ai/docs/skills/) and [V2 skills](https://opencode.ai/v2/docs/skills) |
+| Codex CLI and app-server | Smoke-tested: `$wsg METHOD …`, `$wsg auto …`, `$wsg docs ko` | [Repo-scoped skills and explicit invocation](https://learn.chatgpt.com/docs/build-skills) · [CLI slash-command menu](https://learn.chatgpt.com/docs/developer-commands?surface=cli) |
+| Claude Code | Project slash-command discovery and expansion verified: `/wsg`, `/wsg:auto`, `/wsg:docs`. Live Claude generation untested. | [Project command names and arguments](https://code.claude.com/docs/en/skills#how-a-skill-gets-its-command-name) |
+| OpenCode | No native slash adapter shipped | [Skills](https://opencode.ai/docs/skills/) and [V2 skills](https://opencode.ai/v2/docs/skills) |
 | Antigravity | planned | [Skills](https://antigravity.google/docs/skills) |
 | Pi | planned | [Skills](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/skills.md) |
 | Cline | planned | [Skills](https://docs.cline.bot/customization/skills) |
 
-Verify current official documentation before selecting installation paths or asserting precedence. Record the host's product surface and version: a CLI, app, and IDE extension may differ. Derive paths from that evidence rather than copying an untested path table.
+## Checkout checks · 2026-11-08
+
+- **Codex 0.167.0, macOS 26.5.2 arm64.** App-server `skills/list` discovered the [WSG adapter](../.agents/skills/wsg/SKILL.md) at repository scope from the root and from `skills/eli5/`. Choose `$wsg` in the composer. The [adapter policy](../.agents/skills/wsg/agents/openai.yaml) enables explicit invocation only. App-server tests supplied a native skill selection and the user's text to ordinary read-only turns. An explicit `eli5 light` request read the method and its locale and explained melting ice. `docs ko` read the Korean catalog and returned all 22 IDs. These runs exercise the service behind the composer; the desktop picker itself was not UI-tested.
+- **Codex level reset.** Two native invocations in the same app-server chat produced `eli5 · strict` on the first request and `eli5 · standard` on the next request with no level. The second selection appeared in a status before the answer.
+- **Codex CLI generation.** Fresh `codex exec` runs on `gpt-6.1-sol` returned the English catalog by default, selected Google design docs at `standard` for a Korean cache proposal, and applied ASD's strict reference to a conditional service instruction. Sorting words produced an ordinary answer without selecting a method. A request after `--` preserved “light” and “strict” as source words at the default level. A separate `$wsg off` call returned exactly the requested two words.
+- **Claude Code 2.1.228, same OS.** SDK initialization returned the three checkout commands from [the project command directory](../.claude/commands/). Headless invocations expanded all three with their arguments. A probe with inline and newline shell-looking text preserved the original command arguments, escaped the executable syntax in the expanded prompt and created no marker file. The probe used an isolated configuration and no provider account. It verifies the native parser, not a generated Claude answer.
+- **OpenCode 1.16.2.** Its [command implementation](https://github.com/anomalyco/opencode/blob/v1.16.2/packages/opencode/src/session/prompt.ts#L1436-L1448) expands user arguments before executing inline shell substitutions. A project command template on that version would let supplied writing samples trigger shell commands, so this checkout does not register one.
 
 ## Evidence levels
 

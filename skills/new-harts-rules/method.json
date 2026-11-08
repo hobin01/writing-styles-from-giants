@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "new-harts-rules",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "status": "experimental",
   "title": "New Hart’s Rules source-assisted editing",
   "kind": "process",

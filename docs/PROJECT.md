@@ -20,7 +20,7 @@ The repository is private during solo development before stable `0.0.1`, but eve
 3. **Tested distribution.** Evaluate the existing [reuse candidates](../THIRD_PARTY_NOTICES.md) against [ARCHITECTURE.md](ARCHITECTURE.md). Verify complete references, scope, conflicts, durable link/copy behavior, modified files, shared roots, interrupted updates, and removal preservation. Publish installation instructions and support claims only for tested host/version/OS combinations; Windows needs its own evidence.
 4. **Source release.** Resolve semantic and ownership failures, inspect archive rights/content, and follow [RELEASING.md](RELEASING.md) for the first `0.0.1` draft. Expand methods and host coverage from evidence.
 
-The proposed initial mode is recommendation at `standard` level, with project-scoped installation. Method review, model evaluations, and host evidence are distinct from repository tests. Public CI requires no model keys; optional model evaluations use bounded cost and sanitized inputs.
+The checkout commands default to `standard` on each writing request. Automatic selection is explicit. Method review, model evaluations, and host evidence are distinct from repository tests. Public CI requires no model keys; optional model evaluations use bounded cost and sanitized inputs.
 
 ## Current state
 
@@ -28,7 +28,9 @@ Present: 21 experimental methods plus a Korean-specific linguistic companion, so
 
 All 22 entrypoints now include authored examples. The [four paired writing trials](../evals/runs/2026-11-08-worked-examples.md) preserve outputs, including a failed check and fresh runs after a revision. The HTML example also has a rendered keyboard and no-script check.
 
-Pending: installed host discovery/activation, installer lifecycle integration, independent native-language and reader review, broader comparative model evaluations, release workflow verification, and repository protection settings. No skill is marked `reviewed`; no release or host compatibility is claimed. There is no runtime router: a selected skill follows its own applicability and level instructions.
+The [WSG commands](../commands/WSG.md) expose explicit selection, automatic matching and bilingual help. [EXAMPLES.md](../EXAMPLES.md) collects the standard-mode comparisons for all 22 methods. See [host verification](COMPATIBILITY.md) for tested discovery and invocation paths.
+
+Pending: installer lifecycle integration, independent native-language and reader review, repeated comparative evaluations, release workflow verification, and repository protection settings. All methods retain experimental status.
 
 ## Boundaries
 

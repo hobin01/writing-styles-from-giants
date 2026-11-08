@@ -2,7 +2,7 @@
   {
     "id": "compound-interest",
     "type": "ordinary",
-    "source": "Create HTML explaining compound interest with adjustable principal, annual rate, and years. Use P(1+r)^t; r is an annual fraction and t is whole years.",
+    "source": "Create HTML explaining compound interest with adjustable principal, annual rate, and years. Use P(1+r)^t; r is an annual fraction and t is whole years. Return only the HTML.",
     "ruleIds": [
       "explanatory-question",
       "consistent-model",
@@ -12,7 +12,8 @@
     "expectations": [
       "Show a meaningful initial result and labeled controls.",
       "Convert rate percentage to a fraction consistently.",
-      "Check initial, changed, zero-rate, and invalid-input states."
+      "Check initial, changed, zero-rate, and invalid-input states.",
+      "Keep verification status out of the reader-facing lesson."
     ],
     "sourceIds": [],
     "level": "standard",

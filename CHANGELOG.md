@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Add project writing commands for explicit selection, automatic matching and English/Korean help. Rewrite both READMEs around those commands and publish standard-mode comparisons for all 22 skills.
+
 - Add worked examples to all 22 writing skills, including a runnable HTML explanation. Record four matched trials and revise Feynman's strict transfer check using an observed omission.
 
 - Consolidate 25 skills to 22: retire standalone SCQA in favor of Minto, CTE-inspired editing in favor of ASD, and the factual Hemingway adaptation in favor of Orwell. Retain all nine cases, document distinct methods, and preserve the original evaluation snapshot.

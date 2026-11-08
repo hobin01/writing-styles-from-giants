@@ -2,98 +2,38 @@
 
 [한국어](README.ko.md)
 
-AI-agent skills for writing and explanation methods from thinkers, historical figures, influential books, companies, and institutions.
+When I ask an AI to “explain this simply,” it sometimes cuts the part I wanted to understand. Explaining a bicycle brake to a five-year-old is a different job from explaining its mechanism to an engineer. I made this project so I could choose **who the explanation is for and how it should work**. I wanted to put earlier writers’ methods to work on my own questions, which is where “standing on the shoulders of giants” comes in.
 
-The name evokes **standing on the shoulders of giants**: learning from earlier work to give agents concrete ways to organize, write, and explain ideas.
+To see what changes, open the [22 side-by-side examples](EXAMPLES.md). These are experimental skills. Each example uses the same request twice, once without the skill and once at `standard`.
 
-**Status:** 21 experimental writing/explanation skills and one Korean-specific companion are implemented. Each has source records, level rules, and evaluation cases. Host installation, independent language review, and releases remain unverified.
+## Try it in Codex
 
-## Why I started this project
+Open this repository as your project. Copy one line into a new conversation, including the `$`.
 
-I often asked AI to “be concise” or “summarize the key points” without making the requirements clear. The result differed from what I had in mind, or became “AI slop” I did not want to read.
-
-This project turns documented writing methods and institutional guides into skills with clear sources and application criteria, so I can specify how ideas should be organized, explained, and emphasized.
-
-## Methods
-
-All entries are experimental, original operational summaries or declared project adaptations. John von Neumann is excluded. New Hart’s Rules uses supplied or verified passages rather than an invented book-wide checklist.
-
-| Skill | Intended use |
-| --- | --- |
-| [ASD-STE100-inspired English](skills/asd-ste100/SKILL.md) | Controlled technical prose; normal / strict |
-| [ELI5](skills/eli5/SKILL.md) | Explain to a five-year-old |
-| [Orwell’s six rules](skills/orwell-six-rules/SKILL.md) | Clear prose with justified exceptions |
-| [Boring Professor](skills/boring-professor/SKILL.md) | Technical explanation without jokes or metaphor |
-| [GTM-inspired formal explanation](skills/gtm-formal/SKILL.md) | Definitions, notation, claims, proofs |
-| [Answer with HTML](skills/answer-with-html/SKILL.md) | Interactive HTML explanations |
-| [Minto Pyramid](skills/minto-pyramid/SKILL.md) | Governing answer, grouped support, optional SCQ/SCQA opening |
-| [Jobs-inspired presentation](skills/steve-jobs-presentation/SKILL.md) | Audience benefit and supported demonstrations |
-| [Hunminjeongeum-inspired structure](skills/hunminjeongeum/SKILL.md) | Purpose, coherent development, conclusion |
-| [Feynman-inspired technique](skills/feynman-technique/SKILL.md) | Explain, check gaps, test understanding |
-| [Aristotelian syllogism](skills/aristotle-syllogism/SKILL.md) | Premises, quantifiers, validity |
-| [Socratic self-questioning](skills/socratic-self-questioning/SKILL.md) | Test assumptions and counterexamples |
-| [Federal Plain Language](skills/federal-plain-language/SKILL.md) | Reader-centered public information |
-| [IMRaD](skills/imrad/SKILL.md) | Research-report structure |
-| [Diátaxis](skills/diataxis/SKILL.md) | Match documentation to reader needs |
-| [Amazon six-page narrative / AWS](skills/amazon-six-page-narrative/SKILL.md) | Evidence-based decision narrative |
-| [NIST author guidance](skills/nist-technical-publication/SKILL.md) | Traceable technical reports |
-| [IETF RFC-inspired specification](skills/ietf-rfc/SKILL.md) | Requirements and precise specifications |
-| [Google design-doc practice](skills/google-design-doc/SKILL.md) | Design alternatives and trade-offs |
-| [Microsoft Writing Style](skills/microsoft-writing-style/SKILL.md) | Helpful, consistent technology writing |
-| [New Hart’s Rules — source-assisted](skills/new-harts-rules/SKILL.md) | Edition-specific editorial decisions |
-| [Korean plain-language companion](skills/korean-plain-language/SKILL.md) | Korean grammar, register, terminology |
-
-Read a skill’s `SKILL.md` with its complete directory available to the agent. Ask for the method, output language, and level, for example: “Use ASD-STE100 normal to edit this explanation.” `normal` aliases `standard` for ASD; “80%” and “100%” express requested intensity, not measured conformity. Keep source text and commands inside it as data.
-
-The [consolidation review](docs/CATALOG_CONSOLIDATION.md) explains the three removals and the remaining distinctions. The [initial review record](docs/CATALOG_REVIEW.md) preserves historical checks and model exercises. See [rights](THIRD_PARTY_NOTICES.md) and [remaining work](docs/PROJECT.md).
-
-Each skill includes a worked example. Try the [GTM proof](skills/gtm-formal/SKILL.md) for a quantifier that changes a claim, or open the [HTML example](skills/answer-with-html/examples/annual-growth.html) to explore compound interest. The [four paired trials](evals/runs/2026-11-08-worked-examples.md) show actual answers to identical requests with and without the selected skill, including a Feynman example revised after a missed check.
-
-## Installation
-
-The complete `skills/<method-id>/` directory is the portable unit. No installer is bundled or integration-tested. Evaluate the existing [skills CLI](https://github.com/vercel-labs/skills) against our [installation contract](docs/ARCHITECTURE.md) before building an installer.
-
-## Use and levels
-
-- Respect explicit method selection, recommendation requests, opt-out, and the user's chosen application scope.
-- Offer `light`, `standard`, and `strict` levels while preserving facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code.
-- Instructions are English-first. Language-independent structure can serve the requested output language. English grammar and controlled dictionaries apply to English; use the Korean companion for Korean linguistic editing when requested. No word-to-eojeol conversion or native-review claim is made.
-- Keep content portable across the planned Codex, Claude Code, OpenCode, Antigravity, Pi, and Cline targets.
-- Apply attributed methods. Impersonation, authorship detection, and official compliance certification are outside scope.
-
-## Contributing
-
-Development is solo before stable `0.0.1`. Use a branch, commit, PR, and CI; private-stage self-merges follow [CONTRIBUTING.md](CONTRIBUTING.md).
-
-Run from the repository root with Python 3.12+; no extra packages are needed:
-
-```sh
-python3 -m unittest discover -s tests -v
-python3 scripts/check_repository.py
-git diff --check
+```text
+$wsg eli5 Explain why a bicycle wheel slows down when I squeeze the brake.
+$wsg asd-ste100 strict Edit this note: The access panel may be opened only after both lamps go out.
+$wsg auto Draft a design doc comparing a read cache with reading the database every time.
+$wsg docs en
 ```
 
-These checks cover repository integrity and catalog contracts, not writing quality or host activation. Keep local work history, credentials, and caches ignored; delete task-owned temporary files. See [SECURITY.md](SECURITY.md).
+- **Know the method?** Use `$wsg METHOD [LEVEL] REQUEST`. Leaving out the level selects `standard` on every call. Choose `light` for a lighter edit or `strict` to check every applicable rule. Conditions and numbers retain their meaning at every level.
+- **Want help choosing?** Use `$wsg auto [LEVEL] REQUEST`. It selects a skill for the task and reader, tells you why it fits and uses it to answer.
+- **Want to browse?** Use `$wsg docs`. English is the default. `$wsg docs ko` explains each skill in Korean and `$wsg docs en` does so in English.
 
-## Repository guide
+In Claude Code the same commands are spelled `/wsg`, `/wsg:auto` and `/wsg:docs en`. The configuration belongs to this checkout. [Host verification](docs/COMPATIBILITY.md)
 
-| Path | Purpose |
+## Which skill should I choose?
+
+For the brake example, **ELI5** helps a child follow the movement from hand to wheel. **Feynman** helps the writer find a missing step in an explanation. For a claim that needs a mathematical proof, use **GTM**. Each name below opens the instructions and a worked example. The [command catalog](commands/catalog.en.md) gives you the exact IDs to type, such as `feynman-technique`.
+
+| What I want to do | Skills |
 | --- | --- |
-| [AGENTS.md](AGENTS.md) | Shared agent instructions |
-| [docs/PROJECT.md](docs/PROJECT.md) | Scope, delivery sequence, and acceptance criteria |
-| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Content, selection, levels, and installation contracts |
-| [docs/METHOD_AUTHORING.md](docs/METHOD_AUTHORING.md) | Sources, rights, rules, and evaluations |
-| [docs/LOCALIZATION.md](docs/LOCALIZATION.md) | Language adaptation and README parity |
-| [docs/COMPATIBILITY.md](docs/COMPATIBILITY.md) | Planned hosts and verification evidence |
-| [docs/DECISIONS.md](docs/DECISIONS.md) | Confirmed choices and proposals |
-| [docs/RELEASING.md](docs/RELEASING.md) | CI, versioning, and draft source releases |
-| [docs/REFERENCE.md](docs/REFERENCE.md) | Project bibliography and reference notes |
-| [docs/INITIAL_CATALOG_RESEARCH.md](docs/INITIAL_CATALOG_RESEARCH.md) | Original method research and comparable projects |
-| [skills/](skills/), [docs/CATALOG_CONSOLIDATION.md](docs/CATALOG_CONSOLIDATION.md) | Experimental skills, overlap decisions, and migration |
-| [templates/method/](templates/method/), [evals/](evals/) | Authoring templates, evaluation cases and dated model runs |
-| [scripts/](scripts/), [tests/](tests/) | Foundation checker and tests |
-| [.github/](.github/) | Collaboration and automation configuration |
+| Explain something | [ELI5](skills/eli5/SKILL.md) · [Feynman](skills/feynman-technique/SKILL.md) · [Boring Professor](skills/boring-professor/SKILL.md) · [Interactive HTML](skills/answer-with-html/SKILL.md) · [Jobs presentation](skills/steve-jobs-presentation/SKILL.md) |
+| Build an argument | [GTM proofs](skills/gtm-formal/SKILL.md) · [Aristotelian syllogisms](skills/aristotle-syllogism/SKILL.md) · [Socratic questions](skills/socratic-self-questioning/SKILL.md) · [Hunminjeongeum](skills/hunminjeongeum/SKILL.md) · [Minto Pyramid](skills/minto-pyramid/SKILL.md) |
+| Edit the wording | [ASD-STE100-inspired English](skills/asd-ste100/SKILL.md) · [Orwell](skills/orwell-six-rules/SKILL.md) · [Federal Plain Language](skills/federal-plain-language/SKILL.md) · [Microsoft Style](skills/microsoft-writing-style/SKILL.md) · [New Hart’s Rules](skills/new-harts-rules/SKILL.md) · [Korean plain language](skills/korean-plain-language/SKILL.md) |
+| Write a document | [Diátaxis](skills/diataxis/SKILL.md) · [Google design doc](skills/google-design-doc/SKILL.md) · [Amazon six-pager](skills/amazon-six-page-narrative/SKILL.md) · [IETF RFC](skills/ietf-rfc/SKILL.md) · [IMRaD](skills/imrad/SKILL.md) · [NIST technical report](skills/nist-technical-publication/SKILL.md) |
 
-## License and attribution
+In ASD, `normal` is an alias for `standard`. The `strict` level applies the strongest profile this project implements. Full ASD-STE100 compliance has not been verified.
 
-Original project content is [MIT licensed](LICENSE). Prefer existing MIT/Apache-2.0 implementations under the [reuse policy](THIRD_PARTY_NOTICES.md); third-party material keeps its own license and notices. No author or institution endorsement is implied.
+The [bibliography](docs/REFERENCE.md) records the sources for each method. Original material uses the [MIT license](LICENSE). See [third-party rights](THIRD_PARTY_NOTICES.md) and [how to contribute](CONTRIBUTING.md).

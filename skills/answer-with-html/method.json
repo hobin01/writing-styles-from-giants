@@ -101,7 +101,7 @@
     },
     {
       "id": "exercise-artifact",
-      "intent": "Open the rendered page when tools permit; exercise initial, changed, and boundary states, keyboard use, and formula consistency. Report any checks that could not run.",
+      "intent": "Open the rendered page when tools permit; exercise initial, changed, and boundary states, keyboard use, and formula consistency. Report unrun checks outside the lesson when the response format allows.",
       "classification": "guideline",
       "provenance": "project-original",
       "rationale": "Original artifact verification workflow.",
@@ -118,7 +118,7 @@
     }
   ],
   "schemaVersion": 1,
-  "version": "0.1.1",
+  "version": "0.1.2",
   "status": "experimental",
   "applicability": {
     "genres": [
