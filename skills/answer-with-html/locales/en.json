@@ -1,6 +1,6 @@
 {
   "method": "answer-with-html",
-  "methodVersion": "0.1.1",
+  "methodVersion": "0.1.2",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -26,7 +26,7 @@
       "adaptation": false
     },
     "exercise-artifact": {
-      "instruction": "Open the rendered page when tools permit; exercise initial, changed, and boundary states, keyboard use, and formula consistency. Report any checks that could not run.",
+      "instruction": "Open the rendered page when tools permit; exercise initial, changed, and boundary states, keyboard use, and formula consistency. Report unrun checks outside the lesson when the response format allows.",
       "adaptation": false
     }
   }

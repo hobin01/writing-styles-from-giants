@@ -17,7 +17,7 @@ House style requires `email` in editable prose. The draft says, “Send an e-mai
 
 > Send an email. The archived subject line reads ‘e-mail settings’.
 
-If an audit is requested, record the spelling as a house decision. No book passage was supplied for it. The [house-style-consistency and quote-preservation cases](cases.json) cover these two boundaries.
+In a requested editorial note, explain the edit and name its authority: “House style specifies this spelling; the quoted title stays verbatim.” Keep the method version and level in a separate audit when requested. Attribute a decision to a book only when a relevant passage supports it. The [house-style-consistency and quote-preservation cases](cases.json) cover these two boundaries.
 
 ## Levels and completion
 

@@ -4,7 +4,7 @@
     "type": "ordinary",
     "locale": "en",
     "level": "standard",
-    "source": "Edit this English draft. User house style explicitly requires \"email\" in editable prose. Draft: \"Send an e-mail. Email support if needed.\" No relevant book passage is available.",
+    "source": "Edit this English draft. User house style explicitly requires \"email\" in editable prose. Draft: \"Send an e-mail. Email support if needed.\" No relevant book passage is available. Add a brief editorial note.",
     "ruleIds": [
       "edition-and-house-style",
       "verify-applicable-passage",
@@ -16,7 +16,8 @@
     ],
     "expectations": [
       "Use email consistently as a user house-style decision.",
-      "Do not claim that the decision was verified in New Hart’s Rules."
+      "Do not claim that the decision was verified in New Hart’s Rules.",
+      "Use the requested note for the basis of the edit; reserve method/version reporting for an audit."
     ],
     "method": "new-harts-rules"
   },
