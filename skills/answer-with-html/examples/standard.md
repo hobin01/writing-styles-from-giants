@@ -1,172 +1,115 @@
-# Answer with HTML · How a fixed delay changes delivery time
+# Why Perseverance cannot answer Earth immediately
 
-Run on 2026-11-08 • `answer-with-html` 0.1.2 • English • Codex CLI 0.167.0
+2026-11-08 · `answer-with-html` 0.1.2 · English · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [NASA/JPL, Speaking Percy's Language: How to Talk so Perseverance Will Listen](https://science.nasa.gov/blog/speaking-percys-language-how-to-talk-so-perseverance-will-listen/). JPL vehicle systems engineer Pegah Pashai explains why the one-way command delay varies from about 3 to 22 minutes with orbital position. The doubled time is this exhibit's idealized calculation.
 
 ### Prompt
 
-> Return only one short self-contained HTML page. Teach why a courier travelling at 12 km/h with a fixed 10-minute loading delay takes 30 minutes to deliver 4 km. Add one distance slider from 0 to 8 whole km and update the total minutes. The initial page must show the 4 km result even without JavaScript. No internet dependencies.
+> Return only a short self-contained HTML page for a Mars exhibit. NASA describes commands to the Perseverance rover as taking about 3 to 22 minutes one way as Earth and Mars change position. Give the visitor one labeled slider for whole minutes in that range. Start at 12 minutes and show how long Earth would wait for a reply if the rover replied immediately and the return signal took as long as the outgoing one. Explain why the result is a minimum in this model, not an actual scheduled reply time. The initial result must be readable without scripts; use no external resources.
 
 ### Without a skill
 
-```html
+````html
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Courier delivery time</title>
+<title>Mars: Waiting for a Reply</title>
 <style>
-body{font:18px/1.6 system-ui,sans-serif;max-width:580px;margin:60px auto;padding:0 24px;color:#183143;background:#f4f8fb}
-main{background:white;padding:28px;border-radius:18px}
-h1{font-size:1.7rem;line-height:1.2}
-input{width:100%;accent-color:#087e8b}
-.result{font-size:1.5rem;font-weight:700;color:#087e8b}
+body{margin:0;background:#201519;color:#fff0df;font:18px/1.6 system-ui,sans-serif}
+main{max-width:36rem;margin:4rem auto;padding:1.5rem}
+h1{line-height:1.15;color:#ffad80}
+input{width:100%;accent-color:#ffad80}
+.result{font-size:1.5rem;font-weight:bold}
 </style>
 </head>
 <body>
 <main>
-<h1>A delivery includes loading time</h1>
-<p>At <strong>12 km/h</strong>, the courier travels 1 km in 60 ÷ 12 = <strong>5 minutes</strong>.</p>
-<p>For 4 km, travelling takes 4 × 5 = 20 minutes. Add the fixed 10-minute loading delay: <strong>20 + 10 = 30 minutes</strong>.</p>
-<label for="distance">Delivery distance: <output id="km" for="distance">4</output> km</label>
-<input id="distance" type="range" min="0" max="8" step="1" value="4">
-<p>Total time = 10 minutes loading + 5 minutes × distance.</p>
-<p class="result" aria-live="polite"><output id="total" for="distance">30</output> minutes total</p>
-<p>Even at 0 km, the fixed loading delay takes 10 minutes.</p>
+<h1>A message to Mars—and back</h1>
+<p>NASA describes commands to the Perseverance rover as taking about 3 to 22 minutes one way, depending on the positions of Earth and Mars.</p>
+<label for="delay">One-way signal travel time: <output id="minutes" for="delay">12</output> minutes</label>
+<input id="delay" type="range" min="3" max="22" step="1" value="12">
+<p class="result" aria-live="polite">Minimum wait for a reply: <output id="wait" for="delay">24 minutes</output></p>
+<p>The calculation is twice the one-way travel time: out to Mars, then back to Earth. It assumes the rover replies immediately and the return signal takes just as long.</p>
+<p>This is a minimum in this model, not a scheduled reply time. Processing, carrying out a command, and waiting for communication opportunities can all add time.</p>
+<noscript><p>The example above uses 12 minutes each way. Enable JavaScript to update the result with the slider.</p></noscript>
 </main>
 <script>
-const distance = document.getElementById('distance');
-function update() {
-  document.getElementById('km').textContent = distance.value;
-  document.getElementById('total').textContent = 10 + 5 * Number(distance.value);
-}
-distance.addEventListener('input', update);
-update();
-</script>
-</body>
-</html>
-```
-
-### With the skill at standard
-
-```html
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Courier delivery time</title>
-<style>
-body{font:1.1rem/1.6 system-ui,sans-serif;max-width:36rem;margin:3rem auto;padding:0 1.2rem;color:#183044;background:#f5f8fa}
-main{background:white;padding:1.6rem;border-radius:1rem}
-h1{font-size:1.6rem;line-height:1.2}
-.result{font-size:1.8rem;font-weight:700}
-input{display:block;width:100%;margin:1rem 0;accent-color:#176b87}
-.formula{padding:1rem;background:#eaf4f7;border-radius:.5rem}
-small{display:block}
-</style>
-</head>
-<body>
-<main>
-<h1>Why does 4 km take 30 minutes?</h1>
-<p>At a steady <strong>12 km/h</strong>, each kilometre takes <strong>5 minutes</strong>: 60 ÷ 12 = 5. Travelling 4 km takes 20 minutes. Add the fixed 10-minute loading delay, and the delivery takes 30 minutes.</p>
-<p class="formula">Total minutes = 10 + (5 × distance in km)</p>
-<label for="distance">Distance (whole km): <output id="distance-value" for="distance">4</output> km</label>
-<input id="distance" type="range" min="0" max="8" step="1" value="4" aria-describedby="assumption">
-<div aria-live="polite" aria-atomic="true">
-<p class="result"><span id="total">30</span> minutes total</p>
-<p id="calculation">10 minutes loading + 20 minutes travelling = 30 minutes.</p>
-</div>
-<small id="assumption">Assumes constant speed and no other delays. Loading still takes 10 minutes at 0 km.</small>
-<noscript><p>The example above shows 4 km. Enable JavaScript to explore other distances.</p></noscript>
-</main>
-<script>
-const slider = document.getElementById('distance');
-function update() {
-  const raw = slider.value;
-  const distance = Number(raw);
-  if (raw.trim() === '' || !Number.isFinite(distance) ||
-      distance < 0 || distance > 8 || !Number.isInteger(distance)) return;
-  const travel = distance * 5;
-  const total = 10 + travel;
-  document.getElementById('distance-value').textContent = distance;
-  document.getElementById('total').textContent = total;
-  document.getElementById('calculation').textContent =
-    `10 minutes loading + ${travel} minutes travelling = ${total} minutes.`;
-}
-slider.addEventListener('input', update);
-update();
-</script>
-</body>
-</html>
-```
-
-### What changed
-
-**Checks set before the run.** The formula gives 10, 30 and 50 minutes at 0, 4 and 8 km. The native control needs a label, keyboard access, and a readable initial answer without scripts.
-
-Both final pages produced 30, 10 and 50 minutes at 4, 0 and 8 km. The revised page explains the fixed delay and adds the changing travel-time breakdown. The first treatment exposed the agent’s unfinished verification as a lesson footer. We clarified where to report verification, reran the same request and preserved that earlier output below.
-
-**차이.** 두 페이지 모두 거리별 시간을 정확히 계산했습니다. 첫 스킬 답안은 검증 상태를 수업 본문에 노출해 지침을 고치고 다시 실행했습니다.
-
-Chrome 156.0.8078.80 displayed 30 minutes initially and with JavaScript disabled. With JavaScript enabled, Home, End and ArrowLeft on the distance slider produced 10, 50 and 45 minutes. Both final pages and the earlier treatment stayed within 320 CSS pixels and made no external requests.
-
-<details>
-<summary>First treatment · version 0.1.1</summary>
-
-The page calculated correctly, but its footer addressed the agent's browser checks instead of the lesson. The new instruction keeps test status in a separate delivery note when the requested format allows it. The rerun used the original input and a new context.
-
-```html
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Courier delivery time</title>
-<style>
-body{font:1.1rem/1.6 system-ui,sans-serif;max-width:38rem;margin:3rem auto;padding:0 1rem;color:#183047;background:#f5f8fb}
-main{background:white;padding:1.5rem;border-radius:1rem}
-h1{font-size:1.6rem;line-height:1.2}
-.result{font-size:1.5rem;font-weight:700;color:#075d64}
-input{width:100%;accent-color:#075d64}
-.formula{padding:1rem;background:#edf5f5;border-radius:.5rem}
-small{color:#526474}
-</style>
-</head>
-<body>
-<main>
-<h1>Why does 4 km take 30 minutes?</h1>
-<p>At 12 km/h, the courier travels 1 km every 5 minutes. Travelling 4 km therefore takes 20 minutes. Add the fixed 10-minute loading delay: <strong>30 minutes total.</strong></p>
-<p class="formula">Total minutes = 10 + (distance ÷ 12) × 60<br>
-= 10 + 5 × distance in km</p>
-<section aria-labelledby="explore">
-<h2 id="explore">Try another distance</h2>
-<label for="distance">Distance: <output id="distance-value" for="distance">4</output> km</label>
-<input id="distance" type="range" min="0" max="8" step="1" value="4">
-<div aria-live="polite" aria-atomic="true">
-<p id="breakdown">10 minutes loading + 20 minutes travelling</p>
-<p class="result">Total: <span id="total">30</span> minutes</p>
-</div>
-<p><small>Assumes constant speed and no other delays. Loading takes 10 minutes even at 0 km; at 8 km, the total is 50 minutes.</small></p>
-</section>
-<footer><small>Self-contained; no internet needed. Browser execution and keyboard checks were not run.</small></footer>
-</main>
-<script>
-const slider = document.getElementById('distance');
+const slider = document.getElementById('delay');
 slider.addEventListener('input', () => {
-  const raw = slider.value;
-  const distance = Number(raw);
-  if (raw.trim() === '' || !Number.isFinite(distance) ||
-      !Number.isInteger(distance) || distance < 0 || distance > 8) return;
-  const travel = distance * 5;
-  document.getElementById('distance-value').textContent = distance;
-  document.getElementById('breakdown').textContent =
-    `10 minutes loading + ${travel} minutes travelling`;
-  document.getElementById('total').textContent = 10 + travel;
+  document.getElementById('minutes').textContent = slider.value;
+  document.getElementById('wait').textContent = `${Number(slider.value) * 2} minutes`;
 });
 </script>
 </body>
 </html>
-```
+````
 
-</details>
+### With the skill at standard
+
+````html
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A message to Mars</title>
+<style>
+  body { margin: 0; background: #171d29; color: #f6f1e9; font: 1.1rem/1.6 system-ui, sans-serif; }
+  main { max-width: 38rem; margin: auto; padding: 2rem 1.3rem; }
+  h1 { line-height: 1.15; color: #ffb088; }
+  label, output { display: block; }
+  input { width: 100%; margin: 1rem 0; accent-color: #ffb088; }
+  input:focus-visible { outline: 3px solid #fff; outline-offset: 5px; }
+  .trip { padding: 1rem; border: 1px solid #8793a7; border-radius: .7rem; text-align: center; }
+  .result { font-size: 1.5rem; font-weight: bold; color: #ffb088; }
+</style>
+</head>
+<body>
+<main>
+  <h1>A message to Mars</h1>
+  <p>NASA describes commands to the Perseverance rover as taking about 3 to 22 minutes one way, depending on the positions of Earth and Mars.</p>
+  <p>If the rover replied immediately and the return signal took just as long, Earth would wait twice the one-way travel time.</p>
+
+  <label for="delay">One-way signal travel time: <strong id="minutes">12 minutes</strong></label>
+  <input id="delay" type="range" min="3" max="22" step="1" value="12">
+
+  <div class="trip" aria-label="Signal travels from Earth to Mars, then a reply travels back to Earth">
+    Earth → Mars → Earth
+  </div>
+  <output for="delay" aria-live="polite">
+    <span class="result" id="result">24 minutes minimum</span><br>
+    <span id="calculation">12 minutes out + 12 minutes back = 24 minutes</span>
+  </output>
+
+  <p>This is a minimum <em>in this model</em>: it includes only signal travel and assumes an immediate reply. Rover processing, communication availability, and mission operations can add waiting time. This is not an actual scheduled reply time.</p>
+  <noscript><p>The example above uses a 12-minute one-way journey. Enable JavaScript to explore other travel times.</p></noscript>
+</main>
+<script>
+  const slider = document.getElementById('delay');
+  slider.addEventListener('input', () => {
+    const minutes = Number(slider.value);
+    if (slider.value.trim() === '' || !Number.isFinite(minutes) ||
+        !Number.isInteger(minutes) || minutes < 3 || minutes > 22) return;
+    const total = 2 * minutes;
+    document.getElementById('minutes').textContent = minutes + ' minutes';
+    document.getElementById('result').textContent = total + ' minutes minimum';
+    document.getElementById('calculation').textContent =
+      minutes + ' minutes out + ' + minutes + ' minutes back = ' + total + ' minutes';
+  });
+</script>
+</body>
+</html>
+````
+
+### What changed
+
+**Checks set before the run.** At one-way delays of 3, 12 and 22 minutes, show modeled round trips of 6, 24 and 44 minutes. Preserve the idealized equal return path and immediate reply, distinguish real operations from that model, label the control, support keyboard navigation and show 24 minutes with scripts disabled.
+
+Both pages model the radio trip as twice the one-way delay and put 24 minutes in the initial HTML. The baseline changes the total next to the slider. The skill also updates the outbound and return values in a displayed addition and shows the Earth–Mars–Earth path. Both warn that real mission operations can take longer. Browser checks confirmed 6, 24, 44 and 42 minutes for inputs of 3, 12, 22 and 21 in both pages; the initial 24 remained visible with scripts disabled.
+
+**차이.** 두 페이지 모두 편도 12분일 때 왕복 최소 24분임을 보여 줍니다. 적용 답은 슬라이더를 움직이면 왕복 합계뿐 아니라 가는 시간과 오는 시간을 더하는 식도 함께 바뀝니다.

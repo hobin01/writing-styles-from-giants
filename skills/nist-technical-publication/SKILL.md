@@ -11,13 +11,13 @@ Start with the report's purpose and audience. Select the sections needed to carr
 
 Read each summary claim back against its supporting text, table, or figure. Check the measured quantity, unit, conditions, and reported uncertainty together. If an interval is reported, look for any stated coverage factor or probability that explains how to interpret it. Preserve missing details as missing. For a table or figure, put units beside values, identify the comparison in the caption, and give a text equivalent for the finding when needed.
 
-### Worked example · reporting an uncertainty
+### Worked example · the NIST-4 measurement of the Planck constant
 
-The [measurement-summary case](cases.json) reports that three readings were taken. It gives the value for sensor A, the test temperature, and an uncertainty without its coverage basis.
+In 2017, Haddad and colleagues reported a result from the NIST-4 Kibble balance. A report summary needs the measured quantity, instrument, unit and kind of uncertainty. The [published paper, equation 22 and table 1](https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=923579) supplies all four.
 
-> Three readings were taken with sensor A at 20 °C. The reported value was 12.0 mV with an uncertainty of ±0.2 mV. The coverage basis was not reported.
+> From over 10,000 weighings, the NIST-4 team estimated the Planck constant as **6.626 069 934(89) × 10⁻³⁴ J s**, with relative standard uncertainty **13 × 10⁻⁹**.
 
-Keep the trailing zero in 12.0 mV. Calling the value a mean or the interval a 95% confidence interval would require information the measurement record does not supply. Verify any actual publication-specific instructions separately and use only supplied NIST identifiers or clearance information.
+The digits in parentheses give the standard uncertainty in the final digits of the estimate. Calling this a 95% confidence interval would introduce a coverage claim. Keep the date: the number describes this experiment.
 
 ## Levels and completion
 

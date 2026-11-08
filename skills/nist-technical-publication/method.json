@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "nist-technical-publication",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "status": "experimental",
   "title": "NIST-inspired technical publication",
   "kind": "document",
@@ -32,6 +32,17 @@
       "evidenceType": "primary-explanation",
       "accessScope": "Relevant organization, plain-language, accessibility, and measurement sections read; not all linked standards or institutional procedures.",
       "rights": "Check individual NIST and third-party rights. No source template, seal, or external standard copied."
+    },
+    {
+      "id": "nist4-weighings",
+      "title": "Measurement of the Planck constant at the National Institute of Standards and Technology from 2015 to 2017",
+      "author": "D. Haddad et al.",
+      "url": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=923579",
+      "version": "Metrologia 54 (2017), 633–641",
+      "accessed": "2026-11-08",
+      "evidenceType": "worked-example factual source",
+      "accessScope": "Abstract, equation 22 and table 1 of the published paper, including the measured value and relative standard uncertainty.",
+      "rights": "Link and independently worded example only. The source retains its own terms."
     }
   ],
   "rules": [

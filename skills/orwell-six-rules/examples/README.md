@@ -1,5 +1,3 @@
 # Orwell: six rules for clear prose examples
 
-[Removing filler while keeping uncertainty](standard.md) gives the same request to two fresh Codex sessions. One answers directly; the other receives [Orwell: six rules for clear prose](../SKILL.md), its method and locale rules, and the `standard` level. The file keeps the full replies and explains the difference observed on that request.
-
-The comparison was generated on 2026-11-08 with version 0.1.2 (entrypoint SHA-256 begins `7f1004797d7d`). It illustrates one task.
+[Why the Mars Climate Orbiter’s navigation estimate was wrong](standard.md) contains the source material, one request, both full answers and the review in English and Korean. The baseline answered directly; the other session received [Orwell: six rules for clear prose](../SKILL.md) at `standard`. Tested entrypoint: version 0.1.2, SHA-256 prefix `7f1004797d7d`.

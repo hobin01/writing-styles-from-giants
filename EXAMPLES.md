@@ -1,16 +1,18 @@
 # What changes when you use a writing skill?
 
-Each of the 22 methods below has one new prompt, the full answer without the skill, the full answer with the skill at `standard`, and a short review. Read the whole gallery here or follow a link to one skill. Some pairs give equally useful answers.
+**22 real cases, answered twice.** Compare a [DNS record that still appears missing](#feynman-technique), [LIGO’s first black-hole merger observation](#imrad), or [Seoul’s redesigned subway map](#hunminjeongeum). Each entry links its sources and shows the full answers to the same request, with and without the writing skill.
 
-**읽는 방법.** 각 스킬마다 같은 질문에 대한 미적용 답안과 `standard` 답안을 나란히 기록했습니다. 각 사례의 ‘차이’에서 무엇이 달라졌는지 한 줄로 볼 수 있습니다. 결과가 비슷한 사례와 수정 전 답안도 그대로 남겼습니다.
+**읽는 방법.** 관심 있는 사례를 골라 질문과 실제 답안 두 개를 읽어 보세요. ‘차이’에는 무엇이 달라졌는지 한국어로 적었습니다. 실제 시스템을 설명하기 위해 가정한 시각이나 서버 이름은 사례 안에서 따로 밝혔습니다.
 
 ## How the examples were made
 
-On 2026-11-08 we ran 22 pairs through Codex CLI 0.167.0. Every answer used a new ephemeral process in a separate, randomly named temporary directory outside the checkout. The request and format constraints were identical within each pair. Only the treatment received the selected `SKILL.md`, `method.json`, locale instructions and the `standard` level, supplied directly in its input. Neither arm received the other answer or the judging criteria. The CLI was instructed to work only from its input, shell and plugin features were disabled, and we checked the event stream for tool use. The model was the CLI default at low reasoning effort; its build identifier was not present in the returned event stream.
+On 2026-11-08 we ran separate baseline and standard sessions for each method with Codex CLI 0.167.0, requesting `gpt-6.1-sol` at low reasoning effort. Each answer came from a fresh ephemeral process in its own randomly named temporary directory outside the checkout. Both arms received the same task and its factual inputs. Only the treatment received the skill entrypoint, method and locale rules at `standard`. The shell and plugins were disabled; no tool calls were recorded. The model build behind the requested name was not reported.
 
-We wrote the checks before running the prompts. An authoring agent reviewed both answers against the source with the conditions visible. Two first treatments led to revisions and fresh runs on the original inputs. A sentence-count error in the editorial prompt also led to a corrected pair. The gallery contains 48 observed answers, including all four earlier attempts. Separate browser checks exercised all three HTML pages in Chrome 156.0.8078.80, with scripts both enabled and disabled. These examples show particular writing choices. They do not measure a general quality improvement, host command discovery or reader comprehension.
+We set checks before each pair, then compared the answers against the primary sources with the conditions visible. There are 44 final answers and 8 earlier answers. The Raft example was rerun with named candidates. The HTTP example was rerun after a correction to requirement strength and again after clarifying the timer in the input. The IMRaD example was rerun after correcting how the method describes the roles of researchers and instruments. The Social Security example was rerun against the edition served by the official link. The HTML answers were also rendered in Chromium 156.0.8078.80: at one-way delays of 3, 12 and 22 minutes the controls showed round trips of 6, 24 and 44 minutes. Both pages kept the initial 24-minute result with JavaScript disabled.
 
-The per-skill `examples/standard.md` files own the comparisons. After changing one, run `python3 scripts/build_example_gallery.py` from this checkout.
+The original synthetic prompts, full outputs and earlier revisions remain in the [previous gallery](https://github.com/hobin01/writing-styles-from-giants/blob/dbcb48c0475647d5377eae635b1fbd6f9f40f426/EXAMPLES.md). These examples show what happened on one task per skill; no reader study or general quality ranking was performed.
+
+Edit a method’s `examples/standard.md` and run `python3 scripts/build_example_gallery.py` to update this file.
 
 <!-- Standard examples below are generated. -->
 
@@ -39,837 +41,1039 @@ The per-skill `examples/standard.md` files own the comparisons. After changing o
 
 ## amazon-six-page-narrative
 
-**Amazon six-page narrative · Cold-room alarm pilot**
+**What Minneapolis’s I-35W collapse changes about a bridge review**
 
-Run on 2026-11-08 • `amazon-six-page-narrative` 0.1.1 • English • Codex CLI 0.167.0
+2026-11-08 · `amazon-six-page-narrative` 0.1.1 · English · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [NTSB, investigation HWY07MH024, Collapse of I-35W Highway Bridge, Minneapolis, Minnesota](https://www.ntsb.gov/investigations/Pages/HWY07MH024.aspx). What Happened and What We Found: 1 August 2007 collapse, inadequate U10 gusset plate capacity, combined loads, and omission of gusset plates from load-rating analyses. The proposed review by another owner is an exercise.
 
 ### Prompt
 
-> Write the opening of an internal decision memo in at most 110 words. Our existing cold-room alarm missed 2 of 18 simulated faults. A second probe costs $240 per room. We can test one room this month. We have no false-alarm measurements or live field data. Leadership must decide whether to buy probes for all eight rooms or run the trial first.
+> Write the opening of a decision memo for a hypothetical public bridge owner reviewing its steel truss bridges after Minneapolis's I-35W bridge collapsed in 2007. Should the owner fund a review of gusset plates in the load ratings or rely on its existing inspection records alone? According to the NTSB, undersized connecting plates at the U10 joints failed under combined loads: earlier modifications had made the bridge heavier, and traffic and concentrated construction loads were present on the day of collapse. Excluding gusset plates from load-rating analyses was a contributing practice. We have no calculations for the hypothetical owner's bridges in this exercise. State what the proposed review would establish; don't declare the owner's bridges safe or unsafe. At most 110 words.
 
 ### Without a skill
 
-> We recommend testing a second probe in one room this month before committing $1,920 to probes for all eight rooms. The existing cold-room alarm missed 2 of 18 simulated faults, showing a detection gap, but we do not yet know whether a second probe would close it. We also lack false-alarm measurements and live field data. The trial should measure fault detection and false alarms under defined conditions. Leadership must weigh the delay in broader coverage against the risk of buying eight probes before confirming their benefit.
+> The owner should fund a gusset-plate review as part of its steel truss bridge load ratings; existing inspection records alone cannot establish capacity under combined loads. According to the NTSB, undersized U10 connecting plates failed in the 2007 I-35W collapse under loads from earlier modifications, traffic, and concentrated construction activity. Excluding gusset plates from load-rating analyses contributed to the failure. The proposed review would establish whether plate capacities adequately support applicable load combinations, accounting for modifications and construction loading, and identify any needed restrictions, further analysis, or strengthening. Without bridge-specific calculations, this memo makes no finding that the owner’s bridges are safe or unsafe.
 
 ### With the skill at standard
 
-> I recommend testing a second probe in one room this month before buying probes for all eight rooms. Our existing cold-room alarm missed 2 of 18 simulated faults, showing a detection gap under test conditions. A second probe costs $240 per room, or $1,920 for eight rooms, but we have no evidence yet that it would reduce missed faults. We also lack false-alarm measurements and live field data. The proposed trial should measure missed faults and false alarms under comparable simulated conditions. Leadership can then assess whether broader purchase is justified, while recognizing that field performance remains unverified.
+> I recommend funding a review of gusset plates in our steel truss bridge load ratings rather than relying on inspection records alone. According to the NTSB, undersized connecting plates at I-35W’s U10 joints failed under combined loads: earlier modifications had increased bridge weight, and traffic and concentrated construction loads were present that day. Excluding gusset plates from load-rating analyses contributed to the collapse. The proposed review would establish whether our ratings account for gusset-plate capacity under applicable combined loads and identify any needed analysis or action. We have no calculations for our bridges in this exercise and cannot conclude whether they are safe or unsafe.
 
 ### What changed
 
-**Checks set before the run.** Distinguish simulated faults from field performance; preserve costs, room counts and unknown false alarms; make a decision the supplied evidence supports.
+**Checks set before the run.** Recommend a specific review and distinguish capacity calculations from records of visible condition. Retain the joint and combined loads identified by the NTSB, and keep the hypothetical owner's bridge capacities unresolved.
 
-Both recommend the one-room trial and keep field performance unknown. The baseline gives the derived $1,920 total; the skill also states the original $240 per room and confines the proposed comparison to simulated conditions.
+Both recommend reviewing gusset plates and leave the hypothetical owner's bridge capacities open. The baseline lists possible follow-up decisions, including restrictions or strengthening. The skill answer spells out why the old bridge carried more weight and makes reviewing the owner's load ratings the immediate decision. Neither treats the Minneapolis finding as a diagnosis of another bridge.
 
-**차이.** 두 답 모두 한 방에서 먼저 시험하자고 제안합니다. 스킬을 쓴 답에는 방당 비용과 모의 시험 범위도 명시돼 있습니다.
+**차이.** 두 답 모두 교량 연결판의 하중 평가를 권하고, 다른 교량의 안전 여부는 판단할 수 없다고 밝힙니다. 스킬 답안은 과거 개조로 교량 자체의 무게가 늘었다는 점을 분명하게 짚습니다.
 
 ## answer-with-html
 
-**Answer with HTML · How a fixed delay changes delivery time**
+**Why Perseverance cannot answer Earth immediately**
 
-Run on 2026-11-08 • `answer-with-html` 0.1.2 • English • Codex CLI 0.167.0
+2026-11-08 · `answer-with-html` 0.1.2 · English · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [NASA/JPL, Speaking Percy's Language: How to Talk so Perseverance Will Listen](https://science.nasa.gov/blog/speaking-percys-language-how-to-talk-so-perseverance-will-listen/). JPL vehicle systems engineer Pegah Pashai explains why the one-way command delay varies from about 3 to 22 minutes with orbital position. The doubled time is this exhibit's idealized calculation.
 
 ### Prompt
 
-> Return only one short self-contained HTML page. Teach why a courier travelling at 12 km/h with a fixed 10-minute loading delay takes 30 minutes to deliver 4 km. Add one distance slider from 0 to 8 whole km and update the total minutes. The initial page must show the 4 km result even without JavaScript. No internet dependencies.
+> Return only a short self-contained HTML page for a Mars exhibit. NASA describes commands to the Perseverance rover as taking about 3 to 22 minutes one way as Earth and Mars change position. Give the visitor one labeled slider for whole minutes in that range. Start at 12 minutes and show how long Earth would wait for a reply if the rover replied immediately and the return signal took as long as the outgoing one. Explain why the result is a minimum in this model, not an actual scheduled reply time. The initial result must be readable without scripts; use no external resources.
 
 ### Without a skill
 
-```html
+````html
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Courier delivery time</title>
+<title>Mars: Waiting for a Reply</title>
 <style>
-body{font:18px/1.6 system-ui,sans-serif;max-width:580px;margin:60px auto;padding:0 24px;color:#183143;background:#f4f8fb}
-main{background:white;padding:28px;border-radius:18px}
-h1{font-size:1.7rem;line-height:1.2}
-input{width:100%;accent-color:#087e8b}
-.result{font-size:1.5rem;font-weight:700;color:#087e8b}
+body{margin:0;background:#201519;color:#fff0df;font:18px/1.6 system-ui,sans-serif}
+main{max-width:36rem;margin:4rem auto;padding:1.5rem}
+h1{line-height:1.15;color:#ffad80}
+input{width:100%;accent-color:#ffad80}
+.result{font-size:1.5rem;font-weight:bold}
 </style>
 </head>
 <body>
 <main>
-<h1>A delivery includes loading time</h1>
-<p>At <strong>12 km/h</strong>, the courier travels 1 km in 60 ÷ 12 = <strong>5 minutes</strong>.</p>
-<p>For 4 km, travelling takes 4 × 5 = 20 minutes. Add the fixed 10-minute loading delay: <strong>20 + 10 = 30 minutes</strong>.</p>
-<label for="distance">Delivery distance: <output id="km" for="distance">4</output> km</label>
-<input id="distance" type="range" min="0" max="8" step="1" value="4">
-<p>Total time = 10 minutes loading + 5 minutes × distance.</p>
-<p class="result" aria-live="polite"><output id="total" for="distance">30</output> minutes total</p>
-<p>Even at 0 km, the fixed loading delay takes 10 minutes.</p>
+<h1>A message to Mars—and back</h1>
+<p>NASA describes commands to the Perseverance rover as taking about 3 to 22 minutes one way, depending on the positions of Earth and Mars.</p>
+<label for="delay">One-way signal travel time: <output id="minutes" for="delay">12</output> minutes</label>
+<input id="delay" type="range" min="3" max="22" step="1" value="12">
+<p class="result" aria-live="polite">Minimum wait for a reply: <output id="wait" for="delay">24 minutes</output></p>
+<p>The calculation is twice the one-way travel time: out to Mars, then back to Earth. It assumes the rover replies immediately and the return signal takes just as long.</p>
+<p>This is a minimum in this model, not a scheduled reply time. Processing, carrying out a command, and waiting for communication opportunities can all add time.</p>
+<noscript><p>The example above uses 12 minutes each way. Enable JavaScript to update the result with the slider.</p></noscript>
 </main>
 <script>
-const distance = document.getElementById('distance');
-function update() {
-  document.getElementById('km').textContent = distance.value;
-  document.getElementById('total').textContent = 10 + 5 * Number(distance.value);
-}
-distance.addEventListener('input', update);
-update();
-</script>
-</body>
-</html>
-```
-
-### With the skill at standard
-
-```html
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Courier delivery time</title>
-<style>
-body{font:1.1rem/1.6 system-ui,sans-serif;max-width:36rem;margin:3rem auto;padding:0 1.2rem;color:#183044;background:#f5f8fa}
-main{background:white;padding:1.6rem;border-radius:1rem}
-h1{font-size:1.6rem;line-height:1.2}
-.result{font-size:1.8rem;font-weight:700}
-input{display:block;width:100%;margin:1rem 0;accent-color:#176b87}
-.formula{padding:1rem;background:#eaf4f7;border-radius:.5rem}
-small{display:block}
-</style>
-</head>
-<body>
-<main>
-<h1>Why does 4 km take 30 minutes?</h1>
-<p>At a steady <strong>12 km/h</strong>, each kilometre takes <strong>5 minutes</strong>: 60 ÷ 12 = 5. Travelling 4 km takes 20 minutes. Add the fixed 10-minute loading delay, and the delivery takes 30 minutes.</p>
-<p class="formula">Total minutes = 10 + (5 × distance in km)</p>
-<label for="distance">Distance (whole km): <output id="distance-value" for="distance">4</output> km</label>
-<input id="distance" type="range" min="0" max="8" step="1" value="4" aria-describedby="assumption">
-<div aria-live="polite" aria-atomic="true">
-<p class="result"><span id="total">30</span> minutes total</p>
-<p id="calculation">10 minutes loading + 20 minutes travelling = 30 minutes.</p>
-</div>
-<small id="assumption">Assumes constant speed and no other delays. Loading still takes 10 minutes at 0 km.</small>
-<noscript><p>The example above shows 4 km. Enable JavaScript to explore other distances.</p></noscript>
-</main>
-<script>
-const slider = document.getElementById('distance');
-function update() {
-  const raw = slider.value;
-  const distance = Number(raw);
-  if (raw.trim() === '' || !Number.isFinite(distance) ||
-      distance < 0 || distance > 8 || !Number.isInteger(distance)) return;
-  const travel = distance * 5;
-  const total = 10 + travel;
-  document.getElementById('distance-value').textContent = distance;
-  document.getElementById('total').textContent = total;
-  document.getElementById('calculation').textContent =
-    `10 minutes loading + ${travel} minutes travelling = ${total} minutes.`;
-}
-slider.addEventListener('input', update);
-update();
-</script>
-</body>
-</html>
-```
-
-### What changed
-
-**Checks set before the run.** The formula gives 10, 30 and 50 minutes at 0, 4 and 8 km. The native control needs a label, keyboard access, and a readable initial answer without scripts.
-
-Both final pages produced 30, 10 and 50 minutes at 4, 0 and 8 km. The revised page explains the fixed delay and adds the changing travel-time breakdown. The first treatment exposed the agent’s unfinished verification as a lesson footer. We clarified where to report verification, reran the same request and preserved that earlier output below.
-
-**차이.** 두 페이지 모두 거리별 시간을 정확히 계산했습니다. 첫 스킬 답안은 검증 상태를 수업 본문에 노출해 지침을 고치고 다시 실행했습니다.
-
-Chrome 156.0.8078.80 displayed 30 minutes initially and with JavaScript disabled. With JavaScript enabled, Home, End and ArrowLeft on the distance slider produced 10, 50 and 45 minutes. Both final pages and the earlier treatment stayed within 320 CSS pixels and made no external requests.
-
-<details>
-<summary>First treatment · version 0.1.1</summary>
-
-The page calculated correctly, but its footer addressed the agent's browser checks instead of the lesson. The new instruction keeps test status in a separate delivery note when the requested format allows it. The rerun used the original input and a new context.
-
-```html
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Courier delivery time</title>
-<style>
-body{font:1.1rem/1.6 system-ui,sans-serif;max-width:38rem;margin:3rem auto;padding:0 1rem;color:#183047;background:#f5f8fb}
-main{background:white;padding:1.5rem;border-radius:1rem}
-h1{font-size:1.6rem;line-height:1.2}
-.result{font-size:1.5rem;font-weight:700;color:#075d64}
-input{width:100%;accent-color:#075d64}
-.formula{padding:1rem;background:#edf5f5;border-radius:.5rem}
-small{color:#526474}
-</style>
-</head>
-<body>
-<main>
-<h1>Why does 4 km take 30 minutes?</h1>
-<p>At 12 km/h, the courier travels 1 km every 5 minutes. Travelling 4 km therefore takes 20 minutes. Add the fixed 10-minute loading delay: <strong>30 minutes total.</strong></p>
-<p class="formula">Total minutes = 10 + (distance ÷ 12) × 60<br>
-= 10 + 5 × distance in km</p>
-<section aria-labelledby="explore">
-<h2 id="explore">Try another distance</h2>
-<label for="distance">Distance: <output id="distance-value" for="distance">4</output> km</label>
-<input id="distance" type="range" min="0" max="8" step="1" value="4">
-<div aria-live="polite" aria-atomic="true">
-<p id="breakdown">10 minutes loading + 20 minutes travelling</p>
-<p class="result">Total: <span id="total">30</span> minutes</p>
-</div>
-<p><small>Assumes constant speed and no other delays. Loading takes 10 minutes even at 0 km; at 8 km, the total is 50 minutes.</small></p>
-</section>
-<footer><small>Self-contained; no internet needed. Browser execution and keyboard checks were not run.</small></footer>
-</main>
-<script>
-const slider = document.getElementById('distance');
+const slider = document.getElementById('delay');
 slider.addEventListener('input', () => {
-  const raw = slider.value;
-  const distance = Number(raw);
-  if (raw.trim() === '' || !Number.isFinite(distance) ||
-      !Number.isInteger(distance) || distance < 0 || distance > 8) return;
-  const travel = distance * 5;
-  document.getElementById('distance-value').textContent = distance;
-  document.getElementById('breakdown').textContent =
-    `10 minutes loading + ${travel} minutes travelling`;
-  document.getElementById('total').textContent = 10 + travel;
+  document.getElementById('minutes').textContent = slider.value;
+  document.getElementById('wait').textContent = `${Number(slider.value) * 2} minutes`;
 });
 </script>
 </body>
 </html>
-```
+````
 
-</details>
+### With the skill at standard
+
+````html
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A message to Mars</title>
+<style>
+  body { margin: 0; background: #171d29; color: #f6f1e9; font: 1.1rem/1.6 system-ui, sans-serif; }
+  main { max-width: 38rem; margin: auto; padding: 2rem 1.3rem; }
+  h1 { line-height: 1.15; color: #ffb088; }
+  label, output { display: block; }
+  input { width: 100%; margin: 1rem 0; accent-color: #ffb088; }
+  input:focus-visible { outline: 3px solid #fff; outline-offset: 5px; }
+  .trip { padding: 1rem; border: 1px solid #8793a7; border-radius: .7rem; text-align: center; }
+  .result { font-size: 1.5rem; font-weight: bold; color: #ffb088; }
+</style>
+</head>
+<body>
+<main>
+  <h1>A message to Mars</h1>
+  <p>NASA describes commands to the Perseverance rover as taking about 3 to 22 minutes one way, depending on the positions of Earth and Mars.</p>
+  <p>If the rover replied immediately and the return signal took just as long, Earth would wait twice the one-way travel time.</p>
+
+  <label for="delay">One-way signal travel time: <strong id="minutes">12 minutes</strong></label>
+  <input id="delay" type="range" min="3" max="22" step="1" value="12">
+
+  <div class="trip" aria-label="Signal travels from Earth to Mars, then a reply travels back to Earth">
+    Earth → Mars → Earth
+  </div>
+  <output for="delay" aria-live="polite">
+    <span class="result" id="result">24 minutes minimum</span><br>
+    <span id="calculation">12 minutes out + 12 minutes back = 24 minutes</span>
+  </output>
+
+  <p>This is a minimum <em>in this model</em>: it includes only signal travel and assumes an immediate reply. Rover processing, communication availability, and mission operations can add waiting time. This is not an actual scheduled reply time.</p>
+  <noscript><p>The example above uses a 12-minute one-way journey. Enable JavaScript to explore other travel times.</p></noscript>
+</main>
+<script>
+  const slider = document.getElementById('delay');
+  slider.addEventListener('input', () => {
+    const minutes = Number(slider.value);
+    if (slider.value.trim() === '' || !Number.isFinite(minutes) ||
+        !Number.isInteger(minutes) || minutes < 3 || minutes > 22) return;
+    const total = 2 * minutes;
+    document.getElementById('minutes').textContent = minutes + ' minutes';
+    document.getElementById('result').textContent = total + ' minutes minimum';
+    document.getElementById('calculation').textContent =
+      minutes + ' minutes out + ' + minutes + ' minutes back = ' + total + ' minutes';
+  });
+</script>
+</body>
+</html>
+````
+
+### What changed
+
+**Checks set before the run.** At one-way delays of 3, 12 and 22 minutes, show modeled round trips of 6, 24 and 44 minutes. Preserve the idealized equal return path and immediate reply, distinguish real operations from that model, label the control, support keyboard navigation and show 24 minutes with scripts disabled.
+
+Both pages model the radio trip as twice the one-way delay and put 24 minutes in the initial HTML. The baseline changes the total next to the slider. The skill also updates the outbound and return values in a displayed addition and shows the Earth–Mars–Earth path. Both warn that real mission operations can take longer. Browser checks confirmed 6, 24, 44 and 42 minutes for inputs of 3, 12, 22 and 21 in both pages; the initial 24 remained visible with scripts disabled.
+
+**차이.** 두 페이지 모두 편도 12분일 때 왕복 최소 24분임을 보여 줍니다. 적용 답은 슬라이더를 움직이면 왕복 합계뿐 아니라 가는 시간과 오는 시간을 더하는 식도 함께 바뀝니다.
 
 ## aristotle-syllogism
 
-**Aristotelian syllogistic argument checking · Following a hold rule backwards**
+**Does a new moon guarantee a total solar eclipse?**
 
-Run on 2026-11-08 • `aristotle-syllogism` 0.1.1 • English • Codex CLI 0.167.0
+2026-11-08 · `aristotle-syllogism` 0.1.2 · English · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [NASA, Why Do Eclipses Happen?](https://science.nasa.gov/eclipses/geometry/). Geometry, total and annular sections: solar eclipses occur at new moon; totality requires complete coverage, whereas an annular eclipse leaves a ring.
+- [NASA, 2023 Annular Eclipse FAQ](https://science.nasa.gov/eclipses/future-eclipses/eclipse-2023/faq/). Eclipse science and the October 14, 2023 path of annularity identify the dated counterexample.
 
 ### Prompt
 
-> Assess this argument in a few sentences. Every sealed canister is on hold. Item D is on hold. Therefore D is sealed. Assume the two premises are true. Say whether the conclusion follows and give a small example if useful.
+> Assess this planetarium visitor's argument in under 85 words: Every total solar eclipse on Earth occurs at new moon. On 14 October 2023 there was a new moon. Therefore there was a total solar eclipse on Earth that day. For the factual check, NASA identifies that day's eclipse as annular: even along the central path a ring of the Sun remained visible. Tell the visitor whether the inference follows and whether the actual event supplies a counterexample.
 
 ### Without a skill
 
-> The conclusion does not follow. The premises say that being sealed guarantees being on hold, but they do not say that only sealed canisters are on hold. For example, D could be an unsealed canister placed on hold for inspection, while every sealed canister is also on hold. Both premises would be true, but the conclusion would be false.
+> The inference does not follow: it affirms the consequent. Every total solar eclipse occurs at new moon, but not every new moon brings a total solar eclipse. NASA identifies the 14 October 2023 eclipse as annular: even along the central path, a ring of the Sun remained visible. Thus, that day is a counterexample to the converse claim that every new moon brings a total solar eclipse, not to the original claim that every total solar eclipse occurs at new moon.
 
 ### With the skill at standard
 
-> The premises say that all sealed canisters are on hold and that D is on hold; the conclusion says D is sealed. The conclusion does not follow: being on hold does not establish that an item is sealed or even that it is a canister. For example, a sealed canister and an unsealed item D could both be on hold, satisfying both premises while D remains unsealed. The premises are assumed true; whether D is actually sealed requires additional evidence.
+> The inference does not follow. The premises say every total solar eclipse on Earth occurs at new moon and that 14 October 2023 had a new moon. They do not say every new moon brings a total solar eclipse; that would be an extra premise. No existence follows from the universal premise alone.
+>
+> Factually, NASA identifies that day’s eclipse as annular: a ring remained visible even along the central path. Thus the actual event supplies a counterexample: both premises hold, but the conclusion fails.
 
 ### What changed
 
-**Checks set before the run.** Separate the truth of the premises from whether D must be sealed. A counterexample must keep both premises true while D is on hold but unsealed.
+**Checks set before the run.** Keep both premises true while showing the conclusion was false on that date. Distinguish the direction of implication from the independent annular observation. Do not describe that eclipse as absent everywhere, or confuse the ring seen along the central path with totality.
 
-Both give a counterexample that makes the premises true and the conclusion false. The skill also notices that the premises never say D is a canister and that D's actual condition requires evidence. Either answer settles validity.
+Both keep the true premise and use the ring visible on 14 October 2023 to refute the converse. The baseline names the fallacy; the skill separates the inference from the dated observation. Its extra point about existence is logically correct, but the question already supplies a particular new moon.
 
-**차이.** 두 답 모두 반례로 결론이 따라오지 않음을 보입니다. 스킬을 쓴 답은 D가 통이라는 전제조차 없다는 점까지 짚습니다.
+**차이.** 두 답 모두 금환일식 때 태양의 고리가 남았다는 사실을 반례로 씁니다. 미적용 답은 오류의 이름을, 적용 답은 빠진 전제를 짚습니다.
 
 ## asd-ste100
 
-**ASD-STE100-inspired technical English · Permission to move a tray**
+**When to remove a Raspberry Pi 4 recovery card**
 
-Run on 2026-11-08 • `asd-ste100` 0.1.2 • English • Codex CLI 0.167.0
+2026-11-08 · `asd-ste100` 0.1.3 · English · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [Raspberry Pi, Raspberry Pi computer hardware documentation](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#reflash-the-bootloader). Reflash the bootloader, especially the last step for an HDMI-connected board. The prompt covers only completion of a prepared recovery on the Pi 4 Model B.
 
 ### Prompt
 
-> Edit this note for a maintenance technician in at most four sentences. Use the glossary name 'transfer tray' for the movable tray. Source: Movement of the tray is permissible only while the handling cart is locked and the load is below 8 kg. The fixed shelf must not be moved. We have not identified why the tray tilted yesterday.
+> Edit the following service note into a concise instruction for a Raspberry Pi 4 Model B technician with an HDMI display attached. The recovery microSD card has already been prepared and inserted for a bootloader reflash. Before disconnecting power, wait for both indications: a steady flashing pattern from the green activity LED and a green screen on the HDMI display. After the power is disconnected, remove the recovery microSD card. Give only these finishing steps. Use 'recovery microSD card' consistently.
 
 ### Without a skill
 
-> Move the transfer tray only when the handling cart is locked and the load is below 8 kg. Do not move the fixed shelf. The cause of yesterday’s transfer tray tilt is still unknown.
+> 1. Wait for both a steady flashing pattern from the green activity LED and a green screen on the HDMI display.
+> 2. Disconnect power.
+> 3. Remove the recovery microSD card.
 
 ### With the skill at standard
 
-> You may move the transfer tray only while the handling cart is locked and the load is below 8 kg. Do not move the fixed shelf. We have not identified why the transfer tray tilted yesterday.
+> 1. Wait until both the green activity LED flashes in a steady pattern and the HDMI display shows a green screen.
+> 2. Disconnect power.
+> 3. Remove the recovery microSD card.
 
 ### What changed
 
-**Checks set before the run.** Preserve permission, cart lock and strict less-than-8 kg threshold, the fixed shelf prohibition, correct glossary referent and unknown cause of yesterday's tilt.
+**Checks set before the run.** Keep both independent visual completion conditions, then disconnect power, then remove the recovery microSD card. A continuously lit LED, one flash alone or an error screen is insufficient. Do not add a new formatting step or extend these instructions to every Pi model.
 
-The baseline turns permission into the command “Move the transfer tray.” The skill preserves the choice with “You may move,” both safety conditions, the fixed-shelf prohibition and the unknown cause. Neither answer permits a load of exactly 8 kg.
+Both give the same three finishing steps. Each requires the flashing activity LED and the green HDMI screen before power is disconnected; each removes the recovery microSD card only afterward. The baseline already meets the procedure checks.
 
-**차이.** 미적용 답안은 허용을 작업 지시로 바꿨습니다. 스킬 답안은 옮겨도 된다는 뜻과 8 kg 미만이라는 조건을 함께 지켰습니다.
+**차이.** 두 답 모두 초록색 LED의 점멸과 초록색 HDMI 화면을 함께 확인한 뒤 전원을 끊고 복구용 microSD 카드를 빼라고 안내합니다. 이 절차에서는 적용 전후 차이가 작습니다.
 
 ## boring-professor
 
-**Boring Professor: literal technical explanation · Why one lock is insufficient**
+**Why deleting a Linux log file may not free disk space**
 
-Run on 2026-11-08 • `boring-professor` 0.1.1 • English • Codex CLI 0.167.0
+2026-11-08 · `boring-professor` 0.1.1 · English · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [Linux man-pages 6.19, unlink(2)](https://man7.org/linux/man-pages/man2/unlink.2.html). DESCRIPTION defines the effect of unlinking the last directory link with and without an open descriptor. The log filename and running service are an illustrative Linux scenario.
 
 ### Prompt
 
-> Explain to a systems student, in at most 90 words, why locking only the final write cannot guarantee unique ticket numbers. Two workers can both read 17 before either writes. Each increments its local value and writes 18 under the write lock. Assume the counter starts at 17 and both operations succeed.
+> Explain the following Linux incident drill for a systems engineer in at most 100 words. An administrator successfully unlinks /var/log/payments.log while a payment service still has it open for writing. Assume this was the file's last hard link and the service holds the only open descriptor. The directory no longer lists the pathname, yet the disk space is still in use. What survived unlink, can the service still write, and what event allows that storage to be reused? The pathname and service describe a drill, not a reported outage.
 
 ### Without a skill
 
-> Locking only the final write prevents simultaneous writes, but it does not protect the full read–increment–write operation. Both workers can read 17, independently compute 18, then take turns acquiring the write lock and writing 18. Both operations succeed, yet both issue ticket 18, and the counter ends at 18 instead of 19. To guarantee unique ticket numbers, protect the entire read–increment–write sequence with one lock or use an atomic increment that returns a distinct value to each worker.
+> Unlink removes the directory entry for `/var/log/payments.log`, but the inode and its allocated data blocks survive because the service’s open file descriptor still references the file through an open file description. The service can continue writing to it, even though the pathname no longer exists.
+>
+> When the service closes that last descriptor—or exits, causing it to close—the final open reference disappears. With no hard links or open references remaining, the filesystem can reclaim the inode and data blocks, making the storage available for reuse.
 
 ### With the skill at standard
 
-> A lock provides mutual exclusion: only one worker can execute the protected code at a time. If it protects only the final write, both workers can read the initial counter value, 17, before either writes. Each independently computes 18. The lock then serializes two successful writes of 18, so both workers obtain the same ticket number.
+> `unlink` removes the directory entry associating `/var/log/payments.log` with its inode, the filesystem object recording metadata and references to file data. Because this was the last hard link, the inode’s link count becomes zero. The open file description, referenced by the service’s descriptor, still retains the inode and its allocated storage.
 >
-> Uniqueness requires protecting the entire read–increment–write operation with the same lock, or using an atomic increment that returns a distinct value for each operation.
+> The service can continue writing through that descriptor, assuming writes otherwise succeed. When the service closes its only descriptor, explicitly or on process exit, the final open reference is released. The filesystem can then reclaim the unlinked file’s inode and data blocks for reuse.
 
 ### What changed
 
-**Checks set before the run.** Name the protected operation and the unprotected read–modify–write sequence. Trace both workers to 18. Keep the stated assumptions and avoid a metaphor.
+**Checks set before the run.** Distinguish directory entry from open file and file descriptor. Explain continued writes and the last-close condition under the last-hard-link assumption. Do not imply instantaneous recovery of physical bytes or invent an outage.
 
-Both trace two reads of 17 and two writes of 18, and suggest protecting the full operation. The skill defines mutual exclusion first; the baseline spells out that the counter ends at 18 instead of 19. Both are usable literal explanations.
+Both explain why the pathname disappears while the service can still write, and why the space can be reused only after the last open descriptor closes in this drill. The skill answer explicitly identifies the zero link count and defines the inode. The baseline reaches the same conclusion in fewer words.
 
-**차이.** 두 답 모두 18번이 두 번 발급되는 과정을 설명합니다. 스킬 답안은 먼저 상호 배제를 정의하고, 미적용 답안은 최종 값이 19가 아닌 18임을 강조합니다.
+**차이.** 두 답 모두 로그 이름을 지워도 서비스는 열어 둔 파일에 계속 쓸 수 있고, 마지막 파일 디스크립터가 닫혀야 그 공간을 재사용할 수 있다고 설명합니다. 스킬 답은 이때 하드 링크 수가 0이라는 점과 inode의 역할을 덧붙였습니다.
 
 ## diataxis
 
-**Diátaxis documentation · A lookup entry for snapshot retention**
+**Watching a specific Kubernetes Deployment revision**
 
-Run on 2026-11-08 • `diataxis` 0.1.1 • English • Codex CLI 0.167.0
+2026-11-08 · `diataxis` 0.1.1 · English · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [Kubernetes command reference, kubectl rollout status](https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/kubectl_rollout_status/). Synopsis and flags document default revision tracking, --revision and --watch. checkout-api and revisions 7/8 are an illustrative release, not historical cluster telemetry.
 
 ### Prompt
 
-> Write a short entry for people who already use our backup CLI and want to look up the flag `--keep N`. It accepts integers 1 through 14, defaults to 3, and applies only to completed snapshots. Pending snapshots stay untouched. No installation steps are needed.
+> Write a compact lookup entry for a Kubernetes release engineer who uses kubectl rollout status. An illustrative Deployment named checkout-api is rolling out revision 7; revision 8 might start before 7 finishes. Without --revision, the command watches the latest rollout and follows a newer revision if one starts. With --revision=7, it monitors that particular revision and aborts if it is superseded. With --watch=false, it returns the current status without waiting. Supply the exact command to watch revision 7 and the two flag meanings. Do not claim either rollout actually succeeded.
 
 ### Without a skill
 
-> `--keep N`
+> `kubectl rollout status deployment/checkout-api --revision=7`
 >
-> Keep the N most recent completed snapshots. Accepts integers from 1 to 14; defaults to 3. Pending snapshots remain untouched.
+> - `--revision=7`: Watch revision 7; abort if a newer revision supersedes it. Without this flag, the command watches the latest rollout and follows newer revisions.
+> - `--watch=false`: Return the current status immediately, without waiting for the rollout to finish.
 
 ### With the skill at standard
 
-> ### `--keep N`
+> Watch revision 7 of `checkout-api`:
 >
-> Sets how many completed snapshots to keep.
+> ```sh
+> kubectl rollout status deployment/checkout-api --revision=7
+> ```
 >
-> | Value | Constraint |
+> | Flag | Meaning |
 > | --- | --- |
-> | Type | Integer |
-> | Allowed range | 1–14 |
-> | Default | 3 |
-> | Applies to | Completed snapshots only |
+> | `--revision=7` | Monitors revision 7 and aborts if it is superseded, such as when revision 8 starts. Without `--revision`, the command watches the latest rollout and follows a newer revision if one starts. |
+> | `--watch=false` | Returns the current status without waiting. |
 >
-> Pending snapshots stay untouched.
+> This example does not establish that either rollout succeeded.
 
 ### What changed
 
-**Checks set before the run.** Serve lookup readers with the flag's exact spelling, range, default and completed-only scope. Leave pending snapshots untouched and avoid unsupported CLI commands.
+**Checks set before the run.** Use kubectl rollout status deployment/checkout-api --revision=7 (or equivalent); distinguish monitoring from starting or rolling back the Deployment, pinning from following the latest, and one-time status from waiting. The revision numbers are example inputs.
 
-Both give the correct range, default and scope. The baseline adds “most recent,” an ordering the supplied specification does not promise. The skill uses a small lookup table and leaves the ordering unspecified.
+Both give a correct command for revision 7 and explain when --watch=false returns. The baseline is a short lookup list. The skill uses a table and names the concrete failure condition: revision 8 superseding revision 7. Neither reports a successful deployment.
 
-**차이.** 미적용 답안은 명세에 없는 ‘가장 최근’이라는 순서를 덧붙였습니다. 스킬 답안은 조회에 필요한 범위·기본값·적용 대상을 표로 보여 줍니다.
+**차이.** 두 답 모두 revision 7을 지정하는 명령과 기다리지 않고 상태만 읽는 옵션을 정확히 제시합니다. 스킬 답은 revision 8이 시작되면 revision 7을 지켜보던 명령이 중단된다는 상황을 표에서 보여 줍니다.
 
 ## eli5
 
-**ELI5: explain to a five-year-old · How a zipper closes**
+**Why rescued sea otter pup 696 needed grooming**
 
-Run on 2026-11-08 • `eli5` 0.1.1 • English • Codex CLI 0.167.0
+2026-11-08 · `eli5` 0.1.1 · English · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [Monterey Bay Aquarium, Life of a rescued sea otter](https://www.montereybayaquarium.org/about-us/stories/life-of-a-rescued-sea-otter). Pup 696's rescue and grooming sections describe the role of air in the fur in warmth and buoyancy.
+- [Monterey Bay Aquarium, Sea otter](https://www.montereybayaquarium.org/animals-the-ocean/animals-a-to-z/sea-otter). Species account, Adaptations and Grooming: unlike many marine mammals, a sea otter relies on fur in cold water and lacks a thick layer of blubber.
 
 ### Prompt
 
-> Explain to a five-year-old, in at most four sentences, how this zipper closes. Its two rows of teeth start apart. Moving the slider brings the rows together so their teeth fit between each other. A missing tooth can leave a gap.
+> A five-year-old at Monterey Bay Aquarium asks why caregivers groomed rescued sea otter pup 696. Answer in three or four sentences for the child. A sea otter lacks a thick blubber layer, and grooming fluffs its fur so little bubbles of air are trapped in it. That air helps keep the pup warm and helps it float. Explain what the child would see a caregiver doing and how that helps the pup in cold water.
 
 ### Without a skill
 
-> A zipper has two rows of little teeth that start apart. When you pull the slider, it brings the rows together so the teeth fit between each other and hold the zipper closed. If a tooth is missing, it can leave a little gap.
+> You’d see a caregiver gently rubbing and brushing pup 696’s fur to make it fluffy. Sea otters don’t have a thick layer of fat called blubber to keep them warm. Fluffing the fur traps tiny bubbles of air that help keep the pup warm in cold water and help it float.
 
 ### With the skill at standard
 
-> Look at the zipper on a jacket: its two rows of little teeth start apart. When you pull the slider—the little piece that moves along the zipper—it brings the rows together. The teeth fit between each other, closing the zipper. If a tooth is missing, there can be a gap.
+> You might see a caregiver rubbing and brushing sea otter pup 696’s fur to make it fluffy. Fluffy fur traps tiny bubbles of air. That air helps keep the pup warm in cold water and helps it float. Sea otters don’t have a thick layer of fat called blubber to keep them warm, so their fur is very important.
 
 ### What changed
 
-**Checks set before the run.** Use a pictureable hand action, keep both rows and the slider's role, and retain the possible gap without implying every zipper fails.
+**Checks set before the run.** Connect a visible grooming action to fluffed fur, trapped air, warmth and flotation. Keep the explanation appropriate for a five-year-old and avoid implying that air bubbles generate heat or that the animal breathes through fur.
 
-Both give a literal sequence and preserve the possible gap. The skill places the zipper on a jacket and identifies the slider as the moving piece; the baseline is shorter. No child evaluated the language.
+Both show the caregiver fluffing the fur so that it traps air, and connect the trapped air to warmth and flotation. The skill gives the trapped bubbles their own sentence; the baseline covers the same mechanism in three sentences. Neither answer measures whether a five-year-old understood it.
 
-**차이.** 두 답 모두 이가 빠졌을 때 틈이 생길 수 있음을 설명합니다. 스킬 답안은 재킷의 지퍼를 예로 들어 슬라이더가 어떤 부품인지 알려 줍니다.
+**차이.** 두 답 모두 털 손질로 공기가 갇히고, 그 공기가 새끼 해달의 체온 유지와 부력에 도움이 된다고 설명합니다. 적용 답은 공기 방울이 갇히는 단계를 한 문장으로 따로 보여 줍니다.
 
 ## federal-plain-language
 
-**Federal Plain Language-inspired explanation · A correction without a new deadline**
+**Which documents identify a child to Social Security?**
 
-Run on 2026-11-08 • `federal-plain-language` 0.1.1 • English • Codex CLI 0.167.0
+2026-11-08 · `federal-plain-language` 0.1.1 · English · Codex CLI 0.167.0 / gpt-6.1-sol
 
-### Prompt
+### Case and sources
 
-> Write a notice for applicants in no more than 65 words. Applications already submitted can be corrected through the portal until 4 p.m. Friday, but only if the status is 'Returned'. A correction does not change the original filing deadline. Paper corrections are not accepted.
-
-### Without a skill
-
-> Notice to Applicants
->
-> Applications already submitted may be corrected through the portal until 4 p.m. Friday, but only if their status is “Returned.” A correction does not change the original filing deadline. Paper corrections are not accepted.
-
-### With the skill at standard
-
-> You can correct an application you have already submitted through the portal until 4 p.m. Friday, but only if its status is 'Returned'.
->
-> A correction does not change the original filing deadline. Paper corrections are not accepted.
-
-### What changed
-
-**Checks set before the run.** Keep the status restriction, exact portal deadline, unchanged original deadline and paper exclusion. Let an applicant tell whether they can act.
-
-Both retain the status restriction, time, original deadline and paper exclusion. The skill addresses the applicant as “you” and puts the two remaining constraints in a separate paragraph. The baseline adds a notice heading.
-
-**차이.** 두 답 모두 수정 조건과 기한을 보존합니다. 스킬 답안은 신청자에게 직접 말하고, 서면 접수 제한을 따로 모았습니다.
-
-## feynman-technique
-
-**Feynman-inspired explanation and gap checking · Why a full buffer overwrites an item**
-
-Run on 2026-11-08 • `feynman-technique` 0.1.1 • English • Codex CLI 0.167.0
+- [SSA, U.S. Citizen/Child — Replacement Social Security Card (October 2026)](https://www.ssa.gov/pubs/EN-05-10514.pdf). English page of the October 2026 U.S. citizen/child replacement-card leaflet, sections on the child's and parent's identity, current originals, issuer-certified copies and unacceptable copies. The family’s two documents are an illustrative scenario.
 
 ### Prompt
 
-> Explain a two-slot buffer to a new operator in a short paragraph, without asking them a question. Each arrival writes to the next slot; after the second slot, writing returns to the first. Starting empty, A, B and C arrive in that order. The policy for simultaneous arrivals is unknown.
+> Write an answer for a parent reading the October 2026 U.S. Social Security Administration leaflet about replacing a U.S.-citizen child's Social Security card. The parent has only the child's birth certificate and a notarized photocopy of the parent's identification. Explain whether those establish identity and what forms of evidence the leaflet accepts. It requires evidence of both people's identities. A birth certificate can establish age or citizenship but not the child's identity; a child's U.S. passport is an example of identity evidence. A parent's U.S. driver's license is another example for the parent. Documents must be current originals or copies certified by the issuer; ordinary photocopies and notarized copies aren't accepted. Limit the answer to the evidence question, in 85 words or fewer.
 
 ### Without a skill
 
-> A two-slot buffer stores items in two positions, writing to each slot in turn. Starting empty, A goes into the first slot and B into the second. Writing then returns to the first slot, so C replaces A, leaving C in the first slot and B in the second. How simultaneous arrivals are handled is unknown.
+> No. The birth certificate can establish your child’s age or U.S. citizenship, but it does not establish the child’s identity. The notarized photocopy of your identification is not accepted.
+>
+> The leaflet requires identity evidence for both you and your child. Examples include your child’s U.S. passport and your U.S. driver’s license. Documents must be current originals or copies certified by the issuing agency. Ordinary photocopies and notarized copies are not accepted.
 
 ### With the skill at standard
 
-> A two-slot buffer has two places to hold items. Each arrival writes to the next slot, returning to the first after the second and replacing anything already there. Starting empty, A goes into slot 1, B into slot 2, and C into slot 1, replacing A. The buffer then holds C in slot 1 and B in slot 2; the next arrival will write to slot 2. The policy for simultaneous arrivals is unknown, so we cannot say how those arrivals would be ordered or stored.
+> No. The child’s birth certificate can establish age or citizenship, but it does not establish the child’s identity. The notarized photocopy of your identification is not accepted.
+>
+> The leaflet requires evidence of both your child’s identity and your identity. Examples include a U.S. passport for your child and a U.S. driver’s license for you.
+>
+> Documents must be current originals or copies certified by the issuer. Ordinary photocopies and notarized copies are not accepted.
 
 ### What changed
 
-**Checks set before the run.** Explain where A, B and C go and why C overwrites A; leave simultaneous arrivals unresolved. At standard a learner quiz is unnecessary.
+**Checks set before the run.** Keep the October 2026 leaflet as the source, distinguish the child's identity from age or citizenship, require evidence for both people and distinguish issuer-certified copies from merely notarized copies. Do not imply the examples are the only acceptable documents.
 
-Both trace A, B and C correctly and leave simultaneous arrivals unresolved. The skill goes one step further and predicts which slot the next arrival will use. A learner’s response was not observed.
+Both answers reject the two documents for the identity check, distinguish the child's identity from age or citizenship, and give an acceptable example for each person. The skill gives the document-format rule its own paragraph. This is a difference in layout; the underlying evidence rule is the same.
 
-**차이.** 두 답 모두 C가 왜 A를 덮어쓰는지 설명합니다. 스킬 답안은 다음 항목이 어느 칸에 들어갈지도 예측합니다.
-
-## google-design-doc
-
-**Google-inspired design document · Choosing an index for a search service**
-
-Run on 2026-11-08 • `google-design-doc` 0.1.1 • English • Codex CLI 0.167.0
-
-### Prompt
-
-> Write a design proposal excerpt of at most 115 words. Goal: reduce lookups that currently scan the whole log. Option A adds an index updated during each write. Option B rebuilds the index every 10 minutes. Search must show records within 2 minutes; no latency measurements exist. Changing record format is out of scope.
-
-### Without a skill
-
-> We propose adding an index to reduce lookups that currently scan the whole log, without changing the record format.
->
-> Option A updates the index during each write. This supports the two-minute search visibility requirement, provided indexing completes within that window, but adds work to the write path.
->
-> Option B rebuilds the index every 10 minutes. As proposed, it cannot meet the two-minute visibility requirement.
->
-> Recommend Option A, subject to validation. No latency measurements exist, so performance gains and write overhead remain unverified. Measure lookup latency, write latency, and time to search visibility under representative load before rollout.
-
-### With the skill at standard
-
-> Proposal for review: choose Option A, subject to validation that records become searchable within 2 minutes. The goal is to reduce lookups that currently scan the whole log; record-format changes are out of scope.
->
-> On each write, Option A updates an index; searches use that index to locate records. This adds write work. If an index update fails, search visibility may exceed 2 minutes; failure handling remains unresolved.
->
-> Option B rebuilds the index every 10 minutes, avoiding per-write index updates but failing the visibility requirement without another mechanism.
->
-> No latency measurements exist. Before approval, measure lookup latency, write overhead, and write-to-search visibility, including index-update failures.
-
-### What changed
-
-**Checks set before the run.** Compare the write-path cost with rebuild staleness, honor the two-minute requirement and unchanged record format, avoid invented measurements and identify what to test.
-
-Both recommend A conditionally and reject a 10-minute rebuild as insufficient for a 2-minute deadline. The skill adds a concrete unresolved design question about failed index updates. Neither presents an unmeasured performance gain as observed.
-
-**차이.** 두 답 모두 A를 조건부로 권합니다. 스킬 답안은 인덱스 갱신에 실패해 검색 반영이 늦어지는 경우까지 시험 대상으로 남깁니다.
-
-## gtm-formal
-
-**GTM-inspired formal mathematical explanation · When preimages preserve intersections**
-
-Run on 2026-11-08 • `gtm-formal` 0.1.1 • English • Codex CLI 0.167.0
-
-### Prompt
-
-> For a graduate maths reader, prove in at most 110 words that for any function f:X→Y and any subsets A and B of Y, the inverse image of their intersection equals the intersection of their inverse images. State whether f must be injective and cover empty sets.
-
-### Without a skill
-
-> For every \(x\in X\),
-> \[
-> \begin{aligned}
-> x\in f^{-1}(A\cap B)
-> &\iff f(x)\in A\cap B\\
-> &\iff f(x)\in A\ \text{and}\ f(x)\in B\\
-> &\iff x\in f^{-1}(A)\cap f^{-1}(B).
-> \end{aligned}
-> \]
-> Thus, by extensionality,
-> \[
-> f^{-1}(A\cap B)=f^{-1}(A)\cap f^{-1}(B).
-> \]
-> No injectivity assumption is needed. The argument also covers empty sets: \(f^{-1}(\varnothing)=\varnothing\), so if either \(A\) or \(B\) is empty, both sides are empty. If \(X=\varnothing\), both sides are likewise empty.
-
-### With the skill at standard
-
-> For \(S\subseteq Y\), define \(f^{-1}(S)=\{x\in X:f(x)\in S\}\). Let \(A,B\subseteq Y\). For every \(x\in X\),
-> \[
-> \begin{aligned}
-> x\in f^{-1}(A\cap B)
-> &\iff f(x)\in A\cap B\\
-> &\iff f(x)\in A\ \text{and}\ f(x)\in B\\
-> &\iff x\in f^{-1}(A)\cap f^{-1}(B).
-> \end{aligned}
-> \]
-> Thus, by extensionality,
-> \[
-> f^{-1}(A\cap B)=f^{-1}(A)\cap f^{-1}(B).
-> \]
-> Injectivity is unnecessary: only the definition of inverse image is used. If \(A=\varnothing\) or \(B=\varnothing\), both sides are empty because \(f^{-1}(\varnothing)=\varnothing\). If \(X=\varnothing\), both sides are likewise empty.
-
-### What changed
-
-**Checks set before the run.** Quantify a general element of X and give equivalences in both directions; do not introduce an inverse function or require injectivity; account for empty sets.
-
-Both prove the identity for each element of X, address empty sets, and explain why injectivity is unnecessary. The skill explicitly defines the inverse image before using it. The mathematical result is the same.
-
-**차이.** 두 증명 모두 공집합과 단사성 조건을 다룹니다. 스킬 답안은 사용하는 기호의 뜻인 역상을 먼저 정의합니다.
-
-## hunminjeongeum
-
-**Hunminjeongeum-inspired purpose-first explanation · A guide for finding the correct locker**
-
-Run on 2026-11-08 • `hunminjeongeum` 0.1.1 • English • Codex CLI 0.167.0
-
-### Prompt
-
-> Explain in at most 80 words why we are rewriting our depot locker guide. Couriers at Gate 2 see locker numbers duplicated across two wings. The new guide will pair each locker number with its wing letter. It covers only Gate 2. No one has yet tested whether couriers find parcels faster.
-
-### Without a skill
-
-> We’re rewriting the depot locker guide because couriers at Gate 2 encounter the same locker numbers in two wings. The new guide will pair each locker number with its wing letter to make locations clearer. It covers only Gate 2. Whether this helps couriers find parcels faster has not yet been tested.
-
-### With the skill at standard
-
-> Couriers at Gate 2 see the same locker numbers in two wings, making the number alone insufficient to identify the right locker. We are rewriting the guide to pair each locker number with its wing letter so couriers can distinguish between them. The guide covers only Gate 2. No one has yet tested whether this change helps couriers find parcels faster.
-
-### What changed
-
-**Checks set before the run.** Open with the courier's concrete difficulty, connect wing letters to duplicates, and end on the same task while retaining Gate 2 and the untested benefit.
-
-Both cover the Gate 2 scope and untested benefit. The baseline opens with the company's reason for rewriting; the skill opens with the obstacle faced by the couriers, then returns to their task in the final sentence.
-
-**차이.** 두 답 모두 개선 효과를 단정하지 않습니다. 스킬 답안은 조직의 개편 결정 대신 배달원이 마주한 문제에서 시작합니다.
-
-## ietf-rfc
-
-**RFC-style technical specification · Optional reconnect with a hard deadline**
-
-Run on 2026-11-08 • `ietf-rfc` 0.1.1 • English • Codex CLI 0.167.0
-
-### Prompt
-
-> Draft a short internal protocol requirement using BCP 14 notation. A client may reconnect once only after error E7. It must wait at least 4 seconds before reconnecting. Error E8 does not permit a reconnect. There is no registry action. Keep the text to 90 words or fewer.
-
-### Without a skill
-
-> The key words “MUST”, “MUST NOT”, and “MAY” in this document are to be interpreted as described in BCP 14 (RFC 2119 and RFC 8174).
->
-> A client MAY reconnect once after receiving error E7. It MUST wait at least 4 seconds after receiving E7 before reconnecting. It MUST NOT make a second reconnection attempt. A client MUST NOT reconnect after error E8 or any error other than E7.
->
-> This document requires no registry action.
-
-### With the skill at standard
-
-> # Reconnection Requirement
->
-> Status: Internal draft.
->
-> This specification governs client reconnection after an error. Uppercase keywords MUST, MUST NOT, and MAY have their BCP 14 meanings (RFC 2119 and RFC 8174, normative references).
->
-> After error E7, the client MAY reconnect once. It MUST wait at least 4 seconds after E7 before reconnecting. The client MUST NOT reconnect after E8 or any error other than E7.
->
-> Security considerations: This rule does not define authentication for reconnected sessions.
->
-> IANA considerations: No registry action is required.
-
-### What changed
-
-**Checks set before the run.** Keep reconnect optional and limited to once after E7, preserve the lower wait bound, exclude E8 and identify the absence of registry action. Use requirement keywords consistently.
-
-Both specify the optional single reconnect, waiting period, E8 exclusion and no registry action. The skill adds explicit document status and a security boundary; the baseline states the second-attempt prohibition directly. For this narrow request the shorter baseline also works.
-
-**차이.** 두 답 모두 재연결 횟수와 대기 시간을 정확히 적었습니다. 스킬 답안에는 문서 상태와 보안 범위가 추가돼 더 길어졌습니다.
-
-## imrad
-
-**IMRaD research-report structure · Reporting chipped parts in a test**
-
-Run on 2026-11-08 • `imrad` 0.1.1 • English • Codex CLI 0.167.0
-
-### Prompt
-
-> Turn these notes into a brief research abstract of no more than 100 words. Question: does liner L reduce chipped parts in a simulated route? Twenty crates with L and twenty without it followed one route. Staff counted 3 chipped parts with L and 7 without. We do not know how many parts were in each crate or which crates contained the chips.
-
-### Without a skill
-
-> We assessed whether liner L reduces chipped parts during a simulated route. Twenty crates with L and twenty without L followed the same route. Staff counted 3 chipped parts with L and 7 without. Although fewer chipped parts were observed with L, the number of parts per crate and the distribution of chips across crates were unknown. These limitations prevent calculation of chipping rates and assessment of crate-level variability. The results suggest a possible benefit but do not establish that L reduces chipping.
-
-### With the skill at standard
-
-> **Introduction:** We assessed whether liner L reduces chipped parts on a simulated route.
->
-> **Methods:** Twenty crates with L and twenty without L followed one route. Staff counted chipped parts. The number of parts per crate and the distribution of chipped parts across crates were unknown.
->
-> **Results:** Staff recorded 3 chipped parts with L and 7 without L.
->
-> **Discussion:** Fewer chipped parts were observed with L, but missing part denominators and crate-level data prevent estimating chipping rates or the proportion of crates affected. This single-route simulation does not establish effects on other routes.
-
-### What changed
-
-**Checks set before the run.** Separate the comparison, method, observed counts and interpretation. Do not infer crate-level percentages, chip rates per part, or effects beyond the simulated route.
-
-Both report counts of chipped parts rather than rates per crate. The skill labels the four section roles and makes the one-route limit explicit. The baseline reads as one continuous abstract.
-
-**차이.** 두 답 모두 파손 부품 수를 상자별 파손률로 바꾸지 않았습니다. 스킬 답안은 네 부분을 구분하고 결론의 적용 범위를 한 경로로 한정합니다.
-
-## korean-plain-language
-
-**Korean plain-language companion · 내보내기 예약 안내**
-
-Run on 2026-11-08 • `korean-plain-language` 0.1.1 • Korean • Codex CLI 0.167.0
-
-### Prompt
-
-> 앱 사용자에게 보여 줄 문구만 네 문장 이내로 다듬어 주세요. 원래 해요체와 버튼 이름은 유지해 주세요. 원문: ‘내보내기 예약’은 관리자에게만 가능한 동작이에요. ‘예약’을 눌러도 지금 파일이 전송되지는 않아요. 전송은 확인이 끝난 후에만 시작될 수 있어요. 누가 확인하는지는 아직 정해지지 않았어요.
-
-### Without a skill
-
-> ‘내보내기 예약’은 관리자만 할 수 있어요. ‘예약’을 눌러도 파일이 바로 전송되지는 않아요. 전송은 확인이 끝난 뒤에만 시작할 수 있어요. 확인 담당자는 아직 정해지지 않았어요.
-
-### With the skill at standard
-
-> ‘내보내기 예약’은 관리자만 할 수 있어요. ‘예약’을 눌러도 지금 파일이 전송되지는 않아요. 확인이 끝난 후에만 전송을 시작할 수 있어요. 누가 확인할지는 아직 정해지지 않았어요.
-
-### What changed
-
-**Checks set before the run.** 관리자만 가능한 동작, 실제 버튼 이름, 즉시 전송되지 않음, 확인 후에도 시작은 가능성이라는 점, 확인 주체 미정과 해요체를 보존한다.
-
-Both preserve 해요체, both labels, the administrator restriction, and the unknown person responsible. The baseline says ‘확인 담당자’; the skill says ‘누가 확인할지’. Both keep confirmation necessary without promising immediate transmission.
-
-**차이.** 두 답 모두 조건과 해요체를 지켰습니다. 확인할 사람이 아직 정해지지 않은 점을 하나는 ‘확인 담당자’, 다른 하나는 ‘누가 확인할지’로 표현합니다.
-
-## microsoft-writing-style
-
-**Microsoft-inspired technology writing · Restoring a workspace from an archive**
-
-Run on 2026-11-08 • `microsoft-writing-style` 0.1.1 • English • Codex CLI 0.167.0
-
-### Prompt
-
-> Rewrite this help text for someone using the app. Keep it under 70 words. Only workspace owners may select the button labelled 'Restore copy'. They may do so only after the archive has been verified. The action creates a separate copy; it does not change the current workspace. A storage quota might block creation.
-
-### Without a skill
-
-> After the archive has been verified, workspace owners can select **Restore copy** to create a separate copy. The current workspace stays unchanged. If there isn’t enough available storage within your quota, the copy can’t be created.
-
-### With the skill at standard
-
-> Only workspace owners may select **Restore copy**, and only after the archive has been verified. This action creates a separate copy without changing the current workspace. A storage quota might prevent the copy from being created.
-
-### What changed
-
-**Checks set before the run.** Keep the exact UI label, owner restriction, verified archive prerequisite, separate copy and unchanged workspace. Preserve quota as a possibility.
-
-Both preserve the label and separate-copy behavior. The baseline omits the explicit ‘only’ on the owner restriction and gives a more specific interpretation of the quota than the source. The skill keeps both restrictions and the possibility of a block visible.
-
-**차이.** 미적용 답안에서는 소유자만 가능하다는 제한이 약해졌습니다. 스킬 답안은 권한·검증 조건을 버튼 이름 바로 앞에 놓습니다.
-
-## minto-pyramid
-
-**Minto-inspired Pyramid Principle · Where should we spend the training budget?**
-
-Run on 2026-11-08 • `minto-pyramid` 0.2.1 • English • Codex CLI 0.167.0
-
-### Prompt
-
-> Write only the opening paragraph of a decision note in under 85 words. Choose between funding a second live induction session and printing more manuals. Last intake, 11 of 40 volunteers missed the only session because of shift clashes. All 40 already received a manual. The budget covers one option. A second session could run on Saturdays if a trainer is available. Its effect on attendance has not been measured.
-
-### Without a skill
-
-> Fund a second live induction session rather than print more manuals, subject to confirming a trainer for Saturday. Last intake, 11 of 40 volunteers missed the only session because of shift clashes, while all 40 already received a manual. A second session offers a way to address that scheduling barrier, though its effect on attendance is unmeasured; attendance should be tracked to assess whether the additional session helps.
-
-### With the skill at standard
-
-> Last intake, all 40 volunteers received a manual, but 11 missed the only live induction session because of shift clashes. With funding for one option, should we add a session or print more manuals? Fund a second session, conditional on trainer availability for a Saturday session, because it could address the scheduling barrier while more manuals would duplicate existing provision. Its effect on attendance remains unmeasured.
-
-### What changed
-
-**Checks set before the run.** Answer the decision with a supported reason. Keep the 11/40 denominator, existing manuals, either/or budget, trainer dependency and unmeasured effect. Stay within the opening.
-
-Both recommend a second session, subject to trainer availability, and retain the unmeasured effect. The baseline leads with the recommendation; the skill lays out the evidence, asks the decision question and then answers. The latter also states the one-option budget explicitly.
-
-**차이.** 두 답 모두 추가 교육을 조건부로 권합니다. 미적용 답은 권고를 먼저 쓰고, 스킬 답은 근거와 질문을 놓은 뒤 권고합니다.
-
-## new-harts-rules
-
-**New Hart’s Rules source-assisted editing · House spelling and a protected citation**
-
-Run on 2026-11-08 • `new-harts-rules` 0.1.2 • English • Codex CLI 0.167.0
-
-### Prompt
-
-> Copyedit the sentence below, then add one short editorial note. House style requires 'on-site' before a noun in editable prose. Quoted titles must stay verbatim. No book passage is supplied for serial-comma style. Draft: Our onsite team read the article ‘The Onsite Team’ and checked labels, seals and lids.
-
-### Without a skill
-
-> Our on-site team read the article ‘The Onsite Team’ and checked labels, seals and lids.
->
-> Editorial note: Changed “onsite” to “on-site” before a noun; preserved the quoted title and existing comma style.
-
-### With the skill at standard
-
-> Our on-site team read the article ‘The Onsite Team’ and checked labels, seals and lids.
->
-> Editorial note: ‘On-site’ follows house style; the quoted title stays verbatim. Serial-comma usage is unchanged because no relevant passage from New Hart’s Rules, second edition (2014), was supplied.
-
-### What changed
-
-**Checks set before the run.** Change the editable modifier, preserve the exact quoted title and list facts. Attribute the spelling to house style and avoid claiming a book rule for the unresolved comma.
-
-Both final edits change only the editable spelling and preserve the quoted title and list. The skill's note identifies house style and the absent book passage; the baseline explains what it changed without naming the authority. The earlier treatments and the corrected fixture are documented below.
-
-**차이.** 두 최종 답안의 편집 문장은 같습니다. 스킬 답안은 사내 표기와 확인하지 못한 책의 규칙을 구분합니다. 수정 전 답안도 아래에 남겼습니다.
+**차이.** 두 답 모두 부모와 자녀에게 어떤 신원 증빙이 필요한지 정확히 설명합니다. 스킬 답은 원본·발급기관 인증 사본 요건을 별도 문단으로 나눴고, 인정되는 서류에 관한 결론은 같습니다.
 
 <details>
-<summary>Earlier prompt, answers and revision</summary>
+<summary>Earlier attempts on this case</summary>
 
-The earlier prompt said “two sentences” but supplied one. We corrected that mismatch before publishing the main pair above. The three earlier answers below used this same original prompt.
+The first prompt named a July 2024 leaflet. The current SSA publication identifies itself as the October 2026 edition and says the July 2024 edition may still be used. We dated the question to the edition that the source link actually serves and ran a new matched pair.
 
-> Copyedit the two sentences below, then add one short editorial note. House style requires 'on-site' before a noun in editable prose. Quoted titles must stay verbatim. No book passage is supplied for serial-comma style. Draft: Our onsite team read the article ‘The Onsite Team’ and checked labels, seals and lids.
+**Attempt 1 — request**
+
+> Write an answer for a parent reading the July 2024 U.S. Social Security Administration leaflet about replacing a U.S.-citizen child's Social Security card. The parent has only the child's birth certificate and a notarized photocopy of the parent's identification. Explain whether those establish identity and what forms of evidence the leaflet accepts. It requires evidence of both people's identities. A birth certificate can establish age or citizenship but not the child's identity; a child's U.S. passport is an example of identity evidence. A parent's U.S. driver's license is another example for the parent. Documents must be current originals or copies certified by the issuer; ordinary photocopies and notarized copies aren't accepted. Limit the answer to the evidence question, in 85 words or fewer.
 
 **Without a skill**
 
-> Our on-site team read the article ‘The Onsite Team’ and checked labels, seals and lids.
+> No. The birth certificate can establish your child’s age or U.S. citizenship, but it does not establish identity. Your notarized identification photocopy is also unacceptable.
 >
-> Editorial note: Changed “onsite” to “on-site” in prose; preserved the quoted title and existing serial-comma style because no book passage was supplied.
+> The leaflet requires evidence of both your child’s identity and your identity. Examples include a U.S. passport for your child and a U.S. driver’s license for you. Documents must be current originals or copies certified by the issuing agency. Ordinary photocopies and notarized copies are not accepted.
 
-**First treatment, version 0.1.1**
+**With the skill at standard**
 
-> Our on-site team read the article ‘The Onsite Team’ and checked labels, seals and lids.
+> No. Those documents do not establish both identities, as the leaflet requires. Your child’s birth certificate can establish age or citizenship, but it does not establish identity. The notarized photocopy of your identification is not accepted.
 >
-> Editorial note: Applied new-harts-rules v0.1.1 at standard level, referencing the second edition (2014). ‘On-site’ follows house style; the quoted title is unchanged. Serial-comma style remains unverified, so the existing punctuation is retained.
-
-The note named the method version and described an edition as a reference without a relevant passage. We clarified the difference between an editorial note and a method audit, then reran the original prompt in a fresh context.
-
-**Revised treatment, version 0.1.2**
-
-> Our on-site team read the article ‘The Onsite Team’ and checked labels, seals and lids.
->
-> Editorial note: Applied house style to ‘on-site’; preserved the quoted title verbatim. Left serial-comma style unchanged because no relevant passage from New Hart’s Rules, second edition (2014), was supplied.
+> Examples of accepted identity evidence include your child’s U.S. passport and your U.S. driver’s license. Documents must be current originals or copies certified by the agency that issued them. Ordinary photocopies and notarized copies are not accepted.
 
 </details>
 
-## nist-technical-publication
+## feynman-technique
 
-**NIST-inspired technical publication · Reporting a temperature test**
+**Why a new DNS name can still return NXDOMAIN**
 
-Run on 2026-11-08 • `nist-technical-publication` 0.1.1 • English • Codex CLI 0.167.0
+2026-11-08 · `feynman-technique` 0.1.2 · English · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [IETF RFC 2308, Negative Caching of DNS Queries](https://www.rfc-editor.org/rfc/rfc2308.html#section-5). Sections 3 and 5 explain the SOA-based lifetime and expiry of negative responses. The hostname, TTL values and clock times are a worked trace, not production DNS records.
 
 ### Prompt
 
-> Write a traceable measurement summary in at most 75 words. At a chamber setpoint of 30 °C, sensor Q reported 18.40 mV with stated uncertainty ±0.06 mV. Five readings were taken. The record gives neither their individual values nor a coverage factor. No NIST publication identifier is assigned.
+> Explain this DNS rollout to a developer in one short paragraph. In this worked example a recursive resolver looks up uploads.example.org at 12:00:00, receives NXDOMAIN (the name does not exist), and caches it. In the zone, the SOA record has a TTL of 900 seconds and a MINIMUM of 300 seconds; RFC 2308 uses the smaller value for the negative cache lifetime. At 12:01:00 the operator creates an A record for that name. What can the same resolver return at 12:02:00, and when does this cached answer expire? Assume no early eviction, refresh or local override; the authoritative server remains reachable. The clock times and record are illustrative.
 
 ### Without a skill
 
-> At a chamber setpoint of 30 °C, sensor Q reported 18.40 mV with stated uncertainty ±0.06 mV. Five readings were taken, but individual values are unavailable, preventing independent assessment of variability. The coverage factor and uncertainty coverage probability are unspecified. No NIST publication identifier is assigned. The supplied record does not establish metrological traceability.
+> The resolver caches the NXDOMAIN response for 300 seconds—the smaller of the SOA TTL (900 seconds) and MINIMUM (300 seconds). Creating the A record at 12:01:00 does not invalidate that cached response, so at 12:02:00 the same resolver can still return NXDOMAIN. The cached negative answer expires at 12:05:00, after which a new lookup can retrieve the A record from the authoritative server.
 
 ### With the skill at standard
 
-> At a chamber setpoint of 30 °C, five readings were taken with sensor Q. The reported value was 18.40 mV with a stated uncertainty of ±0.06 mV. The record provides neither the individual readings nor a coverage factor; it does not establish that the reported value is a mean or specify a coverage probability. No NIST publication identifier is assigned.
+> A recursive resolver caches DNS answers, including NXDOMAIN (“the name does not exist”). Here, RFC 2308 sets the negative cache lifetime to the smaller of the SOA TTL (900 seconds) and MINIMUM (300 seconds), so the NXDOMAIN cached at 12:00:00 lasts until 12:05:00. Creating the A record at 12:01:00 does not invalidate that resolver’s cached answer: at 12:02:00 it can still return NXDOMAIN, with 180 seconds remaining. Under the stated assumptions, the cached answer expires at 12:05:00; a subsequent lookup can query the reachable authoritative server and obtain the new A record.
 
 ### What changed
 
-**Checks set before the run.** Retain the distinction between setpoint and measured voltage, decimal precision, units, count, missing raw values and coverage factor. Do not invent an average, interval interpretation or identifier.
+**Checks set before the run.** Compute a 300-second lifetime starting at 12:00, not at the record change. A cached NXDOMAIN can persist at 12:02; it expires at 12:05. Expiration permits a fresh lookup rather than proving that all resolvers update simultaneously.
 
-Both preserve the setpoint, the 18.40 mV precision, the stated uncertainty and the missing data. The baseline flags unestablished metrological traceability. The skill specifically avoids inferring that 18.40 mV is a mean. Both leave coverage and the identifier unresolved.
+Both answers start the 300-second lifetime when the resolver receives NXDOMAIN, retain the 12:02 negative response and calculate the 12:05 expiry. The skill answer also gives the 180 seconds left at 12:02. Both describe a later lookup rather than promising that all resolvers change together.
 
-**차이.** 두 답 모두 정밀도와 불확도를 지켰습니다. 스킬 답안은 18.40 mV를 평균으로 단정하지 않았고, 미적용 답안은 계측학적 소급성을 입증하지 못했다고 적었습니다.
+**차이.** 두 답 모두 12시 1분에 레코드를 추가해도 12시 2분에는 이전 NXDOMAIN을 돌려줄 수 있고, 캐시는 12시 5분에 만료된다고 설명합니다. 스킬 답은 12시 2분에 남은 시간이 180초라는 계산까지 보여 줍니다.
+
+## google-design-doc
+
+**Adding a PostgreSQL index while orders are still arriving**
+
+2026-11-08 · `google-design-doc` 0.1.1 · English · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [PostgreSQL 17 documentation, CREATE INDEX](https://www.postgresql.org/docs/17/sql-createindex.html#SQL-CREATEINDEX-CONCURRENTLY). Building Indexes Concurrently explains locking, table scans, waiting for transactions and invalid indexes after failure. The store, schema and decision are illustrative; no production benchmark is quoted.
+- [PostgreSQL 17 system catalogs, pg_index](https://www.postgresql.org/docs/17/catalog-pg-index.html). The indisvalid field confirms the baseline’s suggested validity check. This catalog reference was checked after the runs.
+
+### Prompt
+
+> Write a design-review excerpt of at most 130 words for an illustrative online store on PostgreSQL 17. Its unpartitioned orders table keeps receiving INSERTs; the requirement is that an index build must not block those writes for the duration of the build. Compare ordinary CREATE INDEX on customer_id with CREATE INDEX CONCURRENTLY. The ordinary build blocks table writes; the concurrent build permits them but scans the table twice and waits for relevant transactions. Failure can leave an invalid index that queries ignore but writes still maintain. Recommend one path and name a rollout check. The store has measured neither build time nor order-write latency.
+
+### Without a skill
+
+> For this illustrative store on PostgreSQL 17, ordinary `CREATE INDEX ON orders (customer_id)` blocks table writes during the build, violating the requirement to keep accepting order INSERTs.
+>
+> Recommend `CREATE INDEX CONCURRENTLY ON orders (customer_id)`. It permits writes during construction, but scans the table twice and waits for relevant transactions. It can still increase resource use and affect write latency; the store has measured neither build time nor order-write latency, so neither should be promised.
+>
+> A failed concurrent build can leave an invalid index that queries ignore but writes still maintain. As a rollout check, verify `pg_index.indisvalid` before declaring success, and monitor order-write latency during the build.
+
+### With the skill at standard
+
+> Proposal for review: use `CREATE INDEX CONCURRENTLY` on `orders(customer_id)` in PostgreSQL 17. The requirement is to keep accepting INSERTs throughout the build.
+>
+> Ordinary `CREATE INDEX` blocks table writes for the build’s duration, so it fails this requirement. The concurrent build permits INSERTs but scans the table twice and waits for relevant transactions. An incoming order can therefore be inserted while the index builds, although its write latency has not been measured.
+>
+> If the concurrent build fails, it can leave an invalid index: queries ignore it, but writes still maintain it. Before rollout completion, verify index validity and investigate any invalid index.
+>
+> Approval remains pending. The store has measured neither build time nor order-write latency; measure both during a representative trial to assess rollout impact.
+
+### What changed
+
+**Checks set before the run.** Tie the recommendation to the write-availability requirement; explain scans/waits and invalid-index maintenance. Include an operational check without claiming zero overhead, no locks of any kind, or measured latency for this store.
+
+Both recommend a concurrent build, explain its extra scans and waits, and keep latency unmeasured. The baseline gives the most actionable validity check, pg_index.indisvalid. The skill answer walks one incoming order through the design and proposes a representative trial. Its statement that approval is pending is plausible in a review draft, but the hypothetical store supplied no approval record.
+
+**차이.** 두 답 모두 쓰기를 허용하는 동시 인덱스 생성을 권합니다. 미적용 답은 확인할 열인 pg_index.indisvalid까지 지정하고, 스킬 답은 주문 한 건이 들어올 때의 동작과 측정할 항목을 짚습니다. 실제 승인 상태는 예제에 주어지지 않았습니다.
+
+## gtm-formal
+
+**Proving at most one Raft leader per term in five-member etcd**
+
+2026-11-08 · `gtm-formal` 0.1.1 · English · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [Ongaro and Ousterhout, In Search of an Understandable Consensus Algorithm, §5.2](https://raft.github.io/raft.pdf). Section 5.2 and Figure 3 distinguish election safety, one vote per term, majority election and split votes.
+- [etcd v3.5 FAQ, fault tolerance](https://etcd.io/docs/v3.5/faq/#what-is-failure-tolerance). The fault-tolerance table gives a quorum of three for five etcd members. The split vote is an illustrative configuration.
+
+### Prompt
+
+> For a distributed systems seminar, prove in at most 130 words why two candidates cannot both be elected leader in the same Raft term in a fixed five-voter etcd cluster. Use the illustrative member names etcd-east and etcd-west throughout the proof for the two candidates. Assume a candidate needs at least three distinct votes and each voter grants at most one vote per term. Show the intersection bound for the two voter sets and connect it to the vote rule. Finally explain whether this proof guarantees that a 2–2 split with the fifth voter unreachable elects anyone in that term. This is a worked configuration, not a claim about a live cluster.
+
+### Without a skill
+
+> Suppose etcd-east and etcd-west are both elected in the same term. Let $E$ and $W$ be their respective voter sets. Each requires at least three distinct votes among the five fixed voters, so
+>
+> $$
+> |E\cap W|=|E|+|W|-|E\cup W|\ge 3+3-5=1.
+> $$
+>
+> Thus at least one voter must have voted for both etcd-east and etcd-west in that term, contradicting the rule that each voter grants at most one vote per term. Therefore, both cannot be elected in the same term.
+>
+> This proves uniqueness, not that an election succeeds. In a 2–2 split between etcd-east and etcd-west with the fifth voter unreachable, neither has the required three votes; if that split persists, neither is elected in that term.
+
+<details>
+<summary>Original model text (math delimiters as returned)</summary>
+
+````text
+Suppose etcd-east and etcd-west are both elected in the same term. Let \(E\) and \(W\) be their respective voter sets. Each requires at least three distinct votes among the five fixed voters, so
+\[
+|E\cap W|=|E|+|W|-|E\cup W|\ge 3+3-5=1.
+\]
+Thus at least one voter must have voted for both etcd-east and etcd-west in that term, contradicting the rule that each voter grants at most one vote per term. Therefore, both cannot be elected in the same term.
+
+This proves uniqueness, not that an election succeeds. In a 2–2 split between etcd-east and etcd-west with the fifth voter unreachable, neither has the required three votes; if that split persists, neither is elected in that term.
+````
+
+</details>
+
+### With the skill at standard
+
+> Let $V$ be the fixed voter set, with $|V|=5$, and fix a term $t$. Each voter grants at most one vote in $t$; election requires at least three distinct votes.
+>
+> Suppose etcd-east and etcd-west are both elected in $t$. Let $E,W\subseteq V$ be their respective voter sets. Then $|E|,|W|\ge3$, so
+>
+> $$
+> |E\cap W|
+> =|E|+|W|-|E\cup W|
+> \ge3+3-5=1.
+> $$
+>
+> Thus some voter voted for both etcd-east and etcd-west in $t$, contradicting the vote rule. Hence they cannot both be elected in that term.
+>
+> This proves uniqueness, not guaranteed election. In a 2–2 split between etcd-east and etcd-west, with the fifth voter unreachable, neither has three votes; neither is elected while that split persists.
+
+<details>
+<summary>Original model text (math delimiters as returned)</summary>
+
+````text
+Let \(V\) be the fixed voter set, with \(|V|=5\), and fix a term \(t\). Each voter grants at most one vote in \(t\); election requires at least three distinct votes.
+
+Suppose etcd-east and etcd-west are both elected in \(t\). Let \(E,W\subseteq V\) be their respective voter sets. Then \(|E|,|W|\ge3\), so
+\[
+|E\cap W|
+=|E|+|W|-|E\cup W|
+\ge3+3-5=1.
+\]
+Thus some voter voted for both etcd-east and etcd-west in \(t\), contradicting the vote rule. Hence they cannot both be elected in that term.
+
+This proves uniqueness, not guaranteed election. In a 2–2 split between etcd-east and etcd-west, with the fifth voter unreachable, neither has three votes; neither is elected while that split persists.
+````
+
+</details>
+
+### What changed
+
+**Checks set before the run.** Identify the two vote sets with their named candidates. Prove that two voter sets of at least 3 in a 5-voter universe overlap in at least 1 voter, contradicting one vote per term for distinct candidates. Distinguish election safety from progress: in the stated split neither has a majority; other terms or changing memberships are outside scope.
+
+Both answers identify the candidates as etcd-east and etcd-west, define their vote sets and show why two sets of three among five share at least one voter. Both distinguish a unique possible leader from a guaranteed election in a 2–2 split. The skill starts by explicitly fixing the voter universe and term; the baseline begins directly with the two supposed winners. The earlier symbolic pair is retained below.
+
+**차이.** 두 답 모두 etcd-east와 etcd-west가 각각 3표를 받았다면 5명 중 적어도 한 명이 두 후보에게 투표했다는 모순을 보입니다. 2대 2로 갈리면 승자가 없어도 된다는 점도 같습니다. 스킬 답은 증명 첫 줄에서 투표자 집합과 임기를 먼저 고정합니다.
+
+<details>
+<summary>Earlier attempts on this case</summary>
+
+The first pair defined its voters correctly, but still referred to abstract candidates. We named the two example etcd members in the final prompt and reran both arms.
+
+**Attempt 1 — request**
+
+> For a distributed systems seminar, prove in at most 130 words why two candidates cannot both be elected leader in the same Raft term in a fixed five-voter etcd cluster. Assume a candidate needs at least three distinct votes and each voter grants at most one vote per term. Show the intersection bound for the two voter sets and connect it to the vote rule. Finally explain whether this proof guarantees that a 2–2 split with the fifth voter unreachable elects anyone in that term. This is a worked configuration, not a claim about a live cluster.
+
+**Without a skill**
+
+````text
+Suppose distinct candidates \(A\) and \(B\) are both elected in term \(t\). Let \(V_A\) and \(V_B\) be their voter sets. Each contains at least three distinct voters from the fixed five-voter cluster, so
+\[
+|V_A\cap V_B|
+=|V_A|+|V_B|-|V_A\cup V_B|
+\ge 3+3-5=1.
+\]
+Thus at least one voter voted for both candidates in term \(t\), contradicting the rule that each voter grants at most one vote per term. Therefore, two candidates cannot both be elected leader in the same term.
+
+This proves uniqueness, not election progress. In a 2–2 split with the fifth voter unreachable, neither candidate has the required three votes. No candidate is elected while that split persists; the proof does not guarantee an election in that term.
+````
+
+**With the skill at standard**
+
+````text
+Let \(V\) be the fixed set of five voters, and fix a term \(t\). Suppose distinct candidates \(A\) and \(B\) are both elected in \(t\). Let \(S_A,S_B\subseteq V\) be their respective voter sets. By assumption, \(|S_A|,|S_B|\ge3\). Hence
+\[
+|S_A\cap S_B|
+=|S_A|+|S_B|-|S_A\cup S_B|
+\ge3+3-5=1.
+\]
+Thus some voter granted votes to both distinct candidates in term \(t\), contradicting the rule that each voter grants at most one vote per term. Therefore at most one candidate can be elected in any given term.
+
+This proves uniqueness, not guaranteed election. In a 2–2 split with the fifth voter unreachable, neither candidate has the required three votes; if that split persists, no leader is elected in that term.
+````
+
+</details>
+
+## hunminjeongeum
+
+**Finding a transfer on Seoul’s redesigned subway map**
+
+2026-11-08 · `hunminjeongeum` 0.1.1 · Korean · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [서울특별시, 시민의 발, 디자인을 입다…서울시, 지하철 노선도 40년 만에 변경 (2023-09-13)](https://news.seoul.go.kr/culture/archives/520933). Design release on interchange markings, the circular Line 2 reference, and maximum time reduction in the 20s–30s domestic/foreign eye-tracking experiment.
+
+### Prompt
+
+> 서울을 처음 방문한 승객에게 서울시가 2023년 9월 지하철 노선도 개선안을 내놓은 이유를 한국어 세 문장으로 설명해 주세요. 기존 지도에서는 환승역이 일반역과 잘 구분되지 않았어요. 개선안은 환승할 수 있는 노선의 색을 한 표시에 연결해 놓았고, 원형으로 그린 2호선을 지도의 기준점으로 삼았어요. 서울시가 20~30대 내국인·외국인을 대상으로 진행한 시선 추적 실험에서는 환승역 길을 찾는 데 걸린 시간이 최대 약 69% 줄었어요. 이 수치가 무엇을 측정했는지도 알려 주세요.
+
+### Without a skill
+
+> 서울시가 2023년 9월 지하철 노선도 개선안을 내놓은 이유는 기존 지도에서 환승역과 일반역을 구분하기 어려워 서울을 처음 방문한 승객도 환승 경로를 쉽게 찾도록 돕기 위해서예요. 개선안은 환승 가능한 노선들의 색을 하나의 표시에 연결하고, 원형으로 그린 2호선을 지도의 기준점으로 삼았어요. 서울시가 20~30대 내국인과 외국인을 대상으로 진행한 시선 추적 실험에서 최대 약 69% 줄어든 것은 지도에서 환승역 길을 찾는 데 걸린 시간이며, 실제 지하철 이동 시간은 아니에요.
+
+### With the skill at standard
+
+> 서울을 처음 방문한 승객은 기존 지하철 노선도에서 환승역과 일반역을 구분하기 어려웠기 때문에, 서울시는 환승역과 이동 경로를 더 쉽게 찾도록 2023년 9월 노선도 개선안을 내놓았어요.
+> 개선안은 환승할 수 있는 노선의 색을 하나의 표시에 연결해 보여 주고, 원형으로 그린 2호선을 지도의 기준점으로 삼아 위치를 파악하도록 했어요.
+> 서울시가 20~30대 내국인·외국인을 대상으로 진행한 시선 추적 실험에서는 환승역 길을 찾는 데 걸린 시간이 최대 약 69% 줄었는데, 이는 실험에서 노선도를 보고 길을 찾는 데 걸린 시간을 측정한 결과이며 실제 열차 이동 시간의 감소를 뜻하지는 않아요.
+
+### What changed
+
+**Checks set before the run.** Begin with the first-time passenger's transfer difficulty. Connect linked line colours and circular Line 2 to finding the transfer. Keep the eye-tracking task, the participant ages and the 'up to about 69%' bound; do not turn it into a reduction in real journey time.
+
+Both connect the transfer symbol and the circular Line 2 to the passenger's task. The baseline opens with the city announcing a change. The skill answer opens with the passenger struggling to distinguish stations. Both correctly identify the roughly 69% maximum as a map-reading result in the eye-tracking test; the skill's last sentence is longer without adding another finding.
+
+**차이.** 미적용 답안은 서울시가 개선안을 낸 이유로, 스킬 답안은 처음 온 승객이 겪던 불편으로 시작합니다. 둘 다 최대 약 69% 줄어든 것은 열차 이동 시간이 아니라 실험에서 환승역 길을 찾는 데 걸린 시간이라고 설명합니다.
+
+## ietf-rfc
+
+**Specifying HTTP 429 for a rate-limited API**
+
+2026-11-08 · `ietf-rfc` 0.1.2 · English · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [IETF RFC 6585 §4, 429 Too Many Requests](https://www.rfc-editor.org/rfc/rfc6585.html#section-4). Sections 4 and 7.2 cover explanation, optional Retry-After, cache prohibition, deliberately unspecified counting and a server’s discretion to omit 429.
+- [IETF RFC 9110 §10.2.3, Retry-After](https://www.rfc-editor.org/rfc/rfc9110.html#section-10.2.3). The field accepts an HTTP date or nonnegative integer delay in seconds after response receipt. The 120-second header is an illustration.
+
+### Prompt
+
+> Draft a short internal HTTP API specification (at most 95 words) using BCP 14 keywords. Explain how a client interprets the worked header Retry-After: 120 and whether a subsequent request is guaranteed to succeed. Under RFC 6585 §§4 and 7.2 a server can choose 429 for too many requests in a time interval. If sent, its content should explain the condition and it may include Retry-After. A cache must not store a 429 response. RFC 9110 §10.2.3 permits an HTTP date or a nonnegative delay in seconds measured after receipt of the response. State the keyword convention and distinguish server, client and cache roles. No identity scheme or rate-limiting algorithm is specified.
+
+### Without a skill
+
+> The keywords MUST, MUST NOT, SHOULD, and MAY are interpreted as described in BCP 14 (RFC 2119 and RFC 8174) when capitalized.
+>
+> A server MAY return 429 for too many requests within a time interval. Its content SHOULD explain the condition; it MAY include Retry-After.
+>
+> Retry-After accepts an HTTP date or nonnegative delay in seconds. For `Retry-After: 120`, the client SHOULD wait at least 120 seconds after receiving the response before retrying. Success is not guaranteed.
+>
+> A cache MUST NOT store a 429 response.
+>
+> No identity scheme or rate-limiting algorithm is specified.
+
+### With the skill at standard
+
+> Internal draft: HTTP rate limiting
+>
+> Uppercase keywords use BCP 14 meanings (RFC 2119; RFC 8174).
+>
+> A server MAY send 429 for too many requests within a time interval. Its content SHOULD explain the condition; it MAY include Retry-After. A cache MUST NOT store 429 responses.
+>
+> Clients interpret `Retry-After: 120` as a suggested 120-second delay after response receipt; subsequent success is not guaranteed. An HTTP date is also permitted.
+>
+> Security: identity and rate-limiting algorithms remain unspecified.
+> IANA: no action.
+>
+> Normative references: RFC 6585 §§4, 7.2; RFC 9110 §10.2.3.
+
+### What changed
+
+**Checks set before the run.** Keep explanatory details at SHOULD, Retry-After optional (MAY), and cache storage prohibited (MUST NOT). Interpret 120 as seconds after receipt and do not guarantee that the subsequent request succeeds. Do not invent per-user counting rules.
+
+Both final answers keep sending HTTP 429 optional, prohibit cache storage and count 120 seconds from receipt, without promising a successful retry. The baseline makes waiting a client SHOULD under BCP 14. The skill describes the suggested wait without adding that normative client requirement. The first treatment had incorrectly made sending 429 mandatory.
+
+**차이.** 두 최종 답 모두 서버의 429 전송은 선택 사항이고 캐시는 응답을 저장하면 안 된다는 점을 지킵니다. 응답 수신 후 120초를 세되 재시도 성공을 보장하지도 않습니다. 미적용 답은 클라이언트 대기에 대문자 SHOULD를 추가했고, 스킬 답은 이를 권장 대기 시간으로 설명했습니다.
+
+<details>
+<summary>Earlier attempts on this case</summary>
+
+The first treatment made sending a 429 mandatory. We clarified that choosing to send a message differs from the obligations on its contents. The new treatment preserved that condition but left the timer origin implicit. We then supplied the receipt-time fact in the final prompt and reran both arms.
+
+**Attempt 1 — request**
+
+> Draft an internal HTTP API specification of at most 95 words using BCP 14 keywords. Adopt RFC 6585 section 4: a 429 response reports too many requests in a time interval; its content should explain the condition, it may include Retry-After, and a cache must not store the response. RFC 9110 section 10.2.3 permits either an HTTP date or a nonnegative delay in seconds. For a worked header, use Retry-After: 120. Do not prescribe an identity scheme or rate-limiting algorithm. State the keyword convention and distinguish the server, client and cache roles.
+
+**With the skill at standard**
+
+> # Internal HTTP API Draft
+>
+> This specification defines rate-limit responses. Uppercase keywords use BCP 14 meanings (RFC 2119; RFC 8174).
+>
+> The server MUST use 429 to report too many requests in a time interval. Response content SHOULD explain the condition; the server MAY include `Retry-After`.
+>
+> Clients can interpret `Retry-After` as an HTTP date or nonnegative delay in seconds.
+>
+> Example: `Retry-After: 120`
+>
+> A cache MUST NOT store the response.
+>
+> Identity schemes and rate-limiting algorithms remain unspecified; abuse resistance remains unresolved.
+>
+> IANA: no action.
+>
+> Normative references: RFC 6585 §4; RFC 9110 §10.2.3.
+
+**Attempt 2 — request**
+
+> Draft an internal HTTP API specification of at most 95 words using BCP 14 keywords. Adopt RFC 6585 section 4: a 429 response reports too many requests in a time interval; its content should explain the condition, it may include Retry-After, and a cache must not store the response. RFC 9110 section 10.2.3 permits either an HTTP date or a nonnegative delay in seconds. For a worked header, use Retry-After: 120. Do not prescribe an identity scheme or rate-limiting algorithm. State the keyword convention and distinguish the server, client and cache roles.
+
+**Without a skill**
+
+> The keywords MUST, MUST NOT, SHOULD, and MAY are interpreted as described in BCP 14 when, and only when, they appear in uppercase.
+>
+> Server: A 429 (Too Many Requests) response indicates too many requests in a time interval. Its content SHOULD explain the condition. The server MAY include Retry-After, using either an HTTP date or a nonnegative delay in seconds.
+>
+> Worked header:
+> ```http
+> Retry-After: 120
+> ```
+>
+> Client: The client SHOULD wait for the indicated interval before retrying.
+>
+> Cache: A cache MUST NOT store a 429 response.
+
+**With the skill at standard**
+
+> Internal draft: HTTP rate-limit responses.
+>
+> Uppercase keywords use BCP 14 meanings (RFC 2119; RFC 8174).
+>
+> A server MAY send 429 to report too many client requests within a time interval. Its content SHOULD explain the condition; it MAY include Retry-After. A cache MUST NOT store the response.
+>
+> Retry-After permits an HTTP date or nonnegative delay in seconds, interpreted by the client. Example:
+> ```http
+> Retry-After: 120
+> ```
+>
+> Identity schemes and limiting algorithms remain unspecified.
+> Security: abuse resistance remains unresolved.
+> IANA: no action.
+>
+> Normative references: RFC 6585 §4; RFC 9110 §10.2.3.
+
+</details>
+
+## imrad
+
+**How LIGO recognized GW150914**
+
+2026-11-08 · `imrad` 0.1.2 · English · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [LIGO Scientific Collaboration and Virgo Collaboration, Observation of Gravitational Waves from a Binary Black Hole Merger (2016)](https://dcc.ligo.org/public/0122/P150914/014/LIGO-P150914_Detection_of_GW150914.pdf). Abstract and §V.B, binary coalescence search: event date, two detectors, frequency sweep, peak strain, predicted waveform match and upper bound on the false-alarm rate.
+
+### Prompt
+
+> Write a research abstract of at most 110 words for a museum's science page about GW150914, keeping the measurement and its interpretation distinct. On 14 September 2015 both Advanced LIGO detectors, at Livingston and Hanford, recorded a transient signal. Its frequency rose from 35 to 250 Hz and its peak strain was 1.0 × 10⁻²¹. The signal matched the waveform predicted for two black holes spiraling together, merging and settling into one remnant. The paper estimated a false-alarm rate of less than one event per 203,000 years for its search. Explain what that rate measures.
+
+### Without a skill
+
+> On 14 September 2015, Advanced LIGO’s detectors at Livingston and Hanford recorded a transient signal whose frequency rose from 35 to 250 Hz, with a peak strain of 1.0 × 10⁻²¹. These measurements matched the predicted gravitational-wave signature of two black holes spiraling together, merging and settling into one remnant, supporting that interpretation of GW150914. The paper estimated a search false-alarm rate below one event per 203,000 years: how often detector noise would produce a candidate at least as significant under that search procedure. This rate is not the probability that this particular signal was noise.
+
+### With the skill at standard
+
+> **Introduction:** GW150914 tested whether gravitational-wave observations matched predictions for merging black holes.
+>
+> **Methods:** On 14 September 2015, the Advanced LIGO detectors at Livingston and Hanford recorded a transient signal.
+>
+> **Results:** Its frequency rose from 35 to 250 Hz, with a peak strain of 1.0 × 10⁻²¹. The paper estimated a false-alarm rate below one event per 203,000 years: how often noise would produce a candidate at least as significant in that search, not the probability this event was noise.
+>
+> **Discussion:** The waveform matched predictions for two black holes spiraling together, merging and settling into one remnant, supporting that interpretation.
+
+### What changed
+
+**Checks set before the run.** Keep the event date, both instruments, 35–250 Hz and the dimensionless peak strain. Distinguish the observed waveform from the black-hole-merger interpretation and the search's noise false-alarm rate from the rate of mergers.
+
+Both final answers give the date, sites, frequency sweep, peak strain and the search-specific false-alarm rate. Both distinguish a noise-candidate rate from the probability that GW150914 was noise. The revised skill answer puts the detector reading in Methods and the merger interpretation in Discussion; the baseline makes the same distinction in one paragraph. The first skill answer assigned the waveform comparison to the detectors. After the instruction was clarified, the new answer no longer does so.
+
+**차이.** 두 최종 답 모두 오경보율을 ‘이 신호가 잡음일 확률’과 구분합니다. 첫 적용 답은 검출기가 파형까지 비교한 것처럼 썼습니다. 재실행한 답은 검출기가 기록한 신호와 그 신호를 블랙홀 병합으로 해석한 근거를 따로 보여 줍니다.
+
+<details>
+<summary>Earlier attempts on this case</summary>
+
+The first treatment assigned waveform comparison to the detectors. The revised method distinguishes the recording instrument from the analysis. We reran the same request with that change.
+
+**Attempt 1 — request**
+
+> Write a research abstract of at most 110 words for a museum's science page about GW150914, keeping the measurement and its interpretation distinct. On 14 September 2015 both Advanced LIGO detectors, at Livingston and Hanford, recorded a transient signal. Its frequency rose from 35 to 250 Hz and its peak strain was 1.0 × 10⁻²¹. The signal matched the waveform predicted for two black holes spiraling together, merging and settling into one remnant. The paper estimated a false-alarm rate of less than one event per 203,000 years for its search. Explain what that rate measures.
+
+**With the skill at standard**
+
+> **Introduction:** GW150914 tested predictions of gravitational waves from merging black holes.
+>
+> **Methods:** On 14 September 2015, both Advanced LIGO detectors, at Livingston and Hanford, recorded a transient signal and compared it with predicted waveforms.
+>
+> **Results:** Its frequency rose from 35 to 250 Hz, with peak strain 1.0 × 10⁻²¹. It matched the predicted waveform of two black holes spiraling together, merging and settling into one remnant. The search’s estimated false-alarm rate was less than one event per 203,000 years: how often noise would produce a candidate at least as significant.
+>
+> **Discussion:** This agreement supports interpreting GW150914 as gravitational waves from a black-hole merger.
+
+</details>
+
+## korean-plain-language
+
+**How Seoul’s 2024 youth Climate Card refunds differed for physical and mobile cards**
+
+2026-11-08 · `korean-plain-language` 0.1.1 · Korean · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [서울특별시 내 손안에 서울, ‘월 5만원대’ 청년 맞춤형 기후동행카드 나온다 (2024-02-21)](https://mediahub.seoul.go.kr/archives/2010350). City's February 2024 announcement, especially the retrospective refund, separate registration rule and monthly eligibility conditions under the original pilot.
+
+### Prompt
+
+> 2024년 서울 기후동행카드 시범사업을 소개하는 기록용 글이에요. 당시 청년 할인 대상자에게 실물카드와 모바일카드의 차이를 알려 주는 해요체 문구로, 아래 내용을 네 문장 이내로 다듬어 주세요. 실물카드는 티머니 홈페이지에 등록한 이후의 이용분만 환급 대상이었어요. 모바일카드는 환급을 위한 별도 카드 등록이 필요 없었어요. 둘 다 환불 없이 30일권을 끝까지 사용한 달에만 7,000원을 돌려받을 수 있었고, 환급은 자동 지급이 아니라 별도로 신청해야 했어요. 지금 신청할 수 있다는 뜻이 되면 안 돼요.
+
+### Without a skill
+
+> 2024년 서울 기후동행카드 시범사업 당시 청년 할인 대상자의 실물카드는 티머니 홈페이지에 등록한 이후의 이용분만 환급 대상이었어요. 모바일카드는 환급을 위한 별도 카드 등록이 필요 없었어요. 두 카드 모두 환불 없이 30일권을 끝까지 사용한 달에만 7,000원을 돌려받을 수 있었어요. 환급금은 자동으로 지급되지 않았고, 당시 별도로 환급 신청을 해야 했어요.
+
+### With the skill at standard
+
+> 2024년 서울 기후동행카드 시범사업 당시 청년 할인 대상자는 실물카드를 티머니 홈페이지에 등록한 이후의 이용분에 대해서만 환급받을 수 있었어요. 모바일카드는 환급을 위한 별도의 카드 등록이 필요 없었어요. 두 카드 모두 환불 없이 30일권을 끝까지 사용한 달에만 7,000원을 돌려받을 수 있었어요. 환급금은 자동으로 지급되지 않았고, 당시 별도로 환급을 신청해야 했어요.
+
+### What changed
+
+**Checks set before the run.** Keep the 2024 pilot in the past; distinguish mobile registration from the refund application required in both cases. Retain physical-card registration timing, full 30-day use without refund, the 7,000-won amount per qualifying month and 해요체.
+
+Both distinguish registering the physical card from applying for the refund, and both keep the notice in the past. The baseline makes the physical card the topic of its first sentence. The skill answer makes the eligible rider the subject. Both preserve the four-sentence limit, full 30-day use, the monthly 7,000 won and 해요체.
+
+**차이.** 첫 문장의 중심이 미적용 답안에서는 ‘실물카드’, 스킬 답안에서는 ‘청년 할인 대상자’입니다. 두 답 모두 실물카드 등록과 환급 신청을 구분하며, 30일 만기·월 7,000원·과거 시점이라는 조건을 지켰습니다.
+
+## microsoft-writing-style
+
+**Clearing Windows 11 Clipboard history without deleting a pinned entry**
+
+2026-11-08 · `microsoft-writing-style` 0.1.1 · English · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [Microsoft Support, Using the clipboard](https://support.microsoft.com/en-us/windows/apps/using-the-clipboard). Windows 11 section on clearing clipboard history gives the local shortcut, Clear all control and pinned-item exception. The delivery address describes an illustrative user task.
+
+### Prompt
+
+> Write brief Windows 11 help for a person with Clipboard history enabled on their PC. They pinned a frequently used delivery address and want to clear the other entries. Microsoft documents the Windows logo key + V shortcut to open Clipboard history and Clear all at the top of the panel to clear device history except pinned items. Tell the reader what to select and what will happen to the address. Write only the user-facing instructions, using the actual shortcut and control label; do not make a claim about synced devices.
+
+### Without a skill
+
+> Press **Windows logo key + V** to open Clipboard history, then select **Clear all** at the top of the panel. The other entries will be cleared, and your pinned delivery address will remain.
+
+### With the skill at standard
+
+> Press **Windows logo key + V** to open Clipboard history, then select **Clear all** at the top of the panel. This clears your device’s Clipboard history except pinned items. Your pinned delivery address will remain.
+
+### What changed
+
+**Checks set before the run.** Preserve the shortcut, the literal Clear all label and the pinned-address exception. Keep the answer scoped to this PC; no unrequested account, cloud deletion, or settings steps.
+
+Both give the same Windows shortcut and Clear all label and correctly say the pinned address remains. The skill answer explicitly scopes the cleanup to this device and makes the general exception for pinned items clear. Both are usable here.
+
+**차이.** 두 답 모두 Windows 로고 키 + V에서 Clear all을 누르면 고정한 주소가 남는다고 안내합니다. 스킬 답은 ‘이 장치’와 ‘고정 항목 제외’라는 범위를 한 번 더 명확히 합니다.
+
+## minto-pyramid
+
+**Should a city pilot an earlier WALK signal?**
+
+2026-11-08 · `minto-pyramid` 0.2.1 · English · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [FHWA, Leading Pedestrian Interval](https://highways.dot.gov/safety/proven-safety-countermeasures/leading-pedestrian-interval). Definition, timing, turning conflicts, visibility, accessibility and applicability at high-turning-volume crossings.
+- [FHWA, Safety Evaluation of Protected Left-Turn Phasing and Leading Pedestrian Intervals on Pedestrian Safety (2018), FHWA-HRT-18-044](https://www.fhwa.dot.gov/publications/research/safety/18044/18044.pdf). Executive summary and combined leading-interval evaluation, including the Chicago, New York and Charlotte sites and pedestrian crash modification factor 0.87. The committee decision in the request is hypothetical.
+
+### Prompt
+
+> For a hypothetical city traffic committee, write an opening paragraph recommending whether to pilot a leading pedestrian interval at signalized crossings with many turning vehicles. In this arrangement WALK begins 3–7 seconds before drivers get green, so someone crossing can become visible before drivers turn. A 2018 FHWA evaluation across treated sites in Chicago, New York City and Charlotte estimated about 13% fewer vehicle–pedestrian crashes than expected without the treatment. This committee has not measured outcomes at its own crossings. Give a concrete next step and keep the opening under 90 words.
+
+### Without a skill
+
+> The committee should pilot a leading pedestrian interval at signalized crossings with many turning vehicles, giving pedestrians a 3–7-second head start to become visible before drivers turn. A 2018 FHWA evaluation of treated sites in Chicago, New York City and Charlotte estimated about 13% fewer vehicle–pedestrian crashes than expected without the treatment, though local results remain unmeasured. Next, select pilot crossings and establish baseline crash, turning-conflict and delay measures to compare with outcomes after installation.
+
+### With the skill at standard
+
+> At signalized crossings with many turning vehicles, a leading pedestrian interval starts WALK 3–7 seconds before drivers get green, helping pedestrians become visible before drivers turn. Should the city pilot it? A 2018 FHWA evaluation across treated sites in Chicago, New York City and Charlotte estimated about 13% fewer vehicle–pedestrian crashes than expected without treatment, but local outcomes remain unmeasured. Recommend a pilot at selected crossings, beginning with baseline crash and turning-conflict measurements and a plan to compare outcomes after implementation.
+
+### What changed
+
+**Checks set before the run.** Give the pilot decision, the 3–7-second mechanism, the three-city estimate and its vehicle–pedestrian crash outcome. Distinguish a proposed local check from an already measured local effect.
+
+Both propose a pilot, give the three-city estimate and call for baseline measurements at the new sites. The baseline leads with the recommendation and includes delay among its suggested measures. The skill answer explains the WALK interval, asks the decision question, then gives its recommendation. Both keep the 13% estimate distinct from the local outcome.
+
+**차이.** 두 답 모두 13%를 세 도시의 추정치로 남겨 두고, 새 교차로에서는 별도로 측정하자고 합니다. 미적용 답안은 시범 도입을 먼저 권하고, 스킬 답안은 신호의 원리와 결정할 질문을 제시한 뒤 권고합니다.
+
+## new-harts-rules
+
+**Copyediting a car-access statistic from the 2021 census**
+
+2026-11-08 · `new-harts-rules` 0.1.2 · English · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [Office for National Statistics, Housing, England and Wales: Census 2021 (5 January 2023)](https://www.ons.gov.uk/peoplepopulationandcommunity/housing/bulletins/housingenglandandwales/census2021). Section 6, Car or van availability, and title: 42.1% of London households versus 23.3% across England and Wales in 2021. Exhibition style and draft are original exercise inputs.
+
+### Prompt
+
+> Copyedit this original sentence for a UK transport exhibition label, followed by one short editorial note. Our exhibition house style spells out ‘per cent’ in prose. Preserve the ONS bulletin title verbatim. Draft: In ‘Housing, England and Wales: Census 2021’, the Office for National Statistics reported that 42.1% of London households had no car or van available in 2021, compared with 23.3% across England and Wales. No edition-specific passage from New Hart’s Rules has been supplied. Keep the finding at household level.
+
+### Without a skill
+
+> In ‘Housing, England and Wales: Census 2021’, the Office for National Statistics reported that 42.1 per cent of London households had no car or van available in 2021, compared with 23.3 per cent across England and Wales.
+>
+> Editorial note: ‘Per cent’ follows exhibition house style; the bulletin title and household-level finding are preserved.
+
+### With the skill at standard
+
+> In ‘Housing, England and Wales: Census 2021’, the Office for National Statistics reported that 42.1 per cent of London households had no car or van available in 2021, compared with 23.3 per cent across England and Wales.
+>
+> Editorial note: ‘Per cent’ follows exhibition house style; the bulletin title and household-level finding are preserved. No rule is attributed to New Hart’s Rules, second edition (2014), because no relevant passage was supplied.
+
+### What changed
+
+**Checks set before the run.** Apply the supplied exhibition convention to both percentages, preserve the exact title, household denominator, year and geographic comparison, and attribute the change to the house rather than to ONS or New Hart's Rules.
+
+The edited sentence is identical in both runs. Each changes the two percent signs to the exhibition's house spelling and preserves the bulletin title and both household percentages. The skill adds a sentence explaining that there was no book passage to consult. It makes the source boundary explicit, but lengthens a note whose practical conclusion is the same.
+
+**차이.** 두 답의 편집 문장은 같습니다. 42.1과 23.3을 해당 지역 가구의 비율로 유지하고 전시의 표기 지침을 따랐습니다. 스킬 답안의 편집 메모만 책의 해당 구절이 제공되지 않았다고 추가로 설명합니다.
+
+## nist-technical-publication
+
+**The uncertainty budget of the NIST-F2 cesium fountain**
+
+2026-11-08 · `nist-technical-publication` 0.1.2 · English · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [Heavner et al., First Accuracy Evaluation of NIST-F2, Metrologia (2014)](https://www.nist.gov/publications/first-accuracy-evaluation-nist-f2). Authors' abstract, including the July–August 2013 Type A and Type B fractional uncertainties, the 80 K interrogation environment and the reason for the dominant Type B contribution.
+
+### Prompt
+
+> For a metrology lab, summarize the July–August 2013 evaluation of NIST-F2 in at most 85 words. This cesium fountain interrogated atoms in an 80 K environment. Cooling cut the uncertainty from the blackbody-radiation shift by more than a factor of 50. The reported statistical (Type A) fractional frequency uncertainty was 0.44 × 10⁻¹⁵; the systematic (Type B) component was 0.11 × 10⁻¹⁵. Microwave-amplitude effects dominated the Type B component. Explain what the smaller number represents without presenting it as the clock's total uncertainty.
+
+### Without a skill
+
+> During its July–August 2013 evaluation, NIST-F2 interrogated cesium atoms in an 80 K environment, reducing uncertainty from the blackbody-radiation shift by more than a factor of 50. Its statistical (Type A) fractional frequency uncertainty was 0.44 × 10⁻¹⁵. The smaller value, 0.11 × 10⁻¹⁵, represents the systematic (Type B) uncertainty component, dominated by microwave-amplitude effects; it is not the clock’s total uncertainty.
+
+### With the skill at standard
+
+> The July–August 2013 evaluation of the NIST-F2 cesium fountain interrogated atoms in an 80 K environment, reducing uncertainty from the blackbody-radiation shift by more than a factor of 50. The reported statistical (Type A) fractional frequency uncertainty was 0.44 × 10⁻¹⁵. The smaller value, 0.11 × 10⁻¹⁵, represents the systematic (Type B) fractional frequency uncertainty component, dominated by microwave-amplitude effects; it is not the clock’s total uncertainty.
+
+### What changed
+
+**Checks set before the run.** Keep July–August 2013, 80 K and the factor greater than 50 attached only to uncertainty from the blackbody-radiation shift. Preserve each numeric fractional uncertainty with its correct component and keep microwave-amplitude effects tied to Type B; neither component alone is the total.
+
+Both keep the 80 K setting, the time interval and the two numerical components. Both attach the factor above 50 to the blackbody-radiation contribution only. The skill spells out that the smaller component is a fractional frequency uncertainty; the baseline is already sufficient to keep it separate from the clock’s total uncertainty.
+
+**차이.** 두 답 모두 50배 넘게 줄어든 것은 흑체복사에 따른 불확도라고 밝힙니다. 둘 다 0.11 × 10⁻¹⁵를 전체 불확도로 바꾸지 않았습니다.
 
 ## orwell-six-rules
 
-**Orwell: six rules for clear prose · Removing filler while keeping uncertainty**
+**Why the Mars Climate Orbiter’s navigation estimate was wrong**
 
-Run on 2026-11-08 • `orwell-six-rules` 0.1.2 • English • Codex CLI 0.167.0
+2026-11-08 · `orwell-six-rules` 0.1.2 · English · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [Cornelius J. Dennehy / NASA, Best Practices for the Design, Development, and Operation of Robust and Reliable Space Vehicle Guidance, Navigation, and Control Systems (NASA/TP–20230005922, April 2023)](https://ntrs.nasa.gov/api/citations/20230005922/downloads/20230005922.pdf). Appendix A-12, pp. 138–139, and lesson 0641: ground software/interface units, trajectory about 170 km low, and two possible outcomes after loss.
 
 ### Prompt
 
-> Edit for a general reader in at most 55 words. Source: At the present moment in time the team is in the process of conducting an assessment of a crack near the latch. The latch was damaged during transit. The responsible party has not been identified. Operation may resume only after inspection.
+> Rewrite this draft for readers of a museum exhibit in at most 75 words. Draft: In September 1999, the loss of NASA's Mars Climate Orbiter took place. A ground program called SM_FORCES made provision for thruster impulse figures in pound-force seconds. The navigation team proceeded on the assumption that the figures were in newton-seconds as required by the software interface. The mismatch caused errors in the trajectory estimate to accumulate; the spacecraft arrived about 170 km lower than planned. NASA could not determine whether it was destroyed in the atmosphere or left Mars for an orbit around the Sun.
 
 ### Without a skill
 
-> The team is assessing a crack near the latch, which was damaged during transit. It is not yet known who is responsible for the damage. Operation may resume only after inspection.
+> In September 1999, NASA lost the Mars Climate Orbiter after a mix-up in units. A ground program reported thruster impulses in pound-force seconds, but navigators treated them as newton-seconds, as the software interface required. Trajectory errors accumulated, bringing the spacecraft about 170 kilometers lower than planned. NASA could not determine whether it broke apart in Mars’s atmosphere or escaped into orbit around the Sun.
 
 ### With the skill at standard
 
-> The team is assessing a crack near the latch. The latch was damaged during transit. The responsible party remains unknown. Operation may resume only after inspection.
+> In September 1999, NASA lost the Mars Climate Orbiter. A ground program, SM_FORCES, supplied thruster impulse figures in pound-force seconds. The navigation team assumed they were in newton-seconds, as the software interface required. This mismatch caused errors to build up in the estimated trajectory. The spacecraft arrived about 170 km lower than planned. NASA could not determine whether it was destroyed in Mars’s atmosphere or left Mars to orbit the Sun.
 
 ### What changed
 
-**Checks set before the run.** Remove filler; keep the assessment ongoing and the location of the crack, damage in transit, unknown actor and inspection as a necessary condition for permission.
+**Checks set before the run.** Cut inflated phrasing while accurately attributing the mismatch to ground data, preserving the two impulse units, the approximate 170 km trajectory error and both possible fates. Avoid inventing a collision or blaming a named individual.
 
-Both cut the opening filler and preserve the inspection condition and unknown actor. The skill gives the damage its own sentence and repeats ‘latch’, making its referent explicit. The baseline attaches it as a relative clause.
+Both replace the inflated wording, preserve the units mismatch and describe the two possible fates. The baseline drops the program name and compresses the navigation estimate into 'trajectory errors'. The skill answer keeps SM_FORCES and distinguishes errors accumulating in an estimate from the spacecraft arriving about 170 km lower than planned.
 
-**차이.** 두 답 모두 군더더기를 덜었습니다. 스킬 답안은 파손된 대상이 걸쇠라는 점을 별도 문장으로 명확하게 했습니다.
+**차이.** 두 답 모두 단위 착오와 탐사선의 두 가지 가능한 최후를 보존합니다. 스킬 답안은 지상 프로그램 이름 SM_FORCES를 남기고, 먼저 오차가 쌓인 것은 궤도 추정값이었다고 정확히 짚습니다.
 
 ## socratic-self-questioning
 
-**Socratic self-questioning · Can faster replies establish a cause?**
+**Did Finland’s basic income experiment prove a universal employment gain?**
 
-Run on 2026-11-08 • `socratic-self-questioning` 0.1.1 • English • Codex CLI 0.167.0
+2026-11-08 · `socratic-self-questioning` 0.1.1 · English · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [Finnish Ministry of Social Affairs and Health and Kela, Results of the basic income experiment (6 May 2020)](https://valtioneuvosto.fi/en/-/1271139/perustulokokeilun-tulokset-tyollisyysvaikutukset-vahaisia-toimeentulo-ja-psyykkinen-terveys-koettiin-paremmaksi?languageId=en_US). Employment results and experiment design: participating population, €560 payment, November 2017–October 2018 comparison, first-year finding, and asymmetric 2018 activation-policy change.
 
 ### Prompt
 
-> Our team claims a new rota caused faster replies because median reply time fell from 13 minutes to 9 minutes during its first week. Ticket volume fell too; no comparison team was tracked. Give a finished revision of that claim in at most 70 words, not a dialogue.
+> Rewrite this claim for a public policy brief in no more than 95 words: ‘Finland proved that paying everyone a basic income creates six extra days of work.’ In its 2017–2018 experiment, 2,000 randomly selected unemployed benefit recipients received €560 a month. In November 2017–October 2018 recipients averaged 78 days employed, six more than the comparison group. The first year showed no group-level employment effect. A 2018 change in unemployment-benefit rules affected the groups differently, so researchers could not separate its effect from the second-year basic-income effect. Give a finished paragraph, not an interview.
 
 ### Without a skill
 
-> Median reply time fell from 13 to 9 minutes during the new rota’s first week. This suggests an improvement, but it does not establish that the rota caused faster replies: ticket volume also fell, and no comparison team was tracked. Further observation, accounting for workload and using a comparison group, would help assess the rota’s effect.
+> Finland’s 2017–2018 experiment does not establish that paying everyone a basic income increases employment. It gave 2,000 randomly selected unemployed benefit recipients €560 a month. From November 2017 to October 2018, recipients averaged 78 days employed—six more than the comparison group—but the first year showed no group-level employment effect. A 2018 change in unemployment-benefit rules affected the groups differently, preventing researchers from separating its effect from that of basic income in the second year. The findings therefore cannot establish the employment effects of a universal basic income.
 
 ### With the skill at standard
 
-> Median reply time fell from 13 minutes to 9 minutes during the new rota’s first week. This shows faster median replies that week, but does not establish that the rota caused the improvement. Ticket volume also fell, which could help explain the change, and no comparison team was tracked to help distinguish the rota’s effect from other influences.
+> Finland’s 2017–2018 experiment does not establish that paying everyone a basic income creates six extra days of work. It provided €560 a month to 2,000 randomly selected unemployed benefit recipients. In November 2017–October 2018, recipients averaged 78 days employed, six more than the comparison group; the first year showed no group-level employment effect. A 2018 unemployment-benefit rule change affected the groups differently, preventing researchers from separating its effect from basic income’s second-year effect. The findings therefore neither establish causation nor show what universal basic income would achieve.
 
 ### What changed
 
-**Checks set before the run.** Preserve the median, numbers and week; separate observation from causation; treat volume as a possible explanation rather than a demonstrated cause.
+**Checks set before the run.** Replace 'everyone' with the studied population and preserve the observation period, 78-day average and six-day difference. Distinguish year one from the later period and the unequal rule change from an identified basic-income-only effect.
 
-Both replace the causal claim with the observed median change and flag volume and the missing comparison. The baseline proposes further observation; the skill keeps the revision focused on what the current evidence can support.
+Both limit the claim to unemployed benefit recipients, give the 78-day average and six-day difference for the correct period, and explain the 2018 rule change. The baseline's final limitation is about extending the result to a universal payment. The skill's final reference to causation reads too broadly in isolation: the specific obstacle was separating the payment from the changed rules in year two, as its preceding sentence explains.
 
-**차이.** 두 답 모두 13분에서 9분으로 줄었다는 관찰과 원인을 구분합니다. 미적용 답안은 후속 관찰을 제안하고 스킬 답안은 현재 근거로 할 수 있는 주장에 집중합니다.
+**차이.** 두 답 모두 관찰된 6일 차이를 실업급여 수급자에게 한정하고 2018년 제도 변경을 설명합니다. 스킬 답안의 마지막 ‘인과관계를 입증하지 못한다’는 말은 바로 앞 문장처럼 2년 차 기본소득의 단독 효과에 한정해서 읽는 편이 정확합니다.
 
 ## steve-jobs-presentation
 
-**Jobs-inspired presentation structure · A presentation to a mapping team**
+**What Ingenuity demonstrated in 39.1 seconds**
 
-Run on 2026-11-08 • `steve-jobs-presentation` 0.1.1 • English • Codex CLI 0.167.0
+2026-11-08 · `steve-jobs-presentation` 0.1.1 · English · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [NASA, NASA’s Ingenuity Mars Helicopter Succeeds in Historic First Flight (April 19, 2021)](https://www.nasa.gov/news-release/nasas-ingenuity-mars-helicopter-succeeds-in-historic-first-flight/). Flight-day report: onboard control, altimeter-derived height and hover, total time, the airfield name and plans to analyze the data.
 
 ### Prompt
 
-> Write 3 short speaker beats for a team deciding whether to try a map export tool. On one test laptop it exported 6 GB in 70 seconds. No field run has been timed. The audience works offline; production export time is unknown. Do not invent more demo results.
+> Write three short speaker beats for a public briefing immediately after Ingenuity's first Mars flight on 19 April 2021. At Wright Brothers Field, onboard guidance flew the helicopter autonomously to about 3 metres. It hovered for 30 seconds and landed after 39.1 seconds of total flight. The team planned to review the flight data before deciding how to fly the next test. Make clear what this meant for powered, controlled flight on another planet. Speak as a presenter reporting the event, using only what was known from this flight.
 
 ### Without a skill
 
-> 1. “On one test laptop, the tool exported 6 GB in 70 seconds. That gives us a reason to try it.”
-> 2. “We haven’t timed a field run, so production export time is still unknown.”
-> 3. “Let’s test it in our offline workflow and time a representative export before deciding whether to adopt it.”
+> 1. Today, 19 April 2021, Ingenuity achieved powered, controlled flight on another planet for the first time, lifting off from Wright Brothers Field on Mars.
+>
+> 2. Onboard guidance flew the helicopter autonomously to about three metres. It hovered for 30 seconds, then landed after a total flight time of 39.1 seconds.
+>
+> 3. This first flight demonstrated that powered, controlled flight is possible on Mars. The team will review the flight data before deciding how to fly the next test.
 
 ### With the skill at standard
 
-> 1. “Can this tool help us get maps ready for offline work? First, here’s what we’ve measured: it exported 6 GB in 70 seconds on one test laptop.”
+> 1. Today, 19 April 2021, Ingenuity demonstrated powered, controlled flight on another planet—a first.
 >
-> 2. “That gives us a starting point. No field run has been timed, and production export time is still unknown.”
+> 2. At Wright Brothers Field on Mars, its onboard guidance flew the helicopter autonomously to about 3 metres. It hovered for 30 seconds, then landed after a total flight time of 39.1 seconds.
 >
-> 3. “Let’s try a timed export with a workload and equipment that reflect our offline work. That will help us judge whether it fits our preparation window.”
+> 3. This flight showed that powered, controlled flight on Mars was possible. The next step was to review the flight data before deciding how to fly the next test.
 
 ### What changed
 
-**Checks set before the run.** Connect the benefit to the offline audience; retain device, size and time; distinguish the demonstration from field performance and give a supported next step.
+**Checks set before the run.** Preserve the date, location, autonomous control, roughly 3 m, 30-second hover versus 39.1-second total and postflight review. Tie the demonstration to powered, controlled flight on Mars without guaranteeing future flights or capacities not tested.
 
-Both retain the test laptop, 6 GB, 70 seconds and the missing field measurement. The skill opens with the team's offline need and proposes timing representative equipment. The baseline also offers a usable three-beat presentation.
+Both distinguish the 30-second hover from the 39.1 seconds between takeoff and landing and end with a review before the next test. The baseline names Wright Brothers Field in the opening; the skill saves the location for the measurement beat. Neither presents a later flight as if it had already happened.
 
-**차이.** 두 답 모두 시험 수치를 현장 성능으로 일반화하지 않습니다. 스킬 답안은 오프라인에서 지도를 준비하는 팀의 질문으로 발표를 시작합니다.
+**차이.** 두 발표 모두 30초는 제자리 비행 시간이고 39.1초는 전체 비행 시간이라고 구분합니다. 기체가 뜬 장소를 소개하는 순서는 달라졌지만 두 답 모두 다음 시험의 성공을 약속하지 않습니다.

@@ -1,56 +1,31 @@
-# New Hart’s Rules source-assisted editing · House spelling and a protected citation
+# Copyediting a car-access statistic from the 2021 census
 
-Run on 2026-11-08 • `new-harts-rules` 0.1.2 • English • Codex CLI 0.167.0
+2026-11-08 · `new-harts-rules` 0.1.2 · English · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [Office for National Statistics, Housing, England and Wales: Census 2021 (5 January 2023)](https://www.ons.gov.uk/peoplepopulationandcommunity/housing/bulletins/housingenglandandwales/census2021). Section 6, Car or van availability, and title: 42.1% of London households versus 23.3% across England and Wales in 2021. Exhibition style and draft are original exercise inputs.
 
 ### Prompt
 
-> Copyedit the sentence below, then add one short editorial note. House style requires 'on-site' before a noun in editable prose. Quoted titles must stay verbatim. No book passage is supplied for serial-comma style. Draft: Our onsite team read the article ‘The Onsite Team’ and checked labels, seals and lids.
+> Copyedit this original sentence for a UK transport exhibition label, followed by one short editorial note. Our exhibition house style spells out ‘per cent’ in prose. Preserve the ONS bulletin title verbatim. Draft: In ‘Housing, England and Wales: Census 2021’, the Office for National Statistics reported that 42.1% of London households had no car or van available in 2021, compared with 23.3% across England and Wales. No edition-specific passage from New Hart’s Rules has been supplied. Keep the finding at household level.
 
 ### Without a skill
 
-> Our on-site team read the article ‘The Onsite Team’ and checked labels, seals and lids.
+> In ‘Housing, England and Wales: Census 2021’, the Office for National Statistics reported that 42.1 per cent of London households had no car or van available in 2021, compared with 23.3 per cent across England and Wales.
 >
-> Editorial note: Changed “onsite” to “on-site” before a noun; preserved the quoted title and existing comma style.
+> Editorial note: ‘Per cent’ follows exhibition house style; the bulletin title and household-level finding are preserved.
 
 ### With the skill at standard
 
-> Our on-site team read the article ‘The Onsite Team’ and checked labels, seals and lids.
+> In ‘Housing, England and Wales: Census 2021’, the Office for National Statistics reported that 42.1 per cent of London households had no car or van available in 2021, compared with 23.3 per cent across England and Wales.
 >
-> Editorial note: ‘On-site’ follows house style; the quoted title stays verbatim. Serial-comma usage is unchanged because no relevant passage from New Hart’s Rules, second edition (2014), was supplied.
+> Editorial note: ‘Per cent’ follows exhibition house style; the bulletin title and household-level finding are preserved. No rule is attributed to New Hart’s Rules, second edition (2014), because no relevant passage was supplied.
 
 ### What changed
 
-**Checks set before the run.** Change the editable modifier, preserve the exact quoted title and list facts. Attribute the spelling to house style and avoid claiming a book rule for the unresolved comma.
+**Checks set before the run.** Apply the supplied exhibition convention to both percentages, preserve the exact title, household denominator, year and geographic comparison, and attribute the change to the house rather than to ONS or New Hart's Rules.
 
-Both final edits change only the editable spelling and preserve the quoted title and list. The skill's note identifies house style and the absent book passage; the baseline explains what it changed without naming the authority. The earlier treatments and the corrected fixture are documented below.
+The edited sentence is identical in both runs. Each changes the two percent signs to the exhibition's house spelling and preserves the bulletin title and both household percentages. The skill adds a sentence explaining that there was no book passage to consult. It makes the source boundary explicit, but lengthens a note whose practical conclusion is the same.
 
-**차이.** 두 최종 답안의 편집 문장은 같습니다. 스킬 답안은 사내 표기와 확인하지 못한 책의 규칙을 구분합니다. 수정 전 답안도 아래에 남겼습니다.
-
-<details>
-<summary>Earlier prompt, answers and revision</summary>
-
-The earlier prompt said “two sentences” but supplied one. We corrected that mismatch before publishing the main pair above. The three earlier answers below used this same original prompt.
-
-> Copyedit the two sentences below, then add one short editorial note. House style requires 'on-site' before a noun in editable prose. Quoted titles must stay verbatim. No book passage is supplied for serial-comma style. Draft: Our onsite team read the article ‘The Onsite Team’ and checked labels, seals and lids.
-
-**Without a skill**
-
-> Our on-site team read the article ‘The Onsite Team’ and checked labels, seals and lids.
->
-> Editorial note: Changed “onsite” to “on-site” in prose; preserved the quoted title and existing serial-comma style because no book passage was supplied.
-
-**First treatment, version 0.1.1**
-
-> Our on-site team read the article ‘The Onsite Team’ and checked labels, seals and lids.
->
-> Editorial note: Applied new-harts-rules v0.1.1 at standard level, referencing the second edition (2014). ‘On-site’ follows house style; the quoted title is unchanged. Serial-comma style remains unverified, so the existing punctuation is retained.
-
-The note named the method version and described an edition as a reference without a relevant passage. We clarified the difference between an editorial note and a method audit, then reran the original prompt in a fresh context.
-
-**Revised treatment, version 0.1.2**
-
-> Our on-site team read the article ‘The Onsite Team’ and checked labels, seals and lids.
->
-> Editorial note: Applied house style to ‘on-site’; preserved the quoted title verbatim. Left serial-comma style unchanged because no relevant passage from New Hart’s Rules, second edition (2014), was supplied.
-
-</details>
+**차이.** 두 답의 편집 문장은 같습니다. 42.1과 23.3을 해당 지역 가구의 비율로 유지하고 전시의 표기 지침을 따랐습니다. 스킬 답안의 편집 메모만 책의 해당 구절이 제공되지 않았다고 추가로 설명합니다.

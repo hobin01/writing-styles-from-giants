@@ -14,13 +14,21 @@ Use only the rules enabled by the selected level below.
 3. Apply `bounded-simplification`: revise the explanation using necessary terms with definitions and a concrete example. An analogy is optional; identify the point where it stops matching.
 4. In strict mode, apply `transfer-check` with a new worked example, prediction, or counterexample. When the mechanism depends on memory, follow the same input on both sides of a stated reset or change of state. Give the outcome on each side and identify any unknown. A worked prediction checks the explanation; an actual learner response is needed to assess understanding.
 
-## Worked transfer at `strict`
+## Predict a Python cache hit, then clear the cache
 
-This original illustration answers the [`finished-answer-without-quiz` case](cases.json) about a cache hit and a miss.
+Suppose a station importer normalizes the same input in a single thread. The example uses Python's [`functools.lru_cache`](https://docs.python.org/3/library/functools.html#functools.lru_cache):
 
-> A cache holds items for later lookup. Suppose it holds A when you request A. Finding A there is a cache hit. Suppose B is absent when you request it. That is a miss, so you need another lookup. If B is stored and still present on your second request, you get a hit. If B is absent, you get another miss. The first miss alone does not tell us whether B was stored.
+```python
+from functools import lru_cache
 
-The second request tests a condition the first lookup could not settle. The source gives no storage policy, so the prediction stays conditional.
+@lru_cache(maxsize=2)
+def station_key(name):
+    return name.strip().casefold()
+```
+
+> Start with an empty cache. The first call to `station_key(" SEOUL ")` runs the function and returns `"seoul"`. An immediate repeat returns the stored result without running the function body. Now call `station_key.cache_clear()` and try the same input again. The result is still `"seoul"`, but Python has to run the function body this time.
+
+The `strict` transfer check holds the input fixed and changes what the cache remembers. Predict a hit or a miss before inspecting `station_key.cache_info()`; looking only at the returned string cannot tell the two apart.
 
 ## Levels
 

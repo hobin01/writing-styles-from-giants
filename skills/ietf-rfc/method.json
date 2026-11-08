@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "ietf-rfc",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "status": "experimental",
   "title": "RFC-style technical specification",
   "kind": "document",
@@ -91,7 +91,7 @@
     },
     {
       "id": "requirement-strength",
-      "intent": "Preserve obligation strength and use BCP 14 uppercase keywords only with an explicit declaration of their meaning.",
+      "intent": "Preserve obligation strength and use BCP 14 uppercase keywords only with an explicit declaration of their meaning. Distinguish optional message selection from requirements on that message once selected.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Original operational guidance adapted from the identified source scope.",

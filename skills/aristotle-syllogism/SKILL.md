@@ -14,13 +14,13 @@ Use only the rules enabled by the selected level below.
 3. Apply `validity-separate-support`: report whether the conclusion must follow under those assumptions, and assess factual support separately. Keep probabilistic claims probabilistic.
 4. In strict mode, apply `countermodel-check`: show a compact counterexample for invalidity or the explicit valid relation. Use predicate notation only if it clarifies the requested analysis.
 
-## Testing “some” at `strict`
+## Does a lowercase word make valid JSON?
 
-Some devices with fault F restart, and unit A has fault F. The standard [`some-not-all` case](cases.json) asks whether A must restart. This original illustration extends that assessment to `strict` by constructing a countermodel.
+A parser maintainer argues that some lowercase words are valid JSON texts, and the bare token `pending` is a lowercase word. Does it follow that `pending` is valid JSON?
 
-> No. Consider two devices, A and B, both with fault F. In this possible case B restarts and A does not. At least one faulty device restarts, and A has the fault, so both premises hold. That is enough to rule out “A must restart.”
+> No. The token `true` satisfies both predicates: it is lowercase and is a valid JSON text. The bare token `pending` satisfies only the first. Both premises hold while the conclusion fails. Adding quotation marks gives `"pending"`, which is a string and a different input.
 
-This possible case settles validity. A measurement would still be needed to find out how A actually behaves. Giving A a different fault in the countermodel would violate the second premise.
+At `strict`, a counterexample must leave both premises true. Check the actual token against [RFC 8259 §§2–3](https://www.rfc-editor.org/rfc/rfc8259#section-3); a parser error by itself would not explain the failed inference.
 
 ## Levels
 

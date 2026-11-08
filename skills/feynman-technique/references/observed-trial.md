@@ -1,5 +1,7 @@
 # Feynman strict · predicting what a counter remembers
 
+This earlier trial is preserved as recorded. For the current source-backed comparison, see [Why a new DNS name can still return NXDOMAIN](../examples/standard.md).
+
 Recorded on 2026-11-08 with one fresh Codex agent per answer. The baseline received the task. Each treatment agent also received this skill at `strict` level. These are the returned texts, including paragraph breaks.
 
 ## Request

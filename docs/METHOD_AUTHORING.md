@@ -47,4 +47,6 @@ The [example cases](../evals/cases.example.json) demonstrate expectations; they 
 
 Use an authored example to show a decision a reader might otherwise miss. Give enough source material to check the answer and explain one consequential choice. For a comparison of model outputs, use a fresh context and separate workspace per answer, the same held-out request and preselected checks. Only the treatment receives the method and level. Preserve both answers, ties, and failed attempts. Revise a skill after a failed check and repeat the request in a fresh context. See the [worked examples and trial records](../evals/runs/2026-11-08-worked-examples.md).
 
+For the [public gallery](../EXAMPLES.md), choose an identifiable system, study or public decision. Link the primary source and name the specific behavior or observation it establishes. Mark worked inputs such as hostnames and clock times as illustrative. When a proof needs notation, first name the entities the symbols represent. Small synthetic fixtures can still isolate an edge case in `cases.json`.
+
 A method is `reviewed` only after provenance/rights review, rule review, and an evaluation record. This status is project review, not author endorsement, official certification, or proof of universal quality.

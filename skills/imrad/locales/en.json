@@ -1,6 +1,6 @@
 {
   "method": "imrad",
-  "methodVersion": "0.1.1",
+  "methodVersion": "0.1.2",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -14,7 +14,7 @@
       "adaptation": false
     },
     "reproducible-methods": {
-      "instruction": "Describe the actual design, materials/participants, procedures, and analysis sufficiently to interpret and reproduce the work.",
+      "instruction": "Describe the actual design, materials/participants, procedures, and analysis sufficiently to interpret and reproduce the work. Attribute acquisition to the instrument and analysis to the researchers or software that performed it when the source supports those roles.",
       "adaptation": false
     },
     "findings-vs-interpretation": {

@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Replace the 22 synthetic gallery tasks with primary-source cases from computing, science and public policy. Preserve full fresh baseline and standard outputs, earlier attempts and the original gallery. Clarify how the RFC profile preserves conditional obligations and how IMRaD assigns observations and analyses to their actors.
+
 - Add project writing commands for explicit selection, automatic matching and English/Korean help. Rewrite both READMEs around those commands and publish standard-mode comparisons for all 22 skills.
 
 - Add worked examples to all 22 writing skills, including a runnable HTML explanation. Record four matched trials and revise Feynman's strict transfer check using an observed omission.

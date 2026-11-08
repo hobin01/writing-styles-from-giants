@@ -46,6 +46,17 @@
       "evidenceType": "primary",
       "accessScope": "Copyright pages 1–2; word-rule opening PDF pp. 45–47; verb summaries and active-voice explanations pp. 67–74; sentence opening pp. 77–78; procedural rules pp. 87–93; descriptive summary and opening pp. 95–98; punctuation/count summary and count explanations pp. 107–114. Other rules and complete dictionary not reviewed.",
       "rights": "© ASD 2025, all rights reserved. Source copyright notice read. No PDF, dictionary, source examples, or source wording bundled; original operational summaries only."
+    },
+    {
+      "id": "git-branch-delete",
+      "title": "git-branch documentation",
+      "author": "Git project",
+      "url": "https://git-scm.com/docs/git-branch#Documentation/git-branch.txt--d",
+      "version": "online manual, --delete / -D options",
+      "accessed": "2026-11-08",
+      "evidenceType": "worked-example factual source",
+      "accessScope": "Merge-check target for -d and force meaning of -D; factual input only.",
+      "rights": "Linked manual, original example."
     }
   ],
   "rules": [
@@ -209,7 +220,7 @@
     }
   ],
   "schemaVersion": 1,
-  "version": "0.1.2",
+  "version": "0.1.3",
   "status": "experimental",
   "applicability": {
     "genres": [

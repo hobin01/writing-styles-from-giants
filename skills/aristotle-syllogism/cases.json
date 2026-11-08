@@ -60,5 +60,24 @@
     ],
     "knownBadRewrite": "All devices with fault F restart.",
     "method": "aristotle-syllogism"
+  },
+  {
+    "id": "bare-token",
+    "type": "ordinary",
+    "method": "aristotle-syllogism",
+    "locale": "en",
+    "level": "strict",
+    "source": "Some bare lowercase words are valid JSON. The token pending is a bare lowercase word. Assess whether it must be valid JSON, using true and pending as written.",
+    "ruleIds": [
+      "countermodel-check",
+      "preserve-meaning"
+    ],
+    "sourceIds": [
+      "prior-analytics-i",
+      "json-grammar"
+    ],
+    "expectations": [
+      "Show that true is valid and bare pending is not; double-quoting pending changes the input."
+    ]
   }
 ]

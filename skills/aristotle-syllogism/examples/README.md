@@ -1,5 +1,3 @@
 # Aristotelian syllogistic argument checking examples
 
-[Following a hold rule backwards](standard.md) gives the same request to two fresh Codex sessions. One answers directly; the other receives [Aristotelian syllogistic argument checking](../SKILL.md), its method and locale rules, and the `standard` level. The file keeps the full replies and explains the difference observed on that request.
-
-The comparison was generated on 2026-11-08 with version 0.1.1 (entrypoint SHA-256 begins `d42dbde1b2ae`). It illustrates one task.
+[Does a new moon guarantee a total solar eclipse?](standard.md) contains the source material, one request, both full answers and the review in English and Korean. The baseline answered directly; the other session received [Aristotelian syllogistic argument checking](../SKILL.md) at `standard`. Tested entrypoint: version 0.1.2, SHA-256 prefix `d69f028ec500`.
