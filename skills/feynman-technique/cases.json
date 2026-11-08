@@ -61,5 +61,24 @@
     ],
     "knownBadRewrite": "Sleeping longer causes higher scores.",
     "method": "feynman-technique"
+  },
+  {
+    "id": "cache-reset",
+    "type": "exception",
+    "method": "feynman-technique",
+    "locale": "en",
+    "level": "strict",
+    "source": "A Python station importer applies lru_cache(maxsize=2) to a function that strips and case-folds a station name. Follow two consecutive calls with the same input in a single thread, then clear the cache and repeat.",
+    "ruleIds": [
+      "transfer-check",
+      "preserve-meaning"
+    ],
+    "sourceIds": [
+      "young-2017",
+      "python-cache"
+    ],
+    "expectations": [
+      "The second call hits; the first call after clearing misses while returning the same normalized station name."
+    ]
   }
 ]

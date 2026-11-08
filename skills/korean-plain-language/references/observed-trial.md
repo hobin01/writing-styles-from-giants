@@ -1,5 +1,7 @@
 # Korean plain language · previewing and saving a draft
 
+This earlier trial is preserved as recorded. For the current source-backed comparison, see [How Seoul’s 2024 youth Climate Card refunds differed for physical and mobile cards](../examples/standard.md).
+
 Recorded on 2026-11-08 with one fresh Codex agent per answer. The baseline received the task. The other agent also received this skill at `standard` level. These are the returned texts, including paragraph breaks.
 
 ## Request

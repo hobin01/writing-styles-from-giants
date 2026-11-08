@@ -1,7 +1,5 @@
 # Answer with HTML examples
 
-[How a fixed delay changes delivery time](standard.md) gives the same request to two fresh Codex sessions. One answers directly; the other receives [Answer with HTML](../SKILL.md), its method and locale rules, and the `standard` level. The file keeps the full replies and explains the difference observed on that request.
+[Why Perseverance cannot answer Earth immediately](standard.md) contains the source material, one request, both full answers and the review in English and Korean. The baseline answered directly; the other session received [Answer with HTML](../SKILL.md) at `standard`. Tested entrypoint: version 0.1.2, SHA-256 prefix `a45f928bc29a`.
 
-The comparison was generated on 2026-11-08 with version 0.1.2 (entrypoint SHA-256 begins `a45f928bc29a`). It illustrates one task.
-
-[Annual growth](annual-growth.html) is a separate runnable teaching example. The comparison above uses newly generated courier pages.
+[Annual growth](annual-growth.html) is a separate interactive teaching example.

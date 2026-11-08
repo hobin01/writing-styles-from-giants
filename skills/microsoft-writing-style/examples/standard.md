@@ -1,23 +1,27 @@
-# Microsoft-inspired technology writing · Restoring a workspace from an archive
+# Clearing Windows 11 Clipboard history without deleting a pinned entry
 
-Run on 2026-11-08 • `microsoft-writing-style` 0.1.1 • English • Codex CLI 0.167.0
+2026-11-08 · `microsoft-writing-style` 0.1.1 · English · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [Microsoft Support, Using the clipboard](https://support.microsoft.com/en-us/windows/apps/using-the-clipboard). Windows 11 section on clearing clipboard history gives the local shortcut, Clear all control and pinned-item exception. The delivery address describes an illustrative user task.
 
 ### Prompt
 
-> Rewrite this help text for someone using the app. Keep it under 70 words. Only workspace owners may select the button labelled 'Restore copy'. They may do so only after the archive has been verified. The action creates a separate copy; it does not change the current workspace. A storage quota might block creation.
+> Write brief Windows 11 help for a person with Clipboard history enabled on their PC. They pinned a frequently used delivery address and want to clear the other entries. Microsoft documents the Windows logo key + V shortcut to open Clipboard history and Clear all at the top of the panel to clear device history except pinned items. Tell the reader what to select and what will happen to the address. Write only the user-facing instructions, using the actual shortcut and control label; do not make a claim about synced devices.
 
 ### Without a skill
 
-> After the archive has been verified, workspace owners can select **Restore copy** to create a separate copy. The current workspace stays unchanged. If there isn’t enough available storage within your quota, the copy can’t be created.
+> Press **Windows logo key + V** to open Clipboard history, then select **Clear all** at the top of the panel. The other entries will be cleared, and your pinned delivery address will remain.
 
 ### With the skill at standard
 
-> Only workspace owners may select **Restore copy**, and only after the archive has been verified. This action creates a separate copy without changing the current workspace. A storage quota might prevent the copy from being created.
+> Press **Windows logo key + V** to open Clipboard history, then select **Clear all** at the top of the panel. This clears your device’s Clipboard history except pinned items. Your pinned delivery address will remain.
 
 ### What changed
 
-**Checks set before the run.** Keep the exact UI label, owner restriction, verified archive prerequisite, separate copy and unchanged workspace. Preserve quota as a possibility.
+**Checks set before the run.** Preserve the shortcut, the literal Clear all label and the pinned-address exception. Keep the answer scoped to this PC; no unrequested account, cloud deletion, or settings steps.
 
-Both preserve the label and separate-copy behavior. The baseline omits the explicit ‘only’ on the owner restriction and gives a more specific interpretation of the quota than the source. The skill keeps both restrictions and the possibility of a block visible.
+Both give the same Windows shortcut and Clear all label and correctly say the pinned address remains. The skill answer explicitly scopes the cleanup to this device and makes the general exception for pinned items clear. Both are usable here.
 
-**차이.** 미적용 답안에서는 소유자만 가능하다는 제한이 약해졌습니다. 스킬 답안은 권한·검증 조건을 버튼 이름 바로 앞에 놓습니다.
+**차이.** 두 답 모두 Windows 로고 키 + V에서 Clear all을 누르면 고정한 주소가 남는다고 안내합니다. 스킬 답은 ‘이 장치’와 ‘고정 항목 제외’라는 범위를 한 번 더 명확히 합니다.

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "imrad",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "status": "experimental",
   "title": "IMRaD research-report structure",
   "kind": "document",
@@ -31,6 +31,17 @@
       "evidenceType": "institutional-guidance",
       "accessScope": "General Principles, Reporting Guidelines, and Introduction–Discussion sections; not every linked reporting standard. Recommendations index: https://www.icmje.org/recommendations/ .",
       "rights": "ICMJE states all rights reserved. Original summaries only; no checklist or full recommendations bundled."
+    },
+    {
+      "id": "dart-first-period",
+      "title": "NASA Confirms DART Mission Impact Changed Asteroid’s Motion in Space",
+      "author": "NASA",
+      "url": "https://www.nasa.gov/news-release/nasa-confirms-dart-mission-impact-changed-asteroids-motion-in-space/",
+      "version": "11 October 2022",
+      "accessed": "2026-11-08",
+      "evidenceType": "worked-example factual source",
+      "accessScope": "Dated early telescope estimate of the orbital period, change and uncertainty; establishes the worked example's facts.",
+      "rights": "Link and independently worded example only. The source retains its own terms."
     }
   ],
   "rules": [
@@ -70,7 +81,7 @@
     },
     {
       "id": "reproducible-methods",
-      "intent": "Describe the actual design, materials/participants, procedures, and analysis sufficiently to interpret and reproduce the work.",
+      "intent": "Describe the actual design, materials/participants, procedures, and analysis sufficiently to interpret and reproduce the work. Attribute acquisition to the instrument and analysis to the researchers or software that performed it when the source supports those roles.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Operational adaptation of methods guidance without study-design-specific completeness claims.",

@@ -1,23 +1,28 @@
-# ELI5: explain to a five-year-old · How a zipper closes
+# Why rescued sea otter pup 696 needed grooming
 
-Run on 2026-11-08 • `eli5` 0.1.1 • English • Codex CLI 0.167.0
+2026-11-08 · `eli5` 0.1.1 · English · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [Monterey Bay Aquarium, Life of a rescued sea otter](https://www.montereybayaquarium.org/about-us/stories/life-of-a-rescued-sea-otter). Pup 696's rescue and grooming sections describe the role of air in the fur in warmth and buoyancy.
+- [Monterey Bay Aquarium, Sea otter](https://www.montereybayaquarium.org/animals-the-ocean/animals-a-to-z/sea-otter). Species account, Adaptations and Grooming: unlike many marine mammals, a sea otter relies on fur in cold water and lacks a thick layer of blubber.
 
 ### Prompt
 
-> Explain to a five-year-old, in at most four sentences, how this zipper closes. Its two rows of teeth start apart. Moving the slider brings the rows together so their teeth fit between each other. A missing tooth can leave a gap.
+> A five-year-old at Monterey Bay Aquarium asks why caregivers groomed rescued sea otter pup 696. Answer in three or four sentences for the child. A sea otter lacks a thick blubber layer, and grooming fluffs its fur so little bubbles of air are trapped in it. That air helps keep the pup warm and helps it float. Explain what the child would see a caregiver doing and how that helps the pup in cold water.
 
 ### Without a skill
 
-> A zipper has two rows of little teeth that start apart. When you pull the slider, it brings the rows together so the teeth fit between each other and hold the zipper closed. If a tooth is missing, it can leave a little gap.
+> You’d see a caregiver gently rubbing and brushing pup 696’s fur to make it fluffy. Sea otters don’t have a thick layer of fat called blubber to keep them warm. Fluffing the fur traps tiny bubbles of air that help keep the pup warm in cold water and help it float.
 
 ### With the skill at standard
 
-> Look at the zipper on a jacket: its two rows of little teeth start apart. When you pull the slider—the little piece that moves along the zipper—it brings the rows together. The teeth fit between each other, closing the zipper. If a tooth is missing, there can be a gap.
+> You might see a caregiver rubbing and brushing sea otter pup 696’s fur to make it fluffy. Fluffy fur traps tiny bubbles of air. That air helps keep the pup warm in cold water and helps it float. Sea otters don’t have a thick layer of fat called blubber to keep them warm, so their fur is very important.
 
 ### What changed
 
-**Checks set before the run.** Use a pictureable hand action, keep both rows and the slider's role, and retain the possible gap without implying every zipper fails.
+**Checks set before the run.** Connect a visible grooming action to fluffed fur, trapped air, warmth and flotation. Keep the explanation appropriate for a five-year-old and avoid implying that air bubbles generate heat or that the animal breathes through fur.
 
-Both give a literal sequence and preserve the possible gap. The skill places the zipper on a jacket and identifies the slider as the moving piece; the baseline is shorter. No child evaluated the language.
+Both show the caregiver fluffing the fur so that it traps air, and connect the trapped air to warmth and flotation. The skill gives the trapped bubbles their own sentence; the baseline covers the same mechanism in three sentences. Neither answer measures whether a five-year-old understood it.
 
-**차이.** 두 답 모두 이가 빠졌을 때 틈이 생길 수 있음을 설명합니다. 스킬 답안은 재킷의 지퍼를 예로 들어 슬라이더가 어떤 부품인지 알려 줍니다.
+**차이.** 두 답 모두 털 손질로 공기가 갇히고, 그 공기가 새끼 해달의 체온 유지와 부력에 도움이 된다고 설명합니다. 적용 답은 공기 방울이 갇히는 단계를 한 문장으로 따로 보여 줍니다.

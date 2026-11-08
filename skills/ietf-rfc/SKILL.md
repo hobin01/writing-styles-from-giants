@@ -9,6 +9,8 @@ description: "Write or review an internal RFC-style specification with precise r
 
 Identify the document's status, scope, and actors. For each in-scope requirement, name the responsible actor, triggering condition, and observable behavior. A **requirement** binds an implementation, a **recommendation** admits justified exceptions, and a **permission** gives the implementer a choice. A possible outage describes the environment. Use BCP 14 keywords only when the document chooses that convention and declares their meaning.
 
+Separate the choice to send a message from obligations that apply once it is sent. A rule about the contents of an optional response does not require a server to send it. Preserve the source’s trigger and actor when converting prose to a BCP 14 keyword.
+
 Use the abstract, introduction, and technical sections the request needs. Identify actual security consequences or unresolved risks. Determine whether any IANA action is needed from the specification. Separate **normative references**, which an implementer needs, from **informative references**, which give background. Treat RFC 7322 as an Informational style guide with later updates. Give an internal draft its actual status.
 
 ### Worked example · timeout-only retries

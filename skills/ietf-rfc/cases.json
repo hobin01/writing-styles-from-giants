@@ -57,5 +57,23 @@
     ],
     "knownBadRewrite": "The client MUST retry after 5 seconds.",
     "method": "ietf-rfc"
+  },
+  {
+    "id": "conditional-response",
+    "method": "ietf-rfc",
+    "locale": "en",
+    "type": "exception",
+    "level": "standard",
+    "source": "A worker may return an acknowledgement. If sent, the acknowledgement must include a job identifier. Restate the contract.",
+    "ruleIds": [
+      "requirement-strength",
+      "preserve-meaning"
+    ],
+    "sourceIds": [
+      "bcp14"
+    ],
+    "expectations": [
+      "Keep sending the acknowledgement optional while preserving the identifier requirement when one is sent."
+    ]
   }
 ]

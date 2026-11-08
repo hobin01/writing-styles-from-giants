@@ -1,29 +1,35 @@
-# Jobs-inspired presentation structure · A presentation to a mapping team
+# What Ingenuity demonstrated in 39.1 seconds
 
-Run on 2026-11-08 • `steve-jobs-presentation` 0.1.1 • English • Codex CLI 0.167.0
+2026-11-08 · `steve-jobs-presentation` 0.1.1 · English · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [NASA, NASA’s Ingenuity Mars Helicopter Succeeds in Historic First Flight (April 19, 2021)](https://www.nasa.gov/news-release/nasas-ingenuity-mars-helicopter-succeeds-in-historic-first-flight/). Flight-day report: onboard control, altimeter-derived height and hover, total time, the airfield name and plans to analyze the data.
 
 ### Prompt
 
-> Write 3 short speaker beats for a team deciding whether to try a map export tool. On one test laptop it exported 6 GB in 70 seconds. No field run has been timed. The audience works offline; production export time is unknown. Do not invent more demo results.
+> Write three short speaker beats for a public briefing immediately after Ingenuity's first Mars flight on 19 April 2021. At Wright Brothers Field, onboard guidance flew the helicopter autonomously to about 3 metres. It hovered for 30 seconds and landed after 39.1 seconds of total flight. The team planned to review the flight data before deciding how to fly the next test. Make clear what this meant for powered, controlled flight on another planet. Speak as a presenter reporting the event, using only what was known from this flight.
 
 ### Without a skill
 
-> 1. “On one test laptop, the tool exported 6 GB in 70 seconds. That gives us a reason to try it.”
-> 2. “We haven’t timed a field run, so production export time is still unknown.”
-> 3. “Let’s test it in our offline workflow and time a representative export before deciding whether to adopt it.”
+> 1. Today, 19 April 2021, Ingenuity achieved powered, controlled flight on another planet for the first time, lifting off from Wright Brothers Field on Mars.
+>
+> 2. Onboard guidance flew the helicopter autonomously to about three metres. It hovered for 30 seconds, then landed after a total flight time of 39.1 seconds.
+>
+> 3. This first flight demonstrated that powered, controlled flight is possible on Mars. The team will review the flight data before deciding how to fly the next test.
 
 ### With the skill at standard
 
-> 1. “Can this tool help us get maps ready for offline work? First, here’s what we’ve measured: it exported 6 GB in 70 seconds on one test laptop.”
+> 1. Today, 19 April 2021, Ingenuity demonstrated powered, controlled flight on another planet—a first.
 >
-> 2. “That gives us a starting point. No field run has been timed, and production export time is still unknown.”
+> 2. At Wright Brothers Field on Mars, its onboard guidance flew the helicopter autonomously to about 3 metres. It hovered for 30 seconds, then landed after a total flight time of 39.1 seconds.
 >
-> 3. “Let’s try a timed export with a workload and equipment that reflect our offline work. That will help us judge whether it fits our preparation window.”
+> 3. This flight showed that powered, controlled flight on Mars was possible. The next step was to review the flight data before deciding how to fly the next test.
 
 ### What changed
 
-**Checks set before the run.** Connect the benefit to the offline audience; retain device, size and time; distinguish the demonstration from field performance and give a supported next step.
+**Checks set before the run.** Preserve the date, location, autonomous control, roughly 3 m, 30-second hover versus 39.1-second total and postflight review. Tie the demonstration to powered, controlled flight on Mars without guaranteeing future flights or capacities not tested.
 
-Both retain the test laptop, 6 GB, 70 seconds and the missing field measurement. The skill opens with the team's offline need and proposes timing representative equipment. The baseline also offers a usable three-beat presentation.
+Both distinguish the 30-second hover from the 39.1 seconds between takeoff and landing and end with a review before the next test. The baseline names Wright Brothers Field in the opening; the skill saves the location for the measurement beat. Neither presents a later flight as if it had already happened.
 
-**차이.** 두 답 모두 시험 수치를 현장 성능으로 일반화하지 않습니다. 스킬 답안은 오프라인에서 지도를 준비하는 팀의 질문으로 발표를 시작합니다.
+**차이.** 두 발표 모두 30초는 제자리 비행 시간이고 39.1초는 전체 비행 시간이라고 구분합니다. 기체가 뜬 장소를 소개하는 순서는 달라졌지만 두 답 모두 다음 시험의 성공을 약속하지 않습니다.

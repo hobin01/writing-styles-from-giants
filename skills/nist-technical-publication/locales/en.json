@@ -1,6 +1,6 @@
 {
   "method": "nist-technical-publication",
-  "methodVersion": "0.1.1",
+  "methodVersion": "0.1.2",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],

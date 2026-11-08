@@ -4,7 +4,7 @@
 
 When I ask an AI to “explain this simply,” it sometimes cuts the part I wanted to understand. Explaining a bicycle brake to a five-year-old is a different job from explaining its mechanism to an engineer. I made this project so I could choose **who the explanation is for and how it should work**. I wanted to put earlier writers’ methods to work on my own questions, which is where “standing on the shoulders of giants” comes in.
 
-To see what changes, open the [22 side-by-side examples](EXAMPLES.md). These are experimental skills. Each example uses the same request twice, once without the skill and once at `standard`.
+To see what changes, open the [22 real-world comparisons](EXAMPLES.md). Try the [DNS record that still appears missing](skills/feynman-technique/examples/standard.md), [LIGO’s first black-hole merger observation](skills/imrad/examples/standard.md), or [Seoul’s subway map redesign](skills/hunminjeongeum/examples/standard.md). These are experimental skills. Each example links its sources and shows the same request answered without the skill and at `standard`.
 
 ## Try it in Codex
 

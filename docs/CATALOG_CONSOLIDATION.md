@@ -1,6 +1,6 @@
 # Catalog consolidation
 
-Reviewed on 2026-11-07 at the owner's request to remove overlapping writing/explanation skills and keep established representative methods. Current catalog: **21 methods plus one Korean companion**, with 117 rules and 77 synthetic cases. All remain experimental.
+Reviewed on 2026-11-07 at the owner's request to remove overlapping writing/explanation skills and keep established representative methods. At consolidation the catalog had **21 methods plus one Korean companion**, with 117 rules and 77 synthetic cases. All remain experimental.
 
 ## Decision basis
 

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "feynman-technique",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "status": "experimental",
   "title": "Feynman-inspired explanation and gap checking",
   "kind": "explanation",
@@ -54,6 +54,17 @@
       "evidenceType": "author-explanation",
       "accessScope": "Technique and depth sections, including the distinction between explaining and solving.",
       "rights": "No permissive redistribution established; original operational summary."
+    },
+    {
+      "id": "python-cache",
+      "title": "functools.lru_cache",
+      "author": "Python Software Foundation",
+      "url": "https://docs.python.org/3/library/functools.html#functools.lru_cache",
+      "version": "Python 3.15.2 documentation",
+      "accessed": "2026-11-08",
+      "evidenceType": "worked-example factual source",
+      "accessScope": "lru_cache, cache_info and cache_clear; factual basis for the station-name example.",
+      "rights": "Link and independently worded example only. The source retains its own terms."
     }
   ],
   "rules": [

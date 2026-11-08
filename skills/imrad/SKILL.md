@@ -9,20 +9,20 @@ Organize supplied original research so readers can distinguish the question, wha
 
 ## Place each claim in its section
 
-Apply the section checks enabled at the selected level. Use the target journal's headings and any supplied reporting guideline for the study design. For original studies, the Introduction establishes the question and why it matters. Methods describes what was actually done, including the design, materials or participants, procedures, measurements, and analysis needed to interpret it. Mark missing details where they belong.
+Apply the section checks enabled at the selected level. Use the target journal's headings and any supplied reporting guideline for the study design. For original studies, the Introduction establishes the question and why it matters. Methods describes what was actually done, including the design, materials or participants, procedures, measurements, and analysis needed to interpret it. Distinguish what an instrument recorded from how analysts or software interpreted the data. Leave the actor unspecified when the notes do not identify one. Mark missing details where they belong.
 
 Results reports observations with their denominators, units, estimates, uncertainty, and negative findings. Discussion explains what those observations support, plausible limits, and where they might apply. If a journal combines these sections, keep the observation and its interpretation distinguishable within the combined text. In strict mode, reconcile claims across the abstract, body, tables, and citations and flag material omissions.
 
-### Worked example · from study notes to four sections
+### Worked example · did DART change an asteroid's orbit?
 
-The [separate-sections case](cases.json) describes one simulated workflow with timer T. There were 20 synthetic trials with T and 20 without. The study notes report 2 missed checks with T and 5 without.
+Use [NASA's 11 October 2022 report](https://www.nasa.gov/news-release/nasa-confirms-dart-mission-impact-changed-asteroids-motion-in-space/) as a dated observation. The report gives an early estimate of how the orbit changed.
 
-- **Introduction.** Does timer T reduce missed checks in this workflow?
-- **Methods.** The simulation used 20 trials with T and 20 without it.
-- **Results.** The trials recorded 2 missed checks with T and 5 without T.
-- **Discussion.** Fewer checks were missed with T in this simulation. The study covered one workflow, so its results do not establish the effect in other workflows.
+- **Introduction.** Could the DART spacecraft's impact shorten the time Dimorphos takes to orbit Didymos?
+- **Methods.** After the 26 September impact, astronomers used telescopes on Earth to measure the orbital period and compare it with the pre-impact period.
+- **Results.** The initial estimate fell from 11 h 55 min to 11 h 23 min. NASA reported a shortening of about 32 min, with uncertainty of about ±2 min.
+- **Discussion.** The result supports changing this asteroid's orbit through an impact. Predicting the effect of an impact on a different asteroid would require more evidence.
 
-The unit counted in Results is **missed checks**. Converting those counts into percentages of trials that had a miss would require knowing how misses were distributed across trials.
+Keep the measured change and its uncertainty together in Results. The larger planetary-defense question belongs in Discussion.
 
 ## Levels
 

@@ -1,5 +1,7 @@
 # ASD normal · editing a maintenance note
 
+This earlier trial is preserved as recorded. For the current source-backed comparison, see [When to remove a Raspberry Pi 4 recovery card](../examples/standard.md).
+
 Recorded on 2026-11-08 with one fresh Codex agent per answer. The baseline received the task. The other agent also received this skill at `normal` level (standard). These are the returned texts, including paragraph breaks.
 
 ## Request

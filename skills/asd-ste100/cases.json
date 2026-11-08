@@ -167,5 +167,24 @@
         "preserve-meaning"
       ]
     }
+  },
+  {
+    "id": "git-branch-target",
+    "method": "asd-ste100",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "standard",
+    "source": "Explain when git branch -d fix-timeout passes its merge check. Cover both a configured upstream and the case where there is none.",
+    "ruleIds": [
+      "technical-profile",
+      "preserve-meaning"
+    ],
+    "sourceIds": [
+      "asd-faq",
+      "git-branch-delete"
+    ],
+    "expectations": [
+      "Keep full merge relative to the configured upstream or, in its absence, HEAD. Preserve the lower-case -d."
+    ]
   }
 ]

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "aristotle-syllogism",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "status": "experimental",
   "title": "Aristotelian syllogistic argument checking",
   "kind": "process",
@@ -31,6 +31,17 @@
       "evidenceType": "primary-text",
       "accessScope": "Definitions of premise, universal/particular statements, syllogism, and opening first-figure valid/invalid relations; not all syllogistic.",
       "rights": "Ancient original and translation/site edition have distinct rights; no translation text bundled."
+    },
+    {
+      "id": "json-grammar",
+      "title": "RFC 8259: The JavaScript Object Notation (JSON) Data Interchange Format",
+      "author": "T. Bray, editor",
+      "url": "https://www.rfc-editor.org/rfc/rfc8259#section-3",
+      "version": "December 2017, §§2–3",
+      "accessed": "2026-11-08",
+      "evidenceType": "worked-example factual source",
+      "accessScope": "Grammar of JSON values and lowercase literals; factual premises for the JSON example.",
+      "rights": "Link and independently worded example only. The source retains its own terms."
     }
   ],
   "rules": [

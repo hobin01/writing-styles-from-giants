@@ -1,23 +1,31 @@
-# ASD-STE100-inspired technical English · Permission to move a tray
+# When to remove a Raspberry Pi 4 recovery card
 
-Run on 2026-11-08 • `asd-ste100` 0.1.2 • English • Codex CLI 0.167.0
+2026-11-08 · `asd-ste100` 0.1.3 · English · Codex CLI 0.167.0 / gpt-6.1-sol
+
+### Case and sources
+
+- [Raspberry Pi, Raspberry Pi computer hardware documentation](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#reflash-the-bootloader). Reflash the bootloader, especially the last step for an HDMI-connected board. The prompt covers only completion of a prepared recovery on the Pi 4 Model B.
 
 ### Prompt
 
-> Edit this note for a maintenance technician in at most four sentences. Use the glossary name 'transfer tray' for the movable tray. Source: Movement of the tray is permissible only while the handling cart is locked and the load is below 8 kg. The fixed shelf must not be moved. We have not identified why the tray tilted yesterday.
+> Edit the following service note into a concise instruction for a Raspberry Pi 4 Model B technician with an HDMI display attached. The recovery microSD card has already been prepared and inserted for a bootloader reflash. Before disconnecting power, wait for both indications: a steady flashing pattern from the green activity LED and a green screen on the HDMI display. After the power is disconnected, remove the recovery microSD card. Give only these finishing steps. Use 'recovery microSD card' consistently.
 
 ### Without a skill
 
-> Move the transfer tray only when the handling cart is locked and the load is below 8 kg. Do not move the fixed shelf. The cause of yesterday’s transfer tray tilt is still unknown.
+> 1. Wait for both a steady flashing pattern from the green activity LED and a green screen on the HDMI display.
+> 2. Disconnect power.
+> 3. Remove the recovery microSD card.
 
 ### With the skill at standard
 
-> You may move the transfer tray only while the handling cart is locked and the load is below 8 kg. Do not move the fixed shelf. We have not identified why the transfer tray tilted yesterday.
+> 1. Wait until both the green activity LED flashes in a steady pattern and the HDMI display shows a green screen.
+> 2. Disconnect power.
+> 3. Remove the recovery microSD card.
 
 ### What changed
 
-**Checks set before the run.** Preserve permission, cart lock and strict less-than-8 kg threshold, the fixed shelf prohibition, correct glossary referent and unknown cause of yesterday's tilt.
+**Checks set before the run.** Keep both independent visual completion conditions, then disconnect power, then remove the recovery microSD card. A continuously lit LED, one flash alone or an error screen is insufficient. Do not add a new formatting step or extend these instructions to every Pi model.
 
-The baseline turns permission into the command “Move the transfer tray.” The skill preserves the choice with “You may move,” both safety conditions, the fixed-shelf prohibition and the unknown cause. Neither answer permits a load of exactly 8 kg.
+Both give the same three finishing steps. Each requires the flashing activity LED and the green HDMI screen before power is disconnected; each removes the recovery microSD card only afterward. The baseline already meets the procedure checks.
 
-**차이.** 미적용 답안은 허용을 작업 지시로 바꿨습니다. 스킬 답안은 옮겨도 된다는 뜻과 8 kg 미만이라는 조건을 함께 지켰습니다.
+**차이.** 두 답 모두 초록색 LED의 점멸과 초록색 HDMI 화면을 함께 확인한 뒤 전원을 끊고 복구용 microSD 카드를 빼라고 안내합니다. 이 절차에서는 적용 전후 차이가 작습니다.
