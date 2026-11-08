@@ -14,6 +14,18 @@ Use only the rules enabled by the selected level below.
 3. Apply `clear-expression`: remove avoidable abstraction, unpack unfamiliar terms, and split sentences only when the conditional, causal, or temporal relation stays intact. Preserve legal force and permissions.
 4. In strict mode, apply `reader-check`: test a locate/understand/act scenario with representative readers when available. Otherwise perform a labeled desk check and leave actual reader comprehension unverified.
 
+## Worked notice · two deadlines
+
+Source from the [permission-and-condition case](cases.json): “You may request a review within 14 days only if the notice contains an error; this does not suspend the payment deadline.”
+
+An authored notice:
+
+> **Can I request a review?**
+>
+> You may request a review within 14 days only if your notice contains an error. Your payment is still due by its original deadline.
+
+A **desk check** means trying a reader's question against the draft. Try the notice with and without an error. The reader should be able to rule out a request in the second case and see that the payment deadline stays the same in both. The source gives no starting date for the 14 days. If the reader needs a calendar deadline, ask for the missing date or event.
+
 ## Levels
 
 - `light`: apply `reader-task` and address the most obstructive mismatch.

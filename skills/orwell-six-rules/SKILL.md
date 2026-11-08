@@ -18,6 +18,14 @@ Edit for clear, honest expression using original summaries of the six rules in O
 
 Compare the edited text with its source before finishing. Do not invent an actor to avoid passive voice, replace a precise term with a vague short word, or remove qualifications to shorten a claim.
 
+## Worked edit · cutting words while keeping the unknown actor
+
+Source combining two [editorial cases](cases.json): “At this moment in time, we are undertaking an investigation into the cause. The sensor was damaged during shipping; the responsible party is unknown.”
+
+An authored edit: “We are investigating the cause. The sensor was damaged during shipping. We do not know who was responsible.”
+
+“Are investigating” carries the ongoing action by itself. Keep “was damaged” under the sixth rule: “the shipper damaged the sensor” would turn the time of the damage into an accusation. Test a cut by asking which fact, qualification, or emphasis the reader would lose.
+
 ## Levels
 
 `light` advises on stale expressions, accurate word choice, and unnecessary wording. `standard` applies all six where relevant. `strict` accounts for every applicable rule and its exceptions; rule six always survives. A sentence is not defective merely because it contains a metaphor or passive verb.

@@ -20,6 +20,12 @@ Apply only the rules enabled by the selected level.
 
 Use MathML or readable mathematical text when sufficient. If LaTeX rendering needs a remote library, use a permitted dependency, preserve its notice, and disclose network requirements. Return the file/artifact or complete HTML as the host permits; creating an explanation does not authorize publishing it.
 
+## Worked example: explain one changing quantity
+
+“Why does $100 at 10% earn $11 in the second year?” The [runnable example](examples/annual-growth.html) starts at two years and shows $121. The reader can move back to one year and see $110. That change explains where the extra dollar came from. The rate is fixed and there are no further deposits or withdrawals.
+
+For a similar page, put the changing quantity and its unit in the control label. Use native HTML to constrain the input. Give the formula one calculation in JavaScript and write the result with `textContent`. Put a correct initial answer in the HTML so the explanation still works with scripts disabled. When checking this example, set the slider to zero years: the reader should see the original $100. A diagram of a fixed relationship can use just the static explanation.
+
 ## Levels
 
 `light` produces the smallest useful artifact and preserves model, accessibility, and safe-data rules. `standard` also exercises the artifact where tools permit. `strict` accounts for every applicable check and boundary; it does not require animation or a framework.

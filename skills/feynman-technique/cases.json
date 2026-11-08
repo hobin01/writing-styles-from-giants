@@ -36,6 +36,7 @@
     ],
     "expectations": [
       "Give a worked new lookup rather than forcing the user to answer a quiz.",
+      "Use the same item to show how a change in cache contents changes a hit into a miss, or a miss into a hit. Keep any unspecified storage policy conditional.",
       "Do not claim that the user has demonstrated mastery."
     ],
     "knownBadRewrite": "Before I explain, answer these five questions.",

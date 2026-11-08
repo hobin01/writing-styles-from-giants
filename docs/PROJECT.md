@@ -26,6 +26,8 @@ The proposed initial mode is recommendation at `standard` level, with project-sc
 
 Present: 21 experimental methods plus a Korean-specific linguistic companion, source-to-rule metadata, per-level policies, ordinary/exception/meaning-preservation cases, per-skill Ponytail review, and catalog validation with behavioral unit tests. [CATALOG_CONSOLIDATION.md](CATALOG_CONSOLIDATION.md) records three overlap removals, retained distinctions, and migration. [CATALOG_REVIEW.md](CATALOG_REVIEW.md) preserves the initial manual-loading model exercises as historical evidence, separate from verification of the consolidated versions. Existing foundation documentation, CI, and release definitions remain.
 
+All 22 entrypoints now include authored examples. The [four paired writing trials](../evals/runs/2026-11-08-worked-examples.md) preserve outputs, including a failed check and fresh runs after a revision. The HTML example also has a rendered keyboard and no-script check.
+
 Pending: installed host discovery/activation, installer lifecycle integration, independent native-language and reader review, broader comparative model evaluations, release workflow verification, and repository protection settings. No skill is marked `reviewed`; no release or host compatibility is claimed. There is no runtime router: a selected skill follows its own applicability and level instructions.
 
 ## Boundaries

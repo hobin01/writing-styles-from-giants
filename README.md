@@ -47,6 +47,8 @@ Read a skill’s `SKILL.md` with its complete directory available to the agent. 
 
 The [consolidation review](docs/CATALOG_CONSOLIDATION.md) explains the three removals and the remaining distinctions. The [initial review record](docs/CATALOG_REVIEW.md) preserves historical checks and model exercises. See [rights](THIRD_PARTY_NOTICES.md) and [remaining work](docs/PROJECT.md).
 
+Each skill includes a worked example. Try the [GTM proof](skills/gtm-formal/SKILL.md) for a quantifier that changes a claim, or open the [HTML example](skills/answer-with-html/examples/annual-growth.html) to explore compound interest. The [four paired trials](evals/runs/2026-11-08-worked-examples.md) show actual answers to identical requests with and without the selected skill, including a Feynman example revised after a missed check.
+
 ## Installation
 
 The complete `skills/<method-id>/` directory is the portable unit. No installer is bundled or integration-tested. Evaluate the existing [skills CLI](https://github.com/vercel-labs/skills) against our [installation contract](docs/ARCHITECTURE.md) before building an installer.
@@ -88,7 +90,7 @@ These checks cover repository integrity and catalog contracts, not writing quali
 | [docs/REFERENCE.md](docs/REFERENCE.md) | Project bibliography and reference notes |
 | [docs/INITIAL_CATALOG_RESEARCH.md](docs/INITIAL_CATALOG_RESEARCH.md) | Original method research and comparable projects |
 | [skills/](skills/), [docs/CATALOG_CONSOLIDATION.md](docs/CATALOG_CONSOLIDATION.md) | Experimental skills, overlap decisions, and migration |
-| [templates/method/](templates/method/), [evals/](evals/) | Authoring and evaluation examples, not released methods or model results |
+| [templates/method/](templates/method/), [evals/](evals/) | Authoring templates, evaluation cases and dated model runs |
 | [scripts/](scripts/), [tests/](tests/) | Foundation checker and tests |
 | [.github/](.github/) | Collaboration and automation configuration |
 

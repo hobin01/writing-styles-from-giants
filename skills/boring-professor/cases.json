@@ -43,7 +43,7 @@
       "scope-and-evidence"
     ],
     "expectations": [
-      "Retain tested-workload scope, both queue sizes, 2 ms median change, and unchanged p99."
+      "Retain tested-workload scope, both queue sizes, 2 ms median change, and the finding that p99 did not improve; it could have stayed the same or worsened."
     ],
     "sourceIds": [],
     "level": "standard",

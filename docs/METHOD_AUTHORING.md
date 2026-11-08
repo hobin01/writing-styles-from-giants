@@ -45,4 +45,6 @@ Every method stores `cases.json` inside its portable directory, with `type` set 
 
 The [example cases](../evals/cases.example.json) demonstrate expectations; they are not model run results. Apply Ponytail after completing each skill and record concrete pruning or retained boundaries in the catalog review. Keep deterministic checks separate from model-judged quality and human reader evaluation. Record the model/version, prompt, host, method version, locale, level, failures, and judging process for a real run. Do not optimize a numeric score by deleting necessary information.
 
+Use an authored example to show a decision a reader might otherwise miss. Give enough source material to check the answer and explain one consequential choice. For a comparison of model outputs, use a fresh context and separate workspace per answer, the same held-out request and preselected checks. Only the treatment receives the method and level. Preserve both answers, ties, and failed attempts. Revise a skill after a failed check and repeat the request in a fresh context. See the [worked examples and trial records](../evals/runs/2026-11-08-worked-examples.md).
+
 A method is `reviewed` only after provenance/rights review, rule review, and an evaluation record. This status is project review, not author endorsement, official certification, or proof of universal quality.

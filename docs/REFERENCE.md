@@ -16,6 +16,8 @@ Keep detailed evidence with each method under the [authoring contract](METHOD_AU
 
 Matt Pocock. [skills, commit 4ae2317](https://github.com/mattpocock/skills/tree/4ae2317ddb22b046e26455e4f9c9b3aaaf62212d). Accessed 2026-11-06; inspected repository structure, README, agent/contributor guidance, and maintainer installation script. Informs documentation and repository organization under [CONTRIBUTING.md](../CONTRIBUTING.md). License evidence is in [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md).
 
+On 2026-11-08 we also read [Writing for Agents](https://github.com/mattpocock/skills/blob/4ae2317ddb22b046e26455e4f9c9b3aaaf62212d/skills/productivity/writing-for-agents/SKILL.md) and its skill mechanics notes (installed project version 1.3.2). This informed two choices in the [catalog](../skills/): define a term where it changes a decision, and end a worked example with a check the writer can actually perform.
+
 ### Structure and adaptation
 
 | Upstream pattern | This project |
@@ -29,6 +31,10 @@ Matt Pocock. [skills, commit 4ae2317](https://github.com/mattpocock/skills/tree/
 Upstream AGENTS.md links to CLAUDE.md; we retain a plain CLAUDE.md pointer to shared AGENTS.md. Its maintainer-only global-link script can replace existing directories and is not reused: our installer contract preserves unowned/modified content.
 
 The collaborator-only PR restriction, closed new-skill intake, bucket taxonomy, Changesets dependency, triage bots, and plugin packaging do not fit the current foundation. Use existing installers first and test host behavior before claiming support. This is a structural reference; no upstream implementation or branding is bundled, and no affiliation is implied.
+
+## Anthropic Skill Creator
+
+Anthropic's [Skill Creator](https://github.com/anthropics/skills/blob/2c5958ecac7cee2b583967a2c4981d0f4a75c579/skills/skill-creator/SKILL.md) informed the [paired trials](../evals/runs/2026-11-08-worked-examples.md). We read its guidance on examples, matched tasks, separate agent contexts and revising after failures on 2026-11-08. We wrote our own prompts, grading criteria and examples. The upstream skill has its own [Apache-2.0 license](https://github.com/anthropics/skills/blob/2c5958ecac7cee2b583967a2c4981d0f4a75c579/skills/skill-creator/LICENSE.txt).
 
 ## vercel-labs/skills
 

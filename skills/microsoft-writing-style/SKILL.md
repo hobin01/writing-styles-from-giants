@@ -18,11 +18,21 @@ Apply only the rules enabled by the selected level.
 3. Match actual product/UI labels and keep terminology consistent across steps. Preserve commands, paths, code, and identifiers verbatim unless the task explicitly asks to change them.
 4. Check whether literal wording, explicit referents, and familiar examples work for the intended audience. Apply English-specific grammar or punctuation choices only to English; do not introduce contractions, capitalization rules, or English word limits into Korean prose.
 
+## Worked help text · what the reader must match
+
+A **UI label** is the text the reader sees on a control. Given the menu item `Utilize legacy mode`, an authored help step is “Select **Utilize legacy mode**.” Editing the label to “Use legacy mode” would make the help text point at a name the reader cannot find.
+
+For the [qualified-action case](cases.json), the source permits only administrators to delete an archive after a verified backup. It supplies the command `archive rm --id=42` and says retention rules might prevent deletion. An authored help excerpt:
+
+> Only administrators with a verified backup may use `archive rm --id=42` to delete the archive. Retention rules might still prevent deletion.
+
+Read the excerpt as someone looking for a command to copy. The permission and backup condition must be visible before the command. Check the command character for character against the source.
+
 ## Levels and completion
 
 `light`: improve the reader action, remove safe redundancy, and align terms. `standard`: also review global comprehension throughout the requested scope. `strict`: inspect every step for a clear action, exact label, prerequisite, and preserved technical meaning, and record justified exceptions.
 
-Return the requested document or edit. Keep method/version (`0.1.0`), level, assumptions, skipped rules, and unresolved checks in a brief status or audit when application is automatic or an audit is requested; keep that record outside the finished prose. For recommendation-only requests, explain the fit without editing.
+Return the requested document or edit. Keep method, version from [method.json](method.json), level, assumptions, skipped rules, and unresolved checks in a brief status or audit when application is automatic or an audit is requested; keep that record outside the finished prose. For recommendation-only requests, explain the fit without editing.
 
 ## Scope and evidence
 

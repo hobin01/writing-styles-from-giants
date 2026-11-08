@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where does the extra dollar come from?</title>
+<style>
+  :root { color-scheme: light; font: 110%/1.55 system-ui, sans-serif; color: #1e302d; background: #faf8f0; }
+  body { max-width: 36rem; margin: 8vh auto; padding: 0 1.25rem; }
+  h1 { font-family: Georgia, serif; line-height: 1.15; }
+  input { display: block; width: 100%; margin: 1rem 0; accent-color: #1b6c57; }
+  output { display: block; padding: .75rem 1rem; border-left: .25rem solid #1b6c57; background: #eef2e9; }
+</style>
+<main>
+  <h1>Where does the extra dollar come from?</h1>
+  <p>Start with $100. At a fixed 10% annual rate, with interest added once a year
+    and no other deposits or withdrawals, the first year earns $10. The second earns
+    $11 because interest now applies to $110. The balance is $100 × 1.10<sup>t</sup>,
+    where <var>t</var> counts whole years.</p>
+  <label for="years">Whole years (0–4)</label>
+  <input id="years" type="range" min="0" max="4" step="1" value="2" disabled>
+  <output id="balance" for="years">After 2 years the balance is $121.00.</output>
+  <noscript>The example above shows the calculation for two years.</noscript>
+</main>
+<script>
+  const years = document.querySelector("#years");
+  const balance = document.querySelector("#balance");
+  const dollars = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" });
+
+  function showBalance() {
+    const t = years.valueAsNumber;
+    const amount = 100 * 1.10 ** t;
+    balance.textContent = `After ${t} ${t === 1 ? "year" : "years"} the balance is ${dollars.format(amount)}.`;
+  }
+
+  years.addEventListener("input", showBalance);
+  showBalance();
+  years.disabled = false;
+</script>
+</html>

@@ -5,7 +5,7 @@ description: "Explain a technical topic with explicit definitions, assumptions, 
 
 # Boring Professor: literal technical explanation
 
-Deliver a technically precise explanation without jokes or metaphors. This is the owner's original method, not a documented professor's style. Technical depth should serve the question rather than create needless length.
+Give a technically precise, literal explanation. This project-original method uses the terminology of the discipline and omits jokes and metaphors. Introduce a term at the point where the reader needs it to follow the next inference.
 
 ## Apply
 
@@ -15,6 +15,14 @@ Apply only the rules enabled by the selected level.
 2. Explain the mechanism or derivation in dependency order. Identify what each inference rests on.
 3. Use literal descriptions, equations, diagrams, and numerical examples when they clarify the mechanism. Keep examples separate from general claims.
 4. Distinguish evidence from inference and state the conditions under which the account applies. Leave unknown details unresolved.
+
+## Reporting a measurement
+
+This original illustration of the [`conditional-gain` case](cases.json) introduces statistical terms where the two latency measurements diverge.
+
+> Under the tested workload, increasing the queue size from 64 to 128 reduced median latency (the 50th percentile) by 2 ms. The 99th-percentile latency, or p99, did not improve. The measurements do not identify the mechanism.
+
+Check the nouns attached to the result. Replacing “median latency” with “latency” would extend the finding to parts of the distribution the data do not support.
 
 ## Levels
 
@@ -26,4 +34,4 @@ Respect the user's selected method, level, output language, and scope. `off` ski
 
 English instructions do not require English output. Structural steps transfer to the requested output language; this is not a reviewed language-specific adaptation.
 
-Read [method.json](method.json) for rule IDs, exceptions, provenance, and exact level policies; [English rules](locales/en.json) for language wording. The [cases](cases.json) define review expectations, not measured model results. For automatic application, expose the method and level in a separate status or audit. When an audit is requested, also record version, language, exceptions, and unresolved checks; keep these outside the finished prose.
+Read [method.json](method.json) for provenance, exceptions, and per-rule levels, and [locales/en.json](locales/en.json) for the English wording. [cases.json](cases.json) supplies synthetic review cases. For automatic application, show the method and level in a separate status or audit. A requested audit also records version, language, exceptions, and unresolved checks.

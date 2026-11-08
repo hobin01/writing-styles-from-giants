@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "federal-plain-language",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "status": "experimental",
   "title": "Federal Plain Language-inspired explanation",
   "kind": "sentence",
