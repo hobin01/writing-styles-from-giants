@@ -5,7 +5,7 @@ description: "Organize an explanation around why it is needed, coherent developm
 
 # Hunminjeongeum-inspired purpose-first explanation
 
-Explain why a document exists before developing its answer. Success means the opening problem, supporting development, and final result form one coherent argument.
+Begin with the difficulty that made the explanation necessary. Write the opening from the affected reader's point of view. Use the body to explain how the proposed answer addresses that difficulty, then return to it in the conclusion.
 
 Use only the rules enabled by the selected level below.
 
@@ -14,13 +14,21 @@ Use only the rules enabled by the selected level below.
 3. Apply `bounded-conclusion`: state the supported result and its limits. Use introduction/body/conclusion as a relationship, not a requirement for three labels or equal-sized sections.
 4. In strict mode, apply `purpose-trace`: remove digressions and repair unsupported jumps between the opening, development, and conclusion.
 
+## A purpose carried through to the last sentence
+
+This original illustration of the [`purpose-and-answer` case](cases.json) explains a proposed change to a manual cover.
+
+> Readers cannot tell which version of the manual matches their device. The new cover will list the supported model numbers so readers can compare their device's number with the list. We have not tested whether readers can find the right version faster.
+
+Read the conclusion beside the opening. Both concern the reader finding a matching version. A promise of faster setup would introduce a different task as well as an untested result.
+
 ## Levels
 
 - `light`: apply `purpose-opening`; keep the existing organization where it works.
 - `standard`: add `connected-development` and `bounded-conclusion`.
 - `strict`: add `purpose-trace` across the whole requested document.
 
-Meaning preservation applies at every level. Keep justified exceptions even in strict mode. Use `standard` when the user has not selected a level.
+Default to `standard`. Keep justified exceptions at every level.
 
 ## Scope and review
 
@@ -28,6 +36,6 @@ Apply only within the requested scope. Honor explicit method, level, output lang
 
 This is a modern purpose-first adaptation, not a reconstruction of Haerye chapters or a contemporary Korean spelling guide. The structure supports Korean output; historical quotations and modern translations require separate verification.
 
-Before finishing, compare the result with the source and check the applicable rules. For automatic selection, expose the method and level in a separate status or audit; keep working notes out of finished prose. Report material unresolved checks without claiming mechanical verification.
+Compare the result with the source. For automatic selection, show the method and level in a separate status or audit. Record material unresolved checks there.
 
-Read [method.json](method.json) for source scope, provenance, exceptions, and rule-level policies; [locales/en.json](locales/en.json) contains English rule wording. [cases.json](cases.json) supplies evaluation cases, not model results. This is an experimental project adaptation, with no author or institution endorsement.
+Read [method.json](method.json) for provenance, exceptions, and per-rule levels, and [locales/en.json](locales/en.json) for the English wording. [cases.json](cases.json) supplies synthetic review cases.

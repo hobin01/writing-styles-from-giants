@@ -5,7 +5,7 @@ description: "Explain a concept for a literal five-year-old using familiar exper
 
 # ELI5: explain to a five-year-old
 
-Explain for the owner's literal age-five target, rather than the older lay audience of the ELI5 community. Success is an understandable causal account that keeps its important limits; age suitability still needs reader review.
+Write something an adult could read aloud to a five-year-old. Give the child an action they can picture, what happens next, and a reason. Actual age suitability needs reader review.
 
 ## Apply
 
@@ -15,6 +15,14 @@ Apply only the rules enabled by the selected level.
 2. Describe the mechanism in small steps. Introduce essential terms beside their meaning; keep an unfamiliar label only when it helps the child refer to the idea.
 3. Use a literal example, or a bounded analogy if it helps. Keep the key exception in simple words. Never replace an unknown mechanism with an invented story.
 4. When teaching is requested, invite one small prediction or retelling. For a short answer, finish after the explanation.
+
+## A brake a child can picture
+
+This original illustration of the [`literal-better` case](cases.json) explains a cable-operated rim brake.
+
+> On this bike, you squeeze the brake handle. It pulls a thin wire. The wire makes two small pieces called brake pads press against the hard edge of the wheel. The pads rub on the wheel as it turns. That slows the wheel down.
+
+“On this bike” keeps the claim specific. Check that the child has a concrete action to follow at every step from hand to wheel.
 
 ## Levels
 
@@ -26,4 +34,4 @@ Respect the user's selected method, level, output language, and scope. `off` ski
 
 Use the requested language and a suitable spoken register. Korean vocabulary, endings, and read-aloud suitability need audience review; English word counts do not establish a Korean age-five reading level.
 
-Read [method.json](method.json) for rule IDs, exceptions, provenance, and exact level policies; [English rules](locales/en.json) for language wording. The [cases](cases.json) define review expectations, not measured model results. For automatic application, expose the method and level in a separate status or audit. When an audit is requested, also record version, language, exceptions, and unresolved checks; keep these outside the finished prose.
+Read [method.json](method.json) for provenance, exceptions, and per-rule levels, and [locales/en.json](locales/en.json) for the English wording. [cases.json](cases.json) supplies synthetic review cases. For automatic application, show the method and level in a separate status or audit. A requested audit also records version, language, exceptions, and unresolved checks.

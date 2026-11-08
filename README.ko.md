@@ -47,6 +47,8 @@
 
 [통합 검토](docs/CATALOG_CONSOLIDATION.md)는 삭제한 3개 스킬과 유지한 기능의 차이를 설명합니다. [최초 검토 기록](docs/CATALOG_REVIEW.md)은 당시 검사와 모델 실행 사례를 보존합니다. [권리](THIRD_PARTY_NOTICES.md)와 [남은 작업](docs/PROJECT.md)도 확인하세요.
 
+각 스킬에는 직접 작성한 예제가 있습니다. [GTM 증명](skills/gtm-formal/SKILL.md)은 양화사의 순서가 바뀌면 왜 명제가 달라지는지 보여 줍니다. [HTML 예제](skills/answer-with-html/examples/annual-growth.html)에서는 기간을 바꿔 복리 계산을 확인할 수 있습니다. [네 가지 비교 실험](evals/runs/2026-11-08-worked-examples.md)에는 같은 요청에 스킬을 적용한 답과 적용하지 않은 답 원문이 있습니다. Feynman 스킬을 수정하고 다시 실행한 과정도 담았습니다.
+
 ## 설치
 
 이식 가능한 배포 단위는 `skills/<method-id>/` 디렉터리 전체입니다. 설치 도구는 포함하거나 통합 검증하지 않았습니다. 자체 설치 도구를 만들기 전에 기존 [skills CLI](https://github.com/vercel-labs/skills)가 [설치 계약](docs/ARCHITECTURE.md)을 충족하는지 확인합니다.
@@ -88,7 +90,7 @@ git diff --check
 | [docs/REFERENCE.md](docs/REFERENCE.md) | 프로젝트 참고 자료 목록과 검토 기록 |
 | [docs/INITIAL_CATALOG_RESEARCH.md](docs/INITIAL_CATALOG_RESEARCH.md) | 최초 방법론 조사와 유사 프로젝트 |
 | [skills/](skills/), [docs/CATALOG_CONSOLIDATION.md](docs/CATALOG_CONSOLIDATION.md) | 실험 단계 스킬·중복 검토·전환 안내 |
-| [templates/method/](templates/method/), [evals/](evals/) | 작성·평가 예제. 배포된 방법론이나 모델 평가 결과가 아닙니다 |
+| [templates/method/](templates/method/), [evals/](evals/) | 작성 템플릿, 평가 사례, 날짜별 모델 실행 기록 |
 | [scripts/](scripts/), [tests/](tests/) | 저장소 검사와 테스트 |
 | [.github/](.github/) | 협업·자동화 설정 |
 

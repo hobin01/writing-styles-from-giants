@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "imrad",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "status": "experimental",
   "title": "IMRaD research-report structure",
   "kind": "document",

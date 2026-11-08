@@ -18,6 +18,18 @@ Apply only the rules enabled by the selected level.
 
 Never fabricate personal experience, quotations, audience reactions, product performance, or a demonstration claimed to have occurred. A memorable sequence is not evidence that a product works.
 
+## Worked speaker notes · from a test result to a next step
+
+Brief from the [backup presentation case](cases.json): the tool restored a 10 GB test dataset in 4 minutes on the team's test machine. Production results are unknown. Explain what this means to the team responsible for recovery.
+
+| Beat | Authored speaker notes |
+| --- | --- |
+| Audience question | “How long would it take us to get our data back?” |
+| Test result | “On our test machine, the tool restored 10 GB in 4 minutes.” |
+| Payoff | “We still don't know our production recovery time. Let's time a restore with a workload that resembles production.” |
+
+The **payoff** answers what the audience can do with the evidence. The last line proposes another test. If you include a slide, label the measurement with the dataset and test conditions so that “4 minutes” cannot stand alone as a production promise.
+
 ## Levels
 
 `light` prioritizes the central benefit and sequence. `standard` also checks demonstration and payoff. `strict` accounts for every applicable step and claim limitation; it does not turn restrained evidence into sales certainty or require stage theatrics.

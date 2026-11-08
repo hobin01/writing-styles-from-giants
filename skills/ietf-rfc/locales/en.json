@@ -1,6 +1,6 @@
 {
   "method": "ietf-rfc",
-  "methodVersion": "0.1.0",
+  "methodVersion": "0.1.1",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],

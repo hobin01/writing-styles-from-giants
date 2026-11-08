@@ -18,6 +18,20 @@ Apply only the rules enabled by the selected level.
 
 For a requested introduction at `standard` or `strict`, apply `scq-opening`: establish the relevant situation, an evidenced complication if present, the reader's question, and a supported answer. Use a factual opening when no complication exists. Keep an opening-only edit within that scope; do not prepend this framing to every short answer. The public site calls its framework SCQ; the four-part SCQA wording is a project adaptation.
 
+## Worked recommendation · a governing answer and its support
+
+A **governing answer** is the decision or conclusion the supporting points jointly justify. In the [storage-choice case](cases.json), utilization is 92% and forecast to reach 98% next month. Expansion costs $800. Deleting data would remove required records.
+
+An authored recommendation:
+
+> Approve the $800 storage expansion.
+>
+> **Capacity is running short.** Storage is 92% full. It is forecast to reach 98% next month.
+>
+> **Deletion cannot solve the problem safely.** It would remove records we must keep.
+
+Test each supporting point by removing its heading. Can the reader recover the claim from the facts below it? “Storage statistics” names a topic; “Capacity is running short” explains why the numbers matter. The forecast remains a forecast even when the recommendation is firm.
+
 ## Levels
 
 `light` prioritizes the reader's question and grouped support. `standard` also checks evidence links, proportionate structure, and applicable opening framing. `strict` accounts for all eligible rules and unresolved support; it never promotes a tentative recommendation to certainty. An explicit opening structure or answer placement takes precedence over the optional framing.
@@ -29,3 +43,5 @@ Respect the user's selected method, level, output language, and scope. `off` ski
 English instructions do not require English output. Structural steps transfer to the requested output language; this is not a reviewed language-specific adaptation.
 
 Read [method.json](method.json) for rule IDs, exceptions, provenance, and exact level policies; [English rules](locales/en.json) for language wording. The [cases](cases.json) define review expectations, not measured model results. For automatic application, expose the method and level in a separate status or audit. When an audit is requested, also record version, language, exceptions, and unresolved checks; keep these outside the finished prose.
+
+For an actual comparison on a held-out request, see the [recorded writing trial](references/observed-trial.md).
