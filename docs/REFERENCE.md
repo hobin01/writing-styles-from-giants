@@ -124,7 +124,7 @@ GitHub Docs, [Writing mathematical expressions](https://docs.github.com/en/get-s
 
 ## Primary sources for the real-world examples
 
-Consulted on 2026-11-08 unless a later date is shown. These sources establish the facts of the writing tasks. The English and Korean questions share these sources. Their examples directories link to all six answers. For example, the Windows task uses the documented pinned-item exception and individual deletion control; the PostgreSQL task uses the index validity flag. Only links, facts and original descriptions are included; the sources retain their own terms.
+Consulted on 2026-11-08 unless a later date is shown. These sources establish the facts of the writing tasks. Each method’s six comparison pages use the same sources for the English and Korean questions. For example, the Windows task uses the documented pinned-item exception and individual deletion control; the PostgreSQL task uses the index validity flag. Only links, facts and original descriptions are included; the sources retain their own terms.
 
 | Method examples | Primary source |
 | --- | --- |
@@ -135,7 +135,7 @@ Consulted on 2026-11-08 unless a later date is shown. These sources establish th
 | [boring-professor](../skills/boring-professor/examples/README.md) | [Linux man-pages 6.19, unlink(2)](https://man7.org/linux/man-pages/man2/unlink.2.html) |
 | [diataxis](../skills/diataxis/examples/README.md) | [Kubernetes command reference, kubectl rollout status](https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/kubectl_rollout_status/) |
 | [eli5](../skills/eli5/examples/README.md) | [USGS Water Science School, Water Density](https://www.usgs.gov/water-science-school/science/water-density), “Ice is less dense than water” (accessed 2026-11-09). [NASA, Melting Ocean Ice Affects Sea Level – Unlike Ice Cubes in a Glass](https://sealevel.nasa.gov/news/261/melting-ocean-ice-affects-sea-level-unlike-ice-cubes-in-a-glass/), freshwater displacement (accessed 2026-11-09). The exercise uses rounded freshwater values. |
-| [federal-plain-language](../skills/federal-plain-language/examples/README.md) | [SSA, U.S. Citizen/Child — Replacement Social Security Card (October 2026)](https://www.ssa.gov/pubs/EN-05-10514.pdf) |
+| [federal-plain-language](../skills/federal-plain-language/examples/README.md) | [SSA, U.S. Citizen/Child — Replacement Social Security Card (October 2026)](https://www.ssa.gov/pubs/EN-05-10514.pdf) (checked 2026-11-09) |
 | [feynman-technique](../skills/feynman-technique/examples/README.md) | [IETF RFC 2308, Negative Caching of DNS Queries](https://www.rfc-editor.org/rfc/rfc2308.html#section-5) |
 | [google-design-doc](../skills/google-design-doc/examples/README.md) | [PostgreSQL 17 documentation, CREATE INDEX](https://www.postgresql.org/docs/17/sql-createindex.html#SQL-CREATEINDEX-CONCURRENTLY) · [PostgreSQL 17 system catalogs, pg_index](https://www.postgresql.org/docs/17/catalog-pg-index.html) |
 | [gtm-formal](../skills/gtm-formal/examples/README.md) | [Ongaro and Ousterhout, In Search of an Understandable Consensus Algorithm, §5.2](https://raft.github.io/raft.pdf) · [etcd v3.5 FAQ, fault tolerance](https://etcd.io/docs/v3.5/faq/#what-is-failure-tolerance) |
@@ -143,7 +143,7 @@ Consulted on 2026-11-08 unless a later date is shown. These sources establish th
 | [ietf-rfc](../skills/ietf-rfc/examples/README.md) | [IETF RFC 6585 §4, 429 Too Many Requests](https://www.rfc-editor.org/rfc/rfc6585.html#section-4) · [IETF RFC 9110 §10.2.3, Retry-After](https://www.rfc-editor.org/rfc/rfc9110.html#section-10.2.3) |
 | [imrad](../skills/imrad/examples/README.md) | [LIGO Scientific Collaboration and Virgo Collaboration, Observation of Gravitational Waves from a Binary Black Hole Merger (2016)](https://dcc.ligo.org/public/0122/P150914/014/LIGO-P150914_Detection_of_GW150914.pdf) |
 | [korean-plain-language](../skills/korean-plain-language/examples/README.md) | [서울특별시 내 손안에 서울, ‘월 5만원대’ 청년 맞춤형 기후동행카드 나온다 (2024-02-21)](https://mediahub.seoul.go.kr/archives/2010350) |
-| [microsoft-writing-style](../skills/microsoft-writing-style/examples/README.md) | [Microsoft Support, Using the clipboard](https://support.microsoft.com/en-us/windows/apps/using-the-clipboard) |
+| [microsoft-writing-style](../skills/microsoft-writing-style/examples/README.md) | [Microsoft Support, Using the clipboard](https://support.microsoft.com/en-us/windows/apps/using-the-clipboard) (checked 2026-11-09) |
 | [minto-pyramid](../skills/minto-pyramid/examples/README.md) | [FHWA, Leading Pedestrian Interval](https://highways.dot.gov/safety/proven-safety-countermeasures/leading-pedestrian-interval) · [FHWA, Safety Evaluation of Protected Left-Turn Phasing and Leading Pedestrian Intervals on Pedestrian Safety (2018), FHWA-HRT-18-044](https://www.fhwa.dot.gov/publications/research/safety/18044/18044.pdf) |
 | [new-harts-rules](../skills/new-harts-rules/examples/README.md) | [Office for National Statistics, Housing, England and Wales: Census 2021 (5 January 2023)](https://www.ons.gov.uk/peoplepopulationandcommunity/housing/bulletins/housingenglandandwales/census2021) |
 | [nist-technical-publication](../skills/nist-technical-publication/examples/README.md) | [Heavner et al., First Accuracy Evaluation of NIST-F2, Metrologia (2014)](https://www.nist.gov/publications/first-accuracy-evaluation-nist-f2) |

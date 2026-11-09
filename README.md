@@ -4,7 +4,9 @@
 
 When I ask an AI to “explain this simply,” it sometimes cuts the part I wanted to understand. Explaining a bicycle brake to a five-year-old is a different job from explaining its mechanism to an engineer. I made this project so I could choose **who the explanation is for and how it should work**. I wanted to put earlier writers’ methods to work on my own questions, which is where “standing on the shoulders of giants” comes in.
 
-Try the same question at `light`, `standard` and `strict`. [What happens when floating ice melts?](skills/eli5/examples/standard.md) leaves ELI5 to choose how to explain it. [Why can two DNS resolvers disagree?](skills/feynman-technique/examples/standard.md) lets Feynman uncover the step that makes the clocks matter. Browse all 22 methods in the [English examples](EXAMPLES.md) or the [한국어 예제](EXAMPLES.ko.md). GPT-6 Luna answered each language and level in its own session.
+What happens when floating ice melts? Read how GPT-6 Luna answers that question with and without ELI5. Or see how Feynman explains why two DNS resolvers disagree. [Floating ice](skills/eli5/examples/standard.md) · [DNS caching](skills/feynman-technique/examples/standard.md)
+
+Every example shows the question and both answers on one page. For each question, you can read GPT-6 Luna’s answer without the skill and its answers at `light`, `standard` and `strict`. The same no-skill answer appears on all three pages so you can use it as a reference. English and Korean answers each came from separate sessions in that language. [English examples](EXAMPLES.md) · [한국어 예제](EXAMPLES.ko.md)
 
 ## Try it in Codex
 

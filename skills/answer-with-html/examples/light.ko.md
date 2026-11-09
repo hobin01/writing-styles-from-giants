@@ -1,10 +1,14 @@
 # 화성의 통신 지연이 1분 늘면 지구는 얼마나 더 기다릴까?
 
-[English](light.md) · [standard](standard.ko.md) · [strict](strict.ko.md)
+[English](light.md) · **light** · [standard](standard.ko.md) · [strict](strict.ko.md)
 
-[질문과 출처](standard.ko.md#질문)
+### 질문
 
-### Light
+> 지구에서 퍼서비어런스 탐사차까지 신호가 가는 데는 편도로 약 3~22분이 걸린다. 다음은 가상의 교신 일정이다. 지구가 0분에 신호를 보내면 탐사차는 신호를 받은 뒤 답신을 준비하는 데 10분이 걸린다. 송신은 25분, 50분, 75분처럼 25분 간격으로만 시작할 수 있고, 준비가 정확히 그 시각에 끝나면 바로 송신할 수 있다. 돌아오는 신호도 가는 신호와 같은 시간이 걸린다. 편도 지연이 15분에서 16분으로 늘면 지구가 답신을 받는 시각이 왜 1분보다 더 늦어질까?
+
+**출처** · [NASA/JPL, Speaking Percy's Language: How to Talk so Perseverance Will Listen](https://science.nasa.gov/blog/speaking-percys-language-how-to-talk-so-perseverance-will-listen/)
+
+### 스킬 적용
 
 [HTML 파일 · 내려받아 브라우저에서 열기](light.ko.html)
 
@@ -82,3 +86,11 @@
 </body>
 </html>
 ````
+
+### 스킬 미적용
+
+> 편도 지연이 15분이면 탐사차는 15분에 신호를 받고, 10분 뒤인 25분에 답신을 보낼 수 있습니다. 지구에는 40분에 답신이 도착합니다.
+>
+> 지연이 16분이면 신호가 16분에 도착하고 준비는 26분에 끝납니다. 하지만 송신은 25분 간격으로만 시작할 수 있으므로, 다음 송신 시각인 50분까지 기다려야 합니다. 답신은 지구에 66분에 도착합니다.
+>
+> 편도 지연은 1분 늘었지만 송신 시작이 25분에서 50분으로 밀려, 답신 도착은 26분 늦어집니다.

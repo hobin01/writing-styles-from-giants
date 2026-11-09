@@ -1,15 +1,11 @@
-# microsoft-writing-style examples
+# Microsoft-inspired technology writing · 마이크로소프트식 사용 안내
 
-All three levels answer the same question. The standard page includes the question and sources. GPT-6 Luna generated each answer independently in its requested language.
+Help a product user complete a task with direct instructions and the labels they actually see. These examples use the English Windows labels in both languages.
 
-세 레벨 모두 같은 질문을 사용합니다. 질문과 출처는 standard 페이지에 있습니다. 한국어 답도 각 레벨에서 한국어로 직접 생성했습니다.
+사용자가 화면을 보며 작업을 마칠 수 있도록 행동과 실제 표시 이름을 정확히 씁니다. 두 언어의 예제 모두 영어 Windows 화면에 나온 이름을 사용합니다.
 
 | Level | English | 한국어 |
 | --- | --- | --- |
-| light | [English](light.md) | [한국어](light.ko.md) |
-| standard | [English](standard.md) | [한국어](standard.ko.md) |
-| strict | [English](strict.md) | [한국어](strict.ko.md) |
-
-Both examples use the labels from the English Windows interface. 한국어 예제에서도 영어 화면에 표시된 제어 이름을 그대로 사용했습니다.
-
-[Method instructions](../SKILL.md)
+| `light` | Clarify the next action, remove unnecessary wording and align product terms. [Example](light.md) | 다음 행동을 분명히 쓰고 군더더기를 덜어내며 제품 용어를 통일합니다. [예제](light.ko.md) |
+| `standard` | Also replace idioms and references that depend on cultural context. [Example](standard.md) | 특정 문화권에서만 통하는 관용구나 배경지식이 필요한 표현도 다듬습니다. [예제](standard.ko.md) |
+| `strict` | Check each step against the actual labels, prerequisites and effect of the action. [Example](strict.md) | 단계마다 화면의 이름, 선행 조건, 실제로 일어나는 변화가 정확한지 확인합니다. [예제](strict.ko.md) |

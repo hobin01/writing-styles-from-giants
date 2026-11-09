@@ -1,19 +1,11 @@
-# answer-with-html examples
+# Answer with HTML · HTML로 설명하기
 
-All three levels answer the same question. The standard page includes the question and sources. GPT-6 Luna generated each answer independently in its requested language.
+Build a self-contained HTML page that lets a reader change an input or select a case and see why the result changes.
 
-세 레벨 모두 같은 질문을 사용합니다. 질문과 출처는 standard 페이지에 있습니다. 한국어 답도 각 레벨에서 한국어로 직접 생성했습니다.
+독자가 값을 바꾸거나 사례를 선택하면 결과와 그 이유를 확인할 수 있는 독립된 HTML 페이지를 만듭니다.
 
 | Level | English | 한국어 |
 | --- | --- | --- |
-| light | [English](light.md) | [한국어](light.ko.md) |
-| standard | [English](standard.md) | [한국어](standard.ko.md) |
-| strict | [English](strict.md) | [한국어](strict.ko.md) |
-
-[Method instructions](../SKILL.md)
-
-On GitHub, download the linked HTML file and open it in a browser.
-
-GitHub에서는 HTML 파일을 내려받아 브라우저에서 열면 직접 조작할 수 있습니다.
-
-[Compound-interest demo](annual-growth.html)
+| `light` | Use the smallest useful interaction, with labeled controls and readable content when scripts are off. [Example](light.md) | 필요한 조작만 넣습니다. 조작 요소에 이름을 붙이고 스크립트가 꺼져도 설명을 읽을 수 있게 합니다. [예제](light.ko.md) |
+| `standard` | Also exercise the controls and check the displayed result when a browser is available. [Example](standard.md) | 브라우저를 쓸 수 있으면 직접 조작해 표시되는 결과를 확인합니다. [예제](standard.ko.md) |
+| `strict` | Check applicable boundaries, keyboard use and fallback content against the same underlying model. [Example](strict.md) | 경계값, 키보드 조작, 스크립트가 꺼진 화면을 점검하고 같은 원리에 따라 결과가 나오는지 확인합니다. [예제](strict.ko.md) |

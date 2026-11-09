@@ -1,6 +1,6 @@
 # Which documents can a family collect in 45 minutes?
 
-[한국어](standard.ko.md) · [light](light.md) · [strict](strict.md)
+[한국어](standard.ko.md) · [light](light.md) · **standard** · [strict](strict.md)
 
 ### Question
 
@@ -19,12 +19,18 @@
 >
 > The times add together. What can I get in time that covers both of us?
 
-**Sources** · [SSA, U.S. Citizen/Child — Replacement Social Security Card (October 2026)](https://www.ssa.gov/pubs/EN-05-10514.pdf)
+**Sources** · [SSA, U.S. Citizen/Child — Replacement Social Security Card (October 2026)](https://www.ssa.gov/pubs/EN-05-10514.pdf) · The child’s certified ID copy and the parent’s certified passport copy take 40 minutes in this exercise (15 + 25).
 
-### Standard
+### With the skill
 
 > For your child, an issuer-certified copy of the state non-driver ID takes 15 minutes. The birth certificate can establish age or citizenship, but it does not meet the leaflet’s identity requirement.
 >
 > For you, the issuer-certified passport copy takes 25 minutes. The notarized photocopy does not count, and the original driver’s license takes 35 minutes.
 >
 > Get the certified state ID copy and certified passport copy: 15 + 25 = 40 minutes. That covers both identity requirements within your 45 minutes.
+
+### Without the skill
+
+> You can collect the child’s issuer-certified non-driver ID (15 minutes) and your issuer-certified passport copy (25 minutes). Together, they take **40 minutes** and provide proof of identity for both of you.
+>
+> Your birth certificate establishes the child’s age or citizenship, but it does not replace the child’s identity proof. The notarized passport photocopy does not count.

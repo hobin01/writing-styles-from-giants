@@ -1,6 +1,6 @@
 # 화성 기후 궤도선의 항법 추정은 단위 착오로 어떻게 빗나갔을까요?
 
-[English](standard.md) · [light](light.ko.md) · [strict](strict.ko.md)
+[English](standard.md) · [light](light.ko.md) · **standard** · [strict](strict.ko.md)
 
 ### 질문
 
@@ -8,8 +8,14 @@
 
 **출처** · [Cornelius J. Dennehy / NASA, Best Practices for the Design, Development, and Operation of Robust and Reliable Space Vehicle Guidance, Navigation, and Control Systems (NASA/TP–20230005922, April 2023)](https://ntrs.nasa.gov/api/citations/20230005922/downloads/20230005922.pdf)
 
-### Standard
+### 스킬 적용
 
 > 1999년 화성 기후 궤도선은 궤도 추정 오차가 누적되면서 계획보다 약 170 km 낮게 화성에 접근했다. NASA는 탐사선이 대기 중에서 파괴됐는지, 태양 궤도로 빠져나갔는지 판별하지 못했다.
 >
 > SM_FORCES가 보낸 충격량의 단위는 파운드힘초였지만, 항법 팀은 이를 뉴턴초로 해석했다. 계산 예로 SM_FORCES가 2파운드힘초를 보냈다면, 환산값은 2파운드힘초 × 4.45뉴턴초/파운드힘초 = 약 8.9뉴턴초다. 항법 팀이 숫자 2를 뉴턴초로 읽으면 2뉴턴초로 해석한다. 숫자 2는 실제 비행 측정값이 아니다.
+
+### 스킬 미적용
+
+> 초안을 다음과 같이 고치면 정확합니다.
+>
+> > 단위 변환 오류와 궤도 추정 오차가 겹치면서 화성 기후 궤도선은 계획보다 약 170 km 낮은 고도로 화성에 접근했다. SM_FORCES가 추력기 충격량을 파운드힘초 단위로 보냈지만 항법 팀은 이를 뉴턴초로 해석했다. 예를 들어 SM_FORCES가 숫자 2를 보냈다고 가정하면, 이는 실제 비행 측정값이 아닌 계산 예로 약 8.9뉴턴초에 해당한다. 다만 탐사선이 대기 중에서 파괴됐는지, 화성의 중력을 벗어나 태양 궤도로 빠져나갔는지는 NASA가 확인하지 못했다.

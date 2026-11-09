@@ -1,15 +1,11 @@
-# asd-ste100 examples
+# ASD-STE100-inspired technical English · STE 기반 기술 영어
 
-All three levels answer the same question. The standard page includes the question and sources. GPT-6 Luna generated each answer independently in its requested language.
+Use consistent terms and explicit conditions in procedures and descriptions. Korean uses the transferable structural rules. Full ASD-STE100 compliance is unverified.
 
-세 레벨 모두 같은 질문을 사용합니다. 질문과 출처는 standard 페이지에 있습니다. 한국어 답도 각 레벨에서 한국어로 직접 생성했습니다.
+같은 부품에는 같은 이름을 쓰고, 절차와 설명에서 행동의 조건을 명확히 합니다. 한국어에는 구조에 관한 규칙을 적용합니다. 공식 ASD-STE100 준수 여부는 검증되지 않았습니다.
 
 | Level | English | 한국어 |
 | --- | --- | --- |
-| light | [English](light.md) | [한국어](light.ko.md) |
-| standard | [English](standard.md) | [한국어](standard.ko.md) |
-| strict | [English](strict.md) | [한국어](strict.ko.md) |
-
-The Korean answer applies the procedural structure. English dictionary and word-count checks apply only to English. 한국어 예제에는 절차와 조건을 다루는 규칙을 적용했습니다.
-
-[Method instructions](../SKILL.md)
+| `light` | Clarify terms and actions while preserving the existing voice. [Example](light.md) | 기존 어투를 유지하면서 용어를 통일하고 행동을 명확히 합니다. [예제](light.ko.md) |
+| `standard` | Apply the technical profile to the task. Keep prerequisites and warnings beside the action they govern. [Example](standard.md) | 절차·설명의 성격에 맞게 기술 규칙을 적용합니다. 선행 조건과 경고는 해당 행동 곁에 둡니다. [예제](standard.ko.md) |
+| `strict` | Also check applicable English vocabulary, syntax and sentence length, and identify any unverified checks. [Example](strict.md) | 영어 원문이면 어휘, 구문, 문장 길이까지 점검하고 확인할 수 없는 항목을 구분합니다. [예제](strict.ko.md) |

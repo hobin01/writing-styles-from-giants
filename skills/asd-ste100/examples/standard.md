@@ -1,6 +1,6 @@
 # When can each Raspberry Pi 4 recovery station be powered down?
 
-[한국어](standard.ko.md) · [light](light.md) · [strict](strict.md)
+[한국어](standard.ko.md) · [light](light.md) · **standard** · [strict](strict.md)
 
 ### Question
 
@@ -8,7 +8,7 @@
 
 **Sources** · [Raspberry Pi, Raspberry Pi computer hardware documentation](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#reflash-the-bootloader)
 
-### Standard
+### With the skill
 
 > Disconnect power only after both indications are present. Use the first check at or after the later indication.
 >
@@ -17,3 +17,9 @@
 > | North | 30 s | Remove after disconnecting power. |
 > | South | 45 s | Remove after disconnecting power. |
 > | East | No check time is safe | Keep the card in place. The screen is not green at 60 s, so both indications are not present. |
+
+### Without the skill
+
+> - **North:** Disconnect at the **30-second check**; both indications have appeared by then. After disconnecting power, remove the recovery microSD card.
+> - **South:** Disconnect at the **45-second check**; both indications have appeared by then. After disconnecting power, remove the recovery microSD card.
+> - **East:** **Do not disconnect at any listed check.** The screen is not green by 60 seconds, so keep the board powered and leave the recovery microSD card in place.

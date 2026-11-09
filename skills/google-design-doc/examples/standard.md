@@ -1,6 +1,6 @@
 # Should PostgreSQL add the orders index during this shift?
 
-[한국어](standard.ko.md) · [light](light.md) · [strict](strict.md)
+[한국어](standard.ko.md) · [light](light.md) · **standard** · [strict](strict.md)
 
 ### Question
 
@@ -8,7 +8,7 @@
 
 **Sources** · [PostgreSQL 17 documentation, CREATE INDEX](https://www.postgresql.org/docs/17/sql-createindex.html#SQL-CREATEINDEX-CONCURRENTLY) · [PostgreSQL 17 system catalogs, pg_index](https://www.postgresql.org/docs/17/catalog-pg-index.html)
 
-### Standard
+### With the skill
 
 > ## Proposal for this shift
 >
@@ -29,3 +29,9 @@
 > First, repeat the concurrent-build rehearsal in a representative test setting and measure p95 write latency. A result at or below 48 ms would pass the latency gate; a result above 48 ms would not. Also assess transaction waits and the expected impact of the two table scans. Production performance remains unknown until a rollout is approved and observed.
 >
 > If the representative rehearsal passes and the store can preserve insert availability, reviewers can consider authorizing a production attempt. Approval has not been given.
+
+### Without the skill
+
+> Do not start the production index build on this shift. A concurrent build keeps INSERTs available, but the rehearsal p95 was 51 ms—27.5% above the 40 ms baseline, exceeding the 20% limit of 48 ms. Production performance is also unknown, and the build can take time or leave an invalid index that still adds write overhead if it fails.
+>
+> A later production attempt is justified after a rehearsal meets the 48 ms p95 limit and the rollout plan accounts for the two scans, possible waits on transactions, and checking for and removing any invalid index left by a failed build. During the production attempt, monitor write latency and build progress, with a rollback plan if the latency limit is breached.

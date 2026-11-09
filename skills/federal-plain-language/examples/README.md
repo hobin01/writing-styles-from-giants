@@ -1,15 +1,11 @@
-# federal-plain-language examples
+# Federal Plain Language Guidelines · 미국 연방 평문 지침
 
-All three levels answer the same question. The standard page includes the question and sources. GPT-6 Luna generated each answer independently in its requested language.
+Organize public information so readers can find what to do, what they need and when an exception applies. The Korean example adapts this organization to Korean.
 
-세 레벨 모두 같은 질문을 사용합니다. 질문과 출처는 standard 페이지에 있습니다. 한국어 답도 각 레벨에서 한국어로 직접 생성했습니다.
+공공 안내문에서 독자가 해야 할 일과 필요한 서류, 자신에게 해당하는 예외를 쉽게 찾도록 씁니다. 한국어 예제에도 이 구성 방식을 적용합니다.
 
 | Level | English | 한국어 |
 | --- | --- | --- |
-| light | [English](light.md) | [한국어](light.ko.md) |
-| standard | [English](standard.md) | [한국어](standard.ko.md) |
-| strict | [English](strict.md) | [한국어](strict.ko.md) |
-
-The Korean example uses the reader-task and organization rules of the English guide. 한국어 예제는 미국 연방 지침에서 독자의 질문과 서류 조건을 정리하는 방식을 가져왔습니다.
-
-[Method instructions](../SKILL.md)
+| `light` | Identify the task the reader came to complete. [Example](light.md) | 독자가 이 안내를 읽고 무엇을 해야 하는지 밝힙니다. [예제](light.ko.md) |
+| `standard` | Place prerequisites before the action, keep exceptions beside their rules and choose familiar terms. [Example](standard.md) | 필요한 조건을 행동보다 먼저 쓰고, 예외는 해당 규칙 곁에 둡니다. 독자에게 익숙한 말을 고릅니다. [예제](standard.ko.md) |
+| `strict` | Check whether readers can find the action and explain its conditions. When readers are unavailable, review those steps at the desk. [Example](strict.md) | 독자가 할 일을 찾고 그 조건을 설명할 수 있는지 확인합니다. 독자와 함께 검토할 수 없으면 문서에서 직접 그 과정을 따라가 봅니다. [예제](strict.ko.md) |

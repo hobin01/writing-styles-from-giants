@@ -1,6 +1,6 @@
 # When do two Raft candidates need the same vote?
 
-[한국어](standard.ko.md) · [light](light.md) · [strict](strict.md)
+[한국어](standard.ko.md) · [light](light.md) · **standard** · [strict](strict.md)
 
 ### Question
 
@@ -8,7 +8,7 @@
 
 **Sources** · [Ongaro and Ousterhout, In Search of an Understandable Consensus Algorithm, §5.2](https://raft.github.io/raft.pdf) · [etcd v3.5 FAQ, fault tolerance](https://etcd.io/docs/v3.5/faq/#what-is-failure-tolerance)
 
-### Standard
+### With the skill
 
 > Let $N$ be the number of servers, and let $T$ be the minimum votes required for a candidate to win. Each server can vote for at most one candidate during the term. Thus, for any two distinct candidates with vote counts $v_1$ and $v_2$,
 > $$
@@ -23,3 +23,12 @@
 > - With $N=8$, $2T=8\not>8$, so **four votes is not safe**: four servers can vote for each candidate, producing two winners.
 >
 > A safe threshold does not guarantee a winner. For example, with seven servers and threshold four, if votes split $3$–$3$ and one server abstains, neither candidate reaches four. Thus a threshold can prevent multiple winners while still allowing no winner.
+
+### Without the skill
+
+> To prevent two candidates from winning the same term, the minimum vote threshold must be **more than half the servers**. If two candidates each reached that threshold, their vote sets would overlap, which is impossible when each server votes for at most one candidate.
+>
+> - **Seven servers:** Four votes is safe. Two sets of four would require eight votes, but only seven servers can vote.
+> - **Eight servers:** Four votes is not safe. The votes could split four to each candidate, giving both a win. The threshold must be at least five.
+>
+> A safe threshold does not guarantee a winner. Votes might split among candidates so that none reaches the minimum—for example, in a seven-server cluster with a four-vote threshold, a 3–2–2 split leaves no winner.

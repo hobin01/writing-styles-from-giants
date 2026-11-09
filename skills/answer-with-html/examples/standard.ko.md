@@ -1,6 +1,6 @@
 # 화성의 통신 지연이 1분 늘면 지구는 얼마나 더 기다릴까?
 
-[English](standard.md) · [light](light.ko.md) · [strict](strict.ko.md)
+[English](standard.md) · [light](light.ko.md) · **standard** · [strict](strict.ko.md)
 
 ### 질문
 
@@ -8,7 +8,7 @@
 
 **출처** · [NASA/JPL, Speaking Percy's Language: How to Talk so Perseverance Will Listen](https://science.nasa.gov/blog/speaking-percys-language-how-to-talk-so-perseverance-will-listen/)
 
-### Standard
+### 스킬 적용
 
 [HTML 파일 · 내려받아 브라우저에서 열기](standard.ko.html)
 
@@ -103,3 +103,11 @@
 </body>
 </html>
 ````
+
+### 스킬 미적용
+
+> 편도 지연이 15분이면 탐사차는 15분에 신호를 받고, 10분 뒤인 25분에 답신을 보낼 수 있습니다. 지구에는 40분에 답신이 도착합니다.
+>
+> 지연이 16분이면 신호가 16분에 도착하고 준비는 26분에 끝납니다. 하지만 송신은 25분 간격으로만 시작할 수 있으므로, 다음 송신 시각인 50분까지 기다려야 합니다. 답신은 지구에 66분에 도착합니다.
+>
+> 편도 지연은 1분 늘었지만 송신 시작이 25분에서 50분으로 밀려, 답신 도착은 26분 늦어집니다.

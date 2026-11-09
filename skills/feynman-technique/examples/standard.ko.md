@@ -1,6 +1,6 @@
 # DNS 응답이 리졸버마다 달라지는 이유
 
-[English](standard.md) · [light](light.ko.md) · [strict](strict.ko.md)
+[English](standard.md) · [light](light.ko.md) · **standard** · [strict](strict.ko.md)
 
 ### 질문
 
@@ -8,10 +8,18 @@
 
 **출처** · [IETF RFC 2308, Negative Caching of DNS Queries](https://www.rfc-editor.org/rfc/rfc2308.html#section-5)
 
-### Standard
+### 스킬 적용
 
 > NXDOMAIN은 **`photos.example.org`라는 이름 자체가 존재하지 않는다**는 응답이다. 두 리졸버는 각자 받은 부정 응답을 독립적으로 캐시에 보관하므로, 만료 시각도 다르다. 보관 시간은 SOA TTL 240초와 SOA MINIMUM 600초 중 작은 값인 240초다.
 >
 > Bay는 09:10에 응답을 받아 09:14에 캐시가 만료된다. Ridge는 09:12에 받아 09:16에 만료된다. 운영자가 09:13에 A 레코드를 추가해 권한 서버가 갱신됐더라도, 이미 받은 응답의 캐시 시간은 바뀌지 않는다. 따라서 09:15 요청에서 Bay는 만료된 캐시를 버리고 권한 서버를 조회해 새 레코드를 받을 수 있지만, Ridge는 아직 유효한 NXDOMAIN 캐시를 사용해 이름이 없다고 답할 수 있다.
 >
 > Ridge의 기존 NXDOMAIN 캐시는 09:16에 만료된다. 그 시각 이후 새 조회가 권한 서버에 도달하면 A 레코드를 받아올 수 있다. 09:16보다 앞선 요청은 여전히 캐시된 NXDOMAIN을 받을 수 있고, 정확히 09:16에는 캐시가 만료된 상태다.
+
+### 스킬 미적용
+
+> NXDOMAIN도 부정 응답으로 캐시됩니다. 두 리졸버는 SOA TTL(240초)과 SOA MINIMUM(600초) 중 작은 값인 **240초** 동안 각자의 NXDOMAIN 응답을 보관합니다.
+>
+> Bay의 캐시는 09:10부터 유효하므로 09:14에 만료됐습니다. 따라서 09:15 조회 때 권한 서버를 다시 확인해 새 A 레코드를 받을 수 있습니다. Ridge의 캐시는 09:12부터 09:16까지 유효하므로, 09:15에는 아직 캐시된 NXDOMAIN을 반환할 수 있습니다. 두 리졸버의 응답이 다른 이유는 부정 캐시가 각 리졸버에서 독립적으로 시작돼 만료 시각도 다르기 때문입니다.
+>
+> Ridge는 **09:16부터** 캐시를 갱신하며 새 레코드를 받아올 수 있습니다.

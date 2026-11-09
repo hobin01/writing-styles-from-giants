@@ -1,6 +1,6 @@
 # 초록색 CI 결과는 어떤 Kubernetes 배포를 확인했을까?
 
-[English](standard.md) · [light](light.ko.md) · [strict](strict.ko.md)
+[English](standard.md) · [light](light.ko.md) · **standard** · [strict](strict.ko.md)
 
 ### 질문
 
@@ -8,6 +8,13 @@
 
 **출처** · [Kubernetes command reference, kubectl rollout status](https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/kubectl_rollout_status/)
 
-### Standard
+### 스킬 적용
 
 > CI는 최신 롤아웃을 따라가므로 리비전 8의 성공을 확인했습니다. 리비전 7만 감시하려면 `kubectl rollout status deployment/checkout-api --revision=7`을 쓰고, 현재 상태만 한 번 확인하려면 `kubectl rollout status deployment/checkout-api --watch=false`를 쓰면 됩니다.
+
+### 스킬 미적용
+
+> CI는 기본 동작에 따라 최신 롤아웃인 **리비전 8**의 완료를 확인했습니다.
+>
+> - 리비전 7만 감시: `kubectl rollout status deployment/checkout-api --revision=7`
+> - 기다리지 않고 현재 상태 확인: `kubectl rollout status deployment/checkout-api --watch=false`
