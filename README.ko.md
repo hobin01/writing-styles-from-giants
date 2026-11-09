@@ -4,9 +4,7 @@
 
 AI한테 “쉽게 설명해 줘”라고 하면, 제가 궁금했던 부분까지 빼고 짧게 끝낼 때가 있어요. 다섯 살 아이에게 자전거 브레이크를 설명하는 것과, 엔지니어에게 브레이크의 작동 원리를 설명하는 건 꽤 다른 일이잖아요. 그래서 **누구에게, 어떤 방식으로 설명할지** 직접 고를 수 있게 만들었습니다. 앞선 사람들의 글쓰기 방식을 제 질문에 빌려 쓴다는 뜻에서 이름도 ‘거인의 어깨 위에 선다’는 말에서 따왔어요.
 
-어떤 차이가 나는지 궁금하다면 [한국어 예제](EXAMPLES.ko.md)나 [영어 예제](EXAMPLES.md)를 열어 보세요. 22개 스킬 모두 GPT-6 Luna에 한국어로 직접 묻고, 영어는 별도 세션에서 다시 물었습니다. [서로 다른 시각에 조회한 두 DNS 서버](skills/feynman-technique/examples/standard.ko.md)는 왜 다른 답을 줄까요? [LIGO의 오경보율](skills/imrad/examples/standard.ko.md)로 관측 한 건이 잡음일 확률을 알 수 있을까요? [서울 지하철 노선도에서 길을 찾는 시간이 줄면](skills/hunminjeongeum/examples/standard.ko.md) 전체 여정에서는 얼마나 절약될까요? 고등학생 이상의 추론을 목표로 만든 각 문제에서 스킬 없이 쓴 답과 `standard` 답을 나란히 볼 수 있습니다.
-
-어떤 스킬을 왜 고쳤는지 보려면 [11월 9일 실행 기록](evals/runs/2026-11-09-standard/README.md)을 열어 보세요. 같은 질문으로 다시 받은 답과 중간에 실패한 답도 모두 남겼습니다.
+[물에 뜬 얼음이 녹으면 수위가 달라질까요?](skills/eli5/examples/standard.ko.md) 이 질문만 주고 ELI5를 골랐습니다. [두 DNS 리졸버가 왜 다른 답을 줄까요?](skills/feynman-technique/examples/standard.ko.md) 이번에는 파인만 스킬을 골랐습니다. [한국어 예제](EXAMPLES.ko.md)와 [영어 예제](EXAMPLES.md)에서 22개 스킬의 `light`, `standard`, `strict` 답을 읽을 수 있습니다. 레벨마다 GPT-6 Luna에 새로 물었고, 한국어 답도 한국어로 직접 받았습니다.
 
 ## Codex에서 써 보기
 

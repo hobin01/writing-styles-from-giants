@@ -79,5 +79,23 @@
     "expectations": [
       "Show that true is valid and bare pending is not; double-quoting pending changes the input."
     ]
+  },
+  {
+    "id": "different-conditions",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "standard",
+    "source": "Every calibrated device has an asset number. One box has an asset number. Can we conclude that it is a calibrated device? Could a box without an asset number be a calibrated device?",
+    "ruleIds": [
+      "premises-and-terms",
+      "quantifier-scope"
+    ],
+    "sourceIds": [
+      "prior-analytics-i"
+    ],
+    "expectations": [
+      "The numbered box might or might not be a calibrated device. Under the given premise, a box without an asset number cannot be a calibrated device."
+    ],
+    "method": "aristotle-syllogism"
   }
 ]

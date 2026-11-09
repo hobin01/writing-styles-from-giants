@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "new-harts-rules",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "status": "experimental",
   "title": "New Hart’s Rules source-assisted editing",
   "kind": "process",
@@ -107,7 +107,7 @@
     },
     {
       "id": "bounded-attribution",
-      "intent": "Separate verified source-based changes, user house-style choices, and unresolved questions in an optional audit.",
+      "intent": "Reserve method, version and editorial audit for an explicit audit request or a separate automatic-selection status. For a normal edit, explain only decisions the user asked about. Attribute a book-specific choice to a verified passage; if the user requires a book ruling that cannot be verified, say so.",
       "classification": "guideline",
       "provenance": "project-original",
       "rationale": "Original project provenance reporting for source-limited editorial work.",

@@ -1,6 +1,6 @@
 {
   "method": "federal-plain-language",
-  "methodVersion": "0.1.22",
+  "methodVersion": "0.1.34",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -10,11 +10,11 @@
       "adaptation": false
     },
     "reader-task": {
-      "instruction": "Identify what the intended reader needs to find, understand, and do; organize around that task. For an explicitly requested edit or answer, return the reader-facing text. A method label belongs in a separately requested audit or automatic-selection status.",
+      "instruction": "When two independent purchases share one limit, write an entry for each need listing every eligible item/form and cost, then identify the cheapest eligible one there. Add those two verified minima and compare the sum with the original limit before recommending. For dependent choices, first check compatibility.",
       "adaptation": false
     },
     "usable-organization": {
-      "instruction": "Lead with the reader’s answer or action and keep conditions beside their step. For a shared budget, keep each option under its own need. For each eligible first option subtract its cost from the limit and look for a compatible second option within the remainder. Recalculate the selected total against the original limit before recommending. Keep any later slack distinct from the original budget.",
+      "instruction": "Make each need and its eligible alternatives identifiable separately; place an item’s qualifying form and cost together. For an additive decision, follow these entries with one supported recommendation and total.",
       "adaptation": false
     },
     "clear-expression": {

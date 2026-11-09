@@ -80,5 +80,23 @@
       "Respect the supplied 85-word maximum including headings while preserving the measured change and its uncertainty."
     ],
     "note": "The 85-word budget and counting of headings come from this exercise; the scientific source supplies the orbital-period measurement."
+  },
+  {
+    "id": "upper-bound",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "standard",
+    "source": "A study reports an upper bound of 0.02 false alerts per device-hour. What does this establish for 10 device-hours at the same rate and for one particular alert?",
+    "ruleIds": [
+      "preserve-meaning",
+      "findings-vs-interpretation"
+    ],
+    "sourceIds": [
+      "icmje-manuscript"
+    ],
+    "expectations": [
+      "Expected false alerts are at most 0.2. The upper bound does not establish a positive lower bound, exact probability of any alert, or posterior probability for a particular alert."
+    ],
+    "method": "imrad"
   }
 ]

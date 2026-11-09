@@ -1,6 +1,6 @@
 {
   "method": "steve-jobs-presentation",
-  "methodVersion": "0.1.8",
+  "methodVersion": "0.1.12",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -18,7 +18,7 @@
       "adaptation": true
     },
     "honest-demonstration": {
-      "instruction": "Use a concrete demonstration or comparison supported by evidence. Distinguish observed from proposed. For questions about timing, name the measured share, numerical remainder and its stages; for a round trip, describe both directions and omit unsupported quotients.",
+      "instruction": "Use an observed demonstration or label it as proposed. For a timed part and a total, put two numerical comparisons in the delivered beat: “part of total, about this fraction or percentage” and “total minus part is shared by these remaining stages.” Their separate durations cannot be inferred.",
       "adaptation": true
     },
     "supported-payoff": {

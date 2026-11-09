@@ -67,7 +67,7 @@
     },
     {
       "id": "justify-steps",
-      "intent": "Separate definitions, claims, proofs, and examples; justify nontrivial steps and name unproved assumptions. Put the proof and its requested conclusions within the given length; keep working notes outside the mathematical text.",
+      "intent": "Prove each nontrivial direction under the stated assumptions. For an existence or failure example, give one simple admissible witness. Check it has exactly the allowed actors, uses the allowed domain and conserves any stated total.",
       "classification": "guideline",
       "provenance": "project-original",
       "rationale": "Original proof/exposition discipline, not an attributed Springer mandate.",
@@ -101,7 +101,7 @@
     }
   ],
   "schemaVersion": 1,
-  "version": "0.1.2",
+  "version": "0.1.7",
   "status": "experimental",
   "applicability": {
     "genres": [

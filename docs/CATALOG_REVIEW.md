@@ -1,13 +1,12 @@
 # Initial catalog review
 
-Historical review dated 2026-11-07, before [catalog consolidation](CATALOG_CONSOLIDATION.md). At that point all 25 skills were experimental at method content version `0.1.0`: 24 retained requested methods plus one Korean linguistic companion. John von Neumann was withdrawn; no replacement persona is implemented. The current catalog has 22 skills; the counts and executions below describe the original snapshot. No installer or runtime router was introduced.
+Historical review dated 2026-11-07, before [catalog consolidation](CATALOG_CONSOLIDATION.md). At that point all 25 skills were experimental at method content version `0.1.0`: 24 retained requested methods plus one Korean linguistic companion. John von Neumann was withdrawn; no replacement persona is implemented. The current catalog has 22 skills; the counts below describe the original snapshot. No installer or runtime router was introduced.
 
 ## Evidence and limits
 
 - Each portable directory includes instructions, source-to-rule records, per-level policies, applicable language wording, and synthetic cases. There are 131 rules and 77 cases across that original catalog.
 - Authoring agents applied the installed Ponytail and Ponytail Review instructions after each skill, checking the entrypoint against metadata, exceptions, and cases. The table records concrete retained boundaries or reductions; this is agent review, not approval by the attributed authors or institutions.
 - Repository checks validate public paths, local links, JSON integrity, catalog identities/evidence references, invariant/level constraints, locale coverage, and case categories. The skill-creator validator checks portable entrypoint naming/frontmatter. Neither proves writing quality or verifies source claims.
-- Independent manual-loading model exercises are recorded separately below. A skill file being present or a model loading it manually does not establish host discovery, installation, compatibility, or measured improvement.
 - Independent native-language review, intended-reader studies, complete source-book coverage, and full ASD dictionary/standard conformity remain unverified. No method is marked `reviewed`.
 
 ## Per-skill Ponytail review
@@ -43,13 +42,3 @@ The version-pinned metadata below carries exact source versions, actual passages
 | [steve-jobs-presentation](https://github.com/hobin01/writing-styles-from-giants/blob/6faa154a480854ae9c5c87604fe2b5730c133389/skills/steve-jobs-presentation/method.json) | Audience benefit and supported demonstrations; no invented stories or benchmark claims. |
 
 No upstream implementation, copied checklist, standard dictionary, framework, generated runtime, or host-specific metadata is bundled. Required meaning-preservation and evidence records remain inside each standalone skill directory; their repetition across independently distributable directories is intentional.
-
-## Model exercises
-
-[Exact prompts, outputs, checks, limitations, and root judgments](../evals/runs/2026-11-07-initial-catalog.json) record 28 main-agent exercises across the 24 methods, plus one separate Korean-companion exercise. ASD includes normal, strict, light, off, and Korean structural adaptation. The executing agent did not read cases or expected answers; root judged the outputs against the supplied facts. Outputs shared one execution context, not independent samples. The exact runtime model ID was not exposed and is recorded as unknown; no reproducibility beyond this manual-loading exercise is claimed.
-
-The [HTML exercise](../evals/runs/initial-html-explanation.html) is a synthetic generated output, not a required skill template. Browser checks exercised formula/value/graph updates, literal annotation safety, numeric boundaries, invalid-input hiding, and recovery. Testing found a CSS hidden-state defect in the generated artifact; the executing agent fixed it and retested it. This supports retaining actual render/exercise checks in the skill; it is not evidence that generated HTML is always correct.
-
-The Korean sample preserved conditional permission, scope, approximate quantity, uncertainty, citation, and requested register. This was an agent language check, not native-human review. Source-limited CTE references, unrendered six-page pagination, unknown measurement bases, and unavailable Hart passages remained unresolved in their outputs. No source-limited check was treated as official compliance or a successful full-book edit.
-
-Independent review also found that the initial frontmatter regex admitted malformed/non-string YAML descriptions. The checker now requires a JSON-quoted string subset and tests malformed, boolean, null, and list values. A Korean case was corrected to keep its register request outside source data. All 10 unit tests, repository checks, whitespace checks, and all 25 skill-creator format validations passed after these corrections.

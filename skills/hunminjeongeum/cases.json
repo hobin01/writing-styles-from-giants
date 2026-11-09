@@ -63,5 +63,25 @@
     ],
     "knownBadRewrite": "The guide eliminates setup errors on every model.",
     "method": "hunminjeongeum"
+  },
+  {
+    "id": "partial-duration",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "strict",
+    "source": "Readers confused two buttons. The replacement buttons use distinct shapes. In a trial, identifying the button took up to 25% less time. For illustration, selection used to take 80 seconds and the unchanged operation takes 60 seconds. What changes at that maximum reduction?",
+    "ruleIds": [
+      "purpose-opening",
+      "connected-development",
+      "bounded-conclusion"
+    ],
+    "sourceIds": [
+      "nomination",
+      "annals-1446"
+    ],
+    "expectations": [
+      "Use the confusion and the distinct shapes to explain why the buttons changed. With that reduction, the search falls to 60 seconds; the unchanged operation brings the new total to 120 seconds, or 20 seconds saved. Treat this as an illustration of the maximum reduction."
+    ],
+    "method": "hunminjeongeum"
   }
 ]

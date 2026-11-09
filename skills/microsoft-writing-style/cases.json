@@ -94,7 +94,8 @@
     "expectations": [
       "Pause the report before Cancel waiting; leave the paused plan alone.",
       "Use Cancel job for the paused poster and Cancel waiting for the waiting proof. Verify that exactly the plan and report remain.",
-      "Do not pause a job already paused, pause a job to be removed, or invent an unlisted control. Apply single-job commands to one named job at a time."
+      "Do not pause a job already paused, pause a job to be removed, or invent an unlisted control. Apply single-job commands to one named job at a time.",
+      "If a control is given without a menu path, do not invent the menu it belongs to."
     ]
   },
   {

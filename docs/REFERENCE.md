@@ -34,7 +34,7 @@ The collaborator-only PR restriction, closed new-skill intake, bucket taxonomy, 
 
 ## Anthropic Skill Creator
 
-Anthropic's [Skill Creator](https://github.com/anthropics/skills/blob/2c5958ecac7cee2b583967a2c4981d0f4a75c579/skills/skill-creator/SKILL.md) informed the [paired trials](../evals/runs/2026-11-08-worked-examples.md). We read its guidance on examples, matched tasks, separate agent contexts and revising after failures on 2026-11-08. We wrote our own prompts, grading criteria and examples. The upstream skill has its own [Apache-2.0 license](https://github.com/anthropics/skills/blob/2c5958ecac7cee2b583967a2c4981d0f4a75c579/skills/skill-creator/LICENSE.txt).
+Anthropic's [Skill Creator](https://github.com/anthropics/skills/blob/2c5958ecac7cee2b583967a2c4981d0f4a75c579/skills/skill-creator/SKILL.md) informed the [example authoring procedure](METHOD_AUTHORING.md). We read its guidance on examples, matched tasks, separate agent contexts and revising after failures on 2026-11-08. We wrote our own prompts, grading criteria and examples. The upstream skill has its own [Apache-2.0 license](https://github.com/anthropics/skills/blob/2c5958ecac7cee2b583967a2c4981d0f4a75c579/skills/skill-creator/LICENSE.txt).
 
 ## vercel-labs/skills
 
@@ -118,11 +118,15 @@ Each project is recorded once below. All were accessed 2026-11-07; [comparison n
 
 National Institute of Korean Language. [쉬운 공문서 쓰기 길잡이](https://korean.go.kr/front/etcData/etcDataView.do?etc_seq=700&mn_id=208&pageIndex=1), 2022, official attachment last revised 2023-07-17; accessed 2026-11-07. Read item description and rights notice, foreword/contents, PDF/printed pp.8,12,15,21–23 visually, and extracted text pp.28–32. Other image-only pages were not reviewed. Informs the independently worded terminology, sentence agreement, and register adaptations in [korean-plain-language/method.json](../skills/korean-plain-language/method.json). Synthetic examples are original; no guide text, transformed examples, or page images are distributed. Its KOGL Type3 attribution/no-derivatives notice is recorded in [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md); independent native-language review is pending.
 
+## Publishing example formulas
+
+GitHub Docs, [Writing mathematical expressions](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions). The inline and block sections (accessed 2026-11-09) inform the [gallery formatting](METHOD_AUTHORING.md#publish-a-gallery-example).
+
 ## Primary sources for the real-world examples
 
-Consulted on 2026-11-08. These sources establish the facts of the writing tasks. Each comparison states what was consulted and which inputs are illustrative. The independently generated English and Korean examples use these same primary sources and identify hypothetical inputs. Each method link below opens its two comparisons. For example, the Windows task uses the documented pinned-item exception and individual deletion control; the PostgreSQL task uses the index validity flag. Only links, facts and original descriptions are included; the sources retain their own terms.
+Consulted on 2026-11-08 unless a later date is shown. These sources establish the facts of the writing tasks. The English and Korean questions share these sources. Their examples directories link to all six answers. For example, the Windows task uses the documented pinned-item exception and individual deletion control; the PostgreSQL task uses the index validity flag. Only links, facts and original descriptions are included; the sources retain their own terms.
 
-| Comparison | Primary source |
+| Method examples | Primary source |
 | --- | --- |
 | [amazon-six-page-narrative](../skills/amazon-six-page-narrative/examples/README.md) | [NTSB, investigation HWY07MH024, Collapse of I-35W Highway Bridge, Minneapolis, Minnesota](https://www.ntsb.gov/investigations/Pages/HWY07MH024.aspx) |
 | [answer-with-html](../skills/answer-with-html/examples/README.md) | [NASA/JPL, Speaking Percy's Language: How to Talk so Perseverance Will Listen](https://science.nasa.gov/blog/speaking-percys-language-how-to-talk-so-perseverance-will-listen/) |
@@ -130,12 +134,12 @@ Consulted on 2026-11-08. These sources establish the facts of the writing tasks.
 | [asd-ste100](../skills/asd-ste100/examples/README.md) | [Raspberry Pi, Raspberry Pi computer hardware documentation](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#reflash-the-bootloader) |
 | [boring-professor](../skills/boring-professor/examples/README.md) | [Linux man-pages 6.19, unlink(2)](https://man7.org/linux/man-pages/man2/unlink.2.html) |
 | [diataxis](../skills/diataxis/examples/README.md) | [Kubernetes command reference, kubectl rollout status](https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/kubectl_rollout_status/) |
-| [eli5](../skills/eli5/examples/README.md) | [Monterey Bay Aquarium, Life of a rescued sea otter](https://www.montereybayaquarium.org/about-us/stories/life-of-a-rescued-sea-otter) · [Monterey Bay Aquarium, Sea otter](https://www.montereybayaquarium.org/animals-the-ocean/animals-a-to-z/sea-otter) |
+| [eli5](../skills/eli5/examples/README.md) | [USGS Water Science School, Water Density](https://www.usgs.gov/water-science-school/science/water-density), “Ice is less dense than water” (accessed 2026-11-09). [NASA, Melting Ocean Ice Affects Sea Level – Unlike Ice Cubes in a Glass](https://sealevel.nasa.gov/news/261/melting-ocean-ice-affects-sea-level-unlike-ice-cubes-in-a-glass/), freshwater displacement (accessed 2026-11-09). The exercise uses rounded freshwater values. |
 | [federal-plain-language](../skills/federal-plain-language/examples/README.md) | [SSA, U.S. Citizen/Child — Replacement Social Security Card (October 2026)](https://www.ssa.gov/pubs/EN-05-10514.pdf) |
 | [feynman-technique](../skills/feynman-technique/examples/README.md) | [IETF RFC 2308, Negative Caching of DNS Queries](https://www.rfc-editor.org/rfc/rfc2308.html#section-5) |
 | [google-design-doc](../skills/google-design-doc/examples/README.md) | [PostgreSQL 17 documentation, CREATE INDEX](https://www.postgresql.org/docs/17/sql-createindex.html#SQL-CREATEINDEX-CONCURRENTLY) · [PostgreSQL 17 system catalogs, pg_index](https://www.postgresql.org/docs/17/catalog-pg-index.html) |
 | [gtm-formal](../skills/gtm-formal/examples/README.md) | [Ongaro and Ousterhout, In Search of an Understandable Consensus Algorithm, §5.2](https://raft.github.io/raft.pdf) · [etcd v3.5 FAQ, fault tolerance](https://etcd.io/docs/v3.5/faq/#what-is-failure-tolerance) |
-| [hunminjeongeum](../skills/hunminjeongeum/examples/README.md) | [서울특별시, 시민의 발, 디자인을 입다…서울시, 지하철 노선도 40년 만에 변경 (2023-09-13)](https://news.seoul.go.kr/culture/archives/520933) |
+| [hunminjeongeum](../skills/hunminjeongeum/examples/README.md) | [서울특별시, 지하철 노선도 개선과 아이트래킹 실험](https://mediahub.seoul.go.kr/archives/2009054), transfer symbols, participants and maximum time reduction (accessed 2026-11-09). |
 | [ietf-rfc](../skills/ietf-rfc/examples/README.md) | [IETF RFC 6585 §4, 429 Too Many Requests](https://www.rfc-editor.org/rfc/rfc6585.html#section-4) · [IETF RFC 9110 §10.2.3, Retry-After](https://www.rfc-editor.org/rfc/rfc9110.html#section-10.2.3) |
 | [imrad](../skills/imrad/examples/README.md) | [LIGO Scientific Collaboration and Virgo Collaboration, Observation of Gravitational Waves from a Binary Black Hole Merger (2016)](https://dcc.ligo.org/public/0122/P150914/014/LIGO-P150914_Detection_of_GW150914.pdf) |
 | [korean-plain-language](../skills/korean-plain-language/examples/README.md) | [서울특별시 내 손안에 서울, ‘월 5만원대’ 청년 맞춤형 기후동행카드 나온다 (2024-02-21)](https://mediahub.seoul.go.kr/archives/2010350) |

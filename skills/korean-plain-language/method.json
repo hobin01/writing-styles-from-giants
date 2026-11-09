@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "korean-plain-language",
-  "version": "0.1.9",
+  "version": "0.1.15",
   "status": "experimental",
   "title": "Korean plain-language companion",
   "kind": "sentence",

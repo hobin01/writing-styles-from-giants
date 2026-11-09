@@ -20,27 +20,14 @@ Apply only the rules enabled by the selected level.
 
 ## Write a safe bulk-removal procedure
 
-Start with how to open the tool. Give the reader a short setup table **before** the bulk command: `Item | Current state | What to do now`. Use the source’s item names, grouping only items with the same state and goal. Copy the stated starting state; do not infer it from the desire to keep or delete something. Fill one row per item or group in source order.
+Open the tool by its supplied shortcut or path. For a batch change, make a short setup table: **source item | current state | keep or remove | action to take now**. Copy the first two columns from the inventory; copy the goal from the user's request. Use these four cases to fill the final column:
 
-- Wanted, already exempt from deletion: leave it as it is.
-- Wanted, subject to deletion: name the action that protects it now.
-- Unwanted, exempt from deletion: give the individual removal command now.
-- Unwanted, subject to deletion: leave it for the bulk command.
+- Keep a protected item: leave it alone.
+- Keep an exposed item: use the supplied protection control on it.
+- Remove a protected item: use the supplied individual removal control on it.
+- Remove an exposed item: leave it for the bulk command.
 
-The table is the setup procedure, so give the actual control and target in each row. **Only after the table**, instruct the reader to run the bulk command. To name what remains, start with the state **after** the table: cross out individually removed entries, remove the entries still eligible for the batch, and read back the surviving names. Do not repeat the setup as a second set of steps. If the user requests a different format, preserve the sequence in that format.
-
-## Match the screen
-
-When a user defines several UI controls in prose, open the help text with a short **Control | What it does** key. Split each source sentence at its finite verb. The grammatical subject is the label; the complete verb phrase is the effect. Use the shortest subject that fits the grammar, including all words in a genuine multiword name. Copy only the left column into reader steps.
-
-From “Dismiss hides the banner. Save as template adds a preset,” the key is:
-
-| Control | What it does |
-| --- | --- |
-| Dismiss | Hides the banner. |
-| Save as template | Adds a preset. |
-
-Before saying “select,” read the proposed label back against the source: **Dismiss hides** would leave “the banner” without a verb. The entire sentence leaves no effect at all. Both are invalid button names. If labels are already quoted or styled, preserve that explicit boundary instead.
+Only after those actions give the bulk command. Check the actual survivors against the wanted set. Example: a saved layout is exempt, a new layout is exposed and both are wanted. Leave the saved layout alone and save the new one before clearing temporary layouts. An unwanted saved layout needs individual removal. Use the actual controls provided: if **Save** is given on its own, copy **Save**. If **Options > Remove** is given as a path, copy that full path only for removal.
 
 ## Levels and completion
 

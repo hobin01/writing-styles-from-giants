@@ -1,41 +1,49 @@
-"""Rebuild the English and Korean galleries from their portable comparisons."""
+"""Collect the portable examples into the English and Korean galleries."""
 
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-MARKER = "<!-- Standard examples below are generated. -->"
-GALLERIES = {
-    "en": ("EXAMPLES.md", "standard.md", "portable example"),
-    "ko": ("EXAMPLES.ko.md", "standard.ko.md", "스킬별 예제"),
-}
+MARKER = "<!-- Generated from the portable examples. -->"
+LEVELS = ("light", "standard", "strict")
+GALLERIES = {"en": "EXAMPLES.md", "ko": "EXAMPLES.ko.md"}
+
+
+def example_name(level, language):
+    return f"{level}.ko.md" if language == "ko" else f"{level}.md"
 
 
 def render(root, language="en"):
-    filename, example_name, link_label = GALLERIES[language]
-    other_language, other_label = ("ko", "한국어") if language == "en" else ("en", "English")
-    other_page, other_example, _ = GALLERIES[other_language]
-    page = (root / filename).read_text()
-    intro, marker, _ = page.partition(MARKER)
+    page = root / GALLERIES[language]
+    intro, marker, _ = page.read_text().partition(MARKER)
     if not marker:
-        raise ValueError(f"{filename} is missing the gallery marker.")
-    methods = sorted((root / "skills").glob("*/method.json"))
-    links = []
-    sections = []
-    for method in methods:
-        example = method.parent / "examples" / example_name
-        title, body = example.read_text().strip().split("\n", 1)
+        raise ValueError(f"{page.name} is missing the gallery marker.")
+    question = "### 질문" if language == "ko" else "### Question"
+    other_lang, other_label = ("en", "English") if language == "ko" else ("ko", "한국어")
+    links, sections = [], []
+    for method in sorted((root / "skills").glob("*/method.json")):
         name = method.parent.name
-        # The portable page links to its sibling; the gallery links to the same method's section.
-        body = body.removeprefix(f"\n[{other_label}]({other_example})\n")
-        switch = f"[{other_label}]({other_page}#{name})"
-        links.append(f"- [{name}](#{name}) · [{link_label}]({example.relative_to(root).as_posix()})"
-                     f" · {switch}")
-        sections.append(f"## {name}\n\n**{title.removeprefix('# ')}**\n\n{switch}\n" + body)
+        directory = method.parent / "examples"
+        canonical = (directory / example_name("standard", language)).read_text()
+        title = canonical.splitlines()[0].removeprefix("# ")
+        context = canonical.split(question + "\n", 1)[1].split("\n### Standard\n", 1)[0].strip()
+        other = f"[{other_label}]({GALLERIES[other_lang]}#{name})"
+        portable = "스킬별 예제" if language == "ko" else "skill examples"
+        index = (directory / "README.md").relative_to(root).as_posix()
+        links.append(f"- [{name}](#{name}) · {title} · [{portable}]({index})")
+        sections.append(f"## {name}\n\n**{title}** · {other}\n\n{question}\n\n{context}")
+        for level in LEVELS:
+            path = directory / example_name(level, language)
+            heading = f"### {level.title()}"
+            answer = path.read_text().split(f"\n{heading}\n", 1)[1].strip()
+            if name == "answer-with-html":
+                # The downloadable page sits next to its portable Markdown example.
+                artifact = path.with_suffix(".html")
+                answer = answer.replace(f"]({artifact.name})", f"]({artifact.relative_to(root).as_posix()})", 1)
+            sections.append(f"{heading}\n\n{answer}")
     return intro + MARKER + "\n\n" + "\n".join(links) + "\n\n" + "\n\n".join(sections) + "\n"
 
 
 if __name__ == "__main__":
-    pages = {ROOT / entry[0]: render(ROOT, lang) for lang, entry in GALLERIES.items()}
-    for path, content in pages.items():
-        path.write_text(content)
+    for language, filename in GALLERIES.items():
+        (ROOT / filename).write_text(render(ROOT, language))

@@ -52,5 +52,21 @@
     "locale": "en",
     "knownBadRewrite": "There exists an integer m larger than every positive integer n.",
     "method": "gtm-formal"
+  },
+  {
+    "id": "integer-bound",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "standard",
+    "source": "A package weighs an integer number of grams from 1 to 9. A sample must weigh more than half of 9 grams. Which weights qualify?",
+    "ruleIds": [
+      "logical-scope",
+      "test-boundaries"
+    ],
+    "sourceIds": [],
+    "expectations": [
+      "Give the whole set of eligible integer weights, 5 through 9. Identify 5 as the minimum."
+    ],
+    "method": "gtm-formal"
   }
 ]

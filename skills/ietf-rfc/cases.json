@@ -136,5 +136,23 @@
       "Keep the conditional SHOULD NOT and its exception; retain the permission to preserve zeroes. Do not strengthen the recommendation to MUST NOT, drop the negation or change the formatter into another actor.",
       "Respect the requested prose format."
     ]
+  },
+  {
+    "id": "elapsed-vs-deadline",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "standard",
+    "source": "An internal notice gives one expiry as eight minutes after receipt and another as an absolute clock reading of 10:15. Both arrive at 10:05. When does each expire?",
+    "ruleIds": [
+      "preserve-meaning",
+      "scope-and-terms"
+    ],
+    "sourceIds": [
+      "rfc7322"
+    ],
+    "expectations": [
+      "The first expires at 10:13, the second at 10:15. The prose agrees with those times. The worked example does not create an implementation requirement."
+    ],
+    "method": "ietf-rfc"
   }
 ]

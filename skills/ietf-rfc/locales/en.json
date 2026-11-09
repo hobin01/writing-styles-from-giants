@@ -1,6 +1,6 @@
 {
   "method": "ietf-rfc",
-  "methodVersion": "0.1.10",
+  "methodVersion": "0.1.26",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -14,7 +14,7 @@
       "adaptation": false
     },
     "requirement-strength": {
-      "instruction": "Include one normative clause per explicit source rule and none for ordinary facts, allowed representations or worked events. Preserve every governed actor, action, condition, literal keyword (including negative, qualified or alternative forms) and source strength. After declaring BCP 14, keep the English keyword next to its clause even in translation. Distinguish a prohibition from physical inability. Rules taken from a referenced standard still bind their original actors. In a translation, pair the source keyword with wording that expresses its force; preserve prohibitions as prohibitions even when no new requirement is being created.",
+      "instruction": "Keep one clause per source rule, with its actor, condition, action and strength. Explain existing behavior in ordinary language when the supplied material does not use uppercase BCP 14 keywords and none are requested. When BCP 14 is used, declare the convention before the clauses, preserve the literal English keyword including qualified and negative forms in translation, and distinguish prohibition from technical inability. Facts, representations and calculations stay outside requirement clauses.",
       "adaptation": false
     },
     "specification-structure": {

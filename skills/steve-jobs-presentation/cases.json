@@ -74,7 +74,8 @@
     ],
     "expectations": [
       "Give exactly two speakable beats without a preface or production notes.",
-      "Name 90 seconds and both open exits as conditions of the auditorium trial; propose a timed gym drill instead of transferring the measured time to the gym."
+      "Name 90 seconds and both open exits as conditions of the auditorium trial; propose a timed gym drill instead of transferring the measured time to the gym.",
+      "Make the sequence speakable without assigning a measured exit time to either individual door."
     ],
     "level": "standard",
     "method": "steve-jobs-presentation"

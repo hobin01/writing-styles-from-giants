@@ -1,104 +1,77 @@
-# Writing skills in English: 22 independent comparisons
+# Writing examples
 
 [한국어 예제](EXAMPLES.ko.md)
 
-Start with a question about [independent DNS caches](#feynman-technique), [a Mars rover that misses a contact slot](#answer-with-html), or [Seoul’s redesigned subway map](#hunminjeongeum). For every method, compare the baseline and standard answers to the same English request and see the three checks.
+Pick a question below to see how the same skill answers at `light`, `standard` and `strict`. The question supplies the facts. The selected skill supplies the writing method. GPT-6 Luna answered each language and level separately.
 
-## How to read the evidence
+<!-- Generated from the portable examples. -->
 
-Each method has one English request and three checks. The Korean gallery uses its own request and answers for the same case. For the November 9 repairs, we kept the November 8 baseline answers, questions and rubric wording. We revised the 13 methods that missed a standard check in either language, testing both languages again after each revision.
-
-All 66 English standard checks are met on the displayed answers. Compared with the controls, **11** English standard answers meet more checks and **11** tie. Nine unchanged profiles keep their November 8 runs. Each revised method also has a different transfer problem. The record contains every accepted attempt, including earlier failures and cases where direct inspection overruled a masked grade. These development results describe the published questions. [Run details and raw records](evals/runs/2026-11-09-standard/README.md) · [November 8 English gallery](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/EXAMPLES.md).
-
-Both conditions used GPT-6 Luna at low reasoning effort in independent read-only sessions. The writer saw only its own language’s request and, for standard, the selected method. Some answers visibly identify their method. English and Korean were generated separately, including mixed-language editing tasks.
-
-Edit `skills/<id>/examples/standard.md` (English) or `standard.ko.md` (Korean) and run `python3 scripts/build_example_gallery.py` to rebuild both galleries.
-
-<!-- Standard examples below are generated. -->
-
-- [amazon-six-page-narrative](#amazon-six-page-narrative) · [portable example](skills/amazon-six-page-narrative/examples/standard.md) · [한국어](EXAMPLES.ko.md#amazon-six-page-narrative)
-- [answer-with-html](#answer-with-html) · [portable example](skills/answer-with-html/examples/standard.md) · [한국어](EXAMPLES.ko.md#answer-with-html)
-- [aristotle-syllogism](#aristotle-syllogism) · [portable example](skills/aristotle-syllogism/examples/standard.md) · [한국어](EXAMPLES.ko.md#aristotle-syllogism)
-- [asd-ste100](#asd-ste100) · [portable example](skills/asd-ste100/examples/standard.md) · [한국어](EXAMPLES.ko.md#asd-ste100)
-- [boring-professor](#boring-professor) · [portable example](skills/boring-professor/examples/standard.md) · [한국어](EXAMPLES.ko.md#boring-professor)
-- [diataxis](#diataxis) · [portable example](skills/diataxis/examples/standard.md) · [한국어](EXAMPLES.ko.md#diataxis)
-- [eli5](#eli5) · [portable example](skills/eli5/examples/standard.md) · [한국어](EXAMPLES.ko.md#eli5)
-- [federal-plain-language](#federal-plain-language) · [portable example](skills/federal-plain-language/examples/standard.md) · [한국어](EXAMPLES.ko.md#federal-plain-language)
-- [feynman-technique](#feynman-technique) · [portable example](skills/feynman-technique/examples/standard.md) · [한국어](EXAMPLES.ko.md#feynman-technique)
-- [google-design-doc](#google-design-doc) · [portable example](skills/google-design-doc/examples/standard.md) · [한국어](EXAMPLES.ko.md#google-design-doc)
-- [gtm-formal](#gtm-formal) · [portable example](skills/gtm-formal/examples/standard.md) · [한국어](EXAMPLES.ko.md#gtm-formal)
-- [hunminjeongeum](#hunminjeongeum) · [portable example](skills/hunminjeongeum/examples/standard.md) · [한국어](EXAMPLES.ko.md#hunminjeongeum)
-- [ietf-rfc](#ietf-rfc) · [portable example](skills/ietf-rfc/examples/standard.md) · [한국어](EXAMPLES.ko.md#ietf-rfc)
-- [imrad](#imrad) · [portable example](skills/imrad/examples/standard.md) · [한국어](EXAMPLES.ko.md#imrad)
-- [korean-plain-language](#korean-plain-language) · [portable example](skills/korean-plain-language/examples/standard.md) · [한국어](EXAMPLES.ko.md#korean-plain-language)
-- [microsoft-writing-style](#microsoft-writing-style) · [portable example](skills/microsoft-writing-style/examples/standard.md) · [한국어](EXAMPLES.ko.md#microsoft-writing-style)
-- [minto-pyramid](#minto-pyramid) · [portable example](skills/minto-pyramid/examples/standard.md) · [한국어](EXAMPLES.ko.md#minto-pyramid)
-- [new-harts-rules](#new-harts-rules) · [portable example](skills/new-harts-rules/examples/standard.md) · [한국어](EXAMPLES.ko.md#new-harts-rules)
-- [nist-technical-publication](#nist-technical-publication) · [portable example](skills/nist-technical-publication/examples/standard.md) · [한국어](EXAMPLES.ko.md#nist-technical-publication)
-- [orwell-six-rules](#orwell-six-rules) · [portable example](skills/orwell-six-rules/examples/standard.md) · [한국어](EXAMPLES.ko.md#orwell-six-rules)
-- [socratic-self-questioning](#socratic-self-questioning) · [portable example](skills/socratic-self-questioning/examples/standard.md) · [한국어](EXAMPLES.ko.md#socratic-self-questioning)
-- [steve-jobs-presentation](#steve-jobs-presentation) · [portable example](skills/steve-jobs-presentation/examples/standard.md) · [한국어](EXAMPLES.ko.md#steve-jobs-presentation)
+- [amazon-six-page-narrative](#amazon-six-page-narrative) · Which bridge review should happen before proposed stockpiling? · [skill examples](skills/amazon-six-page-narrative/examples/README.md)
+- [answer-with-html](#answer-with-html) · When one more minute of Mars delay costs a whole contact window · [skill examples](skills/answer-with-html/examples/README.md)
+- [aristotle-syllogism](#aristotle-syllogism) · Can new moon and central alignment alone establish a total solar eclipse? · [skill examples](skills/aristotle-syllogism/examples/README.md)
+- [asd-ste100](#asd-ste100) · When can each Raspberry Pi 4 recovery station be powered down? · [skill examples](skills/asd-ste100/examples/README.md)
+- [boring-professor](#boring-professor) · Tracking two Linux log files behind the same pathname · [skill examples](skills/boring-professor/examples/README.md)
+- [diataxis](#diataxis) · Which Kubernetes rollout did the green CI job actually observe? · [skill examples](skills/diataxis/examples/README.md)
+- [eli5](#eli5) · What happens when floating ice melts? · [skill examples](skills/eli5/examples/README.md)
+- [federal-plain-language](#federal-plain-language) · Which documents can a family collect in 45 minutes? · [skill examples](skills/federal-plain-language/examples/README.md)
+- [feynman-technique](#feynman-technique) · Why two DNS resolvers disagree after a record is created · [skill examples](skills/feynman-technique/examples/README.md)
+- [google-design-doc](#google-design-doc) · Should PostgreSQL add the orders index during this shift? · [skill examples](skills/google-design-doc/examples/README.md)
+- [gtm-formal](#gtm-formal) · When do two Raft candidates need the same vote? · [skill examples](skills/gtm-formal/examples/README.md)
+- [hunminjeongeum](#hunminjeongeum) · How much of a Seoul journey can a better map shorten? · [skill examples](skills/hunminjeongeum/examples/README.md)
+- [ietf-rfc](#ietf-rfc) · Interpreting two different HTTP 429 retry clocks · [skill examples](skills/ietf-rfc/examples/README.md)
+- [imrad](#imrad) · What ten years of LIGO background would imply for GW150914 · [skill examples](skills/imrad/examples/README.md)
+- [korean-plain-language](#korean-plain-language) · Which passes qualified for Seoul’s 2024 refund? · [skill examples](skills/korean-plain-language/examples/README.md)
+- [microsoft-writing-style](#microsoft-writing-style) · Clearing a Windows clipboard without losing two keepers · [skill examples](skills/microsoft-writing-style/examples/README.md)
+- [minto-pyramid](#minto-pyramid) · Which crossings should receive the pilot first? · [skill examples](skills/minto-pyramid/examples/README.md)
+- [new-harts-rules](#new-harts-rules) · What does the census say about households without a car? · [skill examples](skills/new-harts-rules/examples/README.md)
+- [nist-technical-publication](#nist-technical-publication) · Which improvement would reduce the uncertainty of NIST-F2 more? · [skill examples](skills/nist-technical-publication/examples/README.md)
+- [orwell-six-rules](#orwell-six-rules) · What a unit mix-up did to the Mars Climate Orbiter estimate · [skill examples](skills/orwell-six-rules/examples/README.md)
+- [socratic-self-questioning](#socratic-self-questioning) · Can Finland’s basic-income study predict 2,400 extra employment days? · [skill examples](skills/socratic-self-questioning/examples/README.md)
+- [steve-jobs-presentation](#steve-jobs-presentation) · What can Ingenuity’s flight times tell us? · [skill examples](skills/steve-jobs-presentation/examples/README.md)
 
 ## amazon-six-page-narrative
 
-**Which bridge review should happen before proposed stockpiling?**
+**Which bridge review should happen before proposed stockpiling?** · [한국어](EXAMPLES.ko.md#amazon-six-page-narrative)
 
-[한국어](EXAMPLES.ko.md#amazon-six-page-narrative)
+### Question
 
-2026-11-08 · `amazon-six-page-narrative` 0.1.2 · English · `gpt-6-luna`
+> Investigators found that the I-35W bridge in Minneapolis had undersized U10 gusset plates that earlier load ratings had omitted. Modifications, traffic and construction loads acted together when the bridge collapsed. In a separate, hypothetical screening, River Street's plate has an estimated capacity of 100 units. Its existing load, deck modification and proposed stockpile would impose 68, 18 and 24 units simultaneously. Canal Street's corresponding loads are 66, 14 and 15 units; its plate capacity is unknown. Neither inspection found new visible damage. Neither bridge has a final engineering assessment, and funding covers only one immediate load-rating review. The owner’s priority is the clearest evidence that planned loading could exceed capacity. Which bridge should get the review? Can either stockpile go ahead now?
 
-### Case and sources
+**Sources** · [NTSB, investigation HWY07MH024, Collapse of I-35W Highway Bridge, Minneapolis, Minnesota](https://www.ntsb.gov/investigations/Pages/HWY07MH024.aspx)
 
-- [NTSB, investigation HWY07MH024, Collapse of I-35W Highway Bridge, Minneapolis, Minnesota](https://www.ntsb.gov/investigations/Pages/HWY07MH024.aspx). What Happened and What We Found: 1 August 2007 collapse, inadequate U10 gusset plate capacity, combined loads, and omission of gusset plates from load-rating analyses. The proposed review by another owner is an exercise.
+### Light
 
-### Prompt
+> Prioritize the **River Street bridge** for the immediate load-rating review. Its estimated plate capacity is 100 units, while its existing load, deck modification, and proposed stockpile would impose a combined 110 units at the same time. That estimate indicates planned loading could exceed capacity by 10 units.
+>
+> Neither stockpile should go ahead now. River Street’s estimated combined load exceeds its estimated capacity. Canal Street’s plate capacity is unknown, so there is no evidence that its combined 95-unit load would stay within capacity. The absence of newly visible damage does not resolve either uncertainty, and neither bridge has a final engineering assessment.
 
-> Write one concise opening paragraph of a decision memo in English for a hypothetical owner considering material stockpiles on two truss bridges. At Minneapolis's I-35W bridge, NTSB found that undersized U10 gusset plates failed under combined loads from modifications, traffic and concentrated construction loads; load ratings had omitted the plates. This is a separate classroom screen, not actual ratings. For River Street, estimated plate capacity is 100 screening units and simultaneous loads are 68 existing + 18 deck modifications + 24 proposed construction. At Canal Street the corresponding loads are 66 + 14 + 15 and plate capacity is unknown. Visual inspections found no new visible damage. There is funding for one immediate load-rating review and neither site has a final engineering assessment. Choose the review priority, identify what to do about planned stockpiles at each site, and give leadership the reason.
+### Standard
 
-### Without the skill
+> River Street should receive the immediate load-rating review. The screening estimate gives its plate a capacity of 100 units, while its existing load, deck modification, and proposed stockpile would impose 68 + 18 + 24 = 110 units simultaneously—10 units above the estimate. That is the clearest evidence that planned loading could exceed capacity, matching the owner’s stated priority.
+>
+> Canal Street’s corresponding loads total 95 units, but its plate capacity is unknown. That missing capacity estimate prevents a comparison with the screening objective; it is not evidence that Canal Street is safe. The I-35W investigation also shows why omitted plate capacity and combined loads matter: investigators found undersized U10 gusset plates omitted from earlier load ratings, and modifications, traffic, and construction loads acted together at collapse.
+>
+> Neither stockpile should proceed now. River Street’s proposed loading exceeds its estimated capacity, and Canal Street has no known capacity for comparison. Neither bridge has a final engineering assessment, and the absence of new visible damage does not resolve that uncertainty. Proceed only after an engineering assessment supports the planned simultaneous loads.
 
-> Prioritize an immediate load-rating review of River Street: its estimated 100-unit plate capacity is exceeded by the simultaneous screening loads of 110 units, while Canal Street’s plate capacity is unknown despite a lower estimated combined load of 95 units. Defer River Street’s planned stockpiles until engineering review; at Canal Street, do not treat the lower screening total or clean visual inspection as proof of capacity—defer stockpiling pending an assessment or verified rating. This conservative approach reflects the I-35W finding that omitted gusset plates can govern under combined modification, traffic, and concentrated construction loads; neither site has a final engineering assessment.
+### Strict
 
-### With the skill at standard
-
-> Prioritize the immediate load-rating review for River Street: its estimated simultaneous load is 110 screening units (68 existing + 18 from deck modifications + 24 proposed construction) against an estimated plate capacity of 100. Until a final engineering assessment, defer the planned stockpile there; at Canal Street, where the corresponding load is 95 units but plate capacity is unknown, do not place the planned stockpile until a load rating establishes capacity. The I-35W investigation shows why gusset plates and combined, concentrated loads matter: ratings had omitted undersized plates that failed under combined loads. That case informs this separate classroom screen but does not establish either bridge’s actual capacity; no new visible damage does not resolve the uncertainty.
-
-### What changed
-
-| Check fixed before generation | Without | Standard |
-| --- | --- | --- |
-| Uses the River Street figures to show combined demand 110 against estimated capacity 100 and gives it priority for the immediate review (or explicitly justifies a different priority while addressing that exceedance). | Met | Met |
-| Uses Canal Street's 95-unit demand and missing capacity to leave its safety unresolved; does not clear either stockpile solely from a visual inspection. | Met | Met |
-| The memo makes a concrete stockpiling decision for both sites and connects it to NTSB's plate/combined-load finding without declaring either real bridge unsafe. | Met | Met |
-
-**Masked review** (X = baseline; Y = standard). Both defer both stockpiles and direct the immediate review to River Street: combined demand is 110 against an estimated 100, while Canal Street's demand is 95 and its capacity is unknown. Both connect the decision to the omitted gusset plates. X states the combined totals compactly; Y exposes River Street's three addends and explicitly labels the exercise.
-
-<details>
-<summary>Run record</summary>
-
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `e75c268d420b` / `b036584868d4` / `19a6ebb19adb`.
-
-</details>
+> Review River Street first. Its estimated capacity is 100 units, while its existing load, deck modification, and proposed stockpile would impose 68 + 18 + 24 = 110 units simultaneously—10 units above the estimate. That is the clearest evidence that planned loading could exceed capacity, matching the owner’s stated priority. The estimate is not a final engineering assessment, so the review should confirm the capacity and combined loading before any decision to proceed.
+>
+> Do not allow either stockpile to go ahead now. River Street’s proposed combined load exceeds its estimated capacity. Canal Street’s combined load would be 95 units, but its plate capacity is unknown, so there is not enough evidence to establish that the stockpile is within capacity. Neither inspection found new visible damage, but that does not resolve the capacity questions.
 
 ## answer-with-html
 
-**When one more minute of Mars delay costs a whole contact window**
+**When one more minute of Mars delay costs a whole contact window** · [한국어](EXAMPLES.ko.md#answer-with-html)
 
-[한국어](EXAMPLES.ko.md#answer-with-html)
+### Question
 
-2026-11-09 · `answer-with-html` 0.1.8 · English · `gpt-6-luna`
+> A signal from Earth to the Perseverance rover takes about 3 to 22 minutes one way. In this hypothetical schedule Earth sends at minute 0. The rover takes 10 minutes after receiving the signal to prepare its reply. It can start sending only at minute 25, 50, 75 and so on. If it is ready exactly on a slot, it can use that slot. The return trip takes as long as the outward trip. Why would increasing the one-way delay from 15 to 16 minutes change the time Earth receives the reply by more than a minute?
 
-### Case and sources
+**Sources** · [NASA/JPL, Speaking Percy's Language: How to Talk so Perseverance Will Listen](https://science.nasa.gov/blog/speaking-percys-language-how-to-talk-so-perseverance-will-listen/)
 
-- [NASA/JPL, Speaking Percy's Language: How to Talk so Perseverance Will Listen](https://science.nasa.gov/blog/speaking-percys-language-how-to-talk-so-perseverance-will-listen/). JPL vehicle systems engineer Pegah Pashai explains why the one-way command delay varies from about 3 to 22 minutes with orbital position. The ten-minute preparation time and 25-minute contact slots are classroom assumptions.
+### Light
 
-### Prompt
-
-> Build a self-contained HTML exhibit about communicating with Perseverance. NASA reports a one-way signal delay of about 3 to 22 minutes. Use this clearly hypothetical contact schedule: Earth transmits at minute 0, the rover needs 10 minutes after receipt to prepare a reply, and it may start transmitting only at minutes 25, 50, 75, and so on. If ready exactly on a slot, it can use that slot. Both signal legs have the same delay. Let visitors change one-way delay in whole minutes from 3 to 22 with one keyboard-operable labeled slider, initially 15. Show when the rover is ready, when it can transmit and when Earth receives the reply. Explain why increasing the delay from 15 to 16 produces a jump. The initial answer must be readable without scripts. Use responsive HTML, set the document language to en and write all visible copy in English. Return only the HTML with no external resources.
-
-### Without the skill
+[HTML file · download and open in a browser](skills/answer-with-html/examples/light.html)
 
 ````html
 <!doctype html>
@@ -106,1550 +79,1198 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `e75c268d420b
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Waiting for Perseverance</title>
+  <title>Why one extra minute can delay the reply by 26 minutes</title>
   <style>
-    :root {
-      color-scheme: dark;
-      --space: #101923;
-      --panel: #192735;
-      --line: #34495a;
-      --text: #f1f5f7;
-      --muted: #b7c4cc;
-      --accent: #f5bd67;
-      --earth: #78c4ed;
-      --rover: #f5bd67;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--space);
-      color: var(--text);
-      font: 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
-    }
-    main {
-      width: min(900px, 100%);
-      margin: 0 auto;
-      padding: clamp(1.25rem, 5vw, 3.5rem) 1.25rem;
-    }
-    .eyebrow {
-      margin: 0 0 .5rem;
-      color: var(--accent);
-      font-size: .8rem;
-      font-weight: 750;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-    h1 {
-      max-width: 17ch;
-      margin: 0;
-      font-size: clamp(2rem, 7vw, 4rem);
-      line-height: 1.05;
-      letter-spacing: -.04em;
-    }
-    .intro {
-      max-width: 65ch;
-      margin: 1rem 0 2rem;
-      color: var(--muted);
-      font-size: 1.08rem;
-    }
-    .panel {
-      padding: clamp(1rem, 4vw, 2rem);
-      border: 1px solid var(--line);
-      border-radius: 1.25rem;
-      background: var(--panel);
-    }
-    .control {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: end;
-      gap: .5rem 1rem;
-      margin-bottom: 1.5rem;
-    }
-    label { font-weight: 700; }
-    output {
-      color: var(--accent);
-      font-size: 1.2rem;
-      font-weight: 800;
-      font-variant-numeric: tabular-nums;
-    }
-    input[type="range"] {
-      grid-column: 1 / -1;
-      width: 100%;
-      margin: .5rem 0 0;
-      accent-color: var(--accent);
-      cursor: pointer;
-    }
-    .range-labels {
-      grid-column: 1 / -1;
-      display: flex;
-      justify-content: space-between;
-      color: var(--muted);
-      font-size: .85rem;
-    }
-    .timeline {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: .75rem;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    .event {
-      min-width: 0;
-      padding: 1rem;
-      border: 1px solid var(--line);
-      border-radius: .9rem;
-    }
-    .event dt {
-      margin-bottom: .45rem;
-      color: var(--muted);
-      font-size: .9rem;
-    }
-    .event dd {
-      margin: 0;
-      font-size: clamp(1.25rem, 4vw, 1.8rem);
-      font-weight: 800;
-      font-variant-numeric: tabular-nums;
-    }
-    .event .unit {
-      color: var(--muted);
-      font-size: .9rem;
-      font-weight: 500;
-    }
-    .event.earth dd { color: var(--earth); }
-    .event.rover dd { color: var(--rover); }
-    .explanation {
-      margin: 1.5rem 0 0;
-      color: var(--muted);
-    }
-    .explanation strong { color: var(--text); }
-    .method {
-      margin-top: 1.5rem;
-      padding-top: 1.25rem;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: .92rem;
-    }
-    .method p { margin: .5rem 0; }
-    @media (max-width: 600px) {
-      .timeline { grid-template-columns: 1fr; }
-      .event { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
-      .event dt { margin: 0; }
-      .event dd { white-space: nowrap; }
-    }
+    body { margin: 0; padding: 1.5rem; color: #172033; background: #f5f7fb; font: 1rem/1.55 system-ui, sans-serif; }
+    main { max-width: 52rem; margin: auto; padding: 1.5rem; background: white; border-radius: 1rem; box-shadow: 0 4px 24px #17203314; }
+    h1 { line-height: 1.2; }
+    .table-wrap { max-width: 100%; overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: .65rem; border-bottom: 1px solid #dbe1ea; text-align: left; vertical-align: top; }
+    th { background: #eef3fa; }
+    button { margin: .4rem .4rem .4rem 0; padding: .55rem .8rem; border: 1px solid #52647e; border-radius: .4rem; background: #fff; color: inherit; font: inherit; cursor: pointer; }
+    button[aria-pressed="true"] { background: #173b66; color: white; }
+    #explanation { min-height: 3.2em; padding: .8rem; background: #f1f6fc; border-left: 4px solid #2874b8; }
+    .math { font-variant-numeric: tabular-nums; }
   </style>
 </head>
 <body>
-  <main>
-    <p class="eyebrow">A hypothetical communication schedule</p>
-    <h1>Waiting for Perseverance</h1>
-    <p class="intro">
-      A message cannot become a conversation instantly. NASA reports that a one-way
-      signal between Earth and Mars takes about 3 to 22 minutes. Explore how signal
-      delay and a scheduled transmission window shape this imagined exchange.
-    </p>
+<main>
+  <h1>Why one extra minute can delay the reply by 26 minutes</h1>
+  <p>Earth sends at minute 0. The rover needs 10 minutes to prepare, can begin its reply at minutes 25, 50, 75, …, and the return trip takes the same time as the outward trip. Slot equality is allowed.</p>
 
-    <section class="panel" aria-labelledby="schedule-title">
-      <h2 id="schedule-title" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">Signal delay and reply schedule</h2>
+  <div class="table-wrap">
+    <table>
+      <caption>Two hypothetical one-way delays</caption>
+      <thead>
+        <tr>
+          <th scope="col">One-way delay</th>
+          <th scope="col">Signal reaches rover</th>
+          <th scope="col">Reply ready</th>
+          <th scope="col">Next allowed send slot</th>
+          <th scope="col">Reply reaches Earth</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">15 min</th>
+          <td>0 + 15 = 15 min</td>
+          <td>15 + 10 = 25 min</td>
+          <td>25 min (ready exactly at slot)</td>
+          <td>25 + 15 = 40 min</td>
+        </tr>
+        <tr>
+          <th scope="row">16 min</th>
+          <td>0 + 16 = 16 min</td>
+          <td>16 + 10 = 26 min</td>
+          <td>50 min (the 25-min slot has passed)</td>
+          <td>50 + 16 = 66 min</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-      <div class="control">
-        <label for="delay">One-way signal delay</label>
-        <output id="delay-value" for="delay">15 minutes</output>
-        <input id="delay" type="range" min="3" max="22" step="1" value="15"
-               aria-label="One-way signal delay in whole minutes">
-        <div class="range-labels" aria-hidden="true"><span>3 minutes</span><span>22 minutes</span></div>
-      </div>
+  <p class="math">Difference in Earth’s receipt times: 66 min − 40 min = 26 min.</p>
 
-      <dl class="timeline" aria-live="polite" aria-atomic="true">
-        <div class="event earth">
-          <dt>Earth transmits</dt>
-          <dd>Minute 0</dd>
-        </div>
-        <div class="event rover">
-          <dt>Rover ready</dt>
-          <dd><span id="ready-time">Minute 25</span></dd>
-        </div>
-        <div class="event earth">
-          <dt>Earth receives reply</dt>
-          <dd><span id="receive-time">Minute 55</span></dd>
-        </div>
-      </dl>
+  <section aria-labelledby="cases-heading">
+    <h2 id="cases-heading">Choose a case to see why</h2>
+    <button type="button" data-case="15" aria-pressed="true">15-minute delay</button>
+    <button type="button" data-case="16" aria-pressed="false">16-minute delay</button>
+    <p id="explanation" aria-live="polite">At 15 minutes, the rover is ready exactly when the first send slot opens, so it can reply in that slot.</p>
+  </section>
 
-      <p class="explanation" id="jump-explanation">
-        The outbound signal arrives at minute 15. After 10 minutes of preparation,
-        the rover is ready at minute 25 and can transmit in that slot. The reply
-        takes 15 more minutes to reach Earth.
-      </p>
-
-      <div class="method">
-        <p><strong>How this schedule works:</strong> Earth sends at minute 0. The rover
-          receives the message after the one-way delay, then needs 10 minutes to prepare
-          a reply. It may begin transmitting only at minutes 25, 50, 75, and every 25
-          minutes after that. If it is ready exactly at a slot, it can use that slot.
-          The reply’s journey back takes the same number of minutes as the outbound leg.</p>
-        <p>This schedule is hypothetical and is not a description of Perseverance’s actual
-          operations. NASA’s reported one-way signal-delay range is about 3 to 22 minutes.</p>
-      </div>
-    </section>
-  </main>
-
-  <script>
-    const slider = document.getElementById("delay");
-    const delayValue = document.getElementById("delay-value");
-    const readyTime = document.getElementById("ready-time");
-    const receiveTime = document.getElementById("receive-time");
-    const explanation = document.getElementById("jump-explanation");
-
-    function updateSchedule() {
-      const delay = Number(slider.value);
-      const ready = delay + 10;
-      const slot = Math.ceil(ready / 25) * 25;
-      const received = slot + delay;
-
-      delayValue.value = delay + " minutes";
-      delayValue.textContent = delay + " minutes";
-      readyTime.textContent = "Minute " + ready;
-      receiveTime.textContent = "Minute " + received;
-
-      if (delay === 16) {
-        explanation.textContent =
-          "At 16 minutes, the outbound signal arrives at minute 16, so the rover is ready at minute 26. It has just missed the minute 25 slot and must wait for minute 50. The reply then takes 16 minutes to reach Earth, arriving at minute 66. That missed slot causes the jump from 55 to 66 minutes when delay rises from 15 to 16.";
-      } else {
-        explanation.textContent =
-          "The outbound signal arrives at minute " + delay +
-          ". After 10 minutes of preparation, the rover is ready at minute " + ready +
-          " and can transmit at minute " + slot + ". The reply takes " + delay +
-          " more minutes to reach Earth, arriving at minute " + received + ".";
-      }
-    }
-
-    slider.addEventListener("input", updateSchedule);
-  </script>
+  <p>The extra minute crosses the first send-slot threshold: the rover misses that slot and must wait for the next one, so the reply’s arrival is delayed by more than the added travel time alone.</p>
+</main>
+<script>
+  const explanations = {
+    "15": "At 15 minutes, the rover is ready exactly when the first send slot opens, so it can reply in that slot.",
+    "16": "At 16 minutes, the rover becomes ready just after the first slot, so it must wait for the next send slot."
+  };
+  const buttons = document.querySelectorAll("button[data-case]");
+  const output = document.getElementById("explanation");
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const key = button.dataset.case;
+      output.textContent = explanations[key];
+      buttons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+    });
+  });
+</script>
 </body>
 </html>
 ````
 
-### With the skill at standard
+### Standard
+
+[HTML file · download and open in a browser](skills/answer-with-html/examples/standard.html)
 
 ````html
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why one extra minute can delay the reply by 26 minutes</title>
+<style>
+  :root { color-scheme: light; font: 16px/1.5 system-ui, sans-serif; color: #182230; background: #f5f7fa; }
+  body { max-width: 850px; margin: 0 auto; padding: 2rem 1rem; }
+  main { background: white; padding: clamp(1rem, 4vw, 2rem); border-radius: 1rem; box-shadow: 0 4px 20px #18223012; }
+  h1 { line-height: 1.2; font-size: clamp(1.6rem, 5vw, 2.4rem); }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0 .5rem; }
+  th, td { border: 1px solid #cbd5e1; padding: .65rem; text-align: left; vertical-align: top; }
+  th { background: #eef3f8; }
+  caption { text-align: left; font-weight: 650; padding-bottom: .5rem; }
+  .check { margin: .5rem 0 1.25rem; padding: .8rem 1rem; background: #f1f7ff; border-left: 4px solid #2563eb; }
+  fieldset { border: 1px solid #cbd5e1; border-radius: .65rem; padding: 1rem; margin: 1rem 0; }
+  label { margin-right: 1.25rem; }
+  #explanation { min-height: 3em; padding: .8rem 1rem; background: #f7f7f2; border-radius: .5rem; }
+  tr[aria-current="true"] { background: #fff5d9; }
+  @media (max-width: 560px) { th, td { padding: .45rem; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Why one extra minute can delay the reply by 26 minutes</h1>
+  <p>The reply’s arrival depends on when the rover is ready relative to its permitted sending slots. Select either delay to see the cause.</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Hypothetical schedule, with all times measured from Earth’s transmission at minute 0</caption>
+      <thead>
+        <tr>
+          <th scope="col">One-way delay</th>
+          <th scope="col">Signal reaches rover</th>
+          <th scope="col">Rover ready (+10 min)</th>
+          <th scope="col">First usable slot</th>
+          <th scope="col">Reply reaches Earth (+ one-way delay)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="case-15" aria-current="true">
+          <th scope="row">15 min</th>
+          <td>0 + 15 = 15 min</td>
+          <td>15 + 10 = 25 min</td>
+          <td>25 min</td>
+          <td>25 + 15 = 40 min</td>
+        </tr>
+        <tr id="case-16" aria-current="false">
+          <th scope="row">16 min</th>
+          <td>0 + 16 = 16 min</td>
+          <td>16 + 10 = 26 min</td>
+          <td>50 min</td>
+          <td>50 + 16 = 66 min</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="check"><strong>Difference in Earth’s receipt times:</strong> 66 min − 40 min = 26 min.</p>
+
+  <fieldset>
+    <legend>Choose a one-way delay</legend>
+    <label><input type="radio" name="delay" value="15" checked> 15 minutes</label>
+    <label><input type="radio" name="delay" value="16"> 16 minutes</label>
+  </fieldset>
+
+  <p id="explanation" aria-live="polite">At 15 minutes, the rover is ready exactly at the 25-minute slot, so it can send then. The readiness threshold is met right on time.</p>
+</main>
+<script>
+  const radios = document.querySelectorAll('input[name="delay"]');
+  const explanation = document.getElementById('explanation');
+  const rows = {
+    "15": document.getElementById("case-15"),
+    "16": document.getElementById("case-16")
+  };
+  const messages = {
+    "15": "At 15 minutes, the rover is ready exactly at the 25-minute slot, so it can send then. The readiness threshold is met right on time.",
+    "16": "At 16 minutes, the rover becomes ready just after the 25-minute slot, so it must wait for the next slot. Crossing that cutoff creates the long wait."
+  };
+  radios.forEach((radio) => {
+    radio.addEventListener("change", () => {
+      if (!radio.checked || !messages[radio.value]) return;
+      explanation.textContent = messages[radio.value];
+      Object.entries(rows).forEach(([value, row]) => {
+        row.setAttribute("aria-current", String(value === radio.value));
+      });
+    });
+  });
+</script>
+</body>
+</html>
+````
+
+### Strict
+
+[HTML file · download and open in a browser](skills/answer-with-html/examples/strict.html)
+
+````html
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Communicating with Perseverance</title>
+  <title>Why one extra minute can cost more than a minute</title>
   <style>
-    :root {
-      color-scheme: light;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: #17212b;
-      background: #f4f6f8;
-    }
-    * { box-sizing: border-box; }
+    :root { color-scheme: light; font: 1rem/1.55 system-ui, sans-serif; color: #182333; background: #f4f7fb; }
     body { margin: 0; padding: 1.25rem; }
-    main {
-      width: min(100%, 42rem);
-      margin: 0 auto;
-      padding: clamp(1.1rem, 5vw, 2rem);
-      background: #fff;
-      border: 1px solid #d8e0e7;
-      border-radius: 1rem;
-      box-shadow: 0 0.5rem 1.5rem #17212b0d;
-    }
-    h1 { margin: 0 0 .5rem; font-size: clamp(1.5rem, 5vw, 2rem); line-height: 1.2; }
-    p { line-height: 1.55; }
-    .intro { margin-top: 0; color: #455462; }
-    .assumptions {
-      padding: .85rem 1rem;
-      background: #f1f5f8;
-      border-radius: .65rem;
-    }
-    label { display: block; margin: 1.35rem 0 .45rem; font-weight: 700; }
-    input[type="range"] { width: 100%; accent-color: #176b87; }
-    .range-labels {
-      display: flex;
-      justify-content: space-between;
-      color: #536372;
-      font-size: .9rem;
-    }
-    output {
-      display: block;
-      margin-top: 1.25rem;
-      padding: 1rem;
-      border-left: .3rem solid #176b87;
-      background: #edf7fa;
-      border-radius: .35rem;
-      font-size: 1.08rem;
-      font-weight: 650;
-      line-height: 1.65;
-      overflow-wrap: anywhere;
-    }
-    .explanation { margin-bottom: 0; color: #455462; }
-    @media (max-width: 24rem) {
-      body { padding: .6rem; }
-      main { padding: 1rem; }
-    }
+    main { max-width: 760px; margin: auto; padding: clamp(1rem, 4vw, 2rem); background: white; border: 1px solid #dce4ef; border-radius: 1rem; }
+    h1 { line-height: 1.2; font-size: clamp(1.6rem, 5vw, 2.2rem); }
+    p { max-width: 68ch; }
+    .table-wrap { max-width: 100%; overflow-x: auto; }
+    table { border-collapse: collapse; width: 100%; min-width: 560px; margin: 1rem 0 .5rem; }
+    th, td { text-align: left; vertical-align: top; padding: .7rem; border: 1px solid #dce4ef; }
+    th { background: #eef3fa; }
+    caption { text-align: left; font-weight: 650; padding-bottom: .5rem; }
+    fieldset { border: 1px solid #dce4ef; border-radius: .7rem; padding: .8rem 1rem; margin: 1.25rem 0; }
+    label { margin-right: 1.2rem; display: inline-block; }
+    #explanation { padding: .8rem 1rem; background: #eef6ff; border-left: 4px solid #3674bd; border-radius: .3rem; }
+    .difference { font-weight: 650; }
+    @media (max-width: 520px) { body { padding: .5rem; } main { padding: 1rem; } }
   </style>
 </head>
 <body>
-  <main>
-    <h1>Communicating with Perseverance</h1>
-    <p class="intro">A reply takes time to travel, be prepared, and wait for an available transmission slot.</p>
+<main>
+  <h1>Why one extra minute can cost more than a minute</h1>
+  <p>Earth sends at minute 0. The rover waits 10 minutes after receiving the signal to prepare, then can begin its reply at the first 25-minute slot at or after readiness. The return trip takes the same time as the outward trip.</p>
 
-    <p class="assumptions"><strong>Hypothetical schedule:</strong> Earth transmits at minute 0. After receiving the signal, the rover needs 10 minutes to prepare its reply. It may begin transmitting at minutes 25, 50, 75, and so on. If it is ready exactly at a slot, it can use that slot. Both signal legs have the same one-way delay. NASA reports that the one-way signal delay is about 3 to 22 minutes.</p>
+  <div class="table-wrap">
+    <table>
+      <caption>Two one-way-delay cases (all times in minutes after Earth sends)</caption>
+      <thead>
+        <tr>
+          <th scope="col">One-way delay</th>
+          <th scope="col">Rover receives</th>
+          <th scope="col">Ready after 10 min</th>
+          <th scope="col">Reply starts at eligible slot</th>
+          <th scope="col">Earth receives reply</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-case="15">
+          <th scope="row">15 min</th>
+          <td>0 + 15 = 15</td>
+          <td>15 + 10 = 25</td>
+          <td>25</td>
+          <td>25 + 15 = 40</td>
+        </tr>
+        <tr data-case="16">
+          <th scope="row">16 min</th>
+          <td>0 + 16 = 16</td>
+          <td>16 + 10 = 26</td>
+          <td>50</td>
+          <td>50 + 16 = 66</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-    <label for="delay">One-way signal delay: <span id="delay-value">15</span> minutes</label>
-    <input id="delay" type="range" min="3" max="22" step="1" value="15" aria-describedby="range-hint">
-    <div class="range-labels" id="range-hint"><span>3 minutes</span><span>22 minutes</span></div>
+  <p class="difference">Difference in Earth’s reply receipt time: 66 − 40 = 26 minutes.</p>
 
-    <output id="result" aria-live="polite">Rover receives Earth’s signal at minute 15 · Reply ready at minute 25 · Rover transmits at minute 25 · Earth receives reply at minute 40</output>
+  <fieldset>
+    <legend>Select a delay to see what causes its outcome</legend>
+    <label><input type="radio" name="case" value="15" checked> 15-minute one-way delay</label>
+    <label><input type="radio" name="case" value="16"> 16-minute one-way delay</label>
+  </fieldset>
 
-    <p class="explanation">The rover’s preparation ends 10 minutes after it receives the signal. The transmission time is the first available 25-minute slot at or after that ready time. From a 15-minute delay, the rover is ready exactly at minute 25 and can transmit then. Increasing the delay to 16 moves readiness to minute 26, just past that slot, so the rover waits for the next one. Earth then receives the reply after the same one-way signal delay.</p>
-  </main>
-
-  <script>
-    (() => {
-      const slider = document.getElementById("delay");
-      const delayValue = document.getElementById("delay-value");
-      const result = document.getElementById("result");
-
-      function calculate(rawValue) {
-        const parsed = Number(rawValue);
-        const delay = Number.isFinite(parsed)
-          ? Math.min(22, Math.max(3, Math.round(parsed)))
-          : 15;
-        const ready = delay + 10;
-        const transmit = Math.ceil(ready / 25) * 25;
-        const earthReceives = transmit + delay;
-        return { delay, ready, transmit, earthReceives };
+  <p id="explanation" role="status" aria-live="polite">At 15 minutes, the rover is ready exactly at a reply slot, so it can send then. The threshold is met on time.</p>
+  <p>The one-minute increase moves readiness past the 25-minute slot. Since the next permitted slot is much later, the reply waits for that slot; the threshold crossing creates the extra delay.</p>
+</main>
+<script>
+  "use strict";
+  const explanations = {
+    "15": "At 15 minutes, the rover is ready exactly at a reply slot, so it can send then. The threshold is met on time.",
+    "16": "At 16 minutes, the rover becomes ready just after the 25-minute slot, so it must wait for the next permitted slot. Missing that threshold adds a long scheduling wait."
+  };
+  const output = document.getElementById("explanation");
+  document.querySelectorAll('input[name="case"]').forEach((control) => {
+    control.addEventListener("change", (event) => {
+      const selected = event.currentTarget.value;
+      if (Object.prototype.hasOwnProperty.call(explanations, selected)) {
+        output.textContent = explanations[selected];
       }
-
-      function render() {
-        const values = calculate(slider.value);
-        delayValue.textContent = String(values.delay);
-        result.textContent =
-          `Rover receives Earth’s signal at minute ${values.delay} · ` +
-          `Reply ready at minute ${values.ready} · ` +
-          `Rover transmits at minute ${values.transmit} · ` +
-          `Earth receives reply at minute ${values.earthReceives}`;
-      }
-
-      slider.addEventListener("input", render);
-      render();
-    })();
-  </script>
+    });
+  });
+</script>
 </body>
 </html>
 ````
 
-### What changed
-
-| Check fixed before generation | Without | Standard |
-| --- | --- | --- |
-| At the initial 15-minute delay, the script-free page correctly shows ready at 25, transmit at 25 and received on Earth at 40 minutes, and marks the contact schedule as hypothetical. | Missed | Met |
-| For a 16-minute delay the page shows 26, 50 and 66; it explains the missed contact slot rather than treating every extra minute as a proportional change. | Met | Met |
-| A labeled keyboard-operable control in English covers 3–22 whole minutes; Earth receipt updates to 28 at 3 and 72 at 22 without external resources. | Met | Met |
-
-**Review.** Browser replay checks the script-free initial values (25/25/40), the missed slot at 16 minutes (26/50/66) and both keyboard endpoints. The timing explanation agrees with the display.
-
-Masked reviewer assignment: X was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/answer-with-html/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/answer-with-html.json).
-
-<details>
-<summary>Run record</summary>
-
-Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `318335a72a76` / `0c1e69b04eac` / `8ef4267b1104`.
-
-</details>
-
 ## aristotle-syllogism
 
-**Can new moon and central alignment alone establish a total solar eclipse?**
+**Can new moon and central alignment alone establish a total solar eclipse?** · [한국어](EXAMPLES.ko.md#aristotle-syllogism)
 
-[한국어](EXAMPLES.ko.md#aristotle-syllogism)
+### Question
 
-2026-11-08 · `aristotle-syllogism` 0.1.2 · English · `gpt-6-luna`
+> Every total solar eclipse happens at new moon. A planetarium calendar lists an upcoming new moon but gives no other information. What can someone conclude about totality on that date, or on a date that is not a new moon? In a hypothetical view from one spot, the disks are exactly centered and the Sun is 0.54° across. What would be visible if the Moon were 0.48° across, and what if it were 0.56° across? The annular eclipse of 14 October 2023 is an actual event; neither drawing is a measurement of that event.
 
-### Case and sources
+**Sources** · [NASA, Why Do Eclipses Happen?](https://science.nasa.gov/eclipses/geometry/) · [NASA, 2023 Annular Eclipse FAQ](https://science.nasa.gov/eclipses/future-eclipses/eclipse-2023/faq/)
 
-- [NASA, Why Do Eclipses Happen?](https://science.nasa.gov/eclipses/geometry/). Geometry, total and annular sections: solar eclipses occur at new moon; totality requires complete coverage, whereas an annular eclipse leaves a ring.
-- [NASA, 2023 Annular Eclipse FAQ](https://science.nasa.gov/eclipses/future-eclipses/eclipse-2023/faq/). Eclipse science and the October 14, 2023 path of annularity identify the dated counterexample.
+### Light
 
-### Prompt
-
-> A planetarium visitor reasons: 'Every total solar eclipse occurs at new moon; this is a new moon, so it is total.' They also argue that if it were not new moon, there could not be a total solar eclipse. Assess the two inferences separately. For a separate illustrative drawing, suppose an observer sees the two disks exactly centered, the Sun has angular diameter 0.53° and the Moon 0.50°. Calculate the angular width of the exposed rim on one side and infer what the observer would see. Then consider a centered 0.55° Moon instead. Use the actual annular solar eclipse of 14 October 2023 as a factual check, without attributing these invented diameters to it. Keep the answer concise enough to read beside the diagram. Write the answer in English.
-
-### Without the skill
-
-> The first inference reverses the implication: a total solar eclipse occurs at new moon, but a new moon does not guarantee a total eclipse. The Sun and Moon must also align closely, and the Moon must appear large enough to cover the Sun. The second inference is correct: without a new moon, there is no solar eclipse, total or otherwise.
+> The premise gives a one-way relation: every total solar eclipse happens at new moon. So a listed new moon alone does not establish that totality will happen; the calendar gives no further information. On a date that is not a new moon, there cannot be a total solar eclipse, given the premise.
 >
-> For the centered disks in the drawing, the 0.53° Sun exceeds the 0.50° Moon by 0.03°, leaving an exposed rim **0.015° wide on each side**. The observer would see an **annular eclipse**: a bright ring of sunlight around the Moon. With a centered 0.55° Moon, the Moon is larger than the Sun and would fully cover it, producing a **total eclipse**.
+> In the hypothetical view, the disks are exactly centered. If the Moon is 0.48° across and the Sun is 0.54° across, the Moon appears smaller and leaves a ring of the Sun visible. If the Moon is 0.56° across, it appears larger and covers the Sun’s disk completely. These are hypothetical comparisons, not measurements of the actual annular eclipse of 14 October 2023.
+
+### Standard
+
+> The premise says total solar eclipses occur only at new moon. It does not say that every new moon has a total eclipse, so the calendar entry alone provides no information about whether totality will occur on that date. On a date that is not a new moon, the premise rules out a total solar eclipse.
 >
-> As a factual check, the eclipse of 14 October 2023 was annular along its path: the Moon appeared too small to cover the Sun completely. The drawing’s invented diameters illustrate the geometry; they are not measurements from that eclipse.
-
-### With the skill at standard
-
-> ### The two inferences
+> For the hypothetical view from one spot, the disks are exactly centered and the Sun is 0.54° across:
 >
-> 1. **“Every total solar eclipse occurs at new moon; this is a new moon, so it is total.”**\
->    Premise: All total solar eclipses occur at new moon.\
->    Premise: This is a new moon.\
->    Conclusion: This is a total solar eclipse.
+> - If the Moon is 0.48° across, it would appear smaller than the Sun, leaving a bright ring visible around it.
+> - If the Moon is 0.56° across, it would appear larger than the Sun and cover the Sun’s disk from that spot.
 >
->    The conclusion does not follow: the first premise says total eclipses require a new moon, not that every new moon has a total eclipse. A new moon alone does not establish that the Moon is aligned with the Sun or appears large enough to cover it. The stated premise is a necessary condition, not a sufficient one.
+> These are deductions from the stated hypothetical sizes and alignment. The actual annular eclipse of 14 October 2023 is a separate event; neither hypothetical drawing measures it.
+
+### Strict
+
+> The claim is one-way: every total solar eclipse happens at new moon. It does not say that every new moon has a total solar eclipse.
 >
-> 2. **“If it were not new moon, there could not be a total solar eclipse.”**\
->    This is a valid restatement of the first premise: a total solar eclipse entails a new moon. It does not establish that any particular new moon produces a total eclipse. These are logical assessments; the premises’ factual support is separate.
+> - **On the listed new moon date:** totality is undetermined. The calendar gives the date’s new-moon status, but no information that establishes a total eclipse.
+> - **On a date that is not a new moon:** there cannot be a total solar eclipse on that date, if the supplied claim holds, because every total solar eclipse happens at new moon.
 >
-> ### Disk drawing
+> For the hypothetical view from one spot, the disks are exactly centered and the Sun is 0.54° across:
 >
-> With the disks exactly centered, the 0.53° Sun and 0.50° Moon differ by 0.03° in diameter. The exposed rim on **one side** is half that difference: **0.015°**. In this simplified drawing, sunlight remains visible all around the Moon’s edge: an annular, “ring of fire” appearance.
+> - If the Moon is **0.48° across**, it appears smaller than the Sun, leaving part of the Sun visible around it. That is an annular appearance, not totality.
+> - If the Moon is **0.56° across**, it appears larger than the Sun and, with the disks exactly centered, covers the Sun’s disk. That gives total coverage in this hypothetical view.
 >
-> With a centered 0.55° Moon, the Moon is 0.02° wider than the Sun. It covers the Sun’s disk in the drawing, giving a total-eclipse appearance.
->
-> These are illustrative angular diameters, not measurements of the 14 October 2023 eclipse. That event was an **annular solar eclipse**; the Moon did not completely cover the Sun along the path of annularity. The drawing’s exact centering and diameters are assumptions for the illustration, not claims about that event.
-
-### What changed
-
-| Check fixed before generation | Without | Standard |
-| --- | --- | --- |
-| Explains that new moon is necessary but insufficient, rejects the converse, and accepts the contrapositive about a non-new moon. | Met | Met |
-| Computes the one-sided rim as (0.53−0.50)/2 = 0.015°, leading to a ring; with the centered 0.55° Moon the solar disk is fully covered at that observer. | Met | Met |
-| Uses the 14 October 2023 annular eclipse as a real counterexample without presenting the classroom drawing’s diameters as measured historical values. | Met | Met |
-
-**Masked review** (Y = baseline; X = standard). Both reject the converse, accept the contrapositive and find the 0.015° rim; both distinguish the classroom geometry from the October 2023 eclipse. X separates premises, conclusion and drawing into sections. Y reaches the same results in fewer words, which better fits a diagram label.
-
-<details>
-<summary>Run record</summary>
-
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `d69f028ec500` / `12e925d97f7e` / `ab6d3996f923`.
-
-</details>
+> These are deductions from the stated sizes and alignment. They do not describe or measure the actual annular eclipse of 14 October 2023.
 
 ## asd-ste100
 
-**When can each Raspberry Pi 4 recovery station be powered down?**
+**When can each Raspberry Pi 4 recovery station be powered down?** · [한국어](EXAMPLES.ko.md#asd-ste100)
 
-[한국어](EXAMPLES.ko.md#asd-ste100)
+### Question
 
-2026-11-09 · `asd-ste100` 0.1.4 · English · `gpt-6-luna`
+> Three Raspberry Pi 4 Model B boards are finishing bootloader recovery with HDMI displays attached. Disconnect power only after both the green activity LED shows a steady flashing pattern and the HDMI screen is green. Remove the recovery microSD card only after disconnecting power. In this bench exercise the boards are checked at 0, 15, 30, 45 and 60 seconds. Once an indication appears, it stays. On North the LED pattern appears at 16 s and the green screen at 29 s. On South they appear at 41 s and 33 s respectively. On East the LED pattern appears at 21 s and the screen is still not green at 60 s. All three are still powered. At which check can each board be disconnected, and what happens to its recovery microSD card?
 
-### Case and sources
+**Sources** · [Raspberry Pi, Raspberry Pi computer hardware documentation](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#reflash-the-bootloader)
 
-- [Raspberry Pi, Raspberry Pi computer hardware documentation](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#reflash-the-bootloader). Reflash the bootloader, especially the last step for an HDMI-connected board. The prompt covers only completion of a prepared recovery on the Pi 4 Model B.
+### Light
 
-**Language scope.** This English handover uses the project’s STE-inspired standard profile. It does not verify official ASD-STE100 compliance.
+> - **North:** Disconnect power at the 30-second check. Both indications have appeared by then. After disconnecting power, remove the recovery microSD card.
+> - **South:** Disconnect power at the 45-second check. Both indications have appeared by then. After disconnecting power, remove the recovery microSD card.
+> - **East:** Do not disconnect power at any listed check. The HDMI screen is still not green at 60 seconds, so both required indications are not present. Keep the recovery microSD card in place.
 
-### Prompt
+### Standard
 
-> Write a concise English handover for technicians finishing a Raspberry Pi 4 Model B bootloader recovery with HDMI displays attached. Before disconnecting power they must observe both a steady flashing pattern on the green activity LED and a green HDMI screen. Remove the recovery microSD card only after power is disconnected. In this illustrative bench drill, staff check each board at 0, 15, 30, 45 and 60 seconds. Once an indication appears it persists. At North the LED pattern starts at 16 s and the HDMI screen turns green at 29 s. At South the screen turns green at 33 s and the LED pattern starts at 41 s. At East the LED pattern starts at 21 s and the screen is still not green at 60 s. No power has yet been disconnected. Give the first qualifying check for each station and the safe action there. Explain whether the elapsed time alone can authorize removal. Use one consistent name for the recovery microSD card.
-
-### Without the skill
-
-> **Bench drill handover — Raspberry Pi 4 Model B**
+> Disconnect power only after both indications are present. Use the first check at or after the later indication.
 >
-> Keep power connected until both the steady flashing green activity LED pattern and a green HDMI screen are visible. Then disconnect power before removing the recovery microSD card.
->
-> | Station | First check showing both indications | Safe action |
+> | Board | Disconnect power at | Recovery microSD card |
 > |---|---:|---|
-> | North | 30 s | Disconnect power, then remove the recovery microSD card. |
-> | South | 45 s | Disconnect power, then remove the recovery microSD card. |
-> | East | None by 60 s | Keep power connected; do not remove the card. |
->
-> Elapsed time alone does not authorize removal. At each check, confirm both indications are present; if either is absent, keep power connected and continue checking.
+> | North | 30 s | Remove after disconnecting power. |
+> | South | 45 s | Remove after disconnecting power. |
+> | East | No check time is safe | Keep the card in place. The screen is not green at 60 s, so both indications are not present. |
 
-### With the skill at standard
+### Strict
 
-> ## Bootloader recovery handover
->
-> Keep the HDMI displays attached. At each check, observe both the steady flashing pattern on the green activity LED and a green HDMI screen. Disconnect power only after both indications are present. Remove the recovery microSD card only after power is disconnected.
->
-> | Station | First check with both indications | Safe action |
-> |---|---:|---|
-> | North | 30 seconds | Disconnect power, then remove the recovery microSD card. |
-> | South | 45 seconds | Disconnect power, then remove the recovery microSD card. |
-> | East | None by 60 seconds | Keep power connected and the recovery microSD card installed. |
->
-> Elapsed time alone does not authorize removal. At East, the HDMI screen is still not green at 60 seconds, so both required indications are not present.
-
-### What changed
-
-| Check fixed before generation | Without | Standard |
-| --- | --- | --- |
-| Derives North’s first qualifying check as 30 s and South’s as 45 s, using observation times rather than the raw times at which indicators changed. | Met | Met |
-| For East at 60 s, withholds disconnect/removal and does not imply that a fixed timeout proves success or establishes hardware failure. | Met | Met |
-| States the correct sequence in technician-usable English: observe both signals, disconnect power, then remove the recovery microSD card; calls the card consistently by the same name. | Missed | Met |
-
-**Review.** North qualifies at 30 seconds and South at 45. East stays powered with the recovery microSD card in place. The handover uses the required component name throughout.
-
-Masked reviewer assignment: X was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/asd-ste100/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/asd-ste100.json).
-
-<details>
-<summary>Run record</summary>
-
-Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `441382171a3a` / `9f618db8c88e` / `aba6aa20f2e6`.
-
-</details>
+> - **North:** Disconnect power at the 30-second check. Both indications are present. Then remove the recovery microSD card.
+> - **South:** Disconnect power at the 45-second check. Both indications are present. Then remove the recovery microSD card.
+> - **East:** Do not disconnect power during the 60-second exercise. The screen is not green, so the required indications are not both present. Leave the recovery microSD card in place.
 
 ## boring-professor
 
-**Tracking two Linux log files behind the same pathname**
+**Tracking two Linux log files behind the same pathname** · [한국어](EXAMPLES.ko.md#boring-professor)
 
-[한국어](EXAMPLES.ko.md#boring-professor)
+### Question
 
-2026-11-08 · `boring-professor` 0.1.2 · English · `gpt-6-luna`
+> At 18:20 the last hard link to /var/log/jobs.log is removed on Linux. Its file has 24 MiB allocated. A writer and a monitor each still have it open. At 18:22 a new file is created at the same pathname with 7 MiB allocated. At 18:23 the writer appends 4 MiB using its original descriptor and closes it. The monitor closes its original descriptor at 18:25. There are no other changes; ignore metadata and assume allocation equals data length. Which file contains the append, and how much file data remains allocated immediately after each close?
 
-### Case and sources
+**Sources** · [Linux man-pages 6.19, unlink(2)](https://man7.org/linux/man-pages/man2/unlink.2.html)
 
-- [Linux man-pages 6.19, unlink(2)](https://man7.org/linux/man-pages/man2/unlink.2.html). DESCRIPTION defines the effect of unlinking the last directory link with and without an open descriptor. The filenames, monitor, allocation sizes and event times are illustrative.
+### Light
 
-### Prompt
-
-> Explain this Linux drill to a systems student. At 09:00 an administrator unlinks the last hard link to /var/log/payments.log. The old file has 20 MiB of allocated data; the writer and a monitor each hold an open descriptor to it. At 09:02 the service creates a separate file at the same pathname, with 5 MiB allocated. At 09:03 the original writer appends 8 MiB through its old descriptor, then closes it at 09:04. The monitor closes its old descriptor at 09:06. Trace which file gets the append, the total allocated data across both files just after 09:04 and just after 09:06, and why the pathname alone is insufficient evidence. Assume no sparse allocation, duplication or other changes; ignore metadata. Keep the explanation literal and concise. Write your answer in English.
-
-### Without the skill
-
-> At 09:00, unlinking the last hard link removes the old file’s name, but the open descriptors keep that file alive. At 09:02, the service creates a new, separate file at `/var/log/payments.log`.
+> The writer’s descriptor still refers to the original, unlinked file. Creating a new file at the same pathname does not change what existing descriptors refer to. Therefore, the 4 MiB append goes to the original file.
 >
-> The writer’s append at 09:03 goes to the **old file**, because its descriptor still refers to that file. The old file then has 20 + 8 = **28 MiB** allocated; the new file has **5 MiB**. Total just after 09:04: **33 MiB**.
+> - **18:23, writer closes:** Original file: 24 MiB + 4 MiB = **28 MiB**. New file: **7 MiB**. Total allocated file data: **35 MiB**.
+> - **18:25, monitor closes:** The original file has no open descriptors or hard links, so its data is released. New file: **7 MiB**. Total allocated file data: **7 MiB**.
+
+### Standard
+
+> A file descriptor refers to an open file independently of the pathname used to open it. Removing the last hard link removes the pathname reference; the file’s data remains allocated while an open descriptor still refers to it. Creating a new file at that pathname creates a separate file.
 >
-> Closing the writer’s descriptor does not free the old file because the monitor still has it open. When the monitor closes its descriptor at 09:06, the old file is released. The new file remains at **5 MiB**. Total just after 09:06: **5 MiB**.
+> The append at 18:23 goes to the original file, because the writer uses its original descriptor. The new file at `/var/log/jobs.log` remains 7 MiB.
 >
-> The pathname alone is insufficient evidence because it names the new file after 09:02. An open descriptor can still refer to the old, unlinked file.
-
-### With the skill at standard
-
-> `unlink` removes a directory entry. An open file descriptor continues to refer to its file even after that file has no pathname.
+> - **18:23, after the writer closes:** Original file: 24 MiB + 4 MiB = 28 MiB. New file: 7 MiB. **Total allocated file data: 28 MiB + 7 MiB = 35 MiB.**
+> - **18:25, after the monitor closes:** The original file has no remaining open descriptors and no pathname, so its data is released. New file: 7 MiB. **Total allocated file data: 7 MiB.**
 >
-> The 09:00 unlink removes the last hard link to the original file, but the writer’s and monitor’s descriptors keep it accessible. At 09:02, creating `/var/log/payments.log` creates a separate file; the pathname now refers to that file.
+> These totals count the two files’ data and exclude metadata, as specified.
+
+### Strict
+
+> A hard link is a directory entry that refers to a file’s inode. Removing the last hard link removes the pathname reference, but an open file descriptor can keep the original file’s inode and data available. Creating a new file at the same pathname creates a different file. An open descriptor continues to refer to the file it originally opened.
 >
-> The 09:03 append goes to the original file because the writer uses its old descriptor. Its allocated data becomes 20 + 8 = **28 MiB**. The new file remains **5 MiB**, so the total just after the writer closes at 09:04 is **33 MiB**.
+> Assume the writer and monitor descriptors refer to the original 24 MiB file. The new file at `/var/log/jobs.log` is a separate file with 7 MiB allocated. The writer’s append changes the original file by +4 MiB, making its allocated data 28 MiB.
 >
-> At 09:06, the monitor closes the last open descriptor to the original file. The original file is then released, leaving the new file’s **5 MiB** allocated. The total just after 09:06 is **5 MiB**.
+> - **Immediately after the writer closes at 18:23:** original file: 28 MiB, still held open by the monitor; new file: 7 MiB. **Total: 28 MiB + 7 MiB = 35 MiB.**
+> - **Immediately after the monitor closes at 18:25:** original file: 0 MiB, because it has no remaining hard links or open descriptors; new file: 7 MiB. **Total: 0 MiB + 7 MiB = 7 MiB.**
 >
-> The pathname alone is insufficient evidence because, after 09:02, it identifies the new file, while the writer’s descriptor still identifies the unlinked original. These totals assume no sparse allocation, duplication, other changes, or metadata.
-
-### What changed
-
-| Check fixed before generation | Without | Standard |
-| --- | --- | --- |
-| Identifies the append as going to the old, unlinked file through the writer's descriptor, not to the 5 MiB replacement at the reused pathname. | Met | Met |
-| Gives 33 MiB just after 09:04 (28 old + 5 new) and 5 MiB just after 09:06; the monitor's descriptor delays release of the old file. | Met | Met |
-| Explains the pathname/file-object distinction and the final-descriptor condition using literal technical terms, without implying that unlink disables existing writes. | Met | Met |
-
-**Masked review** (Y = baseline; X = standard). Both identify the old object as the append target, compute 33 MiB at 09:04 and 5 MiB at 09:06, and connect delayed reclamation to the monitor’s descriptor. X defines a directory entry before tracing the events and restates the assumptions; Y gives a shorter event trace. No substantive difference on these checks.
-
-<details>
-<summary>Run record</summary>
-
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `7920576bbe50` / `ae415a4a0b15` / `89fd5a38430b`.
-
-</details>
+> The append is in the **original file**, which no longer has a pathname after 18:20. The total counts file data that remains allocated; it excludes metadata as specified.
 
 ## diataxis
 
-**Which Kubernetes rollout did the green CI job actually observe?**
+**Which Kubernetes rollout did the green CI job actually observe?** · [한국어](EXAMPLES.ko.md#diataxis)
 
-[한국어](EXAMPLES.ko.md#diataxis)
+### Question
 
-2026-11-08 · `diataxis` 0.1.1 · English · `gpt-6-luna`
+> At 09:00 CI ran kubectl rollout status deployment/checkout-api with no flags while revision 7 was rolling out. Revision 8 started before 7 finished. No later revision started, and the command eventually reported success. By default the watch follows the latest rollout. The --revision=N option pins the watch and aborts if that revision is superseded; --watch=false returns a snapshot. Which revision did CI actually verify? What command would watch only revision 7, and what command would return the current status immediately?
 
-### Case and sources
+**Sources** · [Kubernetes command reference, kubectl rollout status](https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/kubectl_rollout_status/)
 
-- [Kubernetes command reference, kubectl rollout status](https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/kubectl_rollout_status/). Synopsis and flags document default revision tracking, --revision and --watch. checkout-api and revisions 7/8 are an illustrative release, not historical cluster telemetry.
+### Light
 
-### Prompt
-
-> Write a short lookup entry for the release team using kubectl rollout status on Deployment checkout-api. CI starts watching revision 7 without flags at 09:00. Before 7 finishes, revision 8 starts; the command later reports success. A default watch follows the latest rollout across revisions; a watch pinned with --revision=N aborts if superseded, and --watch=false reads a snapshot without waiting. Explain what the green job does and does not establish about 7 and 8. Give the exact commands for a new CI job that must monitor revision 7 specifically and for an operator who wants the current status immediately. Assume 8 is the last revision during this example. Make this useful for lookup, not a tutorial. Write your answer in English.
-
-### Without the skill
-
-> ### `kubectl rollout status` — `checkout-api`
+> CI verified **revision 8**, the latest rollout when the watch followed it. The command’s success does not establish that revision 7 finished successfully.
 >
-> At 09:00, CI runs `kubectl rollout status deployment/checkout-api` without flags while revision 7 is in progress. Revision 8 starts before 7 finishes, and the command later reports success. By default, the watch follows the latest rollout, so that green job establishes that **revision 8 completed**. It does **not** establish that revision 7 completed successfully.
->
-> For a new CI job that must monitor revision 7 specifically, pin the watch:
+> To watch only revision 7:
 >
 > ```sh
 > kubectl rollout status deployment/checkout-api --revision=7
 > ```
 >
-> If revision 7 is superseded before the watch completes, the command aborts rather than switching to revision 8.
->
-> For an immediate status snapshot without waiting:
+> To return the current status immediately:
 >
 > ```sh
 > kubectl rollout status deployment/checkout-api --watch=false
 > ```
+
+### Standard
+
+> CI followed the latest rollout, so it verified revision 8. The command’s success does not show that revision 7 completed.
 >
-> This reports the current rollout status; it does not establish that the rollout will finish successfully.
-
-### With the skill at standard
-
-> ## `kubectl rollout status` for `checkout-api`
+> To watch only revision 7:
 >
-> **Default behavior:** `kubectl rollout status deployment/checkout-api` follows the latest rollout. If revision 8 starts while the command is watching revision 7, the watch follows revision 8.
+> ```sh
+> kubectl rollout status deployment/checkout-api --revision=7
+> ```
 >
-> In this example, the green CI job establishes that the latest rollout it followed—revision 8, assumed to be the last revision—completed successfully. It does **not** establish that revision 7 completed successfully: the command may have switched to watching revision 8 before 7 finished.
+> To return the current status immediately:
 >
-> | Need | Command | Behavior |
-> |---|---|---|
-> | CI job must monitor revision 7 specifically | `kubectl rollout status deployment/checkout-api --revision=7` | Watches revision 7; aborts if it is superseded. |
-> | Operator wants the current status immediately | `kubectl rollout status deployment/checkout-api --watch=false` | Reads a snapshot and returns without waiting. |
+> ```sh
+> kubectl rollout status deployment/checkout-api --watch=false
+> ```
 
-### What changed
+### Strict
 
-| Check fixed before generation | Without | Standard |
-| --- | --- | --- |
-| Attributes the successful default watch to latest revision 8 and says that its success does not establish success for revision 7. | Met | Met |
-| Gives an executable kubectl rollout status command for deployment/checkout-api with --revision=7, and states that supersession causes the pinned watch to abort rather than follow 8. | Met | Met |
-| Gives an executable command with --watch=false for a current snapshot, with purpose and commands easy to find in a compact lookup entry. | Met | Met |
-
-**Masked review** (X = baseline; Y = standard). Both identify revision 8 as the successful rollout, give the two executable commands and explain why the unpinned watch cannot certify revision 7. X places the commands in separate code blocks and distinguishes a current snapshot from future success. Y groups each command and its behavior in a lookup table.
-
-<details>
-<summary>Run record</summary>
-
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `1bf8f74acf77` / `80606212012a` / `67a7105766a3`.
-
-</details>
+> CI watched the latest rollout, so it verified **revision 8**. Revision 7 was superseded before the command succeeded.
+>
+> To watch only revision 7:
+>
+> ```sh
+> kubectl rollout status deployment/checkout-api --revision=7
+> ```
+>
+> To return the current status immediately:
+>
+> ```sh
+> kubectl rollout status deployment/checkout-api --watch=false
+> ```
 
 ## eli5
 
-**Which model coat loses warmth faster, and what does that tell a child about pup 696?**
+**What happens when floating ice melts?** · [한국어](EXAMPLES.ko.md#eli5)
 
-[한국어](EXAMPLES.ko.md#eli5)
+### Question
 
-2026-11-09 · `eli5` 0.1.18 · English · `gpt-6-luna`
+> A piece of ice floats freely in a glass of fresh water. It weighs 90 grams and takes up 100 milliliters of space. One milliliter of liquid water weighs one gram in this example. The glass has room to spare, and no water spills or evaporates. How much of the ice sticks out of the water? Where will the water line be after the ice melts?
 
-### Case and sources
+**Sources** · [USGS, Water Density](https://www.usgs.gov/water-science-school/science/water-density) · [NASA, Melting Ocean Ice Affects Sea Level – Unlike Ice Cubes in a Glass](https://sealevel.nasa.gov/news/261/melting-ocean-ice-affects-sea-level-unlike-ice-cubes-in-a-glass/)
 
-- [Monterey Bay Aquarium, Life of a rescued sea otter](https://www.montereybayaquarium.org/about-us/stories/life-of-a-rescued-sea-otter). Pup 696's rescue and grooming sections describe the role of air in the fur in warmth and buoyancy.
-- [Monterey Bay Aquarium, Sea otter](https://www.montereybayaquarium.org/animals-the-ocean/animals-a-to-z/sea-otter). Species account, Adaptations and Grooming: unlike many marine mammals, a sea otter relies on fur in cold water and lacks a thick layer of blubber.
+### Light
 
-### Prompt
+> Look at the ice floating in the glass. The part under the water pushes water aside. The ice weighs 90 grams, so it pushes aside 90 milliliters of water. Since the whole ice takes up 100 milliliters of space, 10 milliliters’ worth sticks out above the water.
+>
+> When the ice melts, it becomes 90 milliliters of liquid water. That is the same amount the ice pushed aside while floating, so the water line stays at the same height.
 
-> At Monterey Bay Aquarium, a five-year-old asks why caregivers groomed rescued sea otter pup 696. In a classroom demonstration invented for this question, two equally warm jars have identical model coats in the same cold bath. With air trapped in the fluffy coat, one jar cools 4 degrees in 20 minutes. With the coat wet and flat, the other cools 3 degrees in 10 minutes. A child says the fluffy jar lost warmth faster because four is more than three. Neither jar was tested for floating. Real sea otters lack thick blubber; grooming traps air in their fur, which helps them stay warm and float. Answer the child in at most five short sentences: use a fair comparison, explain whether air makes heat, and say what the jars can and cannot show about floating. Write the answer in English.
+### Standard
 
-### Without the skill
+> Look at the ice floating in the glass. Some of it is under the water, and some sticks out.
+>
+> The ice weighs 90 grams. Since 1 milliliter of water weighs 1 gram in this example, the ice pushes aside 90 milliliters of water. That means 90 milliliters of the ice is under the water.
+>
+> The whole piece takes up 100 milliliters of space. So 10 milliliters sticks out above the water.
+>
+> When the ice melts, it becomes 90 milliliters of water. That is the same amount of water the floating ice pushed aside, so the water line stays at the same height.
 
-> That comparison isn’t fair yet: the jars were measured for different lengths of time. Air doesn’t make heat; trapped air slows heat loss, so compare both coats over the same time. These jars can show how coats affect cooling, but they can’t tell us which coat floats better because floating wasn’t tested. Sea otters groom to trap air in their fur, which helps them stay warm and float.
+### Strict
 
-### With the skill at standard
-
-> The caregivers groomed pup 696 to help keep him warm.\
-> The air trapped in his fluffy fur slows heat from escaping; it doesn’t make heat.\
-> The flat wet coat cooled faster: on average, it lost 6 degrees in 20 minutes, while the fluffy coat lost 4.\
-> The jars didn’t test floating.\
-> In real sea otters, air trapped in their fur helps them float.
-
-### What changed
-
-| Check fixed before generation | Without | Standard |
-| --- | --- | --- |
-| Uses an equal-time comparison to explain the apparent reversal (2 degrees versus 3 per 10 minutes, or equivalent rates) and identifies the fluffy coat as slower to cool on average. | Missed | Met |
-| Connects grooming to trapped air keeping warmth from leaving as fast, without claiming that air creates heat or substituting an invented biological mechanism. | Met | Met |
-| In at most five short child-facing sentences, separates the jars’ untested floating behavior from the fact that trapped air also helps real otters float. | Met | Met |
-
-**Review.** The answer compares average losses of 6 and 4 degrees per 20 minutes (3 and 2 per 10). This rescales the wet jar’s 10-minute measurement. It tells the child why grooming matters, why air slows heat loss and why the jar test cannot establish buoyancy.
-
-Masked reviewer assignment: X was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/eli5/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/eli5.json).
-
-<details>
-<summary>Run record</summary>
-
-Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `fdd792c71803` / `b13daecf86ad` / `66f424b317e0`.
-
-</details>
+> Look at the ice floating in the glass. The ice weighs 90 grams. In this example, each milliliter of water weighs 1 gram, so the ice pushes aside 90 milliliters of water to hold itself up.
+>
+> The whole piece of ice takes up 100 milliliters of space. The part under the water takes up 90 milliliters, so 10 milliliters’ worth sticks out above the water.
+>
+> When the ice melts, it becomes 90 milliliters of water. That is the same amount of water the floating ice pushed aside. So the water line will stay at the same height.
 
 ## federal-plain-language
 
-**Which 40-minute document trip covers both identities?**
+**Which documents can a family collect in 45 minutes?** · [한국어](EXAMPLES.ko.md#federal-plain-language)
 
-[한국어](EXAMPLES.ko.md#federal-plain-language)
+### Question
 
-2026-11-09 · `federal-plain-language` 0.1.22 · English · `gpt-6-luna`
+> I have 45 minutes to collect identity documents for my child’s replacement Social Security card. The October 2026 SSA leaflet says both of us need proof of identity. My child can use a current US passport or a state non-driver ID. I can use a current US passport or a driver’s license. We can use originals or copies certified by the issuer. A notarized photocopy does not count. A birth certificate can establish age or citizenship. All our IDs are current.
+>
+> Here are our available documents and collection times:
+>
+> | Owner | Document | Time |
+> | --- | --- | --- |
+> | Child | Original birth certificate | Already in hand |
+> | Child | Original passport | 40 min |
+> | Child | Issuer-certified copy of state non-driver ID | 15 min |
+> | Parent | Notarized passport photocopy | 5 min |
+> | Parent | Issuer-certified passport copy | 25 min |
+> | Parent | Original driver’s license | 35 min |
+>
+> The times add together. What can I get in time that covers both of us?
 
-### Case and sources
+**Sources** · [SSA, U.S. Citizen/Child — Replacement Social Security Card (October 2026)](https://www.ssa.gov/pubs/EN-05-10514.pdf)
 
-- [SSA, U.S. Citizen/Child — Replacement Social Security Card (October 2026)](https://www.ssa.gov/pubs/EN-05-10514.pdf). English page of the October 2026 U.S. citizen/child replacement-card leaflet, sections on the child's and parent's identity, current originals, issuer-certified copies and unacceptable copies. The family's options and collection times are hypothetical; the identification requirements come from the leaflet.
+### Light
 
-**Language scope.** This uses the method’s English public-information profile.
+> You can collect the child’s issuer-certified state non-driver ID in 15 minutes and your issuer-certified passport copy in 25 minutes. Together, they take **40 minutes** and provide proof of identity for both of you.
+>
+> The birth certificate can establish age or citizenship, but it does not replace the child’s proof of identity. The notarized passport photocopy does not count.
 
-### Prompt
+### Standard
 
-> A parent has 45 minutes to collect evidence for the identity part of a U.S.-citizen child's replacement Social Security card application. Write a parent-facing answer in English in no more than five sentences using the October 2026 SSA leaflet. Both people need identity evidence. The child can use a current U.S. passport or current state-issued non-driver ID. The parent can use a current U.S. passport or driver's license. SSA accepts originals or issuer-certified copies, not notarized photocopies; a birth certificate proves age or citizenship but not identity. Hypothetical collection times add: the child's original birth certificate is already in hand, original passport takes 40 minutes, and issuer-certified non-driver ID takes 15. For the parent, a notarized passport photocopy takes 5, an issuer-certified passport copy 25, and an original license 35. Which route fits? Point out why the tempting shortcut fails. Address identity evidence only.
+> For your child, an issuer-certified copy of the state non-driver ID takes 15 minutes. The birth certificate can establish age or citizenship, but it does not meet the leaflet’s identity requirement.
+>
+> For you, the issuer-certified passport copy takes 25 minutes. The notarized photocopy does not count, and the original driver’s license takes 35 minutes.
+>
+> Get the certified state ID copy and certified passport copy: 15 + 25 = 40 minutes. That covers both identity requirements within your 45 minutes.
 
-### Without the skill
+### Strict
 
-> Use the child’s issuer-certified state non-driver ID (15 minutes) and the parent’s issuer-certified U.S. passport copy (25 minutes): together they take 40 minutes. The tempting shortcut—a notarized photocopy of the parent’s passport—doesn’t count because SSA accepts originals or issuer-certified copies, not notarized photocopies. The child’s birth certificate proves age or citizenship, but not identity, so it cannot replace the child’s ID.
-
-### With the skill at standard
-
-> Use the child’s issuer-certified state non-driver ID (15 minutes) and the parent’s issuer-certified passport copy (25 minutes). Together they take 40 minutes, within the 45-minute limit. The notarized passport photocopy takes only 5 minutes, but SSA does not accept notarized photocopies as identity evidence. The birth certificate proves the child’s age or citizenship, not identity.
-
-### What changed
-
-| Check fixed before generation | Without | Standard |
-| --- | --- | --- |
-| Identifies the child's issuer-certified non-driver ID plus the parent's issuer-certified passport copy, totals 40 minutes and fits the 45-minute limit. | Met | Met |
-| Explains both rejected shortcuts: the original birth certificate is insufficient for the child's identity and the notarized copy is insufficient for the parent's identity. | Met | Met |
-| Gives the parent an actionable English identity-only answer in no more than five sentences without implying the full application is complete. | Met | Met |
-
-**Review.** The parent gets a feasible 40-minute plan and a reason to reject each shortcut. The answer stays within five sentences and addresses identity evidence only.
-
-Masked reviewer assignment: Y was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/federal-plain-language/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/federal-plain-language.json).
-
-<details>
-<summary>Run record</summary>
-
-Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `90ceac7f7264` / `cd08aed6cec9` / `68130696a7c4`.
-
-</details>
+> **Child:** The state non-driver ID is accepted, and its issuer-certified copy takes 15 minutes. The birth certificate can establish age or citizenship, but it does not meet the child’s identity requirement.
+>
+> **Parent:** The issuer-certified passport copy is accepted and takes 25 minutes. The notarized photocopy is not accepted. The original driver’s license is accepted, but takes 35 minutes.
+>
+> **Get the child’s certified ID copy and your certified passport copy.** They take 15 + 25 = **40 minutes**, within your 45-minute limit. Both documents are originals or copies certified by the issuer.
 
 ## feynman-technique
 
-**Why two DNS resolvers disagree after a record is created**
+**Why two DNS resolvers disagree after a record is created** · [한국어](EXAMPLES.ko.md#feynman-technique)
 
-[한국어](EXAMPLES.ko.md#feynman-technique)
+### Question
 
-2026-11-09 · `feynman-technique` 0.1.8 · English · `gpt-6-luna`
+> Two independent DNS resolvers look up photos.example.org. Bay gets NXDOMAIN at 09:10 and Ridge gets NXDOMAIN at 09:12. Each caches that answer for the smaller of the SOA TTL (240 seconds) and the SOA MINIMUM (600 seconds). At 09:13 the operator adds an A record. Both resolvers receive another query at 09:15. The updated authority is reachable; assume no eviction, early refresh or local override. Why can the two clients get different answers, and when can Ridge first pick up the new record?
 
-### Case and sources
+**Sources** · [IETF RFC 2308, Negative Caching of DNS Queries](https://www.rfc-editor.org/rfc/rfc2308.html#section-5)
 
-- [IETF RFC 2308, Negative Caching of DNS Queries](https://www.rfc-editor.org/rfc/rfc2308.html#section-5). Sections 3 and 5 explain the SOA-based lifetime and expiry of negative responses. The hostname, TTL values and clock times are a worked trace, not production DNS records.
+### Light
 
-### Prompt
-
-> Two teams query uploads.example.org through independent DNS resolvers. In this illustrative trace, Harbor gets NXDOMAIN at 12:00 and Hill gets NXDOMAIN at 12:03. Both cache the name's absence. The zone's SOA TTL is 900 seconds and its MINIMUM is 300 seconds; RFC 2308 uses the smaller value for a negative answer. At 12:04 the operator creates the A record. At 12:06 both teams query again. In a short incident explanation for a junior developer, predict what each team can see, when the later cache expires, and what would change if Hill had not queried before 12:04. Assume a reachable, updated authority; no evictions, refreshes or local overrides. Do not ask the developer a question. Write your answer in English.
-
-### Without the skill
-
-> Harbor and Hill can both still see `NXDOMAIN` at 12:06. Under RFC 2308, the negative cache lifetime is the smaller of the SOA TTL (900 seconds) and SOA MINIMUM (300 seconds), so each resolver can cache the absence for 300 seconds from its own NXDOMAIN response.
+> Bay cached **NXDOMAIN**, meaning the name `photos.example.org` did not exist, at 09:10. Its negative-cache lifetime is the smaller of 240 and 600 seconds: 240 seconds, so that answer expires at 09:14. Ridge cached the same answer at 09:12; its 240-second lifetime expires at 09:16.
 >
-> Harbor’s entry expires at **12:05**, and Hill’s at **12:08**. At 12:06, Harbor’s cache has expired, so its next query can reach the updated authority and return the A record. Hill’s cache is still valid, so Hill can still receive NXDOMAIN until 12:08; after that, its next query can return the A record.
+> The operator adds the A record at 09:13, but that does not change either resolver’s cached answer. At 09:15, Bay’s negative entry has expired, so it can query the reachable authority and return the new record. Ridge’s entry is still valid until 09:16, so it can still return NXDOMAIN. Ridge can first pick up the new record at or after 09:16, when its cached negative answer expires and a query can reach the authority.
+
+### Standard
+
+> NXDOMAIN means the resolver was told that `photos.example.org` does not exist. For each resolver, the negative-cache lifetime is the smaller of the SOA TTL and SOA MINIMUM: `min(240, 600) = 240` seconds.
 >
-> If Hill had not queried before 12:04, it would have no cached negative answer. Its first query after the A record was created could reach the authority and return the A record immediately.
+> Bay received NXDOMAIN at 09:10, so its cached answer expires at 09:14. Ridge received NXDOMAIN at 09:12, so its answer expires at 09:16. Adding the A record at 09:13 updates the authority, but it does not erase either resolver’s cached answer. At 09:15, Bay’s negative entry has expired and it can query the updated authority and return the new record. Ridge’s entry is still valid until 09:16, so it can still return NXDOMAIN. Ridge can first pick up the new record at 09:16, when its cached answer expires and a subsequent query can reach the authority.
 
-### With the skill at standard
+### Strict
 
-> **Incident explanation (junior developer):** RFC 2308 sets the negative-cache lifetime to the smaller of the SOA TTL (900 seconds) and SOA MINIMUM (300 seconds), so each resolver can keep its own NXDOMAIN result for 300 seconds from when it received that answer. Harbor received NXDOMAIN at 12:00, so its entry expires at **12:05**. Hill received NXDOMAIN at 12:03, so its entry expires at **12:08**. The A record was created at 12:04, but that does not erase either resolver’s cached result. At 12:06, Harbor’s entry has expired and, with the authority reachable and updated, Harbor can see the A record; Hill’s entry is still valid, so Hill can still see NXDOMAIN until 12:08. If Hill had not queried before 12:04, it would have no negative entry to serve at 12:06 and could query the authority and see the A record. The two resolvers’ cache timers start independently when each receives NXDOMAIN.
-
-### What changed
-
-| Check fixed before generation | Without | Standard |
-| --- | --- | --- |
-| Computes the 300-second lifetime and the 12:05 Harbor and 12:08 Hill expirations from their own original queries. | Met | Met |
-| At 12:06 Harbor can fetch the new address while Hill can still serve NXDOMAIN; creating the record did not restart or invalidate Hill's cached lifetime. | Missed | Met |
-| Explains for a junior developer why Hill with no earlier negative entry could fetch the new address at 12:06 under the stated assumptions, without implying a simultaneous global update. | Met | Met |
-
-**Review.** The two expirations come from different first queries. At 12:06 only Hill can still reuse its negative entry; without that earlier query, Hill could fetch the new address.
-
-Masked reviewer assignment: X was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/feynman-technique/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/feynman-technique.json).
-
-<details>
-<summary>Run record</summary>
-
-Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `5527bddea967` / `dae944fee0be` / `e3260298686a`.
-
-</details>
+> NXDOMAIN means the authoritative DNS response said **photos.example.org does not exist** when each resolver looked it up. A negative cache stores that answer temporarily so repeated queries do not have to go back to the authority. Here, each resolver’s cache time is the smaller of 240 and 600 seconds: 240 seconds.
+>
+> Bay’s timeline: it received NXDOMAIN at 09:10, so that cached answer expires at 09:14. Its 09:15 query comes after expiry; with the updated authority reachable, Bay can look up the name again and get the new A record.
+>
+> Ridge’s timeline: it received NXDOMAIN at 09:12, so its cached answer expires at 09:16. At 09:15 it can still answer from that cache, so its client can receive NXDOMAIN while Bay’s client gets the A record. Ridge can first pick up the new record on a query at or after 09:16, when the cached answer has expired and Ridge can ask the updated authority.
+>
+> For a transfer check, keep both lookup times and the record addition fixed, but move Ridge’s next query to 09:16: its old answer is expired then, so it can fetch the A record. The precise time that query arrives is separate; no new query is assumed to occur automatically at expiry.
 
 ## google-design-doc
 
-**Should PostgreSQL add the orders index during this shift?**
+**Should PostgreSQL add the orders index during this shift?** · [한국어](EXAMPLES.ko.md#google-design-doc)
 
-[한국어](EXAMPLES.ko.md#google-design-doc)
+### Question
 
-2026-11-08 · `google-design-doc` 0.1.2 · English · `gpt-6-luna`
+> A store running PostgreSQL 17 needs an index on its orders table. Order INSERTs must remain available during the build. Production rollout also requires rehearsal p95 write latency at most 20% above the 40 ms baseline. A concurrent-build rehearsal measured 51 ms; production performance has not been measured. Ordinary CREATE INDEX blocks writes. CREATE INDEX CONCURRENTLY permits writes but scans the table twice and can wait for transactions. If it fails, it can leave an invalid index that the planner ignores but writes still maintain. What should the store do on this shift, and what would justify a later production attempt?
 
-### Case and sources
+**Sources** · [PostgreSQL 17 documentation, CREATE INDEX](https://www.postgresql.org/docs/17/sql-createindex.html#SQL-CREATEINDEX-CONCURRENTLY) · [PostgreSQL 17 system catalogs, pg_index](https://www.postgresql.org/docs/17/catalog-pg-index.html)
 
-- [PostgreSQL 17 documentation, CREATE INDEX](https://www.postgresql.org/docs/17/sql-createindex.html#SQL-CREATEINDEX-CONCURRENTLY). Building Indexes Concurrently explains locking, table scans, waiting for transactions and invalid indexes after failure. The store, schema and decision are illustrative; no production benchmark is quoted.
-- [PostgreSQL 17 system catalogs, pg_index](https://www.postgresql.org/docs/17/catalog-pg-index.html). The indisvalid field records whether the index is valid for queries. The rehearsal metrics and release threshold are illustrative.
+### Light
 
-### Prompt
-
-> Write a design-review excerpt for an illustrative PostgreSQL 17 store. The team cannot block order INSERTs throughout an index build. Its separate release gate is a rehearsal p95 write latency no more than 20% above the 40 ms baseline. A concurrent-build rehearsal measured 51 ms. Ordinary CREATE INDEX blocks writes; CREATE INDEX CONCURRENTLY lets writes continue, scans the table twice and can wait for transactions. A failed concurrent run can leave an invalid index that planners ignore but writes still maintain. Recommend what to authorize this shift, what to measure before retrying and how to handle an invalid result. The store has not measured production performance. Keep it concise. Write your answer in English.
-
-### Without the skill
-
-> ### Design-review excerpt
+> ## Shift decision
 >
-> Authorize a **concurrent index build**: order INSERTs must continue, and ordinary `CREATE INDEX` blocks writes. `CREATE INDEX CONCURRENTLY` keeps writes running, though it scans the table twice and may wait for transactions.
+> **Do not start the index build on this shift.** Ordinary `CREATE INDEX` violates the requirement that order inserts remain available. `CREATE INDEX CONCURRENTLY` permits writes, but its rehearsal p95 write latency was 51 ms.
 >
-> The rehearsal result **fails the separate latency gate**: 51 ms is 27.5% above the 40 ms baseline, exceeding the 20% limit of 48 ms. Before retrying, measure rehearsal p95 write latency and identify the main contributors, including concurrent write load, transaction duration, and build-related resource use. Production performance is unmeasured, so do not treat the rehearsal as a production estimate.
+> The rollout limit is 20% above the 40 ms baseline: at most **48 ms p95**. The rehearsal exceeded that limit by 3 ms, so concurrent build has not passed the release gate. Production performance is also unmeasured.
 >
-> If a concurrent build fails, check whether it left an invalid index. Planners ignore it, but writes still maintain it; remove the invalid index before retrying, then verify the rebuilt index is valid.
-
-### With the skill at standard
-
-> ## Illustrative PostgreSQL 17 index build
+> ## Later production attempt
 >
-> **Proposal for review.** Authorize `CREATE INDEX CONCURRENTLY` for the build, subject to the separate latency gate. The team cannot block order inserts throughout the build. The concurrent-build rehearsal measured 51 ms p95 against a 40 ms baseline: 27.5% higher, above the 20% limit of 48 ms. The rehearsal therefore does not pass the release gate. Production performance has not been measured.
+> A production attempt would be justified after a representative rehearsal of the concurrent build measures p95 write latency at or below **48 ms**, while confirming order inserts remain available. The rehearsal should account for the build’s two table scans and possible waits for transactions.
 >
-> **Behavior and trade-offs.** An ordinary `CREATE INDEX` blocks writes, so it conflicts with the insert constraint. `CREATE INDEX CONCURRENTLY` lets writes continue, but scans the table twice and can wait for transactions. If it fails, it can leave an invalid index: planners ignore it, but writes still maintain it.
+> If a concurrent build fails, check whether it left an invalid index. The planner ignores that index, but writes still maintain it; remove the invalid index before retrying. Production performance should be observed during any later approved rollout.
+
+### Standard
+
+> ## Proposal for this shift
 >
-> **Before retrying.** Measure rehearsal p95 write latency under the same conditions as the 40 ms baseline, and identify what drove the 51 ms result. Retry only when the rehearsal meets the 48 ms limit; the current result does not authorize release.
+> Do not attempt the index build on this shift. The store’s rehearsal p95 write latency limit is 48 ms: 20% above the 40 ms baseline. The concurrent-build rehearsal measured 51 ms, so it failed the release gate by 3 ms. Production performance has not been measured.
 >
-> **Invalid result.** Check the index’s validity after a failed concurrent build. If invalid, account for its write-maintenance cost and remove it before retrying the build.
+> ## Proposed design
 >
-> **Status.** This is a proposal for review. No approval or production-performance evidence is provided.
+> Use `CREATE INDEX CONCURRENTLY` for a later attempt. It permits order inserts during the build, meeting the availability constraint. It scans the table twice and may wait for transactions.
+>
+> If the build fails, check whether it left an invalid index. The planner ignores that index, but writes still maintain it. Drop the invalid index before retrying, accounting for its ongoing write cost until it is removed.
+>
+> ## Alternative
+>
+> Ordinary `CREATE INDEX` does not meet the availability constraint because it blocks writes during the build. It is therefore not a viable option for this rollout.
+>
+> ## What would justify a later production attempt
+>
+> First, repeat the concurrent-build rehearsal in a representative test setting and measure p95 write latency. A result at or below 48 ms would pass the latency gate; a result above 48 ms would not. Also assess transaction waits and the expected impact of the two table scans. Production performance remains unknown until a rollout is approved and observed.
+>
+> If the representative rehearsal passes and the store can preserve insert availability, reviewers can consider authorizing a production attempt. Approval has not been given.
 
-### What changed
+### Strict
 
-| Check fixed before generation | Without | Standard |
-| --- | --- | --- |
-| Computes the 48 ms gate or the 27.5% increase and recognizes that the 51 ms concurrent rehearsal fails the allowed 20% increase. | Met | Met |
-| Rejects an ordinary build during the shift because it blocks required INSERTs and holds the production rollout pending a passing new rehearsal; does not promise production latency. | Missed | Met |
-| Gives a concrete review or recovery plan that checks validity and deals with an invalid index that still imposes write cost (for example, remove it and retry safely). | Met | Met |
-
-**Masked review** (Y = baseline; X = standard). Both calculate a 48 ms ceiling and a 27.5% increase, explain why an ordinary build blocks required writes, and plan to inspect and remove an invalid index. X opens with conditional authorization and explicitly withholds production release until a new rehearsal passes. Y acknowledges the breach but opens by authorizing the concurrent build without limiting that authorization to rehearsal.
-
-<details>
-<summary>Run record</summary>
-
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `96fbdfc6834c` / `22613968a7c4` / `7e00af2b235a`.
-
-</details>
+> # Index build proposal
+>
+> **Recommendation for this shift:** Defer the index build. The concurrent build keeps `INSERT`s available, but its rehearsal p95 write latency was 51 ms—27.5% above the 40 ms baseline. The release limit is 20% above baseline, or 48 ms. The rehearsal failed that gate, and production performance has not been measured.
+>
+> ## Goals and constraints
+>
+> - Keep order `INSERT`s available during the build.
+> - Require rehearsal p95 write latency at most 20% above the 40 ms baseline: **48 ms**.
+> - The store runs PostgreSQL 17.
+>
+> ## Proposed behavior
+>
+> Use `CREATE INDEX CONCURRENTLY` for a later attempt. It permits writes during the build, scans the table twice, and can wait for transactions.
+>
+> If the command fails, check whether it left an invalid index. The planner ignores that index, but writes still maintain it. Remove the invalid index before retrying; until it is removed, writes continue to pay its maintenance cost.
+>
+> ## Alternatives and trade-offs
+>
+> - **Ordinary `CREATE INDEX`:** Does not meet the requirement to keep `INSERT`s available during the build.
+> - **`CREATE INDEX CONCURRENTLY`:** Meets the availability requirement, but the measured rehearsal p95 of 51 ms exceeds the 48 ms limit. It is not ready for production authorization.
+>
+> ## What would justify a later attempt
+>
+> Repeat the concurrent-build rehearsal in a representative test setting. Authorize a production attempt only if the rehearsal p95 write latency is **at most 48 ms** and the build keeps `INSERT`s available. Production performance remains unmeasured; observe it during any subsequently approved rollout. No production attempt is approved by this proposal.
 
 ## gtm-formal
 
-**When does a vote threshold exclude two Raft leaders?**
+**When do two Raft candidates need the same vote?** · [한국어](EXAMPLES.ko.md#gtm-formal)
 
-[한국어](EXAMPLES.ko.md#gtm-formal)
+### Question
 
-2026-11-08 · `gtm-formal` 0.1.2 · English · `gpt-6-luna`
+> Two candidates stand in the same election. The number of servers is fixed, each server can vote for at most one candidate for the term, and each candidate needs a set minimum number of votes to win. Raft normally requires a majority. A team proposes four votes as the minimum for either a seven-server or an eight-server cluster. When does a vote threshold prevent two winners? Is four safe in each cluster, and could an election with a safe threshold still have no winner?
 
-### Case and sources
+**Sources** · [Ongaro and Ousterhout, In Search of an Understandable Consensus Algorithm, §5.2](https://raft.github.io/raft.pdf) · [etcd v3.5 FAQ, fault tolerance](https://etcd.io/docs/v3.5/faq/#what-is-failure-tolerance)
 
-- [Ongaro and Ousterhout, In Search of an Understandable Consensus Algorithm, §5.2](https://raft.github.io/raft.pdf). Section 5.2 and Figure 3 distinguish election safety, one vote per term, majority election and split votes.
-- [etcd v3.5 FAQ, fault tolerance](https://etcd.io/docs/v3.5/faq/#what-is-failure-tolerance). The fault-tolerance table gives a quorum of three for five etcd members. The varied vote threshold is a mathematical exercise; real Raft uses a majority.
+### Light
 
-### Prompt
-
-> In a formal note for a distributed-systems seminar, derive a necessary and sufficient inequality on a proposed election threshold q so that any two qualifying voter sets in a fixed cluster of n voters overlap (1 ≤ q ≤ n). Derive a lower bound for the number of voters shared by two qualifying sets in terms of n and q. Each voter grants at most one vote per term. Use the illustrative etcd-east and etcd-west candidates to connect the bound to election safety. Apply your result to normal majority voting with five voters and to a hypothetical threshold of three in a fixed six-voter cluster. Give a concrete six-voter counterexample if needed. Finally say what election safety alone implies about making progress when voters are unavailable. Keep it concise. Write your answer in English.
-
-### Without the skill
-
-> Let $A$ and $B$ be any two qualifying voter sets in a fixed cluster of $n$ voters, each containing at least $q$ voters, where $1\le q\le n$. Since $A\cup B$ has at most $n$ voters,
+> Let $N$ be the number of servers and $q$ the minimum votes required to win. Assume each server can vote for at most one of the two candidates during the term.
 >
+> Two candidates cannot both win exactly when
 > $$
-> |A\cap B|=|A|+|B|-|A\cup B|\ge 2q-n.
+> 2q>N.
 > $$
+> If both won, they would need $2q$ distinct votes, but only $N$ servers can vote. Conversely, if $2q\le N$, the servers could give each candidate $q$ votes, so two winners are possible.
 >
-> This bound is tight. Thus every two qualifying sets overlap **if and only if**
+> Thus, a safe threshold is $q>\frac N2$, the majority rule:
 >
+> - For $N=7$, $q=4$ is safe because $8>7$.
+> - For $N=8$, $q=4$ is not safe because $8\not>8$. Each candidate could receive four votes.
+>
+> A safe threshold prevents two winners but does not guarantee a winner. For example, in a seven-server cluster with threshold four, if the votes split $3$–$3$ and one server abstains, neither candidate reaches four.
+
+### Standard
+
+> Let $N$ be the number of servers, and let $T$ be the minimum votes required for a candidate to win. Each server can vote for at most one candidate during the term. Thus, for any two distinct candidates with vote counts $v_1$ and $v_2$,
 > $$
-> 2q-n\ge1,\qquad\text{equivalently}\qquad q>\frac n2.
-> $$
->
-> When they overlap, they share at least $2q-n$ voters.
->
-> For five voters, a majority threshold is $q=3$. Any two qualifying sets share at least $2(3)-5=1$ voter. If etcd-east and etcd-west each win an election using a majority, their voter sets therefore share a voter. Because each voter grants at most one vote per term, that shared voter cannot vote for both candidates in the same term; this prevents both candidates from winning that term.
->
-> In a fixed six-voter cluster, threshold $q=3$ does not ensure overlap: the qualifying sets $\{1,2,3\}$ and $\{4,5,6\}$ are disjoint. A threshold of $q=4$ is needed to guarantee overlap, with at least $2(4)-6=2$ shared voters.
->
-> Election safety alone does not guarantee progress: if too many voters are unavailable to form a qualifying set, no candidate can be elected.
-
-<details>
-<summary>Original math delimiters</summary>
-
-````text
-Let \(A\) and \(B\) be any two qualifying voter sets in a fixed cluster of \(n\) voters, each containing at least \(q\) voters, where \(1\le q\le n\). Since \(A\cup B\) has at most \(n\) voters,
-\[
-|A\cap B|=|A|+|B|-|A\cup B|\ge 2q-n.
-\]
-This bound is tight. Thus every two qualifying sets overlap **if and only if**
-\[
-2q-n\ge1,\qquad\text{equivalently}\qquad q>\frac n2.
-\]
-When they overlap, they share at least \(2q-n\) voters.
-
-For five voters, a majority threshold is \(q=3\). Any two qualifying sets share at least \(2(3)-5=1\) voter. If etcd-east and etcd-west each win an election using a majority, their voter sets therefore share a voter. Because each voter grants at most one vote per term, that shared voter cannot vote for both candidates in the same term; this prevents both candidates from winning that term.
-
-In a fixed six-voter cluster, threshold \(q=3\) does not ensure overlap: the qualifying sets \(\{1,2,3\}\) and \(\{4,5,6\}\) are disjoint. A threshold of \(q=4\) is needed to guarantee overlap, with at least \(2(4)-6=2\) shared voters.
-
-Election safety alone does not guarantee progress: if too many voters are unavailable to form a qualifying set, no candidate can be elected.
-````
-
-</details>
-
-### With the skill at standard
-
-> Fix a cluster of $n\ge 1$ voters. A qualifying set is a subset of at least $q$ voters, where $q$ is an integer with $1\le q\le n$. For any two qualifying sets $A,B\subseteq V$, inclusion–exclusion gives
->
-> $$
-> |A\cap B|=|A|+|B|-|A\cup B|\ge 2q-n,
+> v_1+v_2\le N.
 > $$
 >
-> since $|A\cup B|\le n$. Thus every pair overlaps if and only if
+> **Two winners are impossible exactly when $2T>N$.** Indeed, if both candidates win, then $v_1,v_2\ge T$, so $v_1+v_2\ge 2T$. This contradicts $v_1+v_2\le N$ when $2T>N$. Conversely, if $2T\le N$, two candidates can each receive $T$ votes, so the threshold alone does not prevent two winners.
 >
+> For $T=4$:
+>
+> - With $N=7$, $2T=8>7$, so **four votes is safe against two winners**.
+> - With $N=8$, $2T=8\not>8$, so **four votes is not safe**: four servers can vote for each candidate, producing two winners.
+>
+> A safe threshold does not guarantee a winner. For example, with seven servers and threshold four, if votes split $3$–$3$ and one server abstains, neither candidate reaches four. Thus a threshold can prevent multiple winners while still allowing no winner.
+
+### Strict
+
+> Let $N\in\{7,8\}$ be the number of servers, and let $T$ be the minimum number of votes each candidate needs to win. Assume each server casts at most one vote in the term, and both candidates win exactly when each receives at least $T$ votes.
+>
+> Two winners would require at least $2T$ votes in total. Since at most $N$ votes can be cast, two winners are impossible exactly when
 > $$
-> \boxed{2q>n}\qquad\text{or, equivalently,}\qquad q>\frac n2.
+> 2T>N,
 > $$
+> or, for integer $T$, when $T>\lfloor N/2\rfloor$. If $2T\le N$, two winners are possible: assign $T$ distinct servers to each candidate, leaving any remaining servers unassigned. Thus the condition is both necessary and sufficient.
 >
-> The bound on the overlap is $\max(0,2q-n)$. If $2q\le n$, two disjoint qualifying sets of size $q$ can be chosen, so overlap is not guaranteed.
+> For $N=7$, four is safe because $2\cdot4=8>7$. For $N=8$, four is not safe: $2\cdot4=8$, and assigning four servers to each candidate gives both candidates the minimum required votes. A threshold of five would prevent two winners in an eight-server cluster.
 >
-> For example, with five voters, normal majority voting uses $q=3$. Any two qualifying sets share at least $2(3)-5=1$ voter. In a fixed six-voter cluster with hypothetical threshold $q=3$, the bound is zero: $\{\text{A},\text{B},\text{C}\}$ and $\{\text{D},\text{E},\text{F}\}$ are disjoint qualifying sets.
->
-> Apply this to two candidates, etcd-east and etcd-west, each winning by collecting votes from a qualifying set. With a threshold satisfying $2q>n$, their voter sets intersect. Because each voter grants at most one vote per term, the shared voter cannot vote for both candidates in that term; hence both cannot win. With six voters and threshold three, disjoint winning sets are possible, so this overlap argument alone does not guarantee election safety.
->
-> Election safety is a safety property: it rules out conflicting wins under its assumptions, but by itself guarantees no progress when voters are unavailable. Progress depends on whether enough voters remain available to form a qualifying set and on the election protocol’s other conditions.
-
-<details>
-<summary>Original math delimiters</summary>
-
-````text
-Fix a cluster of \(n\ge 1\) voters. A qualifying set is a subset of at least \(q\) voters, where \(q\) is an integer with \(1\le q\le n\). For any two qualifying sets \(A,B\subseteq V\), inclusion–exclusion gives
-\[
-|A\cap B|=|A|+|B|-|A\cup B|\ge 2q-n,
-\]
-since \(|A\cup B|\le n\). Thus every pair overlaps if and only if
-\[
-\boxed{2q>n}\qquad\text{or, equivalently,}\qquad q>\frac n2.
-\]
-The bound on the overlap is \(\max(0,2q-n)\). If \(2q\le n\), two disjoint qualifying sets of size \(q\) can be chosen, so overlap is not guaranteed.
-
-For example, with five voters, normal majority voting uses \(q=3\). Any two qualifying sets share at least \(2(3)-5=1\) voter. In a fixed six-voter cluster with hypothetical threshold \(q=3\), the bound is zero: \(\{\text{A},\text{B},\text{C}\}\) and \(\{\text{D},\text{E},\text{F}\}\) are disjoint qualifying sets.
-
-Apply this to two candidates, etcd-east and etcd-west, each winning by collecting votes from a qualifying set. With a threshold satisfying \(2q>n\), their voter sets intersect. Because each voter grants at most one vote per term, the shared voter cannot vote for both candidates in that term; hence both cannot win. With six voters and threshold three, disjoint winning sets are possible, so this overlap argument alone does not guarantee election safety.
-
-Election safety is a safety property: it rules out conflicting wins under its assumptions, but by itself guarantees no progress when voters are unavailable. Progress depends on whether enough voters remain available to form a qualifying set and on the election protocol’s other conditions.
-````
-
-</details>
-
-### What changed
-
-| Check fixed before generation | Without | Standard |
-| --- | --- | --- |
-| Proves the sufficient bound \|E∩W\| ≥ 2q−n for two qualifying sets and connects 2q>n and one vote per term to exclusion of two leaders. | Met | Met |
-| Establishes necessity when 2q≤n using disjoint sets, computes the five-voter majority of three and illustrates disjoint groups of three in the hypothetical six-voter case. | Missed | Met |
-| Explicitly distinguishes the hypothetical six-voter threshold from Raft's real majority and states why election safety alone does not guarantee progress when too few votes are available. | Met | Met |
-
-**Masked review** (Y = baseline; X = standard). Both derive the inclusion–exclusion bound, apply one vote per term and distinguish safety from election progress. X explicitly constructs disjoint sets for the general case 2q ≤ n and gives the sharp nonnegative bound. Y demonstrates the six-voter split but does not establish general necessity and calls 2q−n tight without the lower limit of zero. Y explicitly computes the safe six-voter threshold of four.
-
-<details>
-<summary>Run record</summary>
-
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `b351e00329c8` / `40b121481c1f` / `8b4494337284`.
-
-</details>
+> A safe threshold does not guarantee a winner. For example, in the seven-server cluster with threshold four, if no server votes, neither candidate reaches four votes. More generally, votes may be split so that each candidate receives fewer than $T$.
 
 ## hunminjeongeum
 
-**How much of a Seoul journey can a better map shorten?**
+**How much of a Seoul journey can a better map shorten?** · [한국어](EXAMPLES.ko.md#hunminjeongeum)
 
-[한국어](EXAMPLES.ko.md#hunminjeongeum)
+### Question
 
-2026-11-08 · `hunminjeongeum` 0.1.1 · English · `gpt-6-luna`
+> On Seoul’s old subway map, transfer stations were hard to distinguish from ordinary stops. The 2023 redesign put the connecting line colours in a single transfer symbol. In an eye-tracking experiment with Korean and international participants in their twenties and thirties, locating a transfer on the map took up to about 69% less time. Suppose someone previously took 200 seconds to find the transfer and then rode the train for nine minutes. What difference could the new map make to that trip if this passenger saw the largest reported reduction?
 
-### Case and sources
+**Sources** · [서울특별시, 지하철 노선도 개선과 아이트래킹 실험](https://mediahub.seoul.go.kr/archives/2009054)
 
-- [서울특별시, 시민의 발, 디자인을 입다…서울시, 지하철 노선도 40년 만에 변경 (2023-09-13)](https://news.seoul.go.kr/culture/archives/520933). Design release on interchange markings, the circular Line 2 reference, and maximum time reduction in the 20s–30s domestic/foreign eye-tracking experiment.
+### Light
 
-### Prompt
+> On the old map, this passenger needed 200 seconds to find the transfer because transfer stations were hard to distinguish from ordinary stops. The redesign puts the connecting line colours in a single transfer symbol, making the transfer easier to locate.
+>
+> Applying the largest reported reduction of about 69% saves about 138 seconds from the search time, leaving about 62 seconds. The nine-minute ride is unchanged, so the trip’s total time falls from 740 seconds to about 602 seconds—a saving of about 138 seconds, or 2 minutes 18 seconds. This is the result if the passenger experiences the largest reduction measured in the experiment; it does not mean every passenger will save that much.
 
-> Explain in English in at most four sentences to someone taking the Seoul subway for the first time why the city proposed a new map in 2023 and what its numbers mean. On the old map, transfers were hard to distinguish from ordinary stations. The redesign joins the colours of connecting lines in one transfer symbol. In an eye-tracking experiment with Korean and international participants in their twenties and thirties, the time to locate a transfer on the map fell by up to about 69%. For illustration, assume a passenger spends 100 seconds using the old map and then 12 minutes riding the train. If that maximum reduction applied to map reading, what would the new combined time be? Someone proposes saying the whole journey becomes 69% faster.
+### Standard
 
-### Without the skill
+> When transfer stations were hard to distinguish from ordinary stops, the 2023 map’s single symbol showing the connecting line colours helped passengers spot a transfer. If this passenger saw the largest reported reduction in search time, finding the transfer would take about 62 seconds instead of 200 seconds—a saving of about 138 seconds.
+>
+> The nine-minute ride is unchanged. In seconds, the trip’s total time would go from 740 seconds (200 + 540) to about 602 seconds (62 + 540), a reduction of about 138 seconds. This applies the experiment’s reported maximum reduction of about 69% to the time spent finding the transfer; the result is conditional, and the experiment does not establish that every passenger would save this much.
 
-> Seoul proposed the map in 2023 because transfers were hard to spot on the old one. The new map combines the colours of connecting lines in a single transfer symbol, and in an eye-tracking experiment, Korean and international participants in their twenties and thirties found transfers up to about 69% faster. If finding a transfer took 100 seconds before, a 69% reduction would bring map-reading time to 31 seconds; with a 12-minute train ride, the combined time would be 12 minutes 31 seconds. So it would be misleading to say the whole journey becomes 69% faster: only the map-reading time is reduced in this example.
+### Strict
 
-### With the skill at standard
-
-> On Seoul’s old subway map, transfers were hard to distinguish from ordinary stations, so the city proposed a redesign in 2023 to make transfers easier to spot. It joins the colours of connecting lines in one transfer symbol; in an eye-tracking experiment with Korean and international participants in their twenties and thirties, the time to locate a transfer on the map fell by up to about 69%. In the example, a 69% reduction cuts 100 seconds of map reading to 31 seconds; adding the unchanged 12-minute ride gives a total of 12 minutes 31 seconds. So “the whole journey becomes 69% faster” would be inaccurate: the reported reduction applies to finding transfers on the map, not to the train ride or total journey.
-
-### What changed
-
-| Check fixed before generation | Without | Standard |
-| --- | --- | --- |
-| Opens by connecting the passenger's difficulty finding transfers to the linked line-colour transfer symbol. | Met | Met |
-| Computes about 31 seconds looking at the new map and about 12 minutes 31 seconds for the hypothetical total (train ride remains 12 minutes). | Met | Met |
-| Makes clear the up-to-about-69% result was for locating transfers in the map experiment, not a measured 69% reduction of actual whole journeys. | Met | Met |
-
-**Masked review** (Y = baseline; X = standard). Both explain the transfer symbol and correctly combine 31 seconds of map reading with an unchanged 12-minute ride. X describes the measured quantity as time falling by up to about 69%. Y calls it finding transfers ‘69% faster’, which is less precise than a 69% reduction in time, then gives the correct calculation and limits the result to the map task.
-
-<details>
-<summary>Run record</summary>
-
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `41f1b8c56caa` / `a341d5a5f712` / `43a2e90ed3f6`.
-
-</details>
+> For a passenger who had trouble spotting a transfer station among ordinary stops, the 2023 map’s single symbol showing the connecting line colours could make the transfer quicker to find.
+>
+> At the largest reported reduction, the 200-second search would take about 62 seconds: 200 × (1 − 0.69) = 62. The nine-minute train ride is unchanged, so the whole trip would go from 740 seconds to about 602 seconds—a saving of about 138 seconds.
+>
+> So, if this passenger saw the largest reduction measured in the experiment, the trip could be about 138 seconds shorter. The result comes from an eye-tracking experiment with Korean and international participants in their twenties and thirties; it does not establish the reduction for every passenger.
 
 ## ietf-rfc
 
-**Interpreting two different HTTP 429 retry clocks**
+**Interpreting two different HTTP 429 retry clocks** · [한국어](EXAMPLES.ko.md#ietf-rfc)
 
-[한국어](EXAMPLES.ko.md#ietf-rfc)
+### Question
 
-2026-11-09 · `ietf-rfc` 0.1.10 · English · `gpt-6-luna`
+> Two HTTP 429 responses were sent at 09:00:00 UTC and received at 09:00:05 UTC. The first carried Retry-After: 45. The second contained an HTTP date for 09:01:00 UTC that day. The clocks agree. RFC 6585 permits a server to send 429 when a user sends too many requests in a period of time, recommends that the response explain the condition, permits Retry-After and forbids caches to store 429 responses. RFC 9110 allows Retry-After to be an HTTP date or a nonnegative number of seconds after receipt. What should the server, cache and client make of these responses? When would the client try again in each case, and what could still happen?
 
-### Case and sources
+**Sources** · [IETF RFC 6585 §4, 429 Too Many Requests](https://www.rfc-editor.org/rfc/rfc6585.html#section-4) · [IETF RFC 9110 §10.2.3, Retry-After](https://www.rfc-editor.org/rfc/rfc9110.html#section-10.2.3)
 
-- [IETF RFC 6585 §4, 429 Too Many Requests](https://www.rfc-editor.org/rfc/rfc6585.html#section-4). Sections 4 and 7.2 cover explanation, optional Retry-After, cache prohibition, deliberately unspecified counting and a server’s discretion to omit 429.
-- [IETF RFC 9110 §10.2.3, Retry-After](https://www.rfc-editor.org/rfc/rfc9110.html#section-10.2.3). The field accepts an HTTP date or nonnegative integer delay in seconds after response receipt. The response times and example header values in the exercise are illustrative.
+### Light
 
-### Prompt
-
-> Write an internal API specification for two illustrative rate-limit responses. Both are sent at 09:00:00 UTC and received by the client at 09:00:05 UTC. The first has Retry-After: 45; the second has an HTTP date equivalent to 09:01:00 UTC that day. Assume synchronized clocks. Under RFC 6585 the server can choose 429, its content should explain the condition, Retry-After is optional, and caches cannot store a 429. RFC 9110 permits either an HTTP date or a nonnegative delay measured after receipt. Declare the BCP 14 keyword convention, give the client’s suggested retry time in each case, and say what neither time promises. Do not add a client obligation absent from the sources. Keep it concise. Write your answer in English.
-
-### Without the skill
-
-> ## Rate-limit responses
+> ### Scope and roles
 >
-> This illustrative API may return **429 Too Many Requests** when a client exceeds its rate limit. The response content should explain the condition. The server may include `Retry-After`; it is optional. Caches **MUST NOT** store a 429 response.
+> This interpretation covers two HTTP 429 responses sent by a server and received by a client. The clocks agree. The server sent both responses at 09:00:00 UTC; the client received both at 09:00:05 UTC. The first carried `Retry-After: 45`; the second carried an HTTP date of 09:01:00 UTC that day.
 >
-> **BCP 14 convention:** The key words **MUST**, **MUST NOT**, **SHOULD**, and **MAY** are to be interpreted as described in BCP 14 only when they appear in all capitals.
+> ### Server and cache
 >
-> Both responses are sent at **09:00:00 UTC** and received at **09:00:05 UTC**. Assume synchronized clocks.
+> RFC 6585 permits the server to send 429 when a user has sent too many requests in a period of time. It recommends that the response explain the condition. The server may include `Retry-After`.
 >
-> | `Retry-After` value | Suggested retry time |
+> A cache must not store a 429 response.
+>
+> ### Client
+>
+> RFC 9110 permits `Retry-After` to contain either an HTTP date or a nonnegative number of seconds after receipt. The two values therefore indicate different retry times:
+>
+> - For `Retry-After: 45`, the client’s retry time is 45 seconds after receipt: 09:00:50 UTC.
+> - For the HTTP date `09:01:00 UTC`, the client’s retry time is that stated date and time: 09:01:00 UTC.
+>
+> These are suggested retry times, not guarantees that a retry will succeed. The client could still receive another 429 or another response.
+
+### Standard
+
+> ### Interpretation of the 429 responses
+>
+> RFC 6585 permits a server to send **429 Too Many Requests** when a user has sent too many requests in a period of time. It recommends that the response explain the condition. The server may include `Retry-After`. A cache is forbidden to store a 429 response.
+>
+> RFC 9110 defines `Retry-After` as either an HTTP date or a nonnegative number of seconds after receipt of the response. The client can use that value to determine when to try again.
+>
+> | Response | Client’s retry time |
 > |---|---|
-> | `45` | **09:00:50 UTC** — 45 seconds after receipt |
-> | HTTP date equivalent to **09:01:00 UTC** | **09:01:00 UTC** |
+> | First: `Retry-After: 45`, received at 09:00:05 UTC | 09:00:50 UTC, 45 seconds after receipt |
+> | Second: HTTP date 09:01:00 UTC, received at 09:00:05 UTC | 09:01:00 UTC |
 >
-> Neither time promises that a retry will succeed or that the server will be available then.
+> These are the times indicated by `Retry-After`; the client may still receive another 429 if the rate limit remains in effect. The second date is later than the first response’s indicated retry time. The two response values do not establish whether they came from the same rate-limit state or which retry time should govern requests other than the one associated with each response.
+>
+> The cache must not store either 429 response. The stated rules do not specify how a client should reconcile multiple retry instructions beyond interpreting each value according to its form.
+>
+> IANA applicability: these rules do not request an IANA action.
 
-### With the skill at standard
+### Strict
 
-> # Rate-Limit Response Examples
+> ## Interpretation of the 429 responses
 >
-> **Status:** Internal illustrative specification.
+> This interpretation applies RFC 6585’s HTTP 429 behavior and RFC 9110’s `Retry-After` semantics to the two responses. The actors are the server that sends the responses, any cache that handles them, and the client that receives them. The clocks agree.
 >
-> ## Scope and terminology
+> ### Server
 >
-> This specification covers two illustrative HTTP 429 responses and the client’s suggested retry times. “Receipt” means receipt by the client. Clocks are assumed synchronized.
+> - When a user sends too many requests within a period of time, the server may send a 429 response.
+> - When sending a 429 response, the server is recommended to explain the condition.
+> - The server may include `Retry-After` in a 429 response.
 >
-> ## Requirements
+> ### Cache
 >
-> The key words **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT**, and **MAY** are to be interpreted as described in BCP 14 (RFC 2119 and RFC 8174) when, and only when, they appear in uppercase.
+> - A cache is forbidden to store a 429 response.
 >
-> | Actor | BCP 14 | Behavior and condition |
-> |---|---|---|
-> | Server | MAY | Choose status code 429 to indicate that the client has sent too many requests in a given amount of time. |
-> | Server | SHOULD | Include a response representation that explains the condition. |
-> | Server | MAY | Include `Retry-After` in a 429 response. |
-> | Cache | MUST NOT | Store a 429 response. |
+> ### Client
 >
-> ## Suggested retry times
+> - When `Retry-After` contains a nonnegative number of seconds, the client interprets it as a duration after receipt of the response.
+> - When `Retry-After` contains an HTTP date, the client interprets it as the time indicated by that date.
 >
-> RFC 9110 allows `Retry-After` to contain either an HTTP date or a nonnegative delay in seconds measured after receipt. In both examples, the response is sent at 09:00:00 UTC and received at 09:00:05 UTC.
+> ### Response times and retry times
 >
-> - With `Retry-After: 45`, the suggested retry time is **09:00:50 UTC** (45 seconds after receipt).
-> - With `Retry-After` set to an HTTP date equivalent to **09:01:00 UTC** that day, the suggested retry time is **09:01:00 UTC**.
+> | Response | Sent | Received | `Retry-After` | Client’s indicated retry time |
+> |---|---|---|---|---|
+> | First | 09:00:00 UTC | 09:00:05 UTC | `45` seconds | 09:00:50 UTC |
+> | Second | 09:00:00 UTC | 09:00:05 UTC | HTTP date: 09:01:00 UTC that day | 09:01:00 UTC |
 >
-> Neither time promises that the rate limit will have cleared or that a subsequent request will succeed. The client has no retry obligation specified here.
+> The first value is relative to receipt, so the client adds 45 seconds to 09:00:05. The second value is an absolute time; the client uses 09:01:00 UTC unchanged. Both indicated times are after the responses were received.
 >
-> ## References
->
-> **Normative:** RFC 6585 (429 responses); RFC 9110 (`Retry-After` formats). RFC 2119 and RFC 8174 define BCP 14 keyword meanings.
->
-> **IANA:** No IANA action applies to these examples.
-
-### What changed
-
-| Check fixed before generation | Without | Standard |
-| --- | --- | --- |
-| States a BCP 14 convention and preserves optional server selection of 429, SHOULD explanatory content, optional Retry-After and the cache's MUST NOT store obligation. | Met | Met |
-| Correctly computes 09:00:50 UTC for the 45-second delay after receipt and 09:01:00 UTC for the date value. | Met | Met |
-| Frames those times as suggested waits rather than a new client MUST/SHOULD, and states that a retry is not guaranteed to succeed. | Met | Met |
-
-**Review.** The specification keeps each requirement with its actor. The two retry times are 09:00:50 and 09:01:00 UTC; neither obliges the client to retry or promises success.
-
-Masked reviewer assignment: Y was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/ietf-rfc/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/ietf-rfc.json).
-
-<details>
-<summary>Run record</summary>
-
-Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `a03848dad0d2` / `0e16e6d9aec6` / `18eb49ccc918`.
-
-</details>
+> `Retry-After` indicates when to try again; it does not guarantee that a later request will succeed. The server could still send another 429 if the client retries while the rate condition persists.
 
 ## imrad
 
-**What ten years of LIGO background would imply for GW150914**
+**What ten years of LIGO background would imply for GW150914** · [한국어](EXAMPLES.ko.md#imrad)
 
-[한국어](EXAMPLES.ko.md#imrad)
+### Question
 
-2026-11-08 · `imrad` 0.1.3 · English · `gpt-6-luna`
+> On 14 September 2015 LIGO's Livingston and Hanford instruments recorded GW150914, a signal rising from 35 to 250 Hz with peak dimensionless strain 1.0 × 10⁻²¹. Researchers found that it matched a predicted waveform for a binary black-hole merger. They estimated that noise candidates at least this significant would occur at a rate below one per 203,000 years in this search. Someone concludes that ten years are guaranteed to contain zero such false alarms, and that the probability GW150914 was noise is zero. What do the observations and the ten-year calculation actually establish if the rate stays the same?
 
-### Case and sources
+**Sources** · [LIGO Scientific Collaboration and Virgo Collaboration, Observation of Gravitational Waves from a Binary Black Hole Merger (2016)](https://dcc.ligo.org/public/0122/P150914/014/LIGO-P150914_Detection_of_GW150914.pdf)
 
-- [LIGO Scientific Collaboration and Virgo Collaboration, Observation of Gravitational Waves from a Binary Black Hole Merger (2016)](https://dcc.ligo.org/public/0122/P150914/014/LIGO-P150914_Detection_of_GW150914.pdf). Abstract and §V.B, binary coalescence search: event date, two detectors, frequency sweep, peak strain, predicted waveform match and upper bound on the false-alarm rate.
+### Light
 
-### Prompt
-
-> Write a museum research abstract in at most five sentences about LIGO’s GW150914. On 14 September 2015 the Livingston and Hanford instruments recorded a signal rising from 35 to 250 Hz with peak dimensionless strain 1.0 × 10⁻²¹. Researchers found that it matched a predicted binary black-hole merger waveform. The search put its rate of noise candidates at least this significant below one per 203,000 years. An editor concludes: “There would be no false alarms in ten years, so the chance this event was noise is zero.” For an illustrative ten years at the same rate, compute an upper bound on the expected number of such noise candidates. Use the result to assess the editor’s reasoning, while keeping instrument readings, analysis, and interpretation distinct. Write the answer in English.
-
-### Without the skill
-
-> On 14 September 2015, LIGO’s Livingston and Hanford instruments recorded a signal rising from 35 to 250 Hz, with peak dimensionless strain of $1.0 \times 10^{-21}$. Analysis found that the signal matched a predicted binary black-hole merger waveform. The search estimated fewer than one noise candidate of at least this significance per 203,000 years; at that rate, the expected number in ten years is less than $10/203{,}000 \approx 4.9 \times 10^{-5}$. This very small upper bound does not mean there would be no false alarms or that the chance this event was noise is zero: it describes an expected rate, not a guarantee or a direct probability for this particular event.
-
-<details>
-<summary>Original math delimiters</summary>
-
-````text
-On 14 September 2015, LIGO’s Livingston and Hanford instruments recorded a signal rising from 35 to 250 Hz, with peak dimensionless strain of \(1.0 \times 10^{-21}\). Analysis found that the signal matched a predicted binary black-hole merger waveform. The search estimated fewer than one noise candidate of at least this significance per 203,000 years; at that rate, the expected number in ten years is less than \(10/203{,}000 \approx 4.9 \times 10^{-5}\). This very small upper bound does not mean there would be no false alarms or that the chance this event was noise is zero: it describes an expected rate, not a guarantee or a direct probability for this particular event.
-````
-
-</details>
-
-### With the skill at standard
-
-> **Status: IMRaD, standard level**
+> What do the GW150914 observations establish, and what does the ten-year rate imply if the rate stays the same?
 >
-> **Introduction:** On 14 September 2015, the Livingston and Hanford instruments recorded a signal consistent with a predicted binary black-hole merger waveform. **Methods:** The instruments recorded a signal rising from 35 to 250 Hz, with peak dimensionless strain of 1.0 × 10⁻²¹; researchers compared it with the predicted waveform and estimated the rate of noise candidates at least this significant. **Results:** That rate was below one per 203,000 years, giving an illustrative ten-year upper bound of 10/203,000 ≈ 4.9 × 10⁻⁵ expected noise candidates. **Discussion:** This rate-based bound does not imply there would be no false alarms in ten years, nor does it make the chance that this event was noise zero; it describes an expected count, not certainty about an individual event.
+> **Observations.** On 14 September 2015, the LIGO instruments at Livingston and Hanford recorded GW150914. The signal rose from 35 to 250 Hz and reached a peak dimensionless strain of $1.0 \times 10^{-21}$. Researchers found that it matched a predicted waveform for a binary black-hole merger. In this search, noise candidates at least this significant were estimated to occur at a rate below one per 203,000 years.
+>
+> **Interpretation.** The waveform match supports a binary black-hole merger interpretation. The rate estimate is an upper bound: it does not establish that the rate is zero, or give the probability that GW150914 was noise. If the rate stays the same for ten years, the expected number of such noise candidates is below $10/203{,}000 \approx 0.0000493$. Zero and some false alarms are both compatible with that bound. It cannot guarantee zero false alarms in ten years, and it does not establish that the probability GW150914 was noise is zero.
 
-### What changed
+### Standard
 
-| Check fixed before generation | Without | Standard |
-| --- | --- | --- |
-| Correctly attributes the dated 35–250 Hz, 1.0 × 10⁻²¹ strain signal to both detectors and the waveform comparison to analysis rather than to the detectors. | Met | Met |
-| Computes an expected count strictly below 10/203,000 (about 4.93 × 10⁻⁵) over the hypothetical ten years at the stated rate, without labeling it an event probability. | Met | Met |
-| Rejects both the guarantee of zero noise candidates and a zero probability for this event; the abstract distinguishes the measured signal from the supported merger interpretation. | Met | Met |
+> ## Introduction
+>
+> GW150914 was recorded by LIGO’s Livingston and Hanford instruments on 14 September 2015. What do the observations and a ten-year calculation establish about the chance of false alarms and the possibility that the signal was noise?
+>
+> ## Methods
+>
+> The two instruments recorded the signal. Researchers compared it with a predicted waveform for a binary black-hole merger. The search estimated the rate at which noise candidates at least as significant as GW150914 would occur. The supplied information does not specify the search’s rate-estimation procedure or uncertainty.
+>
+> ## Results
+>
+> The signal rose from 35 to 250 Hz and had a peak dimensionless strain of $1.0 \times 10^{-21}$. Researchers found that it matched the predicted merger waveform. The estimated rate of noise candidates at least this significant was below one per 203,000 years.
+>
+> If that rate stays the same, multiplying the upper rate bound by ten years gives an expected count below $10/203{,}000 \approx 4.93 \times 10^{-5}$ such candidates in ten years.
+>
+> ## Discussion
+>
+> The ten-year calculation bounds the expected count; it does not guarantee that ten years contain zero false alarms. Zero and some such candidates are both compatible with the bound. The rate estimate also does not establish that the probability GW150914 was noise is zero. The supplied observations support the waveform match and a very low estimated background rate, but they do not give a probability that this particular signal was noise.
 
-**Masked review** (X = baseline; Y = standard). Both assign the observations to the detectors and the waveform comparison to analysis, compute an expected count below 10/203,000 and reject both zero-risk claims. X gives a four-sentence paragraph. Y labels the scientific sections clearly, but prepends an unrequested method-and-level status that makes masking imperfect.
+### Strict
 
-<details>
-<summary>Run record</summary>
-
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `85287f2bd34d` / `d792488d2fd9` / `89f688d01cd5`.
-
-</details>
+> ## Introduction
+>
+> What do the reported observations and the ten-year calculation establish about GW150914 and false alarms, assuming the estimated rate stays the same?
+>
+> ## Methods
+>
+> On 14 September 2015, the LIGO Livingston and Hanford instruments recorded GW150914. Researchers compared the signal with a predicted waveform for a binary black-hole merger. They estimated the rate at which noise candidates at least as significant as the signal would occur in this search.
+>
+> ## Results
+>
+> The signal rose from 35 to 250 Hz and had a peak dimensionless strain of $1.0 \times 10^{-21}$. Researchers found that it matched the predicted binary black-hole merger waveform. The estimated rate of noise candidates at least this significant was below one per 203,000 years. If that rate stays the same, the corresponding ten-year expected count is below $10/203{,}000$, or approximately $4.93 \times 10^{-5}$.
+>
+> ## Discussion
+>
+> The rate estimate implies an expected count below approximately $4.93 \times 10^{-5}$ such noise candidates in ten years. Zero candidates and some candidates are both compatible with this upper bound, so it cannot guarantee zero false alarms. The rate estimate also does not establish that the probability GW150914 was noise is zero; that probability requires separate evidence and a probability model.
+>
+> The supplied account does not specify how the rate was estimated, its uncertainty, or the comparison and analysis procedures in enough detail to assess reproducibility or the strength of the probability claim.
 
 ## korean-plain-language
 
-**Which months qualified for Seoul’s pilot refund?**
+**Which passes qualified for Seoul’s 2024 refund?** · [한국어](EXAMPLES.ko.md#korean-plain-language)
 
-[한국어](EXAMPLES.ko.md#korean-plain-language)
+### Question
 
-2026-11-09 · `korean-plain-language` 0.1.9 · English · `gpt-6-luna`
+> A Korean exhibit caption about Seoul’s 2024 youth Climate Card pilot says “지우와 민서는 지금 환급금을 받아요.” Under that pilot a completed 30-day pass used without a refund could qualify for 7,000 won. Physical cards counted only after registration; mobile cards needed no separate registration. Both required a refund application. Jiwoo finished one physical pass before registration and another after registration, then refunded a third pass on day 18. Minseo completed two mobile passes without refund. All other conditions were met. How should the Korean caption read, and what amount was each person eligible to apply for? Give any explanation in English.
 
-### Case and sources
+**Sources** · [서울특별시 내 손안에 서울, ‘월 5만원대’ 청년 맞춤형 기후동행카드 나온다 (2024-02-21)](https://mediahub.seoul.go.kr/archives/2010350)
 
-- [서울특별시 내 손안에 서울, ‘월 5만원대’ 청년 맞춤형 기후동행카드 나온다 (2024-02-21)](https://mediahub.seoul.go.kr/archives/2010350). City's February 2024 announcement, especially the retrospective refund, separate registration rule and monthly eligibility conditions under the original pilot.
+### Light
 
-**Language scope.** The editor’s explanation is in English; the object being edited is Korean. Quoted Korean phrases demonstrate tense, modality and polite endings.
-
-### Prompt
-
-> Write a brief editorial memo in English for an editor working on a Korean exhibit about Seoul’s 2024 youth Climate Card pilot. The draft says ‘지우와 민서는 지금 환급금을 받아요’. At the time, each completed 30-day pass used without a refund could qualify for a 7,000-won refund. Physical cards counted only after registration; mobile cards required no separate card registration. Both types required a refund application. Assume all other eligibility conditions were met. Jiwoo completed a first physical pass before registration, completed the second after registration, and refunded a third on day 18. Minseo completed two mobile passes without refund. Explain how much each could have applied for and why. Explain the time and payment implication in the draft and suggest a short Korean 해요체 phrase to fix it. Keep the editorial explanation in English; retain Korean where discussing the actual wording.
-
-### Without the skill
-
-> **Editorial memo**
+> Jiwoo’s first physical pass was completed before registration, so it did not qualify. The second was completed after registration and was not refunded, so it qualified for ₩7,000. The third pass was refunded on day 18, so it did not qualify.
 >
-> The statement ‘지우와 민서는 지금 환급금을 받아요’ implies that both are receiving refunds now. That is not supported: the amounts described are potential refunds they could have applied for, and both card types required an application.
+> Minseo’s two completed mobile passes were not refunded. Mobile cards required no separate registration, so both qualified: 2 × ₩7,000 = ₩14,000.
 >
-> Jiwoo could have applied for **7,000 won** for the second pass only. The first physical pass was completed before the card was registered, so it did not count. The third pass was refunded on day 18, so it was not a completed 30-day pass used without a refund.
+> > 지우와 민서는 환급을 신청하면 각각 7,000원과 14,000원을 받을 수 있었어요.
+
+### Standard
+
+> The caption should describe eligibility at the time of the 2024 pilot, rather than say they receive a refund now.
 >
-> Minseo could have applied for **14,000 won**: two completed 30-day mobile passes used without refunds, at 7,000 won each. Mobile cards did not need separate card registration, but still required a refund application.
+> - **Jiwoo:** The pass completed before registering the physical card did not qualify; the one completed after registration did. The third pass was refunded and did not qualify. **1 eligible pass × ₩7,000 = ₩7,000.**
+> - **Minseo:** Both completed mobile passes qualified; mobile cards did not need separate registration. **2 eligible passes × ₩7,000 = ₩14,000.**
 >
-> A concise 해요체 replacement is: **‘지우와 민서는 환급금을 신청할 수 있어요.’** This makes clear that the refunds were available to apply for, not necessarily already paid.
-
-### With the skill at standard
-
-> The draft’s “지우와 민서는 지금 환급금을 받아요” says Jiwoo and Minseo are receiving refunds now. The pilot’s refund was a past opportunity to apply for payment, so this wording may wrongly suggest a current payment or a guaranteed one. Replace it with **“환급금을 신청할 수 있었어요”** (“They could apply for a refund”).
+> Both still had to apply for the refund.
 >
-> - **Jiwoo — 7,000 won.** The first physical pass was completed before registration, so it did not qualify. The second was completed after registration and without a refund, so Jiwoo could apply for 7,000 won. The third was refunded on day 18, so it did not qualify as a completed 30-day pass used without a refund.
-> - **Minseo — 14,000 won.** Both mobile passes were completed without refunds. Mobile cards did not need separate registration, so each pass could qualify for 7,000 won.
+> > 2024년 시범사업 당시 지우는 7,000원, 민서는 14,000원의 환급금을 신청할 수 있었어요.
+
+### Strict
+
+> Under the 2024 pilot rules, Jiwoo’s first pass did not qualify because it was used before the physical card was registered. The second qualified, but the pass refunded on day 18 did not meet the 30-day condition.
 >
-> Both still had to apply; eligibility did not mean the refund was already received.
-
-### What changed
-
-| Check fixed before generation | Without | Standard |
-| --- | --- | --- |
-| Correctly gives Jiwoo 7,000 won, counting only the second pass and explaining why the unregistered and refunded passes do not count. | Met | Met |
-| Correctly gives Minseo 14,000 won for two completed passes; distinguishes not having to register the mobile card from having to apply for either refund. | Met | Met |
-| Explains the draft's timing and payment implications in English and proposes Korean 해요체 wording that conveys past eligibility to apply without implying current entitlement or automatic payment. | Missed | Met |
-
-**Review.** Jiwoo could apply for 7,000 won and Minseo for 14,000. Mobile registration was waived, but both people still needed to apply. The proposed Korean wording describes eligibility at the time.
-
-Masked reviewer assignment: X was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/korean-plain-language/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/korean-plain-language.json).
-
-<details>
-<summary>Run record</summary>
-
-Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `22797d4c7797` / `b2b7f3a4df0d` / `af8afbb2a4fc`.
-
-</details>
+> Minseo’s two completed mobile passes qualified; mobile cards did not need separate registration. Both people still had to apply for the refund.
+>
+> Jiwoo: 1 eligible pass × 7,000 won = 7,000 won.\
+> Minseo: 2 eligible passes × 7,000 won = 14,000 won.
+>
+> > 2024년 청년 기후동행카드 시범사업에서 지우는 환급 신청을 하면 7,000원을 받을 수 있었고, 민서는 14,000원을 받을 수 있었어요.
 
 ## microsoft-writing-style
 
-**Clearing a Windows clipboard without losing two keepers**
+**Clearing a Windows clipboard without losing two keepers** · [한국어](EXAMPLES.ko.md#microsoft-writing-style)
 
-[한국어](EXAMPLES.ko.md#microsoft-writing-style)
+### Question
 
-2026-11-09 · `microsoft-writing-style` 0.1.11 · English · `gpt-6-luna`
+> My Windows 11 clipboard history has five entries. A delivery address and an obsolete access code are pinned. A return reference and two draft notes are unpinned. I want to keep just the address and the return reference without typing either again. The interface is in English: Windows logo key + V opens Clipboard history, Pin protects an entry from Clear all, Clear all removes unpinned entries, and See more (...) > Delete removes one entry. How can I use Clear all on this PC and still end up with exactly those two items?
 
-### Case and sources
+**Sources** · [Microsoft Support, Using the clipboard](https://support.microsoft.com/en-us/windows/apps/using-the-clipboard)
 
-- [Microsoft Support, Using the clipboard](https://support.microsoft.com/en-us/windows/apps/using-the-clipboard). The Windows 11 sections document opening device history, clearing unpinned entries and deleting one selected item. The clipboard contents are hypothetical.
-
-**Language scope.** This English example applies the English technology-writing profile to an English Windows interface.
-
-### Prompt
-
-> Write Windows 11 help for a person who wants exactly two entries left in this PC's clipboard history. The Windows interface is in English. In this example the delivery address and an obsolete access code are pinned; a return reference and two draft notes are unpinned. Keep the address and the return reference, remove the other three, and avoid retyping either keeper. Windows logo key + V opens Clipboard history. You can pin an entry; Clear all removes the unpinned entries. See more (...) then Delete removes a chosen entry. Give one reliable sequence using Clear all, explain which action must come first and how to tell the goal was met. Use the actual controls. They only asked about this PC. Keep it concise. Write your answer in English.
-
-### Without the skill
+### Light
 
 > 1. Press **Windows logo key + V** to open Clipboard history.
-> 2. Find the **delivery address** and **return reference**. For each one, select **See more (…) > Pin**. Do this **before** clearing anything, so both keepers survive.
-> 3. Select **Clear all**. This removes the unpinned **obsolete access code** and **two draft notes**.
-> 4. Check the history: it should show exactly the **delivery address** and **return reference**, both pinned. No retyping is needed.
+> 2. In Clipboard history, keep the pinned delivery address as it is.
+> 3. Select **See more (...) > Delete** for the pinned obsolete access code.
+> 4. Select **Pin** for the unpinned return reference.
+> 5. Leave the two unpinned draft notes as they are.
+> 6. Select **Clear all**.
 >
-> This changes clipboard history on this PC only.
+> Check that the delivery address and return reference remain.
 
-### With the skill at standard
+### Standard
 
-> To leave exactly the delivery address and return reference in this PC’s clipboard history, first protect the address, then remove the obsolete access code and both draft notes. **Clear all removes every unpinned entry**, so pin the return reference before you use it.
+> Open Clipboard history with Windows logo key + V, then set up the entries:
 >
-> Press **Windows logo key + V** to open Clipboard history.
+> | Entry | Current state | Keep or remove | Action to take now |
+> |---|---|---|---|
+> | Delivery address | Pinned | Keep | Leave it pinned |
+> | Obsolete access code | Pinned | Remove | Select See more (...) > Delete |
+> | Return reference | Unpinned | Keep | Select Pin |
+> | Draft note 1 | Unpinned | Remove | Leave it unpinned |
+> | Draft note 2 | Unpinned | Remove | Leave it unpinned |
 >
-> | Item | Current state | What to do now |
-> |---|---|---|
-> | Delivery address | Pinned | Leave it as it is. |
-> | Obsolete access code | Pinned | Select **See more (...)**, then **Delete**. |
-> | Return reference | Unpinned | Pin it. |
-> | First draft note | Unpinned | Leave it for **Clear all**. |
-> | Second draft note | Unpinned | Leave it for **Clear all**. |
+> After those steps, select **Clear all**. Check Clipboard history: it should contain only the delivery address and return reference.
+
+### Strict
+
+> | Entry | Current state | Keep or remove | Action to take now |
+> |---|---|---|---|
+> | Delivery address | Pinned | Keep | Leave it pinned. |
+> | Obsolete access code | Pinned | Remove | Select **See more (...) > Delete**. |
+> | Return reference | Unpinned | Keep | Select **Pin**. |
+> | Draft note 1 | Unpinned | Remove | Leave it unpinned. |
+> | Draft note 2 | Unpinned | Remove | Leave it unpinned. |
 >
-> After those steps, select **Clear all**. Check Clipboard history: the delivery address and return reference should be the only two entries left.
-
-### What changed
-
-| Check fixed before generation | Without | Standard |
-| --- | --- | --- |
-| Uses Windows logo key + V and pins the return reference before Clear all; keeps the already pinned delivery address. | Met | Met |
-| Uses See more (...) then Delete for the obsolete pinned access code, or expressly unpins it before Clear all so it is removed; does not imply Clear all alone deletes pinned items. | Missed | Met |
-| Gives user-facing steps that end with exactly the address and return reference, remove the two drafts and make no unsupported claim about other devices. | Missed | Met |
-
-**Review.** The sequence protects the unpinned return reference, keeps the pinned address and removes the unwanted pinned code separately. The two drafts go in the bulk clear.
-
-Masked reviewer assignment: Y was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/microsoft-writing-style/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/microsoft-writing-style.json).
-
-<details>
-<summary>Run record</summary>
-
-Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `0478d6d5cc87` / `4df37c28e2f2` / `8db00fcc99c0`.
-
-</details>
+> Press **Windows logo key + V** to open Clipboard history. After the setup actions above, select **Clear all**. The address stays pinned, the return reference is now pinned, and the unpinned draft notes are removed. Check that Clipboard history contains exactly the delivery address and return reference.
 
 ## minto-pyramid
 
-**Which crossings should receive the pilot first?**
+**Which crossings should receive the pilot first?** · [한국어](EXAMPLES.ko.md#minto-pyramid)
 
-[한국어](EXAMPLES.ko.md#minto-pyramid)
+### Question
 
-2026-11-09 · `minto-pyramid` 0.2.6 · English · `gpt-6-luna`
+> A city can fund a leading pedestrian interval at North or South, two groups of signalized crossings with heavy turning traffic. WALK would begin 3–7 seconds before drivers get green. Both projects cost the same; the city wants to prevent the larger expected number of vehicle–pedestrian crashes. Without the change, North expects 20 such crashes and South 5 over the same period. A three-city FHWA study estimated a crash modification factor of 0.87. Where should the city run its pilot? How could it find out whether the change made a difference locally?
 
-### Case and sources
+**Sources** · [FHWA, Leading Pedestrian Interval](https://highways.dot.gov/safety/proven-safety-countermeasures/leading-pedestrian-interval) · [FHWA, Safety Evaluation of Protected Left-Turn Phasing and Leading Pedestrian Intervals on Pedestrian Safety (2018), FHWA-HRT-18-044](https://www.fhwa.dot.gov/publications/research/safety/18044/18044.pdf)
 
-- [FHWA, Leading Pedestrian Interval](https://highways.dot.gov/safety/proven-safety-countermeasures/leading-pedestrian-interval). Definition, timing, turning conflicts, visibility, accessibility and applicability at high-turning-volume crossings.
-- [FHWA, Safety Evaluation of Protected Left-Turn Phasing and Leading Pedestrian Intervals on Pedestrian Safety (2018), FHWA-HRT-18-044](https://www.fhwa.dot.gov/publications/research/safety/18044/18044.pdf). Executive summary and combined leading-interval evaluation, including the Chicago, New York and Charlotte sites and pedestrian crash modification factor 0.87. The committee decision in the request is hypothetical.
+### Light
 
-### Prompt
+> **Run the pilot at North.** If the three-city study’s crash modification factor (CMF) of 0.87 applies locally, the estimated reduction is 13%: about **2.6 crashes at North** (20 × 0.13) versus **0.65 at South** (5 × 0.13) over the same period. The estimate favors North because its baseline expected crash count is higher; it is a forecast based on transferring the study result, not a local effect measurement.
+>
+> To assess the local effect, compare changes in vehicle–pedestrian crashes at North before and after the pilot with changes over the same periods at comparable signalized crossings without the interval. Choose comparison crossings with similar turning traffic and crash patterns, and account for differences in exposure, such as pedestrian and vehicle volumes. This comparison helps separate the pilot’s effect from broader changes, though the result will remain uncertain if crash counts are small.
 
-> Write one concise decision-opening paragraph in English for a city committee. It can fund one pilot at a group of signalized crossings with heavy turning traffic; either group costs the same and the goal is to avert the larger expected number of vehicle–pedestrian crashes. WALK would begin 3–7 seconds before drivers get green. In FHWA's three-city study the estimated crash modification factor was 0.87. In this hypothetical comparison, without treatment North's crossings are expected to have 20 such crashes and South's 5 over the same period. Estimate what difference applying the study factor would make at each group. Recommend a site, explain why the head start might matter at turns, and specify a local comparison that could measure the effect of the pilot against what would have happened without it.
+### Standard
 
-### Without the skill
+> Run the pilot at **North**, assuming the FHWA estimate applies equally to both locations. Applying the crash modification factor of 0.87 implies a 13% reduction: about **2.6 fewer crashes at North** (20 × 0.13) versus **0.65 fewer at South** (5 × 0.13). These are forecasts based on transferring a three-city study result; the local effect may differ.
+>
+> To estimate the local effect, compare the change in vehicle–pedestrian crashes at North before and after the pilot with the change over the same periods at a similar untreated group of crossings. Choose comparison crossings with similar crash patterns, turning traffic, and pedestrian exposure, and account for differences in exposure or other safety changes. This comparison helps separate the pilot’s effect from citywide trends and other changes, though rare crashes and differences between sites may leave uncertainty.
 
-> Fund one pilot at **North’s signalized crossings**, where heavy turning traffic and an expected 20 vehicle–pedestrian crashes make the potential benefit larger: applying FHWA’s estimated crash modification factor of 0.87 implies about 2.6 fewer crashes over the comparison period, versus about 0.65 fewer at South’s crossings, which are expected to have 5. The 3–7 second WALK head start may give pedestrians time to enter the crosswalk and become more visible to turning drivers before those drivers receive green. To measure the pilot’s effect, compare North’s before-and-after crash rate with the change over the same period at similar untreated crossings, accounting for pedestrian and vehicle volumes and other relevant changes.
+### Strict
 
-### With the skill at standard
-
-> Cities face vehicle–pedestrian crash risks at both groups of signalized crossings, and the committee can fund one pilot at either site. Which should it choose to avert more crashes, and how can it assess the pilot’s effect? Apply FHWA’s three-city study factor of 0.87 as an estimate: North’s expected 20 crashes would fall to 17.4, or about 2.6 fewer; South’s 5 would fall to 4.35, or about 0.65 fewer. I recommend North because the same estimated proportional reduction yields a larger absolute decrease there. The 3–7 second WALK head start could give pedestrians time to enter the crossing before turning drivers get green, making them more visible to drivers turning through the intersection. To measure the local effect, compare the change in vehicle–pedestrian crashes at North before and after the pilot with the change over the same periods at comparable untreated signalized crossings; matching traffic, turning patterns, and crash trends would make that comparison more credible. The estimates transfer the study factor to North and South, so they are not guaranteed local results.
-
-### What changed
-
-| Check fixed before generation | Without | Standard |
-| --- | --- | --- |
-| Correctly derives expected reductions of 2.6 at North and 0.65 at South (or gives both treated counts and these reductions). | Met | Met |
-| Recommends North under the stated equal-cost objective and explains how the early WALK relates to turning vehicles or pedestrian visibility. | Met | Met |
-| Labels the estimates conditional on transfer from the study and proposes a local treated-versus-credible-without-treatment comparison to test the effect. | Met | Met |
-
-**Review.** The recommendation rests on 2.6 versus 0.65 expected crashes prevented at equal cost, conditional on local transfer. Comparable untreated intersections give the city a way to test that forecast.
-
-Masked reviewer assignment: Y was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/minto-pyramid/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/minto-pyramid.json).
-
-<details>
-<summary>Run record</summary>
-
-Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `8063d7e2ee16` / `447627226ac3` / `e506e806dc95`.
-
-</details>
+> Run the pilot at **North**. Assuming the three-city study’s crash modification factor (CMF) of 0.87 applies locally, it implies a 13% reduction in vehicle–pedestrian crashes:
+>
+> - **North:** 20 × (1 − 0.87) = **2.6 fewer expected crashes**; 17.4 remaining.
+> - **South:** 5 × (1 − 0.87) = **0.65 fewer expected crashes**; 4.35 remaining.
+>
+> North therefore offers the larger expected reduction, though these are forecasts based on transferring the study result—not guaranteed local outcomes.
+>
+> To measure the local effect, compare changes in crashes at North with changes over the same periods at a comparable untreated group of crossings. Use multiple pre- and post-pilot periods and check that the groups had similar trends before the pilot. Account for exposure, such as pedestrian and turning-vehicle volumes, and report uncertainty; crashes may be too rare for a short pilot to show a clear difference.
 
 ## new-harts-rules
 
-**Correcting a percentage-point claim for a UK census exhibit**
+**What does the census say about households without a car?** · [한국어](EXAMPLES.ko.md#new-harts-rules)
 
-[한국어](EXAMPLES.ko.md#new-harts-rules)
+### Question
 
-2026-11-09 · `new-harts-rules` 0.1.6 · English · `gpt-6-luna`
+> Our exhibit has this English label: “In ‘Housing, England and Wales: Census 2021’, ONS showed that 42.1% of Londoners lacked a car in 2021, 18.8 per cent more than across England and Wales.” The bulletin counts households with no car or van available: 42.1% in London and 23.3% across England and Wales. What should the English label say if it needs to give both the gap in percentage points and the excess as a percentage of the England-and-Wales figure?
 
-### Case and sources
+**Sources** · [Office for National Statistics, Housing, England and Wales: Census 2021 (5 January 2023)](https://www.ons.gov.uk/peoplepopulationandcommunity/housing/bulletins/housingenglandandwales/census2021)
 
-- [Office for National Statistics, Housing, England and Wales: Census 2021 (5 January 2023)](https://www.ons.gov.uk/peoplepopulationandcommunity/housing/bulletins/housingenglandandwales/census2021). Section 6, Car or van availability, and title: 42.1% of London households versus 23.3% across England and Wales in 2021. Exhibition style and draft are original exercise inputs.
+### Light
 
-**Language scope.** The edited label and editorial note are both in English.
+> “In ‘Housing, England and Wales: Census 2021’, ONS showed that 42.1% of London households had no car or van available in 2021, 18.8 percentage points higher than the 23.3% across England and Wales. This was 80.7% above the England-and-Wales figure.”
 
-### Prompt
+### Standard
 
-> Copyedit this UK exhibition label in English and append a short English editorial note explaining the denominator and the basis of the spelling decision. Original draft: ‘In “Housing, England and Wales: Census 2021”, ONS showed that 42.1% of Londoners lacked a car in 2021, 18.8 per cent more than across England and Wales.’ The bulletin reports households with no car or van available: 42.1% in London and 23.3% across England and Wales. The editor needs both the percentage-point gap and the relative excess over the England-and-Wales share (round that excess to the nearest whole per cent). House style spells out ‘per cent’ in prose; keep the ONS title verbatim. No passage from New Hart's Rules was supplied. Keep the edited sentence intelligible to a visitor who might otherwise confuse the two comparisons.
+> “In ‘Housing, England and Wales: Census 2021’, ONS showed that 42.1% of households in London had no car or van available in 2021, compared with 23.3% across England and Wales—a gap of 18.8 percentage points. London’s figure was 80.7% higher than the England-and-Wales figure.”
 
-### Without the skill
+### Strict
 
-> In ‘Housing, England and Wales: Census 2021’, ONS reported that 42.1 per cent of London households had no car or van available, compared with 23.3 per cent across England and Wales. That is a gap of 18.8 percentage points; London’s share was 81 per cent higher.
->
-> *Editorial note: The denominator is households, and “no car or van available” describes household vehicle availability. The 18.8-point gap is the subtraction of the two shares; the 81 per cent relative excess is that gap divided by the England-and-Wales share, rounded to the nearest whole per cent. “Per cent” is spelled out to follow house style; no New Hart’s Rules passage was supplied.*
-
-### With the skill at standard
-
-> In “Housing, England and Wales: Census 2021”, ONS reported that 42.1 per cent of households in London had no car or van available, compared with 23.3 per cent across England and Wales. The London share was 18.8 percentage points higher, or 81 per cent greater relative to the England-and-Wales share.
->
-> Editorial note: The denominator is households, not Londoners. The spelling “per cent” follows the stated house style; no relevant passage from *New Hart’s Rules*, second edition (2014), was supplied, so this spelling decision is not attributed to the book.
-
-### What changed
-
-| Check fixed before generation | Without | Standard |
-| --- | --- | --- |
-| Keeps the title 'Housing, England and Wales: Census 2021' verbatim and the measurements at the household level, including no car or van available. | Met | Met |
-| Uses 18.8 percentage points and about 81 per cent relative excess over 23.3%, keeping the measures distinct. | Met | Met |
-| Uses ‘per cent’ for percentages in English prose; the English note identifies the denominator and exhibition house style without claiming verification from the book. | Met | Met |
-
-**Review.** The label measures households and distinguishes the 18.8-point difference from the roughly 81 per cent relative excess. The spelling choice comes from the exhibition’s own house style.
-
-Masked reviewer assignment: X was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/new-harts-rules/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/new-harts-rules.json).
-
-<details>
-<summary>Run record</summary>
-
-Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `9b8e75069344` / `59f8ac49842a` / `0f0790f8516b`.
-
-</details>
+> “In ‘Housing, England and Wales: Census 2021’, ONS showed that 42.1% of London households had no car or van available in 2021, compared with 23.3% of households across England and Wales. The London figure was 18.8 percentage points higher, or 80.7% higher than the England-and-Wales figure.”
 
 ## nist-technical-publication
 
-**Which improvement would reduce the uncertainty of NIST-F2 more?**
+**Which improvement would reduce the uncertainty of NIST-F2 more?** · [한국어](EXAMPLES.ko.md#nist-technical-publication)
 
-[한국어](EXAMPLES.ko.md#nist-technical-publication)
+### Question
 
-2026-11-09 · `nist-technical-publication` 0.1.4 · English · `gpt-6-luna`
+> The July–August 2013 NIST-F2 evaluation reported fractional frequency uncertainty components of 0.44 × 10⁻¹⁵ (Type A, statistical) and 0.11 × 10⁻¹⁵ (Type B, systematic). Its 80 K environment reduced blackbody-radiation uncertainty by more than a factor of 50. Microwave-amplitude effects dominated Type B. Suppose we can halve either component for the same cost, leaving the other unchanged. Assume the two components are independent and combine in quadrature. Which upgrade would reduce combined uncertainty more? Does the fiftyfold figure tell us how much the clock’s overall uncertainty improved?
 
-### Case and sources
+**Sources** · [Heavner et al., First Accuracy Evaluation of NIST-F2, Metrologia (2014)](https://www.nist.gov/publications/first-accuracy-evaluation-nist-f2)
 
-- [Heavner et al., First Accuracy Evaluation of NIST-F2, Metrologia (2014)](https://www.nist.gov/publications/first-accuracy-evaluation-nist-f2). Authors' abstract, including the July–August 2013 Type A and Type B fractional uncertainties, the 80 K interrogation environment and the reason for the dominant Type B contribution.
+### Light
 
-### Prompt
-
-> Prepare a short technical note for a metrology lab deciding which component to improve in NIST-F2. In the July–August 2013 evaluation, Type A statistical fractional frequency uncertainty was 0.44 × 10⁻¹⁵ and Type B systematic uncertainty was 0.11 × 10⁻¹⁵. The 80 K environment reduced the blackbody-radiation uncertainty by more than fiftyfold; microwave-amplitude effects dominated Type B. For this comparison only, assume the two components are independent, combine them by root-sum-square, and compare two equally costly hypothetical upgrades: halve Type A alone or halve Type B alone. Show the present and both projected combined uncertainties, recommend one upgrade on this metric, and state why cooling by itself does not establish a fiftyfold improvement in overall uncertainty. Write the answer in English.
-
-### Without the skill
-
-> ### NIST-F2 upgrade comparison
+> ## Comparison
 >
-> Assuming independent Type A and Type B components, the combined fractional frequency uncertainty is their root-sum-square:
+> Assuming the Type A and Type B components are independent, the combined fractional frequency uncertainty is
 >
-> | Scenario | Type A | Type B | Combined uncertainty |
-> |---|---:|---:|---:|
-> | Present | 0.44 | 0.11 | **0.454 × 10⁻¹⁵** |
-> | Halve Type A | 0.22 | 0.11 | **0.246 × 10⁻¹⁵** |
-> | Halve Type B | 0.44 | 0.055 | **0.443 × 10⁻¹⁵** |
+> $$
+> u=\sqrt{u_A^2+u_B^2}.
+> $$
 >
-> On this metric, **halving Type A is the better upgrade**: it lowers the combined uncertainty substantially, while halving Type B produces only a small change because Type A is much larger.
+> Halving Type A gives
 >
-> Cooling to 80 K reduced the blackbody-radiation uncertainty by more than fiftyfold, but that is a reduction in one systematic contribution, not in total uncertainty. Microwave-amplitude effects dominated Type B, and the overall uncertainty also includes Type A; therefore, cooling alone does not imply a fiftyfold improvement in the combined uncertainty.
+> $$
+> u_{\text{half A}}
+> =\sqrt{(0.22\times10^{-15})^2+(0.11\times10^{-15})^2}
+> =\sqrt{0.0605}\times10^{-15}.
+> $$
+>
+> Halving Type B gives
+>
+> $$
+> u_{\text{half B}}
+> =\sqrt{(0.44\times10^{-15})^2+(0.055\times10^{-15})^2}
+> =\sqrt{0.196625}\times10^{-15}.
+> $$
+>
+> **Halving Type A would reduce the combined uncertainty more.** The Type A component is larger, so reducing it has the greater effect under the stated quadrature assumption.
+>
+> ## What the 50-fold figure means
+>
+> No. The more-than-50-fold reduction applies to the **blackbody-radiation uncertainty** in the 80 K environment. It does not state how much the clock’s overall uncertainty improved. That would require the blackbody contribution before and after cooling and the other uncertainty components used in the overall combination.
 
-### With the skill at standard
+### Standard
 
-> ## NIST-F2 uncertainty improvement note
+> ## Comparison of the two upgrades
 >
-> The July–August 2013 evaluation reported a Type A statistical fractional frequency uncertainty of **0.44 × 10⁻¹⁵** and a Type B systematic uncertainty of **0.11 × 10⁻¹⁵**. Microwave-amplitude effects dominated Type B; the 80 K environment reduced the blackbody-radiation uncertainty by more than fiftyfold.
+> Assuming the Type A and Type B components are independent, the combined fractional frequency uncertainty is their root-sum-square:
 >
-> For this comparison, assume the Type A and Type B components are independent and combine them by root-sum-square:
+> $$
+> u=\sqrt{u_A^2+u_B^2}.
+> $$
+>
+> If the Type A component is halved:
+>
+> $$
+> u_A'=\sqrt{(0.22\times10^{-15})^2+(0.11\times10^{-15})^2}
+> =\sqrt{0.0605}\times10^{-15}.
+> $$
+>
+> If the Type B component is halved:
+>
+> $$
+> u_B'=\sqrt{(0.44\times10^{-15})^2+(0.055\times10^{-15})^2}
+> =\sqrt{0.196625}\times10^{-15}.
+> $$
+>
+> The Type A upgrade yields the lower combined uncertainty, so halving Type A would reduce the combined uncertainty more.
+>
+> ## What the fiftyfold figure means
+>
+> No. The statement that the 80 K environment reduced blackbody-radiation uncertainty by more than a factor of 50 applies to that uncertainty contribution. It does not give the clock’s overall uncertainty improvement. That would require the blackbody contribution before and after cooling, along with the other uncertainty components and how they combine.
+
+### Strict
+
+> ## Comparison
+>
+> Assuming the Type A and Type B components are independent, the combined fractional frequency uncertainty is
 >
 > $$
 > u_{\mathrm{combined}}=\sqrt{u_A^2+u_B^2}.
 > $$
 >
-> | Scenario | Type A uncertainty (× 10⁻¹⁵) | Type B uncertainty (× 10⁻¹⁵) | Combined uncertainty (× 10⁻¹⁵) |
-> |---|---:|---:|---:|
-> | Present | 0.44 | 0.11 | 0.454 |
-> | Halve Type A | 0.22 | 0.11 | 0.246 |
-> | Halve Type B | 0.44 | 0.055 | 0.443 |
+> Halving Type A gives
 >
-> The table values are coefficients on the stated common scale; for example, the present combined uncertainty is **0.454 × 10⁻¹⁵**. On this metric, choose the Type A upgrade: it lowers the combined uncertainty more than halving Type B.
+> $$
+> \sqrt{(0.22\times10^{-15})^2+(0.11\times10^{-15})^2}
+> =\sqrt{0.0605}\times10^{-15}.
+> $$
 >
-> Cooling alone does not establish a fiftyfold improvement in overall uncertainty. The reported reduction applies to the blackbody-radiation component, while other uncertainty sources remain; microwave-amplitude effects dominated Type B, and Type A was larger than Type B in this evaluation.
-
-### What changed
-
-| Check fixed before generation | Without | Standard |
-| --- | --- | --- |
-| Reports the Type A/B values with labels and fractional units and derives a current combined value near 0.454 × 10⁻¹⁵ under the stated independence assumption. | Missed | Met |
-| Correctly calculates both hypothetical totals (about 0.246 × 10⁻¹⁵ if Type A halves and 0.443 × 10⁻¹⁵ if Type B halves) and favors Type A for the larger reduction at equal cost. | Met | Met |
-| Keeps the projections separate from the 2013 observations, bounds the fiftyfold reduction to the blackbody contribution, and identifies microwave amplitude as the dominant Type B effect. | Met | Met |
-
-**Review.** With independent components, the current combined fractional uncertainty is about 0.454 × 10⁻¹⁵. Halving Type A gives 0.246 × 10⁻¹⁵ versus 0.443 × 10⁻¹⁵ for Type B. The fiftyfold change belongs to the blackbody contribution.
-
-Masked reviewer assignment: X was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/nist-technical-publication/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/nist-technical-publication.json).
-
-<details>
-<summary>Run record</summary>
-
-Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `d936b66143cd` / `25ee98c46dab` / `2e5b1c8bcbd6`.
-
-</details>
+> Halving Type B gives
+>
+> $$
+> \sqrt{(0.44\times10^{-15})^2+(0.055\times10^{-15})^2}
+> =\sqrt{0.196625}\times10^{-15}.
+> $$
+>
+> The Type A upgrade leaves the lower combined uncertainty, so it would reduce combined uncertainty more under the stated assumptions.
+>
+> ## What the fiftyfold figure says
+>
+> No. The factor of more than 50 applies to the **blackbody-radiation uncertainty** in the 80 K environment. It does not give the clock’s overall uncertainty improvement. That would require the blackbody contribution before and after cooling, along with the other uncertainty contributions and their combination. The reported Type B total is also dominated by microwave-amplitude effects, so the blackbody reduction alone cannot determine the change in total uncertainty.
 
 ## orwell-six-rules
 
-**What a unit mix-up did to the Mars Climate Orbiter estimate**
+**What a unit mix-up did to the Mars Climate Orbiter estimate** · [한국어](EXAMPLES.ko.md#orwell-six-rules)
 
-[한국어](EXAMPLES.ko.md#orwell-six-rules)
+### Question
 
-2026-11-08 · `orwell-six-rules` 0.1.3 · English · `gpt-6-luna`
+> A draft about the 1999 Mars Climate Orbiter says, ‘Operational misalignment effectuated a 170-km plunge. SM_FORCES supplied thruster impulses in pound-force seconds, which navigation read as newton-seconds. The craft burned up.’ The trajectory estimate accumulated error and the spacecraft approached Mars about 170 km lower than planned. NASA could not distinguish destruction in the atmosphere from escape into a solar orbit. Suppose SM_FORCES had sent the number 2; this is an illustration, not a flight measurement. Use 1 pound-force second ≈ 4.45 newton-seconds. What should the draft say about the unit error and the spacecraft’s fate?
 
-### Case and sources
+**Sources** · [Cornelius J. Dennehy / NASA, Best Practices for the Design, Development, and Operation of Robust and Reliable Space Vehicle Guidance, Navigation, and Control Systems (NASA/TP–20230005922, April 2023)](https://ntrs.nasa.gov/api/citations/20230005922/downloads/20230005922.pdf)
 
-- [Cornelius J. Dennehy / NASA, Best Practices for the Design, Development, and Operation of Robust and Reliable Space Vehicle Guidance, Navigation, and Control Systems (NASA/TP–20230005922, April 2023)](https://ntrs.nasa.gov/api/citations/20230005922/downloads/20230005922.pdf). Appendix A-12, pp. 138–139, and lesson 0641: ground software/interface units, trajectory about 170 km low, and two possible outcomes after loss.
+### Light
 
-### Prompt
+> SM_FORCES sent thruster impulses in pound-force seconds, but navigation treated the values as newton-seconds. For example, 2 pound-force seconds is about 8.9 newton-seconds; if navigation read the unchanged numeral as 2 newton-seconds, it undercounted the impulse. The number 2 is illustrative, not a flight measurement.
+>
+> The trajectory estimate accumulated error, and the spacecraft approached Mars about 170 km lower than planned. NASA could not determine whether it was destroyed in the atmosphere or escaped into a solar orbit.
 
-> Rewrite this museum label as one concise English paragraph. Draft: ‘Operational misalignment effectuated a 170-km plunge. SM_FORCES supplied thruster impulses in pound-force seconds, which navigation read as newton-seconds. The craft burned up.’ The real 1999 navigation estimate accumulated error and the spacecraft approached Mars about 170 km lower than planned. NASA could not distinguish destruction in the atmosphere from escape into a solar orbit. To make the unit error concrete, use a clearly labelled illustrative impulse of 2 pound-force seconds. For this exercise use 1 pound-force second ≈ 4.45 newton-seconds. Work out what the number should have meant to navigation and how far its reading was off. Keep the illustration separate from the reported mission outcome.
+### Standard
 
-### Without the skill
+> The SM_FORCES component sent thruster impulses in pound-force seconds, but navigation read the values as newton-seconds. For example, 2 pound-force seconds × 4.45 newton-seconds per pound-force second ≈ 8.9 newton-seconds. If navigation treated the unchanged numeral 2 as newton-seconds, it read an impulse of 2 newton-seconds. The 2 is illustrative, not a flight measurement.
+>
+> The trajectory estimate accumulated error, and the spacecraft approached Mars about 170 km lower than planned. NASA could not determine whether it was destroyed in the atmosphere or escaped into a solar orbit. Its fate remains unknown.
 
-> A 1999 navigation error accumulated over time, bringing the spacecraft to Mars about 170 km lower than planned. NASA could not determine whether it was destroyed in the atmosphere or escaped into solar orbit. **Illustrative impulse, not a mission measurement:** 2 pound-force seconds should have meant about 8.9 newton-seconds to navigation; reading it as 2 newton-seconds was off by 6.9 newton-seconds.
+### Strict
 
-### With the skill at standard
-
-> Navigation errors accumulated during the 1999 mission, bringing the spacecraft to Mars about 170 km lower than planned. SM_FORCES supplied thruster impulses in pound-force seconds, but navigation read them as newton-seconds. **Illustrative example:** an impulse of 2 pound-force seconds should have meant about 8.9 newton-seconds to navigation; reading it as 2 meant the value was about 6.9 newton-seconds too low. NASA could not determine whether the spacecraft was destroyed in the atmosphere or escaped into solar orbit.
-
-### What changed
-
-| Check fixed before generation | Without | Standard |
-| --- | --- | --- |
-| For the illustrative impulse, gives about 8.9 newton-seconds rather than the 2 read by navigation, with an understatement of about 6.9 newton-seconds or a factor of about 4.45. | Met | Met |
-| Keeps the hypothetical impulse distinct from the mission record and attributes the roughly 170 km difference to the accumulated trajectory-estimate error/low approach rather than to a known plunge. | Met | Met |
-| Retains both possible fates and makes the causal sequence understandable to a museum visitor in a concise paragraph. | Missed | Met |
-
-**Masked review** (Y = baseline; X = standard). Both calculate 8.9 newton-seconds and an understatement of 6.9 for the illustration, preserve the low approach and leave both fates open. X explicitly names SM_FORCES and says which units it sent and navigation read. Y gives the mismatch only as an illustrative calculation, leaving the connection to the real accumulated error implicit.
-
-<details>
-<summary>Run record</summary>
-
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `90ee273da21c` / `38676238d03e` / `0d49ca5b7959`.
-
-</details>
+> SM_FORCES sent thruster impulses in pound-force seconds, but navigation read the values as newton-seconds. For example, 2 pound-force seconds is about 8.9 newton-seconds; if navigation treated the unchanged numeral 2 as newton-seconds, it read about 2 newton-seconds. The number 2 is illustrative, not a flight measurement.
+>
+> The trajectory estimate accumulated error, and the spacecraft approached Mars about 170 km lower than planned. NASA could not determine whether it was destroyed in the atmosphere or escaped into a solar orbit.
 
 ## socratic-self-questioning
 
-**Can Finland’s basic-income result justify a forecast for 500 workers?**
+**Can Finland’s basic-income study predict 2,400 extra employment days?** · [한국어](EXAMPLES.ko.md#socratic-self-questioning)
 
-[한국어](EXAMPLES.ko.md#socratic-self-questioning)
+### Question
 
-2026-11-09 · `socratic-self-questioning` 0.1.6 · English · `gpt-6-luna`
+> A city expects 2,400 extra employment days if it pays a basic income to 400 residents. It cites Finland’s 2017–2018 experiment, where 2,000 randomly selected unemployed benefit recipients got €560 a month. From November 2017 to October 2018 participants averaged 78 employment days, six more than the comparison group. In the first year there was no group-level employment effect. A 2018 benefit reform affected the groups differently, and its second-year effect could not be separated from that of basic income. What does the Finnish evidence support about the city’s estimate?
 
-### Case and sources
+**Sources** · [Finnish Ministry of Social Affairs and Health and Kela, Results of the basic income experiment (6 May 2020)](https://valtioneuvosto.fi/en/-/1271139/perustulokokeilun-tulokset-tyollisyysvaikutukset-vahaisia-toimeentulo-ja-psyykkinen-terveys-koettiin-paremmaksi?languageId=en_US)
 
-- [Finnish Ministry of Social Affairs and Health and Kela, Results of the basic income experiment (6 May 2020)](https://valtioneuvosto.fi/en/-/1271139/perustulokokeilun-tulokset-tyollisyysvaikutukset-vahaisia-toimeentulo-ja-psyykkinen-terveys-koettiin-paremmaksi?languageId=en_US). Employment results and experiment design: participating population, €560 payment, November 2017–October 2018 comparison, first-year finding, and asymmetric 2018 activation-policy change.
+### Light
 
-### Prompt
+> The key ambiguity is what the city means by “2,400 extra employment days”: compared with what would have happened without the basic income, over what period, and for whom?
+>
+> Among Finland’s 2,000 randomly selected unemployed benefit recipients, the reported average was 78 employment days from November 2017 to October 2018—six more than the comparison group. But there was no group-level employment effect in the first year. In the second year, a 2018 benefit reform affected the groups differently, and its effect could not be separated from basic income’s.
+>
+> So the Finnish evidence does not establish that basic income caused the six-day difference, or that it would apply to the city’s 400 residents. The estimate of 2,400 days is the arithmetic result of multiplying 400 by six; it is supported as a forecast only if the city’s residents and program resemble the Finnish study group and conditions, and if the second-year difference was caused by basic income rather than the reform.
 
-> A policy brief predicts ‘If we pay 500 local residents, their employment will rise by 3,000 days.’ Evaluate this inference in one concise English paragraph for publication. In Finland's 2017–2018 experiment, 2,000 randomly selected unemployed benefit recipients got €560 per month. During November 2017–October 2018 recipients averaged 78 employment days, six more than the comparison group. Year one showed no group-level employment effect. A 2018 unemployment-benefit reform affected the groups differently, so researchers could not separate that reform's effect from the second-year basic-income effect. Identify the comparison group’s mean employment days, show how the forecast total was derived and explain what would have to be true for it to apply locally.
+### Standard
 
-### Without the skill
+> The estimate assumes the Finnish result transfers to the city’s 400 residents. But what does “six more days” describe? It is the difference in average employment days between the trial groups from November 2017 to October 2018—not an increase caused by basic income across the full trial.
+>
+> Among Finland’s randomly selected unemployed benefit recipients, who received €560 a month, the basic income group averaged 78 employment days in that second-year period, six more than the comparison group. In the first year, there was no group-level employment effect. A benefit reform affected the groups differently in the second year, and its effect could not be separated from basic income’s.
+>
+> So the Finnish evidence does not establish that basic income caused the six-day difference, or that the city should expect 2,400 extra employment days. That forecast would require the second-year difference to be attributable to basic income and to carry over to the city’s 400 residents. The trial result alone does not establish either condition.
 
-> The Finnish results do not support the forecast as a general prediction: recipients averaged 78 employment days from November 2017 to October 2018, six more than the comparison group, whose mean was therefore 72 days. Multiplying that observed difference by 500 gives 3,000 additional employment days, but this is an extrapolation from Finland’s second-year estimate, not evidence that paying 500 local residents would cause the same increase. For the forecast to apply locally, the residents and program would need to be sufficiently comparable to the Finnish participants and experiment, and local conditions would need to produce a similar causal effect. The caveat is substantial: there was no group-level employment effect in year one, and because a 2018 benefit reform affected the groups differently, researchers could not separate its effects from those of basic income in year two.
+### Strict
 
-### With the skill at standard
-
-> The brief predicts 3,000 additional employment days by multiplying 500 residents by six days each. In Finland, unemployed benefit recipients selected for the experiment averaged 78 employment days from November 2017 through October 2018—six more than the comparison group’s 72—but there was no group-level employment effect in year one. The comparison group’s mean was 78 − 6 = 72 days. Because the 2018 benefit reform affected the groups differently, researchers could not isolate its effect from the second-year basic-income effect. The Finnish result therefore does not establish that paying local residents would add six days per person; the forecast applies only if the local recipients and comparison group are comparable and the payment produces the same six-day difference under local conditions.
-
-### What changed
-
-| Check fixed before generation | Without | Standard |
-| --- | --- | --- |
-| Recovers a comparison mean of 72 days and identifies 3,000 as 500 times the six-day observed difference, not an observed local gain. | Met | Met |
-| Addresses both the lack of a first-year group-level effect and the asymmetric 2018 reform as a reason the second-year difference does not isolate basic income's effect. | Met | Met |
-| Limits the evidence to unemployed benefit recipients and identifies a transfer assumption for 500 local residents, without claiming the experiment proves no effect in any year. | Missed | Met |
-
-**Review.** The comparison mean is 72 days. The 3,000 days are an extrapolation from six days per person. The answer identifies the studied population, the uneven reform exposure and the assumption needed for a local forecast.
-
-Masked reviewer assignment: Y was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/socratic-self-questioning/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/socratic-self-questioning.json).
-
-<details>
-<summary>Run record</summary>
-
-Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `6c4c77094da2` / `b7784aaaace2` / `1af4e026b8f6`.
-
-</details>
+> The city’s estimate is **2,400 extra employment days**, or six extra days for each of 400 residents. The Finnish result does not establish that rate as an effect of basic income: the six-day difference was observed from November 2017 to October 2018, after a benefit reform affected the groups differently. The experiment found no group-level employment effect in its first year, and it could not separate the reform’s second-year effect from basic income’s.
+>
+> So the Finnish evidence supports citing six days as an observed second-year difference among the 2,000 randomly selected unemployed benefit recipients who received €560 a month—not as six days caused by basic income or a reliable forecast for the city. The estimate would follow only if the city’s residents and program produced a comparable effect and other factors did not account for the Finnish difference; the evidence provided does not establish those conditions.
 
 ## steve-jobs-presentation
 
-**What Ingenuity’s hover time can and cannot tell an audience**
+**What can Ingenuity’s flight times tell us?** · [한국어](EXAMPLES.ko.md#steve-jobs-presentation)
 
-[한국어](EXAMPLES.ko.md#steve-jobs-presentation)
+### Question
 
-2026-11-09 · `steve-jobs-presentation` 0.1.8 · English · `gpt-6-luna`
+> On 19 April 2021 Ingenuity flew autonomously at Wright Brothers Field on Mars. It rose to about 3 m, hovered for 30 seconds, and landed 39.1 seconds after takeoff. Someone calls 3 m divided by 39.1 s its average climb speed. What did the flight demonstrate? What can these times tell us about the hover and the climb, and how might the team use the first flight's data to decide what to try next?
 
-### Case and sources
+**Sources** · [NASA, NASA’s Ingenuity Mars Helicopter Succeeds in Historic First Flight (April 19, 2021)](https://www.nasa.gov/news-release/nasas-ingenuity-mars-helicopter-succeeds-in-historic-first-flight/)
 
-- [NASA, NASA’s Ingenuity Mars Helicopter Succeeds in Historic First Flight (April 19, 2021)](https://www.nasa.gov/news-release/nasas-ingenuity-mars-helicopter-succeeds-in-historic-first-flight/). Flight-day report: onboard control, altimeter-derived height and hover, total time, the airfield name and plans to analyze the data.
+### Light
 
-### Prompt
-
-> Write three short speaker beats for a museum briefing as of 19 April 2021. Ingenuity flew autonomously at Wright Brothers Field on Mars to about 3 m, hovered for 30 seconds, and landed 39.1 seconds after takeoff. The flight proves powered, controlled flight on another planet. A proposed slide calls 3 m divided by the whole flight time 'the average climb speed.' Decide whether to use that metric. Give the audience a defensible proportion for time spent hovering and explain why the remaining time does or does not identify climb speed. Close with what the team could decide after reviewing flight data; do not assume a later test succeeded. Write the answer in English.
-
-### Without the skill
-
-> 1. Ingenuity’s first flight at Wright Brothers Field was autonomous: it climbed to about 3 metres, hovered for 30 seconds, and landed 39.1 seconds after takeoff. It demonstrated powered, controlled flight on another planet.
+> Ingenuity’s first flight showed that a powered, controlled flight on Mars was possible.
 >
-> 2. I would not call 3 metres divided by the full 39.1 seconds the “average climb speed.” The hover alone was 30 of 39.1 seconds—about 77% of the flight. The remaining 9.1 seconds include both ascent and descent, so they do not tell us how long the climb took or establish a climb speed.
+> The helicopter rose to about 3 m and landed 39.1 seconds after takeoff. The 30-second hover was about three quarters of the flight; rising and descending shared the other 9.1 seconds, so the total time does not tell us how long the climb took. Dividing 3 m by 39.1 seconds gives a rough height-over-total-time ratio, not its average climb speed.
 >
-> 3. After reviewing the flight data, the team could assess how the helicopter and its systems performed and decide whether to attempt another flight. That decision would depend on the data; it does not mean a later test had succeeded.
+> The team could review the flight data to assess how Ingenuity performed during takeoff, hover, and landing, then use that evidence to choose what to try on a later flight.
 
-### With the skill at standard
+### Standard
 
-> 1. “On 19 April 2021, Ingenuity flew autonomously at Wright Brothers Field on Mars, reaching about 3 meters. The flight demonstrated powered, controlled flight on another planet.”
+> The first flight showed that a powered, controlled aircraft could fly autonomously on Mars.
 >
-> 2. “It hovered for 30 seconds of its 39.1-second flight—about 77 percent. I would not label 3 meters divided by total flight time as average climb speed: the remaining 9.1 seconds include ascent and descent, so they do not tell us how long the climb took.”
+> Ingenuity hovered for 30 seconds of its 39.1-second flight—about 77% of the total. The other 9.1 seconds were shared by the climb and descent, so the flight time alone cannot tell us how long the climb took.
 >
-> 3. “After reviewing the flight data, the team can decide what to change or measure in a future flight; that review alone cannot tell us whether a later test will succeed.”
+> Dividing 3 m by 39.1 s does not give the average climb speed: the total flight time includes the hover and descent. The times show that Ingenuity reached about 3 m and sustained a 30-second hover, but they don’t establish its climb speed. The team could review the first flight’s flight data to decide whether a later test should change the height, duration, or flight path; what to try next would depend on that review.
 
-### What changed
+### Strict
 
-| Check fixed before generation | Without | Standard |
-| --- | --- | --- |
-| Reports the first Mars flight as autonomous, powered and controlled, retains about 3 m and distinguishes 30 s of hover from 39.1 s total. | Met | Met |
-| Derives roughly 77% hovering and identifies the remaining 9.1 s as non-hover time including ascent and descent; rejects using total time to infer climb speed. | Met | Met |
-| Uses three short audience-facing beats and closes on reviewing the flight data to inform the next test, without claiming future success. | Met | Met |
-
-**Review.** The three spoken beats distinguish the 30-second hover from the whole flight. Ascent and descent share the remaining 9.1 seconds; reviewing the flight data informs the next test.
-
-Masked reviewer assignment: X was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/steve-jobs-presentation/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/steve-jobs-presentation.json).
-
-<details>
-<summary>Run record</summary>
-
-Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `24a22d2a3e7c` / `7cd7cfac8849` / `5e0194f544ea`.
-
-</details>
+> Ingenuity’s first flight showed that a small rotorcraft could take off, hover, and land autonomously in the thin Martian atmosphere.
+>
+> It reached about 3 m and hovered for 30 of the flight’s 39.1 seconds—about 77% of the flight. Takeoff, climb, descent, and landing shared the remaining 9.1 seconds, so the total time cannot tell us how long the climb alone took. Dividing 3 m by 39.1 seconds gives about 0.077 m/s, but that is not its average climb speed: it divides the peak height by the entire flight duration, including the hover and other stages.
+>
+> The team could use the first flight’s recorded data to assess how the aircraft and its systems performed, then decide whether to adjust the next flight’s altitude, duration, or other conditions. Those data could guide the next attempt; they don’t by themselves establish how a changed flight would perform.

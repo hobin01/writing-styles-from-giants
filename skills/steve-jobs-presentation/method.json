@@ -83,7 +83,7 @@
     },
     {
       "id": "honest-demonstration",
-      "intent": "Use a concrete demonstration or comparison supported by evidence. Distinguish observed from proposed. For questions about timing, name the measured share, numerical remainder and its stages; for a round trip, describe both directions and omit unsupported quotients.",
+      "intent": "Use an observed demonstration or label it as proposed. For a timed part and a total, put two numerical comparisons in the delivered beat: “part of total, about this fraction or percentage” and “total minus part is shared by these remaining stages.” Their separate durations cannot be inferred.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Original operational application of the identified source within the documented read scope.",
@@ -119,7 +119,7 @@
     }
   ],
   "schemaVersion": 1,
-  "version": "0.1.8",
+  "version": "0.1.12",
   "status": "experimental",
   "applicability": {
     "genres": [

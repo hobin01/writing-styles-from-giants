@@ -5,7 +5,7 @@ description: "Write or revise technical English with STE-inspired normal or stri
 
 # ASD-STE100-inspired technical English
 
-Use consistent terms and explicit actions to reduce ambiguity. This is an original STE-inspired profile, not an official ASD skill or a conformance checker.
+For a direct request, deliver the technical text. Keep version numbers, coverage notes and review findings in a separately requested audit. Use consistent terms and explicit actions to reduce ambiguity. This is an original STE-inspired profile, not an official ASD skill or a conformance checker.
 
 ## Choose the profile
 
@@ -40,8 +40,6 @@ Respect the user's selected method, level, output language, and scope. `off` ski
 
 ## Language
 
-English grammatical and dictionary rules apply only to English. For requested Korean output, disclose a STE-inspired structural adaptation: use stable terms and explicit conditions, but do not transfer English word limits, parts of speech, or dictionary claims. A Korean-specific plain-language companion can supply Korean sentence rules when separately selected.
+English grammatical and dictionary rules apply only to English. For Korean output, use the transferable structural rules: use stable terms and explicit conditions, but do not transfer English word limits, parts of speech, or dictionary claims. If providing an audit, identify this as a structural adaptation.
 
 Read [method.json](method.json) for rule IDs, exceptions, provenance, and exact level policies; [English rules](locales/en.json) for language wording. The [cases](cases.json) define review expectations, not measured model results. For automatic application, expose the method and level in a separate status or audit. When an audit is requested, also record version, language, exceptions, and unresolved checks; keep these outside the finished prose.
-
-For an actual comparison on a held-out request, see the [recorded writing trial](references/observed-trial.md).

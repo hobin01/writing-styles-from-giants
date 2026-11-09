@@ -121,5 +121,23 @@
     ],
     "level": "standard",
     "method": "korean-plain-language"
+  },
+  {
+    "id": "bilingual-notice-edit",
+    "method": "korean-plain-language",
+    "type": "meaning-preservation",
+    "locale": "ko",
+    "level": "light",
+    "source": "Last year, visitors could request a refund only upon showing the original receipt. The Korean draft incorrectly says 지금은 영수증 없이도 환급받아요. What should it say in Korean? Explain the edit in English.",
+    "ruleIds": [
+      "preserve-meaning",
+      "register-and-modality"
+    ],
+    "sourceIds": [
+      "nikl-guide"
+    ],
+    "expectations": [
+      "The replacement is Korean, stays retrospective and requires the original receipt; the accompanying explanation is in English."
+    ]
   }
 ]

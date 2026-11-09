@@ -5,7 +5,7 @@ description: "Test a claim through definitions, assumptions, counterexamples, an
 
 # Socratic self-questioning
 
-Use targeted questions to determine how much a claim's evidence supports. Choose a question whose answer would change the conclusion. In a finished rewrite, give the reader the revised claim and its reason.
+Use targeted questions to determine how much a claim's evidence supports. When the claim generalizes to a new population, include the observed group and the comparison in the finished answer: who qualified, what was measured and how the groups differed. Keep every observation attached to the period it describes. If a different period showed a different result, present them separately and check the final sentence has not moved a number between periods. Connect these facts to the new population; “the trial found” alone leaves the reader guessing whom the evidence describes. Choose a question whose answer would change the conclusion. Give the reader the revised claim and its reason. Keep the method name, level and review notes out of the finished answer. A calculation can be arithmetically right while its causal interpretation or application elsewhere lacks support; name precisely which part is in doubt.
 
 Use only the rules enabled by the selected level below.
 

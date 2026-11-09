@@ -1,6 +1,6 @@
 {
   "method": "boring-professor",
-  "methodVersion": "0.1.2",
+  "methodVersion": "0.1.5",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -14,7 +14,7 @@
       "adaptation": false
     },
     "dependency-order": {
-      "instruction": "Explain mechanism or derivation in dependency order, connecting each result to its assumptions or evidence. When a result is a requested total, combine the distinct contributions for the same scope and report the result with its unit.",
+      "instruction": "Explain the mechanism in dependency order. For each requested instant, add the latest amount of every object still counted, including unchanged objects. Report the resulting sum and unit at that instant.",
       "adaptation": false
     },
     "literal-delivery": {

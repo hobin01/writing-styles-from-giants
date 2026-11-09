@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "feynman-technique",
-  "version": "0.1.8",
+  "version": "0.1.15",
   "status": "experimental",
   "title": "Feynman-inspired explanation and gap checking",
   "kind": "explanation",
@@ -85,7 +85,7 @@
     },
     {
       "id": "audience-prerequisites",
-      "intent": "Set the intended audience and prerequisites; explain required terms rather than replacing every technical word. Fit the causal links and any relevant prediction into the requested answer format.",
+      "intent": "At the first mention of the term or code the result depends on, say in ordinary words what it means in this case. Explain other prerequisites only as needed; respect the requested format.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Modern audience-specific adaptation; no universal age target.",
@@ -144,7 +144,7 @@
     },
     {
       "id": "transfer-check",
-      "intent": "Check the explanation with a new application or counterexample; distinguish a proposed test from demonstrated mastery.",
+      "intent": "For a timed state change, hold the event history fixed and test the same new input strictly before and strictly after the transition. Predict each outcome. Elsewhere test one changed condition; a worked prediction does not establish learner mastery.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Operational adaptation of the warning that explanation alone does not establish problem-solving ability.",

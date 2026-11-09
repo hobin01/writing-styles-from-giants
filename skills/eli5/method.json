@@ -33,7 +33,7 @@
     },
     {
       "id": "familiar-start",
-      "intent": "Choose an experience the child recognizes. For a why question, name the actual actor and the change they made. Omit optional background.",
+      "intent": "Use familiar words for the actual people, objects and actions. Keep each actor distinct and do not guess personal details.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Owner-requested literal age-five adaptation; subreddit convention is not an age-five standard.",
@@ -52,7 +52,7 @@
     },
     {
       "id": "show-mechanism",
-      "intent": "Explain the action and its effects in small causal steps. Define a necessary new word. State when a cause is unknown.",
+      "intent": "Give the child a visible starting point and lead from it to the cause in small steps. Keep the comparison basis in any statement about a relative quantity, or omit the comparison. Define only necessary unfamiliar words.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Original operational application of the identified source within the documented read scope.",
@@ -71,7 +71,7 @@
     },
     {
       "id": "bounded-model",
-      "intent": "Use literal examples or bounded analogies when useful. Give only the common-scale averages when comparing speeds; keep each figure beside its subject and put the named winner directly with its comparative verb. Distinguish individual rates from the difference between them. State untested properties and the specific cause of any separately established real effect.",
+      "intent": "Prefer a literal example or a bounded analogy. For a comparison, use a common unit, attach each number to its subject, and check that the conclusion follows from those numbers. Distinguish an average from observations at each interval and a measured effect from a separately known one.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Original operational application of the identified source within the documented read scope.",
@@ -90,7 +90,7 @@
     },
     {
       "id": "child-check",
-      "intent": "In a capped demonstration explanation, use the short spoken frames once for each needed job: correct actor and immediate purpose, actual mechanism and any misconception, a named comparison result with common-scale averages, the untested property and the independently known cause and effect. Each filled frame yields one sentence. Skip unneeded frames. Offer a prediction only when teaching is requested.",
+      "intent": "Read the answer aloud in short, concrete steps. Check that a child can tell who did what and why, and that the simplification keeps the direction, units and limits of the original claim. Offer a prediction only in a teaching activity.",
       "classification": "guideline",
       "provenance": "project-original",
       "rationale": "Original audience-check procedure, not a claim of validated age suitability.",
@@ -107,7 +107,7 @@
     }
   ],
   "schemaVersion": 1,
-  "version": "0.1.18",
+  "version": "0.1.26",
   "status": "experimental",
   "applicability": {
     "genres": [

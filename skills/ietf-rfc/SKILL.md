@@ -7,36 +7,33 @@ description: "Write or review an internal RFC-style specification with precise r
 
 ## Specify behavior an implementer can test
 
-Identify the document's status, scope, and actors. For each in-scope requirement, name the responsible actor, triggering condition, and observable behavior. A **requirement** binds an implementation, a **recommendation** admits justified exceptions, and a **permission** gives the implementer a choice. A possible outage describes the environment. Use BCP 14 keywords only when the document chooses that convention and declares their meaning.
+Start with the protocol behavior or a descriptive heading. Keep protocol values, field names and document identifiers in their correct namespaces; a status code is not an RFC number. End on the last meaningful sentence; omit drafting labels and stray words outside the requested language. The method name, level, and analysis notes are not part of a protocol document. State the document’s actual status, scope and actors where relevant. Match the form to what the reader is doing.
 
-Separate two kinds of source statements before drafting.
+- **Interpreting existing behavior.** Write in ordinary language. For each source rule state the actor, action, condition and whether the action is permitted, recommended, required or forbidden. Preserve separate permissions to send a message and to include an optional field in it. For several source requirements, use one row per actor and prescribed action. Preserve the exact scope of the source verb and its object. “Explain the cause” recommends explaining the cause alone; it does not recommend supplying an optional deadline, promising a recovery, or directing another actor. A prohibition applies to the governed role even when it shares a process with another role. A worked event never substitutes for the general rule. For example, “The publisher can issue a translation. The editor should leave quotations unchanged. The reviewer is forbidden to disclose a sealed decision.” A format, calculation or possible outcome creates no obligation. Preserve any literal requirement tokens in material the user quotes.
+- **Drafting with BCP 14.** When the request or supplied specification uses this convention, put a declaration before the requirements: uppercase keywords have the meanings defined in RFC 2119 and RFC 8174. For each source rule, give the actor, keyword, action and condition in a sentence or table row. Keep permissions separate from recommendations, preserve negative and qualified forms, and retain every governed actor. Each normative clause needs a source. A field format defines what its value means. Put its interpretation with the worked value, outside the actor requirements table, without assigning the reader a permission or duty.
 
-- **Rules.** For each clause prescribing, permitting, recommending or forbidding behavior, record its source actor, triggering condition, keyword/force and action. Include every governed actor, even when the excerpt mainly addresses a different reader. Preserve an existing keyword exactly, including qualified, negative and alternative forms such as SHOULD NOT and NOT RECOMMENDED. Distinguish a protocol prohibition from technical inability.
-- **Facts and examples.** Formats, timestamps, calculations, capabilities, advice and predicted outcomes stay ordinary prose unless the source explicitly gives them normative force. A reader’s ability to interpret a value does not grant that reader a new normative permission. For a worked event, keep the source’s message, sender and recipient attached to their times.
+For a worked interpretation, organize the rules by actor and give each rule once. Then put each message on its own row or in its own sentence. Keep its known send and receive events with the correct actors. Distinguish a fact that is irrelevant to the calculation from one the source did not provide. Only call an event time unknown if the source omits it.
 
-An internal excerpt can restate rules that already bind implementers without creating new requirements. Put those sourced rules in the requirements section even if the main reader is interested in a worked calculation. If the draft uses BCP 14, start by declaring the convention and then render the rules as **Actor | Keyword | Behavior and condition**. Check both directions: each table row must trace to one source clause, and each source rule must appear in the table. Use the same actors and English tokens when writing in another language. Honor a requested prose-only format by expressing the same fields in sentences. Explain what advice suggests and which outcome following it cannot guarantee.
+| Value type | Operation |
+| --- | --- |
+| Absolute value such as a deadline | Use the stated value unchanged. |
+| Relative value such as a lifetime | Add the duration to its specified reference event. |
 
-For an excerpt, give the requested clauses and examples. Add security, IANA or reference sections only if requested or necessary for the specified behavior. Reserve audit details for an explicitly requested audit or a separate automatic-selection status. Identify actual security consequences or unresolved risks. Determine whether any IANA action is needed from the specification. Separate **normative references**, which an implementer needs, from **informative references**, which give background. Treat RFC 7322 as an Informational style guide with later updates. Give an internal draft its actual status.
+Check any generalization across alternative forms before finishing. Move the reference event forward one unit while holding the input literal fixed. The relative target moves by one unit; the absolute target stays fixed. Delete any claim that both use the same origin, or that the origin affects neither. This private check belongs in the finished text only if the user asked about that counterfactual. Finish with the implication or remaining uncertainty. Do not infer unrelated request times from response transit time. In Korean, use “해서는 안 된다” or “금지한다” to distinguish a prohibition from an observed behavior.
 
-For example, “A publisher may issue a translation. An editor should not change a quoted passage. A reviewer must not reveal a sealed decision” could appear in a Korean draft as follows.
+### Worked example · preserving a prohibition in Korean
 
-| 주체 | BCP 14 | 동작과 조건 |
-| --- | --- | --- |
-| 발행자 | MAY | 번역본을 발행할 수 있다. |
-| 편집자 | SHOULD NOT | 인용문은 원칙적으로 수정하지 않는다. |
-| 심사자 | MUST NOT | 봉인된 결정을 공개해서는 안 된다. |
+For an optional message with optional contents, distinguish sending the message from including the field: “노드는 시간 초과 경고를 보낼 수 있다. 보낼 때는 사유를 밝히는 것이 권장된다. 종료 시각을 넣을지는 노드가 선택한다.” An actual instance with a deadline does not make either choice mandatory.
 
-In Korean, “공개해서는 안 된다” states the prohibition. “공개할 수 없다” alone could mean the reviewer is technically unable to disclose it. Keep the explicit keyword and prohibitory wording for rules copied from a cited standard as well as original rules.
+An internal protocol says “A reviewer MUST NOT reveal a sealed decision.” With uppercase BCP 14 notation declared, write “심사자는 봉인된 결정을 공개해서는 안 된다(MUST NOT).” Without that notation, an explanation can say “심사자가 봉인된 결정을 공개하는 것은 금지된다.” Both preserve a prohibition. “공개할 수 없다” alone could mean the reviewer lacks the technical capability. The [conditional-response case](cases.json) similarly distinguishes permission to send an optional message from a binding requirement if it is sent.
 
-Classify a reference by what the specification takes from it. If it supplies any requirement in the table, an implementer needs it as a normative reference even when it also gives background. Omit reference classifications if the excerpt does not need them.
-
-In the example above, the time at which an editor happened to open a manuscript would be an observation, not another BCP 14 row. The [conditional-response case](cases.json) also distinguishes permission to send an optional message from a requirement on its contents once sent.
+For an actual specification, identify material security consequences or open risks and determine whether it requests an IANA action. Keep an internal excerpt within its requested scope. When references are requested or useful, identify the technical behavior supplied by each normative source. Background references are informative. Omit a references heading that would only repeat the source names. RFC 7322 itself is an Informational guide with later updates.
 
 ## Levels and completion
 
 `light`: clarify scope/terms and preserve requirement strength. `standard`: apply all applicable structure and reference rules. `strict`: audit every requirement for actor, condition, and observable result, then review security and reference gaps; unresolved technical decisions stay explicit.
 
-For recommendation-only requests, explain the fit. When applying the method automatically or providing a requested audit, record method, version, level, assumptions, exceptions, and unresolved checks outside the finished text.
+A named method and level select the document directly; output only the document. A recommendation-only request gets the fit explanation. An explicit auto-mode request gets a separate status naming the method and level; keep that status out of the artifact.
 
 ## Scope and evidence
 

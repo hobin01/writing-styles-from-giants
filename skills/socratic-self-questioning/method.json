@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "socratic-self-questioning",
-  "version": "0.1.6",
+  "version": "0.1.9",
   "status": "experimental",
   "title": "Socratic self-questioning",
   "kind": "process",

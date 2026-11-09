@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "microsoft-writing-style",
-  "version": "0.1.11",
+  "version": "0.1.17",
   "status": "experimental",
   "title": "Microsoft-inspired technology writing",
   "kind": "sentence",
@@ -74,7 +74,7 @@
     },
     {
       "id": "reader-action",
-      "intent": "In the reader-facing setup give each item, its actual current state and its immediate action, in source order. Leave a wanted exempt item alone; protect an affected keeper; individually remove an exempt unwanted item; leave an affected unwanted item for bulk removal. Only then issue the bulk command and verify what remains. Evaluate the bulk command on the state left by the setup actions; entries already removed cannot survive it.",
+      "intent": "In the setup identify each source item, current state and goal. Keep protected wanted items as they are; protect exposed wanted items; remove protected unwanted items individually; leave exposed unwanted items for the batch. Issue the batch command after setup. Check the resulting names.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Original operational guidance adapted from the identified source scope.",
@@ -112,7 +112,7 @@
     },
     {
       "id": "consistent-terms",
-      "intent": "For controls defined in prose, separate each grammatical subject (literal control name) from its full finite verb phrase (effect) in a short key. The label alone belongs after “select.” A label that consumes the action verb or entire sentence cannot identify the control. Preserve explicitly marked labels, code and identifiers.",
+      "intent": "Take each label and its effect from the source. Use exactly the supplied individual label or complete path for that action; do not infer a menu parent or toggle. Keep product terms, code and literal identifiers intact.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Original operational guidance adapted from the identified source scope.",

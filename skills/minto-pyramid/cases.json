@@ -136,7 +136,8 @@
     ],
     "expectations": [
       "Retain legal approval as a prerequisite.",
-      "Retain pending approval and possible 10% improvement."
+      "Retain pending approval and possible 10% improvement.",
+      "Open with the supported action and its condition, without making uncertainty the entire governing answer."
     ],
     "knownBadRewrite": "We will pilot in France and cut review time by 10%.",
     "method": "minto-pyramid",

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "imrad",
-  "version": "0.1.3",
+  "version": "0.1.9",
   "status": "experimental",
   "title": "IMRaD research-report structure",
   "kind": "document",
@@ -100,7 +100,7 @@
     },
     {
       "id": "findings-vs-interpretation",
-      "intent": "Report supplied findings in Results and interpret their implications, limitations, and bounded conclusions in Discussion.",
+      "intent": "Report supplied findings in Results. In Discussion, preserve the exact direction of bounds: an upper bound alone establishes neither zero nor a positive value. Keep rates, expected counts, event probabilities and probabilities of an explanation distinct.",
       "classification": "guideline",
       "provenance": "faithful-summary",
       "rationale": "Faithful summary of IMRaD section roles.",

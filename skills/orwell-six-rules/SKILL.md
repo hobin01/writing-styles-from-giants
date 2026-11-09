@@ -16,7 +16,7 @@ Edit for clear, honest expression using original summaries of the six rules in O
 5. Translate needless jargon into familiar language, retaining indispensable terms (`needed-terminology`).
 6. Keep an exception whenever the preceding rules damage the sentence (`sense-over-rule`). This final rule applies at every level.
 
-Compare the edited text with its source before finishing. Keep a named component when it identifies where a fault arose; explain its job in ordinary words. Preserve qualifications and leave unknown actors unresolved.
+Return the revised passage itself unless the user asks to discuss the edits. For a unit error, write down the input with its original unit first. Multiply once by the supplied factor, cancel the original unit and verify the output unit. Separately state what the unchanged numeral would mean in the mistaken unit. Example: a sender’s 500 milliseconds means 0.5 seconds; a receiver that treats the numeral as seconds reads 500 seconds. State what happened in the actual case first, including which component sent what and how the recipient interpreted it. Distinguish any invented value from the known error: an illustrative number does not make the underlying mistake hypothetical. Keep the check internal. Compare the edited text with its source before finishing. Keep a named component when it identifies where a fault arose; explain its job in ordinary words. Preserve qualifications and leave unknown actors unresolved.
 
 ## Worked edit · cutting words while keeping the unknown actor
 

@@ -1,6 +1,6 @@
 {
   "method": "feynman-technique",
-  "methodVersion": "0.1.8",
+  "methodVersion": "0.1.15",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -10,7 +10,7 @@
       "adaptation": false
     },
     "audience-prerequisites": {
-      "instruction": "Set the intended audience and prerequisites; explain required terms rather than replacing every technical word. Fit the causal links and any relevant prediction into the requested answer format.",
+      "instruction": "At the first mention of the term or code the result depends on, say in ordinary words what it means in this case. Explain other prerequisites only as needed; respect the requested format.",
       "adaptation": false
     },
     "mechanism-and-gaps": {
@@ -22,7 +22,7 @@
       "adaptation": false
     },
     "transfer-check": {
-      "instruction": "Check the explanation with a new application or counterexample; distinguish a proposed test from demonstrated mastery.",
+      "instruction": "For a timed state change, hold the event history fixed and test the same new input strictly before and strictly after the transition. Predict each outcome. Elsewhere test one changed condition; a worked prediction does not establish learner mastery.",
       "adaptation": false
     }
   }

@@ -63,7 +63,8 @@
     "type": "ordinary",
     "source": "A new image codec must preserve captions and fit a 2 MiB download budget. Codec Red drops captions; Codec Blue preserves captions but its trial file is 2.4 MiB. Could we select a codec for launch or only for another trial?",
     "expectations": [
-      "Neither trial satisfies both constraints. Keep a future experiment with a promising codec distinct from approval to launch."
+      "Neither trial satisfies both constraints. Keep a future experiment with a promising codec distinct from approval to launch.",
+      "Keep the trial acceptance test distinct from measurements that would be desirable after release."
     ],
     "ruleIds": [
       "context-and-goals",

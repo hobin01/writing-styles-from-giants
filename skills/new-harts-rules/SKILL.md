@@ -7,7 +7,7 @@ description: "Resolve English editorial choices against an identified New Hart�
 
 ## Resolve an editorial choice
 
-Identify the edition and the span the editor can change. The public preview identifies the second edition (2014), edited by Anne Waddingham. For a book-specific decision, consult the relevant passage and its exceptions. Record the page or other locator when available.
+For an explicit selection, return the edited span in its target language. If the user asks for reasons, give only reasons for specific wording changes, in the language requested. Do not add an audit, the method name, version, level or an edition note to this answer. A user who explicitly asks what the book requires needs a verified passage and locator; if none is available, say so and finish any independently supported edits. The public preview identifies the second edition (2014), edited by Anne Waddingham.
 
 **House style** is an explicit convention for the publication or project. Apply it when requested and attribute that decision to the house. If a book-specific choice remains open, preserve the wording or offer a clearly identified proposal. Request the passage when the answer affects the edit. Continue independent edits already supported. Apply a supported choice consistently to editable prose, keeping literal quotations, citation identity, code, and identifiers intact.
 
@@ -25,7 +25,7 @@ An editorial note could read: “House style calls for ‘hours’ in the prose;
 
 ## Levels and completion
 
-`light`: identify edition/scope and verify only choices needed for the requested local edit. `standard`: also apply supported decisions consistently and distinguish their provenance. `strict`: audit all in-scope editorial choices against available passages and report unresolved checks; strict never fills gaps with invented book rules.
+`light`: identify edition/scope and verify only choices needed for the requested local edit. `standard`: also apply supported decisions consistently and distinguish their provenance. `strict`: check every in-scope editorial choice. Leave unsupported choices open. Describe an unresolved source only when it changes the deliverable or the editor requests an audit. All three levels deliver the same kinds of reader-facing text.
 
 For recommendation-only requests, explain the fit. When applying the method automatically or providing a requested audit, record method, version, level, assumptions, exceptions, and unresolved checks outside the finished text.
 

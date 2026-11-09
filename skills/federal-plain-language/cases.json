@@ -79,7 +79,8 @@
     ],
     "expectations": [
       "Recommend booking entry and an electronic slot for $17 total.",
-      "Tell the visitor that the free catalogue terminal cannot scan. A valid but over-budget pair is not the recommended route."
+      "Tell the visitor that the free catalogue terminal cannot scan. A valid but over-budget pair is not the recommended route.",
+      "Only the feasible pair can be framed as an instruction; leave discarded routes out of the recommendation."
     ],
     "level": "standard",
     "method": "federal-plain-language"
