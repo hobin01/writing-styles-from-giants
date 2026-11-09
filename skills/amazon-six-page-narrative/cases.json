@@ -61,5 +61,23 @@
     ],
     "knownBadRewrite": "The pilot saves $20,000/year.",
     "method": "amazon-six-page-narrative"
+  },
+  {
+    "id": "one-inspection",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "standard",
+    "source": "A district can inspect one pump today. One has a pressure reading above its stated operating limit. The other has no recent reading. The district wants to investigate the strongest evidence of a fault. Which pump goes first?",
+    "ruleIds": [
+      "decision-and-context",
+      "evidence-and-reasoning"
+    ],
+    "sourceIds": [
+      "aws-narrative"
+    ],
+    "expectations": [
+      "Recommend the pump with an observed limit exceedance. Describe the missing reading as an uncertainty, not evidence of safe operation."
+    ],
+    "method": "amazon-six-page-narrative"
   }
 ]

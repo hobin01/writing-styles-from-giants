@@ -1,57 +1,23 @@
 # Windows 클립보드에서 필요한 항목만 두 개 남기기
 
-[English](standard.md)
-
-2026-11-09 · `microsoft-writing-style` 0.1.11 · 한국어 · `gpt-6-luna`
-
-### 사례와 출처
-
-- [Microsoft Support, Using the clipboard](https://support.microsoft.com/en-us/windows/apps/using-the-clipboard)
-
-Microsoft 문서는 Windows 11 장치의 클립보드 기록 열기, 고정 항목을 제외한 일괄 지우기, 항목별 삭제를 설명합니다. 클립보드의 내용은 가정입니다.
-
-**언어 적용 범위.** 이 스킬은 영어 기술 문서를 위한 프로필입니다. 한국어 예제는 작업 순서와 조건을 설명하는 구조를 적용하고 영어 UI의 실제 이름을 보존합니다. 한국어 문법의 검증이나 공식 한국어 UI 명칭을 뜻하지 않습니다.
+[English](standard.md) · [light](light.ko.md) · [strict](strict.ko.md)
 
 ### 질문
 
-> Windows 11에서 이 PC의 클립보드 기록에 두 항목만 남기려는 사람을 위해 짧은 한국어 도움말을 써 주세요. 사용자의 Windows 화면은 영어로 표시됩니다. 배송 주소와 더 이상 쓰지 않는 출입 코드가 고정되어 있고, 반품 참조 번호와 메모 두 개는 고정되지 않은 상태입니다. 배송 주소와 반품 참조 번호는 다시 입력할 필요 없이 남기고 나머지 세 항목을 지워야 합니다. Windows logo key + V로 클립보드 기록을 엽니다. 항목을 고정할 수 있고, Clear all은 고정되지 않은 항목을 삭제합니다. See more (...)에서 Delete를 선택하면 해당 항목을 지울 수 있습니다. Clear all을 사용하는 확실한 절차 하나를 제시하고, 어떤 작업을 먼저 해야 하는지와 완료 여부를 확인할 방법을 알려 주세요. 실제 영문 버튼 이름은 그대로 쓰세요. 대상은 이 PC뿐입니다.
+> Windows 11 클립보드 기록에 항목이 다섯 개 있어요. 배송 주소와 만료된 출입 코드는 고정되어 있고, 반품 참조 번호와 메모 초안 두 개는 고정되어 있지 않아요. 주소와 반품 참조 번호만 남기고 싶은데, 둘 다 다시 입력하고 싶지는 않아요. 화면 언어는 영어예요. Windows logo key + V로 Clipboard history를 열 수 있고, Pin은 항목을 Clear all의 삭제 대상에서 제외해요. Clear all은 고정되지 않은 항목을 지우고, See more (...) > Delete는 개별 항목 하나를 지워요. 이 PC에서 Clear all을 쓰고 원하는 두 항목만 남기려면 어떻게 하면 될까요?
 
-### 스킬 미적용 답안
+**출처** · [Microsoft Support, Using the clipboard](https://support.microsoft.com/en-us/windows/apps/using-the-clipboard)
 
-> Windows logo key + V를 눌러 클립보드 기록을 엽니다. 배송 주소와 반품 참조 번호가 **고정되어 있지 않다면** 각각의 See more (...)에서 **Pin**을 선택합니다. 두 항목이 고정된 것을 확인한 뒤 **Clear all**을 선택하세요. 고정되지 않은 항목만 삭제되므로 출입 코드와 메모 두 개가 지워집니다.
+### Standard
+
+> Windows 로고 키 + V를 눌러 **Clipboard history**를 엽니다.
 >
-> 완료 여부는 기록을 다시 확인해 배송 주소와 반품 참조 번호만 남아 있는지 보면 됩니다. 고정된 출입 코드도 그대로 남아 있을 수 있으니, 남아 있다면 See more (...)에서 **Delete**를 선택해 지우세요.
-
-### 스킬 적용 답안 · standard
-
-> ### 클립보드 기록에 두 항목만 남기기
+> | 항목 | 현재 상태 | 목표 | 지금 할 일 |
+> |---|---|---|---|
+> | 배송 주소 | 고정됨 | 남기기 | 그대로 둡니다. |
+> | 만료된 출입 코드 | 고정됨 | 삭제 | **See more (...) > Delete**를 선택합니다. |
+> | 반품 참조 번호 | 고정되지 않음 | 남기기 | 항목에서 **Pin**을 선택합니다. |
+> | 메모 초안 1 | 고정되지 않음 | 삭제 | 그대로 둡니다. |
+> | 메모 초안 2 | 고정되지 않음 | 삭제 | 그대로 둡니다. |
 >
-> Windows logo key + V를 눌러 클립보드 기록을 여세요. 영문 화면에서 **Clear all**은 고정되지 않은 항목을 삭제하고, **See more (...) > Delete**는 선택한 항목을 삭제합니다. 배송 주소와 반품 참조 번호를 남기려면 먼저 두 항목을 고정해야 합니다.
->
-> | 항목 | 현재 상태 | 지금 할 일 |
-> |---|---|---|
-> | 배송 주소 | 고정됨 | 그대로 둡니다. |
-> | 출입 코드 | 고정됨 | See more (...)를 연 다음 **Delete**를 선택합니다. |
-> | 반품 참조 번호 | 고정되지 않음 | 고정합니다. |
-> | 메모 두 개 | 고정되지 않음 | 그대로 둡니다. |
->
-> 그런 다음 **Clear all**을 선택하세요. 완료 후 클립보드 기록에 배송 주소와 반품 참조 번호만 남아 있는지 확인하세요.
-
-### 두 답안의 차이
-
-| 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
-| --- | --- | --- |
-| Windows logo key + V로 기록을 열고 Clear all 전에 반품 참조 번호를 고정한다. 이미 고정된 배송 주소는 유지한다. | 충족 | 충족 |
-| See more (...)의 Delete로 고정된 출입 코드를 지우거나, 명시적으로 고정을 해제한 뒤 Clear all로 없앤다. Clear all만으로 고정된 코드가 사라진다고 하지 않는다. | 미충족 | 충족 |
-| 최종적으로 주소와 반품 참조 번호만 남고 메모 두 개가 삭제되는 사용자용 절차를 제공한다. 다른 기기 상태에 관한 근거 없는 주장은 하지 않는다. | 충족 | 충족 |
-
-**검토 결과.** 반품 참조 번호를 먼저 보호하고 고정된 배송 주소는 유지합니다. 고정된 출입 코드는 개별 처리하고 메모 두 개를 함께 지워, 원하는 항목만 남깁니다.
-
-익명 채점에서 개정 답안은 X였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/microsoft-writing-style/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/microsoft-writing-style.json).
-
-<details>
-<summary>실행 기록</summary>
-
-미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `0478d6d5cc87` / `49b13f22cab5` / `b7ecfdbb5c37`.
-
-</details>
+> 그런 다음 **Clear all**을 선택합니다. 마지막으로 Clipboard history를 확인해 배송 주소와 반품 참조 번호만 남았는지 확인합니다.

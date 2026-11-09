@@ -1,6 +1,6 @@
 {
   "method": "aristotle-syllogism",
-  "methodVersion": "0.1.2",
+  "methodVersion": "0.1.11",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -10,7 +10,7 @@
       "adaptation": false
     },
     "premises-and-terms": {
-      "instruction": "Separate premises from conclusion and use each term consistently; expose implicit premises as assumptions.",
+      "instruction": "Identify the proposed conclusion and actual premises. For P implies Q, with Q false conclude P false; with Q true, P is unknown. Keep these verdicts separate. Do not attribute any extra premise to the source.",
       "adaptation": false
     },
     "quantifier-scope": {
@@ -22,7 +22,7 @@
       "adaptation": false
     },
     "countermodel-check": {
-      "instruction": "For a disputed inference, construct a possible case where the premises hold and conclusion fails, or give the explicit valid form.",
+      "instruction": "For each inference, give an explicit valid relation or exhibit a particular situation where all premises hold and the proposed conclusion fails. Naming a converse without such a witness is incomplete.",
       "adaptation": false
     }
   }

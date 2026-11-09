@@ -56,5 +56,23 @@
     ],
     "knownBadRewrite": "Run it; you will see ready.",
     "method": "diataxis"
+  },
+  {
+    "id": "watch-latest",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "standard",
+    "source": "An internal watcher reports the latest build when it ends. Build 4 started, build 5 replaced it before completion, and the watcher then reported success. No later build started. What succeeded?",
+    "ruleIds": [
+      "reader-need",
+      "type-contract"
+    ],
+    "sourceIds": [
+      "diataxis-start"
+    ],
+    "expectations": [
+      "Name build 5 as the successful build. State that the watch does not establish whether build 4 succeeded."
+    ],
+    "method": "diataxis"
   }
 ]

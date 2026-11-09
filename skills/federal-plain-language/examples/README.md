@@ -1,10 +1,15 @@
-# Federal Plain Language-inspired explanation examples
+# federal-plain-language examples
 
-- [English · Which 40-minute document trip covers both identities?](standard.md)
-- [한국어 · 부모와 아이의 신원을 45분 안에 어떻게 증명할 수 있나요?](standard.ko.md)
+All three levels answer the same question. The standard page includes the question and sources. GPT-6 Luna generated each answer independently in its requested language.
 
-Each page gives its own task, sources, both GPT-6 Luna answers and a review. Each baseline and standard answer was generated independently in the page’s language. [Method instructions](../SKILL.md)
+세 레벨 모두 같은 질문을 사용합니다. 질문과 출처는 standard 페이지에 있습니다. 한국어 답도 각 레벨에서 한국어로 직접 생성했습니다.
 
-영어·한국어 질문은 같은 사례를 바탕으로 했습니다. 각 언어의 미적용 답안과 스킬 적용 답안은 다른 답안을 보지 않은 별도 세션에서 생성했습니다.
+| Level | English | 한국어 |
+| --- | --- | --- |
+| light | [English](light.md) | [한국어](light.ko.md) |
+| standard | [English](standard.md) | [한국어](standard.ko.md) |
+| strict | [English](strict.md) | [한국어](strict.ko.md) |
 
-[Earlier Luna evaluation and retests](https://github.com/hobin01/writing-styles-from-giants/blob/06f7e14e4b9f1e1081e817d7f828278def138742/skills/federal-plain-language/examples/standard.md)
+The Korean example uses the reader-task and organization rules of the English guide. 한국어 예제는 미국 연방 지침에서 독자의 질문과 서류 조건을 정리하는 방식을 가져왔습니다.
+
+[Method instructions](../SKILL.md)

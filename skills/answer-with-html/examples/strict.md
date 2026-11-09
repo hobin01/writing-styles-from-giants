@@ -1,0 +1,101 @@
+# When one more minute of Mars delay costs a whole contact window
+
+[한국어](strict.ko.md) · [light](light.md) · [standard](standard.md)
+
+[Question and sources](standard.md#question)
+
+### Strict
+
+[HTML file · download and open in a browser](strict.html)
+
+````html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why one extra minute can cost more than a minute</title>
+  <style>
+    :root { color-scheme: light; font: 1rem/1.55 system-ui, sans-serif; color: #182333; background: #f4f7fb; }
+    body { margin: 0; padding: 1.25rem; }
+    main { max-width: 760px; margin: auto; padding: clamp(1rem, 4vw, 2rem); background: white; border: 1px solid #dce4ef; border-radius: 1rem; }
+    h1 { line-height: 1.2; font-size: clamp(1.6rem, 5vw, 2.2rem); }
+    p { max-width: 68ch; }
+    .table-wrap { max-width: 100%; overflow-x: auto; }
+    table { border-collapse: collapse; width: 100%; min-width: 560px; margin: 1rem 0 .5rem; }
+    th, td { text-align: left; vertical-align: top; padding: .7rem; border: 1px solid #dce4ef; }
+    th { background: #eef3fa; }
+    caption { text-align: left; font-weight: 650; padding-bottom: .5rem; }
+    fieldset { border: 1px solid #dce4ef; border-radius: .7rem; padding: .8rem 1rem; margin: 1.25rem 0; }
+    label { margin-right: 1.2rem; display: inline-block; }
+    #explanation { padding: .8rem 1rem; background: #eef6ff; border-left: 4px solid #3674bd; border-radius: .3rem; }
+    .difference { font-weight: 650; }
+    @media (max-width: 520px) { body { padding: .5rem; } main { padding: 1rem; } }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Why one extra minute can cost more than a minute</h1>
+  <p>Earth sends at minute 0. The rover waits 10 minutes after receiving the signal to prepare, then can begin its reply at the first 25-minute slot at or after readiness. The return trip takes the same time as the outward trip.</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Two one-way-delay cases (all times in minutes after Earth sends)</caption>
+      <thead>
+        <tr>
+          <th scope="col">One-way delay</th>
+          <th scope="col">Rover receives</th>
+          <th scope="col">Ready after 10 min</th>
+          <th scope="col">Reply starts at eligible slot</th>
+          <th scope="col">Earth receives reply</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-case="15">
+          <th scope="row">15 min</th>
+          <td>0 + 15 = 15</td>
+          <td>15 + 10 = 25</td>
+          <td>25</td>
+          <td>25 + 15 = 40</td>
+        </tr>
+        <tr data-case="16">
+          <th scope="row">16 min</th>
+          <td>0 + 16 = 16</td>
+          <td>16 + 10 = 26</td>
+          <td>50</td>
+          <td>50 + 16 = 66</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="difference">Difference in Earth’s reply receipt time: 66 − 40 = 26 minutes.</p>
+
+  <fieldset>
+    <legend>Select a delay to see what causes its outcome</legend>
+    <label><input type="radio" name="case" value="15" checked> 15-minute one-way delay</label>
+    <label><input type="radio" name="case" value="16"> 16-minute one-way delay</label>
+  </fieldset>
+
+  <p id="explanation" role="status" aria-live="polite">At 15 minutes, the rover is ready exactly at a reply slot, so it can send then. The threshold is met on time.</p>
+  <p>The one-minute increase moves readiness past the 25-minute slot. Since the next permitted slot is much later, the reply waits for that slot; the threshold crossing creates the extra delay.</p>
+</main>
+<script>
+  "use strict";
+  const explanations = {
+    "15": "At 15 minutes, the rover is ready exactly at a reply slot, so it can send then. The threshold is met on time.",
+    "16": "At 16 minutes, the rover becomes ready just after the 25-minute slot, so it must wait for the next permitted slot. Missing that threshold adds a long scheduling wait."
+  };
+  const output = document.getElementById("explanation");
+  document.querySelectorAll('input[name="case"]').forEach((control) => {
+    control.addEventListener("change", (event) => {
+      const selected = event.currentTarget.value;
+      if (Object.prototype.hasOwnProperty.call(explanations, selected)) {
+        output.textContent = explanations[selected];
+      }
+    });
+  });
+</script>
+</body>
+</html>
+````

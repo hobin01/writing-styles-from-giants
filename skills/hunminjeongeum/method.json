@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "hunminjeongeum",
-  "version": "0.1.1",
+  "version": "0.1.7",
   "status": "experimental",
   "title": "Hunminjeongeum-inspired purpose-first explanation",
   "kind": "structure",
@@ -74,7 +74,7 @@
     },
     {
       "id": "purpose-opening",
-      "intent": "Open with the reader's problem, why the document is needed, and the intended benefit.",
+      "intent": "Start from the reader's supplied difficulty. Connect the concrete feature that changes the task to what the reader can now do; avoid inventing a broader purpose.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Modern purpose-first adaptation of the foreword, as clarified by the project owner.",
@@ -93,7 +93,7 @@
     },
     {
       "id": "connected-development",
-      "intent": "Develop principles, analysis, and examples that address the opening problem in dependency order.",
+      "intent": "Explain how the feature answers the opening problem. In a numerical example, keep the changed and unchanged quantities separate and use one common unit for all totals and differences.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Adapts explanatory structure rather than reconstructing historical chapter order.",

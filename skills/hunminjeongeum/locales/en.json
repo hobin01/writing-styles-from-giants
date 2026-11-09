@@ -1,6 +1,6 @@
 {
   "method": "hunminjeongeum",
-  "methodVersion": "0.1.1",
+  "methodVersion": "0.1.7",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -10,11 +10,11 @@
       "adaptation": false
     },
     "purpose-opening": {
-      "instruction": "Open with the reader's problem, why the document is needed, and the intended benefit.",
+      "instruction": "Start from the reader's supplied difficulty. Connect the concrete feature that changes the task to what the reader can now do; avoid inventing a broader purpose.",
       "adaptation": false
     },
     "connected-development": {
-      "instruction": "Develop principles, analysis, and examples that address the opening problem in dependency order.",
+      "instruction": "Explain how the feature answers the opening problem. In a numerical example, keep the changed and unchanged quantities separate and use one common unit for all totals and differences.",
       "adaptation": false
     },
     "bounded-conclusion": {

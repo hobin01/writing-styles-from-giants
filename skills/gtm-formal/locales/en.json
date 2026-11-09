@@ -1,6 +1,6 @@
 {
   "method": "gtm-formal",
-  "methodVersion": "0.1.2",
+  "methodVersion": "0.1.7",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -18,7 +18,7 @@
       "adaptation": false
     },
     "justify-steps": {
-      "instruction": "Separate definitions, claims, proofs, and examples; justify nontrivial steps and name unproved assumptions. Put the proof and its requested conclusions within the given length; keep working notes outside the mathematical text.",
+      "instruction": "Prove each nontrivial direction under the stated assumptions. For an existence or failure example, give one simple admissible witness. Check it has exactly the allowed actors, uses the allowed domain and conserves any stated total.",
       "adaptation": false
     },
     "test-boundaries": {

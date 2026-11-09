@@ -11,10 +11,10 @@ Build a clear presentation arc from observed public examples. This is a project 
 
 Apply only the rules enabled by the selected level.
 
-1. Identify the audience's question and one central benefit or message supported by the material.
-2. Arrange a small sequence around the audience's question. Honor a requested count. For a short script, draft one or two speakable sentences per beat. For slides, use sparse visual prompts. Cut throat-clearing and repetition before dropping a required fact.
-3. Use a concrete example or demonstration the evidence supports. Label a proposed demo or an illustrative value as such. If the audience needs to understand part of a measured total, speak the share and the numerical remainder with its unit. Name the activities that occupy the remainder. For a round trip, describe motion in both directions. “Loading and unloading share the remaining four minutes, so we cannot time loading alone.”
-4. Close on what the central message means for the audience. When the requested next step is a test, link two actions in the final beat: “We'll review [observations from this test]. That will help us decide [what to try or change in the next one].” Keep future outcomes conditional and production notes outside the script.
+1. **Lead with the news.** Name one audience benefit or finding that the evidence supports. Give it a sentence people could say aloud.
+2. **Show it.** Choose one concrete observation to make the finding tangible. Keep measured quantities and their units attached to what was observed. With a part and a total, the demonstration at standard or strict has two spoken lines. First, turn the part into a share. Then account for the remainder: “The doors stood open for nine of twelve minutes, about three quarters of the test. Opening and closing shared the other three minutes, so we can’t time opening alone.” Use the same structure in the requested language. Make each required comparison visible in the finished demonstration.
+3. **Land on a consequence.** Link what the evidence establishes to the decision it can inform. If a later test is proposed, name what the team would review and what it might change. Keep the future result conditional.
+4. **Check the delivery.** Let each beat carry one idea, honor a requested count, and keep slide prompts short. Before sending, check that no observed duration was called unknown and that no duration shared by stages was assigned to one stage.
 
 Never fabricate personal experience, quotations, audience reactions, product performance, or a demonstration claimed to have occurred. A memorable sequence is not evidence that a product works.
 

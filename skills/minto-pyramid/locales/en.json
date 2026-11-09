@@ -1,6 +1,6 @@
 {
   "method": "minto-pyramid",
-  "methodVersion": "0.2.6",
+  "methodVersion": "0.2.7",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],

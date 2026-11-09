@@ -1,10 +1,13 @@
-# ELI5: explain to a five-year-old examples
+# eli5 examples
 
-- [English · Which model coat loses warmth faster, and what does that tell a child about pup 696?](standard.md)
-- [한국어 · 시간을 맞춰 보면 어느 병이 더 빨리 식었을까?](standard.ko.md)
+All three levels answer the same question. The standard page includes the question and sources. GPT-6 Luna generated each answer independently in its requested language.
 
-Each page gives its own task, sources, both GPT-6 Luna answers and a review. Each baseline and standard answer was generated independently in the page’s language. [Method instructions](../SKILL.md)
+세 레벨 모두 같은 질문을 사용합니다. 질문과 출처는 standard 페이지에 있습니다. 한국어 답도 각 레벨에서 한국어로 직접 생성했습니다.
 
-영어·한국어 질문은 같은 사례를 바탕으로 했습니다. 각 언어의 미적용 답안과 스킬 적용 답안은 다른 답안을 보지 않은 별도 세션에서 생성했습니다.
+| Level | English | 한국어 |
+| --- | --- | --- |
+| light | [English](light.md) | [한국어](light.ko.md) |
+| standard | [English](standard.md) | [한국어](standard.ko.md) |
+| strict | [English](strict.md) | [한국어](strict.ko.md) |
 
-[Earlier Luna evaluation and retests](https://github.com/hobin01/writing-styles-from-giants/blob/06f7e14e4b9f1e1081e817d7f828278def138742/skills/eli5/examples/standard.md)
+[Method instructions](../SKILL.md)

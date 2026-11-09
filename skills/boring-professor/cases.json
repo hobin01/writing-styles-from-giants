@@ -66,5 +66,21 @@
     "method": "boring-professor",
     "level": "standard",
     "locale": "en"
+  },
+  {
+    "id": "last-reference",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "light",
+    "source": "A 10 MiB buffer remains allocated while any view refers to it. Two views refer to it. Another, independent buffer of 3 MiB stays allocated. First one view closes, then the other. What is the total after each close?",
+    "ruleIds": [
+      "dependency-order",
+      "preserve-meaning"
+    ],
+    "sourceIds": [],
+    "expectations": [
+      "Name the remaining reference after the first close and give 13 MiB. After the second close only the separate 3 MiB buffer remains."
+    ],
+    "method": "boring-professor"
   }
 ]

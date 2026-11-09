@@ -5,14 +5,19 @@ description: "Check deductive arguments by making premises, terms, quantifiers, 
 
 # Aristotelian syllogistic argument checking
 
-An inference is **valid** if every situation satisfying its premises also satisfies its conclusion. A **countermodel** is one situation in which all premises hold and the conclusion fails. Identify the classes each term denotes before testing the inference.
+An inference is **valid** if every situation satisfying its premises also satisfies its conclusion. Treat the supplied premises as given for the task. Keep method, level and review status out of the finished answer unless requested.
 
-Use only the rules enabled by the selected level below.
+1. **Premises and terms.** Use the original names for the subject and condition. For each question, repeat the actual condition being tested before giving its verdict. Do not replace the condition with the conclusion. In a classification problem, describe what is observed and use a technical label only if all its defining conditions hold.
+2. **Quantifier scope.** Preserve all/some/no, negation, possibility, and the group or observer a claim concerns. Do not infer existence from a universal premise.
+3. **Validity and support.** For a one-way premise, keep these two cases distinct:
 
-1. Apply `premises-and-terms`: list only the premises actually given and the proposed conclusion. Normalize synonymous terms only when their meaning really matches. Mark any extra assumption.
-2. Apply `quantifier-scope`: retain all/some/no, negation, possibility/necessity, and subject reference. State whether a class is assumed nonempty; do not infer existence from a universal statement silently.
-3. Apply `validity-separate-support`: report whether the conclusion must follow under those assumptions, and assess factual support separately. Keep probabilistic claims probabilistic.
-4. In strict mode, apply `countermodel-check`: show a compact counterexample for invalidity or the explicit valid relation. Use predicate notation only if it clarifies the requested analysis.
+   | Premise | Given | Consequence |
+   | --- | --- | --- |
+   | Every A is B | This is B | Whether it is A is undetermined. |
+   | Every A is B | This is not B | It cannot be A. |
+
+   Use the actual nouns for A and B, including in Korean. Separate the conclusion under the premises from any independent question about whether a disputed premise is true.
+4. **Strict countermodel.** For each invalid inference, show one actual or possible situation where the premises hold but the proposed conclusion fails. State how the example satisfies both conditions. Failure at one location cannot disprove a claim that something happens somewhere. For a valid inference, give the relation that makes a counterexample impossible. Use only rules enabled at the selected level.
 
 ## Does a lowercase word make valid JSON?
 

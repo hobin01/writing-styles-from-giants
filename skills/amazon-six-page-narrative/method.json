@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "amazon-six-page-narrative",
-  "version": "0.1.2",
+  "version": "0.1.6",
   "status": "experimental",
   "title": "Amazon six-page narrative",
   "kind": "document",

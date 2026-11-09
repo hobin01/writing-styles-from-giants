@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "aristotle-syllogism",
-  "version": "0.1.2",
+  "version": "0.1.11",
   "status": "experimental",
   "title": "Aristotelian syllogistic argument checking",
   "kind": "process",
@@ -62,7 +62,7 @@
     },
     {
       "id": "premises-and-terms",
-      "intent": "Separate premises from conclusion and use each term consistently; expose implicit premises as assumptions.",
+      "intent": "Identify the proposed conclusion and actual premises. For P implies Q, with Q false conclude P false; with Q true, P is unknown. Keep these verdicts separate. Do not attribute any extra premise to the source.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Adapts opening syllogistic definitions to argument review.",
@@ -119,7 +119,7 @@
     },
     {
       "id": "countermodel-check",
-      "intent": "For a disputed inference, construct a possible case where the premises hold and conclusion fails, or give the explicit valid form.",
+      "intent": "For each inference, give an explicit valid relation or exhibit a particular situation where all premises hold and the proposed conclusion fails. Naming a converse without such a witness is incomplete.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Project adaptation of valid/invalid form testing, not a complete automatic logic solver.",

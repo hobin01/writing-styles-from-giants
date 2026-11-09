@@ -4,9 +4,7 @@
 
 When I ask an AI to “explain this simply,” it sometimes cuts the part I wanted to understand. Explaining a bicycle brake to a five-year-old is a different job from explaining its mechanism to an engineer. I made this project so I could choose **who the explanation is for and how it should work**. I wanted to put earlier writers’ methods to work on my own questions, which is where “standing on the shoulders of giants” comes in.
 
-Choose the [English examples](EXAMPLES.md) or [한국어 예제](EXAMPLES.ko.md). For each of the 22 skills, GPT-6 Luna received the English and Korean questions independently, with and without the skill. Try [two DNS caches with different clocks](skills/feynman-technique/examples/standard.md), [LIGO’s false-alarm rate](skills/imrad/examples/standard.md), or [Seoul’s subway map redesign](skills/hunminjeongeum/examples/standard.md). Each page shows the sources, both actual answers and what they got right or missed on a task designed for high-school reasoning or above.
-
-The [November 9 run record](evals/runs/2026-11-09-standard/README.md) shows which 13 skills changed, what they missed, and every retry on the same questions.
+Try the same question at `light`, `standard` and `strict`. [What happens when floating ice melts?](skills/eli5/examples/standard.md) leaves ELI5 to choose how to explain it. [Why can two DNS resolvers disagree?](skills/feynman-technique/examples/standard.md) lets Feynman uncover the step that makes the clocks matter. Browse all 22 methods in the [English examples](EXAMPLES.md) or the [한국어 예제](EXAMPLES.ko.md). GPT-6 Luna answered each language and level in its own session.
 
 ## Try it in Codex
 

@@ -89,7 +89,8 @@
     "sourceIds": [],
     "expectations": [
       "The charge durations are 13 and 20 minutes, a difference of 7 minutes. The 14-minute change in end time expresses a different quantity.",
-      "The static comparison remains readable on a narrow screen."
+      "The static comparison remains readable on a narrow screen.",
+      "Check the difference between the two durations by subtracting their endpoints separately; narrative text and displayed values agree."
     ]
   }
 ]

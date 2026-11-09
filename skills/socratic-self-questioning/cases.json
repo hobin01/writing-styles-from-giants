@@ -81,5 +81,23 @@
     "level": "standard",
     "locale": "en",
     "method": "socratic-self-questioning"
+  },
+  {
+    "id": "separate-periods",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "strict",
+    "source": "In year one, customer wait times did not differ. In year two, clinics using a new scheduler recorded a three-minute shorter wait, but only those clinics also hired a nurse. A hospital predicts the same three-minute reduction. What does this evidence support?",
+    "ruleIds": [
+      "test-assumptions",
+      "revise-calibration"
+    ],
+    "sourceIds": [
+      "plato-apology"
+    ],
+    "expectations": [
+      "Keep the first-year null separate from the second-year difference. The measurement does not isolate the scheduler from staffing or establish how a different hospital will respond."
+    ],
+    "method": "socratic-self-questioning"
   }
 ]

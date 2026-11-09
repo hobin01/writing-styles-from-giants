@@ -1,241 +1,81 @@
-# 한국어로 직접 실행한 글쓰기 스킬 22개
+# 글쓰기 예제
 
 [English examples](EXAMPLES.md)
 
-[서로 다른 시각에 조회한 DNS 리졸버](#feynman-technique), [송신 기회를 놓친 화성 탐사차](#answer-with-html), [서울 지하철 노선도](#hunminjeongeum) 중 하나를 골라 보세요. 각 항목에는 한국어 질문, 스킬 없이 쓴 답, `standard`로 쓴 답과 판정 기준 세 가지가 있습니다.
+궁금한 질문을 하나 골라 보세요. 같은 질문에 같은 스킬을 쓰고 `light`, `standard`, `strict`만 바꾼 답을 차례로 볼 수 있습니다. 질문에는 사례와 필요한 사실을 담고, 글을 어떻게 쓸지는 스킬에 맡겼습니다. 영어와 한국어 답은 각 레벨에서 GPT-6 Luna에 따로 물었습니다.
 
-## 어떻게 비교했나요?
+<!-- Generated from the portable examples. -->
 
-스킬마다 질문 하나와 판정 기준 세 개가 있습니다. 영어 예제와 한국어 예제는 같은 사례를 각 언어로 따로 물었습니다. 11월 9일 재검증에서는 11월 8일의 질문, 채점 기준, 미적용 답안을 고정했습니다. 한 언어에서라도 기준을 놓친 13개 스킬은 지침을 수정할 때마다 양쪽 언어로 다시 실행했습니다.
-
-현재 한국어 적용 답안은 66개 기준을 모두 충족합니다. 미적용 답안보다 더 많은 기준을 충족한 문항은 **11개**, 같은 수를 충족한 문항은 **11개**입니다. 고칠 항목이 없었던 9개 스킬은 11월 8일의 실제 답안을 유지했습니다. 수정한 스킬에는 새 소재 문항도 하나씩 추가했습니다. 기록에서 중간 실패와 익명 채점이 틀려 판정을 바로잡은 근거를 볼 수 있습니다. [실행 기록과 전체 답안](evals/runs/2026-11-09-standard/README.md) · [11월 8일 한국어 예제](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/EXAMPLES.ko.md).
-
-모든 답안은 GPT-6 Luna의 low 추론 설정으로, 저장소 밖의 읽기 전용 독립 세션에서 생성했습니다. 모델에는 해당 언어의 질문만 주고 적용 세션에만 스킬 지침을 추가했습니다. 채점할 때는 어느 답이 스킬을 썼는지 가렸지만, 일부 답에는 방법 이름이 드러납니다.
-
-스킬별 `examples/standard.md`(영어), `examples/standard.ko.md`(한국어)를 수정한 뒤 `python3 scripts/build_example_gallery.py`를 실행하면 두 모음이 함께 갱신됩니다.
-
-<!-- Standard examples below are generated. -->
-
-- [amazon-six-page-narrative](#amazon-six-page-narrative) · [스킬별 예제](skills/amazon-six-page-narrative/examples/standard.ko.md) · [English](EXAMPLES.md#amazon-six-page-narrative)
-- [answer-with-html](#answer-with-html) · [스킬별 예제](skills/answer-with-html/examples/standard.ko.md) · [English](EXAMPLES.md#answer-with-html)
-- [aristotle-syllogism](#aristotle-syllogism) · [스킬별 예제](skills/aristotle-syllogism/examples/standard.ko.md) · [English](EXAMPLES.md#aristotle-syllogism)
-- [asd-ste100](#asd-ste100) · [스킬별 예제](skills/asd-ste100/examples/standard.ko.md) · [English](EXAMPLES.md#asd-ste100)
-- [boring-professor](#boring-professor) · [스킬별 예제](skills/boring-professor/examples/standard.ko.md) · [English](EXAMPLES.md#boring-professor)
-- [diataxis](#diataxis) · [스킬별 예제](skills/diataxis/examples/standard.ko.md) · [English](EXAMPLES.md#diataxis)
-- [eli5](#eli5) · [스킬별 예제](skills/eli5/examples/standard.ko.md) · [English](EXAMPLES.md#eli5)
-- [federal-plain-language](#federal-plain-language) · [스킬별 예제](skills/federal-plain-language/examples/standard.ko.md) · [English](EXAMPLES.md#federal-plain-language)
-- [feynman-technique](#feynman-technique) · [스킬별 예제](skills/feynman-technique/examples/standard.ko.md) · [English](EXAMPLES.md#feynman-technique)
-- [google-design-doc](#google-design-doc) · [스킬별 예제](skills/google-design-doc/examples/standard.ko.md) · [English](EXAMPLES.md#google-design-doc)
-- [gtm-formal](#gtm-formal) · [스킬별 예제](skills/gtm-formal/examples/standard.ko.md) · [English](EXAMPLES.md#gtm-formal)
-- [hunminjeongeum](#hunminjeongeum) · [스킬별 예제](skills/hunminjeongeum/examples/standard.ko.md) · [English](EXAMPLES.md#hunminjeongeum)
-- [ietf-rfc](#ietf-rfc) · [스킬별 예제](skills/ietf-rfc/examples/standard.ko.md) · [English](EXAMPLES.md#ietf-rfc)
-- [imrad](#imrad) · [스킬별 예제](skills/imrad/examples/standard.ko.md) · [English](EXAMPLES.md#imrad)
-- [korean-plain-language](#korean-plain-language) · [스킬별 예제](skills/korean-plain-language/examples/standard.ko.md) · [English](EXAMPLES.md#korean-plain-language)
-- [microsoft-writing-style](#microsoft-writing-style) · [스킬별 예제](skills/microsoft-writing-style/examples/standard.ko.md) · [English](EXAMPLES.md#microsoft-writing-style)
-- [minto-pyramid](#minto-pyramid) · [스킬별 예제](skills/minto-pyramid/examples/standard.ko.md) · [English](EXAMPLES.md#minto-pyramid)
-- [new-harts-rules](#new-harts-rules) · [스킬별 예제](skills/new-harts-rules/examples/standard.ko.md) · [English](EXAMPLES.md#new-harts-rules)
-- [nist-technical-publication](#nist-technical-publication) · [스킬별 예제](skills/nist-technical-publication/examples/standard.ko.md) · [English](EXAMPLES.md#nist-technical-publication)
-- [orwell-six-rules](#orwell-six-rules) · [스킬별 예제](skills/orwell-six-rules/examples/standard.ko.md) · [English](EXAMPLES.md#orwell-six-rules)
-- [socratic-self-questioning](#socratic-self-questioning) · [스킬별 예제](skills/socratic-self-questioning/examples/standard.ko.md) · [English](EXAMPLES.md#socratic-self-questioning)
-- [steve-jobs-presentation](#steve-jobs-presentation) · [스킬별 예제](skills/steve-jobs-presentation/examples/standard.ko.md) · [English](EXAMPLES.md#steve-jobs-presentation)
+- [amazon-six-page-narrative](#amazon-six-page-narrative) · 두 교량 중 어느 쪽의 하중 평가부터 해야 할까요? · [스킬별 예제](skills/amazon-six-page-narrative/examples/README.md)
+- [answer-with-html](#answer-with-html) · 화성의 통신 지연이 1분 늘면 지구는 얼마나 더 기다릴까? · [스킬별 예제](skills/answer-with-html/examples/README.md)
+- [aristotle-syllogism](#aristotle-syllogism) · 삭(새달)에 두 원반의 중심이 겹치면 반드시 개기일식일까? · [스킬별 예제](skills/aristotle-syllogism/examples/README.md)
+- [asd-ste100](#asd-ste100) · 라즈베리 파이 4 복구 작업대별로 언제 전원을 끌 수 있을까? · [스킬별 예제](skills/asd-ste100/examples/README.md)
+- [boring-professor](#boring-professor) · 같은 경로를 쓴 두 Linux 로그 파일의 디스크 공간 · [스킬별 예제](skills/boring-professor/examples/README.md)
+- [diataxis](#diataxis) · 초록색 CI 결과는 어떤 Kubernetes 배포를 확인했을까? · [스킬별 예제](skills/diataxis/examples/README.md)
+- [eli5](#eli5) · 물에 뜬 얼음이 녹으면 수위가 달라질까? · [스킬별 예제](skills/eli5/examples/README.md)
+- [federal-plain-language](#federal-plain-language) · 부모와 아이의 신원을 45분 안에 어떻게 증명할 수 있을까? · [스킬별 예제](skills/federal-plain-language/examples/README.md)
+- [feynman-technique](#feynman-technique) · DNS 응답이 리졸버마다 달라지는 이유 · [스킬별 예제](skills/feynman-technique/examples/README.md)
+- [google-design-doc](#google-design-doc) · 주문을 받는 동안 인덱스 생성을 승인할 수 있을까? · [스킬별 예제](skills/google-design-doc/examples/README.md)
+- [gtm-formal](#gtm-formal) · 두 후보가 동시에 당선되지 않으려면 몇 표가 필요할까? · [스킬별 예제](skills/gtm-formal/examples/README.md)
+- [hunminjeongeum](#hunminjeongeum) · 서울 지하철 노선도를 빨리 읽으면 전체 여정은 얼마나 줄어드나요? · [스킬별 예제](skills/hunminjeongeum/examples/README.md)
+- [ietf-rfc](#ietf-rfc) · HTTP 429 응답에서 두 가지 재시도 시각 계산하기 · [스킬별 예제](skills/ietf-rfc/examples/README.md)
+- [imrad](#imrad) · LIGO의 오경보율을 10년에 적용하면 무엇을 말할 수 있을까? · [스킬별 예제](skills/imrad/examples/README.md)
+- [korean-plain-language](#korean-plain-language) · 2024년 서울 기후동행카드로 누가 얼마를 환급 신청할 수 있었을까? · [스킬별 예제](skills/korean-plain-language/examples/README.md)
+- [microsoft-writing-style](#microsoft-writing-style) · Windows 클립보드에서 필요한 항목만 두 개 남기기 · [스킬별 예제](skills/microsoft-writing-style/examples/README.md)
+- [minto-pyramid](#minto-pyramid) · 보행 선행신호 시범사업은 어느 교차로에 먼저 도입할까요? · [스킬별 예제](skills/minto-pyramid/examples/README.md)
+- [new-harts-rules](#new-harts-rules) · 자동차가 없는 가구의 비율은 런던과 잉글랜드·웨일스에서 얼마나 달랐을까? · [스킬별 예제](skills/new-harts-rules/examples/README.md)
+- [nist-technical-publication](#nist-technical-publication) · NIST-F2의 어느 불확도를 줄이는 쪽이 더 효과적일까? · [스킬별 예제](skills/nist-technical-publication/examples/README.md)
+- [orwell-six-rules](#orwell-six-rules) · 화성 기후 궤도선의 항법 추정은 단위 착오로 어떻게 빗나갔을까요? · [스킬별 예제](skills/orwell-six-rules/examples/README.md)
+- [socratic-self-questioning](#socratic-self-questioning) · 핀란드 기본소득 실험에서 취업일수가 2,400일 늘 거라고 예측할 수 있을까? · [스킬별 예제](skills/socratic-self-questioning/examples/README.md)
+- [steve-jobs-presentation](#steve-jobs-presentation) · 인제뉴어티의 비행 시간으로 무엇을 알 수 있을까? · [스킬별 예제](skills/steve-jobs-presentation/examples/README.md)
 
 ## amazon-six-page-narrative
 
-**두 교량 중 어느 쪽의 하중 평가부터 해야 할까요?**
-
-[English](EXAMPLES.md#amazon-six-page-narrative)
-
-2026-11-08 · `amazon-six-page-narrative` 0.1.2 · 한국어 · `gpt-6-luna`
-
-### 사례와 출처
-
-- [NTSB, investigation HWY07MH024, Collapse of I-35W Highway Bridge, Minneapolis, Minnesota](https://www.ntsb.gov/investigations/Pages/HWY07MH024.aspx)
-
-NTSB는 미니애폴리스 I-35W 교량 붕괴의 원인으로 U10 연결판의 부족한 용량과 복합 하중을 조사했습니다. 다른 두 교량의 이름과 하중 단위는 의사결정 연습을 위한 가정입니다.
+**두 교량 중 어느 쪽의 하중 평가부터 해야 할까요?** · [English](EXAMPLES.md#amazon-six-page-narrative)
 
 ### 질문
 
-> 두 강트러스교에 건설 자재를 쌓아 둘지 검토하는 가상의 교량 관리기관을 위해 한국어 의사결정 메모의 첫 문단을 써 주세요. 미니애폴리스 I-35W 붕괴 조사에서 미국 국가교통안전위원회(NTSB)는 U10 이음부의 거싯 플레이트가 증설·교통·집중된 공사 하중을 함께 견디기에 부족했으며, 기존 하중 평가에서는 이 판이 빠졌다고 판단했습니다. 다음은 실제 교량 평가가 아닌 교육용 예비 검토입니다. 리버 스트리트 교량은 연결판의 추정 용량이 100이고 기존 하중 68, 증설 하중 18, 적재 예정 하중 24가 동시에 작용합니다. 커낼 스트리트 교량의 해당 하중은 66, 14, 15이며 용량은 모릅니다. 두 교량 모두 육안 검사에서 새 손상은 보이지 않았고 최종 공학 평가는 없습니다. 즉시 정밀 하중 평가를 할 예산은 한 곳분입니다. 평가 우선순위, 두 곳의 자재 적재 여부, 그 이유를 한 문단에 담아 주세요.
+> 미니애폴리스 I-35W 교량 붕괴 당시 증설·교통·공사 하중이 함께 작용했다. 조사 결과 U10 이음부의 거싯 플레이트는 용량이 부족했고 이전 하중 평가에서도 빠져 있었다. 별개의 가상 예비 검토에서 리버 스트리트 교량 연결판의 추정 용량은 100단위다. 기존 하중 68단위, 증설 하중 18단위, 적재 예정 하중 24단위가 동시에 작용한다. 커낼 스트리트 교량의 해당 하중은 66, 14, 15단위이며 연결판의 용량은 모른다. 육안 검사에서는 두 곳 모두 새 손상이 보이지 않았다. 최종 공학 평가는 아직 없고 즉시 정밀 하중 평가를 할 예산은 한 곳분이다. 관리기관은 예정된 하중이 용량을 넘을 수 있다는 근거가 더 뚜렷한 곳을 먼저 평가하려 한다. 어느 교량을 먼저 평가해야 할까? 지금 두 곳 중 자재를 쌓아도 되는 곳이 있을까?
 
-### 스킬 미적용 답안
+**출처** · [NTSB, investigation HWY07MH024, Collapse of I-35W Highway Bridge, Minneapolis, Minnesota](https://www.ntsb.gov/investigations/Pages/HWY07MH024.aspx)
 
-> 예산이 한 곳분인 정밀 하중 평가는 리버 스트리트 교량에 우선 배정해야 합니다. 추정 용량 100에 기존 하중 68, 증설 하중 18, 예정 적재 하중 24를 합하면 총 110으로 용량을 넘으며, 하중이 동시에 작용하는 조건은 I-35W 조사에서 확인된 위험과 관련이 있습니다. 따라서 정밀 평가가 끝날 때까지 리버에는 자재를 적재하지 않는 것이 타당합니다. 커낼 스트리트는 합산 하중이 95이지만 용량을 모르므로, 안전하다고 단정하거나 적재를 승인할 근거가 없습니다. 우선 적재를 보류하고, 리버 평가 뒤 확보되는 예산으로 정밀 평가를 받도록 해야 합니다. 두 교량 모두 새 손상이 보이지 않았다는 육안 검사 결과만으로는 하중 안전성을 판단할 수 없으며, 이는 실제 교량 평가가 아닌 교육용 예비 검토입니다.
+### Light
 
-### 스킬 적용 답안 · standard
+> 리버 스트리트 교량을 먼저 정밀 하중 평가해야 합니다. 가상 예비 검토의 추정치를 합하면 기존 하중 68단위, 증설 하중 18단위, 예정 하중 24단위가 동시에 작용할 때 총 110단위로, 추정 용량 100단위를 10단위 초과합니다. 이 추정만으로 안전 여부를 확정할 수는 없지만, 예정 하중이 용량을 넘을 수 있다는 근거는 두 곳 중 이 교량에서 더 분명합니다.
+>
+> 커낼 스트리트 교량은 해당 하중의 합이 95단위(66+14+15)지만 연결판 용량을 모르므로, 이 합만으로 용량 초과 여부를 판단할 수 없습니다. 새 손상이 보이지 않았다는 육안 검사 결과도 하중 용량을 확인해 주지는 않습니다. 미니애폴리스 I-35W 교량 붕괴 조사에서 U10 거싯 플레이트의 용량 부족과 이전 하중 평가에서의 누락이 확인됐다는 사례는, 육안상 새 손상이 없거나 과거 평가를 거쳤다는 사실만으로 연결부 용량이 입증되지는 않음을 보여줍니다.
+>
+> 두 교량 모두 최종 공학 평가가 없으므로, 현재 정보만으로는 어느 곳에도 자재를 쌓아도 된다고 판단할 수 없습니다. 정밀 평가 전에는 두 곳 모두 자재 적재를 보류해야 합니다.
 
-> 커낼 스트리트 교량의 정밀 하중 평가를 먼저 승인하고, 평가가 끝날 때까지 두 교량 모두에 자재를 적재하지 않을 것을 권고합니다. 리버 스트리트 교량은 교육용 예비 검토에서 추정 용량 100에 기존 하중 68, 증설 하중 18, 예정 적재 하중 24가 동시에 작용해 합계 110으로 추정 용량을 넘습니다. 커낼 스트리트 교량은 해당 하중이 66, 14, 15로 합계 95이지만 용량을 모릅니다. I-35W 붕괴 조사에서 NTSB는 U10 거싯 플레이트가 여러 하중을 함께 견디기에 부족했고 기존 평가에서 그 판이 빠졌다고 판단했습니다. 이는 연결부의 용량과 동시 하중을 확인해야 할 이유를 뒷받침하지만, 이 예비 검토를 실제 안전 판정으로 만들지는 않습니다. 두 교량 모두 새 육안 손상은 없고 최종 공학 평가도 없으므로, 한 곳에만 평가 예산을 쓸 수 있다면 용량을 모르는 커낼을 먼저 평가하고, 평가 전에는 어느 곳에도 적재하지 않는 편이 타당합니다.
+### Standard
 
-### 두 답안의 차이
+> 리버 스트리트 교량을 먼저 정밀 하중 평가해야 합니다. 예비 검토의 추정치를 그대로 적용하면 기존 68단위와 증설 18단위에 예정 적재 하중 24단위가 더해져 총 110단위입니다. 추정 용량 100단위를 10단위 초과합니다. 미니애폴리스 I-35W 조사에서는 거싯 플레이트의 용량 부족이 발견됐고, 이전 하중 평가에서 해당 부재가 빠져 있었습니다. 이는 연결부의 용량을 확인하는 평가가 중요할 수 있음을 보여주지만, 리버 스트리트의 최종 안전성 판단을 대신하지는 않습니다.
+>
+> 커낼 스트리트 교량은 총 하중이 95단위(66+14+15)지만 연결판 용량을 모릅니다. 따라서 리버 스트리트보다 초과 위험 근거가 덜 명확할 뿐, 안전하다는 뜻은 아닙니다. 두 교량 모두 육안 검사에서 새 손상이 보이지 않았지만, 최종 공학 평가도 아직 없습니다.
+>
+> 현재 정보만으로는 두 곳 중 어느 곳에도 자재를 쌓아도 된다고 판단할 수 없습니다. 리버 스트리트는 평가 전 적재를 보류하고, 커낼 스트리트도 용량을 확인하기 전에는 적재를 승인하지 않아야 합니다. 예비 수치가 정확하다는 가정 아래 리버 스트리트의 초과가 추정되지만, 실제 용량과 두 교량의 안전성은 정밀 평가 전까지 불확실합니다.
 
-| 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
-| --- | --- | --- |
-| 리버 스트리트의 합계 하중 110이 추정 용량 100을 넘는다는 계산을 제시하고 이를 근거로 즉시 평가 대상을 선택한다. | 충족 | 충족 |
-| 커낼 스트리트의 하중은 95이지만 용량을 몰라 안전 여유를 판단할 수 없다고 밝힌다. 육안 검사만으로 적재를 허용하지 않는다. | 충족 | 충족 |
-| 두 곳의 자재 적재 여부를 구체적으로 정하고 NTSB의 연결판·복합 하중 결과와 연결하되, 교육용 수치로 실재 교량의 안전성을 단정하지 않는다. | 충족 | 충족 |
+### Strict
 
-**블라인드 검토** (Y = 미적용, X = 스킬 적용). 두 답 모두 리버의 하중 110과 용량 100, 커낼의 하중 95와 용량 미상을 밝히고 두 곳의 적재를 보류합니다. X의 우선순위는 용량을 모르는 커낼이고 Y의 우선순위는 추정 용량을 넘긴 리버입니다. 조건을 근거로 다른 우선순위를 설명하는 것도 기준상 허용되지만, 두 제안이 같은 결정은 아닙니다. Y는 아직 주어지지 않은 후속 예산도 언급합니다.
-
-<details>
-<summary>실행 기록</summary>
-
-각 답안은 Codex CLI 0.167.0, low 추론 설정의 별도 임시 읽기 전용 세션에서 생성했습니다. 같은 문항의 다른 답안이나 다른 언어의 답안은 입력하지 않았습니다.
-
-SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `e75c268d420b` / `f21acaaff574` / `f78edf440a2a`.
-
-</details>
+> 리버 스트리트 교량을 먼저 정밀 하중 평가해야 합니다. 예비 추정치에 따르면 기존·증설·예정 하중이 동시에 작용할 때 총하중은 110단위(68+18+24)로, 연결판의 추정 용량 100단위를 10단위 초과합니다. 이 추정만으로 실제 안전 여부를 확정할 수는 없지만, 용량 초과 가능성을 뒷받침하는 근거는 두 곳 중 리버 스트리트에 더 구체적입니다.
+>
+> 커낼 스트리트 교량의 해당 하중 합계는 95단위(66+14+15)입니다. 그러나 연결판 용량을 모르므로 이 합계만으로 안전하다고 판단할 수 없습니다. 두 교량 모두 육안 검사에서 새 손상이 보이지 않았지만, 이는 정밀 하중 평가를 대신하지 않습니다.
+>
+> 따라서 현재 정보만으로는 어느 교량에도 자재를 쌓아도 된다고 승인할 수 없습니다. 한 곳만 지금 평가할 수 있다면 리버 스트리트부터 평가하고, 커낼 스트리트에는 연결판 용량과 예정 하중을 검토할 때까지 자재를 쌓지 않는 것이 타당합니다. 이는 미니애폴리스 I-35W 교량 붕괴 당시의 조사 결과와는 별개의 가상 예비 검토이며, 최종 공학 평가는 아직 없습니다.
 
 ## answer-with-html
 
-**화성의 통신 지연이 1분 늘면 지구는 얼마나 더 기다릴까?**
-
-[English](EXAMPLES.md#answer-with-html)
-
-2026-11-09 · `answer-with-html` 0.1.8 · 한국어 · `gpt-6-luna`
-
-### 사례와 출처
-
-- [NASA/JPL, Speaking Percy's Language: How to Talk so Perseverance Will Listen](https://science.nasa.gov/blog/speaking-percys-language-how-to-talk-so-perseverance-will-listen/)
-
-NASA/JPL 자료는 지구·화성의 위치에 따라 편도 통신 지연이 약 3~22분이라는 근거를 제공합니다. 준비 시간 10분과 25분 간격의 송신 기회는 이 문제의 가정입니다.
+**화성의 통신 지연이 1분 늘면 지구는 얼마나 더 기다릴까?** · [English](EXAMPLES.md#answer-with-html)
 
 ### 질문
 
-> 화성 탐사차 퍼서비어런스와 지구 사이의 통신을 설명하는 한국어 HTML 전시 페이지를 만들어 주세요. NASA에 따르면 전파가 편도로 이동하는 데 약 3~22분이 걸립니다. 다음 송신 일정은 전시를 위해 만든 가정입니다. 지구는 0분에 메시지를 보내고, 탐사차는 받은 뒤 10분간 응답을 준비합니다. 답신 전송은 25분, 50분, 75분처럼 25분 간격의 정해진 시각에만 시작할 수 있습니다. 준비가 끝난 순간이 송신 시각과 정확히 같으면 바로 보낼 수 있습니다. 전파가 양방향에서 걸리는 시간은 같습니다. 편도 지연을 3분부터 22분까지 1분씩 바꿀 수 있도록, 이름이 표시되고 키보드로 조작할 수 있는 슬라이더 하나를 두세요. 초기값은 15분입니다. 답신 준비가 끝나는 시각, 전송 시각, 지구 도착 시각을 보여 주고, 지연을 15분에서 16분으로 올릴 때 도착 시각이 크게 뛰는 이유를 설명해 주세요. 스크립트를 끄더라도 초기 결과를 읽을 수 있어야 합니다. 작은 화면에서도 읽을 수 있게 구성하고, 문서 언어는 ko로 설정하고 화면 안내와 설명은 한국어로 작성하세요. 외부 리소스 없이 HTML 전체만 반환하세요.
+> 지구에서 퍼서비어런스 탐사차까지 신호가 가는 데는 편도로 약 3~22분이 걸린다. 다음은 가상의 교신 일정이다. 지구가 0분에 신호를 보내면 탐사차는 신호를 받은 뒤 답신을 준비하는 데 10분이 걸린다. 송신은 25분, 50분, 75분처럼 25분 간격으로만 시작할 수 있고, 준비가 정확히 그 시각에 끝나면 바로 송신할 수 있다. 돌아오는 신호도 가는 신호와 같은 시간이 걸린다. 편도 지연이 15분에서 16분으로 늘면 지구가 답신을 받는 시각이 왜 1분보다 더 늦어질까?
 
-### 스킬 미적용 답안
+**출처** · [NASA/JPL, Speaking Percy's Language: How to Talk so Perseverance Will Listen](https://science.nasa.gov/blog/speaking-percys-language-how-to-talk-so-perseverance-will-listen/)
 
-````html
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>화성에서 온 답신 — 퍼서비어런스 통신</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #111719;
-      --panel: #1c2628;
-      --text: #f4f1e8;
-      --muted: #bdc8c5;
-      --accent: #ffad7a;
-      --line: #445251;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-      line-height: 1.65;
-    }
-    main { width: min(100% - 2rem, 760px); margin: 0 auto; padding: 2rem 0 3rem; }
-    header { padding: 1.5rem 0 1.25rem; }
-    .eyebrow { color: var(--accent); font-size: .85rem; font-weight: 700; letter-spacing: .08em; }
-    h1 { margin: .4rem 0 .65rem; font-size: clamp(2rem, 7vw, 3.5rem); line-height: 1.12; }
-    h2 { margin: 0 0 .75rem; font-size: 1.25rem; }
-    p { margin: .5rem 0; }
-    .intro { max-width: 60ch; color: var(--muted); font-size: 1.05rem; }
-    .panel {
-      margin-top: 1rem;
-      padding: clamp(1rem, 4vw, 1.5rem);
-      border: 1px solid var(--line);
-      border-radius: 1rem;
-      background: var(--panel);
-    }
-    .range-row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
-    output { color: var(--accent); font-size: 1.4rem; font-weight: 800; font-variant-numeric: tabular-nums; }
-    input[type="range"] { display: block; width: 100%; margin: 1rem 0 .25rem; accent-color: var(--accent); }
-    .range-labels { display: flex; justify-content: space-between; color: var(--muted); font-size: .85rem; }
-    .results { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; margin-top: 1rem; }
-    .result { padding: 1rem; border-radius: .75rem; background: #121a1b; }
-    .result span { display: block; color: var(--muted); font-size: .88rem; }
-    .result strong { display: block; margin-top: .25rem; font-size: clamp(1.2rem, 5vw, 1.7rem); font-variant-numeric: tabular-nums; }
-    .arrival { color: var(--accent); }
-    .note { color: var(--muted); font-size: .92rem; }
-    .explain { border-left: 3px solid var(--accent); padding-left: 1rem; }
-    .formula { display: inline-block; margin: .4rem 0; padding: .2rem .55rem; border-radius: .4rem; background: #121a1b; font-variant-numeric: tabular-nums; }
-    @media (max-width: 560px) {
-      main { width: min(100% - 1.25rem, 760px); padding-top: 1rem; }
-      .results { grid-template-columns: 1fr; }
-      .result { display: flex; align-items: center; justify-content: space-between; gap: .75rem; }
-      .result strong { margin: 0; }
-    }
-  </style>
-</head>
-<body>
-  <main>
-    <header>
-      <div class="eyebrow">화성 탐사 통신 전시</div>
-      <h1>화성에서 온 답신</h1>
-      <p class="intro">퍼서비어런스가 지구의 메시지를 받고 답장을 보내기까지, 빛의 속도로도 시간이 걸립니다. 편도 전파 지연을 바꾸며 답신이 지구에 도착하는 시각을 살펴보세요.</p>
-    </header>
+### Light
 
-    <section class="panel" aria-labelledby="control-title">
-      <h2 id="control-title">편도 전파 지연</h2>
-      <div class="range-row">
-        <label for="delay">지구와 화성 사이, 한쪽 방향의 이동 시간</label>
-        <output id="delay-value" for="delay">15분</output>
-      </div>
-      <input id="delay" type="range" min="3" max="22" step="1" value="15"
-             aria-describedby="range-help">
-      <div class="range-labels" id="range-help"><span>3분</span><span>22분</span></div>
-
-      <div class="results" aria-live="polite">
-        <div class="result">
-          <span>답신 준비 완료</span>
-          <strong id="ready-time">25분</strong>
-        </div>
-        <div class="result">
-          <span>답신 전송 시작</span>
-          <strong id="send-time">25분</strong>
-        </div>
-        <div class="result">
-          <span>지구 도착</span>
-          <strong class="arrival" id="arrival-time">40분</strong>
-        </div>
-      </div>
-      <p class="note">시간은 지구가 메시지를 보낸 순간을 0분으로 한 경과 시간입니다.</p>
-    </section>
-
-    <section class="panel" aria-labelledby="why-title">
-      <h2 id="why-title">왜 15분에서 16분으로 바꾸면 크게 늦어질까요?</h2>
-      <div class="explain">
-        <p>지구의 메시지는 0분에 출발하고, 화성까지 <strong>편도 지연만큼</strong> 걸립니다. 탐사차는 받은 뒤 10분 동안 답신을 준비합니다. 답신은 25분 간격으로 정해진 시각에만 출발할 수 있습니다.</p>
-        <p>편도 지연이 15분이면 메시지가 15분에 도착하고, 준비는 25분에 끝납니다. 그 순간이 송신 시각과 같으므로 곧바로 보낼 수 있어 답신은 25분에 출발해 40분에 지구에 도착합니다.</p>
-        <p>지연이 16분이면 메시지가 16분에 도착하고 준비는 26분에 끝납니다. 25분 송신 시각을 1분 놓쳐 다음 기회인 50분까지 기다립니다. 왕복 전파 시간도 1분씩 늘어나므로 지구 도착은 40분에서 82분으로, 총 42분 늦어집니다.</p>
-        <p class="formula">준비 완료 = 편도 지연 + 10분 · 송신 = 준비 완료 이후 첫 25분 간격 시각 · 지구 도착 = 송신 + 편도 지연</p>
-      </div>
-    </section>
-
-    <p class="note">NASA에 따르면 퍼서비어런스와 지구 사이의 전파는 편도로 약 3~22분 걸릴 수 있습니다. 이 전시의 10분 준비 시간과 25분 간격 송신 일정은 설명을 위한 가정입니다.</p>
-  </main>
-
-  <script>
-    const slider = document.getElementById("delay");
-    const delayValue = document.getElementById("delay-value");
-    const readyTime = document.getElementById("ready-time");
-    const sendTime = document.getElementById("send-time");
-    const arrivalTime = document.getElementById("arrival-time");
-
-    function update() {
-      const delay = Number(slider.value);
-      const ready = delay + 10;
-      const send = Math.ceil(ready / 25) * 25;
-      delayValue.textContent = delay + "분";
-      readyTime.textContent = ready + "분";
-      sendTime.textContent = send + "분";
-      arrivalTime.textContent = (send + delay) + "분";
-    }
-
-    slider.addEventListener("input", update);
-    update();
-  </script>
-</body>
-</html>
-````
-
-### 스킬 적용 답안 · standard
+[HTML 파일 · 내려받아 브라우저에서 열기](skills/answer-with-html/examples/light.ko.html)
 
 ````html
 <!doctype html>
@@ -243,1505 +83,1223 @@ NASA/JPL 자료는 지구·화성의 위치에 따라 편도 통신 지연이 �
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>화성과 지구 사이, 답신은 언제 도착할까?</title>
+  <title>편도 지연 1분이 답신 시각을 더 늦추는 이유</title>
   <style>
-    :root {
-      color-scheme: dark;
-      font-family: system-ui, -apple-system, "Malgun Gothic", sans-serif;
-      background: #101827;
-      color: #f3f6fb;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      padding: clamp(1rem, 5vw, 3rem);
-      background:
-        radial-gradient(ellipse at 80% 5%, #273b63 0, transparent 38rem),
-        #101827;
-    }
-    main { width: min(100%, 48rem); margin: 0 auto; }
-    .eyebrow { color: #a9c5ff; letter-spacing: .08em; font-size: .82rem; }
-    h1 { line-height: 1.2; font-size: clamp(1.8rem, 7vw, 3rem); margin: .5rem 0 1rem; }
-    p { line-height: 1.65; color: #d1d9e8; }
-    .card {
-      margin-top: 1.5rem;
-      padding: clamp(1rem, 4vw, 1.6rem);
-      border: 1px solid #3b4b67;
-      border-radius: 1rem;
-      background: #182337;
-    }
-    label { display: block; font-weight: 700; margin-bottom: .75rem; }
-    input[type="range"] { width: 100%; accent-color: #9cc4ff; }
-    .range-labels { display: flex; justify-content: space-between; color: #aebbd0; font-size: .9rem; }
-    output {
-      display: block;
-      margin-top: 1.3rem;
-      padding: 1rem;
-      border-radius: .75rem;
-      background: #101827;
-      color: #fff;
-      line-height: 1.8;
-      overflow-wrap: anywhere;
-    }
-    output strong { color: #a9c5ff; }
-    .note { font-size: .9rem; color: #aebbd0; }
-    :focus-visible { outline: 3px solid #ffd166; outline-offset: 4px; }
+    body { max-width: 760px; margin: 2rem auto; padding: 0 1rem; font: 1rem/1.6 system-ui, sans-serif; color: #182230; }
+    h1 { font-size: 1.5rem; line-height: 1.3; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th, td { border: 1px solid #bac5d1; padding: .65rem; text-align: left; overflow-wrap: anywhere; }
+    th { background: #f0f4f8; }
+    fieldset { border: 1px solid #bac5d1; border-radius: .5rem; margin: 1rem 0; padding: .8rem 1rem; }
+    label { margin-right: 1rem; }
+    output { display: block; padding: .8rem; border-left: 4px solid #287a63; background: #f0f8f5; }
   </style>
 </head>
 <body>
   <main>
-    <p class="eyebrow">화성 탐사 통신 전시</p>
-    <h1>답신은 언제 지구에 도착할까?</h1>
-    <p>지구에서 보낸 메시지가 퍼서비어런스에 도착한 뒤, 탐사차는 10분 동안 답신을 준비합니다. 하지만 답신은 정해진 송신 시각에만 보낼 수 있습니다. 편도 전파 지연을 바꾸며 도착 시각이 어떻게 달라지는지 살펴보세요.</p>
+    <h1>편도 지연이 1분 늘었는데, 답신은 왜 더 늦어질까?</h1>
+    <p>가상 일정에서 지구는 0분에 신호를 보내고, 퍼서비어런스는 신호를 받은 뒤 답신 준비에 10분을 쓴다. 답신 송신은 25분 간격 시각에만 시작할 수 있으며, 준비가 그 시각에 끝나면 바로 송신한다.</p>
 
-    <section class="card" aria-labelledby="assumptions-title">
-      <h2 id="assumptions-title">전시의 가정</h2>
-      <p>지구는 0분에 메시지를 보냅니다. 편도 지연은 양방향에서 같고, 답신 송신은 25분 간격의 시각(25분, 50분, 75분…)에 시작할 수 있습니다. 준비 완료 시각과 송신 시각이 같으면 바로 전송합니다. NASA에 따르면 실제 편도 전파 시간은 약 3~22분입니다. 송신 일정과 준비 시간은 전시를 위해 정한 가정입니다.</p>
-    </section>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">편도 지연</th>
+          <th scope="col">탐사차 수신</th>
+          <th scope="col">준비 완료</th>
+          <th scope="col">답신 송신</th>
+          <th scope="col">지구 수신</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">15분</th>
+          <td>0 + 15 = 15분</td>
+          <td>15 + 10 = 25분</td>
+          <td>25분</td>
+          <td>25 + 15 = 40분</td>
+        </tr>
+        <tr>
+          <th scope="row">16분</th>
+          <td>0 + 16 = 16분</td>
+          <td>16 + 10 = 26분</td>
+          <td>50분</td>
+          <td>50 + 16 = 66분</td>
+        </tr>
+      </tbody>
+    </table>
 
-    <section class="card" aria-labelledby="control-title">
-      <h2 id="control-title">편도 지연 조절</h2>
-      <label for="delay">편도 전파 지연: <span id="delay-value">15</span>분</label>
-      <input id="delay" type="range" min="3" max="22" step="1" value="15"
-             aria-label="편도 전파 지연, 3분부터 22분까지">
-      <div class="range-labels" aria-hidden="true"><span>3분</span><span>22분</span></div>
+    <p>지구 수신 시각 차이: 66분 − 40분 = 26분.</p>
 
-      <output id="result" aria-live="polite">
-        편도 지연 15분 · 답신 준비 완료 25분 · 답신 전송 25분 · 지구 도착 40분
-      </output>
-    </section>
-
-    <section class="card" aria-labelledby="why-title">
-      <h2 id="why-title">15분에서 16분으로 바꾸면 왜 크게 뛸까?</h2>
-      <p>15분 지연이면 메시지가 탐사차에 15분에 도착하고, 10분 준비 뒤 25분에 답신을 보낼 수 있습니다. 지연이 16분이면 준비 완료는 26분입니다. 25분 송신 시각을 이미 지나서 다음 기회인 50분까지 기다려야 하므로, 도착 시각도 크게 늦어집니다. 정해진 송신 시각 사이에서는 준비 완료 시각이 다음 송신 기회를 넘기는 순간 대기 시간이 한 번에 늘어납니다.</p>
-    </section>
+    <fieldset>
+      <legend>편도 지연 사례를 선택해 원인을 확인하세요</legend>
+      <label><input type="radio" name="case" value="15" checked> 15분</label>
+      <label><input type="radio" name="case" value="16"> 16분</label>
+    </fieldset>
+    <output id="reason" aria-live="polite">15분 사례: 준비가 송신 가능 시각에 맞춰 끝나므로, 첫 번째 송신 기회를 이용합니다.</output>
+    <p>16분 사례에서는 준비 완료가 첫 송신 시각을 지나쳐, 다음 송신 기회까지 기다려야 합니다. 그 결과 송신 일정의 경계가 넘어가며 지구의 답신 수신이 크게 늦어집니다.</p>
   </main>
   <script>
-    const slider = document.getElementById("delay");
-    const delayValue = document.getElementById("delay-value");
-    const result = document.getElementById("result");
-
-    function calculate(rawValue) {
-      const delay = Number(rawValue);
-      if (!Number.isFinite(delay) || delay < 3 || delay > 22) return null;
-      const ready = delay + 10;
-      const send = Math.ceil(ready / 25) * 25;
-      const arrival = send + delay;
-      return { delay, ready, send, arrival };
-    }
-
-    function render() {
-      const values = calculate(slider.value);
-      if (!values) return;
-      delayValue.textContent = String(values.delay);
-      result.textContent =
-        `편도 지연 ${values.delay}분 · 답신 준비 완료 ${values.ready}분 · ` +
-        `답신 전송 ${values.send}분 · 지구 도착 ${values.arrival}분`;
-    }
-
-    slider.addEventListener("input", render);
-    render();
+    const reason = document.getElementById("reason");
+    document.querySelectorAll('input[name="case"]').forEach((control) => {
+      control.addEventListener("change", () => {
+        reason.textContent = control.value === "15"
+          ? "15분 사례: 준비가 송신 가능 시각에 맞춰 끝나므로, 첫 번째 송신 기회를 이용합니다."
+          : "16분 사례: 준비가 첫 송신 가능 시각을 1분 지나 끝나므로, 다음 송신 기회까지 기다려야 합니다.";
+      });
+    });
   </script>
 </body>
 </html>
 ````
 
-### 두 답안의 차이
+### Standard
 
-| 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
-| --- | --- | --- |
-| 초기 편도 지연 15분일 때 스크립트 없이도 준비 25분·전송 25분·지구 도착 40분을 확인할 수 있고, 송신 일정이 가정임을 밝힌다. | 충족 | 충족 |
-| 편도 지연 16분에서는 26분·50분·66분을 표시하고, 25분 송신 시각을 놓쳤기 때문에 도착 시각이 뛰는 이유를 설명한다. | 미충족 | 충족 |
-| 한국어로 이름을 표시한 키보드 조작 슬라이더가 3~22분을 1분씩 바꾸며, 양 끝에서 지구 도착이 각각 28분·72분으로 갱신된다. 외부 리소스를 쓰지 않는다. | 충족 | 충족 |
+[HTML 파일 · 내려받아 브라우저에서 열기](skills/answer-with-html/examples/standard.ko.html)
 
-**검토 결과.** 스크립트를 끈 첫 화면에서 25·25·40분을 확인했습니다. 편도 16분에서는 송신 시각을 놓쳐 26·50·66분이 되고, 키보드로 양 끝을 선택하면 지구 도착이 28분과 72분으로 바뀝니다.
+````html
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>편도 지연이 1분 늘 때 답신이 더 늦어지는 이유</title>
+<style>
+  :root { color-scheme: light; font-family: system-ui, -apple-system, "Malgun Gothic", sans-serif; }
+  body { margin: 0; padding: 1.25rem; color: #172033; background: #f5f7fb; line-height: 1.55; }
+  main { max-width: 850px; margin: auto; padding: clamp(1rem, 4vw, 2rem); background: white; border: 1px solid #dbe2ee; border-radius: 1rem; }
+  h1 { font-size: clamp(1.4rem, 4vw, 2rem); line-height: 1.25; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0 .5rem; }
+  th, td { padding: .7rem; border: 1px solid #dbe2ee; text-align: left; vertical-align: top; }
+  th { background: #edf2fa; }
+  caption { text-align: left; font-weight: 650; padding-bottom: .5rem; }
+  .equation { font-weight: 700; margin: .5rem 0 1rem; }
+  fieldset { margin: 1.25rem 0; border: 1px solid #cbd5e1; border-radius: .75rem; padding: 1rem; }
+  legend { font-weight: 700; padding: 0 .35rem; }
+  .choices { display: flex; flex-wrap: wrap; gap: .75rem 1.25rem; }
+  label { cursor: pointer; }
+  #explanation { margin-top: .85rem; padding: .85rem 1rem; border-left: 4px solid #2563eb; background: #eff6ff; border-radius: .25rem; }
+  .note { color: #475569; }
+  @media (max-width: 520px) { body { padding: .5rem; } th, td { padding: .5rem; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>편도 지연이 1분 늘 때 답신은 왜 더 늦어질까?</h1>
+  <p>가상의 일정에서 지구는 0분에 신호를 보내고, 탐사차는 받은 뒤 답신 준비에 10분을 씁니다. 송신은 25분 간격으로만 시작할 수 있으며, 준비가 송신 시각에 맞춰 끝나면 바로 보낼 수 있습니다.</p>
 
-익명 채점에서 개정 답안은 Y였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/answer-with-html/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/answer-with-html.json).
+  <div class="table-wrap">
+    <table>
+      <caption>편도 지연에 따른 답신 일정 (단위: 분)</caption>
+      <thead>
+        <tr>
+          <th scope="col">편도 지연</th>
+          <th scope="col">탐사차가 받는 시각</th>
+          <th scope="col">준비 완료 시각</th>
+          <th scope="col">가능한 첫 송신 시각</th>
+          <th scope="col">지구가 답신을 받는 시각</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">15분</th>
+          <td>0 + 15 = 15</td>
+          <td>15 + 10 = 25</td>
+          <td>25</td>
+          <td>25 + 15 = 40</td>
+        </tr>
+        <tr>
+          <th scope="row">16분</th>
+          <td>0 + 16 = 16</td>
+          <td>16 + 10 = 26</td>
+          <td>50</td>
+          <td>50 + 16 = 66</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-<details>
-<summary>실행 기록</summary>
+  <p class="equation">답신 도착 시각 차이: 66분 − 40분 = 26분</p>
 
-미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `318335a72a76` / `aa3daa7508a3` / `7a548d0ad983`.
+  <fieldset>
+    <legend>편도 지연 사례를 선택해 원인을 확인하세요</legend>
+    <div class="choices">
+      <label><input type="radio" name="case" value="15" checked> 15분 지연</label>
+      <label><input type="radio" name="case" value="16"> 16분 지연</label>
+    </div>
+    <p id="explanation" aria-live="polite">준비가 송신 가능 시각에 맞춰 끝나므로 탐사차는 바로 답신을 보냅니다.</p>
+  </fieldset>
 
-</details>
+  <p class="note">편도 지연이 16분일 때는 준비가 첫 송신 가능 시각을 지나 끝납니다. 다음 송신 기회를 기다려야 하므로, 왕복 전파 시간의 증가에 더해 일정 간격 때문에 추가 지연이 생깁니다.</p>
+</main>
+<script>
+  const explanations = {
+    "15": "준비가 송신 가능 시각에 맞춰 끝나므로 탐사차는 바로 답신을 보냅니다.",
+    "16": "준비가 첫 송신 가능 시각을 놓친 뒤 끝나므로, 탐사차는 다음 25분 간격의 송신 기회까지 기다립니다."
+  };
+  document.querySelectorAll('input[name="case"]').forEach((control) => {
+    control.addEventListener("change", (event) => {
+      const message = explanations[event.target.value];
+      if (message) document.getElementById("explanation").textContent = message;
+    });
+  });
+</script>
+</body>
+</html>
+````
+
+### Strict
+
+[HTML 파일 · 내려받아 브라우저에서 열기](skills/answer-with-html/examples/strict.ko.html)
+
+````html
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>편도 지연 1분 증가가 답신에 미치는 영향</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, -apple-system, "Noto Sans KR", sans-serif; }
+    body { margin: 0; background: #f4f7fb; color: #172238; line-height: 1.6; }
+    main { box-sizing: border-box; max-width: 900px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+    h1 { font-size: clamp(1.45rem, 4vw, 2rem); line-height: 1.3; }
+    .lead, .note, .cause, .subtraction { background: white; border: 1px solid #d9e2ef; border-radius: 12px; padding: 1rem; }
+    .lead { border-left: 5px solid #3874d8; }
+    .table-wrap { overflow-x: auto; margin: 1rem 0 .5rem; }
+    table { border-collapse: collapse; width: 100%; min-width: 650px; background: white; }
+    th, td { border: 1px solid #d9e2ef; text-align: left; padding: .7rem; vertical-align: top; }
+    th { background: #eaf0f8; }
+    .subtraction { font-weight: 650; margin: .75rem 0; }
+    fieldset { margin: 1.25rem 0; padding: 1rem; border: 1px solid #c8d5e7; border-radius: 12px; }
+    legend { font-weight: 700; padding: 0 .35rem; }
+    label { display: inline-flex; gap: .5rem; align-items: center; margin: .25rem 1rem .25rem 0; }
+    input { accent-color: #245fc4; }
+    .cause { min-height: 3.5rem; }
+    .small { color: #4a5870; font-size: .94rem; }
+    @media (max-width: 520px) {
+      main { padding: 1.25rem .75rem 2rem; }
+      .table-wrap { margin-left: -.25rem; margin-right: -.25rem; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <h1>편도 지연이 1분 늘었는데, 답신은 왜 1분보다 더 늦을까?</h1>
+  <p class="lead">탐사차의 답신 준비가 끝나는 시각과 다음 송신 가능 시각 사이에 25분 간격의 경계가 있다. 준비가 그 경계를 넘으면, 답신은 다음 송신 기회를 기다려야 한다.</p>
+
+  <h2>가상 교신 일정</h2>
+  <p class="small">지구는 0분에 송신한다. 탐사차는 신호를 받은 뒤 답신을 준비하는 데 10분이 걸리고, 송신은 25분 간격으로 시작한다. 편도 지연은 양방향에 동일하게 적용된다.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">편도 지연</th>
+          <th scope="col">탐사차가 신호를 받음</th>
+          <th scope="col">답신 준비 완료</th>
+          <th scope="col">탐사차가 답신 송신</th>
+          <th scope="col">지구가 답신 수신</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">15분</th>
+          <td>0 + 15 = 15분</td>
+          <td>15 + 10 = 25분</td>
+          <td>25분<br><span class="small">정확히 송신 시각에 준비 완료</span></td>
+          <td>25 + 15 = 40분</td>
+        </tr>
+        <tr>
+          <th scope="row">16분</th>
+          <td>0 + 16 = 16분</td>
+          <td>16 + 10 = 26분</td>
+          <td>50분<br><span class="small">25분 송신 기회를 지나침</span></td>
+          <td>50 + 16 = 66분</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="subtraction">66분 − 40분 = 26분</p>
+
+  <fieldset>
+    <legend>사례를 선택해 원인을 확인하세요</legend>
+    <label><input type="radio" name="case" value="15" checked> 편도 지연 15분</label>
+    <label><input type="radio" name="case" value="16"> 편도 지연 16분</label>
+  </fieldset>
+  <section class="cause" id="cause" aria-live="polite" aria-atomic="true">
+    <strong>15분 사례:</strong> 준비가 송신 경계에 맞춰 끝나므로 탐사차는 곧바로 답신을 보낼 수 있다.
+  </section>
+
+  <p class="note small">이 일정에서는 15분 지연일 때 준비가 송신 경계에 정확히 맞지만, 16분 지연일 때는 그 경계를 넘는다. 그 결과 답신은 다음 송신 기회까지 기다리며, 왕복 전파 지연 증가분에 대기 시간이 더해진다.</p>
+</main>
+<script>
+  const explanations = {
+    "15": "15분 사례: 준비가 송신 경계에 맞춰 끝나므로 탐사차는 곧바로 답신을 보낼 수 있다.",
+    "16": "16분 사례: 준비가 25분 송신 경계를 지나 끝나므로 탐사차는 다음 송신 기회까지 기다려야 한다."
+  };
+  const cause = document.getElementById("cause");
+  document.querySelectorAll('input[name="case"]').forEach((control) => {
+    control.addEventListener("change", () => {
+      if (control.checked && Object.hasOwn(explanations, control.value)) {
+        cause.textContent = explanations[control.value];
+      }
+    });
+  });
+</script>
+</body>
+</html>
+````
 
 ## aristotle-syllogism
 
-**삭(새달)에 두 원반의 중심이 겹치면 반드시 개기일식일까?**
-
-[English](EXAMPLES.md#aristotle-syllogism)
-
-2026-11-08 · `aristotle-syllogism` 0.1.2 · 한국어 · `gpt-6-luna`
-
-### 사례와 출처
-
-- [NASA, Why Do Eclipses Happen?](https://science.nasa.gov/eclipses/geometry/)
-- [NASA, 2023 Annular Eclipse FAQ](https://science.nasa.gov/eclipses/future-eclipses/eclipse-2023/faq/)
-
-NASA 자료에서 2023년 10월 14일의 금환일식과 개기·금환일식의 기하학적 차이를 확인할 수 있습니다. 그림에 주어진 각지름은 그날의 실측치가 아닙니다.
+**삭(새달)에 두 원반의 중심이 겹치면 반드시 개기일식일까?** · [English](EXAMPLES.md#aristotle-syllogism)
 
 ### 질문
 
-> 천체투영관의 관람객이 이렇게 추론합니다. “개기일식은 항상 삭(새달)일 때 일어난다. 지금 삭이므로 개기일식이다.” 또 “삭이 아니라면 개기일식일 수 없다”고 말합니다. 두 추론이 각각 타당한지 판단해 주세요. 별도의 설명용 그림에서는 관측자에게 보이는 태양과 달 원반의 중심이 정확히 겹칩니다. 태양의 각지름은 0.53°, 달의 각지름은 0.50°입니다. 한쪽 가장자리에 남는 고리의 각폭과 그때 보이는 현상을 구해 주세요. 같은 그림에서 달의 각지름만 0.55°가 되면 무엇이 달라질까요? 2023년 10월 14일 실제 금환일식을 근거로 추론을 점검하되 그림의 가상 수치를 그날의 관측값으로 쓰지 마세요. 도표 옆에서 읽을 간결한 한국어 설명으로 답해 주세요.
+> 모든 개기일식은 삭일 때 일어난다. 천문관 달력에는 다음 삭의 날짜만 나와 있다. 그날 개기일식이 일어날지, 또 삭이 아닌 날에도 개기일식이 일어날 수 있을지 어디까지 알 수 있을까? 한 지점에서 두 원반의 중심이 정확히 겹치고 태양의 겉보기 지름이 0.54°인 상황을 가정하자. 달의 겉보기 지름이 0.48°일 때와 0.56°일 때 각각 무엇이 보일까? 2023년 10월 14일에 실제로 금환일식이 있었지만, 위의 수치는 그날 측정한 값이 아니다.
 
-### 스킬 미적용 답안
+**출처** · [NASA, Why Do Eclipses Happen?](https://science.nasa.gov/eclipses/geometry/) · [NASA, 2023 Annular Eclipse FAQ](https://science.nasa.gov/eclipses/future-eclipses/eclipse-2023/faq/)
 
-> 개기일식은 삭일 때 일어나므로 “개기일식이면 삭이다”는 맞습니다. 하지만 삭이라고 해서 매번 개기일식이 일어나는 것은 아닙니다. 달의 그림자가 지구에 닿도록 태양·달·지구가 충분히 일직선에 가까워야 합니다. 따라서 “지금 삭이므로 개기일식이다”는 타당하지 않고, “삭이 아니라면 개기일식일 수 없다”는 타당합니다.
+### Light
+
+> 다음 삭 날짜라는 정보만으로는 그날 개기일식이 일어날지 알 수 없습니다. 전제는 개기일식이 일어나면 삭이라는 뜻이지, 삭이면 반드시 개기일식이 일어난다는 뜻은 아닙니다. 삭이 아닌 날에는 개기일식이 일어날 수 없습니다.
 >
-> **그림의 가상 수치:** 중심이 정확히 겹치고 태양의 각지름이 0.53°, 달이 0.50°라면 태양이 달보다 0.03° 더 큽니다. 중심에서 한쪽 가장자리까지 남는 고리의 각폭은 그 차이의 절반인 **0.015°**입니다. 태양 가장자리가 고리처럼 남아 보이는 **금환일식**입니다. 달의 각지름이 0.55°라면 달이 태양보다 커져 태양 원반을 완전히 가리므로 **개기일식**이 됩니다.
+> 중심이 정확히 겹치는 가정에서는 두 원반의 겉보기 지름을 비교할 수 있습니다. 태양 지름이 0.54°일 때 달 지름이 0.48°이면 달이 태양을 완전히 가리지 못해 가장자리가 보입니다. 달 지름이 0.56°이면 달이 태양을 완전히 가립니다. 이 기하 조건만으로는 실제 일식 여부나 다른 조건까지 알 수 없습니다.
 >
-> **실제 사례:** 2023년 10월 14일에는 삭 무렵 금환일식이 일어났습니다. 이는 삭만으로 개기일식이 보장되지는 않는다는 점을 보여 줍니다. 위 그림의 각지름은 설명용 가상 수치이며, 그날의 관측값이 아닙니다.
+> 2023년 10월 14일에 실제 금환일식이 있었다는 사실은 별도 정보입니다. 위의 가정값은 그날 측정값이 아니므로, 그날의 겉보기 지름을 나타내는 것으로 해석할 수 없습니다.
 
-### 스킬 적용 답안 · standard
+### Standard
 
-> **추론 점검**
+> 주어진 전제에서 알 수 있는 것은 개기일식이 일어나면 삭이라는 점입니다. 따라서 삭이 아닌 날에는 개기일식이 일어날 수 없습니다. 하지만 삭이라는 사실만으로 그날 개기일식이 일어난다고 결론 내릴 수는 없습니다. 달력에 다음 삭 날짜만 나와 있으므로 그날 개기일식이 있을지는 알 수 없습니다. 삭이 개기일식을 보장한다는 추가 전제가 주어지지 않았기 때문입니다.
 >
-> - “개기일식은 항상 삭일 때 일어난다”와 “지금 삭이다”만으로는 “지금 개기일식이다”가 따라오지 않습니다. 삭은 태양과 달이 같은 방향에 놓이는 위상 조건이지, 관측자에게 달이 태양 원반을 완전히 가린다는 뜻은 아닙니다. 주어진 문장만으로는 추론이 **타당하지 않습니다**.
-> - “삭이 아니라면 개기일식일 수 없다”는 첫 문장의 대우입니다. 삭이 개기일식의 필요조건이라는 뜻이므로, 그 전제가 참이라면 이 추론은 **타당합니다**. 다만 전제의 사실 여부는 논리적 타당성과 별도로 확인해야 합니다.
+> 두 원반의 중심이 한 지점에서 정확히 겹친다면, 달의 겉보기 지름이 태양보다 작을 때 태양 원반 가장자리가 남습니다. 달의 지름이 0.48°이면 태양 가장자리가 둥근 고리처럼 보이고, 0.56°이면 달이 태양 원반을 완전히 가립니다. 이는 해당 지점에서 두 원반의 크기와 중심 겹침으로 판단한 결과입니다. 주어진 수치는 가정값이며 2023년 10월 14일의 측정값이 아닙니다.
+
+### Strict
+
+> 주어진 전제만으로는 **다음 삭 날짜에 개기일식이 일어나는지 알 수 없습니다.** “모든 개기일식은 삭 때 일어난다”는 말은 개기일식이면 삭이라는 뜻이지, 삭이면 개기일식이라는 뜻은 아닙니다. 그날 개기일식이 없더라도 두 전제와 모순되지 않습니다.
 >
-> **그림의 가상 수치**
+> 또한 삭이 아닌 날에는 개기일식이 일어날 수 없습니다. 개기일식이 일어나면 삭이어야 한다는 전제에 어긋나기 때문입니다. 다만 이 결론은 주어진 전제를 받아들였을 때의 귀결이며, 전제 자체의 사실 여부를 별도로 검증한 것은 아닙니다.
 >
-> 두 원반의 중심이 겹치고 태양 지름이 달보다 크므로, 한쪽 가장자리에 남는 고리의 각폭은 지름 차이의 절반입니다.
+> 중심이 정확히 겹치고 태양의 겉보기 지름이 **0.54°**라면:
 >
+> - 달의 겉보기 지름이 **0.48°**일 때는 달이 태양 원반을 완전히 덮지 못해, 태양 가장자리가 고리처럼 보입니다. 이는 금환일식입니다.
+> - 달의 겉보기 지름이 **0.56°**일 때는 달이 태양 원반을 완전히 덮어, 가정한 지점에서 개기일식이 보입니다.
 >
-> $$
-> (0.53^\circ-0.50^\circ)/2=0.015^\circ
-> $$
->
->
-> 양쪽 가장자리의 폭은 각각 **0.015°**입니다. 태양 원반이 달 둘레로 드러나는 **금환일식**을 나타냅니다.
->
-> 달의 각지름이 **0.55°**라면 태양보다 크므로 태양 원반을 완전히 덮습니다. 중심이 정확히 겹친다는 가정 아래 태양 가장자리에 고리는 남지 않고 **개기일식**이 됩니다.
->
-> **실제 사례와 비교**
->
-> 2023년 10월 14일 금환일식은 삭만으로 개기일식이 결론 나지 않음을 보여 줍니다. 달이 삭에 있어도 태양을 완전히 가리지 못하면 금환일식이 일어납니다. 이 실제 사례는 두 번째 추론의 방향, 즉 개기일식이라면 삭이어야 한다는 주장과도 모순되지 않습니다. 위의 각폭 계산은 설명용 가상 수치에만 적용한 것이며, 그날의 관측값을 뜻하지 않습니다.
-
-<details>
-<summary>원래 수식 표기로 보기</summary>
-
-````text
-**추론 점검**
-
-- “개기일식은 항상 삭일 때 일어난다”와 “지금 삭이다”만으로는 “지금 개기일식이다”가 따라오지 않습니다. 삭은 태양과 달이 같은 방향에 놓이는 위상 조건이지, 관측자에게 달이 태양 원반을 완전히 가린다는 뜻은 아닙니다. 주어진 문장만으로는 추론이 **타당하지 않습니다**.
-- “삭이 아니라면 개기일식일 수 없다”는 첫 문장의 대우입니다. 삭이 개기일식의 필요조건이라는 뜻이므로, 그 전제가 참이라면 이 추론은 **타당합니다**. 다만 전제의 사실 여부는 논리적 타당성과 별도로 확인해야 합니다.
-
-**그림의 가상 수치**
-
-두 원반의 중심이 겹치고 태양 지름이 달보다 크므로, 한쪽 가장자리에 남는 고리의 각폭은 지름 차이의 절반입니다.
-
-\[
-(0.53^\circ-0.50^\circ)/2=0.015^\circ
-\]
-
-양쪽 가장자리의 폭은 각각 **0.015°**입니다. 태양 원반이 달 둘레로 드러나는 **금환일식**을 나타냅니다.
-
-달의 각지름이 **0.55°**라면 태양보다 크므로 태양 원반을 완전히 덮습니다. 중심이 정확히 겹친다는 가정 아래 태양 가장자리에 고리는 남지 않고 **개기일식**이 됩니다.
-
-**실제 사례와 비교**
-
-2023년 10월 14일 금환일식은 삭만으로 개기일식이 결론 나지 않음을 보여 줍니다. 달이 삭에 있어도 태양을 완전히 가리지 못하면 금환일식이 일어납니다. 이 실제 사례는 두 번째 추론의 방향, 즉 개기일식이라면 삭이어야 한다는 주장과도 모순되지 않습니다. 위의 각폭 계산은 설명용 가상 수치에만 적용한 것이며, 그날의 관측값을 뜻하지 않습니다.
-````
-
-</details>
-
-### 두 답안의 차이
-
-| 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
-| --- | --- | --- |
-| 삭은 필요조건이지만 충분조건이 아님을 설명해 첫 번째 역명제를 배척하고, 삭이 아니면 개기일식일 수 없다는 대우를 받아들인다. | 충족 | 충족 |
-| 한쪽 고리의 각폭을 (0.53−0.50)/2 = 0.015°로 구한다. 중심이 같고 달이 0.55°면 그 관측자에게 태양 원반이 완전히 가려짐을 설명한다. | 미충족 | 충족 |
-| 2023년 10월 14일 금환일식을 실제 반례로 들고 설명용 그림의 각지름을 역사적 관측값으로 돌리지 않는다. | 충족 | 충족 |
-
-**블라인드 검토** (Y = 미적용, X = 스킬 적용). X와 Y 모두 삭만으로는 개기일식을 결론 낼 수 없고 대우는 타당하다고 판단하며, 2023년 금환일식을 가상 각지름과 구별한다. X는 0.015°가 한쪽에 드러난 고리 폭임을 정확히 설명한다. Y는 수치는 맞지만 ‘중심에서 한쪽 가장자리까지’라고 해 측정 구간을 잘못 설명한다. 태양 중심에서 가장자리까지는 0.265°이고 0.015°는 달 가장자리와 태양 가장자리 사이의 차이다. 두 답 모두 중심이 겹친 0.55° 달이 태양 원반을 완전히 가린다고 설명한다.
-
-<details>
-<summary>실행 기록</summary>
-
-각 답안은 Codex CLI 0.167.0, low 추론 설정의 별도 임시 읽기 전용 세션에서 생성했습니다. 같은 문항의 다른 답안이나 다른 언어의 답안은 입력하지 않았습니다.
-
-SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `d69f028ec500` / `15076d2660f0` / `38636190c91c`.
-
-</details>
+> 2023년 10월 14일에 금환일식이 있었다는 사실은 별도로 주어진 정보입니다. 위의 두 지름 조합은 그날 측정값이 아니므로, 그 사실에서 해당 수치가 실제 관측값이었다고 결론 내릴 수는 없습니다.
 
 ## asd-ste100
 
-**라즈베리 파이 4 복구 작업대별로 언제 전원을 끌 수 있을까?**
-
-[English](EXAMPLES.md#asd-ste100)
-
-2026-11-09 · `asd-ste100` 0.1.4 · 한국어 · `gpt-6-luna`
-
-### 사례와 출처
-
-- [Raspberry Pi, Raspberry Pi computer hardware documentation](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#reflash-the-bootloader)
-
-Raspberry Pi 문서에서 HDMI가 연결된 보드의 복구 완료 표시와 전원 분리 순서를 확인할 수 있습니다. 작업대별 표시 시각과 관측 간격은 연습용입니다.
-
-**언어 적용 범위.** 한국어 답은 조건과 작업 순서, 용어의 일관성을 다루는 구조적 응용입니다. 영어 문법·단어 수·승인 어휘를 한국어에 적용하거나 공식 ASD-STE100 준수를 판정하지 않습니다.
+**라즈베리 파이 4 복구 작업대별로 언제 전원을 끌 수 있을까?** · [English](EXAMPLES.md#asd-ste100)
 
 ### 질문
 
-> HDMI 화면이 연결된 Raspberry Pi 4 Model B의 부트로더 복구 마무리 절차를 기술자에게 인계할 한국어 메모를 간결하게 써 주세요. 전원을 분리하려면 녹색 활동 LED가 일정하게 깜박이는 상태와 HDMI 화면이 녹색으로 표시되는 상태를 모두 확인해야 합니다. 복구용 microSD 카드는 전원을 분리한 다음에만 뺍니다. 이 가상 훈련에서는 각 작업대를 0초, 15초, 30초, 45초, 60초에 점검합니다. 한번 나타난 신호는 유지됩니다. North에서는 16초에 LED가 해당 패턴으로 깜박이기 시작하고 29초에 화면이 녹색이 됩니다. South에서는 33초에 화면이 녹색이 되고 41초에 LED가 해당 패턴으로 깜박이기 시작합니다. East에서는 21초에 LED가 해당 패턴으로 깜박이기 시작하지만 60초에도 화면이 녹색이 아닙니다. 아직 어느 작업대에서도 전원을 분리하지 않았습니다. 각 작업대에서 두 신호를 처음 확인할 수 있는 점검 시각과 그때 취할 안전한 조치를 알려 주세요. 경과 시간만으로 카드를 빼도 되는지도 설명하고, 카드 이름은 ‘복구용 microSD 카드’로 통일해 주세요.
+> HDMI 화면을 연결한 Raspberry Pi 4 Model B 세 대에서 부트로더를 복구하고 있다. 녹색 활동 LED가 일정한 패턴으로 계속 깜박이고 HDMI 화면도 녹색일 때만 전원을 분리한다. 복구용 microSD 카드는 전원을 분리한 뒤에만 꺼낸다. 이 실습에서는 0, 15, 30, 45, 60초에 상태를 확인하고, 한번 나타난 표시가 계속 유지된다. 북쪽 장비에서 LED 패턴은 16초, 녹색 화면은 29초에 나타났다. 남쪽 장비에서는 각각 41초와 33초에 나타났다. 동쪽 장비에서는 LED 패턴이 21초에 나타났지만 60초에도 화면이 녹색이 아니었다. 세 장비 모두 아직 전원이 연결되어 있다. 각 장비의 전원을 분리할 수 있는 첫 확인 시각은 언제이고, 복구용 microSD 카드는 어떻게 하면 될까?
 
-### 스킬 미적용 답안
+**출처** · [Raspberry Pi, Raspberry Pi computer hardware documentation](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#reflash-the-bootloader)
 
-> 기술자 인계 메모
->
-> - **North:** 두 신호를 처음 함께 확인하는 시각은 **30초**입니다. 녹색 활동 LED의 일정한 깜박임과 HDMI 화면의 녹색 표시를 모두 확인한 뒤 전원을 분리하세요. 전원이 분리된 다음에만 **복구용 microSD 카드**를 빼세요.
-> - **South:** 두 신호를 처음 함께 확인하는 시각은 **45초**입니다. 두 신호를 확인한 뒤 전원을 분리하고, 전원 분리 후 **복구용 microSD 카드**를 빼세요.
-> - **East:** **60초까지 두 신호를 함께 확인할 수 없습니다.** 화면이 녹색으로 표시될 때까지 전원을 분리하거나 **복구용 microSD 카드**를 빼지 마세요.
->
-> 경과 시간만으로는 안전하게 전원을 분리하거나 카드를 뺄 수 없습니다. 전원 분리는 두 신호를 모두 확인한 뒤에만 하고, 카드는 전원이 분리된 다음에만 빼세요.
+### Light
 
-### 스킬 적용 답안 · standard
-
-> **부트로더 복구 마무리 메모**
+> 전원은 **양쪽 표시가 모두 확인된 뒤의 첫 확인 시각**에 분리할 수 있습니다. 확인은 0, 15, 30, 45, 60초에 하므로, 표시가 나타난 실제 시각이 아니라 해당 확인 시각을 기준으로 판단합니다.
 >
-> 전원을 분리하기 전에 녹색 활동 LED가 일정하게 깜박이는지, HDMI 화면이 녹색인지 모두 확인합니다. 복구용 microSD 카드는 전원을 분리한 다음에만 뺍니다. 한 번 나타난 신호는 유지됩니다.
->
-> | 작업대 | 두 신호를 처음 확인하는 점검 시각 | 안전한 조치 |
+> | 장비 | 첫 확인 시각 | 조치 |
 > |---|---:|---|
-> | North | 30초 | 두 신호를 확인한 뒤 전원을 분리합니다. 복구용 microSD 카드는 전원이 분리된 다음에 뺍니다. |
-> | South | 45초 | 두 신호를 확인한 뒤 전원을 분리합니다. 복구용 microSD 카드는 전원이 분리된 다음에 뺍니다. |
-> | East | 아직 확인 불가 | 화면이 녹색이 아니므로 전원을 분리하지 말고 복구용 microSD 카드를 빼지 않습니다. |
+> | 북쪽 | 30초 | 전원을 분리합니다. |
+> | 남쪽 | 45초 | 전원을 분리합니다. |
+> | 동쪽 | 아직 확인 불가 | 화면이 녹색이 될 때까지 전원을 연결해 두고, 양쪽 표시가 모두 확인된 다음 첫 확인 시각에 전원을 분리합니다. |
 >
-> 경과 시간만으로는 복구용 microSD 카드를 빼면 안 됩니다. 각 작업대에서 두 신호를 모두 확인하고 전원을 분리한 다음에만 뺍니다.
+> 각 장비의 전원을 분리한 뒤에만 해당 복구용 microSD 카드를 꺼냅니다.
 
-### 두 답안의 차이
+### Standard
 
-| 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
-| --- | --- | --- |
-| 신호가 실제로 나타난 순간과 점검 시각을 구분해, North의 첫 적격 점검은 30초, South는 45초라고 판단한다. | 충족 | 충족 |
-| East는 60초에도 전원을 분리하거나 카드를 빼지 않는다. 경과 시간만으로 성공이나 하드웨어 고장을 단정하지 않는다. | 충족 | 충족 |
-| 기술자가 따를 순서인 두 신호 확인 → 전원 분리 → 복구용 microSD 카드 제거를 지키고 카드 이름을 일관되게 쓴다. | 미충족 | 충족 |
+> 표시가 한 번 나타나면 계속 유지되므로, 각 확인 시각에 두 조건이 모두 충족되면 전원을 분리할 수 있습니다.
+>
+> | 장비 | 전원을 분리할 수 있는 첫 확인 시각 | 조치 |
+> |---|---:|---|
+> | 북쪽 | 30초 | 30초 확인 때 LED 패턴과 녹색 화면이 모두 나타났으므로 전원을 분리합니다. |
+> | 남쪽 | 45초 | 45초 확인 때 두 표시가 모두 나타났으므로 전원을 분리합니다. |
+> | 동쪽 | 아직 없음 | 60초 확인 때 화면이 녹색이 아니었으므로 전원을 연결한 상태로 둡니다. |
+>
+> 복구용 microSD 카드는 해당 장비의 전원을 분리한 뒤에만 꺼냅니다.
 
-**검토 결과.** North는 30초, South는 45초 점검에서 두 신호를 확인합니다. East에서는 전원과 복구용 microSD 카드를 그대로 둡니다. 카드 이름은 마지막 경고까지 일관됩니다.
+### Strict
 
-익명 채점에서 개정 답안은 Y였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/asd-ste100/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/asd-ste100.json).
-
-<details>
-<summary>실행 기록</summary>
-
-미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `441382171a3a` / `0dd8cfece084` / `85329a442f12`.
-
-</details>
+> 표시가 나타난 뒤에도 유지되므로, 두 표시가 모두 나타난 것을 **확인한 시각**에 전원을 분리할 수 있습니다.
+>
+> - **북쪽 장비:** LED 패턴은 16초, 녹색 화면은 29초에 나타났습니다. 둘 다 **30초 확인** 때 보이므로, 그때 전원을 분리합니다.
+> - **남쪽 장비:** 녹색 화면은 33초, LED 패턴은 41초에 나타났습니다. 둘 다 **45초 확인** 때 보이므로, 그때 전원을 분리합니다.
+> - **동쪽 장비:** 60초에도 녹색 화면이 나타나지 않았습니다. 두 표시를 모두 확인하지 못했으므로, **전원을 분리하지 않습니다.**
+>
+> 각 장비에서 전원을 분리한 뒤에만 해당 복구용 microSD 카드를 꺼냅니다.
 
 ## boring-professor
 
-**같은 경로를 쓴 두 Linux 로그 파일의 디스크 공간**
-
-[English](EXAMPLES.md#boring-professor)
-
-2026-11-08 · `boring-professor` 0.1.2 · 한국어 · `gpt-6-luna`
-
-### 사례와 출처
-
-- [Linux man-pages 6.19, unlink(2)](https://man7.org/linux/man-pages/man2/unlink.2.html)
-
-Linux의 unlink(2) 문서는 이름을 삭제해도 마지막 파일 디스크립터가 열린 동안 파일이 유지되는 이유를 설명합니다. 파일 이름과 용량, 시간은 가상의 장애 훈련에 쓰는 값입니다.
+**같은 경로를 쓴 두 Linux 로그 파일의 디스크 공간** · [English](EXAMPLES.md#boring-professor)
 
 ### 질문
 
-> 다음 Linux 실습을 시스템 수업을 듣는 학생에게 비유 없이 한국어로 간결하게 설명하세요. 09:00에 관리자가 /var/log/payments.log의 마지막 하드 링크를 삭제합니다. 기존 파일에 할당된 데이터는 20 MiB이고 기록 프로세스와 모니터 프로세스가 각자 파일 디스크립터 하나를 열어 둔 상태입니다. 09:02에 서비스는 같은 경로에 별도 파일을 만들고 5 MiB를 할당합니다. 09:03에 기록 프로세스는 원래 디스크립터로 8 MiB를 덧붙이고 09:04에 그 디스크립터를 닫습니다. 모니터는 09:06에 기존 디스크립터를 닫습니다. 어느 파일에 8 MiB가 추가되는지, 09:04 직후와 09:06 직후 두 파일에 할당된 데이터가 각각 합계 몇 MiB인지, 경로 이름만 보고 판단할 수 없는 이유를 설명하세요. 희소 할당이나 중복 할당, 그 밖의 변화는 없고 메타데이터 크기는 제외합니다.
+> 리눅스에서 18:20에 /var/log/jobs.log의 마지막 하드 링크를 삭제했다. 그 파일에는 24 MiB가 할당되어 있고, 기록 프로세스와 감시 프로세스가 각각 파일을 열어 둔 상태다. 18:22에 같은 경로로 새 파일을 만들어 7 MiB를 할당했다. 18:23에 기록 프로세스가 기존 파일 디스크립터로 4 MiB를 덧붙이고 그 디스크립터를 닫았다. 감시 프로세스는 18:25에 기존 디스크립터를 닫았다. 다른 변화는 없으며 메타데이터를 제외하고 할당량과 데이터 길이는 같다고 가정한다. 추가한 데이터는 어느 파일에 들어가며, 두 프로세스가 디스크립터를 닫은 직후 각각 얼마나 많은 파일 데이터가 할당된 상태인가?
 
-### 스킬 미적용 답안
+**출처** · [Linux man-pages 6.19, unlink(2)](https://man7.org/linux/man-pages/man2/unlink.2.html)
 
-> 8 MiB는 삭제 전 파일을 가리키는 기록 프로세스의 기존 디스크립터를 통해 기록되므로, 새 파일이 아니라 **기존 파일**에 추가됩니다. 하드 링크가 삭제돼 경로에서 사라져도, 열린 디스크립터가 남아 있으면 기존 파일은 계속 접근할 수 있습니다.
+### Light
+
+> 추가한 4 MiB는 18:20에 삭제한 기존 파일에 들어갑니다. 열린 파일 디스크립터는 경로가 아니라 기존 파일 객체를 가리키므로, 같은 경로에 18:22에 만든 새 파일에는 추가되지 않습니다.
 >
-> - **09:04 직후:** 기존 파일은 디스크립터를 연 모니터가 남아 있으므로 20 + 8 = **28 MiB**가 할당되어 있습니다. 새 파일은 **5 MiB**입니다.
-> - **09:06 직후:** 모니터도 디스크립터를 닫아 기존 파일에 대한 참조가 없어지면 기존 파일의 할당 데이터는 회수됩니다. 새 파일은 계속 **5 MiB**입니다.
+> | 시각 | 기존 파일 데이터 | 새 파일 데이터 | 합계 |
+> |---|---:|---:|---:|
+> | 18:23, 기록 프로세스가 디스크립터를 닫은 직후 | 24 + 4 = 28 MiB | 7 MiB | 35 MiB |
+> | 18:25, 감시 프로세스가 디스크립터를 닫은 직후 | 0 MiB | 7 MiB | 7 MiB |
 >
-> `/var/log/payments.log`라는 경로는 현재 새 파일을 가리킵니다. 기존 파일은 그 경로에서 분리된 뒤에도 열린 디스크립터로 참조되므로, 경로 이름만으로는 두 파일의 정체나 할당량을 모두 판단할 수 없습니다.
+> 18:23에는 감시 프로세스의 디스크립터가 기존 파일을 계속 열어 두므로, 기존 파일의 28 MiB 데이터는 아직 할당된 상태입니다. 18:25에 감시 프로세스도 디스크립터를 닫으면 기존 파일에 대한 참조가 없어져 그 데이터가 해제됩니다. 새 파일은 두 시점 모두 경로에 남아 7 MiB를 차지합니다.
 
-### 스킬 적용 답안 · standard
+### Standard
 
-> 하드 링크는 파일을 가리키는 디렉터리 항목입니다. 파일 디스크립터는 프로세스가 이미 연 파일 객체를 참조합니다. 따라서 경로 이름이 삭제되어도 열린 디스크립터가 남아 있으면 기존 파일 객체에 계속 접근할 수 있습니다. 마지막 하드 링크와 마지막 열린 디스크립터가 모두 사라질 때 기존 파일의 할당 데이터가 해제됩니다.
+> **기존 파일**은 18:20에 마지막 하드 링크를 잃었지만, 두 프로세스가 연 파일 디스크립터가 남아 있어 할당 상태를 유지합니다. 디스크립터는 경로가 아니라 열린 파일을 참조하므로, 같은 경로에 새 파일을 만들어도 기존 디스크립터가 새 파일로 바뀌지 않습니다.
 >
-> 09:00에 경로의 마지막 하드 링크가 삭제됐지만 두 프로세스의 디스크립터는 기존 파일 객체를 계속 가리킵니다. 09:02에 같은 경로로 만든 파일은 별도 파일 객체입니다. 그러므로 09:03에 기록 프로세스가 덧붙인 8 MiB는 새 파일이 아니라 기존 파일에 추가됩니다.
+> 18:23에 기록 프로세스가 덧붙인 4 MiB는 기존 파일에 들어갑니다. 그 직후 기존 파일은 24 MiB + 4 MiB = **28 MiB**, 새 파일은 **7 MiB**가 할당되어 있습니다. 기록 프로세스가 디스크립터를 닫아도 감시 프로세스가 기존 파일을 열어 두고 있으므로, 두 파일의 합계는 **28 MiB + 7 MiB = 35 MiB**입니다.
 >
-> - **09:04 직후:** 기존 파일은 20 + 8 = **28 MiB**, 새 파일은 **5 MiB**입니다. 합계는 **33 MiB**입니다.
-> - **09:06 직후:** 모니터가 기존 파일의 마지막 디스크립터를 닫으므로 기존 파일의 할당 데이터는 해제됩니다. 새 파일은 **5 MiB**이며, 두 파일에 남아 있는 할당 데이터의 합계도 **5 MiB**입니다.
+> 18:25에 감시 프로세스가 기존 파일의 마지막 열린 디스크립터를 닫으면 기존 파일의 데이터는 해제됩니다. 그 직후 남아 있는 할당량은 새 파일의 **7 MiB**입니다.
 >
-> 경로 이름은 디렉터리 항목이 가리키는 파일 객체를 식별하지만, 이미 열린 디스크립터가 가리키는 객체까지 보여 주지는 않습니다. 따라서 같은 경로에 새 파일을 만들었다는 사실만으로 기존 디스크립터가 새 파일을 가리킨다고 판단할 수 없습니다.
+> 이는 파일 데이터의 할당량을 기준으로 한 답입니다. 디렉터리 항목과 파일 메타데이터는 계산에서 제외했습니다.
 
-### 두 답안의 차이
+### Strict
 
-| 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
-| --- | --- | --- |
-| 추가 쓰기는 같은 경로의 새 파일(5 MiB)이 아니라 기존 디스크립터가 가리키는 링크 없는 파일에 반영된다고 밝힌다. | 충족 | 충족 |
-| 09:04 직후 합계 33 MiB(기존 28, 새 파일 5), 09:06 직후 합계 5 MiB를 명시하고 모니터의 디스크립터가 기존 공간 반환을 지연시켰다고 설명한다. | 미충족 | 충족 |
-| 경로와 파일 객체의 차이, 마지막 디스크립터가 닫혀야 공간을 다시 쓸 수 있다는 조건을 설명하며 unlink가 기존 디스크립터의 쓰기를 막는다고 하지 않는다. | 충족 | 충족 |
-
-**블라인드 검토** (Y = 미적용, X = 스킬 적용). 두 답 모두 8 MiB가 기존 파일에 추가되고 모니터가 마지막 디스크립터를 닫아야 그 공간을 회수할 수 있다고 설명한다. X 쪽은 09:04의 합계 33 MiB와 09:06의 합계 5 MiB를 모두 명시한다. Y 쪽은 09:04의 구성값 28 MiB와 5 MiB는 구했지만 요청한 합계를 독자가 직접 더해야 한다.
-
-<details>
-<summary>실행 기록</summary>
-
-각 답안은 Codex CLI 0.167.0, low 추론 설정의 별도 임시 읽기 전용 세션에서 생성했습니다. 같은 문항의 다른 답안이나 다른 언어의 답안은 입력하지 않았습니다.
-
-SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `7920576bbe50` / `b433842f01c2` / `699659287da0`.
-
-</details>
+> 같은 경로로 새 파일을 만들어도 이미 열린 디스크립터가 새 파일을 가리키도록 바뀌지는 않는다. 따라서 기록 프로세스가 기존 디스크립터로 추가한 4 MiB는 경로에 새로 만들어진 파일이 아니라, 링크가 삭제된 기존 파일에 들어간다. 할당량과 데이터 길이가 같다는 가정에 따라 기존 파일의 데이터는 24 MiB에서 28 MiB가 된다.
+>
+> 18:23에 기록 프로세스가 디스크립터를 닫은 직후, 기존 파일은 감시 프로세스가 계속 열어 두고 있으므로 할당 상태로 남는다. 합계는 기존 파일 28 MiB + 새 파일 7 MiB = **35 MiB**다.
+>
+> 18:25에 감시 프로세스가 기존 디스크립터를 닫은 직후, 기존 파일을 가리키는 열린 디스크립터가 더는 없다. 기존 파일의 28 MiB는 해제되고, 새 파일의 7 MiB는 남는다. 합계는 기존 파일 0 MiB + 새 파일 7 MiB = **7 MiB**다.
+>
+> 이 계산은 다른 프로세스가 기존 파일을 열고 있지 않고, 파일 삭제나 쓰기 등 다른 변화가 없다는 조건에 따른다.
 
 ## diataxis
 
-**초록색 CI 결과는 어떤 Kubernetes 배포를 확인했을까?**
-
-[English](EXAMPLES.md#diataxis)
-
-2026-11-08 · `diataxis` 0.1.1 · 한국어 · `gpt-6-luna`
-
-### 사례와 출처
-
-- [Kubernetes command reference, kubectl rollout status](https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/kubectl_rollout_status/)
-
-Kubernetes 문서는 진행 상태를 조회할 때 기본으로 추적하는 리비전과 --revision, --watch 옵션의 동작을 설명합니다. checkout-api의 배포 상황은 예제입니다.
+**초록색 CI 결과는 어떤 Kubernetes 배포를 확인했을까?** · [English](EXAMPLES.md#diataxis)
 
 ### 질문
 
-> 배포팀을 위한 짧은 한국어 명령 참조 항목을 써 주세요. Deployment checkout-api를 대상으로 CI가 09:00에 별도 플래그 없이 kubectl rollout status를 실행해 리비전 7을 지켜봅니다. 7이 끝나기 전에 리비전 8이 시작되고, 명령은 나중에 성공을 보고합니다. 기본 감시는 최신 롤아웃으로 넘어갑니다. --revision=N을 주면 해당 리비전을 감시하다가 새 리비전에 대체될 때 중단하고, --watch=false는 기다리지 않고 현재 상태를 읽습니다. 이 예에서는 8이 마지막 리비전입니다. CI 성공이 7과 8에 대해 무엇을 입증하고 무엇은 입증하지 않는지 밝히세요. 새 CI 작업에서 리비전 7만 감시할 명령, 운영자가 즉시 현재 상태를 조회할 명령을 각각 정확히 제시하세요. 따라 하는 튜토리얼보다 필요할 때 바로 찾을 수 있는 참조 문서가 필요합니다.
+> 09:00에 checkout-api의 리비전 7 배포가 진행되는 동안 CI가 별도 옵션 없이 kubectl rollout status deployment/checkout-api를 실행했다. 7이 끝나기 전에 리비전 8이 시작됐고 이후 더 새 리비전은 없었다. 명령은 나중에 성공을 보고했다. 기본값은 최신 롤아웃을 따라간다. --revision=N은 지정한 리비전을 감시하다가 다른 리비전으로 대체되면 중단하고, --watch=false는 현재 상태를 한 번 읽는다. CI가 실제로 확인한 리비전은 어느 것인가? 7만 감시하려면 어떤 명령을 쓰고, 지금 상태를 기다리지 않고 보려면 어떤 명령을 쓰는가?
 
-### 스킬 미적용 답안
+**출처** · [Kubernetes command reference, kubectl rollout status](https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/kubectl_rollout_status/)
 
-> ### `kubectl rollout status` 명령 참조
->
-> 배포 `checkout-api`의 롤아웃 상태를 확인합니다. 기본 동작은 최신 롤아웃을 감시하므로, 리비전 7을 지켜보던 CI 명령은 리비전 8이 시작되면 새 롤아웃으로 넘어갑니다. 나중에 보고된 성공은 마지막 리비전인 **8이 완료됐음**을 입증하지만, **7이 완료됐음**을 입증하지는 않습니다.
->
-> - **새 CI 작업에서 리비전 7만 감시:** `kubectl rollout status deployment/checkout-api --revision=7`
->
->   리비전 7이 새 리비전으로 대체되면 감시를 중단합니다. 성공 여부를 확인하려면 명령의 종료 결과를 확인하세요.
->
-> - **운영자가 현재 상태를 즉시 조회:** `kubectl rollout status deployment/checkout-api --watch=false`
->
->   기다리지 않고 현재 롤아웃 상태를 한 번 읽습니다.
+### Light
 
-### 스킬 적용 답안 · standard
-
-> ### `kubectl rollout status` 참조
+> CI가 확인한 것은 리비전 8입니다. 기본 동작이 최신 롤아웃을 따라가므로 리비전 7이 끝나기 전에 8이 시작된 뒤, 명령은 8의 완료를 기다려 성공을 보고했습니다.
 >
-> 기본 감시는 진행 중인 롤아웃을 따라갑니다. 09:00에 시작한 CI 작업은 별도 플래그 없이 `deployment/checkout-api`의 리비전 7을 감시했지만, 7이 끝나기 전에 8이 시작되어 기본 감시가 최신 롤아웃인 8로 넘어갔습니다. 이후 명령의 성공은 **리비전 8의 롤아웃이 완료됐음**을 입증합니다. 리비전 7의 완료를 입증하지는 않습니다. 이 예에서는 8이 마지막 리비전입니다.
+> - 리비전 7만 감시: `kubectl rollout status deployment/checkout-api --revision=7`
+> - 기다리지 않고 현재 상태 한 번 읽기: `kubectl rollout status deployment/checkout-api --watch=false`
+
+### Standard
+
+> CI는 최신 롤아웃을 따라가므로 리비전 8의 성공을 확인했습니다. 리비전 7만 감시하려면 `kubectl rollout status deployment/checkout-api --revision=7`을 쓰고, 현재 상태만 한 번 확인하려면 `kubectl rollout status deployment/checkout-api --watch=false`를 쓰면 됩니다.
+
+### Strict
+
+> CI는 기본 동작에 따라 최신 롤아웃인 **리비전 8**의 완료를 확인했습니다. 리비전 7이 완료됐는지는 이 결과만으로 알 수 없습니다.
 >
-> 새 CI 작업에서 리비전 7만 감시하려면:
->
-> ```sh
-> kubectl rollout status deployment/checkout-api --revision=7
-> ```
->
-> `--revision=7`은 해당 리비전을 감시하며, 새 리비전으로 대체되면 감시를 중단합니다. 운영자가 기다리지 않고 현재 상태를 즉시 조회하려면:
->
-> ```sh
-> kubectl rollout status deployment/checkout-api --watch=false
-> ```
->
-> 이 명령은 현재 상태를 읽고 기다리지 않습니다. 조회 결과만으로 롤아웃 완료를 입증하지는 않습니다.
-
-### 두 답안의 차이
-
-| 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
-| --- | --- | --- |
-| 기본 감시가 마지막 리비전 8의 성공을 확인했으나 리비전 7의 성공은 입증하지 못한다고 밝힌다. | 충족 | 충족 |
-| deployment/checkout-api에 --revision=7을 주는 실행 가능한 명령을 제시하고, 리비전 7이 대체되면 8을 따라가지 않고 감시가 중단된다고 설명한다. | 충족 | 충족 |
-| --watch=false를 쓰는 실행 가능한 현재 상태 조회 명령을 담고, 두 명령의 목적을 간결한 참조 항목에서 쉽게 찾을 수 있다. | 충족 | 충족 |
-
-**블라인드 검토** (Y = 미적용, X = 스킬 적용). 두 답 모두 CI 성공이 리비전 8을 확인한 것이고 리비전 7의 성공은 입증하지 않는다고 설명한다. X 쪽은 명령을 각각 코드 블록에 싣고, Y 쪽은 두 사용 목적을 강조한 목록에 명령을 나란히 배치한다. 둘 다 리비전 고정 감시가 대체 시 중단되는 조건과 즉시 조회 옵션을 정확히 안내한다.
-
-<details>
-<summary>실행 기록</summary>
-
-각 답안은 Codex CLI 0.167.0, low 추론 설정의 별도 임시 읽기 전용 세션에서 생성했습니다. 같은 문항의 다른 답안이나 다른 언어의 답안은 입력하지 않았습니다.
-
-SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `1bf8f74acf77` / `ef4253e91603` / `4138d1891549`.
-
-</details>
+> - 리비전 7만 감시: `kubectl rollout status deployment/checkout-api --revision=7`
+> - 현재 상태를 한 번만 확인: `kubectl rollout status deployment/checkout-api --watch=false`
 
 ## eli5
 
-**시간을 맞춰 보면 어느 병이 더 빨리 식었을까?**
-
-[English](EXAMPLES.md#eli5)
-
-2026-11-09 · `eli5` 0.1.18 · 한국어 · `gpt-6-luna`
-
-### 사례와 출처
-
-- [Monterey Bay Aquarium, Life of a rescued sea otter](https://www.montereybayaquarium.org/about-us/stories/life-of-a-rescued-sea-otter)
-- [Monterey Bay Aquarium, Sea otter](https://www.montereybayaquarium.org/animals-the-ocean/animals-a-to-z/sea-otter)
-
-몬터레이 베이 수족관은 새끼 해달 696의 구조·털 손질과 털 속 공기가 보온·부력에 하는 역할을 설명합니다. 병의 냉각 수치는 별도의 가상 실험값입니다.
+**물에 뜬 얼음이 녹으면 수위가 달라질까?** · [English](EXAMPLES.md#eli5)
 
 ### 질문
 
-> 몬터레이 베이 아쿠아리움에서 다섯 살 아이가 구조된 아기 해달 696의 털을 왜 돌봐 주었는지 궁금해합니다. 이 질문을 위해 만든 교실 실험에서는 똑같이 따뜻한 병 두 개에 같은 재질의 모형 털옷을 입혀 같은 찬물에 넣었습니다. 공기가 들어 있는 보송한 털옷을 입힌 병은 20분에 4도 식었습니다. 젖어서 납작해진 털옷을 입힌 병은 10분에 3도 식었습니다. 아이는 4가 3보다 크니 보송한 병에서 온기가 더 빨리 빠져나갔다고 말합니다. 병이 물에 뜨는지는 실험하지 않았습니다. 실제 해달은 두꺼운 지방층이 없고, 손질한 털 사이에 갇힌 공기 덕분에 따뜻함을 유지하고 물에도 잘 뜹니다. 아이에게 들려줄 한국어 답을 짧은 다섯 문장 이내로 써 주세요. 같은 기준으로 두 병을 비교하고, 공기가 열을 만들어 내는지, 물에 뜨는 것에 대해서는 병 실험으로 무엇까지 알 수 있는지 설명해 주세요.
+> 민물 한 잔에 얼음 한 덩어리가 떠 있다. 얼음의 무게는 90그램이고 부피는 100밀리리터다. 이 예에서 액체 상태의 물 1밀리리터는 1그램이다. 컵에는 여유 공간이 있고 물이 넘치거나 증발하지 않는다. 얼음 가운데 물 위로 나온 부분의 부피는 얼마일까? 얼음이 다 녹으면 물 높이는 어떻게 될까?
 
-### 스킬 미적용 답안
+**출처** · [USGS, Water Density](https://www.usgs.gov/water-science-school/science/water-density) · [NASA, Melting Ocean Ice Affects Sea Level – Unlike Ice Cubes in a Glass](https://sealevel.nasa.gov/news/261/melting-ocean-ice-affects-sea-level-unlike-ice-cubes-in-a-glass/)
 
-> 같은 기준으로 보면, 보송한 털옷을 입힌 병은 20분 동안 4도 식었고 젖은 털옷을 입힌 병은 10분 동안 3도 식었어요. 식은 정도만 보면 4도가 더 크지만, 시간까지 맞춰 비교하면 보송한 병은 10분에 2도씩 식어 젖은 병보다 온기가 천천히 빠져나갔어요. 털 사이의 공기는 열을 만들지는 않고, 온기가 빠져나가는 것을 늦춰 줘요. 실제 해달은 이 공기 덕분에 따뜻함을 지켜요. 병 실험은 물에 잘 뜨는지는 알려 주지 않아요.
+### Light
 
-### 스킬 적용 답안 · standard
+> 컵의 얼음은 일부가 물 위로 나와 있고, 나머지는 물속에 잠겨 있어.
+>
+> 얼음 무게는 90그램이야. 이 예에서는 물 1밀리리터가 1그램이니까, 얼음이 물속에 잠긴 부분은 물 90밀리리터만큼의 자리를 차지해.
+>
+> 얼음 전체 부피는 100밀리리터야. 그러니 물 위로 나온 부분은 10밀리리터야.
+>
+> 얼음이 녹으면 물 90밀리리터가 돼. 얼음이 잠겨 있던 곳도 물 90밀리리터가 차지하니까, 물 높이는 그대로야.
 
-> 아쿠아리움 사람들은 아기 해달 696이 따뜻하게 지내도록 털을 손질해 주었어.
-> 털 사이에 갇힌 공기는 열을 만들지 않고, 몸의 따뜻함이 빠져나가는 것을 늦춰 줘.
-> 20분 동안으로 맞춰 보면 젖은 병은 평균 6도, 보송한 병은 평균 4도 식어서 젖은 병 쪽이 더 빨리 식었어.
-> 이 병 실험으로는 병이 물에 뜨는지 알 수 없어.
-> 실제 해달은 손질한 털 사이의 공기 덕분에 따뜻함을 지키고 물에도 잘 떠.
+### Standard
 
-### 두 답안의 차이
+> 컵에 얼음 한 덩어리가 떠 있어. 얼음은 90그램이고, 부피는 100밀리리터야. 물 1밀리리터는 1그램이야.
+>
+> 얼음이 물 위에 떠 있으려면, 얼음의 무게만큼 물을 밀어내야 해. 90그램의 물은 90밀리리터니까, 얼음은 물속에서 90밀리리터만큼 물을 밀어내고 있어.
+>
+> 얼음 전체 부피는 100밀리리터야. 그중 물속에 있는 부분이 90밀리리터니까, 물 위로 나온 부분은 10밀리리터야.
+>
+> 얼음이 녹으면 90그램의 물이 돼. 그 물도 90밀리리터를 차지해. 얼음이 떠 있을 때 밀어낸 물의 양과 같으니, 얼음이 녹아도 물 높이는 그대로야.
 
-| 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
-| --- | --- | --- |
-| 같은 시간으로 환산해 10분당 평균 2도와 3도(또는 동등한 식는 속도)를 비교하고, 보송한 털옷을 입힌 쪽이 평균적으로 더 천천히 식었다고 설명한다. | 충족 | 충족 |
-| 털 손질로 갇힌 공기가 온기가 빠져나가는 속도를 늦춘다고 설명한다. 공기가 열을 만든다고 하거나 근거 없는 원리를 도입하지 않는다. | 충족 | 충족 |
-| 아이에게 들려줄 짧은 다섯 문장 이내에서, 병이 뜨는지는 시험하지 않았다는 점과 실제 해달은 갇힌 공기의 도움으로 뜬다는 사실을 구분한다. | 미충족 | 충족 |
+### Strict
 
-**검토 결과.** 젖은 병과 보송한 병이 식는 속도를 20분당 평균 6도와 4도로 환산했습니다. 젖은 병에서 실제로 관측한 값은 10분에 3도입니다. 병의 부력은 시험하지 않았고, 실제 해달은 털 사이 공기 덕분에 물에 뜬다는 점도 구분합니다.
-
-익명 채점에서 개정 답안은 X였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/eli5/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/eli5.json).
-
-<details>
-<summary>실행 기록</summary>
-
-미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `fdd792c71803` / `358d2614595e` / `e59e42c830bd`.
-
-</details>
+> 컵의 물 위로 얼음이 조금 나와 있어. 얼음은 물속에 잠긴 부분도 있어.
+>
+> 얼음은 90그램이야. 이 예에서 물 1밀리리터는 1그램이니까, 얼음이 다 녹으면 물 90밀리리터가 돼.
+>
+> 얼음 90그램이 떠 있으려면 얼음의 90밀리리터만큼이 물속에 잠겨 있어야 해. 얼음 전체는 100밀리리터니까, 물 위로 나온 부분은 10밀리리터야.
+>
+> 얼음이 녹으면 그 얼음이 있던 물속 공간만큼 물이 생겨. 그래서 물 높이는 그대로야.
 
 ## federal-plain-language
 
-**부모와 아이의 신원을 45분 안에 어떻게 증명할 수 있나요?**
-
-[English](EXAMPLES.md#federal-plain-language)
-
-2026-11-09 · `federal-plain-language` 0.1.22 · 한국어 · `gpt-6-luna`
-
-### 사례와 출처
-
-- [SSA, U.S. Citizen/Child — Replacement Social Security Card (October 2026)](https://www.ssa.gov/pubs/EN-05-10514.pdf)
-
-미국 사회보장국의 2026년 10월 안내문은 부모·자녀 각각의 신원 증빙 및 발급기관 인증 사본 요건을 설명합니다. 이 가족의 서류 수집 시간은 가정한 값입니다.
-
-**언어 적용 범위.** 한국어에서는 독자의 질문, 절차, 서류의 조건을 명확히 하는 구조만 적용합니다. 연방 지침에 따른 한국어 문법 검증을 뜻하지 않습니다.
+**부모와 아이의 신원을 45분 안에 어떻게 증명할 수 있을까?** · [English](EXAMPLES.md#federal-plain-language)
 
 ### 질문
 
-> 미국 시민권자인 자녀의 사회보장카드 재발급 신청을 준비하는 부모에게 한국어로 짧은 안내문을 써 주세요. 질문은 2026년 10월 미국 사회보장국(SSA) 안내문에 따른 신원 증빙에만 관한 것이고, 서류를 모을 수 있는 시간은 45분입니다. 아이와 부모 모두 신원 증빙이 필요합니다. 아이는 유효한 미국 여권이나 주 정부가 발급한 유효한 비운전자 신분증, 부모는 유효한 미국 여권이나 운전면허증을 쓸 수 있습니다. 원본 또는 발급기관이 인증한 사본은 인정되지만, 공증받은 복사본은 인정되지 않습니다. 출생증명서는 나이나 시민권을 증명할 수 있지만 신원 증빙은 아닙니다. 다음 소요 시간은 가정값이며 합산합니다. 아이의 출생증명서 원본은 이미 있고, 여권 원본은 40분, 비운전자 신분증의 발급기관 인증 사본은 15분 걸립니다. 부모의 여권 공증 복사본은 5분, 여권의 발급기관 인증 사본은 25분, 운전면허증 원본은 35분입니다. 어떤 조합을 가져가야 하나요? 손쉬워 보이는 조합이 안 되는 이유까지 다섯 문장 이내로 설명해 주세요.
+> 아이의 사회보장카드 재발급에 쓸 신원 증명 서류를 챙길 시간이 45분이에요. 2026년 10월 미국 사회보장국 안내에 따르면 아이와 저 모두 신원을 증명해야 해요. 아이는 유효한 미국 여권이나 주 정부가 발급한 비운전 신분증을, 저는 유효한 미국 여권이나 운전면허증을 쓸 수 있어요. 원본이나 발급기관이 인증한 사본은 인정되지만 공증받은 복사본은 인정되지 않아요. 출생증명서는 나이나 시민권을 증명하는 데 쓸 수 있어요. 신분증은 모두 유효해요.
+>
+> 챙길 수 있는 서류와 가져오는 데 걸리는 시간은 다음과 같아요.
+>
+> | 누구의 서류인지 | 서류 | 걸리는 시간 |
+> | --- | --- | --- |
+> | 아이 | 출생증명서 원본 | 이미 있음 |
+> | 아이 | 여권 원본 | 40분 |
+> | 아이 | 주 정부 발급 비운전 신분증의 발급기관 인증 사본 | 15분 |
+> | 부모 | 여권의 공증 복사본 | 5분 |
+> | 부모 | 여권의 발급기관 인증 사본 | 25분 |
+> | 부모 | 운전면허증 원본 | 35분 |
+>
+> 서류를 가져오는 데 걸리는 시간은 합산해야 해요. 두 사람의 신원을 증명할 서류를 시간 안에 어떻게 챙길 수 있을까요?
 
-### 스킬 미적용 답안
+**출처** · [SSA, U.S. Citizen/Child — Replacement Social Security Card (October 2026)](https://www.ssa.gov/pubs/EN-05-10514.pdf)
 
-> 45분 안에 준비하려면 **아이의 주 정부 발급 유효한 비운전자 신분증의 발급기관 인증 사본(15분)**과 **부모의 유효한 미국 운전면허증 원본(35분)**을 가져가세요. 총 50분이므로, 주어진 시간 안에 두 사람의 신원 증빙을 모두 마련할 수 있는 조합은 없습니다. 아이의 여권 원본과 부모의 운전면허증 원본 조합도 75분이 걸립니다. 부모 여권 공증 복사본은 인정되지 않고, 아이의 출생증명서는 나이나 시민권을 증명할 수 있어도 신원 증빙을 대신하지 못합니다.
+### Light
 
-### 스킬 적용 답안 · standard
+> 아이 신원 증명: 유효한 미국 여권 원본은 40분, 주 정부 발급 비운전 신분증의 발급기관 인증 사본은 15분입니다. 둘 다 인정되는 서류 형식이며, 더 빠른 선택은 인증 사본입니다.
+>
+> 부모 신원 증명: 유효한 미국 여권의 발급기관 인증 사본은 25분, 유효한 운전면허증 원본은 35분입니다. 둘 다 인정되는 서류 형식이며, 더 빠른 선택은 여권의 인증 사본입니다. 공증 복사본은 5분이지만 인정되지 않습니다.
+>
+> 주 정부 발급 비운전 신분증의 인증 사본과 여권의 인증 사본을 챙기세요. 합계 15분 + 25분 = 40분으로, 45분 안에 가능합니다. 출생증명서는 나이나 시민권 증명에 쓸 수 있지만 신원 증명 서류를 대신하지 않습니다.
 
-> 아이의 유효한 주 정부 발급 비운전자 신분증 인증 사본(15분)과 부모의 유효한 미국 여권 인증 사본(25분)을 준비하세요. 합계 40분으로 45분 안에 준비할 수 있습니다. 아이의 여권 원본(40분)과 부모의 운전면허증 원본(35분)은 각각 가능하지만, 어느 쪽이든 다른 사람의 서류 준비 시간과 합치면 45분을 넘습니다. 부모 여권의 공증 복사본은 인정되지 않고, 아이의 출생증명서는 이미 있어도 신원 증빙이 아닙니다.
+### Standard
 
-### 두 답안의 차이
+> - **아이:** 유효한 주 정부 발급 비운전 신분증의 발급기관 인증 사본을 받는 데 15분이 걸립니다. 유효한 여권 원본도 인정되지만 40분이 걸려 시간 안에 다른 서류까지 챙길 수 없습니다. 출생증명서는 나이나 시민권 증명에 쓸 수 있지만 신원 증명 서류는 아닙니다. 아이에게는 15분짜리 사본이 가장 빠른 적격 서류입니다.
+> - **부모:** 유효한 운전면허증 원본을 가져오는 데 35분이 걸립니다. 유효한 여권의 발급기관 인증 사본도 인정되지만 25분이 걸립니다. 공증받은 여권 복사본은 인정되지 않습니다. 부모에게는 25분짜리 인증 사본이 가장 빠른 적격 서류입니다.
+>
+> **아이의 인증 사본과 부모의 인증 사본을 챙기세요. 총 15분 + 25분 = 40분으로, 45분 안에 두 사람의 신원을 증명할 수 있습니다.**
 
-| 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
-| --- | --- | --- |
-| 아이의 비운전자 신분증 발급기관 인증 사본과 부모의 여권 발급기관 인증 사본을 골라 총 40분이므로 45분 안에 가능하다고 밝힌다. | 미충족 | 충족 |
-| 출생증명서 원본으로는 아이의 신원을 증명할 수 없고, 공증받은 여권 복사본으로는 부모의 신원을 증명할 수 없다는 두 이유를 구분한다. | 충족 | 충족 |
-| 부모가 바로 실행할 수 있는 한국어 신원 증빙 안내를 다섯 문장 이내로 쓰고, 이 조합으로 전체 신청이 완료된다고 단정하지 않는다. | 미충족 | 충족 |
+### Strict
 
-**검토 결과.** 아이의 비운전자 신분증 인증 사본(15분)과 부모의 여권 인증 사본(25분)을 골라 공증 복사본을 제외했습니다. 제시된 선택지에서 해당 조합은 분명합니다. 답안은 사본의 인증 주체가 발급기관이라는 점을 따로 명시하지 않았습니다.
-
-익명 채점에서 개정 답안은 X였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/federal-plain-language/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/federal-plain-language.json).
-
-<details>
-<summary>실행 기록</summary>
-
-미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `90ceac7f7264` / `50ea09db03d5` / `cdc312b05a0a`.
-
-</details>
+> **아이:** 유효한 미국 여권 원본은 40분, 주 정부 발급 비운전 신분증의 발급기관 인증 사본은 15분이 걸립니다. 둘 다 인정되는 신원 증명 서류입니다. 더 빠른 선택은 인증 사본입니다.
+>
+> **부모:** 유효한 미국 여권의 발급기관 인증 사본은 25분, 운전면허증 원본은 35분이 걸립니다. 둘 다 인정되는 신원 증명 서류입니다. 공증받은 여권 복사본은 5분이 걸리지만 인정되지 않습니다. 더 빠른 선택은 인증 사본입니다.
+>
+> **아이 신분증 인증 사본과 부모 여권 인증 사본을 챙기세요. 총 15분 + 25분 = 40분으로, 45분 안에 두 사람의 신원을 증명할 수 있습니다.** 출생증명서는 나이나 시민권 증명에 쓸 수 있지만 신원 증명 서류를 대신하지는 않습니다.
 
 ## feynman-technique
 
-**DNS 응답이 리졸버마다 달라지는 이유**
-
-[English](EXAMPLES.md#feynman-technique)
-
-2026-11-09 · `feynman-technique` 0.1.8 · 한국어 · `gpt-6-luna`
-
-### 사례와 출처
-
-- [IETF RFC 2308, Negative Caching of DNS Queries](https://www.rfc-editor.org/rfc/rfc2308.html#section-5)
-
-RFC 2308은 DNS 음성 응답의 캐시 수명과 만료를 설명합니다. 호스트 이름, 두 리졸버의 조회 시각과 TTL 값은 이 계산을 위한 예시입니다.
+**DNS 응답이 리졸버마다 달라지는 이유** · [English](EXAMPLES.md#feynman-technique)
 
 ### 질문
 
-> 두 팀은 서로 다른 DNS 리졸버를 통해 uploads.example.org를 조회합니다. 다음은 가상의 장애 기록입니다. Harbor는 12:00에, Hill은 12:03에 NXDOMAIN 응답을 받아 이름이 없다는 결과를 캐시했습니다. 이 영역의 SOA TTL은 900초이고 MINIMUM은 300초입니다. RFC 2308에 따라 음성 응답에는 둘 중 작은 값을 씁니다. 운영자는 12:04에 A 레코드를 만들었고 두 팀은 12:06에 다시 조회합니다. 신입 개발자를 위한 짧은 한국어 장애 설명을 써 주세요. 두 팀이 각각 무엇을 받을 수 있는지, 더 늦게 저장된 캐시는 언제 만료되는지, Hill이 12:04 전에 조회하지 않았다면 결과가 어떻게 달라질지 설명하세요. 권한 서버에는 새 주소가 반영됐고 연결할 수 있습니다. 조기 삭제나 갱신, 로컬 재정의는 없습니다. 독자에게 다시 질문하지 마세요.
+> 서로 독립적으로 동작하는 DNS 리졸버 두 대가 photos.example.org를 조회했다. Bay는 09:10에, Ridge는 09:12에 NXDOMAIN 응답을 받았다. 각 리졸버는 SOA TTL(240초)과 SOA MINIMUM(600초) 중 작은 값만큼 그 응답을 캐시에 보관한다. 운영자는 09:13에 A 레코드를 추가했다. 09:15에 두 리졸버가 다시 조회 요청을 받았다. 갱신된 권한 서버에 접속할 수 있고, 조기 삭제나 갱신 또는 로컬 설정에 의한 응답 대체는 없다. 두 클라이언트가 왜 다른 응답을 받을 수 있고, Ridge는 언제부터 새 레코드를 받아올 수 있을까?
 
-### 스킬 미적용 답안
+**출처** · [IETF RFC 2308, Negative Caching of DNS Queries](https://www.rfc-editor.org/rfc/rfc2308.html#section-5)
 
-> **장애 설명**
+### Light
+
+> NXDOMAIN은 `photos.example.org`에 해당 이름이 없다는 응답이다. 각 리졸버는 NXDOMAIN을 받은 시점부터 SOA TTL 240초와 SOA MINIMUM 600초 중 더 짧은 240초 동안 그 응답을 캐시에 둔다.
 >
-> RFC 2308에 따라 음성 응답의 캐시 시간은 SOA TTL 900초와 MINIMUM 300초 중 작은 값인 **300초(5분)**입니다.
+> Bay는 09:10에 NXDOMAIN을 받아 09:14에 캐시가 만료된다. Ridge는 09:12에 받아 09:16에 만료된다. 운영자가 A 레코드를 추가한 09:13 이후에도 두 캐시의 만료 시각은 바뀌지 않는다. 따라서 09:15 조회에서 Bay는 캐시가 만료되어 권한 서버에 물어보고 새 A 레코드를 받을 수 있지만, Ridge는 아직 캐시된 NXDOMAIN을 돌려줄 수 있다.
 >
-> Harbor는 12:00에 NXDOMAIN을 받아 12:05에 캐시가 만료됩니다. 따라서 12:06 조회는 캐시를 다시 사용하지 않고, 권한 서버에서 새 A 레코드를 확인해 **새 주소를 받을 수 있습니다**.
+> Ridge는 09:16부터 새 레코드를 받아올 수 있다. 정확히 그 시각에는 기존 캐시가 만료되어 유효하지 않으며, 이후 도착하는 조회 요청은 갱신된 권한 서버에서 새 레코드를 확인할 수 있다.
+
+### Standard
+
+> NXDOMAIN은 **`photos.example.org`라는 이름 자체가 존재하지 않는다**는 응답이다. 두 리졸버는 각자 받은 부정 응답을 독립적으로 캐시에 보관하므로, 만료 시각도 다르다. 보관 시간은 SOA TTL 240초와 SOA MINIMUM 600초 중 작은 값인 240초다.
 >
-> Hill은 12:03에 NXDOMAIN을 받아 12:08에 만료됩니다. 그러므로 12:06에는 아직 유효한 음성 캐시가 남아 있어 **계속 NXDOMAIN을 받을 수 있습니다**. 두 팀의 결과가 다른 이유는 각 리졸버가 별도로 캐시하고 만료 시점도 다르기 때문입니다.
+> Bay는 09:10에 응답을 받아 09:14에 캐시가 만료된다. Ridge는 09:12에 받아 09:16에 만료된다. 운영자가 09:13에 A 레코드를 추가해 권한 서버가 갱신됐더라도, 이미 받은 응답의 캐시 시간은 바뀌지 않는다. 따라서 09:15 요청에서 Bay는 만료된 캐시를 버리고 권한 서버를 조회해 새 레코드를 받을 수 있지만, Ridge는 아직 유효한 NXDOMAIN 캐시를 사용해 이름이 없다고 답할 수 있다.
 >
-> Hill이 12:04 전에 조회한 적이 없어 NXDOMAIN을 저장하지 않았다면, 12:06 조회 때 권한 서버에서 새 A 레코드를 받아 **새 주소를 받을 수 있습니다**.
+> Ridge의 기존 NXDOMAIN 캐시는 09:16에 만료된다. 그 시각 이후 새 조회가 권한 서버에 도달하면 A 레코드를 받아올 수 있다. 09:16보다 앞선 요청은 여전히 캐시된 NXDOMAIN을 받을 수 있고, 정확히 09:16에는 캐시가 만료된 상태다.
 
-### 스킬 적용 답안 · standard
+### Strict
 
-> **장애 설명**
+> 각 리졸버는 자신이 받은 `NXDOMAIN`(조회한 이름 `photos.example.org`가 존재하지 않는다는 응답)을 받은 시각부터 부정 응답을 캐시에 보관한다. 보관 시간은 SOA TTL 240초와 SOA MINIMUM 600초 중 작은 값인 240초다. 따라서 Bay의 부정 응답은 09:14에 만료되고, Ridge의 응답은 09:16에 만료된다.
 >
-> 신입 개발자가 알아둘 점은 DNS 캐시가 팀마다 따로 유지된다는 것입니다. 음성 응답의 캐시 시간은 SOA TTL 900초와 MINIMUM 300초 중 작은 값이므로 300초, 즉 5분입니다.
+> 09:15에는 Bay의 캐시가 이미 만료되어 있으므로 권한 서버에 다시 조회해 09:13에 추가된 A 레코드를 받을 수 있다. Ridge의 부정 응답은 아직 유효하므로 그 시각의 조회에는 계속 `NXDOMAIN`을 돌려줄 수 있다. Ridge는 **09:16부터** 새 조회를 권한 서버로 보내 새 레코드를 받아올 수 있다. 만료는 정확히 09:16에 일어나지만, 새 조회가 도착하는 시각은 주어지지 않았다.
 >
-> Harbor는 12:00에 NXDOMAIN을 받았으므로 그 캐시는 12:05에 만료됩니다. 12:06 조회 때 캐시가 만료된 상태라 새 A 레코드의 주소를 받을 수 있습니다. Hill은 12:03에 NXDOMAIN을 받았으므로 캐시가 12:08에 만료됩니다. 따라서 12:06에는 아직 캐시가 유효해 NXDOMAIN을 받을 수 있습니다. 권한 서버에 주소가 반영됐고 연결 가능해도, Hill의 리졸버가 가진 캐시가 먼저 갱신되지는 않습니다.
->
-> Hill이 12:04 전에 조회하지 않았다면 NXDOMAIN을 저장하지 않았을 것입니다. 12:06의 첫 조회는 권한 서버에 새 레코드가 반영된 뒤이므로 주소를 받을 수 있습니다.
-
-### 두 답안의 차이
-
-| 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
-| --- | --- | --- |
-| 음성 캐시 수명 300초와 Harbor의 12:05, Hill의 12:08 만료를 각 리졸버의 최초 조회 시각에서 구한다. | 충족 | 충족 |
-| 12:06에 Harbor는 새 주소를 조회할 수 있고 Hill은 NXDOMAIN을 줄 수 있다고 설명한다. 레코드 생성이 Hill의 캐시를 지우거나 수명을 다시 시작한 것으로 쓰지 않는다. | 충족 | 충족 |
-| Hill에 이전 음성 항목이 없었다면 12:06에 새 주소를 조회할 수 있는 이유를 신입 개발자가 이해할 수 있게 설명하며, 모든 리졸버가 동시에 바뀐다고 하지 않는다. | 충족 | 충족 |
-
-**검토 결과.** 두 리졸버가 처음 조회한 시각에서 각각 만료 시각을 구합니다. 12:06에는 Hill만 기존 음성 캐시를 쓸 수 있고, 이전 조회가 없었다면 Hill도 새 주소를 받을 수 있습니다.
-
-익명 채점에서 개정 답안은 Y였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/feynman-technique/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/feynman-technique.json).
-
-<details>
-<summary>실행 기록</summary>
-
-미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `5527bddea967` / `90b434c4a7c3` / `d07535fa421a`.
-
-</details>
+> 전이 확인: 같은 사건 이력을 유지하면 Ridge의 09:15:59 조회는 아직 캐시된 `NXDOMAIN`을 받고, 09:16:01 조회는 권한 서버에 접속해 새 A 레코드를 받을 수 있다. 이 예측은 설명을 점검하지만, 실제 학습자의 이해를 확인해 주지는 않는다.
 
 ## google-design-doc
 
-**주문을 받는 동안 인덱스 생성을 승인할 수 있을까?**
-
-[English](EXAMPLES.md#google-design-doc)
-
-2026-11-08 · `google-design-doc` 0.1.2 · 한국어 · `gpt-6-luna`
-
-### 사례와 출처
-
-- [PostgreSQL 17 documentation, CREATE INDEX](https://www.postgresql.org/docs/17/sql-createindex.html#SQL-CREATEINDEX-CONCURRENTLY)
-- [PostgreSQL 17 system catalogs, pg_index](https://www.postgresql.org/docs/17/catalog-pg-index.html)
-
-PostgreSQL 17 문서는 일반 인덱스와 동시 인덱스 생성의 잠금·대기 동작, 실패한 인덱스의 상태를 설명합니다. 상점의 지연 시간 측정값과 배포 기준은 가정입니다.
+**주문을 받는 동안 인덱스 생성을 승인할 수 있을까?** · [English](EXAMPLES.md#google-design-doc)
 
 ### 질문
 
-> PostgreSQL 17을 쓰는 가상의 쇼핑몰에 대해 한국어 설계 검토 문단을 써 주세요. 인덱스를 만드는 내내 주문 INSERT를 막는 방식은 쓸 수 없습니다. 이와 별개로, 운영 반영 전에 리허설의 p95 쓰기 지연 시간이 기준값 40 ms보다 20% 넘게 늘어나지 않아야 합니다. 동시 인덱스 생성 리허설에서는 51 ms를 측정했습니다. 일반 CREATE INDEX는 쓰기를 막습니다. CREATE INDEX CONCURRENTLY는 쓰기를 허용하지만 테이블을 두 번 스캔하고 트랜잭션을 기다릴 수 있습니다. 실패하면 플래너는 사용하지 않지만 쓰기 때는 계속 갱신되는 무효 인덱스가 남을 수 있습니다. 이번 근무 시간에 무엇을 승인할지, 재시도하기 전에 무엇을 측정할지, 무효 인덱스는 어떻게 처리할지 간결하게 권고하세요. 운영 환경의 성능은 측정하지 않았습니다.
+> PostgreSQL 17을 쓰는 쇼핑몰이 주문 테이블에 인덱스를 추가하려 한다. 생성 중에도 주문 INSERT를 계속 받을 수 있어야 한다. 운영 반영 조건은 리허설 p95 쓰기 지연 시간이 기준값 40 ms보다 20% 넘게 늘어나지 않는 것이다. 동시 인덱스 생성 리허설에서는 51 ms였고, 운영 환경에서는 측정하지 않았다. 일반 CREATE INDEX는 쓰기를 막는다. CREATE INDEX CONCURRENTLY는 쓰기를 허용하지만 테이블을 두 번 스캔하고 트랜잭션을 기다릴 수 있다. 실패하면 플래너는 쓰지 않지만 쓰기 때마다 유지 비용이 드는 무효 인덱스가 남을 수 있다. 이번 근무 시간에는 어떤 조치를 취해야 할까? 나중에 운영 반영을 시도하려면 무엇을 확인해야 할까?
 
-### 스킬 미적용 답안
+**출처** · [PostgreSQL 17 documentation, CREATE INDEX](https://www.postgresql.org/docs/17/sql-createindex.html#SQL-CREATEINDEX-CONCURRENTLY) · [PostgreSQL 17 system catalogs, pg_index](https://www.postgresql.org/docs/17/catalog-pg-index.html)
 
-> 이번 근무 시간에는 인덱스 생성을 승인하지 마세요. `CREATE INDEX`는 주문 쓰기를 막으므로 운영 제약에 맞지 않고, `CREATE INDEX CONCURRENTLY` 리허설은 51 ms로 기준 40 ms보다 27.5% 높아 허용 한도인 48 ms를 넘었습니다. 다만 운영 성능은 측정하지 않았으므로, 이 결과만으로 운영 영향까지 단정할 수는 없습니다.
+### Light
+
+> ## 이번 근무 시간의 조치
 >
-> 재시도 전에는 리허설에서 쓰기 부하와 트랜잭션 대기 조건을 점검하고, 동시 생성 중 p95 쓰기 지연 시간과 완료 여부를 다시 측정하세요. 실패 시에는 무효 인덱스가 남았는지 확인하고, 남아 있으면 플래너가 쓰지 않는다는 점만 믿고 방치하지 말고 제거한 뒤 원인을 해결하고 재시도하세요.
-
-### 스킬 적용 답안 · standard
-
-> ### 설계 검토 권고
+> 동시 인덱스 생성은 이번 근무 시간에 운영 반영하지 않는다. 쓰기를 계속 받아야 하므로 일반 `CREATE INDEX`는 조건에 맞지 않는다. `CREATE INDEX CONCURRENTLY`는 쓰기를 허용하지만, 리허설 p95 쓰기 지연이 51 ms로 측정됐다. 허용 상한은 기준값 40 ms의 20% 증가인 **48 ms**이므로, 리허설에서 게이트를 넘지 못했다. 운영 환경 측정값도 아직 없다.
 >
-> **이번 근무 시간에는 운영 반영을 승인하지 않습니다.** 주문 INSERT를 인덱스 생성 내내 막을 수 없으므로 일반 `CREATE INDEX`는 제약을 위반합니다. `CREATE INDEX CONCURRENTLY`는 쓰기를 허용해 이 제약은 충족하지만, 운영 반영 전 리허설의 p95 쓰기 지연 시간이 기준값 40 ms보다 20% 넘게 늘지 않아야 한다는 조건에는 미달했습니다. 허용 상한은 48 ms인데 리허설에서 51 ms를 측정했습니다. 운영 성능도 아직 측정되지 않았습니다.
+> ## 나중에 확인할 사항
 >
-> 재시도 전에는 같은 기준값과 작업 부하를 사용해 리허설을 반복하고 p95 쓰기 지연을 측정합니다. **48 ms 이하**가 확인되면 운영 반영을 다시 검토합니다. 동시 생성이 실패하면 남은 무효 인덱스는 플래너가 사용하지 않더라도 쓰기 때 계속 갱신될 수 있으므로, 재시도 전에 해당 인덱스를 제거하고 제거 여부를 확인합니다. 이 권고는 제안이며, 승인된 결정은 없습니다.
+> 운영 반영을 다시 검토하기 전에 대표성 있는 테스트 환경에서 동시 인덱스 생성을 재현하고, 리허설 p95 쓰기 지연이 **48 ms 이하**인지 확인한다. 기준값 40 ms와 같은 측정 조건을 사용한다. 게이트를 통과하고 운영 측정 계획을 마련한 뒤에야 배포를 승인할 수 있다.
+>
+> 생성이 실패하면 인덱스가 남았는지 확인한다. 무효 인덱스가 있으면 플래너는 사용하지 않지만 쓰기마다 유지 비용이 들 수 있으므로, 이를 정리한 뒤 재시도 여부를 판단한다.
 
-### 두 답안의 차이
+### Standard
 
-| 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
-| --- | --- | --- |
-| 허용 한도 48 ms 또는 증가율 27.5%를 구하고, 리허설의 51 ms가 허용 기준을 초과한다고 판단한다. | 충족 | 충족 |
-| 주문 INSERT를 막는 일반 방식은 이번 작업에 쓸 수 없다고 판단하고, 새 리허설이 통과할 때까지 운영 반영을 보류한다. 운영 성능을 측정한 것처럼 쓰지 않는다. | 충족 | 충족 |
-| 무효 인덱스의 유효성을 확인하고 쓰기 비용이 남는 인덱스를 처리하는 구체적인 재시도 계획을 제시한다. | 충족 | 충족 |
+> # 주문 테이블 인덱스 추가 제안
+>
+> **제안 상태:** 운영 반영 보류. 이번 근무 시간에는 인덱스 생성 명령을 실행하지 않는다.
+>
+> ## 맥락과 목표
+>
+> 주문 테이블에 인덱스를 추가하되, 생성 중에도 주문 `INSERT`를 계속 받아야 한다. 운영 반영 조건은 리허설에서 측정한 p95 쓰기 지연 시간이 기준값 40 ms보다 20% 넘게 증가하지 않는 것이다. 따라서 허용 상한은 **48 ms**다.
+>
+> 목표는 쓰기를 중단하지 않고 인덱스를 만드는 것이다. 일반 `CREATE INDEX`는 쓰기를 막으므로 이 조건을 만족하지 않는다.
+>
+> ## 제안 설계와 대안
+>
+> `CREATE INDEX CONCURRENTLY`는 쓰기를 허용하므로 요구된 쓰기 동작에 맞는다. 다만 테이블을 두 번 스캔하고 트랜잭션을 기다릴 수 있다. 실패하면 플래너가 사용하지 않는 무효 인덱스가 남을 수 있으며, 이 인덱스도 쓰기 때마다 유지 비용을 발생시킬 수 있다.
+>
+> 일반 `CREATE INDEX`는 동시 생성보다 생성 절차가 단순하지만, 쓰기를 막으므로 요구를 위반한다. 두 방법 모두 현재 운영 반영 조건을 충족한다고 확인되지 않았다.
+>
+> ## 근무 시간 중 조치
+>
+> 동시 생성 리허설의 p95 쓰기 지연 시간은 **51 ms**로, 허용 상한인 **48 ms**를 3 ms 초과했다. 운영 환경 측정값도 없다. 그러므로 현재 근거로는 운영 반영 조건을 충족했다고 볼 수 없으며, 이번 근무 시간에는 생성을 시도하지 않는다.
+>
+> ## 나중에 시도하기 전 확인할 사항
+>
+> 대표성 있는 리허설 환경에서 동시 인덱스 생성을 다시 수행하고 p95 쓰기 지연 시간을 측정한다. 승인 조건은 기준값 40 ms 대비 증가폭이 20% 이하, 즉 **48 ms 이하**다. 이 리허설 게이트를 통과한 뒤에만 운영 배포를 검토한다.
+>
+> 배포를 승인받아 진행한다면 생성 완료 여부를 확인한다. 실패한 경우 무효 인덱스가 남았는지 확인하고, 남아 있다면 쓰기 유지 비용이 발생하므로 제거 또는 재생성 전에 정리해야 한다. 운영 반영 후에는 p95 쓰기 지연 시간을 관찰한다.
 
-**블라인드 검토** (X = 미적용, Y = 스킬 적용). 두 답 모두 허용 한도 48 ms를 넘긴 51 ms 리허설을 근거로 운영 반영을 보류하고, 실패 시 무효 인덱스를 확인해 제거하도록 한다. X 쪽은 지연 증가율 27.5%도 계산한다. Y 쪽은 무효 인덱스를 방치하면 플래너가 쓰지 않더라도 쓰기 비용이 남는다는 이유를 명시한다.
+### Strict
 
-<details>
-<summary>실행 기록</summary>
-
-각 답안은 Codex CLI 0.167.0, low 추론 설정의 별도 임시 읽기 전용 세션에서 생성했습니다. 같은 문항의 다른 답안이나 다른 언어의 답안은 입력하지 않았습니다.
-
-SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `96fbdfc6834c` / `11153554b6ca` / `fb809a2d0596`.
-
-</details>
+> ## 제안: 이번 근무 시간에는 운영 반영을 보류한다
+>
+> **결정 요청.** 지금은 인덱스 생성을 시작하지 않는다. 먼저 대표성 있는 리허설에서 p95 쓰기 지연 시간이 기준값 40 ms보다 20% 넘게 증가하지 않는지 확인한다. 기준값의 20%는 8 ms이므로 허용 상한은 **48 ms**다. 동시 인덱스 생성 리허설 결과 **51 ms**는 기준보다 11 ms, 즉 27.5% 높아 이 조건을 충족하지 못한다. 운영 지연 시간은 측정되지 않았다.
+>
+> ### 목표와 제약
+>
+> - **목표:** 인덱스 생성 중에도 주문 `INSERT`를 계속 받는다.
+> - **운영 반영 조건:** 대표성 있는 리허설에서 p95 쓰기 지연 시간이 기준값 40 ms보다 20% 넘게 증가하지 않는다. 따라서 리허설 측정값은 48 ms 이하여야 한다.
+> - **비교 기준:** 일반 `CREATE INDEX`는 쓰기를 막는다. `CREATE INDEX CONCURRENTLY`는 쓰기를 허용하지만 테이블을 두 번 스캔하고 트랜잭션을 기다릴 수 있다.
+>
+> ### 제안 동작과 실패 처리
+>
+> `CREATE INDEX CONCURRENTLY`는 쓰기를 허용하므로 가용성 목표에는 맞는다. 그러나 현재 리허설의 51 ms 결과가 지연 시간 게이트를 넘었다. 실패 시에는 플래너가 사용하지 않지만 쓰기마다 유지 비용을 발생시키는 무효 인덱스가 남을 수 있다. 생성 실패 후에는 인덱스 유효성을 확인하고, 무효 인덱스가 있으면 정리한 뒤 쓰기 부하와 인덱스 상태를 다시 확인해야 한다.
+>
+> 일반 `CREATE INDEX`는 동시 쓰기 요구를 위반하므로 이번 목표에 맞는 대안이 아니다. 동시 생성 방식은 쓰기를 허용하지만 현재 리허설 결과가 운영 반영 조건을 충족하지 않는다.
+>
+> ### 다음 확인 사항
+>
+> 운영 반영을 다시 검토하기 전에 대표성 있는 리허설을 반복해 p95 쓰기 지연 시간을 측정한다. **측정 설정과 결과를 기록하고, 결과가 48 ms 이하인지 확인한다.** 게이트를 통과한 뒤에도 승인 전에는 운영에 배포하지 않는다. 이후 운영 반영이 별도로 승인되면, 적용 중 p95 쓰기 지연 시간과 인덱스 상태를 관찰한다.
 
 ## gtm-formal
 
-**etcd의 두 후보가 동시에 당선되지 않으려면 몇 표가 필요할까?**
-
-[English](EXAMPLES.md#gtm-formal)
-
-2026-11-08 · `gtm-formal` 0.1.2 · 한국어 · `gpt-6-luna`
-
-### 사례와 출처
-
-- [Ongaro and Ousterhout, In Search of an Understandable Consensus Algorithm, §5.2](https://raft.github.io/raft.pdf)
-- [etcd v3.5 FAQ, fault tolerance](https://etcd.io/docs/v3.5/faq/#what-is-failure-tolerance)
-
-Raft 논문은 한 임기의 단일 투표와 과반 선출을, etcd 문서는 다섯 투표자의 정족수를 설명합니다. 여섯 투표자에게 다른 문턱값을 적용하는 논증은 가상의 수학 문제입니다.
+**두 후보가 동시에 당선되지 않으려면 몇 표가 필요할까?** · [English](EXAMPLES.md#gtm-formal)
 
 ### 질문
 
-> 분산 시스템 세미나에서 읽을 짧은 한국어 증명을 써 주세요. 투표자 n명이 고정된 클러스터에서 당선에 필요한 표 수를 q라고 할 때(1 ≤ q ≤ n), 요건을 충족한 두 투표자 집합이 반드시 겹칠 필요충분조건을 구하세요. 두 집합에 공통으로 속하는 투표자 수의 하한도 n과 q로 유도하세요. 한 투표자는 한 임기에 최대 한 표만 줍니다. 가상의 후보 etcd-east와 etcd-west로 이 조건을 리더 선출의 안전성과 연결하세요. 투표자 5명의 실제 과반수 선거와, 투표자가 6명인데 3표만으로 당선된다고 가정한 경우를 각각 따져 보세요. 필요하면 6명으로 반례를 구성하세요. 일부 투표자와 연락할 수 없을 때, 안전성만으로 선거의 진행을 보장할 수 있는지도 밝히세요.
+> 같은 임기 선거에 후보 두 명이 나왔다. 서버 수는 고정되어 있고, 각 서버는 그 임기에 최대 한 후보에게만 투표할 수 있다. 각 후보가 당선되려면 정해진 최소 득표수를 채워야 한다. Raft에서는 보통 과반수를 요구한다. 어떤 팀이 서버가 7대일 때와 8대일 때 모두 4표를 당선 기준으로 쓰자고 한다. 어떤 기준에서 두 후보가 함께 당선되는 일을 막을 수 있을까? 두 경우 모두 4표면 안전할까? 안전한 기준을 써도 아무도 당선되지 않을 수 있을까?
 
-### 스킬 미적용 답안
+**출처** · [Ongaro and Ousterhout, In Search of an Understandable Consensus Algorithm, §5.2](https://raft.github.io/raft.pdf) · [etcd v3.5 FAQ, fault tolerance](https://etcd.io/docs/v3.5/faq/#what-is-failure-tolerance)
 
-> ### 정족수 겹침과 리더 선출 안전성
+### Light
+
+> 서버 수를 $N$, 후보 $i$의 득표수를 $v_i$, 당선 기준을 $q$라 하겠습니다. 각 서버가 최대 한 후보에게만 투표하므로 두 후보 $A,B$에 대해 $v_A+v_B\le N$입니다. 두 후보가 함께 당선되려면 $v_A\ge q$이고 $v_B\ge q$여야 합니다.
 >
-> 투표자 집합을 $V$, $|V|=n$이라 하고, 당선에 필요한 표 수를 $q$라 하자. 크기가 각각 $q$인 두 당선 집합 $A,B\subseteq V$에 대해 포함배제 원리로
+> **동시 당선을 막는 조건은 $2q>N$** 입니다. 실제로 $2q>N$이면 두 후보가 모두 기준을 채울 경우 $v_A+v_B\ge2q>N$가 되어 서버 수를 넘으므로 불가능합니다. 반대로 $2q\le N$이면 두 후보에게 각각 $q$표씩 배정할 수 있어 동시 당선을 막을 수 없습니다.
 >
+> 따라서 7대에서 기준 4표는 안전합니다. $2\cdot4=8>7$이기 때문입니다. 8대에서 기준 4표는 안전하지 않습니다. $2\cdot4=8$이고, 두 후보가 각각 4표를 받는 배정이 가능하기 때문입니다.
+>
+> 안전한 기준을 사용해도 당선자가 없을 수 있습니다. 예를 들어 7대에서 기준을 4표로 정하고 표가 후보 둘에게 3표씩 나뉘면, $3<4$이므로 둘 다 당선되지 않습니다.
+
+### Standard
+
+> 서버 수를 $N$, 각 후보의 당선 기준을 $q$표라고 하자. 각 서버는 최대 한 후보에게만 투표하므로, 서로 다른 두 후보가 각각 $q$표 이상을 얻으려면 최소 $2q$대의 서버가 필요하다. 따라서 두 후보의 동시 당선을 막는 조건은
 >
 > $$
-> |A\cap B|=|A|+|B|-|A\cup B|\ge 2q-n.
+> 2q>N
 > $$
 >
+> 이다. 실제로 $2q\le N$이면, 서버 $N$대 가운데 $q$대를 첫 후보에게, 다른 $q$대를 둘째 후보에게 투표하게 할 수 있어 두 후보가 모두 기준을 채운다.
 >
-> 따라서 $2q>n$, 즉 $q>n/2$이면 두 집합은 반드시 겹친다. 반대로 $2q\le n$이면 서로소인 크기 $q$의 집합을 만들 수 있으므로, 모든 두 당선 집합이 반드시 겹치는 필요충분조건은
+> - 서버가 7대이고 기준이 4표이면 $2q=8>7$이다. 두 후보가 함께 당선될 수 없다.
+> - 서버가 8대이고 기준이 4표이면 $2q=8\not>8$이다. 각 후보가 서로 다른 4대의 표를 얻으면 둘 다 당선된다.
 >
+> 그러므로 4표 기준은 7대에서는 이 안전 조건을 만족하지만, 8대에서는 만족하지 않는다. 일반적으로 엄격한 과반수 기준 $q=\lfloor N/2\rfloor+1$은 $2q>N$을 만족한다.
 >
+> 다만 이 기준이 있어도 아무도 당선되지 않을 수 있다. 예를 들어 두 후보가 각각 기준보다 적은 표를 얻으면 된다. 7대에서 4표 기준이라면 두 후보가 각각 3표를 얻는 경우가 가능하고, 8대에서 5표 기준이라면 각각 4표를 얻는 경우가 가능하다. 따라서 $2q>N$은 두 후보의 동시 당선을 막는 조건이지, 반드시 한 후보가 당선된다는 보장은 아니다.
+
+### Strict
+
+> 서버 집합을 $S$, 서버 수를 $N=|S|$, 두 후보를 $A,B$라 하자. 한 임기에서 각 서버는 최대 한 후보에게만 투표하므로, 후보들의 득표 서버 집합 $V_A,V_B\subseteq S$는 서로소다. 당선 기준 $q$는 각 후보가 적어도 $q$표를 얻어야 당선된다는 뜻으로 두자.
+>
+> **두 후보의 동시 당선을 막는 조건은 $2q>N$이다.** 두 후보가 모두 당선되었다고 가정하면
 > $$
-> \boxed{q>n/2}
+> |V_A|\ge q,\qquad |V_B|\ge q,\qquad V_A\cap V_B=\varnothing,
 > $$
->
->
-> 이다. 두 집합의 공통 투표자 수에 대한 일반적인 하한은 $\max(0,\,2q-n)$명이다.
->
-> 이 겹침은 리더 선출의 안전성에 쓰인다. 예를 들어 etcd-east와 etcd-west가 같은 임기에 각각 $q$표를 얻었다고 하자. 두 당선 집합이 겹치고, 겹친 투표자가 한 임기에 최대 한 표만 준다면 두 후보 모두 당선될 수 없다. 그러므로 $q>n/2$는 같은 임기에 두 리더가 선출되는 것을 막는 데 필요한 정족수 조건이다. 이는 두 후보가 실제로 모두 당선된다는 뜻이 아니라, 그런 동시 당선이 불가능하다는 뜻이다.
->
-> 투표자 5명인 클러스터의 실제 과반수는 $q=3$이다. 두 3인 집합은 최소 $2\cdot3-5=1$명 겹친다. 겹친 투표자는 같은 임기에 두 후보에게 표를 줄 수 없으므로, 두 후보의 동시 당선은 불가능하다.
->
-> 반면 투표자 6명에게 3표만 있으면 당선된다고 하면 $q=3$이고, $2q-n=0$이다. 실제로
->
->
+> 이므로 $N\ge |V_A|+|V_B|\ge 2q$여야 한다. 따라서 $2q>N$이면 모순이다. 반대로 $2q\le N$이면 서로소인 두 집합에 각각 $q$개의 서버를 배정할 수 있으므로, 투표 규칙만으로 동시 당선을 배제할 수 없다. 즉 정수 기준으로 안전 조건은
 > $$
-> A=\{1,2,3\},\qquad B=\{4,5,6\}
+> q>\frac N2,\quad\text{곧}\quad q_{\min}=\left\lfloor\frac N2\right\rfloor+1
 > $$
->
->
-> 처럼 서로소인 당선 집합을 만들 수 있다. 앞의 세 명이 etcd-east에, 나머지 세 명이 etcd-west에 표를 주면 두 후보가 모두 당선될 수 있다. 따라서 이 규칙은 해당 안전성 보장을 제공하지 않는다.
->
-> 마지막으로, 정족수 겹침은 안전성 조건이지 진행 보장 조건은 아니다. 일부 투표자와 연락할 수 없어 어떤 후보도 $q$표를 모으지 못한다면 선거는 완료되지 않는다. 안전성만으로는 선거가 반드시 진행된다고 보장할 수 없다.
-
-<details>
-<summary>원래 수식 표기로 보기</summary>
-
-````text
-### 정족수 겹침과 리더 선출 안전성
-
-투표자 집합을 \(V\), \(|V|=n\)이라 하고, 당선에 필요한 표 수를 \(q\)라 하자. 크기가 각각 \(q\)인 두 당선 집합 \(A,B\subseteq V\)에 대해 포함배제 원리로
-
-\[
-|A\cap B|=|A|+|B|-|A\cup B|\ge 2q-n.
-\]
-
-따라서 \(2q>n\), 즉 \(q>n/2\)이면 두 집합은 반드시 겹친다. 반대로 \(2q\le n\)이면 서로소인 크기 \(q\)의 집합을 만들 수 있으므로, 모든 두 당선 집합이 반드시 겹치는 필요충분조건은
-
-\[
-\boxed{q>n/2}
-\]
-
-이다. 두 집합의 공통 투표자 수에 대한 일반적인 하한은 \(\max(0,\,2q-n)\)명이다.
-
-이 겹침은 리더 선출의 안전성에 쓰인다. 예를 들어 etcd-east와 etcd-west가 같은 임기에 각각 \(q\)표를 얻었다고 하자. 두 당선 집합이 겹치고, 겹친 투표자가 한 임기에 최대 한 표만 준다면 두 후보 모두 당선될 수 없다. 그러므로 \(q>n/2\)는 같은 임기에 두 리더가 선출되는 것을 막는 데 필요한 정족수 조건이다. 이는 두 후보가 실제로 모두 당선된다는 뜻이 아니라, 그런 동시 당선이 불가능하다는 뜻이다.
-
-투표자 5명인 클러스터의 실제 과반수는 \(q=3\)이다. 두 3인 집합은 최소 \(2\cdot3-5=1\)명 겹친다. 겹친 투표자는 같은 임기에 두 후보에게 표를 줄 수 없으므로, 두 후보의 동시 당선은 불가능하다.
-
-반면 투표자 6명에게 3표만 있으면 당선된다고 하면 \(q=3\)이고, \(2q-n=0\)이다. 실제로
-
-\[
-A=\{1,2,3\},\qquad B=\{4,5,6\}
-\]
-
-처럼 서로소인 당선 집합을 만들 수 있다. 앞의 세 명이 etcd-east에, 나머지 세 명이 etcd-west에 표를 주면 두 후보가 모두 당선될 수 있다. 따라서 이 규칙은 해당 안전성 보장을 제공하지 않는다.
-
-마지막으로, 정족수 겹침은 안전성 조건이지 진행 보장 조건은 아니다. 일부 투표자와 연락할 수 없어 어떤 후보도 \(q\)표를 모으지 못한다면 선거는 완료되지 않는다. 안전성만으로는 선거가 반드시 진행된다고 보장할 수 없다.
-````
-
-</details>
-
-### 스킬 적용 답안 · standard
-
-> 투표자 집합을 $V$, $|V|=n$이라 하자. 한 임기에 각 투표자는 최대 한 표만 주며, **요건을 충족한 집합**은 $V$의 원소를 $q$명 이상 포함하는 부분집합이다. 두 요건 충족 집합이 반드시 겹친다는 말은 임의의 두 그런 집합의 교집합이 공집합이 아니라는 뜻이다.
->
-> **명제.** 두 요건 충족 집합이 반드시 겹칠 필요충분조건은
->
-> $$
-> 2q>n
-> $$
->
-> 이다. 임의의 두 요건 충족 집합 $A,B$에 대해 공통 투표자 수는
->
-> $$
-> |A\cap B|\ge \max(0,\,2q-n)
-> $$
->
 > 이다.
 >
-> **증명.** 포함배제에 의해
+> - 서버가 $7$대이고 $q=4$이면 $2q=8>7$이므로 두 후보가 함께 당선될 수 없다. $4$표는 이 조건을 만족하는 최소 기준이다.
+> - 서버가 $8$대이고 $q=4$이면 $2q=8$이다. 예를 들어 네 서버가 $A$에게, 나머지 네 서버가 $B$에게 투표하면 두 후보 모두 당선된다. 따라서 이 기준은 안전하지 않다. $8$대에서는 최소 안전 기준이 $5$표다.
 >
-> $$
-> |A\cap B|=|A|+|B|-|A\cup B|\ge q+q-n=2q-n.
-> $$
->
-> 교집합 크기는 음수가 될 수 없으므로 하한은 $\max(0,2q-n)$이다. 따라서 $2q>n$이면 교집합은 적어도 한 명이다.
->
-> 역으로 $2q\le n$이라 하자. $V$에서 서로소인 $q$명짜리 부분집합 두 개를 고를 수 있다. 두 집합은 모두 요건을 충족하지만 겹치지 않으므로, 반드시 겹친다는 조건은 성립하지 않는다. 이로써 필요충분성이 증명된다. $2q=n$인 경계에서도 하한은 0이며, 서로소인 두 집합이 가능하다.
->
-> **리더 선출에의 적용.** 같은 임기에서 `etcd-east`와 `etcd-west`가 각각 당선되려면 서로 다른 투표자 집합으로부터 $q$표를 받아야 한다. $2q>n$이면 두 집합이 적어도 한 투표자를 공유한다. 각 투표자가 임기에 최대 한 표만 주므로 그 공통 투표자는 두 후보 모두에게 투표할 수 없다. 따라서 두 후보가 모두 당선될 수 없다. 이는 이 투표 모델에서의 안전성, 즉 한 임기에 두 후보가 동시에 당선되지 않는다는 성질이다.
->
-> **사례.** 투표자가 5명이고 실제 과반수로 선출한다면 $q=3$이다. 두 당선 집합의 교집합 크기는 적어도 $2\cdot3-5=1$이므로 반드시 겹친다. 반면 투표자가 6명인데 3표만으로 당선된다고 가정하면 $q=3$이고 $2q=n$이다. 다음 두 집합은 서로소이면서 각각 요건을 충족한다.
->
-> $$
-> A=\{1,2,3\},\qquad B=\{4,5,6\}.
-> $$
->
-> 따라서 이 규칙만으로는 같은 임기에 `etcd-east`와 `etcd-west`가 각각 당선되는 경우를 배제할 수 없다.
->
-> 마지막으로, 안전성은 선거의 진행을 보장하지 않는다. 연락 가능한 투표자가 $q$명보다 적으면 어떤 후보도 필요한 표를 모을 수 없다. 따라서 $2q>n$은 당선 집합 간의 겹침을 통한 안전성 조건이지, 일부 투표자와 연락할 수 없는 상황에서 선거가 반드시 완료된다는 진행성 보장은 아니다.
-
-<details>
-<summary>원래 수식 표기로 보기</summary>
-
-````text
-투표자 집합을 \(V\), \(|V|=n\)이라 하자. 한 임기에 각 투표자는 최대 한 표만 주며, **요건을 충족한 집합**은 \(V\)의 원소를 \(q\)명 이상 포함하는 부분집합이다. 두 요건 충족 집합이 반드시 겹친다는 말은 임의의 두 그런 집합의 교집합이 공집합이 아니라는 뜻이다.
-
-**명제.** 두 요건 충족 집합이 반드시 겹칠 필요충분조건은
-\[
-2q>n
-\]
-이다. 임의의 두 요건 충족 집합 \(A,B\)에 대해 공통 투표자 수는
-\[
-|A\cap B|\ge \max(0,\,2q-n)
-\]
-이다.
-
-**증명.** 포함배제에 의해
-\[
-|A\cap B|=|A|+|B|-|A\cup B|\ge q+q-n=2q-n.
-\]
-교집합 크기는 음수가 될 수 없으므로 하한은 \(\max(0,2q-n)\)이다. 따라서 \(2q>n\)이면 교집합은 적어도 한 명이다.
-
-역으로 \(2q\le n\)이라 하자. \(V\)에서 서로소인 \(q\)명짜리 부분집합 두 개를 고를 수 있다. 두 집합은 모두 요건을 충족하지만 겹치지 않으므로, 반드시 겹친다는 조건은 성립하지 않는다. 이로써 필요충분성이 증명된다. \(2q=n\)인 경계에서도 하한은 0이며, 서로소인 두 집합이 가능하다.
-
-**리더 선출에의 적용.** 같은 임기에서 `etcd-east`와 `etcd-west`가 각각 당선되려면 서로 다른 투표자 집합으로부터 \(q\)표를 받아야 한다. \(2q>n\)이면 두 집합이 적어도 한 투표자를 공유한다. 각 투표자가 임기에 최대 한 표만 주므로 그 공통 투표자는 두 후보 모두에게 투표할 수 없다. 따라서 두 후보가 모두 당선될 수 없다. 이는 이 투표 모델에서의 안전성, 즉 한 임기에 두 후보가 동시에 당선되지 않는다는 성질이다.
-
-**사례.** 투표자가 5명이고 실제 과반수로 선출한다면 \(q=3\)이다. 두 당선 집합의 교집합 크기는 적어도 \(2\cdot3-5=1\)이므로 반드시 겹친다. 반면 투표자가 6명인데 3표만으로 당선된다고 가정하면 \(q=3\)이고 \(2q=n\)이다. 다음 두 집합은 서로소이면서 각각 요건을 충족한다.
-\[
-A=\{1,2,3\},\qquad B=\{4,5,6\}.
-\]
-따라서 이 규칙만으로는 같은 임기에 `etcd-east`와 `etcd-west`가 각각 당선되는 경우를 배제할 수 없다.
-
-마지막으로, 안전성은 선거의 진행을 보장하지 않는다. 연락 가능한 투표자가 \(q\)명보다 적으면 어떤 후보도 필요한 표를 모을 수 없다. 따라서 \(2q>n\)은 당선 집합 간의 겹침을 통한 안전성 조건이지, 일부 투표자와 연락할 수 없는 상황에서 선거가 반드시 완료된다는 진행성 보장은 아니다.
-````
-
-</details>
-
-### 두 답안의 차이
-
-| 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
-| --- | --- | --- |
-| 요건을 충족한 두 집합에 대해 \|E∩W\| ≥ 2q−n을 유도하고, 2q>n과 임기당 한 표 규칙 때문에 두 리더가 동시에 당선되지 못함을 보인다. | 충족 | 충족 |
-| 2q≤n이면 서로 겹치지 않는 집합을 구성할 수 있어 필요조건임을 보인다. 5명의 과반수 3표와 6명이 두 그룹으로 3표씩 나뉠 수 있는 반례를 제시한다. | 충족 | 충족 |
-| 가상의 6명 중 3표와 실제 Raft 과반수를 구분하고, 투표 부족 시 안전성이 진전을 보장하지 않는 이유를 밝힌다. | 충족 | 충족 |
-
-**블라인드 검토** (Y = 미적용, X = 스킬 적용). 두 증명 모두 2q−n의 하한을 유도하고 q가 n의 절반을 넘어야 하는 이유와 임기당 한 표의 의미를 설명한다. X 쪽은 경계 2q=n에서 하한이 0임을 따로 짚는다. Y 쪽은 두 집단이 각각 누구에게 투표하면 함께 당선될 수 있는지 보여 준다. 둘 다 6명 중 3표를 가정한 규칙과 실제 과반수 원리를 구분하고, 정족수가 없으면 선거가 진행되지 않을 수 있다고 밝힌다.
-
-<details>
-<summary>실행 기록</summary>
-
-각 답안은 Codex CLI 0.167.0, low 추론 설정의 별도 임시 읽기 전용 세션에서 생성했습니다. 같은 문항의 다른 답안이나 다른 언어의 답안은 입력하지 않았습니다.
-
-SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `b351e00329c8` / `b2bffd7272a2` / `5ec37cc9df03`.
-
-</details>
+> 여기서 “안전”은 **두 후보가 동시에 당선되지 않음**을 뜻한다. 이 조건을 만족해도 당선자가 생긴다는 보장은 없다. 예를 들어 $q=4$일 때 아무 서버도 투표하지 않으면 두 후보 모두 당선 기준에 못 미친다. 일반적으로도 투표가 분할되거나 일부 서버가 투표하지 않아 어떤 후보도 $q$표를 얻지 못할 수 있다. 따라서 과반수 기준은 동시 당선을 막지만, 단독 당선을 보장하지는 않는다.
 
 ## hunminjeongeum
 
-**서울 지하철 노선도를 빨리 읽으면 전체 여정은 얼마나 줄어드나요?**
-
-[English](EXAMPLES.md#hunminjeongeum)
-
-2026-11-08 · `hunminjeongeum` 0.1.1 · 한국어 · `gpt-6-luna`
-
-### 사례와 출처
-
-- [서울특별시, 시민의 발, 디자인을 입다…서울시, 지하철 노선도 40년 만에 변경 (2023-09-13)](https://news.seoul.go.kr/culture/archives/520933)
-
-서울시 발표의 최대 약 69% 감소는 실험에서 환승역 길을 찾는 데 걸린 시간에 관한 수치입니다. 예시 여행의 지도 탐색 시간 및 승차 시간은 따로 주어진 가정입니다.
+**서울 지하철 노선도를 빨리 읽으면 전체 여정은 얼마나 줄어드나요?** · [English](EXAMPLES.md#hunminjeongeum)
 
 ### 질문
 
-> 서울 지하철을 처음 타는 사람에게, 서울시가 2023년에 노선도를 고치려 한 이유와 숫자의 의미를 한국어 네 문장 이내로 설명해 주세요. 기존 지도에서는 환승역이 일반역과 잘 구분되지 않았고, 개선안은 환승할 노선들의 색을 한 표시에 연결했어요. 20~30대 내국인·외국인의 시선 추적 실험에서 환승역 길 찾기 시간이 최대 약 69% 줄었어요. 설명용으로 어떤 승객이 예전 지도에서 길을 찾는 데 100초, 이후 열차 안에서 이동하는 시간이 12분이라고 가정해요. 지도 보는 시간에 그 최대 감소율을 적용한다면 지도 탐색 시간과 열차 안에서 이동하는 시간의 합계는 얼마일까요? 누군가 ‘여정 전체가 69% 빨라진다’고 소개하려고 해요.
+> 서울의 예전 지하철 노선도는 환승역과 일반역을 구별하기 어려웠다. 2023년 개편안은 환승역 하나에 연결된 노선들의 색을 한 기호에 모았다. 20~30대 내·외국인을 대상으로 시선을 추적한 실험에서 지도 위의 환승역을 찾는 데 걸리는 시간이 최대 약 69% 줄었다. 한 승객이 예전에는 환승역을 찾는 데 200초를 쓰고 열차를 9분 탔다고 하자. 이 승객에게 실험에서 보고된 최대 감소율이 적용된다면, 새 노선도로 이동 시간이 얼마나 달라질까?
 
-### 스킬 미적용 답안
+**출처** · [서울특별시, 지하철 노선도 개선과 아이트래킹 실험](https://mediahub.seoul.go.kr/archives/2009054)
 
-> 서울시는 기존 노선도에서 환승역이 일반역과 잘 구분되지 않아 길 찾기가 어려운 점을 개선하려고 했어요. 개선안은 환승역에서 갈아탈 노선들의 색을 하나의 표시에 연결해 환승 정보를 쉽게 알아보도록 했고, 20~30대 내국인·외국인의 시선 추적 실험에서는 환승역 길 찾기 시간이 최대 약 69% 줄었어요. 예전 지도에서 100초 걸렸다고 가정하면 지도 탐색 시간은 최대 감소율 적용 후 31초이고, 열차 안 이동 시간 12분을 더하면 합계는 12분 31초예요. 따라서 69%는 지도 탐색 시간에 적용한 수치이지, 여정 전체가 69% 빨라진다는 뜻은 아니에요.
+### Light
 
-### 스킬 적용 답안 · standard
+> 환승역을 찾기 어려웠던 승객은, 환승역 하나에 연결된 노선들의 색을 한 기호에 모은 새 노선도에서 역을 더 빨리 찾을 수 있습니다. 최대 약 69% 감소율을 적용하면 환승역을 찾는 시간은 200초에서 62초로 줄어듭니다. 열차를 타는 9분은 그대로이므로, 총 이동 시간은 740초에서 602초로 **138초(2분 18초) 줄어듭니다**. 이는 실험에서 보고된 최대 감소율이 이 승객에게 그대로 적용된다고 가정한 계산입니다.
 
-> 서울 지하철을 처음 타면 환승역 표시가 일반역과 비슷해 길을 찾기 어려울 수 있어, 서울시는 2023년 노선도에서 환승할 노선들의 색을 하나의 표시에 연결하는 개선안을 내놓았습니다. 20~30대 내국인·외국인을 대상으로 한 시선 추적 실험에서 환승역 길 찾기 시간이 최대 약 69% 줄었다는 뜻입니다. 설명을 위해 예전 지도에서 찾는 데 100초 걸렸다고 가정하면, 그 시간에 69% 감소를 적용한 탐색 시간은 31초이고, 열차 이동 12분을 더한 합계는 12분 31초입니다. 이 계산은 지도 탐색 시간에만 감소율을 적용한 것이므로, ‘여정 전체가 69% 빨라진다’고 말할 근거는 아닙니다.
+### Standard
 
-### 두 답안의 차이
+> 환승역과 일반역을 구별하기 어려웠던 승객은, 환승역 하나에 연결된 노선들의 색을 한 기호에 모은 새 노선도에서 환승역을 더 빨리 찾을 수 있습니다.
+>
+> 환승역을 찾는 데 걸리던 200초에 실험에서 보고된 최대 감소율 약 69%를 적용하면, 찾는 시간은 200초에서 62초로 줄어듭니다. 열차를 타는 9분(540초)은 그대로이므로, 전체 이동 시간은 740초(12분 20초)에서 602초(10분 2초)로 약 138초(2분 18초) 줄어듭니다.
+>
+> 따라서 이 승객의 이동 시간은 해당 최대 감소율이 적용될 경우 약 2분 18초 짧아집니다. 이는 실험에서 보고된 최대치에 따른 계산이며, 모든 승객에게 같은 감소가 나타난다는 뜻은 아닙니다.
 
-| 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
-| --- | --- | --- |
-| 환승역과 일반역을 구분하기 어려웠던 승객의 문제에서 시작해, 환승 노선 색을 연결한 표식이 그 문제를 어떻게 해결하는지 설명한다. | 충족 | 충족 |
-| 새 지도 탐색 시간은 약 31초이고 열차 탑승 시간은 여전히 12분이어서 가상 여정의 합계가 약 12분 31초라고 계산한다. | 충족 | 충족 |
-| 최대 약 69% 감소한 것은 시선 추적 실험에서의 환승역 길 찾기 시간이며, 실제 전체 이동 시간이 그렇게 줄었다는 뜻이 아님을 분명히 한다. | 충족 | 충족 |
+### Strict
 
-**블라인드 검토** (Y = 미적용, X = 스킬 적용). X와 Y 모두 환승역을 일반역과 구별하기 어려웠다는 문제를 노선 색을 연결한 표식과 연결한다. 지도 탐색만 100초에서 31초로 줄고 열차 안 이동은 12분이어서 합계가 12분 31초라는 계산과 실험 범위를 네 문장 안에 담는다. 개선안의 연도(2023년)는 X에만 있다.
-
-<details>
-<summary>표현을 명확히 하기 전의 질문과 답안</summary>
-
-“열차를 타는 데”가 탑승 대기처럼 읽힐 수 있어 “열차 안에서 이동하는 시간”으로 구체화하고 한국어 양쪽 답을 새로 생성했습니다. 위 판정은 최종 질문에 대해서만 이뤄졌습니다.
-
-**이전 질문**
-
-> 서울 지하철을 처음 타는 사람에게, 서울시가 2023년에 노선도를 고치려 한 이유와 숫자의 의미를 한국어 네 문장 이내로 설명해 주세요. 기존 지도에서는 환승역이 일반역과 잘 구분되지 않았고, 개선안은 환승할 노선들의 색을 한 표시에 연결했어요. 20~30대 내국인·외국인의 시선 추적 실험에서 환승역 길 찾기 시간이 최대 약 69% 줄었어요. 설명용으로 어떤 승객이 예전 지도에서 길을 찾는 데 100초, 이후 열차를 타는 데 12분이 걸린다고 가정해요. 지도 보는 시간에 그 최대 감소율을 적용한다면 지도를 보고 열차를 타는 데 걸리는 합계는 얼마일까요? 누군가 ‘여정 전체가 69% 빨라진다’고 소개하려고 해요.
-
-**이전 미적용 답안**
-
-> 서울시는 기존 노선도에서 환승역이 일반역과 잘 구분되지 않아 길 찾기가 어려운 점을 개선하려 했고, 개선안은 환승 노선들의 색을 한 표시에 연결했어요. 20~30대 내국인·외국인 실험에서 환승역 길 찾기 시간은 최대 약 69% 줄었지만, 이는 실험에서 측정한 길 찾기 시간에 관한 수치예요. 설명용 가정에 따르면 지도 보는 시간은 100초에서 약 31초로 줄고, 열차 탑승까지 12분을 더하면 합계는 **12분 31초**예요. 따라서 ‘여정 전체가 69% 빨라진다’고 말할 수는 없어요.
-
-**이전 적용 답안**
-
-> 처음 서울 지하철을 타면 환승역이 일반역과 잘 구분되지 않아, 갈아탈 곳을 찾기 어려울 수 있습니다. 서울시는 환승할 노선들의 색을 한 표시에 연결해 환승역을 알아보기 쉽도록 노선도를 고치려 했고, 20~30대 내국인·외국인의 시선 추적 실험에서는 환승역 길 찾기 시간이 최대 약 69% 줄었습니다. 설명용 가정에서 예전 지도 보는 시간 100초에 이 감소율을 적용하면 31초이고, 이후 열차를 타는 데 걸리는 12분을 더한 합계는 12분 31초입니다. 이 계산은 지도 보는 시간에만 최대 감소율을 적용한 것이므로, ‘여정 전체가 69% 빨라진다’고 말할 근거는 되지 않습니다.
-
-</details>
-
-<details>
-<summary>실행 기록</summary>
-
-각 답안은 Codex CLI 0.167.0, low 추론 설정의 별도 임시 읽기 전용 세션에서 생성했습니다. 같은 문항의 다른 답안이나 다른 언어의 답안은 입력하지 않았습니다.
-
-SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `41f1b8c56caa` / `3ed4cb7760bb` / `aef558c2f63e`.
-
-</details>
+> 예전 노선도에서는 환승역을 찾기 어려워 한 승객이 역 탐색에 200초를 썼다. 2023년 개편안은 환승역 하나에 연결된 노선들의 색을 한 기호에 모아, 지도에서 환승역을 더 쉽게 찾도록 했다.
+>
+> 최대 약 69% 감소율을 적용하면 탐색 시간은 200초에서 62초로 줄어든다. 열차를 타는 9분은 그대로이므로, 초 단위로 계산하면 전체 이동 시간은 740초(200초 + 540초)에서 602초(62초 + 540초)로 줄어든다. 총 절약 시간은 138초다.
+>
+> 따라서 이 승객의 이동 시간은 실험에서 보고된 최대 감소율이 적용될 경우 138초 줄어든다. 이는 가정에 따른 계산이며, 실험이 이 승객에게 같은 감소율을 보장하는 것은 아니다.
 
 ## ietf-rfc
 
-**HTTP 429 응답에서 두 가지 재시도 시각 계산하기**
-
-[English](EXAMPLES.md#ietf-rfc)
-
-2026-11-09 · `ietf-rfc` 0.1.10 · 한국어 · `gpt-6-luna`
-
-### 사례와 출처
-
-- [IETF RFC 6585 §4, 429 Too Many Requests](https://www.rfc-editor.org/rfc/rfc6585.html#section-4)
-- [IETF RFC 9110 §10.2.3, Retry-After](https://www.rfc-editor.org/rfc/rfc9110.html#section-10.2.3)
-
-RFC 6585는 429 응답의 선택과 캐시 저장 금지를, RFC 9110은 Retry-After의 HTTP 날짜 및 수신 이후의 초 단위를 설명합니다. 두 응답의 시각은 예시입니다.
+**HTTP 429 응답에서 두 가지 재시도 시각 계산하기** · [English](EXAMPLES.md#ietf-rfc)
 
 ### 질문
 
-> 가상의 요청 제한 응답 두 건을 다루는 짧은 한국어 내부 API 명세를 써 주세요. 둘 다 09:00:00 UTC에 보냈고 클라이언트는 09:00:05 UTC에 받았습니다. 첫 응답은 Retry-After: 45를, 둘째 응답은 그날 09:01:00 UTC에 해당하는 HTTP 날짜를 담았습니다. 시계는 동기화되어 있습니다. RFC 6585에 따르면 서버는 429 응답을 보낼지 선택할 수 있고, 응답 본문에는 제한 사유를 설명하는 것이 권장되며 Retry-After를 포함할지는 선택 사항입니다. 캐시는 429 응답을 저장할 수 없습니다. RFC 9110에서는 HTTP 날짜 또는 응답 수신 시점부터 세는 0 이상의 초 단위를 허용합니다. 대문자 BCP 14 키워드의 의미를 먼저 밝히고, 각 경우 클라이언트에 제시되는 재시도 시각과 두 시각 모두 보장하지 않는 것을 설명하세요. 근거가 없는 클라이언트 의무는 추가하지 마세요.
+> 두 HTTP 429 응답은 09:00:00 UTC에 전송되어 09:00:05 UTC에 도착했다. 첫 응답은 Retry-After: 45를 담았고 둘째 응답은 그날 09:01:00 UTC에 해당하는 HTTP 날짜를 담았다. 시계는 동기화되어 있다. RFC 6585는 사용자가 일정 시간에 요청을 너무 많이 보내면 서버가 429를 보낼 수 있고 응답 내용에 사유를 설명하는 것이 권장되며 Retry-After를 포함할 수 있다고 한다. 캐시가 429 응답을 저장하는 것은 금지한다. RFC 9110에서 Retry-After 값은 HTTP 날짜이거나 수신 시점부터 세는 0 이상의 초 단위 값이다. 서버·캐시·클라이언트에 이 두 응답은 각각 무엇을 뜻하는가? 각 경우 재시도를 언제 하는 게 좋고 이후에도 어떤 일이 생길 수 있는가?
 
-### 스킬 미적용 답안
+**출처** · [IETF RFC 6585 §4, 429 Too Many Requests](https://www.rfc-editor.org/rfc/rfc6585.html#section-4) · [IETF RFC 9110 §10.2.3, Retry-After](https://www.rfc-editor.org/rfc/rfc9110.html#section-10.2.3)
 
-> ## 내부 API 명세: 429 요청 제한 응답
+### Light
+
+> ## 적용 범위
 >
-> 이 명세에서 대문자 **MUST**, **SHOULD**, **MAY**는 BCP 14에서 정의한 규범 키워드입니다. 대문자로 쓰인 경우에만 그 의미를 갖습니다.
+> 두 HTTP 429 응답은 서버가 사용자의 요청을 너무 많이 받았음을 나타낸다. RFC 6585에 따르면 서버는 이런 경우 429를 보낼 수 있고, 응답 내용에 사유를 설명하는 것이 권장되며, `Retry-After`를 포함할 수 있다. 캐시는 429 응답을 저장해서는 안 된다.
 >
-> 서버는 요청을 제한할 때 429 응답을 **MAY** 보낼 수 있습니다. 응답 본문은 제한 사유를 설명하는 것이 **SHOULD**이며, `Retry-After`를 포함하는 것은 **MAY**입니다. 캐시는 429 응답을 저장할 수 없습니다.
+> RFC 9110에서 `Retry-After` 값은 HTTP 날짜이거나, 응답을 받은 시점부터 세는 0 이상의 초 단위 값이다.
 >
-> 두 응답 모두 서버가 09:00:00 UTC에 보냈고 클라이언트가 09:00:05 UTC에 받았습니다. 시계는 동기화되어 있습니다. HTTP 날짜 형식은 재시도 시각을 나타내고, 초 단위 형식은 응답 수신 시점부터 세는 0 이상의 대기 시간을 나타냅니다.
+> ## 첫 번째 응답: `Retry-After: 45`
 >
-> | `Retry-After` 값 | 클라이언트에 제시되는 재시도 시각 |
+> - **서버:** 45초를 재시도 대기 시간으로 지정했다.
+> - **캐시:** 429 응답을 저장하지 않는다.
+> - **클라이언트:** 응답을 받은 시점인 09:00:05 UTC부터 45초 뒤인 **09:00:50 UTC 이후**에 재시도하는 것이 좋다.
+>
+> ## 두 번째 응답: HTTP 날짜
+>
+> - **서버:** 09:01:00 UTC를 재시도 시각으로 지정했다.
+> - **캐시:** 429 응답을 저장하지 않는다.
+> - **클라이언트:** 지정 시각인 **09:01:00 UTC 이후**에 재시도하는 것이 좋다.
+>
+> 두 응답은 모두 09:00:00 UTC에 전송되어 09:00:05 UTC에 도착했다. 첫 번째 값은 도착 시점부터 45초를 세므로 09:00:50 UTC가 되고, 두 번째 값은 지정된 절대 시각인 09:01:00 UTC를 가리킨다. 두 값이 뜻하는 재시도 시점은 다르다.
+>
+> ## 재시도 이후
+>
+> 재시도 시각이 지났더라도 요청이 성공한다고 보장되지는 않는다. 사용자의 요청이 여전히 너무 잦으면 서버는 다시 429를 보낼 수 있다. 주어진 정보만으로는 그때 서버가 어떤 응답 값이나 추가 동작을 선택할지 알 수 없다.
+
+### Standard
+
+> # HTTP 429와 Retry-After의 해석
+>
+> ## 범위
+>
+> 이 설명은 RFC 6585와 RFC 9110에 따른 두 HTTP 429 응답의 의미를 다룬다. 서버는 응답을 09:00:00 UTC에 전송했고, 클라이언트는 09:00:05 UTC에 받았다. 시계는 동기화되어 있다. 첫 응답의 `Retry-After` 값은 `45`이고, 둘째 응답의 값은 그날 09:01:00 UTC를 나타내는 HTTP 날짜다.
+>
+> ## 동작
+>
+> | 주체 | 동작 |
 > |---|---|
-> | `45` | 수신 시각 09:00:05 UTC부터 45초 뒤인 **09:00:50 UTC** |
-> | 해당 날짜의 09:01:00 UTC를 나타내는 HTTP 날짜 | **09:01:00 UTC** |
+> | 서버 | 사용자가 일정 시간에 요청을 너무 많이 보내면 429 응답을 보낼 수 있다. 응답 내용으로 사유를 설명하는 것이 권장된다. `Retry-After`를 포함할 수 있다. |
+> | 캐시 | 429 응답을 저장하는 것은 금지된다. |
+> | 클라이언트 | 이 두 응답의 `Retry-After` 값이 가리키는 시각까지 기다린 뒤 재시도하는 것이 좋다. |
 >
-> 두 시각 모두 해당 시각에 재시도가 성공한다거나, 서버가 그때까지 제한을 해제한다는 것을 보장하지 않습니다.
+> ## 두 응답의 의미
+>
+> RFC 9110에서 `Retry-After`는 HTTP 날짜 또는 응답 수신 시점부터 세는 0 이상의 초 단위 값이다.
+>
+> - **`Retry-After: 45`**: 클라이언트가 응답을 받은 09:00:05 UTC부터 45초 뒤인 **09:00:50 UTC**를 뜻한다. 이 시각 이후 재시도하는 것이 좋다.
+> - **HTTP 날짜가 09:01:00 UTC인 경우**: 지정된 절대 시각은 **09:01:00 UTC**다. 이 시각 이후 재시도하는 것이 좋다. 응답 수신 시점부터 55초를 더해 계산하는 값은 아니다.
+>
+> 두 경우 모두 `Retry-After`는 재시도 시점을 안내한다. 재시도가 성공한다고 보장하지는 않는다. 서버가 그때도 요청을 너무 많다고 판단하면 이후에도 429 응답을 보낼 수 있다. 429 응답은 캐시에 저장되지 않는다.
+>
+> ## 보안 및 IANA 고려사항
+>
+> 이 동작은 보안 고려사항이나 IANA 조치를 추가로 정의하지 않는다.
+>
+> ## 참고문헌
+>
+> - **RFC 6585**는 429 사용, 응답 사유 설명 권고, `Retry-After` 포함 가능성, 429 응답 캐시 금지를 규정한다.
+> - **RFC 9110**은 `Retry-After` 값의 두 형식과 의미를 정의한다.
 
-### 스킬 적용 답안 · standard
+### Strict
 
-> # HTTP 429의 `Retry-After` 해석
+> ## 적용 범위
 >
-> **상태:** 내부 API 명세 초안
+> 이 설명은 주어진 두 HTTP 429 응답과 RFC 6585 및 RFC 9110의 규칙에 한정한다. 서버는 응답을 보내고, 클라이언트는 응답을 받으며, 캐시는 응답 저장 여부를 결정한다. 시계는 동기화되어 있다.
 >
-> ## 범위와 용어
+> ## 서버
 >
-> 이 명세는 두 가상 HTTP 429 응답의 `Retry-After` 값을 클라이언트가 제시하는 재시도 시각으로 해석하는 방법을 다룬다. 모든 시각은 UTC이며, 관련 시계는 동기화되어 있다.
+> - 서버는 사용자가 일정 시간 동안 요청을 너무 많이 보낼 때 429 응답을 보낼 수 있다.
+> - 서버가 429 응답을 보낼 때 응답 내용에 사유를 설명하는 것이 권장된다.
+> - 서버는 429 응답에 `Retry-After`를 포함할 수 있다.
 >
-> 이 문서에서 **MUST**, **SHOULD**, **MAY**는 RFC 2119와 RFC 8174가 정한 의미로 사용한다.
+> 첫 응답은 `Retry-After: 45`를 담았다. RFC 9110에 따라 이 값은 수신 시점부터 세는 45초를 뜻한다. 응답은 09:00:05 UTC에 도착했으므로, 클라이언트가 재시도를 고려할 시점은 09:00:50 UTC이다.
 >
-> ## 요구사항
+> 둘째 응답의 `Retry-After` 값은 그날 09:01:00 UTC를 나타내는 HTTP 날짜다. 이 날짜는 절대 시각이므로 수신 시점에 더해 계산하지 않는다. 클라이언트가 재시도를 고려할 시점은 09:01:00 UTC이다.
 >
-> | 주체 | BCP 14 | 동작과 조건 |
-> | --- | --- | --- |
-> | 서버 | MAY | 요청 제한을 적용할 때 429 응답을 보낼지 선택할 수 있다. |
-> | 서버 | SHOULD | 429 응답 본문에 제한 사유를 설명하는 내용을 포함하는 것이 권장된다. |
-> | 서버 | MAY | 429 응답에 `Retry-After` 필드를 포함할지 선택할 수 있다. |
-> | 캐시 | MUST NOT | 429 응답을 저장해서는 안 된다. |
+> ## 클라이언트
 >
-> ## 예시
+> - 클라이언트는 첫 응답을 받은 뒤 재시도하려면 09:00:50 UTC까지 기다리는 것이 좋다.
+> - 클라이언트는 둘째 응답을 받은 뒤 재시도하려면 09:01:00 UTC까지 기다리는 것이 좋다.
 >
-> 두 응답 모두 서버가 09:00:00 UTC에 보냈고 클라이언트가 09:00:05 UTC에 받았다.
+> 각 값은 재시도를 고려할 시점을 가리킨다. 그 시점에 재시도가 성공한다는 보장은 주어진 규칙에 없다. 서버가 계속 요청을 제한하면 재시도에도 429를 받을 수 있다.
 >
-> 1. 첫 응답의 `Retry-After: 45`는 응답 수신 시점부터 45초를 나타낸다. 따라서 클라이언트에 제시되는 재시도 시각은 **09:00:50 UTC**이다.
-> 2. 둘째 응답의 `Retry-After`는 그날 09:01:00 UTC에 해당하는 HTTP 날짜다. 따라서 제시되는 재시도 시각은 **09:01:00 UTC**이다.
+> ## 캐시
 >
-> 두 시각 모두 해당 시각에 재시도가 성공한다거나, 서버가 그때 요청을 허용한다거나, 그때 재시도해야 한다는 것을 보장하지 않는다. 이 명세는 클라이언트에 별도의 재시도 의무를 부과하지 않는다.
+> - 캐시는 429 응답을 저장해서는 안 된다.
 >
-> ## 참고
+> 두 429 응답은 모두 저장 금지 대상이다. 따라서 이 응답들을 저장된 응답으로 제공하는 동작은 허용되지 않는다.
 >
-> - **규범 참고문헌:** RFC 6585, *Additional HTTP Status Codes* — 429 응답의 선택적 사용, 본문 설명 권고, `Retry-After` 포함 여부 및 캐시 저장 금지를 규정한다.
-> - **규범 참고문헌:** RFC 9110, *HTTP Semantics* — `Retry-After`의 HTTP 날짜 형식과 응답 수신 시점부터 세는 0 이상의 초 단위를 정의한다.
-> - **정보 참고문헌:** RFC 7322, *RFC Style Guide* — RFC 문서 작성 스타일을 안내한다.
+> ## 보안 고려사항
 >
-> 이 내부 명세는 IANA 등록을 요청하지 않는다.
-
-### 두 답안의 차이
-
-| 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
-| --- | --- | --- |
-| BCP 14 키워드의 표기 규칙을 밝히고, 429 전송과 Retry-After 포함은 선택 사항, 사유 설명은 SHOULD, 캐시 저장은 MUST NOT이라는 강도를 보존한다. | 충족 | 충족 |
-| 수신 후 45초인 첫 경우를 09:00:50 UTC, 날짜로 정한 둘째 경우를 09:01:00 UTC로 계산한다. | 충족 | 충족 |
-| 두 시각은 재시도 권고이며 성공을 보장하지 않는다고 밝힌다. 클라이언트에 새로운 MUST나 SHOULD를 부과하지 않는다. | 충족 | 충족 |
-
-**검토 결과.** 429 응답을 택할 권한, 본문 설명 권고, 캐시 저장 금지를 각각 해당 주체에 연결합니다. 09:00:50과 09:01:00은 재시도 권고 시각이며 성공을 보장하지 않습니다.
-
-익명 채점에서 개정 답안은 X였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/ietf-rfc/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/ietf-rfc.json).
-
-<details>
-<summary>실행 기록</summary>
-
-미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `a03848dad0d2` / `c460af81b495` / `7cc5535eacc4`.
-
-</details>
+> 주어진 규칙은 429 응답의 저장을 금지한다. 이 사례에서 추가적인 보안 결과나 위험은 제시되어 있지 않다.
+>
+> ## IANA 고려사항
+>
+> 이 설명은 새 프로토콜 값이나 레지스트리 변경을 제안하지 않으므로 IANA 조치는 해당되지 않는다.
+>
+> ## 참고문헌
+>
+> - RFC 6585는 429 응답의 사용, 응답 내용에 사유를 설명하는 권고, `Retry-After` 포함 가능성 및 429 응답의 캐시 저장 금지를 규정한다.
+> - RFC 9110은 `Retry-After` 값이 HTTP 날짜 또는 수신 시점부터 세는 0 이상의 초 단위 값임을 규정한다.
 
 ## imrad
 
-**LIGO의 오경보율을 10년에 적용하면 무엇을 말할 수 있을까?**
-
-[English](EXAMPLES.md#imrad)
-
-2026-11-08 · `imrad` 0.1.3 · 한국어 · `gpt-6-luna`
-
-### 사례와 출처
-
-- [LIGO Scientific Collaboration and Virgo Collaboration, Observation of Gravitational Waves from a Binary Black Hole Merger (2016)](https://dcc.ligo.org/public/0122/P150914/014/LIGO-P150914_Detection_of_GW150914.pdf)
-
-LIGO 논문의 초록과 제V.B절은 신호 관측, 파형 비교, 잡음 오경보율의 상한을 제시합니다. 같은 비율을 가정한 10년의 기대 건수는 이 문제에서 유도할 값입니다.
+**LIGO의 오경보율을 10년에 적용하면 무엇을 말할 수 있을까?** · [English](EXAMPLES.md#imrad)
 
 ### 질문
 
-> 박물관에서 읽을 수 있도록 LIGO의 GW150914 관측을 한국어 연구 초록으로 다섯 문장 이내에 설명해 주세요. 2015년 9월 14일 리빙스턴과 핸퍼드 검출기는 주파수가 35 Hz에서 250 Hz까지 상승한 신호를 기록했습니다. 차원이 없는 변형률의 최댓값은 1.0 × 10⁻²¹이었습니다. 연구진은 이 신호가 두 블랙홀의 병합을 예측한 파형과 일치함을 확인했습니다. 이 탐색에서 잡음이 관측 신호만큼 또는 그보다 유의한 후보로 검출될 비율은 203,000년에 한 건 미만으로 추정됐습니다. 편집자는 “10년 동안 오경보가 단 한 건도 없을 테니 이 신호가 잡음일 확률은 0이다”라고 주장합니다. 같은 비율이 유지되는 가상의 10년 동안 그런 잡음 후보 수의 기댓값에 어떤 상한을 둘 수 있는지 계산해 주세요. 검출기의 측정, 연구진의 분석, 그에 따른 해석을 구분해서 편집자의 주장을 평가해 주세요.
+> 2015년 9월 14일 LIGO의 리빙스턴과 핸퍼드 검출기는 GW150914를 기록했다. 신호의 주파수는 35 Hz에서 250 Hz로 상승했고 무차원 변형률의 최댓값은 1.0 × 10⁻²¹이었다. 연구진은 이 신호가 두 블랙홀의 병합을 예측한 파형과 일치하며, 이 탐색에서 관측 신호만큼 또는 그보다 유의한 잡음 후보의 발생률은 203,000년에 1건 미만이라고 추정했다. 이를 보고 누군가 10년 동안 그런 오경보는 절대로 없으며 GW150914가 잡음이었을 확률은 0이라고 주장한다. 같은 발생률이 유지된다고 할 때 관측값과 10년치 계산으로 어디까지 말할 수 있을까?
 
-### 스킬 미적용 답안
+**출처** · [LIGO Scientific Collaboration and Virgo Collaboration, Observation of Gravitational Waves from a Binary Black Hole Merger (2016)](https://dcc.ligo.org/public/0122/P150914/014/LIGO-P150914_Detection_of_GW150914.pdf)
 
-> **관측과 분석.** 2015년 9월 14일 리빙스턴과 핸퍼드의 LIGO 검출기는 35 Hz에서 250 Hz까지 주파수가 상승하는 중력파 신호를 기록했으며, 차원이 없는 변형률의 최댓값은 $1.0 \times 10^{-21}$이었다. 연구진은 관측 파형이 두 블랙홀의 병합을 예측한 파형과 일치한다고 분석했다. 이 탐색에서 관측 신호만큼 또는 그보다 유의한 잡음 후보가 검출될 비율은 203,000년에 한 건 미만으로 추정됐다. **10년간의 기대 건수.** 같은 비율이 유지된다고 가정하면, 10년 동안 그런 잡음 후보 수의 기댓값은 $10/203{,}000 \approx 4.93 \times 10^{-5}$건 미만이다. **해석.** 이는 기대 건수가 매우 작다는 뜻이지, 오경보가 반드시 한 건도 없거나 신호가 잡음일 확률이 0이라는 뜻은 아니다.
+### Light
 
-<details>
-<summary>원래 수식 표기로 보기</summary>
-
-````text
-**관측과 분석.** 2015년 9월 14일 리빙스턴과 핸퍼드의 LIGO 검출기는 35 Hz에서 250 Hz까지 주파수가 상승하는 중력파 신호를 기록했으며, 차원이 없는 변형률의 최댓값은 \(1.0 \times 10^{-21}\)이었다. 연구진은 관측 파형이 두 블랙홀의 병합을 예측한 파형과 일치한다고 분석했다. 이 탐색에서 관측 신호만큼 또는 그보다 유의한 잡음 후보가 검출될 비율은 203,000년에 한 건 미만으로 추정됐다. **10년간의 기대 건수.** 같은 비율이 유지된다고 가정하면, 10년 동안 그런 잡음 후보 수의 기댓값은 \(10/203{,}000 \approx 4.93 \times 10^{-5}\)건 미만이다. **해석.** 이는 기대 건수가 매우 작다는 뜻이지, 오경보가 반드시 한 건도 없거나 신호가 잡음일 확률이 0이라는 뜻은 아니다.
-````
-
-</details>
-
-### 스킬 적용 답안 · standard
-
-> **방법·수준: IMRaD, 표준**
+> 이 관측과 10년치 계산은 오경보에 대해 어디까지 말해 줄까?
 >
-> 2015년 9월 14일 리빙스턴과 핸퍼드의 LIGO 검출기는 주파수가 35 Hz에서 250 Hz로 상승하고 최댓값이 1.0 × 10⁻²¹인 무차원 변형률 신호를 기록했다. 연구진은 분석 결과 이 신호가 두 블랙홀 병합을 예측한 파형과 일치한다고 판단했다. 이 탐색에서 관측 신호만큼 또는 그보다 유의한 잡음 후보의 추정 비율은 203,000년에 한 건 미만이었다. 같은 비율이 10년간 유지된다고 가정하면 그런 잡음 후보 수의 기댓값은 10/203,000, 즉 약 4.93 × 10⁻⁵건 미만이다. 이는 기대되는 잡음 후보 수의 상한이지, 10년 동안 오경보가 없음을 보장하거나 이 신호가 잡음일 확률을 0으로 만드는 값은 아니므로 편집자의 주장은 근거를 넘어선다.
+> **관측값.** 2015년 9월 14일 LIGO의 리빙스턴과 핸퍼드 검출기는 GW150914를 기록했다. 신호 주파수는 35 Hz에서 250 Hz로 상승했고, 무차원 변형률의 최댓값은 $1.0 \times 10^{-21}$이었다. 연구진은 신호가 두 블랙홀 병합을 예측한 파형과 일치한다고 보고했다. 이 탐색에서 관측 신호만큼 또는 그보다 유의한 잡음 후보의 발생률은 203,000년에 1건 미만으로 추정됐다.
+>
+> **10년치 계산과 해석.** 이 발생률이 유지된다고 가정하면 10년 동안 해당 기준을 넘는 잡음 후보의 기대 건수는 $10/203{,}000$ 미만, 즉 약 $4.93 \times 10^{-5}$건 미만이다. 이는 기대 건수의 상한이지, 10년 동안 오경보가 절대로 없다는 보장은 아니다. 0건과 1건 이상 모두 이 상한과 양립한다. 또한 발생률만으로는 GW150914가 잡음이었을 확률을 계산할 수 없다. 따라서 그 확률이 0이라고 결론 내릴 수 없다.
 
-### 두 답안의 차이
+### Standard
 
-| 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
-| --- | --- | --- |
-| 두 검출기, 관측 날짜, 35~250 Hz와 변형률 1.0 × 10⁻²¹을 보존하고, 파형 비교의 주체를 검출기가 아닌 연구진의 분석으로 구분한다. | 충족 | 충족 |
-| 가정한 10년 동안 후보 수의 기댓값이 10/203,000(약 4.93 × 10⁻⁵)보다 작다고 계산하며, 이를 개별 사건의 확률로 제시하지 않는다. | 충족 | 충족 |
-| 잡음 후보가 0건일 것이 보장된다거나 이 사건이 잡음일 확률이 0이라는 결론을 둘 다 배척한다. 관측 신호와 그 신호가 뒷받침하는 블랙홀 병합 해석을 구분한다. | 충족 | 충족 |
+> ## 서론
+>
+> GW150914는 두 블랙홀 병합의 파형과 일치하는 신호로 보고되었다. 이 신호의 관측 특징과 추정된 잡음 후보 발생률은, 10년간 오경보가 절대로 없다고 하거나 GW150914가 잡음일 확률이 0이라고 결론 내리기에 충분한가?
+>
+> ## 방법
+>
+> 2015년 9월 14일 LIGO의 리빙스턴과 핸퍼드 검출기가 기록한 신호를 분석했다. 주어진 정보에 따르면 연구진은 신호의 주파수 변화와 변형률을 측정하고, 파형이 두 블랙홀 병합 예측과 일치하는지 평가했다. 또한 이 탐색에서 관측 신호만큼 또는 그보다 유의한 잡음 후보의 발생률을 추정했다. 발생률이 같은 수준으로 유지된다고 가정해 10년 동안의 기대 후보 수를 계산한다.
+>
+> ## 결과
+>
+> 신호의 주파수는 35 Hz에서 250 Hz로 상승했고, 무차원 변형률의 최댓값은 1.0 × 10⁻²¹이었다. 연구진은 파형이 두 블랙홀 병합 예측과 일치한다고 보고했다. 관측 신호만큼 또는 그보다 유의한 잡음 후보의 추정 발생률은 203,000년에 1건 미만이었다.
+>
+> 이 상한을 10년에 적용하면 기대 잡음 후보 수는 10/203,000 미만, 즉 약 0.0000493건 미만이다. 이는 기대값의 상한이지, 10년 동안 실제로 발생할 후보 수의 확률 자체는 아니다.
+>
+> ## 논의
+>
+> 이 발생률 상한은 10년 동안 오경보가 절대로 없음을 보장하지 않는다. 0건과 1건 이상의 잡음 후보가 모두 이 상한과 양립할 수 있다. 또한 발생률만으로는 GW150914가 잡음이었을 확률을 계산할 수 없다. 그 확률을 주장하려면 신호와 잡음 가설을 비교하는 별도의 근거와 확률 모형이 필요하다. 따라서 주어진 자료는 GW150914가 보고된 병합 파형과 일치하고, 비슷하거나 더 유의한 잡음 후보의 추정 발생률이 매우 낮다는 점을 뒷받침하지만, 오경보가 불가능하다거나 해당 신호가 잡음일 확률이 0이라는 주장을 뒷받침하지는 않는다.
 
-**블라인드 검토** (X = 미적용, Y = 스킬 적용). 두 답 모두 기댓값이 10/203,000 미만이라는 점과 ‘오경보가 절대로 없다’는 주장 사이의 차이를 정확히 설명합니다. X 쪽은 관측·분석과 해석을 문장 안의 표지로 나눕니다. Y 쪽은 초록 앞에 방법과 수준을 밝혀, 답만 보아도 적용 조건을 짐작할 수 있습니다.
+### Strict
 
-<details>
-<summary>실행 기록</summary>
-
-각 답안은 Codex CLI 0.167.0, low 추론 설정의 별도 임시 읽기 전용 세션에서 생성했습니다. 같은 문항의 다른 답안이나 다른 언어의 답안은 입력하지 않았습니다.
-
-SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `85287f2bd34d` / `e95fcfb40e21` / `e86f8f801cba`.
-
-</details>
+> ## 서론
+>
+> 2015년 9월 14일 LIGO의 리빙스턴과 핸퍼드 검출기는 중력파 신호 GW150914를 기록했다. 이 신호의 관측 특성과 잡음 후보 발생률을 바탕으로, 10년 동안의 오경보 가능성과 해당 신호가 잡음일 확률에 대해 어디까지 결론 내릴 수 있는지 살펴본다.
+>
+> ## 방법
+>
+> 제공된 관측 기록에서 신호의 주파수 범위와 무차원 변형률 최댓값을 정리했다. 연구진이 제시한 잡음 후보 발생률 상한을 연간 기대 후보 수로 환산하고, 같은 발생률이 10년 동안 유지된다고 가정해 기대 후보 수의 상한을 계산했다. 제공된 내용에는 발생률 추정의 불확실성 산출 방식이나 10년 동안 후보 발생을 모형화한 확률분포가 명시되어 있지 않다.
+>
+> ## 결과
+>
+> 신호의 주파수는 35 Hz에서 250 Hz로 상승했고, 무차원 변형률의 최댓값은 1.0 × 10⁻²¹이었다. 연구진은 신호가 두 블랙홀 병합을 예측한 파형과 일치한다고 보고했다. 이 탐색에서 관측 신호만큼 또는 그보다 유의한 잡음 후보의 발생률은 연 1/203,000건 미만으로 추정됐다. 같은 발생률이 유지된다고 가정하면 10년간 기대 후보 수의 상한은 $10/203{,}000$, 즉 약 $4.93 \times 10^{-5}$건 미만이다.
+>
+> ## 고찰
+>
+> 이 상한은 10년 동안 오경보가 절대로 발생하지 않는다는 뜻이 아니다. 10년간 기대 후보 수가 위 상한보다 작다는 뜻이며, 실제로 후보가 0건인 경우와 양수인 경우 모두 이 상한과 양립할 수 있다. 연간 발생률 상한만으로는 10년 동안 오경보가 한 번 이상 발생할 확률을 정할 수 없다. 그 확률을 계산하려면 후보 발생의 확률모형과 추가 가정이 필요하다.
+>
+> 또한 잡음 후보 발생률은 해당 신호가 잡음이었을 확률과 같은 양이 아니다. 파형 일치 관측과 후보 발생률 상한은 신호 해석의 근거가 되지만, 제공된 정보만으로 GW150914가 잡음이었을 확률이 0이라고 결론 내릴 수는 없다. 특히 발생률 추정의 불확실성 산출 방식과 신호·잡음 가설을 비교하는 분석이 제시되지 않아, 그 확률을 정량화할 수 없다.
 
 ## korean-plain-language
 
-**서울 기후동행카드 환급 안내에서 시점과 신청 가능성을 어떻게 살릴까요?**
-
-[English](EXAMPLES.md#korean-plain-language)
-
-2026-11-09 · `korean-plain-language` 0.1.9 · 한국어 · `gpt-6-luna`
-
-### 사례와 출처
-
-- [서울특별시 내 손안에 서울, ‘월 5만원대’ 청년 맞춤형 기후동행카드 나온다 (2024-02-21)](https://mediahub.seoul.go.kr/archives/2010350)
-
-서울시의 2024년 시범사업 안내에 따른 당시 환급 조건을 다룹니다. 지우·민서의 이용 내역은 조건을 적용해 보기 위해 만든 사례입니다.
-
-**언어 적용 범위.** 한국어 원문에서 시점과 신청 가능성, 해요체 표현을 직접 점검합니다.
+**2024년 서울 기후동행카드로 누가 얼마를 환급 신청할 수 있었을까?** · [English](EXAMPLES.md#korean-plain-language)
 
 ### 질문
 
-> 서울의 2024년 기후동행카드 시범사업을 다룬 전시 문구를 편집합니다. 초안은 ‘지우와 민서는 지금 환급금을 받아요’입니다. 당시 청년 할인 대상자는 실물카드 등록 후 이용분이나 별도 등록이 필요 없는 모바일카드 이용분 중 환불 없이 30일 만기를 채운 달마다 7,000원을 신청할 수 있었고, 두 카드 모두 환급을 별도로 신청해야 했어요. 연령 등 나머지 조건은 충족했다고 가정합니다. 지우는 실물카드 첫 30일권을 미등록 상태로 끝까지 쓴 뒤 등록하고, 둘째 권은 만기까지, 셋째 권은 18일째 환불했어요. 민서는 모바일카드 두 장을 각각 30일 만기까지 썼어요. 편집자에게 한국어로 짧은 메모를 써 주세요. 두 사람이 얼마를 신청할 수 있었는지와 그 이유를 밝히고, 초안이 잘못 전달하는 시점과 자동 지급 여부를 바로잡을 해요체 표현을 제시해 주세요.
+> 서울의 2024년 청년 기후동행카드 시범사업을 다룬 전시에 “지우와 민서는 지금 환급금을 받아요”라고 적혀 있어요. 당시 중도 환불 없이 30일권 한 회차를 사용하면 7천 원을 환급 신청할 수 있었어요. 실물 카드는 등록 후 사용한 회차만 인정됐고 모바일 카드는 별도 등록이 필요 없었어요. 두 카드 모두 환급 신청은 해야 했어요. 지우는 실물 카드 등록 전 한 회차, 등록 후 한 회차를 끝까지 사용했고, 세 번째 회차는 18일째에 환불했어요. 민서는 모바일 카드 두 회차를 중도 환불 없이 사용했어요. 다른 조건은 모두 충족했어요. 이 전시 문구를 어떻게 고치면 될까요? 두 사람이 각각 얼마를 신청할 수 있었나요?
 
-### 스킬 미적용 답안
+**출처** · [서울특별시 내 손안에 서울, ‘월 5만원대’ 청년 맞춤형 기후동행카드 나온다 (2024-02-21)](https://mediahub.seoul.go.kr/archives/2010350)
 
-> 편집 메모: 지우는 실물카드를 등록하기 전에 쓴 첫 이용분은 환급 대상에서 빠지고, 등록 후 만기를 채운 둘째 이용분만 신청할 수 있어요. 셋째 이용분은 18일째 환불했으므로 대상이 아니에요. 따라서 7,000원을 신청할 수 있어요. 민서는 모바일카드 두 장 모두 30일 만기를 채웠으므로 합계 14,000원을 신청할 수 있어요. 두 사람 모두 환급금이 자동 지급되는 건 아니고 별도로 신청해야 해요.
+### Light
+
+> ‘지금 환급금을 받아요’라고 하면 현재도 환급을 받는다는 뜻으로 읽힐 수 있어요. 당시 시범사업에서 각자 신청할 수 있었던 금액은 다음과 같습니다.
 >
-> 표현 제안: **“지우와 민서는 환급금을 신청할 수 있어요.”**
-
-### 스킬 적용 답안 · standard
-
-> 초안은 ‘지금’ 받을 수 있고 환급금이 자동 지급되는 것처럼 들려요. 당시에는 환급 대상 이용분이 있어도 별도로 신청해야 했어요.
+> - **지우:** 실물 카드는 등록 후 사용한 회차만 인정됐어요. 등록 전 회차와 18일째 환불한 회차는 제외되고, 등록 후 끝까지 사용한 1회차만 인정돼요. 1회차 × 7천 원 = **7천 원**을 신청할 수 있었어요.
+> - **민서:** 모바일 카드는 별도 등록이 필요 없고, 중도 환불 없이 사용한 2회차가 인정돼요. 2회차 × 7천 원 = **1만 4천 원**을 신청할 수 있었어요.
 >
-> - **지우:** 7,000원을 신청할 수 있었어요. 첫 실물카드 이용분은 이용 전에 등록하지 않아 대상이 아니었고, 둘째 권은 등록 후 만기까지 채웠어요. 셋째 권은 30일 전에 환불해 대상이 아니었어요.
-> - **민서:** 14,000원을 신청할 수 있었어요. 모바일카드는 별도 등록이 필요 없었고, 두 장 모두 환불 없이 30일 만기를 채웠어요.
+> 두 사람 모두 환급 신청을 해야 했어요. 전시 문구는 이렇게 고칠 수 있어요.
 >
-> 해요체 표현은 이렇게 고칠 수 있어요.
+> > 지우는 7천 원, 민서는 1만 4천 원을 환급 신청할 수 있었어요.
+
+### Standard
+
+> **계산**
 >
-> > 당시 지우는 7,000원, 민서는 14,000원을 신청할 수 있었어요. 두 사람 모두 환급금을 별도로 신청해야 했어요.
+> - 지우: 등록 후 끝까지 사용한 회차 1회만 인정돼요. 등록 전 사용한 회차와 18일째에 환불한 회차는 제외돼요. 1회 × 7천 원 = **7천 원**
+> - 민서: 중도 환불 없이 사용한 두 회차가 모두 인정돼요. 2회 × 7천 원 = **1만 4천 원**
+>
+> **전시 문구**
+>
+> > 당시 지우는 7천 원, 민서는 1만 4천 원을 환급 신청할 수 있었어요. 두 사람 모두 환급을 받으려면 신청해야 했어요.
 
-### 두 답안의 차이
+### Strict
 
-| 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
-| --- | --- | --- |
-| 지우는 등록 후 만기를 채운 둘째 권만 해당해 7,000원이며, 첫 권과 셋째 권은 각각 미등록과 중도 환불로 제외됨을 설명한다. | 충족 | 충족 |
-| 민서는 만기 두 번으로 14,000원이고, 모바일카드 등록 면제와 두 종류 모두 별도의 환급 신청이 필요했던 점을 구분한다. | 미충족 | 충족 |
-| 2024년 당시 신청할 수 있었다는 뜻을 전달하는 해요체 표현을 제시하고, 현재 신청 가능이나 자동 지급을 암시하는 원문의 문제를 고친다. | 미충족 | 충족 |
-
-**검토 결과.** 지우는 둘째 이용분 7,000원, 민서는 두 번의 만기 이용분 14,000원을 신청할 수 있었습니다. 모바일카드의 등록 면제와 두 사람 모두에게 필요했던 환급 신청을 구분합니다.
-
-익명 채점에서 개정 답안은 X였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/korean-plain-language/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/korean-plain-language.json).
-
-<details>
-<summary>실행 기록</summary>
-
-미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `22797d4c7797` / `bb769f285186` / `26ce88ff6387`.
-
-</details>
+> 전시 문구는 지금도 환급 신청을 할 수 있다는 뜻으로 읽힐 수 있어요. 당시에는 두 사람 모두 환급 신청을 해야 했고, 신청할 수 있었던 금액은 다음과 같아요.
+>
+> - **지우:** 실물 카드는 등록 후 사용한 회차만 인정돼요. 등록 전 회차는 제외하고, 등록 후 끝까지 사용한 회차 1회만 인정돼요. 세 번째 회차는 18일째에 환불했으므로 제외돼요. **1회 × 7천 원 = 7천 원**을 신청할 수 있었어요.
+> - **민서:** 모바일 카드는 별도 등록이 필요 없고, 중도 환불 없이 사용한 두 회차가 모두 인정돼요. **2회 × 7천 원 = 1만 4천 원**을 신청할 수 있었어요.
+>
+> > 2024년 시범사업 당시 지우는 7천 원, 민서는 1만 4천 원을 환급 신청할 수 있었어요. 두 사람 모두 환급 신청을 해야 했어요.
 
 ## microsoft-writing-style
 
-**Windows 클립보드에서 필요한 항목만 두 개 남기기**
-
-[English](EXAMPLES.md#microsoft-writing-style)
-
-2026-11-09 · `microsoft-writing-style` 0.1.11 · 한국어 · `gpt-6-luna`
-
-### 사례와 출처
-
-- [Microsoft Support, Using the clipboard](https://support.microsoft.com/en-us/windows/apps/using-the-clipboard)
-
-Microsoft 문서는 Windows 11 장치의 클립보드 기록 열기, 고정 항목을 제외한 일괄 지우기, 항목별 삭제를 설명합니다. 클립보드의 내용은 가정입니다.
-
-**언어 적용 범위.** 이 스킬은 영어 기술 문서를 위한 프로필입니다. 한국어 예제는 작업 순서와 조건을 설명하는 구조를 적용하고 영어 UI의 실제 이름을 보존합니다. 한국어 문법의 검증이나 공식 한국어 UI 명칭을 뜻하지 않습니다.
+**Windows 클립보드에서 필요한 항목만 두 개 남기기** · [English](EXAMPLES.md#microsoft-writing-style)
 
 ### 질문
 
-> Windows 11에서 이 PC의 클립보드 기록에 두 항목만 남기려는 사람을 위해 짧은 한국어 도움말을 써 주세요. 사용자의 Windows 화면은 영어로 표시됩니다. 배송 주소와 더 이상 쓰지 않는 출입 코드가 고정되어 있고, 반품 참조 번호와 메모 두 개는 고정되지 않은 상태입니다. 배송 주소와 반품 참조 번호는 다시 입력할 필요 없이 남기고 나머지 세 항목을 지워야 합니다. Windows logo key + V로 클립보드 기록을 엽니다. 항목을 고정할 수 있고, Clear all은 고정되지 않은 항목을 삭제합니다. See more (...)에서 Delete를 선택하면 해당 항목을 지울 수 있습니다. Clear all을 사용하는 확실한 절차 하나를 제시하고, 어떤 작업을 먼저 해야 하는지와 완료 여부를 확인할 방법을 알려 주세요. 실제 영문 버튼 이름은 그대로 쓰세요. 대상은 이 PC뿐입니다.
+> Windows 11 클립보드 기록에 항목이 다섯 개 있어요. 배송 주소와 만료된 출입 코드는 고정되어 있고, 반품 참조 번호와 메모 초안 두 개는 고정되어 있지 않아요. 주소와 반품 참조 번호만 남기고 싶은데, 둘 다 다시 입력하고 싶지는 않아요. 화면 언어는 영어예요. Windows logo key + V로 Clipboard history를 열 수 있고, Pin은 항목을 Clear all의 삭제 대상에서 제외해요. Clear all은 고정되지 않은 항목을 지우고, See more (...) > Delete는 개별 항목 하나를 지워요. 이 PC에서 Clear all을 쓰고 원하는 두 항목만 남기려면 어떻게 하면 될까요?
 
-### 스킬 미적용 답안
+**출처** · [Microsoft Support, Using the clipboard](https://support.microsoft.com/en-us/windows/apps/using-the-clipboard)
 
-> Windows logo key + V를 눌러 클립보드 기록을 엽니다. 배송 주소와 반품 참조 번호가 **고정되어 있지 않다면** 각각의 See more (...)에서 **Pin**을 선택합니다. 두 항목이 고정된 것을 확인한 뒤 **Clear all**을 선택하세요. 고정되지 않은 항목만 삭제되므로 출입 코드와 메모 두 개가 지워집니다.
+### Light
+
+> | 항목 | 현재 상태 | 유지하거나 제거 | 지금 할 작업 |
+> |---|---|---|---|
+> | 배송 주소 | 고정됨 | 유지 | 그대로 둡니다. |
+> | 만료된 출입 코드 | 고정됨 | 제거 | 해당 항목에서 **See more (...) > Delete**를 선택합니다. |
+> | 반품 참조 번호 | 고정되지 않음 | 유지 | 해당 항목에서 **Pin**을 선택합니다. |
+> | 메모 초안 두 개 | 고정되지 않음 | 제거 | 그대로 둡니다. |
 >
-> 완료 여부는 기록을 다시 확인해 배송 주소와 반품 참조 번호만 남아 있는지 보면 됩니다. 고정된 출입 코드도 그대로 남아 있을 수 있으니, 남아 있다면 See more (...)에서 **Delete**를 선택해 지우세요.
-
-### 스킬 적용 답안 · standard
-
-> ### 클립보드 기록에 두 항목만 남기기
+> **Windows logo key + V**를 눌러 **Clipboard history**를 엽니다. 위 표의 작업을 마친 뒤 **Clear all**을 선택하세요.
 >
-> Windows logo key + V를 눌러 클립보드 기록을 여세요. 영문 화면에서 **Clear all**은 고정되지 않은 항목을 삭제하고, **See more (...) > Delete**는 선택한 항목을 삭제합니다. 배송 주소와 반품 참조 번호를 남기려면 먼저 두 항목을 고정해야 합니다.
+> 마지막으로 클립보드 기록에 배송 주소와 반품 참조 번호만 남았는지 확인합니다.
+
+### Standard
+
+> Windows 로고 키 + V를 눌러 **Clipboard history**를 엽니다.
 >
-> | 항목 | 현재 상태 | 지금 할 일 |
-> |---|---|---|
-> | 배송 주소 | 고정됨 | 그대로 둡니다. |
-> | 출입 코드 | 고정됨 | See more (...)를 연 다음 **Delete**를 선택합니다. |
-> | 반품 참조 번호 | 고정되지 않음 | 고정합니다. |
-> | 메모 두 개 | 고정되지 않음 | 그대로 둡니다. |
+> | 항목 | 현재 상태 | 목표 | 지금 할 일 |
+> |---|---|---|---|
+> | 배송 주소 | 고정됨 | 남기기 | 그대로 둡니다. |
+> | 만료된 출입 코드 | 고정됨 | 삭제 | **See more (...) > Delete**를 선택합니다. |
+> | 반품 참조 번호 | 고정되지 않음 | 남기기 | 항목에서 **Pin**을 선택합니다. |
+> | 메모 초안 1 | 고정되지 않음 | 삭제 | 그대로 둡니다. |
+> | 메모 초안 2 | 고정되지 않음 | 삭제 | 그대로 둡니다. |
 >
-> 그런 다음 **Clear all**을 선택하세요. 완료 후 클립보드 기록에 배송 주소와 반품 참조 번호만 남아 있는지 확인하세요.
+> 그런 다음 **Clear all**을 선택합니다. 마지막으로 Clipboard history를 확인해 배송 주소와 반품 참조 번호만 남았는지 확인합니다.
 
-### 두 답안의 차이
+### Strict
 
-| 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
-| --- | --- | --- |
-| Windows logo key + V로 기록을 열고 Clear all 전에 반품 참조 번호를 고정한다. 이미 고정된 배송 주소는 유지한다. | 충족 | 충족 |
-| See more (...)의 Delete로 고정된 출입 코드를 지우거나, 명시적으로 고정을 해제한 뒤 Clear all로 없앤다. Clear all만으로 고정된 코드가 사라진다고 하지 않는다. | 미충족 | 충족 |
-| 최종적으로 주소와 반품 참조 번호만 남고 메모 두 개가 삭제되는 사용자용 절차를 제공한다. 다른 기기 상태에 관한 근거 없는 주장은 하지 않는다. | 충족 | 충족 |
-
-**검토 결과.** 반품 참조 번호를 먼저 보호하고 고정된 배송 주소는 유지합니다. 고정된 출입 코드는 개별 처리하고 메모 두 개를 함께 지워, 원하는 항목만 남깁니다.
-
-익명 채점에서 개정 답안은 X였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/microsoft-writing-style/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/microsoft-writing-style.json).
-
-<details>
-<summary>실행 기록</summary>
-
-미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `0478d6d5cc87` / `49b13f22cab5` / `b7ecfdbb5c37`.
-
-</details>
+> 1. **Windows logo key + V**를 눌러 **Clipboard history**를 엽니다.
+> 2. 다음 설정을 확인합니다.
+>
+>    | 항목 | 현재 상태 | 남길까요? | 지금 할 작업 |
+>    |---|---|---|---|
+>    | 배송 주소 | 고정됨 | 예 | 그대로 둡니다. |
+>    | 만료된 출입 코드 | 고정됨 | 아니요 | **See more (...) > Delete**를 선택합니다. |
+>    | 반품 참조 번호 | 고정되지 않음 | 예 | 항목에서 **Pin**을 선택합니다. |
+>    | 메모 초안 두 개 | 고정되지 않음 | 아니요 | 그대로 둡니다. |
+>
+> 3. 만료된 출입 코드를 개별 삭제하고 반품 참조 번호를 고정한 뒤, **Clear all**을 선택합니다.
+> 4. **Clipboard history**에 배송 주소와 반품 참조 번호만 남았는지 확인합니다.
 
 ## minto-pyramid
 
-**보행 선행신호 시범사업은 어느 교차로에 먼저 도입할까요?**
-
-[English](EXAMPLES.md#minto-pyramid)
-
-2026-11-09 · `minto-pyramid` 0.2.6 · 한국어 · `gpt-6-luna`
-
-### 사례와 출처
-
-- [FHWA, Leading Pedestrian Interval](https://highways.dot.gov/safety/proven-safety-countermeasures/leading-pedestrian-interval)
-- [FHWA, Safety Evaluation of Protected Left-Turn Phasing and Leading Pedestrian Intervals on Pedestrian Safety (2018), FHWA-HRT-18-044](https://www.fhwa.dot.gov/publications/research/safety/18044/18044.pdf)
-
-FHWA는 보행 선행신호의 원리와 세 도시의 충돌 변화 계수 0.87을 보고했습니다. 두 후보 지역의 기준 건수는 시범사업 의사결정을 위한 가정이며 실제 지역 조사 결과가 아닙니다.
+**보행 선행신호 시범사업은 어느 교차로에 먼저 도입할까요?** · [English](EXAMPLES.md#minto-pyramid)
 
 ### 질문
 
-> 시 교통위원회가 선회 차량이 많은 신호 교차로 두 집단 중 한 곳에서만 시범사업을 할 수 있습니다. 사업비는 같고 목표는 차량·보행자 충돌의 예상 감소 건수를 최대화하는 것입니다. 보행 신호는 차량 녹색 신호보다 3~7초 먼저 켜집니다. 미국 연방도로청의 세 도시 연구에서 추정된 충돌수정계수는 0.87입니다. 가상 비교에서 같은 기간 사업을 하지 않을 때 북부에서는 20건, 남부에서는 5건의 차량·보행자 충돌이 예상됩니다. 연구의 계수를 그대로 적용할 경우 각 집단의 예상 감소 건수를 계산하세요. 위원회 결정문의 첫 문단을 한국어로 작성해 시범 지역을 추천하고 선회 차량에 보행 선행신호가 왜 도움이 될 수 있는지, 현지에서 사업을 하지 않았을 경우와 견주어 효과를 측정하려면 무엇을 비교해야 하는지 설명해 주세요.
+> 선회 차량이 많은 신호 교차로를 북부와 남부 두 집단으로 나눈 시에서 보행 신호를 차량 녹색 신호보다 3~7초 먼저 켜려고 한다. 한 집단에만 시범사업을 할 예산이 있고 비용은 같다. 시의 목표는 차량·보행자 충돌의 예상 감소 건수를 최대화하는 것이다. 사업을 하지 않으면 같은 기간 북부에서는 20건, 남부에서는 5건이 예상된다. 미국 연방도로청의 세 도시 연구에서 추정한 충돌수정계수는 0.87이었다. 어느 지역에서 시범사업을 하는 게 좋을까? 현지에서 실제로 효과가 있었는지는 어떻게 알 수 있을까?
 
-### 스킬 미적용 답안
+**출처** · [FHWA, Leading Pedestrian Interval](https://highways.dot.gov/safety/proven-safety-countermeasures/leading-pedestrian-interval) · [FHWA, Safety Evaluation of Protected Left-Turn Phasing and Leading Pedestrian Intervals on Pedestrian Safety (2018), FHWA-HRT-18-044](https://www.fhwa.dot.gov/publications/research/safety/18044/18044.pdf)
 
-> 연방도로청의 세 도시 연구에서 추정된 충돌수정계수 0.87을 그대로 적용하면 충돌 감소율은 13%입니다. 이에 따라 같은 기간 사업을 하지 않을 때 예상 충돌이 북부 20건인 경우 감소 예상 건수는 **2.6건**, 남부 5건인 경우는 **0.65건**입니다. 사업비가 같고 목표가 예상 감소 건수의 최대화라면 **북부를 시범 지역으로 추천합니다**. 보행 선행신호는 보행자에게 차량 녹색보다 3~7초 먼저 길을 건너기 시작할 시간을 주어, 뒤이어 진입하는 선회 차량 운전자가 보행자를 더 잘 보고 양보하도록 도울 수 있습니다. 효과를 측정할 때는 사업 전후의 충돌 건수만 비교하지 말고, 같은 기간 사업을 하지 않았을 경우 북부에서 발생했을 충돌을 나타내는 신뢰할 만한 비교 기준과 시범사업 후 실제 충돌 건수를 비교해야 합니다.
+### Light
 
-### 스킬 적용 답안 · standard
+> **북부에서 시범사업을 하세요.** 두 지역에 같은 충돌수정계수 0.87이 적용된다고 가정하면, 예상 충돌 감소 건수는 북부가 더 큽니다.
+>
+> - 북부: 20건 × (1 − 0.87) = **2.6건 감소**
+> - 남부: 5건 × (1 − 0.87) = **0.65건 감소**
+>
+> 이 계산은 연방도로청의 세 도시 연구에서 얻은 계수가 시의 두 집단에도 그대로 적용된다는 가정에 따른 예측입니다.
+>
+> 현지 효과는 시범사업 전후의 변화만으로 판단하지 말고, **북부의 변화에서 같은 기간 비교 가능한 미시행 지역의 변화를 빼서** 추정하세요. 사업 전 여러 기간의 충돌 추세와 교통량·교차로 특성이 비슷한 미시행 지역을 비교 대상으로 고르고, 같은 기간의 충돌 건수와 교통량을 함께 기록하면 일반적인 변화나 노출량 차이를 사업 효과와 구분하는 데 도움이 됩니다.
 
-> 사업비가 같고 목표가 차량·보행자 충돌의 예상 감소 건수를 최대화하는 것이라면 **북부 교차로 집단에서 시범사업을 시행할 것을 권고합니다.** 미국 연방도로청의 세 도시 연구에서 추정된 충돌수정계수 0.87을 두 지역에 그대로 적용한다고 가정하면, 북부의 예상 감소 건수는 `20 × (1 − 0.87) = 2.6건`, 남부는 `5 × (1 − 0.87) = 0.65건`입니다. 보행 신호가 차량 녹색 신호보다 3~7초 먼저 켜지면 보행자가 선회 차량보다 먼저 교차로에 진입해 운전자가 보행자를 인지할 가능성을 높일 수 있습니다. 다만 이 감소 추정치는 연구 계수가 현지에도 적용된다는 가정에 따른 예측입니다. 현지 효과는 사업 전후의 충돌 변화를 북부와 사업을 하지 않은 비교 집단에서 같은 기간에 측정해 견주고, 두 집단의 기존 추세와 교통 여건이 비슷한지 확인해 평가해야 합니다.
+### Standard
 
-### 두 답안의 차이
+> 시범사업은 **북부에서 먼저 하세요.** 사업을 하지 않을 때 예상 충돌 건수가 북부 20건, 남부 5건이고, 양쪽에 같은 충돌수정계수(CMF) 0.87을 적용하면 북부의 예상 감소 건수가 더 큽니다. 다만 이는 세 도시 연구 결과가 이 도시에도 적용된다는 가정에 따른 예측입니다.
+>
+> **예상 감소량은 북부가 더 큽니다.** CMF 0.87은 충돌이 기존 수준의 87%로 줄어든다는 뜻이므로, 감소율은 13%입니다.
+>
+> - 북부: 20 × (1 − 0.87) = **2.6건 감소**, 적용 후 예상 17.4건
+> - 남부: 5 × (1 − 0.87) = **0.65건 감소**, 적용 후 예상 4.35건
+>
+> 실제 효과는 지역별 충돌 건수가 적어 단기간에는 분명하게 드러나지 않을 수 있습니다. 가능하면 시범사업 전후의 충돌 변화를 **사업 대상 교차로와 유사한 미시행 교차로**에서 같은 기간 비교하세요. 예를 들어 대상 교차로의 전후 변화에서 비교 교차로의 전후 변화를 빼면, 공통적인 교통량 변화나 계절 영향을 일부 걸러낼 수 있습니다. 비교 교차로는 선회 교통량, 보행량, 도로 특성, 사전 충돌 추세가 대상 교차로와 비슷해야 비교의 신뢰도가 높아집니다.
+>
+> 현지 자료로 사업 전후 충돌 건수를 확인하고, 교통량 변화를 고려해 충분히 긴 기간 동안 비교해야 합니다. 비교 집단이 없거나 사전 추세가 크게 다르면, 관측된 변화만으로 사업 효과라고 단정하기 어렵습니다.
 
-| 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
-| --- | --- | --- |
-| 북부와 남부의 예상 감소 건수를 각각 2.6건, 0.65건으로 계산한다. | 충족 | 충족 |
-| 같은 비용으로 더 큰 절대 감소를 얻으려는 목적에 따라 북부를 권하고, 보행 신호가 앞서면 선회 차량 운전자가 보행자를 알아보기 쉬워지는 등의 이유를 제시한다. | 충족 | 충족 |
-| 연구 결과를 현지에 적용할 수 있다는 가정하의 예상치임을 밝히고, 처리 교차로와 믿을 만한 현지 미도입 상황을 비교하는 측정 방법을 제안한다. | 미충족 | 충족 |
+### Strict
 
-**검토 결과.** 연구 결과가 현지에도 적용된다면 같은 비용에 북부는 2.6건, 남부는 0.65건 감소가 예상됩니다. 시범 교차로와 비교 가능한 미시행 교차로의 변화를 비교해 예측을 검증할 수 있습니다.
-
-익명 채점에서 개정 답안은 X였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/minto-pyramid/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/minto-pyramid.json).
-
-<details>
-<summary>실행 기록</summary>
-
-미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `8063d7e2ee16` / `018c20fe2c01` / `2fdddcffd1cb`.
-
-</details>
+> **북부에서 시범사업을 하세요.** 비용이 같고 목표가 예상 충돌 감소 건수를 최대화하는 것이라면, 연방도로청 연구의 충돌수정계수 0.87이 이 도시에도 적용된다고 가정할 때 북부의 감소 예상치가 더 큽니다.
+>
+> **같은 감소율을 적용하면 북부의 예상 감소 건수도 더 큽니다.** 충돌수정계수 0.87은 기준 대비 충돌이 13% 감소했다는 뜻입니다. 북부는 20건 × 13% = **2.6건 감소**(사업 후 17.4건), 남부는 5건 × 13% = **0.65건 감소**(사업 후 4.35건)입니다. 이는 세 도시 연구의 효과가 북부와 남부에도 그대로 적용된다는 예측이지, 이 도시에서 확인된 효과는 아닙니다.
+>
+> **현지 효과는 시범사업 전후 변화와 같은 기간의 비교 지역 변화를 함께 살펴보세요.** 사업 지역과 유사하지만 사업을 시행하지 않은 교차로 집단을 정해, 각 집단의 사업 전후 차량·보행자 충돌 변화를 비교합니다. 비교 집단은 사업이 없었을 때의 변화를 추정하는 데 도움이 됩니다. 두 집단의 사전 추세와 교차로 특성이 비슷하고, 관찰 기간 중 다른 안전 조치나 교통량 변화가 한쪽에만 발생하지 않아야 비교가 더 신뢰할 만합니다. 충돌 건수가 적으면 관찰 기간을 충분히 확보하고, 실제 건수와 추정치의 불확실성을 함께 보고하세요.
 
 ## new-harts-rules
 
-**영국 인구총조사 전시문에서 퍼센트포인트와 상대 차이를 어떻게 구분할까요?**
-
-[English](EXAMPLES.md#new-harts-rules)
-
-2026-11-09 · `new-harts-rules` 0.1.6 · 한국어 · `gpt-6-luna`
-
-### 사례와 출처
-
-- [Office for National Statistics, Housing, England and Wales: Census 2021 (5 January 2023)](https://www.ons.gov.uk/peoplepopulationandcommunity/housing/bulletins/housingenglandandwales/census2021)
-
-영국 통계청의 2021년 인구조사 자료는 자동차나 밴을 이용할 수 없는 가구의 비율을 제시합니다. 전시의 표기 지침과 편집 초안은 이 연습에서만 사용합니다.
-
-**언어 적용 범위.** 영어 출판물 편집이 적용 대상이므로 전시 문장은 영어로 유지하고 분모와 표기 선택을 설명하는 편집 메모를 한국어로 새로 생성합니다.
+**자동차가 없는 가구의 비율은 런던과 잉글랜드·웨일스에서 얼마나 달랐을까?** · [English](EXAMPLES.md#new-harts-rules)
 
 ### 질문
 
-> 영국 교통 전시회에 실을 영어 문장과 한국어 편집 메모를 제출해 주세요. 영국 통계청(ONS) 원자료는 2021년 자동차나 승합차를 이용할 수 없는 가구의 비율이 런던 42.1%, 잉글랜드·웨일스 전체 23.3%라고 보고했습니다. 영어 초안은 ‘In “Housing, England and Wales: Census 2021”, ONS showed that 42.1% of Londoners lacked a car in 2021, 18.8 per cent more than across England and Wales.’입니다. 자료 제목은 한 글자도 바꾸지 말고, 영어 전시문은 본문의 백분율을 ‘per cent’로 적는 전시회 자체 표기 지침을 따르세요. 런던 비율과 전체 비율의 퍼센트포인트 차이, 전체 비율을 기준으로 한 상대 초과 비율(가장 가까운 정수 퍼센트)을 분명히 구분해 영어 문장을 고친 다음, 한국어로 두세 문장짜리 편집 메모를 써 주세요. 메모에서는 무엇을 분모로 삼았는지와 표기 판단의 근거를 설명하세요. New Hart’s Rules 원문 구절은 제공되지 않았습니다.
+> 전시에 쓸 영문 문안은 다음과 같아요. “In ‘Housing, England and Wales: Census 2021’, ONS showed that 42.1% of Londoners lacked a car in 2021, 18.8 per cent more than across England and Wales.” 실제로 이 통계가 집계한 것은 승용차나 승합차를 이용할 수 없는 가구의 비율이에요. 런던은 42.1%, 잉글랜드와 웨일스 전체는 23.3%였어요. 퍼센트포인트 차이와 잉글랜드·웨일스 전체 수치 대비 상대적인 차이를 모두 전하려면 영문 문안을 어떻게 고치면 될까요? 설명은 한국어로 해 주세요.
 
-### 스킬 미적용 답안
+**출처** · [Office for National Statistics, Housing, England and Wales: Census 2021 (5 January 2023)](https://www.ons.gov.uk/peoplepopulationandcommunity/housing/bulletins/housingenglandandwales/census2021)
 
-> **English exhibition text**
+### Light
+
+> “In ‘Housing, England and Wales: Census 2021’, ONS reported that 42.1% of London households had no access to a car or van, compared with 23.3% of households across England and Wales: a difference of 18.8 percentage points, or about 80.7% higher than the England and Wales figure.”
 >
-> In “Housing, England and Wales: Census 2021”, ONS reported that 42.1 per cent of households in London could not use a car or van in 2021, 18.8 percentage points higher than the 23.3 per cent across England and Wales. This is an 81 per cent relative excess over the England and Wales rate.
+> 여기서 18.8은 두 비율의 퍼센트포인트 차이이고, 약 80.7%는 잉글랜드와 웨일스 전체 수치인 23.3%를 기준으로 한 상대적 차이입니다.
+
+### Standard
+
+> 수정 문안:
 >
-> **편집 메모**
+> > In ‘Housing, England and Wales: Census 2021’, ONS showed that 42.1% of London households had no access to a car or van, 18.8 percentage points higher than the 23.3% across England and Wales as a whole. This was an 80.7% relative increase compared with the England and Wales figure.
 >
-> 42.1%와 23.3%의 차이는 18.8퍼센트포인트이며, 상대 초과율은 잉글랜드·웨일스 전체 비율 23.3%를 분모로 계산해 `(42.1−23.3)÷23.3×100`으로 구한 약 81%입니다. 원자료의 지표는 자동차나 승합차를 이용할 수 없는 **가구**의 비율이므로 ‘Londoners lacked a car’ 대신 가구 기준으로 바로잡았습니다. 자료 제목은 그대로 두고, 전시회 표기 지침에 따라 본문 백분율은 ‘per cent’로 썼습니다.
+> 퍼센트포인트 차이는 42.1%와 23.3%의 차이인 18.8%포인트이고, 상대적인 증가는 잉글랜드와 웨일스 전체 수치인 23.3%를 기준으로 계산했습니다.
 
-### 스킬 적용 답안 · standard
+### Strict
 
-> **영어 전시문**
+> “In ‘Housing, England and Wales: Census 2021’, ONS reported that 42.1% of London households had no access to a car or van, compared with 23.3% of households across England and Wales—a difference of 18.8 percentage points, or approximately 80.7% higher than the England and Wales figure.”
 >
-> In “Housing, England and Wales: Census 2021”, ONS reported that 42.1 per cent of London households could not access a car or van in 2021, 18.8 percentage points above the England and Wales figure of 23.3 per cent. This was 81 per cent higher than the England and Wales figure.
->
-> **편집 메모**
->
-> 분모는 잉글랜드·웨일스 전체 가구의 비율 23.3%입니다. 런던과의 차이는 42.1%−23.3%=18.8퍼센트포인트이고, 이를 23.3%로 나눈 상대 초과율은 약 81%입니다. 본문에는 전시회 자체 지침에 따라 ‘per cent’를 썼으며, 이 표기 판단은 하우스 스타일에 따른 것입니다. New Hart’s Rules 제2판(2014)의 관련 원문 구절은 제공되지 않아 해당 책의 세부 규칙으로 판단하지 않았습니다.
-
-### 두 답안의 차이
-
-| 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
-| --- | --- | --- |
-| 영문 제목 Housing, England and Wales: Census 2021을 그대로 보존하고 측정 대상이 자동차나 승합차를 이용할 수 없는 가구임을 유지한다. | 충족 | 충족 |
-| 18.8퍼센트포인트 차이와 23.3%를 기준으로 한 약 81% 상대 초과를 구분한다. | 충족 | 충족 |
-| 영어 본문의 백분율에 per cent를 사용하고, 한국어 편집 메모가 분모와 전시회의 표기 지침을 설명하며 확인하지 않은 책 규칙을 근거로 삼지 않는다. | 충족 | 충족 |
-
-**검토 결과.** 측정 대상을 가구로 유지하고 18.8퍼센트포인트의 격차와 약 81%의 상대 초과를 구분합니다. 영문 본문의 표기 근거는 전시회 지침입니다.
-
-익명 채점에서 개정 답안은 X였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/new-harts-rules/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/new-harts-rules.json).
-
-<details>
-<summary>실행 기록</summary>
-
-미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `9b8e75069344` / `401e71e2374b` / `495020e17085`.
-
-</details>
+> 18.8은 두 비율의 **퍼센트포인트 차이**이고, 잉글랜드와 웨일스 전체 수치인 23.3%를 기준으로 한 상대적 차이는 약 **80.7%**입니다.
 
 ## nist-technical-publication
 
-**NIST-F2의 어느 불확도를 줄이는 쪽이 더 효과적일까?**
-
-[English](EXAMPLES.md#nist-technical-publication)
-
-2026-11-09 · `nist-technical-publication` 0.1.4 · 한국어 · `gpt-6-luna`
-
-### 사례와 출처
-
-- [Heavner et al., First Accuracy Evaluation of NIST-F2, Metrologia (2014)](https://www.nist.gov/publications/first-accuracy-evaluation-nist-f2)
-
-NIST-F2 논문은 2013년 측정의 두 불확도 성분과 냉각 환경을 설명합니다. 독립성, 비용, 개선 후의 두 시나리오는 비교를 위한 가정입니다.
+**NIST-F2의 어느 불확도를 줄이는 쪽이 더 효과적일까?** · [English](EXAMPLES.md#nist-technical-publication)
 
 ### 질문
 
-> 측정 연구실이 NIST-F2의 어느 부분을 개선할지 결정할 수 있도록 간단한 한국어 기술 메모를 작성해 주세요. 2013년 7~8월 평가에서 통계적 A형 상대 주파수 불확도는 0.44 × 10⁻¹⁵, 계통적 B형 불확도는 0.11 × 10⁻¹⁵였습니다. 80 K 환경은 흑체복사에 따른 불확도를 50분의 1 미만으로 줄였고, B형에서는 마이크로파 진폭에 따른 영향이 가장 컸습니다. 이번 계산에 한해서 두 성분은 독립이라고 가정하고, 각각을 제곱해 합한 뒤 제곱근을 취해 결합하세요. 비용이 같은 두 가지 가상 방안, 즉 A형 성분만 절반으로 줄이는 방안과 B형 성분만 절반으로 줄이는 방안을 비교해 주세요. 현재의 결합 불확도와 두 방안에서 예상되는 결합 불확도를 구하고, 이 지표에 비춰 한 방안을 추천해 주세요. 냉각 효과만으로 전체 불확도가 50분의 1 미만이 됐다고 결론 낼 수 있는지도 설명해 주세요.
+> NIST-F2의 2013년 7~8월 평가에서 분수 주파수 불확도의 두 성분은 0.44 × 10⁻¹⁵(A형, 통계적)와 0.11 × 10⁻¹⁵(B형, 계통적)였어요. 80 K 환경에서 흑체복사에 따른 불확도는 이전의 50분의 1 미만으로 줄었고, B형에서는 마이크로파 진폭의 영향이 가장 컸어요. 같은 비용으로 두 성분 중 하나만 절반으로 줄이고 다른 성분은 그대로 둘 수 있다고 해요. 두 성분은 독립이며 제곱합의 제곱근으로 결합한다고 가정할게요. 어느 쪽을 개선하면 결합 불확도가 더 많이 줄까요? 흑체복사에 대한 50배라는 수치로 시계 전체 불확도의 개선 정도를 알 수 있을까요?
 
-### 스킬 미적용 답안
+**출처** · [Heavner et al., First Accuracy Evaluation of NIST-F2, Metrologia (2014)](https://www.nist.gov/publications/first-accuracy-evaluation-nist-f2)
 
-> **기술 메모 — NIST-F2 불확도 개선 우선순위**
+### Light
+
+> ## 비교 결과
 >
-> 2013년 7~8월 평가의 상대 주파수 불확도는 A형이 $0.44\times10^{-15}$, B형이 $0.11\times10^{-15}$였습니다. 두 성분을 독립으로 보고 제곱합의 제곱근으로 결합하면 현재 불확도는
->
+> 초기 결합 분수 주파수 불확도는 두 독립 성분을 제곱합의 제곱근으로 결합해 계산합니다.
 >
 > $$
-> \sqrt{0.44^2+0.11^2}\times10^{-15}\approx 0.454\times10^{-15}
+> u_{\mathrm{초기}}
+> =\sqrt{(0.44\times10^{-15})^2+(0.11\times10^{-15})^2}
 > $$
 >
+> A형 성분만 절반으로 줄이면:
 >
-> 입니다.
+> $$
+> u_{\mathrm{A\ 개선}}
+> =\sqrt{(0.22\times10^{-15})^2+(0.11\times10^{-15})^2}
+> $$
 >
-> 비용이 같은 두 가상 방안의 예상치는 다음과 같습니다.
+> B형 성분만 절반으로 줄이면:
 >
-> | 방안 | 변경 후 A형 | 변경 후 B형 | 결합 불확도 |
-> |---|---:|---:|---:|
-> | A형만 절반으로 감소 | 0.22 | 0.11 | $0.246\times10^{-15}$ |
-> | B형만 절반으로 감소 | 0.44 | 0.055 | $0.443\times10^{-15}$ |
+> $$
+> u_{\mathrm{B\ 개선}}
+> =\sqrt{(0.44\times10^{-15})^2+(0.055\times10^{-15})^2}
+> $$
 >
-> 따라서 이 지표만 보면 **A형 성분을 절반으로 줄이는 방안**을 추천합니다. 결합 불확도가 약 $0.454$에서 $0.246\times10^{-15}$로 낮아지는 반면, B형만 줄이면 약 $0.443\times10^{-15}$에 그칩니다. B형에서는 마이크로파 진폭 영향이 가장 크지만, 현재 결합값에서는 더 큰 A형 성분을 줄이는 편이 효과가 큽니다.
+> 따라서 **A형(통계적) 성분을 절반으로 줄이는 편이 결합 불확도를 더 많이 낮춥니다.** 더 큰 초기 성분을 줄이기 때문입니다.
 >
-> 80 K 환경이 흑체복사에 따른 **불확도**를 50분의 1 미만으로 줄였다는 사실만으로 전체 불확도도 50분의 1 미만이 됐다고 결론 낼 수는 없습니다. 이는 흑체복사 기여분에 관한 결과이며, 전체 결합 불확도에는 A형 통계 성분과 다른 B형 기여분도 포함됩니다.
-
-<details>
-<summary>원래 수식 표기로 보기</summary>
-
-````text
-**기술 메모 — NIST-F2 불확도 개선 우선순위**
-
-2013년 7~8월 평가의 상대 주파수 불확도는 A형이 \(0.44\times10^{-15}\), B형이 \(0.11\times10^{-15}\)였습니다. 두 성분을 독립으로 보고 제곱합의 제곱근으로 결합하면 현재 불확도는
-
-\[
-\sqrt{0.44^2+0.11^2}\times10^{-15}\approx 0.454\times10^{-15}
-\]
-
-입니다.
-
-비용이 같은 두 가상 방안의 예상치는 다음과 같습니다.
-
-| 방안 | 변경 후 A형 | 변경 후 B형 | 결합 불확도 |
-|---|---:|---:|---:|
-| A형만 절반으로 감소 | 0.22 | 0.11 | \(0.246\times10^{-15}\) |
-| B형만 절반으로 감소 | 0.44 | 0.055 | \(0.443\times10^{-15}\) |
-
-따라서 이 지표만 보면 **A형 성분을 절반으로 줄이는 방안**을 추천합니다. 결합 불확도가 약 \(0.454\)에서 \(0.246\times10^{-15}\)로 낮아지는 반면, B형만 줄이면 약 \(0.443\times10^{-15}\)에 그칩니다. B형에서는 마이크로파 진폭 영향이 가장 크지만, 현재 결합값에서는 더 큰 A형 성분을 줄이는 편이 효과가 큽니다.
-
-80 K 환경이 흑체복사에 따른 **불확도**를 50분의 1 미만으로 줄였다는 사실만으로 전체 불확도도 50분의 1 미만이 됐다고 결론 낼 수는 없습니다. 이는 흑체복사 기여분에 관한 결과이며, 전체 결합 불확도에는 A형 통계 성분과 다른 B형 기여분도 포함됩니다.
-````
-
-</details>
-
-### 스킬 적용 답안 · standard
-
-> ## NIST-F2 개선 방안 검토 메모
+> ## 흑체복사 수치의 의미
 >
-> **목적.** 비용이 같은 두 가상 개선 방안 중 어느 쪽이 결합 상대 주파수 불확도를 더 낮추는지 비교한다.
+> 80 K에서 흑체복사에 따른 불확도가 이전의 50분의 1 미만이 되었다는 사실만으로는 **시계 전체 불확도가 얼마나 개선됐는지 알 수 없습니다.** 전체 불확도에서 흑체복사 항이 차지하는 크기와 다른 불확도 성분들의 값이 필요합니다. 제시된 B형의 주요 영향 요인은 마이크로파 진폭이므로, 흑체복사 항의 큰 감소가 B형 또는 전체 불확도를 같은 비율로 줄였다고 해석할 수 없습니다.
+
+### Standard
+
+> ### 비교 방법
 >
-> **근거와 가정.** 2013년 7~8월 평가에서 A형(통계적) 상대 주파수 불확도는 $0.44\times10^{-15}$, B형(계통적) 불확도는 $0.11\times10^{-15}$였다. 이번 계산에서는 두 성분이 독립이라고 가정해 제곱합의 제곱근으로 결합한다. 각 방안은 해당 성분 하나만 절반으로 줄이며 다른 성분은 그대로라고 가정한다.
+> 평가에서 보고된 A형과 B형 불확도를 제곱합의 제곱근으로 결합했습니다. 두 성분은 독립이라고 가정하며, 각 경우 한 성분만 절반으로 줄이고 다른 성분은 그대로 둡니다.
 >
-> **계산 결과.** 아래 값은 모두 상대 주파수 불확도이며, 표의 수치는 $10^{-15}$를 곱한 계수다.
+> ### 결과
 >
-> | 경우 | A형 성분 $(\times10^{-15})$ | B형 성분 $(\times10^{-15})$ | 결합 불확도 $(\times10^{-15})$ |
-> |---|---:|---:|---:|
-> | 현재 | 0.44 | 0.11 | 0.454 |
-> | A형만 절반으로 감소 | 0.22 | 0.11 | 0.246 |
-> | B형만 절반으로 감소 | 0.44 | 0.055 | 0.443 |
+> - **A형을 절반으로 줄이는 경우:**\
+>   $$
+>   \sqrt{(0.22\times10^{-15})^2+(0.11\times10^{-15})^2}
+>   = \sqrt{0.0605}\times10^{-15}
+>   $$
 >
-> 계산은 각 열의 성분을 $10^{-15}$ 단위의 계수로 놓고 $\sqrt{A^2+B^2}$를 적용한 것이다. 예를 들어 현재 결합 불확도는 $\sqrt{0.44^2+0.11^2}\times10^{-15}\approx0.454\times10^{-15}$이다.
+> - **B형을 절반으로 줄이는 경우:**\
+>   $$
+>   \sqrt{(0.44\times10^{-15})^2+(0.055\times10^{-15})^2}
+>   = \sqrt{0.196625}\times10^{-15}
+>   $$
 >
-> **해석 및 권고.** 이 지표에서는 **A형 성분을 절반으로 줄이는 방안**을 권고한다. 예상 결합 불확도는 $0.246\times10^{-15}$로, 현재 $0.454\times10^{-15}$보다 작다. B형만 절반으로 줄이면 약 $0.443\times10^{-15}$로 감소 폭이 더 작다. 따라서 A형 성분 저감이 우선이다. 다만 B형에서 마이크로파 진폭 영향이 가장 컸다는 관측은 계통 오차의 개선 대상을 정할 때 참고할 수 있다.
+> 따라서 **A형을 절반으로 줄이면 결합 불확도가 더 많이 감소합니다.** A형을 개선한 경우의 최종 결합 불확도가 더 작습니다.
 >
-> **냉각 효과의 범위.** 80 K 환경이 흑체복사에 따른 불확도를 50분의 1 미만으로 줄였다는 사실만으로 전체 불확도도 50분의 1 미만이 됐다고 결론 낼 수는 없다. 그 결과는 흑체복사 기여분에 관한 것이며, 제공된 정보에는 냉각 전후 전체 불확도나 다른 기여분의 변화가 제시되지 않았다. 여기서 계산한 현재 결합값과 방안별 값은 주어진 A형·B형 성분만을 대상으로 한다.
+> ### 흑체복사 감소 수치의 해석
+>
+> 80 K 환경에서 흑체복사에 따른 불확도가 이전의 50분의 1 미만으로 줄었다는 정보만으로는 **시계 전체 불확도가 얼마나 개선됐는지 알 수 없습니다.** 전체 불확도에서 흑체복사 성분이 차지하는 크기와 다른 성분들의 값이 제시되지 않았기 때문입니다. 또한 B형 불확도에서 마이크로파 진폭의 영향이 가장 컸다는 사실만으로 그 영향의 절대 크기나 전체 불확도의 변화량을 계산할 수는 없습니다.
 
-### 두 답안의 차이
+### Strict
 
-| 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
-| --- | --- | --- |
-| A형과 B형의 값이 상대 주파수 불확도임을 구분하고, 독립이라는 가정 아래 현재 결합값이 약 0.454 × 10⁻¹⁵임을 계산한다. | 미충족 | 충족 |
-| A형만 절반이면 약 0.246 × 10⁻¹⁵, B형만 절반이면 약 0.443 × 10⁻¹⁵로 계산하고 같은 비용이라면 감소량이 큰 A형 개선을 선택한다. | 충족 | 충족 |
-| 가상 방안의 예측값과 2013년 관측 결과를 구분한다. 50배 넘는 감소는 흑체복사 불확도에 한정하고, B형에서 주된 영향이 마이크로파 진폭임을 밝힌다. | 충족 | 충족 |
-
-**검토 결과.** 독립인 두 성분을 결합하면 현재 상대 주파수 불확도는 약 0.454 × 10⁻¹⁵입니다. A형만 절반으로 줄인 경우와 B형만 줄인 경우를 구분하고, 50배 넘는 개선은 흑체복사 기여분에 한정합니다.
-
-익명 채점에서 개정 답안은 X였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/nist-technical-publication/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/nist-technical-publication.json).
-
-<details>
-<summary>실행 기록</summary>
-
-미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `d936b66143cd` / `ff875254df61` / `86b5397a90de`.
-
-</details>
+> ## NIST-F2 불확도 개선 비교
+>
+> ### 비교 방법
+>
+> 분수 주파수 불확도의 A형 성분은 $0.44\times10^{-15}$, B형 성분은 $0.11\times10^{-15}$입니다. 두 성분이 독립이라는 가정에서 결합 불확도 $u$는 제곱합의 제곱근으로 계산합니다.
+>
+> 각 성분 하나만 절반으로 줄이고 다른 성분은 유지하는 두 경우를 같은 식으로 비교했습니다. 계산에서 공통 척도 $10^{-15}$를 사용했으므로 괄호 안의 계수는 그 척도에서의 값입니다.
+>
+> ### 결과
+>
+> - **A형을 절반으로 줄이는 경우:**\
+>   $u_A=\sqrt{(0.22)^2+(0.11)^2}\times10^{-15}=\sqrt{0.0605}\times10^{-15}$
+>
+> - **B형을 절반으로 줄이는 경우:**\
+>   $u_B=\sqrt{(0.44)^2+(0.055)^2}\times10^{-15}=\sqrt{0.196625}\times10^{-15}$
+>
+> 첫 번째 경우의 결합 불확도가 더 낮습니다. 따라서 같은 비용이라면 **A형(통계적) 성분을 절반으로 줄이는 편이 결합 불확도를 더 많이 낮춥니다.** 이는 초기 결합 불확도에서 더 큰 몫을 차지하는 A형 성분을 줄이기 때문입니다.
+>
+> ### 흑체복사 수치의 해석
+>
+> 80 K 환경에서 흑체복사에 따른 불확도가 이전의 50분의 1 미만으로 줄었다는 정보만으로는 **시계 전체 불확도의 개선 정도를 판단할 수 없습니다.** 전체 불확도에서 흑체복사 성분이 차지하던 크기와 다른 불확도 성분의 크기 및 결합 방식이 주어지지 않았기 때문입니다. 또한 “이전”의 기준값과 해당 평가에서 흑체복사 성분의 수치도 제시되지 않았습니다. 따라서 50배 이상 감소는 흑체복사 불확도 성분에 대한 결과로 해석해야 하며, 전체 불확도 감소율로 옮겨 말할 수는 없습니다.
 
 ## orwell-six-rules
 
-**화성 기후 궤도선의 항법 추정은 단위 착오로 어떻게 빗나갔을까요?**
-
-[English](EXAMPLES.md#orwell-six-rules)
-
-2026-11-08 · `orwell-six-rules` 0.1.3 · 한국어 · `gpt-6-luna`
-
-### 사례와 출처
-
-- [Cornelius J. Dennehy / NASA, Best Practices for the Design, Development, and Operation of Robust and Reliable Space Vehicle Guidance, Navigation, and Control Systems (NASA/TP–20230005922, April 2023)](https://ntrs.nasa.gov/api/citations/20230005922/downloads/20230005922.pdf)
-
-NASA 자료는 지상 프로그램의 단위 불일치, 계획보다 낮아진 접근 궤도와 탐사선의 두 가지 가능한 최후를 설명합니다. 변환에 쓰는 충격량은 실제 임무 측정값이 아닙니다.
-
-**언어 적용 범위.** 한국어에서는 군더더기를 줄이되 단위·조건·책임 주체를 정확히 보존하는 편집 원리를 적용합니다. 영어 단어 길이, 태, 어원에 관한 규칙은 한국어 규칙으로 옮기지 않습니다.
+**화성 기후 궤도선의 항법 추정은 단위 착오로 어떻게 빗나갔을까요?** · [English](EXAMPLES.md#orwell-six-rules)
 
 ### 질문
 
-> 박물관 설명문 초안을 간결한 한국어 한 문단으로 고쳐 주세요. 초안은 ‘운용상의 불일치가 170 km 추락을 야기했다. SM_FORCES가 추력기 충격량을 파운드힘초로 넘겼는데 항법 팀은 뉴턴초로 읽었다. 탐사선은 대기에서 불탔다’입니다. 실제 1999년 임무에서는 항법 궤도 추정의 오차가 누적돼 탐사선이 계획보다 약 170 km 더 낮게 화성에 접근했습니다. NASA는 대기 중 파괴됐는지 태양 궤도로 빠져나갔는지 판별하지 못했습니다. 단위 오류는 실제 측정값이 아닌 가상의 충격량 2파운드힘초로 보여 주세요. 이 문제에서 1파운드힘초는 약 4.45뉴턴초입니다. 항법 팀이 받아야 했던 값과 잘못 읽은 값의 차이를 계산하고, 이 예시와 실제 임무의 결과를 분리해 주세요.
+> 1999년 화성 기후 궤도선에 관한 초안에는 ‘운용상의 불일치가 170 km 추락을 야기했다. SM_FORCES는 추력기 충격량을 파운드힘초로 보냈고 항법 팀은 이를 뉴턴초로 읽었다. 탐사선은 대기에서 불탔다’라고 쓰여 있다. 실제로는 궤도 추정의 오차가 누적되어 탐사선이 계획보다 약 170 km 더 낮게 화성에 접근했다. NASA는 탐사선이 대기 중에서 파괴됐는지 태양 궤도로 빠져나갔는지 판별하지 못했다. SM_FORCES가 숫자 2를 보냈다고 가정하자. 실제 비행 측정값이 아닌 계산 예이며, 1파운드힘초는 약 4.45뉴턴초다. 단위 오류와 탐사선의 행방을 다룬 이 초안은 어떻게 고치면 좋을까?
 
-### 스킬 미적용 답안
+**출처** · [Cornelius J. Dennehy / NASA, Best Practices for the Design, Development, and Operation of Robust and Reliable Space Vehicle Guidance, Navigation, and Control Systems (NASA/TP–20230005922, April 2023)](https://ntrs.nasa.gov/api/citations/20230005922/downloads/20230005922.pdf)
 
-> 1999년 화성 기후 궤도선 임무에서는 항법 궤도 추정의 오차가 누적돼 탐사선이 계획보다 약 170 km 낮게 화성에 접근했습니다. NASA는 탐사선이 대기 중 파괴됐는지, 태양 궤도로 빠져나갔는지 판별하지 못했습니다. 단위 혼동을 설명하는 가상 예시로, SM_FORCES가 충격량 2파운드힘초를 전달했다면 항법 팀이 받아야 할 값은 약 8.90뉴턴초입니다(1파운드힘초 ≈ 4.45뉴턴초). 이를 2뉴턴초로 잘못 읽으면 차이는 약 6.90뉴턴초입니다.
+### Light
 
-### 스킬 적용 답안 · standard
+> 운용상의 단위 오류로 궤도 추정 오차가 누적됐다. SM_FORCES는 추력기 충격량을 파운드힘초로 보냈지만, 항법 팀은 이를 뉴턴초로 해석했다. 그 결과 탐사선은 계획보다 약 170 km 더 낮게 화성에 접근했다. NASA는 탐사선이 대기 중에서 파괴됐는지, 태양 궤도로 빠져나갔는지 판별하지 못했다.
+>
+> 단위 환산의 계산 예를 들면, SM_FORCES가 보낸 2 파운드힘초는 $2 \times 4.45 = 8.9$ 뉴턴초다. 파운드힘초 단위를 약분하면 뉴턴초가 남는다. 항법 팀이 숫자 2를 뉴턴초로 읽으면, 실제 값보다 작은 충격량으로 해석한다. 이 숫자는 설명을 위한 가정이며 실제 비행 측정값은 아니다.
 
-> 실제 1999년 화성 기후 궤도선 임무에서는 항법 궤도 추정의 오차가 누적돼 탐사선이 계획보다 약 170 km 더 낮은 고도로 화성에 접근했습니다. NASA는 탐사선이 대기 중에 파괴됐는지, 태양 궤도로 빠져나갔는지 판별하지 못했습니다. 별도의 가상 예로, SM_FORCES가 충격량 2파운드힘초를 보냈다면 항법 팀은 약 8.90뉴턴초를 받아야 했습니다. 이를 2뉴턴초로 잘못 읽으면 약 6.90뉴턴초의 차이가 납니다.
+### Standard
 
-### 두 답안의 차이
+> 1999년 화성 기후 궤도선은 궤도 추정 오차가 누적되면서 계획보다 약 170 km 낮게 화성에 접근했다. NASA는 탐사선이 대기 중에서 파괴됐는지, 태양 궤도로 빠져나갔는지 판별하지 못했다.
+>
+> SM_FORCES가 보낸 충격량의 단위는 파운드힘초였지만, 항법 팀은 이를 뉴턴초로 해석했다. 계산 예로 SM_FORCES가 2파운드힘초를 보냈다면, 환산값은 2파운드힘초 × 4.45뉴턴초/파운드힘초 = 약 8.9뉴턴초다. 항법 팀이 숫자 2를 뉴턴초로 읽으면 2뉴턴초로 해석한다. 숫자 2는 실제 비행 측정값이 아니다.
 
-| 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
-| --- | --- | --- |
-| 가상 충격량은 약 8.9뉴턴초이고 항법 팀이 2뉴턴초로 읽었으므로 약 6.9뉴턴초 작게 읽었다고 설명한다(올바른 값이 약 4.45배라는 설명도 가능). | 충족 | 충족 |
-| 예제 수치와 실제 임무를 구분하고, 약 170 km를 추락 거리로 쓰지 않으며 궤도 추정 오차가 쌓여 낮게 접근한 결과로 설명한다. | 충족 | 충족 |
-| 박물관 독자가 원인과 결과를 따라갈 수 있게 한 문단에 쓰고 대기 중 파괴됐을 가능성과 태양을 도는 궤도로 빠져나갔을 가능성을 모두 남긴다. | 충족 | 충족 |
+### Strict
 
-**블라인드 검토** (X = 미적용, Y = 스킬 적용). X와 Y 모두 가상 충격량 2파운드힘초를 약 8.90뉴턴초로 환산하고, 2뉴턴초로 읽었을 때의 차이를 약 6.90뉴턴초로 계산한다. 계획보다 약 170 km 낮게 접근한 실제 임무와 대기 중 파괴·태양 궤도로 탈출이라는 두 가능성을 보존한다. X는 환산 계수도 제시한다. 둘 다 실제 추력기 자료의 단위 혼동이 궤도 추정 오차를 일으켰다는 연결은 가상 예시로만 암시한다.
-
-**기준 문구 정정.** 세 번째 기준의 초기 표현 “태양 궤도 이탈”은 방향이 모호해 영어 원기준과 한국어 질문에 맞춰 바로잡았습니다. 질문과 답안은 그대로 두고, 정정한 기준으로 답안의 조건을 가린 채 다시 판정했습니다.
-
-<details>
-<summary>실행 기록</summary>
-
-각 답안은 Codex CLI 0.167.0, low 추론 설정의 별도 임시 읽기 전용 세션에서 생성했습니다. 같은 문항의 다른 답안이나 다른 언어의 답안은 입력하지 않았습니다.
-
-SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `90ee273da21c` / `4d416ff1a41c` / `d5a5549a64f2`.
-
-</details>
+> 1999년 화성 기후 궤도선의 궤도 추정 오차가 누적되면서 탐사선은 계획보다 약 170 km 낮게 화성에 접근했다. SM_FORCES는 추력기 충격량을 파운드힘초로 보냈지만, 항법 팀은 그 값을 뉴턴초로 읽었다. 이 단위 오류는 궤도 추정 오차에 기여했다. NASA는 탐사선이 대기 중에서 파괴됐는지, 태양 궤도로 빠져나갔는지 판별하지 못했다.
+>
+> 계산 예로 SM_FORCES가 2 파운드힘초를 보냈다면, 항법 팀은 그 값을 2 뉴턴초로 읽었을 것이다. 실제 비행 측정값은 아니다. 환산하면 2 파운드힘초 × 약 4.45 뉴턴초/파운드힘초 = 약 8.9 뉴턴초다. 따라서 팀은 약 8.9 뉴턴초가 아니라 2 뉴턴초로 해석했다.
 
 ## socratic-self-questioning
 
-**핀란드 기본소득 실험에서 지역 주민 500명의 취업일수를 예측할 수 있을까요?**
-
-[English](EXAMPLES.md#socratic-self-questioning)
-
-2026-11-09 · `socratic-self-questioning` 0.1.6 · 한국어 · `gpt-6-luna`
-
-### 사례와 출처
-
-- [Finnish Ministry of Social Affairs and Health and Kela, Results of the basic income experiment (6 May 2020)](https://valtioneuvosto.fi/en/-/1271139/perustulokokeilun-tulokset-tyollisyysvaikutukset-vahaisia-toimeentulo-ja-psyykkinen-terveys-koettiin-paremmaksi?languageId=en_US)
-
-핀란드 정부 자료는 실험 참여 집단, 고용일수 차이, 2018년 제도 변경의 영향을 설명합니다. 지역 주민 500명에 대한 전망은 검토 대상인 가정입니다.
+**핀란드 기본소득 실험에서 취업일수가 2,400일 늘 거라고 예측할 수 있을까?** · [English](EXAMPLES.md#socratic-self-questioning)
 
 ### 질문
 
-> 정책 브리프 초안이 ‘지역 주민 500명에게 기본소득을 지급하면 취업일수가 3,000일 늘어난다’고 예측합니다. 핀란드의 2017~2018년 실험에서는 무작위로 선정된 실업급여 수급자 2,000명에게 매월 560유로를 지급했습니다. 2017년 11월부터 2018년 10월까지 지급 집단의 평균 취업일수는 78일로, 비교집단보다 6일 많았습니다. 첫해에는 집단 수준의 고용 효과가 없었습니다. 2018년 실업급여 제도 개편은 두 집단에 다르게 작용해, 연구진은 둘째 해에 기본소득만의 효과를 분리할 수 없었습니다. 비교집단 평균과 예측 총계가 나온 계산을 밝히고, 지역에 그 값을 적용하려면 어떤 가정이 필요할지 짚어 주세요. 브리프에 실을 한국어 한 문단으로 작성하세요.
+> 어느 시가 주민 400명에게 기본소득을 지급하면 취업일수가 총 2,400일 늘어날 것으로 예상하고 있다. 시가 근거로 든 핀란드의 2017~2018년 실험에서는 무작위로 뽑힌 실업급여 수급자 2,000명이 매달 560유로를 받았다. 2017년 11월부터 2018년 10월까지 이들의 평균 취업일수는 78일로 비교집단보다 6일 많았다. 첫해에는 집단 수준의 고용 효과가 없었다. 2018년의 급여 제도 개편이 두 집단에 다르게 작용해 둘째 해에는 개편의 효과와 기본소득의 효과를 분리할 수 없었다. 이 실험에 비추어 볼 때 시의 예상은 어디까지 뒷받침될까?
 
-### 스킬 미적용 답안
+**출처** · [Finnish Ministry of Social Affairs and Health and Kela, Results of the basic income experiment (6 May 2020)](https://valtioneuvosto.fi/en/-/1271139/perustulokokeilun-tulokset-tyollisyysvaikutukset-vahaisia-toimeentulo-ja-psyykkinen-terveys-koettiin-paremmaksi?languageId=en_US)
 
-> 핀란드 실험에서 2017년 11월부터 2018년 10월까지 기본소득 집단의 평균 취업일수는 78일로 비교집단보다 6일 많았으므로, 비교집단 평균은 72일(78−6일)입니다. 이 6일 차이를 무작위 선정된 수급자 2,000명에게 적용하면 집단 전체에서 12,000일의 차이에 해당합니다. 초안의 3,000일은 그 차이를 지역 주민 500명에게 그대로 적용한 값(500×6일)으로 보입니다. 그러나 이는 첫해에 관찰된 집단 수준의 고용 효과가 없었다는 결과와 맞지 않으며, 둘째 해의 6일 차이도 제도 개편이 두 집단에 다르게 작용해 기본소득만의 효과로 분리할 수 없습니다. 따라서 지역에 3,000일을 적용하려면 주민 500명이 실험 참가자와 비슷한 대상이고, 참여·수급 조건과 노동시장 여건이 유사하며, 관찰된 6일 차이가 기본소득으로 인한 인과 효과이고 지역에서도 같은 기간·규모로 재현된다고 가정해야 합니다.
+### Light
 
-### 스킬 적용 답안 · standard
+> 이 실험은 시의 예상인 취업일수 2,400일 증가를 직접 뒷받침하지 않습니다. “늘어난다”가 기본소득 때문에 생기는 증가를 뜻한다면, 어느 기간의 결과인지와 비교 기준을 분명히 해야 합니다.
+>
+> 무작위로 뽑힌 실업급여 수급자 2,000명은 매달 560유로를 받았습니다. 2017년 11월부터 2018년 10월까지 이들의 평균 취업일수는 비교집단보다 6일 많았지만, 첫해에는 집단 수준의 고용 효과가 없었습니다. 둘째 해에는 급여 제도 개편이 두 집단에 다르게 작용해 기본소득의 효과를 따로 확인할 수 없었습니다.
+>
+> 따라서 6일 차이는 해당 기간에 관찰된 두 집단의 평균 차이이며, 기본소득만의 효과라고 단정할 수 없습니다. 이를 시의 주민 400명에게 적용해 총 2,400일 증가를 예상하려면, 그 주민들이 실험의 실업급여 수급자들과 충분히 비슷하고 시의 지급 조건과 고용 환경도 결과를 바꾸지 않는다고 볼 근거가 필요합니다. 현재 제시된 정보만으로는 그 가정이 확인되지 않으므로, 시의 예상은 가능성 있는 추정일 수는 있어도 실험으로 입증된 결과는 아닙니다.
 
-> 핀란드 실험에서 무작위 선정된 실업급여 수급자 2,000명에게 매월 560유로를 지급한 결과, 2017년 11월부터 2018년 10월까지 지급 집단의 평균 취업일수는 78일로 비교집단보다 6일 많았습니다. 따라서 비교집단 평균은 78일−6일=72일이며, 주민 500명에게 3,000일 증가를 예측한 계산은 500명×6일입니다. 다만 첫해에는 집단 수준의 고용 효과가 없었고, 둘째 해에는 실업급여 제도 개편이 두 집단에 다르게 작용해 기본소득만의 효과를 분리할 수 없었습니다. 그러므로 6일 차이를 기본소득의 확정적 효과로 보기는 어렵습니다. 지역에 이 값을 적용하려면 대상 주민이 핀란드 실험의 실업급여 수급자와 충분히 비슷하고, 지급 방식·기간과 제도 환경이 유사하며, 관찰된 차이가 지역에서도 재현된다고 가정해야 합니다.
+### Standard
 
-### 두 답안의 차이
+> 핀란드 실험이 뒷받침하는 수치는 특정 기간의 **개인별 평균 차이**입니다. 무작위로 뽑힌 실업급여 수급자 2,000명이 2017년 11월부터 2018년 10월까지 평균 78일 취업했고, 비교집단보다 6일 많았습니다. 다만 첫해에는 집단 수준의 고용 효과가 없었고, 둘째 해에는 급여 제도 개편이 두 집단에 다르게 작용해 기본소득의 효과를 따로 확인할 수 없었습니다.
+>
+> 시의 예상은 주민 400명에게 평균 6일씩 추가 취업일이 생긴다고 보면 총 2,400일이라는 계산입니다(400×6). 계산은 맞지만, 그 차이를 시의 주민에게 그대로 적용할 수 있다는 근거는 제시되지 않았습니다. 시의 대상 주민이 핀란드 실험의 실업급여 수급자와 얼마나 비슷한지, 그리고 급여 제도나 다른 조건이 결과를 다르게 만들지 않는지가 확인되어야 합니다.
+>
+> 따라서 2,400일은 핀란드 실험의 6일 차이를 400명에게 적용한 **조건부 추정치**로는 볼 수 있지만, 그 실험만으로 시에서 취업일수가 실제로 총 2,400일 늘어난다고 결론 내릴 수는 없습니다.
 
-| 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
-| --- | --- | --- |
-| 비교집단 평균이 72일이며 3,000일은 관측된 6일 차이를 500명에게 곱한 외삽이지 지역에서 관측된 증가가 아님을 밝힌다. | 충족 | 충족 |
-| 첫해 집단 수준의 효과가 없었다는 점과 2018년 제도 개편이 두 집단에 다르게 작용해 둘째 해 기본소득만의 효과를 분리할 수 없다는 점을 모두 설명한다. | 충족 | 충족 |
-| 실험 참여자를 실업급여 수급자로 한정해 설명하고 일반 지역 주민에게 적용하려면 필요한 가정을 제시한다. 실험이 모든 연도에서 효과가 없었다고 단정하지 않는다. | 미충족 | 충족 |
+### Strict
 
-**검토 결과.** 비교집단 평균은 72일입니다. 3,000일은 관측된 6일 차이를 지역 주민에게 외삽한 값입니다. 실업급여 수급자라는 연구 대상, 집단별로 달랐던 개편 영향과 지역 적용 가정을 함께 설명합니다.
-
-익명 채점에서 개정 답안은 X였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/socratic-self-questioning/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/socratic-self-questioning.json).
-
-<details>
-<summary>실행 기록</summary>
-
-미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `6c4c77094da2` / `5f10922f41d2` / `271a6d767645`.
-
-</details>
+> 핀란드 실험은 시의 예상치인 취업일수 2,400일 증가를 직접 뒷받침하지 않는다. 여기서 “늘어난다”는 말은 기본소득이 없었을 때보다 취업일수가 증가한다는 인과 효과를 뜻하는 것으로 보인다.
+>
+> 핀란드에서 무작위로 뽑힌 실업급여 수급자 2,000명은 2017년 11월부터 2018년 10월까지 평균 취업일수가 비교집단보다 6일 많았다. 단순 비례 계산으로는 400명에게 6일씩 적용해 2,400일이 된다. 그러나 첫해에는 집단 수준의 고용 효과가 없었고, 보고된 6일 차이는 둘째 해에 관찰됐다. 그해에는 급여 제도 개편이 두 집단에 다르게 작용해 기본소득의 효과를 개편 효과와 분리할 수 없었다. 따라서 6일 차이를 기본소득이 유발한 증가분으로 해석할 수 없다.
+>
+> 가장 강하게 말할 수 있는 것은 해당 실업급여 수급자 집단에서 둘째 해 평균 취업일수 차이가 관찰됐다는 것이다. 이를 시의 주민 400명에 적용하려면 주민들이 실험 대상자와 충분히 비슷하고, 시의 기본소득이 핀란드의 급여 및 제도 환경과 비교 가능한 조건에서 같은 효과를 낸다는 근거가 필요하다. 현재 정보만으로는 2,400일은 가능한 산술적 환산치일 뿐, 시에서 기대할 수 있는 근거 있는 인과 예측치는 아니다.
 
 ## steve-jobs-presentation
 
-**인제뉴어티가 떠 있던 30초로 무엇을 알 수 있을까?**
-
-[English](EXAMPLES.md#steve-jobs-presentation)
-
-2026-11-09 · `steve-jobs-presentation` 0.1.8 · 한국어 · `gpt-6-luna`
-
-### 사례와 출처
-
-- [NASA, NASA’s Ingenuity Mars Helicopter Succeeds in Historic First Flight (April 19, 2021)](https://www.nasa.gov/news-release/nasas-ingenuity-mars-helicopter-succeeds-in-historic-first-flight/)
-
-NASA의 첫 비행 발표는 Ingenuity의 전체 비행 시간, 제자리 비행 시간과 고도를 구분합니다. 주어진 수치만으로 상승 속도를 계산할 수 있는지는 별도로 판단해야 합니다.
+**인제뉴어티의 비행 시간으로 무엇을 알 수 있을까?** · [English](EXAMPLES.md#steve-jobs-presentation)
 
 ### 질문
 
-> 2021년 4월 19일을 기준으로 박물관에서 발표할 짧은 한국어 발화 세 대목을 써 주세요. 인제뉴어티는 화성의 라이트 브라더스 비행장에서 자율 비행으로 약 3 m까지 올라가 30초간 제자리 비행을 했고, 이륙 후 39.1초에 착륙했습니다. 다른 행성에서 동력을 사용해 제어 비행을 할 수 있음을 보여 준 비행입니다. 준비 중인 슬라이드에는 3 m를 전체 비행 시간으로 나눈 값을 ‘평균 상승 속도’라고 적었습니다. 이 지표를 쓸지 결정해 주세요. 비행 시간 중 제자리 비행의 비율을 제시하고 나머지 시간으로 상승 속도를 알아낼 수 있는지 설명해 주세요. 비행 자료를 검토한 뒤 연구진이 다음 시험에 대해 무엇을 결정할 수 있는지로 마무리하세요. 후속 비행이 이미 성공했다고 가정하지 마세요.
+> 2021년 4월 19일 인제뉴어티가 화성의 라이트 브라더스 비행장에서 자율 비행했다. 약 3 m까지 올라가 30초간 제자리 비행을 한 뒤 이륙 시점으로부터 39.1초에 착륙했다. 누군가 3 m를 39.1초로 나눈 값을 평균 상승 속도라고 부른다. 이번 비행이 입증한 것은 무엇일까? 이 시간들로 제자리 비행과 상승에 관해 어디까지 알 수 있고, 연구진은 다음 시험을 결정할 때 첫 비행 자료를 어떻게 활용할 수 있을까?
 
-### 스킬 미적용 답안
+**출처** · [NASA, NASA’s Ingenuity Mars Helicopter Succeeds in Historic First Flight (April 19, 2021)](https://www.nasa.gov/news-release/nasas-ingenuity-mars-helicopter-succeeds-in-historic-first-flight/)
 
-> 인제뉴어티는 2021년 4월 19일 화성의 라이트 브라더스 비행장에서 자율 비행으로 약 3미터까지 올라갔습니다. 이번 비행은 다른 행성에서 동력을 사용해 제어 비행을 할 수 있음을 보여 줬습니다.
+### Light
+
+> 이번 비행은 인제뉴어티가 화성에서 자율적으로 이륙해 상승하고, 제자리 비행을 한 뒤 안전하게 착륙할 수 있음을 입증했습니다.
 >
-> 전체 비행 시간 39.1초 가운데 약 30초, 즉 약 77%는 제자리 비행이었습니다. 따라서 3미터를 전체 시간으로 나눈 값은 상승 속도가 아니므로 슬라이드의 ‘평균 상승 속도’로 쓰지 않는 편이 맞습니다.
+> 기체는 약 3 m까지 올라가 30초간 제자리 비행을 했고, 이륙 후 39.1초에 착륙했습니다. 3 m를 전체 39.1초로 나눈 값은 평균 상승 속도가 아닙니다. 그 시간에는 상승뿐 아니라 제자리 비행과 하강, 착륙 과정도 포함되며, 주어진 시간만으로 상승에 걸린 시간이나 실제 상승 속도를 따로 계산할 수는 없습니다.
 >
-> 제자리 비행 시간을 빼면 약 9.1초가 남지만, 이 시간에는 상승뿐 아니라 하강과 착륙도 포함됩니다. 그러므로 그 값만으로 상승 속도를 알아낼 수는 없습니다. 연구진은 비행 자료를 검토해 기체가 어떻게 작동했는지 평가하고, 다음 시험의 목표와 비행 계획을 정할 수 있습니다.
+> 연구진은 첫 비행의 고도와 비행 시간, 제자리 비행 및 착륙 기록을 검토해 기체가 어떻게 작동했는지 평가하고 다음 시험의 조건을 정할 수 있습니다. 이 비행은 후속 시험을 설계할 자료를 제공하지만, 더 복잡한 비행의 성공까지 보장하지는 않습니다.
 
-### 스킬 적용 답안 · standard
+### Standard
 
-> 인제뉴어티는 화성의 라이트 브라더스 비행장에서 자율 비행으로 약 3 m까지 올라가 30초간 제자리 비행을 한 뒤, 이륙 후 39.1초에 착륙했습니다. 다른 행성에서 동력을 사용해 제어 비행을 할 수 있음을 보여 준 비행입니다.
+> 첫 비행은 인제뉴어티가 화성에서 자율 비행을 수행할 수 있음을 입증했습니다.
 >
-> 제자리 비행은 전체 39.1초 중 30초, 약 77%입니다. 남은 약 9.1초에는 상승과 하강이 모두 포함되므로, 그 시간만으로 상승 속도를 알 수 없습니다. 따라서 3 m를 전체 비행 시간으로 나눈 값을 ‘평균 상승 속도’라고 쓰지 않겠습니다.
+> 2021년 4월 19일, 인제뉴어티는 라이트 브라더스 비행장에서 약 3 m까지 올라 30초 동안 제자리 비행을 했습니다. 이륙부터 착륙까지는 39.1초였습니다. 제자리 비행은 전체 시간의 30/39.1, 약 77%를 차지했습니다. 남은 9.1초는 상승과 하강, 이착륙 과정에 함께 쓰였으므로 상승에만 걸린 시간은 알 수 없습니다. 따라서 3 m를 39.1초로 나눈 값은 이륙부터 착륙까지의 시간으로 나눈 높이일 뿐, 평균 상승 속도라고 할 수 없습니다.
 >
-> 연구진은 비행 자료를 검토해 상승과 하강의 시간 및 경로를 살펴볼 수 있습니다. 그 관찰을 바탕으로 다음 시험에서 무엇을 조정하거나 측정할지 결정할 수 있습니다.
+> 연구진은 첫 비행의 고도와 시간 기록을 다른 비행 자료와 함께 검토해, 다음 시험에서 고도·비행 시간·기동을 어떻게 설정할지 판단할 수 있습니다. 이 첫 비행만으로 상승 속도나 더 긴 비행의 성능까지 알 수는 없습니다.
 
-### 두 답안의 차이
+### Strict
 
-| 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
-| --- | --- | --- |
-| 화성 최초의 자율 동력·제어 비행이라는 의미와 약 3 m 높이를 유지하고, 30초 제자리 비행과 전체 39.1초를 구분한다. | 충족 | 충족 |
-| 제자리 비행은 약 77%이며 남은 9.1초에는 상승과 하강이 들어감을 설명한다. 전체 시간에서 상승 속도를 유도하는 계산을 배척한다. | 충족 | 충족 |
-| 관객에게 말할 짧은 세 대목으로 구성하고, 앞으로의 성공을 단언하지 않고 비행 자료 검토가 다음 시험을 정하는 근거라고 마무리한다. | 충족 | 충족 |
-
-**검토 결과.** 세 대목에서 제자리 비행 30초와 전체 비행 39.1초를 구분합니다. 나머지 9.1초에는 상승과 하강이 모두 들어 있고, 다음 시험은 비행 자료를 검토한 뒤 정합니다.
-
-익명 채점에서 개정 답안은 X였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/steve-jobs-presentation/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/steve-jobs-presentation.json).
-
-<details>
-<summary>실행 기록</summary>
-
-미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `24a22d2a3e7c` / `ff6014188315` / `a51853b9dd0b`.
-
-</details>
+> ### 발표 원고
+>
+> **이번 첫 비행은 인제뉴어티가 화성에서 자율 비행을 수행할 수 있음을 보여줬습니다.**
+>
+> 2021년 4월 19일, 인제뉴어티는 라이트 형제 비행장에서 약 3 m까지 올라가 30초간 제자리 비행을 했고, 이륙 시점으로부터 39.1초에 착륙했습니다. 30초는 전체 39.1초의 약 77%입니다. 나머지 약 9.1초는 상승과 하강이 함께 차지하므로, 이 자료만으로 상승에 걸린 시간은 알 수 없습니다.
+>
+> 따라서 3 m를 39.1초로 나눈 값은 평균 상승 속도가 아닙니다. 그 계산은 최고 고도와 이륙부터 착륙까지의 전체 시간을 나눈 값일 뿐, 상승 구간의 속도를 알려주지 않습니다.
+>
+> 연구진은 첫 비행의 고도와 시간 기록을 다음 시험의 계획에 참고할 수 있습니다. 상승 속도를 평가하려면 상승 구간의 시간이나 비행 경로 자료를 검토하고, 그 결과에 따라 다음 비행의 고도나 기동을 조정할 수 있습니다.

@@ -1,6 +1,6 @@
 {
   "method": "new-harts-rules",
-  "methodVersion": "0.1.6",
+  "methodVersion": "0.1.8",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -22,7 +22,7 @@
       "adaptation": false
     },
     "bounded-attribution": {
-      "instruction": "Separate verified source-based changes, user house-style choices, and unresolved questions in an optional audit.",
+      "instruction": "Reserve method, version and editorial audit for an explicit audit request or a separate automatic-selection status. For a normal edit, explain only decisions the user asked about. Attribute a book-specific choice to a verified passage; if the user requires a book ruling that cannot be verified, say so.",
       "adaptation": false
     }
   }

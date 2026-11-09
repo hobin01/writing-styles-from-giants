@@ -1,6 +1,6 @@
 {
   "method": "answer-with-html",
-  "methodVersion": "0.1.8",
+  "methodVersion": "0.1.13",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -10,11 +10,11 @@
       "adaptation": false
     },
     "explanatory-question": {
-      "instruction": "For a requested interactive calculation, center the artifact on the assumptions, labeled control, one result and its cause. Add a diagram, timeline or table only when requested or when it explains a distinct relationship; a second numerical account introduces avoidable drift.",
+      "instruction": "Choose controls from the question. For named scenarios, show their causal paths in a table and let a reader select a case-specific explanation of what changed. Highlighting or repeating values alone is insufficient. Use a range when exploring additional values serves the question.",
       "adaptation": false
     },
     "consistent-model": {
-      "instruction": "Compute and write the starting inputs and results in one script-free numerical readout. Compute live results with one model and update that same readout on load and input. Keep the explanation qualitative or render its numerical claims from the same model; avoid independently typed copies. Verify equality and neighboring states against the source and distinguish clock readings from durations.",
+      "instruction": "Show both causal rows and the arithmetic establishing each endpoint. Check an endpoint by subtracting its immediate predecessor and recovering the stated transition. Show one difference between the final outcomes and explain the threshold qualitatively. For exploratory ranges use one model and verify a boundary and its neighbor.",
       "adaptation": false
     },
     "accessible-fallback": {

@@ -16,7 +16,7 @@ Honor an explicit document type. Otherwise choose from the task the reader came 
 | Look up a fact | Reference | Find an exact value, constraint, or interface detail. |
 | Understand a subject | Explanation | Describe the reasons or relationships involved. |
 
-Keep a prerequisite or safety condition beside the action it governs. Split off substantial material that serves another need only within the requested restructuring scope. A single file can have distinct sections. Link only to destinations that exist and distinguish a tutorial's expected outcome from a verified run.
+For a lookup about a specific event, apply the documented behavior to its actual sequence. Give the result that follows, what remains unknown, and the exact option for the next task. Keep a prerequisite or safety condition beside the action it governs. Split off substantial material that serves another need only within the requested restructuring scope. A single file can have distinct sections. Link only to destinations that exist and distinguish a tutorial's expected outcome from a verified run.
 
 ### Worked example · looking up an option
 
@@ -32,7 +32,7 @@ The reader can answer “Does this change writes?” from the last column. A req
 
 `light`: identify the reader need and repair the largest type mismatch. `standard`: apply all applicable rules to the requested document. `strict`: inspect each section for purpose drift and check cross-links or separated destinations that actually exist; preserve necessary exceptions.
 
-For recommendation-only requests, explain the fit. When applying the method automatically or providing a requested audit, record method, version, level, assumptions, exceptions, and unresolved checks outside the finished text.
+Return the finished document alone for explicit selection. For recommendation only, explain the fit without applying the method. For automatic selection, report the method and level separately; include further audit details only on request.
 
 ## Scope and evidence
 

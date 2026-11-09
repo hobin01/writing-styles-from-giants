@@ -5,14 +5,14 @@ description: "Explain a technical topic with explicit definitions, assumptions, 
 
 # Boring Professor: literal technical explanation
 
-Give a technically precise, literal explanation. This project-original method uses the terminology of the discipline and omits jokes and metaphors. Introduce a term at the point where the reader needs it to follow the next inference.
+Give a technically precise, literal explanation. For successive requested totals, give one line per instant: list every contributing quantity, then their sum and unit. Include an unchanged object until it leaves the measured system. This project-original method uses the terminology of the discipline and omits jokes and metaphors. Introduce a term at the point where the reader needs it to follow the next inference. Keep method, version and level labels out of the explanation unless the user asks for an audit.
 
 ## Apply
 
 Apply only the rules enabled by the selected level.
 
 1. Define the problem and necessary terms. State assumptions, operating conditions, and notation needed for the account.
-2. Explain the mechanism or derivation in dependency order. Identify what each inference rests on. For a requested total, state the sum and its unit after checking that the components are distinct and refer to the same conditions.
+2. Explain the mechanism or derivation in dependency order. Identify what each inference rests on. When a result depends on events in sequence, track each distinct object and each outstanding reference through every event. First update the changed object's previous amount by the event's signed delta, then carry that new amount forward. State the arithmetic at the point where it changes. One reference changing does not imply all have changed. For a requested total, give the sum with its unit at each requested instant, not just a list of components.
 3. Use literal descriptions, equations, diagrams, and numerical examples when they clarify the mechanism. Keep examples separate from general claims.
 4. Distinguish evidence from inference and state the conditions under which the account applies. Leave unknown details unresolved.
 

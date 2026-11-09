@@ -1,4 +1,4 @@
-"""Read a public task from stdin and run two isolated GPT-6 Luna writing sessions."""
+"""Generate a public example in an isolated GPT-6 Luna session or run a control pair."""
 
 import argparse
 import json
@@ -9,12 +9,13 @@ import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
 MODEL = "gpt-6-luna"
+LEVELS = ("light", "standard", "strict")
 
 
-def generate(task, instructions=""):
+def generate(task, instructions="", level="standard"):
     message = "Work only from this message. Do not use tools. Give the requested writing or artifact.\n"
     if instructions:
-        message += f"Apply this writing method at standard level:\n{instructions}\n"
+        message += f"Apply this writing method at {level} level:\n{instructions}\n"
     message += f"\nUser request:\n{task}"
     with tempfile.TemporaryDirectory(prefix="writing-") as workspace:
         if Path(workspace).resolve().is_relative_to(ROOT):
@@ -24,7 +25,8 @@ def generate(task, instructions=""):
             ["codex", "exec", "--ephemeral", "--ignore-user-config",
              "--disable", "plugins", "--disable", "shell_tool", "--enable", "omit_skill_descriptions",
              "--sandbox", "read-only", "--skip-git-repo-check", "--model", MODEL,
-             "-c", 'model_reasoning_effort="low"', "-c", "project_doc_max_bytes=0",
+             "-c", 'model_reasoning_effort="low"', "-c", 'web_search="disabled"',
+             "-c", "project_doc_max_bytes=0",
              "-c", "suppress_unstable_features_warning=true", "--json", "-o", str(final), "-"],
             cwd=workspace, input=message, text=True, capture_output=True, timeout=240,
         )
@@ -43,9 +45,15 @@ def generate(task, instructions=""):
         return replies[-1]
 
 
-def run_pair(method_dir, task):
+def method_instructions(method_dir, level):
     paths = [method_dir / "SKILL.md", method_dir / "method.json", *sorted((method_dir / "locales").glob("*.json"))]
-    instructions = "\n".join(f"<{p.name}>\n{p.read_text()}\n</{p.name}>" for p in paths)
+    if level == "strict" and method_dir.name == "asd-ste100":
+        paths.append(method_dir / "references" / "strict-profile.md")
+    return "\n".join(f"<{p.name}>\n{p.read_text()}\n</{p.name}>" for p in paths)
+
+
+def run_pair(method_dir, task):
+    instructions = method_instructions(method_dir, "standard")
     result = {"model": MODEL}
     for arm, context in (("without", ""), ("standard", instructions)):
         try:
@@ -59,10 +67,15 @@ def run_pair(method_dir, task):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("method", choices=sorted(p.parent.name for p in (ROOT / "skills").glob("*/method.json")))
+    parser.add_argument("--level", choices=LEVELS, help="Generate just the selected level as plain text.")
     args = parser.parse_args()
     task = sys.stdin.read()
     if not task.strip():
-        parser.error("Supply the same nonempty writing request for both arms on stdin.")
-    result = run_pair(ROOT / "skills" / args.method, task)
+        parser.error("Supply a nonempty writing request on stdin.")
+    method_dir = ROOT / "skills" / args.method
+    if args.level:
+        print(generate(task, method_instructions(method_dir, args.level), args.level))
+        sys.exit(0)
+    result = run_pair(method_dir, task)
     print(json.dumps(result, ensure_ascii=False, indent=2))
     sys.exit(1 if "failure" in result else 0)

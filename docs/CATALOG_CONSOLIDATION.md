@@ -57,5 +57,3 @@ Minto content version is `0.2.0` for the new conditional opening rule. ASD and O
 ## Review and limits
 
 Ponytail review kept one Minto opening rule and the existing ASD/Orwell rules, deleting the three duplicate entrypoints rather than creating a router or copies. Each changed skill retains its own complete evidence, locale record, and cases.
-
-The [initial review](CATALOG_REVIEW.md) and [original run record](../evals/runs/2026-11-07-initial-catalog.json) remain historical evidence for the initial `0.1.0` profiles, including retired skills. They are not new execution results for the consolidated versions. No new model-quality, host-discovery, mixed-method execution, or native-reader evaluation was performed in this change. Repository/format validation is reported in the PR; all skills remain experimental.

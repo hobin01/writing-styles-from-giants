@@ -1,6 +1,6 @@
 {
   "method": "korean-plain-language",
-  "methodVersion": "0.1.9",
+  "methodVersion": "0.1.15",
   "locale": "ko",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -22,7 +22,7 @@
       "adaptation": true
     },
     "logical-sentences": {
-      "instruction": "문장을 나눌 때도 문장 성분의 호응과 각 조건의 범위를 유지한다. 비교 편집을 요청받으면 사람별로 한 항목씩 쓰고, 수치를 물었을 때에는 이름 뒤에 정확한 값과 단위를 먼저 밝힌다. 포함·제외 사유와 해당 집단의 면제 절차를 명시하고 공통 의무는 함께 설명한다.",
+      "instruction": "문장을 나눌 때도 문장 성분의 호응과 각 조건의 범위를 유지한다. 비교 편집을 요청받으면 사람별로 한 항목씩 쓰고, 수치를 물었을 때에는 이름 뒤에 정확한 값과 단위를 먼저 밝힌다. 포함·제외 사유와 해당 집단의 면제 절차를 명시하고 공통 의무는 함께 설명한다. 영어로 이유를 요청한 경우 계산과 설명은 영어로 쓰고, 고친 한국어 문안만 한국어로 따로 제시한다.",
       "adaptation": true
     }
   }

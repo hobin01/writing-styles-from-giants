@@ -1,6 +1,6 @@
 {
   "method": "amazon-six-page-narrative",
-  "methodVersion": "0.1.2",
+  "methodVersion": "0.1.6",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],

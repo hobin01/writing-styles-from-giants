@@ -77,5 +77,23 @@
       "Use at most four brief read-aloud sentences; omit an unrelated analogy."
     ],
     "method": "eli5"
+  },
+  {
+    "id": "equal-volume",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "standard",
+    "source": "A cup of oil weighs less than the same cup filled with water. Would a barrel of oil also weigh less than a spoonful of water?",
+    "ruleIds": [
+      "show-mechanism",
+      "preserve-meaning"
+    ],
+    "sourceIds": [
+      "eli5-community"
+    ],
+    "expectations": [
+      "Describe the cup or spoon in familiar spoken words. The original comparison is for the same volume; it cannot establish the barrel-to-spoon claim."
+    ],
+    "method": "eli5"
   }
 ]

@@ -91,7 +91,8 @@
     ],
     "expectations": [
       "Calculate the observed offset magnitude as 10 mm, and the projected magnitude as the square root of 73 mm², about 8.54 mm.",
-      "State which value is hypothetical. Return just the technical note."
+      "State which value is hypothetical. Return just the technical note.",
+      "If giving a relative reduction, compare 10 mm with √73 mm before rounding either value. Report the reduction as about 14.6%."
     ],
     "method": "nist-technical-publication"
   },
