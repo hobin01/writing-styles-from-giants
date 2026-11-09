@@ -2,7 +2,7 @@
 
 [한국어](standard.ko.md)
 
-2026-11-08 · `federal-plain-language` 0.1.2 · English · `gpt-6-luna`
+2026-11-09 · `federal-plain-language` 0.1.22 · English · `gpt-6-luna`
 
 ### Case and sources
 
@@ -20,7 +20,7 @@
 
 ### With the skill at standard
 
-> Both you and your child need identity evidence for the replacement card application. For your child, get an issuer-certified copy of a current state-issued non-driver ID; it takes 15 minutes, while the original passport takes 40. For yourself, use your original driver’s license; it takes 35 minutes, while an issuer-certified passport copy takes 25. The fastest valid route is the child’s certified ID and your certified passport copy, which takes 40 minutes total. The notarized passport photocopy is not accepted, and the birth certificate proves age or citizenship, not identity.
+> Use the child’s issuer-certified state non-driver ID (15 minutes) and the parent’s issuer-certified passport copy (25 minutes). Together they take 40 minutes, within the 45-minute limit. The notarized passport photocopy takes only 5 minutes, but SSA does not accept notarized photocopies as identity evidence. The birth certificate proves the child’s age or citizenship, not identity.
 
 ### What changed
 
@@ -28,15 +28,15 @@
 | --- | --- | --- |
 | Identifies the child's issuer-certified non-driver ID plus the parent's issuer-certified passport copy, totals 40 minutes and fits the 45-minute limit. | Met | Met |
 | Explains both rejected shortcuts: the original birth certificate is insufficient for the child's identity and the notarized copy is insufficient for the parent's identity. | Met | Met |
-| Gives the parent an actionable English identity-only answer in no more than five sentences without implying the full application is complete. | Met | Missed |
+| Gives the parent an actionable English identity-only answer in no more than five sentences without implying the full application is complete. | Met | Met |
 
-**Masked review** (X = baseline; Y = standard). Both identify the 15 + 25 = 40 minute combination and reject the birth certificate and notarized photocopy as identity shortcuts. X gives one consistent route. Y first tells the parent to use a 35-minute license, making that trip 50 minutes, then recommends the 25-minute passport copy instead.
+**Review.** The parent gets a feasible 40-minute plan and a reason to reject each shortcut. The answer stays within five sentences and addresses identity evidence only.
+
+Masked reviewer assignment: Y was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/federal-plain-language/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/federal-plain-language.json).
 
 <details>
 <summary>Run record</summary>
 
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `5ba332f74f16` / `cd08aed6cec9` / `6dc26dbd3b6c`.
+Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `90ceac7f7264` / `cd08aed6cec9` / `68130696a7c4`.
 
 </details>

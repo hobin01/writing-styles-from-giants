@@ -1,12 +1,12 @@
 {
   "method": "new-harts-rules",
-  "methodVersion": "0.1.2",
+  "methodVersion": "0.1.6",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
   "rules": {
     "preserve-meaning": {
-      "instruction": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code at every level.",
+      "instruction": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code. Derive the counted noun and whole population from source data and use them in both edited copy and notes. Identify the comparison base of relative changes.",
       "adaptation": false
     },
     "edition-and-house-style": {
@@ -18,7 +18,7 @@
       "adaptation": false
     },
     "consistent-decisions": {
-      "instruction": "Apply a verified editorial decision consistently to editable prose while preserving quotations, code, citations, and intentional exceptions.",
+      "instruction": "Write every editable instance in the requested house form, including numbers in text and editorial notes. Scan both for the superseded form; only exact protected spans retain it.",
       "adaptation": false
     },
     "bounded-attribution": {

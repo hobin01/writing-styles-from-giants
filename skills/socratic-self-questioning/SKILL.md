@@ -10,8 +10,8 @@ Use targeted questions to determine how much a claim's evidence supports. Choose
 Use only the rules enabled by the selected level below.
 
 1. Apply `define-claim`: identify the claim and the term most likely to hide disagreement or ambiguity.
-2. Apply `test-assumptions`: ask what supports the claim, what it assumes, and what case or alternative would challenge it. Focus on questions that can change the answer.
-3. Apply `revise-calibration`: revise an overbroad conclusion or retain the unresolved issue. For a claim about a new population, identify who was studied, who they were compared with, and what assumption the extension needs. Give concise reasons for the resulting claim.
+2. Apply `test-assumptions`: what supports the claim, and which counterexample or alternative could change it? For a numerical comparison, reconstruct any requested reference value from the supplied difference or ratio and check it in reverse. For a causal claim, ask what else affected the compared groups or periods differently.
+3. Apply `revise-calibration`: state the strongest conclusion the evidence warrants, with any unresolved objection. When extrapolating, introduce the observation with “Among [the source's specific eligible group] …”. Fill in the defining characteristics; “participants” or the place name alone does not tell the reader who qualified. Then name the comparison group and what must hold in the new setting for the forecast to follow.
 4. In strict mode, apply `bounded-stop`: check that remaining questions cannot materially alter the current answer, then deliver the requested product. Default to self-review; ask the user only for missing facts that matter. Use an interactive dialogue only when requested.
 
 ## From a universal claim to a supportable one

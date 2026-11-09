@@ -6,6 +6,8 @@ When I ask an AI to “explain this simply,” it sometimes cuts the part I want
 
 Choose the [English examples](EXAMPLES.md) or [한국어 예제](EXAMPLES.ko.md). For each of the 22 skills, GPT-6 Luna received the English and Korean questions independently, with and without the skill. Try [two DNS caches with different clocks](skills/feynman-technique/examples/standard.md), [LIGO’s false-alarm rate](skills/imrad/examples/standard.md), or [Seoul’s subway map redesign](skills/hunminjeongeum/examples/standard.md). Each page shows the sources, both actual answers and what they got right or missed on a task designed for high-school reasoning or above.
 
+The [November 9 run record](evals/runs/2026-11-09-standard/README.md) shows which 13 skills changed, what they missed, and every retry on the same questions.
+
 ## Try it in Codex
 
 Open this repository as your project. Copy one line into a new conversation, including the `$`.

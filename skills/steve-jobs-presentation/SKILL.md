@@ -12,9 +12,9 @@ Build a clear presentation arc from observed public examples. This is a project 
 Apply only the rules enabled by the selected level.
 
 1. Identify the audience's question and one central benefit or message supported by the material.
-2. Arrange a small, signposted sequence. Each part should contribute a distinct idea and connect to the central message. Choose the count from the material rather than forcing three parts.
-3. Use a concrete demonstration, comparison, or example when the evidence supports one. Label proposed demonstrations and illustrative values; preserve uncertainty, costs, and limitations.
-4. Return to the central message and a warranted implication or next step. Use natural spoken language and sparse visual prompts when slides are requested.
+2. Arrange a small sequence around the audience's question. Honor a requested count. For a short script, draft one or two speakable sentences per beat. For slides, use sparse visual prompts. Cut throat-clearing and repetition before dropping a required fact.
+3. Use a concrete example or demonstration the evidence supports. Label a proposed demo or an illustrative value as such. If the audience needs to understand part of a measured total, speak the share and the numerical remainder with its unit. Name the activities that occupy the remainder. For a round trip, describe motion in both directions. “Loading and unloading share the remaining four minutes, so we cannot time loading alone.”
+4. Close on what the central message means for the audience. When the requested next step is a test, link two actions in the final beat: “We'll review [observations from this test]. That will help us decide [what to try or change in the next one].” Keep future outcomes conditional and production notes outside the script.
 
 Never fabricate personal experience, quotations, audience reactions, product performance, or a demonstration claimed to have occurred. A memorable sequence is not evidence that a product works.
 
@@ -40,4 +40,4 @@ Respect the user's selected method, level, output language, and scope. `off` ski
 
 English instructions do not require English output. Structural steps transfer to the requested output language; this is not a reviewed language-specific adaptation.
 
-Read [method.json](method.json) for rule IDs, exceptions, provenance, and exact level policies; [English rules](locales/en.json) for language wording. The [cases](cases.json) define review expectations, not measured model results. For automatic application, expose the method and level in a separate status or audit. When an audit is requested, also record version, language, exceptions, and unresolved checks; keep these outside the finished prose.
+Read [method.json](method.json) for rule IDs, exceptions, provenance, and exact level policies; [English rules](locales/en.json) for language wording. The [cases](cases.json) define review expectations, not measured model results. Explicit selection returns the requested artifact alone. The automatic router reports its selection separately. A requested audit may also record version, language, exceptions, and unresolved checks.

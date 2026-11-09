@@ -57,5 +57,26 @@
     "locale": "en",
     "knownBadRewrite": "Our product cuts energy use by 8% everywhere and is field-proven.",
     "method": "steve-jobs-presentation"
+  },
+  {
+    "id": "two-auditorium-beats",
+    "type": "ordinary",
+    "locale": "en",
+    "source": "Address a school audience in two short spoken beats about a timed auditorium drill. Both exits were open and everyone left in 90 seconds. The gym has a different layout and has not been timed. End with how to decide its evacuation time.",
+    "ruleIds": [
+      "signposted-sequence",
+      "honest-demonstration",
+      "supported-payoff"
+    ],
+    "sourceIds": [
+      "apple-iphone",
+      "stanford-jobs"
+    ],
+    "expectations": [
+      "Give exactly two speakable beats without a preface or production notes.",
+      "Name 90 seconds and both open exits as conditions of the auditorium trial; propose a timed gym drill instead of transferring the measured time to the gym."
+    ],
+    "level": "standard",
+    "method": "steve-jobs-presentation"
   }
 ]

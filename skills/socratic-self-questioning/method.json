@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "socratic-self-questioning",
-  "version": "0.1.2",
+  "version": "0.1.6",
   "status": "experimental",
   "title": "Socratic self-questioning",
   "kind": "process",
@@ -82,7 +82,7 @@
     },
     {
       "id": "test-assumptions",
-      "intent": "Identify supporting reasons and assumptions; test a consequential one with a counterexample or alternative explanation.",
+      "intent": "Identify support and test a consequential assumption with a counterexample or alternative. Reconstruct requested numerical reference values from supplied contrasts when possible. In a causal comparison, check whether another change affected the groups differently.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Bounded operational adaptation of examination of knowledge claims.",
@@ -101,7 +101,7 @@
     },
     {
       "id": "revise-calibration",
-      "intent": "Revise the claim to the strongest version supported by the evidence, or retain a specific uncertainty. Name the population and comparison behind an observed result when a claim extends it to other people or settings.",
+      "intent": "State the strongest supported claim and retain unresolved objections. For an extrapolation, report the observed result with the specific eligibility description in its subject; general labels such as participants omit the evidence boundary. Name the comparison and the assumption needed to extend that result.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Project adaptation of recognizing limits to claimed knowledge.",

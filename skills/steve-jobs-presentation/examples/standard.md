@@ -2,7 +2,7 @@
 
 [한국어](standard.ko.md)
 
-2026-11-08 · `steve-jobs-presentation` 0.1.1 · English · `gpt-6-luna`
+2026-11-09 · `steve-jobs-presentation` 0.1.8 · English · `gpt-6-luna`
 
 ### Case and sources
 
@@ -22,13 +22,11 @@
 
 ### With the skill at standard
 
-> **Method status:** Jobs-inspired presentation structure · standard
+> 1. “On 19 April 2021, Ingenuity flew autonomously at Wright Brothers Field on Mars, reaching about 3 meters. The flight demonstrated powered, controlled flight on another planet.”
 >
-> 1. **The milestone:** “On 19 April 2021, Ingenuity flew autonomously at Wright Brothers Field on Mars. It reached about 3 metres, hovered for 30 seconds, and landed 39.1 seconds after takeoff. The flight demonstrated powered, controlled flight on another planet.”
+> 2. “It hovered for 30 seconds of its 39.1-second flight—about 77 percent. I would not label 3 meters divided by total flight time as average climb speed: the remaining 9.1 seconds include ascent and descent, so they do not tell us how long the climb took.”
 >
-> 2. **What the timing tells us:** “The hover took about 77% of the flight: 30 divided by 39.1. I would not label 3 metres divided by the whole flight time—about 0.077 metres per second—as the average climb speed. The total includes the 30-second hover and time spent descending, so the remaining 9.1 seconds cannot tell us how long the climb took.”
->
-> 3. **What comes next:** “The flight establishes the milestone; the timing alone does not establish climb speed. After reviewing the flight data, the team could decide whether it supports a climb-speed estimate and what, if anything, to investigate in a later flight. That would be a decision based on the data, not a claim that a later test succeeded.”
+> 3. “After reviewing the flight data, the team can decide what to change or measure in a future flight; that review alone cannot tell us whether a later test will succeed.”
 
 ### What changed
 
@@ -36,15 +34,15 @@
 | --- | --- | --- |
 | Reports the first Mars flight as autonomous, powered and controlled, retains about 3 m and distinguishes 30 s of hover from 39.1 s total. | Met | Met |
 | Derives roughly 77% hovering and identifies the remaining 9.1 s as non-hover time including ascent and descent; rejects using total time to infer climb speed. | Met | Met |
-| Uses three short audience-facing beats and closes on reviewing the flight data to inform the next test, without claiming future success. | Met | Missed |
+| Uses three short audience-facing beats and closes on reviewing the flight data to inform the next test, without claiming future success. | Met | Met |
 
-**Masked review** (X = baseline; Y = standard). Both give the roughly 77% hover share, separate the 9.1 seconds of ascent and descent, and decline to infer climb speed. X gives three brief, speakable beats. Y's second beat is longer and the visible method status is additional material outside the requested three beats; its closing decision is still conditional on the data.
+**Review.** The three spoken beats distinguish the 30-second hover from the whole flight. Ascent and descent share the remaining 9.1 seconds; reviewing the flight data informs the next test.
+
+Masked reviewer assignment: X was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/steve-jobs-presentation/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/steve-jobs-presentation.json).
 
 <details>
 <summary>Run record</summary>
 
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `172a5e6964a7` / `7cd7cfac8849` / `b1d810da602d`.
+Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `24a22d2a3e7c` / `7cd7cfac8849` / `5e0194f544ea`.
 
 </details>

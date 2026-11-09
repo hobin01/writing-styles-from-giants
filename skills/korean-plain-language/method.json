@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "korean-plain-language",
-  "version": "0.1.2",
+  "version": "0.1.9",
   "status": "experimental",
   "title": "Korean plain-language companion",
   "kind": "sentence",
@@ -54,7 +54,7 @@
     },
     {
       "id": "referents-and-particles",
-      "intent": "Resolve ambiguous omitted subjects, referents, particles, and modifier scope while retaining natural Korean omission.",
+      "intent": "Resolve ambiguous referents without guessing. Preserve the scope of exclusive and universal particles: in the proposed wording, a shared predicate must be true of every named group and each stated example must respect that scope.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Extends the guide’s sentence agreement and grammatical-accuracy guidance to explanatory editing; examples and operational questions are original.",
@@ -114,7 +114,7 @@
     },
     {
       "id": "logical-sentences",
-      "intent": "Repair predicate agreement and group conditions with the action they govern; split or reorder only when the logical relation remains clear.",
+      "intent": "Repair predicate agreement and preserve each condition when splitting sentences. In a requested comparison, give each group a separate entry with its numerical result and unit when asked, reasons, and any explicit exemption. State any duty shared by the groups.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Original operational interpretation of pp.15 and28–32 about visible organization and grammatical accuracy. English active-voice and word-count rules do not transfer literally.",

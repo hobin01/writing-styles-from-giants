@@ -13,26 +13,40 @@ At every level preserve facts, numbers, units, negation, conditions, exceptions,
 
 Apply only the rules enabled by the selected level.
 
-1. Identify the reader task and knowledge. Put the useful action or answer early; retain its prerequisites, warning, and applicable conditions. For a sequence, trace what each action changes and preserves. Verify that the surviving items match the reader’s goal before giving the steps.
+1. Identify the reader task and knowledge. Put the useful action or answer early; retain its prerequisites, warning, and applicable conditions. For an action that removes several items at once, use the decision table below before writing the steps.
 2. Use direct, helpful wording. Remove empty openings and repetition only when the reader loses no information. Define needed technical terms instead of replacing them with inaccurate everyday words.
 3. Match actual product/UI labels and keep terminology consistent across steps. Preserve commands, paths, code, and identifiers verbatim unless the task explicitly asks to change them.
 4. Check whether literal wording, explicit referents, and familiar examples work for the intended audience. Apply English-specific grammar or punctuation choices only to English; do not introduce contractions, capitalization rules, or English word limits into Korean prose.
 
-## Worked help text · what the reader must match
+## Write a safe bulk-removal procedure
 
-A **UI label** is the text the reader sees on a control. Given the menu item `Utilize legacy mode`, an authored help step is “Select **Utilize legacy mode**.” Editing the label to “Use legacy mode” would make the help text point at a name the reader cannot find.
+Start with how to open the tool. Give the reader a short setup table **before** the bulk command: `Item | Current state | What to do now`. Use the source’s item names, grouping only items with the same state and goal. Copy the stated starting state; do not infer it from the desire to keep or delete something. Fill one row per item or group in source order.
 
-For the [qualified-action case](cases.json), the source permits only administrators to delete an archive after a verified backup. It supplies the command `archive rm --id=42` and says retention rules might prevent deletion. An authored help excerpt:
+- Wanted, already exempt from deletion: leave it as it is.
+- Wanted, subject to deletion: name the action that protects it now.
+- Unwanted, exempt from deletion: give the individual removal command now.
+- Unwanted, subject to deletion: leave it for the bulk command.
 
-> Only administrators with a verified backup may use `archive rm --id=42` to delete the archive. Retention rules might still prevent deletion.
+The table is the setup procedure, so give the actual control and target in each row. **Only after the table**, instruct the reader to run the bulk command. To name what remains, start with the state **after** the table: cross out individually removed entries, remove the entries still eligible for the batch, and read back the surviving names. Do not repeat the setup as a second set of steps. If the user requests a different format, preserve the sequence in that format.
 
-Read the excerpt as someone looking for a command to copy. The permission and backup condition must be visible before the command. Check the command character for character against the source.
+## Match the screen
+
+When a user defines several UI controls in prose, open the help text with a short **Control | What it does** key. Split each source sentence at its finite verb. The grammatical subject is the label; the complete verb phrase is the effect. Use the shortest subject that fits the grammar, including all words in a genuine multiword name. Copy only the left column into reader steps.
+
+From “Dismiss hides the banner. Save as template adds a preset,” the key is:
+
+| Control | What it does |
+| --- | --- |
+| Dismiss | Hides the banner. |
+| Save as template | Adds a preset. |
+
+Before saying “select,” read the proposed label back against the source: **Dismiss hides** would leave “the banner” without a verb. The entire sentence leaves no effect at all. Both are invalid button names. If labels are already quoted or styled, preserve that explicit boundary instead.
 
 ## Levels and completion
 
 `light`: improve the reader action, remove safe redundancy, and align terms. `standard`: also review global comprehension throughout the requested scope. `strict`: inspect every step for a clear action, exact label, prerequisite, and preserved technical meaning, and record justified exceptions.
 
-Return the requested document or edit. Keep method, version from [method.json](method.json), level, assumptions, skipped rules, and unresolved checks in a brief status or audit when application is automatic or an audit is requested; keep that record outside the finished prose. For recommendation-only requests, explain the fit without editing.
+For a directly chosen method, return just the requested help text. Keep method, version from [method.json](method.json), level, assumptions, skipped rules, and unresolved checks in a brief status or audit when application is automatic or an audit is requested; keep that record outside the finished prose. For recommendation-only requests, explain the fit without editing.
 
 ## Scope and evidence
 

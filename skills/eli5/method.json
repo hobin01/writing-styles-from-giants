@@ -33,7 +33,7 @@
     },
     {
       "id": "familiar-start",
-      "intent": "Start with an experience the intended child can recognize and introduce one unfamiliar idea at a time.",
+      "intent": "Choose an experience the child recognizes. For a why question, name the actual actor and the change they made. Omit optional background.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Owner-requested literal age-five adaptation; subreddit convention is not an age-five standard.",
@@ -52,7 +52,7 @@
     },
     {
       "id": "show-mechanism",
-      "intent": "Explain what happens and why with a concrete sequence; explain a necessary new term at first use.",
+      "intent": "Explain the action and its effects in small causal steps. Define a necessary new word. State when a cause is unknown.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Original operational application of the identified source within the documented read scope.",
@@ -71,7 +71,7 @@
     },
     {
       "id": "bounded-model",
-      "intent": "Use a concrete example or analogy only when it helps; state the important way the simplified model differs from reality. When amounts span different times or sample sizes, compare them on a common basis and explain what the example can actually show.",
+      "intent": "Use literal examples or bounded analogies when useful. Give only the common-scale averages when comparing speeds; keep each figure beside its subject and put the named winner directly with its comparative verb. Distinguish individual rates from the difference between them. State untested properties and the specific cause of any separately established real effect.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Original operational application of the identified source within the documented read scope.",
@@ -90,7 +90,7 @@
     },
     {
       "id": "child-check",
-      "intent": "Offer a small prediction or retelling question when learning is the task; use respectful language and a read-aloud form when appropriate.",
+      "intent": "In a capped demonstration explanation, use the short spoken frames once for each needed job: correct actor and immediate purpose, actual mechanism and any misconception, a named comparison result with common-scale averages, the untested property and the independently known cause and effect. Each filled frame yields one sentence. Skip unneeded frames. Offer a prediction only when teaching is requested.",
       "classification": "guideline",
       "provenance": "project-original",
       "rationale": "Original audience-check procedure, not a claim of validated age suitability.",
@@ -107,7 +107,7 @@
     }
   ],
   "schemaVersion": 1,
-  "version": "0.1.2",
+  "version": "0.1.18",
   "status": "experimental",
   "applicability": {
     "genres": [

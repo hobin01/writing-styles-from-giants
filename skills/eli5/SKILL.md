@@ -5,24 +5,33 @@ description: "Explain a concept for a literal five-year-old using familiar exper
 
 # ELI5: explain to a five-year-old
 
-Write something an adult could read aloud to a five-year-old. Give the child an action they can picture, what happens next, and a reason. Actual age suitability needs reader review.
+Write only the words an adult should read aloud to the child. Start with what happened, in everyday words. Keep the skill name, level, headings and review notes out of the read-aloud text. Actual age suitability needs reader review.
 
 ## Apply
 
-Apply only the rules enabled by the selected level.
+Answer the child's question using something familiar and one small causal step at a time. Explain a new word where it appears. Use a literal example or a helpful analogy with its limit. Say when the cause is unknown. In a teaching activity, invite one prediction; for a direct answer, stop after explaining. Apply only rules enabled at the chosen level.
 
-1. Start with a familiar object or experience. If no context is supplied, choose an ordinary one and keep the assumption modest.
-2. Describe the mechanism in small steps. Introduce essential terms beside their meaning; keep an unfamiliar label only when it helps the child refer to the idea.
-3. Use a literal example, or a bounded analogy if it helps. If a comparison spans different amounts of time or different numbers of items, work out a fair comparison first. Give the child its result in familiar units. Say which part the example shows and explain separately any fact it did not test. Never replace an unknown mechanism with an invented story.
-4. When teaching is requested, invite one small prediction or retelling. For a short answer, finish after the explanation.
+For a capped read-aloud answer that combines a real action, unequal measurements and an untested effect, use one short sentence for each job below. For other questions, use only the relevant jobs.
 
-## A brake a child can picture
+| Job | Shape of the spoken sentence |
+| --- | --- |
+| Action | “The [person who acted] did [action] to [immediate purpose].” When one person helps another, keep their roles straight. |
+| Mechanism | “The [part] helps [effect]; it doesn't [mistaken idea].” Use brief words that suit the language. |
+| Comparison | “[Name] was faster, averaging [amount] per [unit] to [other name]’s [amount].” Adapt the word order when slower is clearer. |
+| Limit | “This [activity] didn't test [property].” |
+| Real effect | “In the real [subject], the [specific part] helps it [known effect].” Reuse the mechanism's name here; a broader object name changes the explanation. |
 
-This original illustration of the [`literal-better` case](cases.json) explains a cable-operated rim brake.
+For the comparison, scale each amount to the shorter interval using its own original interval. Say “on average” (Korean “평균”) once, with the shared unit. Use each needed frame once. Each frame makes **one sentence**, even when it contains two short clauses. The spoken answer gets only the result. No setup, recap or labels.
 
-> On this bike, you squeeze the brake handle. It pulls a thin wire. The wire makes two small pieces called brake pads press against the hard edge of the wheel. The pads rub on the wheel as it turns. That slows the wheel down.
+## A picture-label game
 
-“On this bike” keeps the claim specific. Check that the child has a concrete action to follow at every step from hand to wheel.
+A teacher labelled drawers with pictures because the pictures helped children both find things and put them away. In a game, children found nine toys in three rounds with picture labels and four in two rounds with word labels. The game timed only finding toys. For a two-round comparison the averages are six and four, although no one counted the first two picture rounds separately.
+
+> Our teacher put pictures on the drawers to help us find toys.
+> A picture shows us where to look.
+> Pictures were faster, with six toys in two rounds on average to the words’ four.
+> The game didn’t time putting toys away.
+> Pictures help us put toys back in the right drawers, too.
 
 ## Levels
 
@@ -32,6 +41,6 @@ Respect the user's selected method, level, output language, and scope. `off` ski
 
 ## Language
 
-Use the requested language and a suitable spoken register. Korean vocabulary, endings, and read-aloud suitability need audience review; English word counts do not establish a Korean age-five reading level.
+Use the requested language and a suitable spoken register. In Korean, name the actor after a change of subject. For unequal rates, use parallel amounts and put the winner next to the comparative verb: “한 번에 평균 토끼는 세 칸, 거북이는 두 칸이라 토끼가 더 빨랐어.” “두 칸 더 빨랐어” makes the second animal’s rate sound like the difference. Give the converted rates alone. Audience review remains necessary; English word counts do not establish Korean read-aloud suitability.
 
 Read [method.json](method.json) for provenance, exceptions, and per-rule levels, and [locales/en.json](locales/en.json) for the English wording. [cases.json](cases.json) supplies synthetic review cases. For automatic application, show the method and level in a separate status or audit. A requested audit also records version, language, exceptions, and unresolved checks.

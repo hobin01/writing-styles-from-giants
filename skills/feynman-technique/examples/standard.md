@@ -2,7 +2,7 @@
 
 [한국어](standard.ko.md)
 
-2026-11-08 · `feynman-technique` 0.1.3 · English · `gpt-6-luna`
+2026-11-09 · `feynman-technique` 0.1.8 · English · `gpt-6-luna`
 
 ### Case and sources
 
@@ -22,25 +22,23 @@
 
 ### With the skill at standard
 
-> Harbor’s NXDOMAIN at 12:00 is cached for 300 seconds: RFC 2308 uses the smaller of the SOA TTL (900 seconds) and MINIMUM (300 seconds). The cache stores that the name does not exist, so at 12:06 Harbor can still receive NXDOMAIN even though the operator added the A record at 12:04. Harbor’s negative cache expires at 12:05.
->
-> Hill’s independent resolver starts its own 300-second timer from its NXDOMAIN at 12:03, so it can also receive NXDOMAIN at 12:06; that cache expires at 12:08. After each cache expires, a query can reach the updated authority and see the A record. If Hill had not queried before 12:04, it would have no cached NXDOMAIN, so its first query at 12:06 could reach the authority and return the A record.
+> **Incident explanation (junior developer):** RFC 2308 sets the negative-cache lifetime to the smaller of the SOA TTL (900 seconds) and SOA MINIMUM (300 seconds), so each resolver can keep its own NXDOMAIN result for 300 seconds from when it received that answer. Harbor received NXDOMAIN at 12:00, so its entry expires at **12:05**. Hill received NXDOMAIN at 12:03, so its entry expires at **12:08**. The A record was created at 12:04, but that does not erase either resolver’s cached result. At 12:06, Harbor’s entry has expired and, with the authority reachable and updated, Harbor can see the A record; Hill’s entry is still valid, so Hill can still see NXDOMAIN until 12:08. If Hill had not queried before 12:04, it would have no negative entry to serve at 12:06 and could query the authority and see the A record. The two resolvers’ cache timers start independently when each receives NXDOMAIN.
 
 ### What changed
 
 | Check fixed before generation | Without | Standard |
 | --- | --- | --- |
 | Computes the 300-second lifetime and the 12:05 Harbor and 12:08 Hill expirations from their own original queries. | Met | Met |
-| At 12:06 Harbor can fetch the new address while Hill can still serve NXDOMAIN; creating the record did not restart or invalidate Hill's cached lifetime. | Missed | Missed |
+| At 12:06 Harbor can fetch the new address while Hill can still serve NXDOMAIN; creating the record did not restart or invalidate Hill's cached lifetime. | Missed | Met |
 | Explains for a junior developer why Hill with no earlier negative entry could fetch the new address at 12:06 under the stated assumptions, without implying a simultaneous global update. | Met | Met |
 
-**Masked review** (X = baseline; Y = standard). Both derive 300 seconds, the 12:05 and 12:08 expirations, and Hill’s counterfactual. X initially says both resolvers can still return the cached negative answer at 12:06, then corrects itself for Harbor. Y says Harbor can still see NXDOMAIN at 12:06 even though it gives Harbor’s earlier expiration. Only Hill can reuse that negative entry.
+**Review.** The two expirations come from different first queries. At 12:06 only Hill can still reuse its negative entry; without that earlier query, Hill could fetch the new address.
+
+Masked reviewer assignment: X was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/feynman-technique/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/feynman-technique.json).
 
 <details>
 <summary>Run record</summary>
 
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `9249d0cc1aa8` / `dae944fee0be` / `1f151137eb92`.
+Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `5527bddea967` / `dae944fee0be` / `e3260298686a`.
 
 </details>

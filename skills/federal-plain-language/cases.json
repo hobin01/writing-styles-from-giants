@@ -64,5 +64,24 @@
     ],
     "knownBadRewrite": "Request a review to suspend payment.",
     "method": "federal-plain-language"
+  },
+  {
+    "id": "archive-visit-budget",
+    "type": "ordinary",
+    "locale": "en",
+    "source": "An archive visitor needs both entrance and access to a scanning station for $20 or less. Entry costs $9 with online booking or $15 at the door. An electronic scan slot costs $8. The free catalogue terminal cannot scan. The staffed scan desk costs $13. Write a two-sentence visitor notice. All charges add.",
+    "ruleIds": [
+      "reader-task",
+      "usable-organization"
+    ],
+    "sourceIds": [
+      "plain-intro"
+    ],
+    "expectations": [
+      "Recommend booking entry and an electronic slot for $17 total.",
+      "Tell the visitor that the free catalogue terminal cannot scan. A valid but over-budget pair is not the recommended route."
+    ],
+    "level": "standard",
+    "method": "federal-plain-language"
   }
 ]

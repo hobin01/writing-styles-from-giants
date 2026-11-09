@@ -18,7 +18,7 @@ Use consistent terms and explicit actions to reduce ambiguity. This is an origin
 Apply only the rules enabled by the selected level.
 
 1. Identify whether the text describes a system or gives a procedure. Keep its factual scope and reader prerequisites.
-2. Draft with stable terms, explicit referents, direct sentences, and clear logical dependencies. Preserve permission versus obligation and possibility versus certainty.
+2. Use the full supplied name each time you refer to a component with a mandated label. After editing, scan the entire note for shortened names, including the last warning or table heading. Remove a repeated sentence if the preceding step already gives the same instruction. Preserve explicit referents, dependencies, and permission versus obligation.
 3. In a procedure, keep prerequisites and warnings next to the action they govern. In a description, show the relationship between components.
 4. Review the rewrite against the source. A useful technical term or necessary relation takes priority over a shorter sentence. If official rules/dictionary are unavailable, report the coverage gap in the audit rather than inventing approved entries.
 

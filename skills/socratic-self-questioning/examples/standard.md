@@ -2,7 +2,7 @@
 
 [한국어](standard.ko.md)
 
-2026-11-08 · `socratic-self-questioning` 0.1.2 · English · `gpt-6-luna`
+2026-11-09 · `socratic-self-questioning` 0.1.6 · English · `gpt-6-luna`
 
 ### Case and sources
 
@@ -18,7 +18,7 @@
 
 ### With the skill at standard
 
-> The forecast implies six additional employment days for each of 500 residents, since 3,000 ÷ 500 = 6. In Finland’s experiment, recipients averaged 78 employment days—six more than the comparison group, whose mean was therefore 72 days. But that second-year difference cannot be attributed to basic income alone: a 2018 benefit reform affected the groups differently, and researchers could not separate its effect from the basic-income effect; year one showed no group-level employment effect. The local forecast would apply only if paying these residents produced the same six-day difference against a comparable local comparison group, with relevant conditions and policy effects sufficiently similar.
+> The brief predicts 3,000 additional employment days by multiplying 500 residents by six days each. In Finland, unemployed benefit recipients selected for the experiment averaged 78 employment days from November 2017 through October 2018—six more than the comparison group’s 72—but there was no group-level employment effect in year one. The comparison group’s mean was 78 − 6 = 72 days. Because the 2018 benefit reform affected the groups differently, researchers could not isolate its effect from the second-year basic-income effect. The Finnish result therefore does not establish that paying local residents would add six days per person; the forecast applies only if the local recipients and comparison group are comparable and the payment produces the same six-day difference under local conditions.
 
 ### What changed
 
@@ -26,15 +26,15 @@
 | --- | --- | --- |
 | Recovers a comparison mean of 72 days and identifies 3,000 as 500 times the six-day observed difference, not an observed local gain. | Met | Met |
 | Addresses both the lack of a first-year group-level effect and the asymmetric 2018 reform as a reason the second-year difference does not isolate basic income's effect. | Met | Met |
-| Limits the evidence to unemployed benefit recipients and identifies a transfer assumption for 500 local residents, without claiming the experiment proves no effect in any year. | Missed | Missed |
+| Limits the evidence to unemployed benefit recipients and identifies a transfer assumption for 500 local residents, without claiming the experiment proves no effect in any year. | Missed | Met |
 
-**Masked review** (Y = baseline; X = standard). Both recover the 72-day comparison mean and explain the limitations from the first-year result and the 2018 reform. Both recognize that transferring the six-day difference requires comparable local conditions, but omit that the Finnish participants were unemployed benefit recipients. Y explicitly calls the 3,000 days an extrapolation; X reconstructs it by division.
+**Review.** The comparison mean is 72 days. The 3,000 days are an extrapolation from six days per person. The answer identifies the studied population, the uneven reform exposure and the assumption needed for a local forecast.
+
+Masked reviewer assignment: Y was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/socratic-self-questioning/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/socratic-self-questioning.json).
 
 <details>
 <summary>Run record</summary>
 
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `73849e50a54b` / `b7784aaaace2` / `15fcfc0f0a6a`.
+Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `6c4c77094da2` / `b7784aaaace2` / `1af4e026b8f6`.
 
 </details>

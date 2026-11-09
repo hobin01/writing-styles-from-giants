@@ -186,5 +186,24 @@
     "expectations": [
       "Keep full merge relative to the configured upstream or, in its absence, HEAD. Preserve the lower-case -d."
     ]
+  },
+  {
+    "id": "term-in-warning",
+    "method": "asd-ste100",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "standard",
+    "source": "Use “sample inlet valve” for one component throughout. Shorten this maintenance note: Close the sample inlet valve. Do not loosen the joint until the valve is closed. The drain valve stays open.",
+    "ruleIds": [
+      "consistent-terms",
+      "explicit-action"
+    ],
+    "sourceIds": [
+      "asd-issue9-selected"
+    ],
+    "expectations": [
+      "Every retained mention of the sample inlet valve uses the supplied full name, including the warning.",
+      "Keep the drain valve distinct and retain its open state. The joint must stay tight until the sample inlet valve is closed."
+    ]
   }
 ]

@@ -149,5 +149,25 @@
       ]
     },
     "request": "Write only a decision opening using the Minto SCQ framing."
+  },
+  {
+    "id": "library-pilot",
+    "type": "ordinary",
+    "source": "A county must decide whether to try evening library hours. In another county, adding evening hours was followed by more weekly visits. Recommend a local pilot and say how the county could test whether evening hours raise total weekly visits.",
+    "ruleIds": [
+      "reader-question",
+      "evidence-links"
+    ],
+    "expectations": [
+      "Present the earlier increase as evidence for trying the idea, conditional on local patterns; do not claim an established local effect.",
+      "Compare weekly visit changes at pilot branches with changes at similar branches keeping their hours over the same weeks; explain how to check comparability."
+    ],
+    "sourceIds": [
+      "minto-public",
+      "minto-course"
+    ],
+    "level": "standard",
+    "locale": "en",
+    "method": "minto-pyramid"
   }
 ]

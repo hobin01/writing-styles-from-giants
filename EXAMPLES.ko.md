@@ -6,13 +6,11 @@
 
 ## 어떻게 비교했나요?
 
-2026년 11월 8일, 영어와 한국어에 같은 사례와 계산 조건을 주되 각 언어에 맞는 질문으로 따로 실행했습니다. 예를 들어 한국어 평문 스킬의 영문 예제에서는 편집자가 한국어 문장을 영어로 검토합니다. New Hart’s Rules의 한국어 예제에서는 편집할 영문 전시 문구는 유지하고, 편집 이유를 한국어로 설명합니다.
+스킬마다 질문 하나와 판정 기준 세 개가 있습니다. 영어 예제와 한국어 예제는 같은 사례를 각 언어로 따로 물었습니다. 11월 9일 재검증에서는 11월 8일의 질문, 채점 기준, 미적용 답안을 고정했습니다. 한 언어에서라도 기준을 놓친 13개 스킬은 지침을 수정할 때마다 양쪽 언어로 다시 실행했습니다.
 
-Codex CLI 0.167.0에서 평가 모델을 `gpt-6-luna`, 추론 설정을 low로 지정했습니다. 답안마다 저장소 밖의 새 임시 디렉터리에서 읽기 전용 세션을 열었습니다. 미적용 세션에는 그 언어의 질문만, 적용 세션에는 같은 질문과 해당 스킬 지침을 주었습니다. 어느 세션에도 다른 답안이나 번역할 원문 답안을 주지 않았고, 도구를 사용한 실행은 채택하지 않았습니다. 모델의 세부 빌드 번호는 제공되지 않았습니다. 수식과 줄바꿈, 빈 줄의 공백은 마크다운에 맞게 표시했고, 각 예제에 원문 해시를 기록했습니다.
+현재 한국어 적용 답안은 66개 기준을 모두 충족합니다. 미적용 답안보다 더 많은 기준을 충족한 문항은 **11개**, 같은 수를 충족한 문항은 **11개**입니다. 고칠 항목이 없었던 9개 스킬은 11월 8일의 실제 답안을 유지했습니다. 수정한 스킬에는 새 소재 문항도 하나씩 추가했습니다. 기록에서 중간 실패와 익명 채점이 틀려 판정을 바로잡은 근거를 볼 수 있습니다. [실행 기록과 전체 답안](evals/runs/2026-11-09-standard/README.md) · [11월 8일 한국어 예제](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/EXAMPLES.ko.md).
 
-판정 기준 세 개를 먼저 정한 뒤, 검토자에게 어느 답이 스킬을 썼는지 가리고 비교했습니다. 일부 답이 스스로 방법 이름을 밝혀 가림이 완전하지는 않았습니다. 한국어 22문항에서 스킬 답이 더 많은 기준을 충족한 경우는 4개, 같은 개수는 13개, 더 적게 충족한 경우는 5개였습니다. 각 언어에서 문항별로 답안 한 쌍을 본 결과이므로 언어 간 성능 순위를 뜻하지 않습니다.
-
-영어·한국어의 본 비교에는 답안 88개가 있습니다. 영어 ELI5와 한국어 서울 지하철 노선도 예제에는 표현을 명확히 하기 전의 답안도 각각 두 개 남겼습니다. 화성 기후 궤도선 예제는 생성 후 한국어 판정 기준의 표현 한 곳을 바로잡고 익명으로 재검토했습니다. HTML 예제에는 본문과 화면의 수치가 달랐던 첫 답안과, 지침 수정 후 각 언어에서 새로 생성한 스킬 답안 한 개씩을 실었습니다. 추가 답안 여섯 개는 위 집계에서 제외했습니다. [이전 Luna 평가 기록](https://github.com/hobin01/writing-styles-from-giants/blob/06f7e14e4b9f1e1081e817d7f828278def138742/EXAMPLES.md)도 확인할 수 있습니다. 읽기 쉽게 마크다운 줄바꿈과 수식 표기를 조정한 곳이 있으며, 각 항목의 실행 기록에서 원문 해시를 확인할 수 있습니다.
+모든 답안은 GPT-6 Luna의 low 추론 설정으로, 저장소 밖의 읽기 전용 독립 세션에서 생성했습니다. 모델에는 해당 언어의 질문만 주고 적용 세션에만 스킬 지침을 추가했습니다. 채점할 때는 어느 답이 스킬을 썼는지 가렸지만, 일부 답에는 방법 이름이 드러납니다.
 
 스킬별 `examples/standard.md`(영어), `examples/standard.ko.md`(한국어)를 수정한 뒤 `python3 scripts/build_example_gallery.py`를 실행하면 두 모음이 함께 갱신됩니다.
 
@@ -92,7 +90,7 @@ SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `e75c26
 
 [English](EXAMPLES.md#answer-with-html)
 
-2026-11-08 · `answer-with-html` 0.1.2 · 한국어 · `gpt-6-luna`
+2026-11-09 · `answer-with-html` 0.1.8 · 한국어 · `gpt-6-luna`
 
 ### 사례와 출처
 
@@ -245,214 +243,104 @@ NASA/JPL 자료는 지구·화성의 위치에 따라 편도 통신 지연이 �
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>화성에서 온 답신 — 퍼서비어런스 통신</title>
+  <title>화성과 지구 사이, 답신은 언제 도착할까?</title>
   <style>
     :root {
       color-scheme: dark;
-      --bg: #10151b;
-      --panel: #19212a;
-      --line: #35424d;
-      --text: #f1f4f6;
-      --muted: #bdc7d0;
-      --accent: #ffb36b;
-      --earth: #77c8ff;
-      --mars: #ff9273;
+      font-family: system-ui, -apple-system, "Malgun Gothic", sans-serif;
+      background: #101827;
+      color: #f3f6fb;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      background: radial-gradient(ellipse at 50% 0%, #26313a 0, var(--bg) 55%);
-      color: var(--text);
-      font-family: system-ui, -apple-system, "Malgun Gothic", sans-serif;
-      line-height: 1.65;
+      padding: clamp(1rem, 5vw, 3rem);
+      background:
+        radial-gradient(ellipse at 80% 5%, #273b63 0, transparent 38rem),
+        #101827;
     }
-    main {
-      width: min(900px, 100%);
-      margin: 0 auto;
-      padding: 32px 20px 52px;
-    }
-    header { margin-bottom: 24px; }
-    .eyebrow {
-      margin: 0 0 6px;
-      color: var(--accent);
-      font-size: .85rem;
-      font-weight: 700;
-      letter-spacing: .08em;
-    }
-    h1 { margin: 0; font-size: clamp(1.8rem, 6vw, 3rem); line-height: 1.2; }
-    .intro { max-width: 66ch; color: var(--muted); margin: 14px 0 0; }
+    main { width: min(100%, 48rem); margin: 0 auto; }
+    .eyebrow { color: #a9c5ff; letter-spacing: .08em; font-size: .82rem; }
+    h1 { line-height: 1.2; font-size: clamp(1.8rem, 7vw, 3rem); margin: .5rem 0 1rem; }
+    p { line-height: 1.65; color: #d1d9e8; }
     .card {
-      background: color-mix(in srgb, var(--panel) 94%, transparent);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: clamp(18px, 4vw, 30px);
-      margin-top: 18px;
+      margin-top: 1.5rem;
+      padding: clamp(1rem, 4vw, 1.6rem);
+      border: 1px solid #3b4b67;
+      border-radius: 1rem;
+      background: #182337;
     }
-    h2 { margin: 0 0 14px; font-size: 1.25rem; }
-    .control-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: baseline;
-    }
-    label { font-weight: 700; }
-    output { color: var(--accent); font-weight: 800; font-variant-numeric: tabular-nums; }
-    input[type="range"] {
+    label { display: block; font-weight: 700; margin-bottom: .75rem; }
+    input[type="range"] { width: 100%; accent-color: #9cc4ff; }
+    .range-labels { display: flex; justify-content: space-between; color: #aebbd0; font-size: .9rem; }
+    output {
       display: block;
-      width: 100%;
-      margin: 18px 0 4px;
-      accent-color: var(--accent);
-      min-height: 32px;
+      margin-top: 1.3rem;
+      padding: 1rem;
+      border-radius: .75rem;
+      background: #101827;
+      color: #fff;
+      line-height: 1.8;
+      overflow-wrap: anywhere;
     }
-    .range-labels {
-      display: flex;
-      justify-content: space-between;
-      color: var(--muted);
-      font-size: .85rem;
-    }
-    .results {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin: 22px 0 0;
-    }
-    .result {
-      min-width: 0;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 14px;
-      background: #121920;
-    }
-    .result dt { color: var(--muted); font-size: .9rem; }
-    .result dd {
-      margin: 4px 0 0;
-      font-size: clamp(1.3rem, 4vw, 1.8rem);
-      font-weight: 800;
-      font-variant-numeric: tabular-nums;
-    }
-    .timeline {
-      margin: 20px 0 0;
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      list-style: none;
-    }
-    .timeline li {
-      border-top: 2px solid var(--line);
-      padding-top: 8px;
-      color: var(--muted);
-      font-size: .85rem;
-    }
-    .timeline strong { display: block; color: var(--text); font-size: 1rem; }
-    .earth { color: var(--earth); }
-    .mars { color: var(--mars); }
-    .explain { margin: 0; }
-    .equation {
-      margin: 14px 0;
-      padding: 12px 14px;
-      border-left: 3px solid var(--accent);
-      background: #121920;
-      font-variant-numeric: tabular-nums;
-    }
-    .note { color: var(--muted); font-size: .92rem; }
-    @media (max-width: 560px) {
-      main { padding: 24px 14px 36px; }
-      .results { grid-template-columns: 1fr; }
-      .result { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
-      .result dd { margin: 0; }
-    }
+    output strong { color: #a9c5ff; }
+    .note { font-size: .9rem; color: #aebbd0; }
+    :focus-visible { outline: 3px solid #ffd166; outline-offset: 4px; }
   </style>
 </head>
 <body>
   <main>
-    <header>
-      <p class="eyebrow">지구 ↔ 화성 · 빛의 속도로 오가는 메시지</p>
-      <h1>화성에서 온 답신</h1>
-      <p class="intro">
-        지구가 보낸 신호를 퍼서비어런스가 받고, 답신을 준비해 다시 지구로 보냅니다.
-        전파는 편도로 약 3~22분 걸립니다. 거리가 멀수록 대화에는 기다림이 생깁니다.
-      </p>
-    </header>
+    <p class="eyebrow">화성 탐사 통신 전시</p>
+    <h1>답신은 언제 지구에 도착할까?</h1>
+    <p>지구에서 보낸 메시지가 퍼서비어런스에 도착한 뒤, 탐사차는 10분 동안 답신을 준비합니다. 하지만 답신은 정해진 송신 시각에만 보낼 수 있습니다. 편도 전파 지연을 바꾸며 도착 시각이 어떻게 달라지는지 살펴보세요.</p>
 
-    <section class="card" aria-labelledby="controls-title">
-      <h2 id="controls-title">전파 지연을 바꿔 보기</h2>
-      <div class="control-row">
-        <label for="delay">편도 전파 지연</label>
-        <output id="delay-value" for="delay">15분</output>
-      </div>
+    <section class="card" aria-labelledby="assumptions-title">
+      <h2 id="assumptions-title">전시의 가정</h2>
+      <p>지구는 0분에 메시지를 보냅니다. 편도 지연은 양방향에서 같고, 답신 송신은 25분 간격의 시각(25분, 50분, 75분…)에 시작할 수 있습니다. 준비 완료 시각과 송신 시각이 같으면 바로 전송합니다. NASA에 따르면 실제 편도 전파 시간은 약 3~22분입니다. 송신 일정과 준비 시간은 전시를 위해 정한 가정입니다.</p>
+    </section>
+
+    <section class="card" aria-labelledby="control-title">
+      <h2 id="control-title">편도 지연 조절</h2>
+      <label for="delay">편도 전파 지연: <span id="delay-value">15</span>분</label>
       <input id="delay" type="range" min="3" max="22" step="1" value="15"
-             aria-label="편도 전파 지연, 3분에서 22분">
+             aria-label="편도 전파 지연, 3분부터 22분까지">
       <div class="range-labels" aria-hidden="true"><span>3분</span><span>22분</span></div>
 
-      <dl class="results" aria-live="polite">
-        <div class="result">
-          <dt>탐사차가 받은 시각</dt>
-          <dd><span id="received">15</span>분</dd>
-        </div>
-        <div class="result">
-          <dt>답신 준비 완료</dt>
-          <dd><span id="ready">25</span>분</dd>
-        </div>
-        <div class="result">
-          <dt>지구에 도착</dt>
-          <dd><span id="arrival">65</span>분</dd>
-        </div>
-      </dl>
-
-      <ol class="timeline" aria-label="현재 지연에서 메시지가 오가는 순서">
-        <li><strong class="earth">0분</strong>지구가 메시지 전송</li>
-        <li><strong class="mars"><span id="received-timeline">15</span>분</strong>탐사차가 수신</li>
-        <li><strong class="earth"><span id="send">25</span>분 전송</strong>답신, 지구에는 <span id="arrival-timeline">65</span>분 도착</li>
-      </ol>
-      <p class="note">전시를 위해 설정한 일정: 수신 후 준비에 10분이 걸리고, 답신은 25분 간격의 시각(25분, 50분, 75분…)에만 전송을 시작합니다. 준비 완료와 전송 시각이 같으면 바로 보냅니다.</p>
+      <output id="result" aria-live="polite">
+        편도 지연 15분 · 답신 준비 완료 25분 · 답신 전송 25분 · 지구 도착 40분
+      </output>
     </section>
 
     <section class="card" aria-labelledby="why-title">
-      <h2 id="why-title">15분에서 16분으로 바꾸면 왜 크게 늦어질까요?</h2>
-      <p class="explain">
-        15분 지연이면 탐사차는 15분에 메시지를 받고, 10분 뒤인 25분에 준비를 마칩니다.
-        이때는 전송 시작 시각과 딱 맞아 바로 답신을 보냅니다. 답신은 15분 더 이동해 40분에 지구에 도착합니다.
-      </p>
-      <p class="equation">15분 지연: 수신 15분 → 준비 완료 25분 → 전송 25분 → 지구 도착 40분</p>
-      <p class="explain">
-        지연이 16분이면 수신은 16분, 준비 완료는 26분입니다. 25분 전송 시각을 놓쳤으므로 다음 기회인 50분까지 기다립니다.
-        왕복 전파 시간은 32분으로 2분만 늘었지만, 전송 대기 시간이 0분에서 24분으로 늘어 도착은 40분에서 82분으로 42분 늦어집니다.
-      </p>
-      <p class="equation">16분 지연: 수신 16분 → 준비 완료 26분 → 다음 전송 50분 → 지구 도착 82분</p>
-      <p class="note">모형의 계산: 준비 완료 = 편도 지연 + 10분. 전송 시각은 준비 완료 이후 처음 만나는 25분 간격 시각이며, 도착 시각 = 전송 시각 + 편도 지연. 실제 통신 지연은 화성과 지구의 위치에 따라 달라집니다.</p>
+      <h2 id="why-title">15분에서 16분으로 바꾸면 왜 크게 뛸까?</h2>
+      <p>15분 지연이면 메시지가 탐사차에 15분에 도착하고, 10분 준비 뒤 25분에 답신을 보낼 수 있습니다. 지연이 16분이면 준비 완료는 26분입니다. 25분 송신 시각을 이미 지나서 다음 기회인 50분까지 기다려야 하므로, 도착 시각도 크게 늦어집니다. 정해진 송신 시각 사이에서는 준비 완료 시각이 다음 송신 기회를 넘기는 순간 대기 시간이 한 번에 늘어납니다.</p>
     </section>
   </main>
-
   <script>
     const slider = document.getElementById("delay");
     const delayValue = document.getElementById("delay-value");
-    const received = document.getElementById("received");
-    const ready = document.getElementById("ready");
-    const send = document.getElementById("send");
-    const arrival = document.getElementById("arrival");
-    const receivedTimeline = document.getElementById("received-timeline");
-    const arrivalTimeline = document.getElementById("arrival-timeline");
+    const result = document.getElementById("result");
 
-    function update() {
-      const delay = Number(slider.value);
-      if (!Number.isFinite(delay) || delay < 3 || delay > 22) return;
-
-      const receivedAt = delay;
-      const readyAt = receivedAt + 10;
-      const sendAt = Math.ceil(readyAt / 25) * 25;
-      const arrivalAt = sendAt + delay;
-
-      delayValue.textContent = delay + "분";
-      received.textContent = receivedAt;
-      ready.textContent = readyAt;
-      send.textContent = sendAt + "분 전송";
-      arrival.textContent = arrivalAt;
-      receivedTimeline.textContent = receivedAt;
-      arrivalTimeline.textContent = arrivalAt;
+    function calculate(rawValue) {
+      const delay = Number(rawValue);
+      if (!Number.isFinite(delay) || delay < 3 || delay > 22) return null;
+      const ready = delay + 10;
+      const send = Math.ceil(ready / 25) * 25;
+      const arrival = send + delay;
+      return { delay, ready, send, arrival };
     }
 
-    slider.addEventListener("input", update);
+    function render() {
+      const values = calculate(slider.value);
+      if (!values) return;
+      delayValue.textContent = String(values.delay);
+      result.textContent =
+        `편도 지연 ${values.delay}분 · 답신 준비 완료 ${values.ready}분 · ` +
+        `답신 전송 ${values.send}분 · 지구 도착 ${values.arrival}분`;
+    }
+
+    slider.addEventListener("input", render);
+    render();
   </script>
 </body>
 </html>
@@ -462,202 +350,18 @@ NASA/JPL 자료는 지구·화성의 위치에 따라 편도 통신 지연이 �
 
 | 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
 | --- | --- | --- |
-| 초기 편도 지연 15분일 때 스크립트 없이도 준비 25분·전송 25분·지구 도착 40분을 확인할 수 있고, 송신 일정이 가정임을 밝힌다. | 충족 | 미충족 |
-| 편도 지연 16분에서는 26분·50분·66분을 표시하고, 25분 송신 시각을 놓쳤기 때문에 도착 시각이 뛰는 이유를 설명한다. | 미충족 | 미충족 |
+| 초기 편도 지연 15분일 때 스크립트 없이도 준비 25분·전송 25분·지구 도착 40분을 확인할 수 있고, 송신 일정이 가정임을 밝힌다. | 충족 | 충족 |
+| 편도 지연 16분에서는 26분·50분·66분을 표시하고, 25분 송신 시각을 놓쳤기 때문에 도착 시각이 뛰는 이유를 설명한다. | 미충족 | 충족 |
 | 한국어로 이름을 표시한 키보드 조작 슬라이더가 3~22분을 1분씩 바꾸며, 양 끝에서 지구 도착이 각각 28분·72분으로 갱신된다. 외부 리소스를 쓰지 않는다. | 충족 | 충족 |
 
-**블라인드 검토** (X = 미적용, Y = 스킬 적용). 양쪽 모두 한국어 화면에서 키보드로 편도 3분과 22분을 골랐을 때 지구 도착을 각각 28분과 72분으로 표시합니다. 스크립트를 끈 초기 화면에서 X 쪽은 25·25·40분으로 맞지만, Y 쪽은 지구 도착을 65분으로 표시합니다. 편도 16분의 동적 표시는 양쪽 모두 26·50·66분입니다. 그러나 고정 설명문은 둘 다 지구 도착을 82분으로 써서 표시된 계산과 모순됩니다.
+**검토 결과.** 스크립트를 끈 첫 화면에서 25·25·40분을 확인했습니다. 편도 16분에서는 송신 시각을 놓쳐 26·50·66분이 되고, 키보드로 양 끝을 선택하면 지구 도착이 28분과 72분으로 바뀝니다.
 
-Chromium 156.0.8078.80에서 편도 15분일 때 미적용 페이지는 25/25/40분을, 스킬 페이지는 25/25/65분을 표시했습니다. 스크립트를 끈 상태에서도 같았습니다. 편도 16분의 동적 표시는 두 페이지 모두 26/50/66분이었지만 본문에는 각각 82분으로 잘못 적혔습니다. 양 끝값과 키보드 조작은 동작했고, 외부 요청이나 스크립트 오류, 320 CSS 픽셀에서의 가로 넘침은 없었습니다.
-
-<details>
-<summary>별도 재실행 · 버전 0.1.3</summary>
-
-정적 HTML·슬라이더·본문을 같은 계산으로 확인하도록 수정하고 동일한 한국어 질문으로 다시 실행했습니다. 새 답안은 초기 25/25/40분과 변경 후 26/50/66분을 표시하며 본문의 82분 오류도 고쳤습니다. 다만 대기 시간이 “25분 늘어”났다는 문장은 여전히 부정확합니다. 전송 시각이 25분에서 50분으로 이동하고, 준비 후 대기는 0분에서 24분으로 늘며, 최종 도착은 26분 늦어집니다.
-
-````html
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>화성에서 온 답신 — 퍼서비어런스와 지구의 통신</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #101820;
-      --panel: #192630;
-      --text: #f3efe5;
-      --muted: #bac5c9;
-      --accent: #ffb36b;
-      --line: #42535b;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: radial-gradient(ellipse at 80% 0%, #293841 0, var(--bg) 58%);
-      color: var(--text);
-      font: 1rem/1.6 system-ui, -apple-system, "Noto Sans KR", sans-serif;
-    }
-    main {
-      width: min(100% - 2rem, 850px);
-      margin: 0 auto;
-      padding: clamp(1.5rem, 5vw, 3.5rem) 0;
-    }
-    header { margin-bottom: 1.5rem; }
-    .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: .08em; }
-    h1 { margin: .3rem 0 .7rem; font-size: clamp(1.8rem, 6vw, 3rem); line-height: 1.2; }
-    h2 { margin-top: 0; font-size: 1.25rem; }
-    p { margin: .6rem 0; }
-    .muted { color: var(--muted); }
-    .panel {
-      margin: 1rem 0;
-      padding: clamp(1rem, 4vw, 1.5rem);
-      background: color-mix(in srgb, var(--panel) 92%, transparent);
-      border: 1px solid var(--line);
-      border-radius: 1rem;
-    }
-    .range-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      align-items: baseline;
-    }
-    output { color: var(--accent); font-size: 1.35rem; font-weight: 750; }
-    input[type="range"] { width: 100%; margin: 1rem 0 .25rem; accent-color: var(--accent); }
-    input:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
-    .bounds { display: flex; justify-content: space-between; color: var(--muted); font-size: .9rem; }
-    .timeline {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: .7rem;
-      margin-top: 1rem;
-    }
-    .event {
-      padding: .9rem;
-      border-left: 3px solid var(--accent);
-      background: #111b22;
-      border-radius: .25rem .7rem .7rem .25rem;
-    }
-    .event span { display: block; color: var(--muted); font-size: .9rem; }
-    .event strong { display: block; margin-top: .2rem; font-size: 1.25rem; }
-    .diagram { width: 100%; height: auto; display: block; margin: 1rem 0 .3rem; }
-    .callout { border-left: 3px solid var(--accent); padding-left: 1rem; }
-    code { color: #ffd0a4; }
-    @media (max-width: 560px) {
-      .timeline { grid-template-columns: 1fr; }
-      .event strong { font-size: 1.15rem; }
-    }
-  </style>
-</head>
-<body>
-<main>
-  <header>
-    <div class="eyebrow">화성 통신 전시</div>
-    <h1>화성에서 온 답신은 언제 도착할까?</h1>
-    <p>퍼서비어런스와 지구 사이의 전파는 빛의 속도로 이동하지만, 거리가 멀어 편도에 약 3~22분이 걸립니다. 그래서 지구의 메시지를 받은 뒤 답신을 준비해도, 지구에는 한참 뒤에 도착합니다.</p>
-  </header>
-
-  <section class="panel" aria-labelledby="model-title">
-    <h2 id="model-title">전시의 가정</h2>
-    <p>지구는 0분에 메시지를 보냅니다. 탐사차는 메시지를 받은 뒤 10분 동안 답신을 준비합니다. 답신은 전시를 위해 정한 25분 간격의 시각(25분, 50분, 75분 …)에만 전송을 시작할 수 있습니다. 준비가 그 시각에 정확히 끝나면 바로 전송합니다. 왕복 편도 지연은 같다고 가정합니다.</p>
-    <p class="muted">아래 일정은 설명을 위한 가정이며 실제 퍼서비어런스의 송신 일정이 아닙니다.</p>
-  </section>
-
-  <section class="panel" aria-labelledby="explorer-title">
-    <h2 id="explorer-title">편도 지연을 바꿔 보기</h2>
-    <div class="range-row">
-      <label for="delay">전파의 편도 지연</label>
-      <output id="delay-value" for="delay">15분</output>
-    </div>
-    <input id="delay" type="range" min="3" max="22" step="1" value="15" aria-describedby="range-hint">
-    <div class="bounds" id="range-hint"><span>3분</span><span>22분</span></div>
-
-    <div class="timeline" aria-live="polite" aria-atomic="true">
-      <div class="event">
-        <span>답신 준비 완료</span>
-        <strong id="ready-time">25분</strong>
-      </div>
-      <div class="event">
-        <span>답신 전송 시작</span>
-        <strong id="send-time">25분</strong>
-      </div>
-      <div class="event">
-        <span>지구 도착</span>
-        <strong id="arrival-time">40분</strong>
-      </div>
-    </div>
-
-    <svg class="diagram" viewBox="0 0 760 145" role="img" aria-labelledby="diagram-title diagram-desc">
-      <title id="diagram-title">지구와 화성 탐사차 사이의 왕복 통신</title>
-      <desc id="diagram-desc">지구에서 보낸 메시지가 편도 지연 뒤 화성에 도착하고, 준비된 답신이 정해진 송신 시각에 출발해 같은 편도 지연 뒤 지구에 도착합니다.</desc>
-      <defs>
-        <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-          <path d="M0,0 L0,6 L7,3 z" fill="#ffb36b"></path>
-        </marker>
-      </defs>
-      <circle cx="70" cy="73" r="25" fill="#6bb8e8"></circle>
-      <text x="70" y="78" text-anchor="middle" fill="#101820" font-size="14" font-weight="700">지구</text>
-      <circle cx="690" cy="73" r="25" fill="#d8754d"></circle>
-      <text x="690" y="78" text-anchor="middle" fill="#101820" font-size="12" font-weight="700">화성</text>
-      <line x1="110" y1="49" x2="646" y2="49" stroke="#ffb36b" stroke-width="3" marker-end="url(#arrow)"></line>
-      <text x="378" y="38" text-anchor="middle" fill="#f3efe5" font-size="14">메시지: 편도 지연</text>
-      <line x1="650" y1="103" x2="114" y2="103" stroke="#ffb36b" stroke-width="3" marker-end="url(#arrow)"></line>
-      <text x="378" y="133" text-anchor="middle" fill="#f3efe5" font-size="14">답신: 전송 시각 이후 같은 편도 지연</text>
-    </svg>
-    <p class="muted">그림은 통신 방향을 나타냅니다. 실제 거리나 이동 경로의 축척은 아닙니다.</p>
-  </section>
-
-  <section class="panel" aria-labelledby="jump-title">
-    <h2 id="jump-title">15분에서 16분으로 바꾸면 왜 크게 뛸까?</h2>
-    <p>지연이 15분이면 메시지는 15분에 화성에 도착하고, 10분 준비를 마친 시각은 25분입니다. 이 시각이 송신 가능 시각과 일치하므로 답신을 바로 보내고, 15분 뒤인 40분에 지구에 도착합니다.</p>
-    <p>지연을 16분으로 늘리면 준비 완료 시각은 26분입니다. 25분 송신 시각은 이미 지나갔으므로 다음 기회인 50분까지 기다려야 합니다. 답신은 50분에 출발해 16분 뒤인 66분에 도착합니다. 편도 지연은 1분만 늘었지만, 송신 일정의 경계가 바뀌면서 대기 시간이 25분 늘어나 도착은 26분 늦어집니다.</p>
-    <p class="callout"><strong>계산 규칙</strong><br>
-      준비 완료 = 편도 지연 + 10분<br>
-      전송 시각 = 준비 완료 이후 처음 만나는 25분 간격의 시각(같으면 즉시)<br>
-      지구 도착 = 전송 시각 + 편도 지연
-    </p>
-  </section>
-
-  <footer class="muted">
-    <p>편도 지연 범위(약 3~22분)는 NASA가 제시한 값입니다. 전송 간격과 준비 시간은 이 전시의 가정입니다.</p>
-  </footer>
-</main>
-<script>
-  (() => {
-    const slider = document.getElementById("delay");
-    const delayValue = document.getElementById("delay-value");
-    const readyTime = document.getElementById("ready-time");
-    const sendTime = document.getElementById("send-time");
-    const arrivalTime = document.getElementById("arrival-time");
-
-    function update() {
-      const delay = Number(slider.value);
-      if (!Number.isFinite(delay) || delay < 3 || delay > 22) return;
-      const ready = delay + 10;
-      const send = Math.ceil(ready / 25) * 25;
-      const arrival = send + delay;
-      delayValue.textContent = `${delay}분`;
-      readyTime.textContent = `${ready}분`;
-      sendTime.textContent = `${send}분`;
-      arrivalTime.textContent = `${arrival}분`;
-    }
-
-    slider.addEventListener("input", update);
-  })();
-</script>
-</body>
-</html>
-````
-
-</details>
+익명 채점에서 개정 답안은 Y였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/answer-with-html/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/answer-with-html.json).
 
 <details>
 <summary>실행 기록</summary>
 
-각 답안은 Codex CLI 0.167.0, low 추론 설정의 별도 임시 읽기 전용 세션에서 생성했습니다. 같은 문항의 다른 답안이나 다른 언어의 답안은 입력하지 않았습니다.
-
-SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `a45f928bc29a` / `aa3daa7508a3` / `6326ba04aeda`.
+미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `318335a72a76` / `aa3daa7508a3` / `7a548d0ad983`.
 
 </details>
 
@@ -766,7 +470,7 @@ SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `d69f02
 
 [English](EXAMPLES.md#asd-ste100)
 
-2026-11-08 · `asd-ste100` 0.1.3 · 한국어 · `gpt-6-luna`
+2026-11-09 · `asd-ste100` 0.1.4 · 한국어 · `gpt-6-luna`
 
 ### 사례와 출처
 
@@ -792,17 +496,17 @@ Raspberry Pi 문서에서 HDMI가 연결된 보드의 복구 완료 표시와 �
 
 ### 스킬 적용 답안 · standard
 
-> ## 기술자 인계 메모
+> **부트로더 복구 마무리 메모**
 >
-> | 작업대 | 두 신호를 처음 확인할 수 있는 점검 시각 | 안전한 조치 |
+> 전원을 분리하기 전에 녹색 활동 LED가 일정하게 깜박이는지, HDMI 화면이 녹색인지 모두 확인합니다. 복구용 microSD 카드는 전원을 분리한 다음에만 뺍니다. 한 번 나타난 신호는 유지됩니다.
+>
+> | 작업대 | 두 신호를 처음 확인하는 점검 시각 | 안전한 조치 |
 > |---|---:|---|
-> | North | 30초 | 녹색 활동 LED가 일정하게 깜박이고 HDMI 화면이 녹색인 것을 확인했습니다. 전원을 분리한 다음 복구용 microSD 카드를 뺍니다. |
-> | South | 45초 | 두 신호를 모두 확인했습니다. 전원을 분리한 다음 복구용 microSD 카드를 뺍니다. |
-> | East | 확인 불가 | 60초에도 HDMI 화면이 녹색이 아닙니다. 전원을 분리하거나 복구용 microSD 카드를 빼지 말고, 두 신호가 모두 확인될 때까지 기다립니다. |
+> | North | 30초 | 두 신호를 확인한 뒤 전원을 분리합니다. 복구용 microSD 카드는 전원이 분리된 다음에 뺍니다. |
+> | South | 45초 | 두 신호를 확인한 뒤 전원을 분리합니다. 복구용 microSD 카드는 전원이 분리된 다음에 뺍니다. |
+> | East | 아직 확인 불가 | 화면이 녹색이 아니므로 전원을 분리하지 말고 복구용 microSD 카드를 빼지 않습니다. |
 >
-> 경과 시간만으로 복구용 microSD 카드를 빼면 안 됩니다. 카드를 빼기 전에 두 신호를 모두 확인하고, 먼저 전원을 분리해야 합니다.
->
-> *구조 적응: 한국어 문장 길이나 사전 규칙은 적용하지 않고, 용어를 통일하고 조건과 조치를 명확히 했습니다.*
+> 경과 시간만으로는 복구용 microSD 카드를 빼면 안 됩니다. 각 작업대에서 두 신호를 모두 확인하고 전원을 분리한 다음에만 뺍니다.
 
 ### 두 답안의 차이
 
@@ -810,16 +514,16 @@ Raspberry Pi 문서에서 HDMI가 연결된 보드의 복구 완료 표시와 �
 | --- | --- | --- |
 | 신호가 실제로 나타난 순간과 점검 시각을 구분해, North의 첫 적격 점검은 30초, South는 45초라고 판단한다. | 충족 | 충족 |
 | East는 60초에도 전원을 분리하거나 카드를 빼지 않는다. 경과 시간만으로 성공이나 하드웨어 고장을 단정하지 않는다. | 충족 | 충족 |
-| 기술자가 따를 순서인 두 신호 확인 → 전원 분리 → 복구용 microSD 카드 제거를 지키고 카드 이름을 일관되게 쓴다. | 미충족 | 미충족 |
+| 기술자가 따를 순서인 두 신호 확인 → 전원 분리 → 복구용 microSD 카드 제거를 지키고 카드 이름을 일관되게 쓴다. | 미충족 | 충족 |
 
-**블라인드 검토** (X = 미적용, Y = 스킬 적용). 두 답 모두 North는 30초, South는 45초로 판단하고, East는 60초에도 전원을 분리하거나 카드를 빼지 않도록 합니다. 각 작업대의 조치에는 ‘복구용 microSD 카드’를 쓰지만 끝부분에서는 둘 다 ‘카드’로 줄여 일관된 명칭이라는 기준을 온전히 충족하지 못했습니다. X 쪽은 목록으로, Y 쪽은 표로 정리하고 한국어 적용 범위도 덧붙입니다.
+**검토 결과.** North는 30초, South는 45초 점검에서 두 신호를 확인합니다. East에서는 전원과 복구용 microSD 카드를 그대로 둡니다. 카드 이름은 마지막 경고까지 일관됩니다.
+
+익명 채점에서 개정 답안은 Y였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/asd-ste100/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/asd-ste100.json).
 
 <details>
 <summary>실행 기록</summary>
 
-각 답안은 Codex CLI 0.167.0, low 추론 설정의 별도 임시 읽기 전용 세션에서 생성했습니다. 같은 문항의 다른 답안이나 다른 언어의 답안은 입력하지 않았습니다.
-
-SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `6600af844428` / `0dd8cfece084` / `521d854c379c`.
+미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `441382171a3a` / `0dd8cfece084` / `85329a442f12`.
 
 </details>
 
@@ -957,7 +661,7 @@ SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `1bf8f7
 
 [English](EXAMPLES.md#eli5)
 
-2026-11-08 · `eli5` 0.1.2 · 한국어 · `gpt-6-luna`
+2026-11-09 · `eli5` 0.1.18 · 한국어 · `gpt-6-luna`
 
 ### 사례와 출처
 
@@ -976,24 +680,28 @@ SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `1bf8f7
 
 ### 스킬 적용 답안 · standard
 
-> 해달이 털을 돌보는 건 털 사이에 공기를 가둬 따뜻하게 지내기 위해서야. 실험에서 보송한 털옷을 입은 병은 20분에 4도 식고, 젖은 털옷을 입은 병은 20분에 6도 식었어. 그래서 같은 20분 동안 보송한 병에서 온기가 더 천천히 빠져나갔어. 공기는 따뜻함을 만들지는 않고, 온기가 빠져나가는 걸 늦춰 줘. 해달 털의 공기는 물에 뜨는 데도 도움이 되지만, 이 병 실험은 병이 뜨는지는 알려 주지 않아.
+> 아쿠아리움 사람들은 아기 해달 696이 따뜻하게 지내도록 털을 손질해 주었어.
+> 털 사이에 갇힌 공기는 열을 만들지 않고, 몸의 따뜻함이 빠져나가는 것을 늦춰 줘.
+> 20분 동안으로 맞춰 보면 젖은 병은 평균 6도, 보송한 병은 평균 4도 식어서 젖은 병 쪽이 더 빨리 식었어.
+> 이 병 실험으로는 병이 물에 뜨는지 알 수 없어.
+> 실제 해달은 손질한 털 사이의 공기 덕분에 따뜻함을 지키고 물에도 잘 떠.
 
 ### 두 답안의 차이
 
 | 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
 | --- | --- | --- |
-| 같은 시간으로 환산해 10분당 평균 2도와 3도(또는 동등한 식는 속도)를 비교하고, 보송한 털옷을 입힌 쪽이 평균적으로 더 천천히 식었다고 설명한다. | 충족 | 미충족 |
+| 같은 시간으로 환산해 10분당 평균 2도와 3도(또는 동등한 식는 속도)를 비교하고, 보송한 털옷을 입힌 쪽이 평균적으로 더 천천히 식었다고 설명한다. | 충족 | 충족 |
 | 털 손질로 갇힌 공기가 온기가 빠져나가는 속도를 늦춘다고 설명한다. 공기가 열을 만든다고 하거나 근거 없는 원리를 도입하지 않는다. | 충족 | 충족 |
 | 아이에게 들려줄 짧은 다섯 문장 이내에서, 병이 뜨는지는 시험하지 않았다는 점과 실제 해달은 갇힌 공기의 도움으로 뜬다는 사실을 구분한다. | 미충족 | 충족 |
 
-**블라인드 검토** (Y = 미적용, X = 스킬 적용). X 쪽은 젖은 병이 20분에 6도 식었다고 쓰지만, 실제로 주어진 것은 10분에 3도라는 관찰입니다. 같은 속도가 유지된다는 가정 없이 그 수치를 20분의 관찰값으로 바꿀 수 없습니다. Y 쪽은 같은 10분 기준에서 2도와 3도를 비교하지만, 병의 부력은 시험하지 않았다는 점만 말하고 갇힌 공기가 실제 해달이 뜨는 데 도움이 된다는 사실은 빼먹습니다.
+**검토 결과.** 젖은 병과 보송한 병이 식는 속도를 20분당 평균 6도와 4도로 환산했습니다. 젖은 병에서 실제로 관측한 값은 10분에 3도입니다. 병의 부력은 시험하지 않았고, 실제 해달은 털 사이 공기 덕분에 물에 뜬다는 점도 구분합니다.
+
+익명 채점에서 개정 답안은 X였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/eli5/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/eli5.json).
 
 <details>
 <summary>실행 기록</summary>
 
-각 답안은 Codex CLI 0.167.0, low 추론 설정의 별도 임시 읽기 전용 세션에서 생성했습니다. 같은 문항의 다른 답안이나 다른 언어의 답안은 입력하지 않았습니다.
-
-SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `10536a49c052` / `358d2614595e` / `f85bcafcc28c`.
+미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `fdd792c71803` / `358d2614595e` / `e59e42c830bd`.
 
 </details>
 
@@ -1003,7 +711,7 @@ SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `10536a
 
 [English](EXAMPLES.md#federal-plain-language)
 
-2026-11-08 · `federal-plain-language` 0.1.2 · 한국어 · `gpt-6-luna`
+2026-11-09 · `federal-plain-language` 0.1.22 · 한국어 · `gpt-6-luna`
 
 ### 사례와 출처
 
@@ -1023,24 +731,24 @@ SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `10536a
 
 ### 스킬 적용 답안 · standard
 
-> 아이 신원 증빙으로 유효한 미국 여권 원본(40분)을, 부모 신원 증빙으로 운전면허증 원본(35분)을 준비하세요. 두 서류 모두 인정되는 원본이며, 합계 75분이 필요해 45분 안에 준비할 수는 없습니다. 아이의 비운전자 신분증 발급기관 인증 사본(15분)과 부모의 운전면허증 원본(35분)을 조합해도 합계 50분입니다. 부모 여권의 공증 복사본은 인정되지 않고, 발급기관 인증 사본은 인정되지만 25분이 걸립니다. 아이의 출생증명서는 나이나 시민권을 증명할 수 있어도 신원 증빙은 아니므로, 주어진 시간과 서류만으로는 두 사람의 신원 증빙을 모두 준비할 수 없습니다.
+> 아이의 유효한 주 정부 발급 비운전자 신분증 인증 사본(15분)과 부모의 유효한 미국 여권 인증 사본(25분)을 준비하세요. 합계 40분으로 45분 안에 준비할 수 있습니다. 아이의 여권 원본(40분)과 부모의 운전면허증 원본(35분)은 각각 가능하지만, 어느 쪽이든 다른 사람의 서류 준비 시간과 합치면 45분을 넘습니다. 부모 여권의 공증 복사본은 인정되지 않고, 아이의 출생증명서는 이미 있어도 신원 증빙이 아닙니다.
 
 ### 두 답안의 차이
 
 | 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
 | --- | --- | --- |
-| 아이의 비운전자 신분증 발급기관 인증 사본과 부모의 여권 발급기관 인증 사본을 골라 총 40분이므로 45분 안에 가능하다고 밝힌다. | 미충족 | 미충족 |
+| 아이의 비운전자 신분증 발급기관 인증 사본과 부모의 여권 발급기관 인증 사본을 골라 총 40분이므로 45분 안에 가능하다고 밝힌다. | 미충족 | 충족 |
 | 출생증명서 원본으로는 아이의 신원을 증명할 수 없고, 공증받은 여권 복사본으로는 부모의 신원을 증명할 수 없다는 두 이유를 구분한다. | 충족 | 충족 |
-| 부모가 바로 실행할 수 있는 한국어 신원 증빙 안내를 다섯 문장 이내로 쓰고, 이 조합으로 전체 신청이 완료된다고 단정하지 않는다. | 미충족 | 미충족 |
+| 부모가 바로 실행할 수 있는 한국어 신원 증빙 안내를 다섯 문장 이내로 쓰고, 이 조합으로 전체 신청이 완료된다고 단정하지 않는다. | 미충족 | 충족 |
 
-**블라인드 검토** (Y = 미적용, X = 스킬 적용). 두 답 모두 출생증명서와 공증 복사본이 왜 안 되는지는 정확히 설명합니다. 하지만 15분짜리 아이 신분증과 25분짜리 부모 여권 인증 사본을 조합하면 40분인데도 가능한 조합이 없다고 결론 내립니다. X는 75분, Y는 50분이 걸리는 경로를 첫 문장에 권합니다.
+**검토 결과.** 아이의 비운전자 신분증 인증 사본(15분)과 부모의 여권 인증 사본(25분)을 골라 공증 복사본을 제외했습니다. 제시된 선택지에서 해당 조합은 분명합니다. 답안은 사본의 인증 주체가 발급기관이라는 점을 따로 명시하지 않았습니다.
+
+익명 채점에서 개정 답안은 X였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/federal-plain-language/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/federal-plain-language.json).
 
 <details>
 <summary>실행 기록</summary>
 
-각 답안은 Codex CLI 0.167.0, low 추론 설정의 별도 임시 읽기 전용 세션에서 생성했습니다. 같은 문항의 다른 답안이나 다른 언어의 답안은 입력하지 않았습니다.
-
-SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `5ba332f74f16` / `50ea09db03d5` / `2e32db00c4d7`.
+미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `90ceac7f7264` / `50ea09db03d5` / `cdc312b05a0a`.
 
 </details>
 
@@ -1050,7 +758,7 @@ SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `5ba332
 
 [English](EXAMPLES.md#feynman-technique)
 
-2026-11-08 · `feynman-technique` 0.1.3 · 한국어 · `gpt-6-luna`
+2026-11-09 · `feynman-technique` 0.1.8 · 한국어 · `gpt-6-luna`
 
 ### 사례와 출처
 
@@ -1076,26 +784,30 @@ RFC 2308은 DNS 음성 응답의 캐시 수명과 만료를 설명합니다. 호
 
 ### 스킬 적용 답안 · standard
 
-> 유효한 음성 캐시 시간은 SOA TTL 900초와 MINIMUM 300초 중 작은 값인 **300초**입니다. Harbor는 12:00에 NXDOMAIN을 캐시했으므로 12:05에 만료됩니다. Hill은 12:03에 저장했으므로 12:06 조회 시점에는 아직 캐시가 유효해, 두 팀 모두 그때까지 조회한 적이 있다면 NXDOMAIN을 받을 수 있습니다. 권한 서버에 A 레코드가 생겼어도 각 리졸버의 음성 캐시는 만료 전까지 남습니다.
+> **장애 설명**
 >
-> Hill이 12:04 전에 조회한 적이 없다면 저장된 NXDOMAIN이 없습니다. 따라서 12:06 조회는 권한 서버의 새 A 레코드를 확인해 주소를 받을 수 있습니다.
+> 신입 개발자가 알아둘 점은 DNS 캐시가 팀마다 따로 유지된다는 것입니다. 음성 응답의 캐시 시간은 SOA TTL 900초와 MINIMUM 300초 중 작은 값이므로 300초, 즉 5분입니다.
+>
+> Harbor는 12:00에 NXDOMAIN을 받았으므로 그 캐시는 12:05에 만료됩니다. 12:06 조회 때 캐시가 만료된 상태라 새 A 레코드의 주소를 받을 수 있습니다. Hill은 12:03에 NXDOMAIN을 받았으므로 캐시가 12:08에 만료됩니다. 따라서 12:06에는 아직 캐시가 유효해 NXDOMAIN을 받을 수 있습니다. 권한 서버에 주소가 반영됐고 연결 가능해도, Hill의 리졸버가 가진 캐시가 먼저 갱신되지는 않습니다.
+>
+> Hill이 12:04 전에 조회하지 않았다면 NXDOMAIN을 저장하지 않았을 것입니다. 12:06의 첫 조회는 권한 서버에 새 레코드가 반영된 뒤이므로 주소를 받을 수 있습니다.
 
 ### 두 답안의 차이
 
 | 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
 | --- | --- | --- |
-| 음성 캐시 수명 300초와 Harbor의 12:05, Hill의 12:08 만료를 각 리졸버의 최초 조회 시각에서 구한다. | 충족 | 미충족 |
-| 12:06에 Harbor는 새 주소를 조회할 수 있고 Hill은 NXDOMAIN을 줄 수 있다고 설명한다. 레코드 생성이 Hill의 캐시를 지우거나 수명을 다시 시작한 것으로 쓰지 않는다. | 충족 | 미충족 |
+| 음성 캐시 수명 300초와 Harbor의 12:05, Hill의 12:08 만료를 각 리졸버의 최초 조회 시각에서 구한다. | 충족 | 충족 |
+| 12:06에 Harbor는 새 주소를 조회할 수 있고 Hill은 NXDOMAIN을 줄 수 있다고 설명한다. 레코드 생성이 Hill의 캐시를 지우거나 수명을 다시 시작한 것으로 쓰지 않는다. | 충족 | 충족 |
 | Hill에 이전 음성 항목이 없었다면 12:06에 새 주소를 조회할 수 있는 이유를 신입 개발자가 이해할 수 있게 설명하며, 모든 리졸버가 동시에 바뀐다고 하지 않는다. | 충족 | 충족 |
 
-**블라인드 검토** (X = 미적용, Y = 스킬 적용). 두 답 모두 음성 캐시 수명을 300초로 계산하고, Hill이 먼저 조회하지 않았다면 새 주소를 받을 수 있다고 설명한다. X 쪽은 Harbor의 12:05와 Hill의 12:08 만료를 비교해 12:06에 Hill만 캐시된 NXDOMAIN을 줄 수 있다고 짚는다. Y 쪽은 Hill의 만료 시각을 명시하지 않고 두 팀 모두 이전 음성 응답을 받을 수 있다고 잘못 말한다.
+**검토 결과.** 두 리졸버가 처음 조회한 시각에서 각각 만료 시각을 구합니다. 12:06에는 Hill만 기존 음성 캐시를 쓸 수 있고, 이전 조회가 없었다면 Hill도 새 주소를 받을 수 있습니다.
+
+익명 채점에서 개정 답안은 Y였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/feynman-technique/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/feynman-technique.json).
 
 <details>
 <summary>실행 기록</summary>
 
-각 답안은 Codex CLI 0.167.0, low 추론 설정의 별도 임시 읽기 전용 세션에서 생성했습니다. 같은 문항의 다른 답안이나 다른 언어의 답안은 입력하지 않았습니다.
-
-SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `9249d0cc1aa8` / `90b434c4a7c3` / `54201b2c506a`.
+미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `5527bddea967` / `90b434c4a7c3` / `d07535fa421a`.
 
 </details>
 
@@ -1411,7 +1123,7 @@ SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `41f1b8
 
 [English](EXAMPLES.md#ietf-rfc)
 
-2026-11-08 · `ietf-rfc` 0.1.3 · 한국어 · `gpt-6-luna`
+2026-11-09 · `ietf-rfc` 0.1.10 · 한국어 · `gpt-6-luna`
 
 ### 사례와 출처
 
@@ -1443,15 +1155,41 @@ RFC 6585는 429 응답의 선택과 캐시 저장 금지를, RFC 9110은 Retry-A
 
 ### 스킬 적용 답안 · standard
 
-> 이 내부 API 명세는 두 가상 `429 Too Many Requests` 응답에서 `Retry-After` 값을 해석하는 클라이언트 동작을 다룹니다. 클라이언트는 두 응답을 모두 `09:00:05 UTC`에 받았으며 시계는 동기화되어 있습니다. 이 문서에서 대문자 요구 키워드는 RFC 2119와 RFC 8174의 BCP 14 의미로 사용합니다.
+> # HTTP 429의 `Retry-After` 해석
 >
-> 서버는 `429` 응답을 보낼지 선택할 수 있습니다. 응답을 보낼 경우 본문에 제한 사유를 설명하는 것이 권장되며, `Retry-After` 헤더를 포함할지는 선택 사항입니다. 캐시는 `429` 응답을 저장할 수 없습니다.
+> **상태:** 내부 API 명세 초안
 >
-> 첫 응답의 `Retry-After: 45`는 응답 수신 시점부터 45초를 뜻하므로, 클라이언트에 제시되는 재시도 시각은 `09:00:50 UTC`입니다. 둘째 응답의 `Retry-After`는 그날 `09:01:00 UTC`를 나타내는 HTTP 날짜이므로, 제시되는 재시도 시각은 `09:01:00 UTC`입니다. 두 시각 모두 재시도를 보장하거나 요구하지 않습니다.
+> ## 범위와 용어
 >
-> 참고 자료: [RFC 6585](https://www.rfc-editor.org/rfc/rfc6585.html), [RFC 9110](https://www.rfc-editor.org/rfc/rfc9110.html).
+> 이 명세는 두 가상 HTTP 429 응답의 `Retry-After` 값을 클라이언트가 제시하는 재시도 시각으로 해석하는 방법을 다룬다. 모든 시각은 UTC이며, 관련 시계는 동기화되어 있다.
 >
-> **작성 기록:** `ietf-rfc` 방법론 v0.1.3, standard 수준 적용. 요청에 제공된 동작과 시각을 전제로 했습니다. 내부 명세이며 별도의 클라이언트 재시도 의무를 추가하지 않았습니다. IANA 조치는 해당되지 않습니다. Normative reference: RFC 9110. Informative reference: RFC 6585.
+> 이 문서에서 **MUST**, **SHOULD**, **MAY**는 RFC 2119와 RFC 8174가 정한 의미로 사용한다.
+>
+> ## 요구사항
+>
+> | 주체 | BCP 14 | 동작과 조건 |
+> | --- | --- | --- |
+> | 서버 | MAY | 요청 제한을 적용할 때 429 응답을 보낼지 선택할 수 있다. |
+> | 서버 | SHOULD | 429 응답 본문에 제한 사유를 설명하는 내용을 포함하는 것이 권장된다. |
+> | 서버 | MAY | 429 응답에 `Retry-After` 필드를 포함할지 선택할 수 있다. |
+> | 캐시 | MUST NOT | 429 응답을 저장해서는 안 된다. |
+>
+> ## 예시
+>
+> 두 응답 모두 서버가 09:00:00 UTC에 보냈고 클라이언트가 09:00:05 UTC에 받았다.
+>
+> 1. 첫 응답의 `Retry-After: 45`는 응답 수신 시점부터 45초를 나타낸다. 따라서 클라이언트에 제시되는 재시도 시각은 **09:00:50 UTC**이다.
+> 2. 둘째 응답의 `Retry-After`는 그날 09:01:00 UTC에 해당하는 HTTP 날짜다. 따라서 제시되는 재시도 시각은 **09:01:00 UTC**이다.
+>
+> 두 시각 모두 해당 시각에 재시도가 성공한다거나, 서버가 그때 요청을 허용한다거나, 그때 재시도해야 한다는 것을 보장하지 않는다. 이 명세는 클라이언트에 별도의 재시도 의무를 부과하지 않는다.
+>
+> ## 참고
+>
+> - **규범 참고문헌:** RFC 6585, *Additional HTTP Status Codes* — 429 응답의 선택적 사용, 본문 설명 권고, `Retry-After` 포함 여부 및 캐시 저장 금지를 규정한다.
+> - **규범 참고문헌:** RFC 9110, *HTTP Semantics* — `Retry-After`의 HTTP 날짜 형식과 응답 수신 시점부터 세는 0 이상의 초 단위를 정의한다.
+> - **정보 참고문헌:** RFC 7322, *RFC Style Guide* — RFC 문서 작성 스타일을 안내한다.
+>
+> 이 내부 명세는 IANA 등록을 요청하지 않는다.
 
 ### 두 답안의 차이
 
@@ -1459,16 +1197,16 @@ RFC 6585는 429 응답의 선택과 캐시 저장 금지를, RFC 9110은 Retry-A
 | --- | --- | --- |
 | BCP 14 키워드의 표기 규칙을 밝히고, 429 전송과 Retry-After 포함은 선택 사항, 사유 설명은 SHOULD, 캐시 저장은 MUST NOT이라는 강도를 보존한다. | 충족 | 충족 |
 | 수신 후 45초인 첫 경우를 09:00:50 UTC, 날짜로 정한 둘째 경우를 09:01:00 UTC로 계산한다. | 충족 | 충족 |
-| 두 시각은 재시도 권고이며 성공을 보장하지 않는다고 밝힌다. 클라이언트에 새로운 MUST나 SHOULD를 부과하지 않는다. | 충족 | 미충족 |
+| 두 시각은 재시도 권고이며 성공을 보장하지 않는다고 밝힌다. 클라이언트에 새로운 MUST나 SHOULD를 부과하지 않는다. | 충족 | 충족 |
 
-**블라인드 검토** (X = 미적용, Y = 스킬 적용). X와 Y 모두 서버의 선택권·본문 설명 권고·캐시 저장 금지를 유지하고, 수신 후 45초인 09:00:50 UTC와 날짜가 지정한 09:01:00 UTC를 구분한다. X는 재시도 성공이나 제한 해제를 보장하지 않는다고 명시한다. Y의 ‘재시도를 보장하거나 요구하지 않습니다’는 재시도 자체에 관한 말로, 시도했을 때의 성공 여부를 설명하지 않는다. Y는 429의 의무를 정한 RFC 6585를 참고용(informative)으로 분류한 점도 부정확하다.
+**검토 결과.** 429 응답을 택할 권한, 본문 설명 권고, 캐시 저장 금지를 각각 해당 주체에 연결합니다. 09:00:50과 09:01:00은 재시도 권고 시각이며 성공을 보장하지 않습니다.
+
+익명 채점에서 개정 답안은 X였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/ietf-rfc/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/ietf-rfc.json).
 
 <details>
 <summary>실행 기록</summary>
 
-각 답안은 Codex CLI 0.167.0, low 추론 설정의 별도 임시 읽기 전용 세션에서 생성했습니다. 같은 문항의 다른 답안이나 다른 언어의 답안은 입력하지 않았습니다.
-
-SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `1613a9080cdb` / `c460af81b495` / `602495001ecb`.
+미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `a03848dad0d2` / `c460af81b495` / `7cc5535eacc4`.
 
 </details>
 
@@ -1534,7 +1272,7 @@ SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `85287f
 
 [English](EXAMPLES.md#korean-plain-language)
 
-2026-11-08 · `korean-plain-language` 0.1.2 · 한국어 · `gpt-6-luna`
+2026-11-09 · `korean-plain-language` 0.1.9 · 한국어 · `gpt-6-luna`
 
 ### 사례와 출처
 
@@ -1556,28 +1294,31 @@ SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `85287f
 
 ### 스킬 적용 답안 · standard
 
-> - 지우: **7,000원**을 신청할 수 있었어요. 첫 실물카드는 이용 중 등록하지 않아 대상이 아니었고, 둘째 카드만 환불 없이 30일 만기를 채웠어요. 셋째 카드는 18일째 환불해 만기를 채우지 못했어요.
-> - 민서: **14,000원**을 신청할 수 있었어요. 모바일카드 두 장 모두 만기까지 사용했어요.
-> - 환급금은 당시 이용 실적에 대해 신청할 수 있었어요. 두 카드 모두 자동 지급이 아니라 별도 신청이 필요했어요.
+> 초안은 ‘지금’ 받을 수 있고 환급금이 자동 지급되는 것처럼 들려요. 당시에는 환급 대상 이용분이 있어도 별도로 신청해야 했어요.
 >
-> **수정 문구:** “지우와 민서는 당시 조건을 충족한 이용분에 대해 환급금을 별도로 신청할 수 있었어요.”
+> - **지우:** 7,000원을 신청할 수 있었어요. 첫 실물카드 이용분은 이용 전에 등록하지 않아 대상이 아니었고, 둘째 권은 등록 후 만기까지 채웠어요. 셋째 권은 30일 전에 환불해 대상이 아니었어요.
+> - **민서:** 14,000원을 신청할 수 있었어요. 모바일카드는 별도 등록이 필요 없었고, 두 장 모두 환불 없이 30일 만기를 채웠어요.
+>
+> 해요체 표현은 이렇게 고칠 수 있어요.
+>
+> > 당시 지우는 7,000원, 민서는 14,000원을 신청할 수 있었어요. 두 사람 모두 환급금을 별도로 신청해야 했어요.
 
 ### 두 답안의 차이
 
 | 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
 | --- | --- | --- |
 | 지우는 등록 후 만기를 채운 둘째 권만 해당해 7,000원이며, 첫 권과 셋째 권은 각각 미등록과 중도 환불로 제외됨을 설명한다. | 충족 | 충족 |
-| 민서는 만기 두 번으로 14,000원이고, 모바일카드 등록 면제와 두 종류 모두 별도의 환급 신청이 필요했던 점을 구분한다. | 미충족 | 미충족 |
+| 민서는 만기 두 번으로 14,000원이고, 모바일카드 등록 면제와 두 종류 모두 별도의 환급 신청이 필요했던 점을 구분한다. | 미충족 | 충족 |
 | 2024년 당시 신청할 수 있었다는 뜻을 전달하는 해요체 표현을 제시하고, 현재 신청 가능이나 자동 지급을 암시하는 원문의 문제를 고친다. | 미충족 | 충족 |
 
-**블라인드 검토** (X = 미적용, Y = 스킬 적용). 두 답 모두 지우의 7,000원과 민서의 14,000원을 계산하고, 실물카드의 미등록·중도 환불 이용분을 제외합니다. 둘 다 모바일카드는 별도 카드 등록이 필요 없었다는 점을 명시하지 않습니다. X의 제안 문구는 여전히 ‘신청할 수 있어요’라고 해 현재의 자격처럼 읽힙니다. Y의 ‘당시 … 신청할 수 있었어요’는 과거의 신청 가능성을 살립니다.
+**검토 결과.** 지우는 둘째 이용분 7,000원, 민서는 두 번의 만기 이용분 14,000원을 신청할 수 있었습니다. 모바일카드의 등록 면제와 두 사람 모두에게 필요했던 환급 신청을 구분합니다.
+
+익명 채점에서 개정 답안은 X였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/korean-plain-language/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/korean-plain-language.json).
 
 <details>
 <summary>실행 기록</summary>
 
-각 답안은 Codex CLI 0.167.0, low 추론 설정의 별도 임시 읽기 전용 세션에서 생성했습니다. 같은 문항의 다른 답안이나 다른 언어의 답안은 입력하지 않았습니다.
-
-SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `c0be7cf32505` / `bb769f285186` / `b4951e717a02`.
+미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `22797d4c7797` / `bb769f285186` / `26ce88ff6387`.
 
 </details>
 
@@ -1587,7 +1328,7 @@ SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `c0be7c
 
 [English](EXAMPLES.md#microsoft-writing-style)
 
-2026-11-08 · `microsoft-writing-style` 0.1.2 · 한국어 · `gpt-6-luna`
+2026-11-09 · `microsoft-writing-style` 0.1.11 · 한국어 · `gpt-6-luna`
 
 ### 사례와 출처
 
@@ -1609,31 +1350,35 @@ Microsoft 문서는 Windows 11 장치의 클립보드 기록 열기, 고정 항�
 
 ### 스킬 적용 답안 · standard
 
-> Windows 11에서 이 PC의 클립보드 기록에 배송 주소와 반품 참조 번호만 남기려면, 먼저 두 항목을 고정하세요. 그래야 **Clear all**을 선택해도 남습니다.
+> ### 클립보드 기록에 두 항목만 남기기
 >
-> 1. **Windows logo key + V**를 눌러 클립보드 기록을 엽니다.
-> 2. 배송 주소에서 **See more (...)** > **Pin**을 선택합니다. 반품 참조 번호도 같은 방법으로 고정합니다.
-> 3. 두 항목에 고정 표시가 있는지 확인한 다음 **Clear all**을 선택합니다. 고정되지 않은 항목은 삭제됩니다.
-> 4. 클립보드 기록에 배송 주소와 반품 참조 번호만 남았는지 확인합니다. 출입 코드와 메모 두 개가 없으면 완료입니다.
+> Windows logo key + V를 눌러 클립보드 기록을 여세요. 영문 화면에서 **Clear all**은 고정되지 않은 항목을 삭제하고, **See more (...) > Delete**는 선택한 항목을 삭제합니다. 배송 주소와 반품 참조 번호를 남기려면 먼저 두 항목을 고정해야 합니다.
 >
-> *작성 상태: microsoft-writing-style v0.1.2, standard 수준을 적용했습니다. 한국어 전반의 이해도와 작업 순서를 검토했습니다. UI 항목명은 화면에 표시되는 영문 그대로 유지했습니다. 자세한 항목별 감사는 요청되지 않아 생략했습니다. ც
+> | 항목 | 현재 상태 | 지금 할 일 |
+> |---|---|---|
+> | 배송 주소 | 고정됨 | 그대로 둡니다. |
+> | 출입 코드 | 고정됨 | See more (...)를 연 다음 **Delete**를 선택합니다. |
+> | 반품 참조 번호 | 고정되지 않음 | 고정합니다. |
+> | 메모 두 개 | 고정되지 않음 | 그대로 둡니다. |
+>
+> 그런 다음 **Clear all**을 선택하세요. 완료 후 클립보드 기록에 배송 주소와 반품 참조 번호만 남아 있는지 확인하세요.
 
 ### 두 답안의 차이
 
 | 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
 | --- | --- | --- |
 | Windows logo key + V로 기록을 열고 Clear all 전에 반품 참조 번호를 고정한다. 이미 고정된 배송 주소는 유지한다. | 충족 | 충족 |
-| See more (...)의 Delete로 고정된 출입 코드를 지우거나, 명시적으로 고정을 해제한 뒤 Clear all로 없앤다. Clear all만으로 고정된 코드가 사라진다고 하지 않는다. | 미충족 | 미충족 |
-| 최종적으로 주소와 반품 참조 번호만 남고 메모 두 개가 삭제되는 사용자용 절차를 제공한다. 다른 기기 상태에 관한 근거 없는 주장은 하지 않는다. | 충족 | 미충족 |
+| See more (...)의 Delete로 고정된 출입 코드를 지우거나, 명시적으로 고정을 해제한 뒤 Clear all로 없앤다. Clear all만으로 고정된 코드가 사라진다고 하지 않는다. | 미충족 | 충족 |
+| 최종적으로 주소와 반품 참조 번호만 남고 메모 두 개가 삭제되는 사용자용 절차를 제공한다. 다른 기기 상태에 관한 근거 없는 주장은 하지 않는다. | 충족 | 충족 |
 
-**블라인드 검토** (X = 미적용, Y = 스킬 적용). 두 답 모두 반품 참조 번호를 먼저 고정한다. X 쪽은 Clear all로 고정된 출입 코드도 지워진다고 잘못 설명하지만, 마지막에 실제로 남은 코드를 See more (...)의 Delete로 지우는 단계를 제시해 목표 상태에 도달할 수 있다. Y 쪽은 이미 고정된 주소를 다시 고정하도록 하고 코드 삭제 단계를 빠뜨린다. 요청하지 않은 방법 이름·수준과 불필요한 문자도 덧붙였다.
+**검토 결과.** 반품 참조 번호를 먼저 보호하고 고정된 배송 주소는 유지합니다. 고정된 출입 코드는 개별 처리하고 메모 두 개를 함께 지워, 원하는 항목만 남깁니다.
+
+익명 채점에서 개정 답안은 X였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/microsoft-writing-style/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/microsoft-writing-style.json).
 
 <details>
 <summary>실행 기록</summary>
 
-각 답안은 Codex CLI 0.167.0, low 추론 설정의 별도 임시 읽기 전용 세션에서 생성했습니다. 같은 문항의 다른 답안이나 다른 언어의 답안은 입력하지 않았습니다.
-
-SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `fe6a3443c596` / `49b13f22cab5` / `0659b269dc01`.
+미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `0478d6d5cc87` / `49b13f22cab5` / `b7ecfdbb5c37`.
 
 </details>
 
@@ -1643,7 +1388,7 @@ SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `fe6a34
 
 [English](EXAMPLES.md#minto-pyramid)
 
-2026-11-08 · `minto-pyramid` 0.2.2 · 한국어 · `gpt-6-luna`
+2026-11-09 · `minto-pyramid` 0.2.6 · 한국어 · `gpt-6-luna`
 
 ### 사례와 출처
 
@@ -1662,7 +1407,7 @@ FHWA는 보행 선행신호의 원리와 세 도시의 충돌 변화 계수 0.87
 
 ### 스킬 적용 답안 · standard
 
-> 선회 차량이 많은 교차로에 보행 선행신호를 적용하면 보행자가 차량보다 먼저 횡단을 시작해 선회 차량 운전자에게 더 잘 보일 수 있습니다. 위원회는 두 지역 중 어디에 시범사업을 해야 예상 충돌 감소 건수를 극대화할 수 있을까요? 연구의 충돌수정계수 0.87을 그대로 적용하면 북부는 예상 충돌 20건에서 2.6건 감소, 남부는 5건에서 0.65건 감소합니다. 따라서 **북부를 시범 지역으로 추천합니다.** 현지 효과는 북부에서 사업을 시행했을 때의 충돌 건수를 같은 기간 사업을 하지 않았을 경우의 예상치와 비교해 측정해야 합니다. *(감소 추정치 = 기준 충돌 건수 × (1−0.87); 이는 연구 계수를 그대로 적용한 가상 추정입니다.)*
+> 사업비가 같고 목표가 차량·보행자 충돌의 예상 감소 건수를 최대화하는 것이라면 **북부 교차로 집단에서 시범사업을 시행할 것을 권고합니다.** 미국 연방도로청의 세 도시 연구에서 추정된 충돌수정계수 0.87을 두 지역에 그대로 적용한다고 가정하면, 북부의 예상 감소 건수는 `20 × (1 − 0.87) = 2.6건`, 남부는 `5 × (1 − 0.87) = 0.65건`입니다. 보행 신호가 차량 녹색 신호보다 3~7초 먼저 켜지면 보행자가 선회 차량보다 먼저 교차로에 진입해 운전자가 보행자를 인지할 가능성을 높일 수 있습니다. 다만 이 감소 추정치는 연구 계수가 현지에도 적용된다는 가정에 따른 예측입니다. 현지 효과는 사업 전후의 충돌 변화를 북부와 사업을 하지 않은 비교 집단에서 같은 기간에 측정해 견주고, 두 집단의 기존 추세와 교통 여건이 비슷한지 확인해 평가해야 합니다.
 
 ### 두 답안의 차이
 
@@ -1670,16 +1415,16 @@ FHWA는 보행 선행신호의 원리와 세 도시의 충돌 변화 계수 0.87
 | --- | --- | --- |
 | 북부와 남부의 예상 감소 건수를 각각 2.6건, 0.65건으로 계산한다. | 충족 | 충족 |
 | 같은 비용으로 더 큰 절대 감소를 얻으려는 목적에 따라 북부를 권하고, 보행 신호가 앞서면 선회 차량 운전자가 보행자를 알아보기 쉬워지는 등의 이유를 제시한다. | 충족 | 충족 |
-| 연구 결과를 현지에 적용할 수 있다는 가정하의 예상치임을 밝히고, 처리 교차로와 믿을 만한 현지 미도입 상황을 비교하는 측정 방법을 제안한다. | 미충족 | 미충족 |
+| 연구 결과를 현지에 적용할 수 있다는 가정하의 예상치임을 밝히고, 처리 교차로와 믿을 만한 현지 미도입 상황을 비교하는 측정 방법을 제안한다. | 미충족 | 충족 |
 
-**블라인드 검토** (X = 미적용, Y = 스킬 적용). 두 답 모두 북부를 권하고, 예상 감소량 2.6건과 0.65건 및 선회 차량에 보행자가 먼저 보이는 원리를 설명합니다. 두 답 모두 실제 충돌 건수와 미도입 시의 예상 건수를 비교하자고 하지만, 비슷한 미도입 교차로 등 현지에서 그 예상치를 뒷받침할 비교 대상을 제시하지 않습니다. X는 단순 전후 비교의 한계도 지적합니다.
+**검토 결과.** 연구 결과가 현지에도 적용된다면 같은 비용에 북부는 2.6건, 남부는 0.65건 감소가 예상됩니다. 시범 교차로와 비교 가능한 미시행 교차로의 변화를 비교해 예측을 검증할 수 있습니다.
+
+익명 채점에서 개정 답안은 X였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/minto-pyramid/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/minto-pyramid.json).
 
 <details>
 <summary>실행 기록</summary>
 
-각 답안은 Codex CLI 0.167.0, low 추론 설정의 별도 임시 읽기 전용 세션에서 생성했습니다. 같은 문항의 다른 답안이나 다른 언어의 답안은 입력하지 않았습니다.
-
-SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `1c5f170eb9d4` / `018c20fe2c01` / `b4944b8d1e69`.
+미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `8063d7e2ee16` / `018c20fe2c01` / `2fdddcffd1cb`.
 
 </details>
 
@@ -1689,7 +1434,7 @@ SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `1c5f17
 
 [English](EXAMPLES.md#new-harts-rules)
 
-2026-11-08 · `new-harts-rules` 0.1.2 · 한국어 · `gpt-6-luna`
+2026-11-09 · `new-harts-rules` 0.1.6 · 한국어 · `gpt-6-luna`
 
 ### 사례와 출처
 
@@ -1715,13 +1460,13 @@ SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `1c5f17
 
 ### 스킬 적용 답안 · standard
 
-> ### English exhibition text
+> **영어 전시문**
 >
-> In “Housing, England and Wales: Census 2021”, ONS reported that 42.1 per cent of London households could not access a car or van in 2021, a difference of 18.8 percentage points from the 23.3 per cent across England and Wales. This is 81 per cent higher than the England and Wales rate.
+> In “Housing, England and Wales: Census 2021”, ONS reported that 42.1 per cent of London households could not access a car or van in 2021, 18.8 percentage points above the England and Wales figure of 23.3 per cent. This was 81 per cent higher than the England and Wales figure.
 >
-> ### 편집 메모
+> **편집 메모**
 >
-> 분모를 구분했습니다. 18.8퍼센트포인트는 두 비율의 차이(42.1−23.3)이고, 상대 초과율 81퍼센트는 그 차이를 잉글랜드·웨일스 전체 비율 23.3으로 나눈 뒤 가장 가까운 정수로 반올림한 값입니다. 본문의 백분율은 전시회 자체 지침에 따라 ‘per cent’로 표기했으며, New Hart’s Rules 원문 구절이 제공되지 않아 해당 표기 판단을 그 책의 규칙으로 돌리지 않았습니다.
+> 분모는 잉글랜드·웨일스 전체 가구의 비율 23.3%입니다. 런던과의 차이는 42.1%−23.3%=18.8퍼센트포인트이고, 이를 23.3%로 나눈 상대 초과율은 약 81%입니다. 본문에는 전시회 자체 지침에 따라 ‘per cent’를 썼으며, 이 표기 판단은 하우스 스타일에 따른 것입니다. New Hart’s Rules 제2판(2014)의 관련 원문 구절은 제공되지 않아 해당 책의 세부 규칙으로 판단하지 않았습니다.
 
 ### 두 답안의 차이
 
@@ -1731,14 +1476,14 @@ SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `1c5f17
 | 18.8퍼센트포인트 차이와 23.3%를 기준으로 한 약 81% 상대 초과를 구분한다. | 충족 | 충족 |
 | 영어 본문의 백분율에 per cent를 사용하고, 한국어 편집 메모가 분모와 전시회의 표기 지침을 설명하며 확인하지 않은 책 규칙을 근거로 삼지 않는다. | 충족 | 충족 |
 
-**블라인드 검토** (Y = 미적용, X = 스킬 적용). 두 답 모두 영어 전시문에서 자료 제목과 가구 단위를 지키고, 18.8퍼센트포인트와 약 81% 상대 초과를 구분합니다. 한국어 편집 메모에서 두 답 모두 23.3을 상대 비교의 분모로 제시하고 영어 본문의 ‘per cent’를 전시회 표기 지침으로 설명합니다. Y는 가구 단위로 초안을 고친 이유도 명시합니다.
+**검토 결과.** 측정 대상을 가구로 유지하고 18.8퍼센트포인트의 격차와 약 81%의 상대 초과를 구분합니다. 영문 본문의 표기 근거는 전시회 지침입니다.
+
+익명 채점에서 개정 답안은 X였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/new-harts-rules/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/new-harts-rules.json).
 
 <details>
 <summary>실행 기록</summary>
 
-각 답안은 Codex CLI 0.167.0, low 추론 설정의 별도 임시 읽기 전용 세션에서 생성했습니다. 같은 문항의 다른 답안이나 다른 언어의 답안은 입력하지 않았습니다.
-
-SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `984d898d4573` / `401e71e2374b` / `d56137d09d96`.
+미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `9b8e75069344` / `401e71e2374b` / `495020e17085`.
 
 </details>
 
@@ -1748,7 +1493,7 @@ SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `984d89
 
 [English](EXAMPLES.md#nist-technical-publication)
 
-2026-11-08 · `nist-technical-publication` 0.1.3 · 한국어 · `gpt-6-luna`
+2026-11-09 · `nist-technical-publication` 0.1.4 · 한국어 · `gpt-6-luna`
 
 ### 사례와 출처
 
@@ -1815,37 +1560,42 @@ NIST-F2 논문은 2013년 측정의 두 불확도 성분과 냉각 환경을 설
 
 ### 스킬 적용 답안 · standard
 
-> **기술 메모 — NIST-F2 불확도 개선 방안**
+> ## NIST-F2 개선 방안 검토 메모
 >
-> **목적.** 2013년 7~8월 평가의 상대 주파수 불확도를 바탕으로, 같은 비용의 두 가상 개선 방안 중 하나를 추천합니다. 두 성분은 이번 계산에서만 서로 독립이라고 가정하고, 제곱합 제곱근으로 결합했습니다.
+> **목적.** 비용이 같은 두 가상 개선 방안 중 어느 쪽이 결합 상대 주파수 불확도를 더 낮추는지 비교한다.
 >
-> **기준과 계산.** 통계적 A형 성분은 0.44 × 10⁻¹⁵, 계통적 B형 성분은 0.11 × 10⁻¹⁵입니다. 현재 결합 불확도는 √(0.44² + 0.11²) = **0.454 × 10⁻¹⁵**입니다.
+> **근거와 가정.** 2013년 7~8월 평가에서 A형(통계적) 상대 주파수 불확도는 $0.44\times10^{-15}$, B형(계통적) 불확도는 $0.11\times10^{-15}$였다. 이번 계산에서는 두 성분이 독립이라고 가정해 제곱합의 제곱근으로 결합한다. 각 방안은 해당 성분 하나만 절반으로 줄이며 다른 성분은 그대로라고 가정한다.
 >
-> | 가상 방안 | A형 상대 주파수 불확도 | B형 상대 주파수 불확도 | 예상 결합 불확도 |
+> **계산 결과.** 아래 값은 모두 상대 주파수 불확도이며, 표의 수치는 $10^{-15}$를 곱한 계수다.
+>
+> | 경우 | A형 성분 $(\times10^{-15})$ | B형 성분 $(\times10^{-15})$ | 결합 불확도 $(\times10^{-15})$ |
 > |---|---:|---:|---:|
-> | A형만 절반으로 감소 | 0.22 × 10⁻¹⁵ | 0.11 × 10⁻¹⁵ | **0.246 × 10⁻¹⁵** |
-> | B형만 절반으로 감소 | 0.44 × 10⁻¹⁵ | 0.055 × 10⁻¹⁵ | **0.443 × 10⁻¹⁵** |
+> | 현재 | 0.44 | 0.11 | 0.454 |
+> | A형만 절반으로 감소 | 0.22 | 0.11 | 0.246 |
+> | B형만 절반으로 감소 | 0.44 | 0.055 | 0.443 |
 >
-> **권고.** 이 지표만 보면 **A형 성분을 절반으로 줄이는 방안**을 권합니다. 예상 결합 불확도는 약 0.454 × 10⁻¹⁵에서 0.246 × 10⁻¹⁵로 낮아집니다. B형에서 마이크로파 진폭 영향이 가장 컸다는 사실은 해당 효과를 우선 조사할 근거가 될 수 있지만, 주어진 비교에서는 B형 전체를 절반으로 줄여도 결합 불확도 변화가 작습니다. 이 권고는 명시된 두 가상 방안과 독립성 가정 아래에서만 성립합니다.
+> 계산은 각 열의 성분을 $10^{-15}$ 단위의 계수로 놓고 $\sqrt{A^2+B^2}$를 적용한 것이다. 예를 들어 현재 결합 불확도는 $\sqrt{0.44^2+0.11^2}\times10^{-15}\approx0.454\times10^{-15}$이다.
 >
-> **냉각 효과의 해석.** 80 K 환경은 흑체복사에 따른 불확도를 50분의 1 미만으로 줄였습니다. 이는 **흑체복사 기여분**에 관한 결과입니다. A형·B형을 포함한 전체 불확도가 50분의 1 미만으로 줄었다고 결론 내릴 수는 없습니다. 각 성분에서 흑체복사 기여가 차지하는 비율과 다른 기여분에 관한 정보가 주어지지 않았기 때문입니다.
+> **해석 및 권고.** 이 지표에서는 **A형 성분을 절반으로 줄이는 방안**을 권고한다. 예상 결합 불확도는 $0.246\times10^{-15}$로, 현재 $0.454\times10^{-15}$보다 작다. B형만 절반으로 줄이면 약 $0.443\times10^{-15}$로 감소 폭이 더 작다. 따라서 A형 성분 저감이 우선이다. 다만 B형에서 마이크로파 진폭 영향이 가장 컸다는 관측은 계통 오차의 개선 대상을 정할 때 참고할 수 있다.
+>
+> **냉각 효과의 범위.** 80 K 환경이 흑체복사에 따른 불확도를 50분의 1 미만으로 줄였다는 사실만으로 전체 불확도도 50분의 1 미만이 됐다고 결론 낼 수는 없다. 그 결과는 흑체복사 기여분에 관한 것이며, 제공된 정보에는 냉각 전후 전체 불확도나 다른 기여분의 변화가 제시되지 않았다. 여기서 계산한 현재 결합값과 방안별 값은 주어진 A형·B형 성분만을 대상으로 한다.
 
 ### 두 답안의 차이
 
 | 실행 전에 정한 기준 | 스킬 미적용 | 스킬 적용 |
 | --- | --- | --- |
-| A형과 B형의 값이 상대 주파수 불확도임을 구분하고, 독립이라는 가정 아래 현재 결합값이 약 0.454 × 10⁻¹⁵임을 계산한다. | 미충족 | 미충족 |
+| A형과 B형의 값이 상대 주파수 불확도임을 구분하고, 독립이라는 가정 아래 현재 결합값이 약 0.454 × 10⁻¹⁵임을 계산한다. | 미충족 | 충족 |
 | A형만 절반이면 약 0.246 × 10⁻¹⁵, B형만 절반이면 약 0.443 × 10⁻¹⁵로 계산하고 같은 비용이라면 감소량이 큰 A형 개선을 선택한다. | 충족 | 충족 |
 | 가상 방안의 예측값과 2013년 관측 결과를 구분한다. 50배 넘는 감소는 흑체복사 불확도에 한정하고, B형에서 주된 영향이 마이크로파 진폭임을 밝힌다. | 충족 | 충족 |
 
-**블라인드 검토** (Y = 미적용, X = 스킬 적용). X는 현재값의 지수를 올바르게 적었지만 식 왼쪽에서 ×10⁻¹⁵를 빠뜨려 양변의 크기가 다르다. Y의 첫 식은 맞지만 권고문에서 현재값을 0.454로 적고 표의 변경 후 A·B 성분에도 ×10⁻¹⁵ 단위를 표시하지 않았다. 둘 다 예상 결합값 0.246 × 10⁻¹⁵와 0.443 × 10⁻¹⁵를 맞게 제시해 A형 개선을 택한다. 50배 넘는 감소를 흑체복사 기여분으로 한정하고 마이크로파 진폭을 B형의 주된 영향으로 식별한다.
+**검토 결과.** 독립인 두 성분을 결합하면 현재 상대 주파수 불확도는 약 0.454 × 10⁻¹⁵입니다. A형만 절반으로 줄인 경우와 B형만 줄인 경우를 구분하고, 50배 넘는 개선은 흑체복사 기여분에 한정합니다.
+
+익명 채점에서 개정 답안은 X였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/nist-technical-publication/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/nist-technical-publication.json).
 
 <details>
 <summary>실행 기록</summary>
 
-각 답안은 Codex CLI 0.167.0, low 추론 설정의 별도 임시 읽기 전용 세션에서 생성했습니다. 같은 문항의 다른 답안이나 다른 언어의 답안은 입력하지 않았습니다.
-
-SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `33e35b943513` / `ff875254df61` / `8f7535325e38`.
+미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `d936b66143cd` / `ff875254df61` / `86b5397a90de`.
 
 </details>
 
@@ -1904,7 +1654,7 @@ SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `90ee27
 
 [English](EXAMPLES.md#socratic-self-questioning)
 
-2026-11-08 · `socratic-self-questioning` 0.1.2 · 한국어 · `gpt-6-luna`
+2026-11-09 · `socratic-self-questioning` 0.1.6 · 한국어 · `gpt-6-luna`
 
 ### 사례와 출처
 
@@ -1922,7 +1672,7 @@ SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `90ee27
 
 ### 스킬 적용 답안 · standard
 
-> 핀란드 실험 결과를 “지역 주민 500명에게 기본소득을 지급하면 취업일수가 3,000일 늘어난다”고 옮기려면, 먼저 6일의 기준이 무엇인지 밝혀야 합니다. 이 6일은 2017년 11월부터 2018년 10월까지 기본소득 집단의 평균 취업일수 78일과 비교집단 평균의 차이이므로, 비교집단 평균은 72일입니다. 3,000일은 1인당 6일 차이가 지역의 500명 모두에게 나타난다고 보고 500을 곱한 계산으로 추정됩니다. 그러나 실험 대상은 지역 주민 일반이 아니라 무작위 선정된 실업급여 수급자 2,000명이었고, 첫해에는 집단 수준의 고용 효과가 없었습니다. 둘째 해에는 실업급여 제도 개편이 두 집단에 다르게 작용해 기본소득만의 효과를 분리할 수 없었습니다. 따라서 3,000일은 확정된 지역 예측이 아니라, 지역의 500명에게도 실험의 6일 차이가 그대로 적용된다는 가정에 따른 추정치입니다. 이 가정이 타당하려면 지역 대상자의 고용 여건과 구성, 제도 환경이 실험 대상 및 비교 조건과 충분히 비슷해야 합니다.
+> 핀란드 실험에서 무작위 선정된 실업급여 수급자 2,000명에게 매월 560유로를 지급한 결과, 2017년 11월부터 2018년 10월까지 지급 집단의 평균 취업일수는 78일로 비교집단보다 6일 많았습니다. 따라서 비교집단 평균은 78일−6일=72일이며, 주민 500명에게 3,000일 증가를 예측한 계산은 500명×6일입니다. 다만 첫해에는 집단 수준의 고용 효과가 없었고, 둘째 해에는 실업급여 제도 개편이 두 집단에 다르게 작용해 기본소득만의 효과를 분리할 수 없었습니다. 그러므로 6일 차이를 기본소득의 확정적 효과로 보기는 어렵습니다. 지역에 이 값을 적용하려면 대상 주민이 핀란드 실험의 실업급여 수급자와 충분히 비슷하고, 지급 방식·기간과 제도 환경이 유사하며, 관찰된 차이가 지역에서도 재현된다고 가정해야 합니다.
 
 ### 두 답안의 차이
 
@@ -1932,14 +1682,14 @@ SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `90ee27
 | 첫해 집단 수준의 효과가 없었다는 점과 2018년 제도 개편이 두 집단에 다르게 작용해 둘째 해 기본소득만의 효과를 분리할 수 없다는 점을 모두 설명한다. | 충족 | 충족 |
 | 실험 참여자를 실업급여 수급자로 한정해 설명하고 일반 지역 주민에게 적용하려면 필요한 가정을 제시한다. 실험이 모든 연도에서 효과가 없었다고 단정하지 않는다. | 미충족 | 충족 |
 
-**블라인드 검토** (X = 미적용, Y = 스킬 적용). 두 답 모두 비교집단 평균 72일과 500×6일의 외삽, 둘째 해 제도 개편을 구분합니다. Y는 실험 대상이 실업급여 수급자였다는 점을 명시합니다. X의 ‘수급자’는 무엇을 받던 집단인지 밝히지 않으며, 첫해 효과가 없었다는 관찰을 둘째 해 수치와 직접 충돌하는 결과처럼 서술합니다.
+**검토 결과.** 비교집단 평균은 72일입니다. 3,000일은 관측된 6일 차이를 지역 주민에게 외삽한 값입니다. 실업급여 수급자라는 연구 대상, 집단별로 달랐던 개편 영향과 지역 적용 가정을 함께 설명합니다.
+
+익명 채점에서 개정 답안은 X였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/socratic-self-questioning/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/socratic-self-questioning.json).
 
 <details>
 <summary>실행 기록</summary>
 
-각 답안은 Codex CLI 0.167.0, low 추론 설정의 별도 임시 읽기 전용 세션에서 생성했습니다. 같은 문항의 다른 답안이나 다른 언어의 답안은 입력하지 않았습니다.
-
-SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `73849e50a54b` / `5f10922f41d2` / `d0baaafcd370`.
+미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `6c4c77094da2` / `5f10922f41d2` / `271a6d767645`.
 
 </details>
 
@@ -1949,7 +1699,7 @@ SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `73849e
 
 [English](EXAMPLES.md#steve-jobs-presentation)
 
-2026-11-08 · `steve-jobs-presentation` 0.1.1 · 한국어 · `gpt-6-luna`
+2026-11-09 · `steve-jobs-presentation` 0.1.8 · 한국어 · `gpt-6-luna`
 
 ### 사례와 출처
 
@@ -1971,15 +1721,11 @@ NASA의 첫 비행 발표는 Ingenuity의 전체 비행 시간, 제자리 비행
 
 ### 스킬 적용 답안 · standard
 
-> **세 대목**
+> 인제뉴어티는 화성의 라이트 브라더스 비행장에서 자율 비행으로 약 3 m까지 올라가 30초간 제자리 비행을 한 뒤, 이륙 후 39.1초에 착륙했습니다. 다른 행성에서 동력을 사용해 제어 비행을 할 수 있음을 보여 준 비행입니다.
 >
-> “인제뉴어티는 화성의 라이트 브라더스 비행장에서 자율 비행을 했습니다. 화성에서도 동력을 사용해 제어 비행을 할 수 있음을 보여 준 비행입니다.”
+> 제자리 비행은 전체 39.1초 중 30초, 약 77%입니다. 남은 약 9.1초에는 상승과 하강이 모두 포함되므로, 그 시간만으로 상승 속도를 알 수 없습니다. 따라서 3 m를 전체 비행 시간으로 나눈 값을 ‘평균 상승 속도’라고 쓰지 않겠습니다.
 >
-> “기체는 약 3 m까지 올라가 30초간 제자리 비행을 한 뒤, 이륙 후 39.1초에 착륙했습니다. 전체 비행 시간으로 높이 3 m를 나눈 값은 약 0.077 m/s지만, 이 값은 ‘평균 상승 속도’가 아니라 **전체 비행 시간에 대한 높이의 비율**입니다. 제자리 비행은 전체 시간의 약 76.7%입니다. 그 시간을 빼면 약 9.1초가 남지만, 그 시간에는 하강과 착륙도 포함됩니다. 따라서 이 정보만으로 상승에 걸린 시간이나 상승 속도를 알아낼 수는 없습니다.”
->
-> “비행 자료를 검토하면 연구진은 실제 상승·하강 구간과 기체의 성능을 평가해 다음 시험에서 무엇을 바꿀지, 또는 어떤 조건으로 시험할지 결정할 수 있습니다. 이 비행은 동력 제어 비행의 가능성을 보여 줬지만, 후속 비행의 성공을 미리 말해 주지는 않습니다.”
->
-> **방법 상태:** Jobs-inspired presentation structure · standard
+> 연구진은 비행 자료를 검토해 상승과 하강의 시간 및 경로를 살펴볼 수 있습니다. 그 관찰을 바탕으로 다음 시험에서 무엇을 조정하거나 측정할지 결정할 수 있습니다.
 
 ### 두 답안의 차이
 
@@ -1987,15 +1733,15 @@ NASA의 첫 비행 발표는 Ingenuity의 전체 비행 시간, 제자리 비행
 | --- | --- | --- |
 | 화성 최초의 자율 동력·제어 비행이라는 의미와 약 3 m 높이를 유지하고, 30초 제자리 비행과 전체 39.1초를 구분한다. | 충족 | 충족 |
 | 제자리 비행은 약 77%이며 남은 9.1초에는 상승과 하강이 들어감을 설명한다. 전체 시간에서 상승 속도를 유도하는 계산을 배척한다. | 충족 | 충족 |
-| 관객에게 말할 짧은 세 대목으로 구성하고, 앞으로의 성공을 단언하지 않고 비행 자료 검토가 다음 시험을 정하는 근거라고 마무리한다. | 충족 | 미충족 |
+| 관객에게 말할 짧은 세 대목으로 구성하고, 앞으로의 성공을 단언하지 않고 비행 자료 검토가 다음 시험을 정하는 근거라고 마무리한다. | 충족 | 충족 |
 
-**블라인드 검토** (X = 미적용, Y = 스킬 적용). 두 답 모두 30초는 전체 39.1초의 약 77%이고, 남은 9.1초에는 하강도 포함돼 상승 속도를 구할 수 없다고 설명합니다. X 쪽은 이 판단과 다음 시험 결정을 세 단락으로 전합니다. Y 쪽은 계산 근거를 자세히 쓰지만 둘째 대목이 길고 발표와 별개인 방법 상태까지 붙였습니다.
+**검토 결과.** 세 대목에서 제자리 비행 30초와 전체 비행 39.1초를 구분합니다. 나머지 9.1초에는 상승과 하강이 모두 들어 있고, 다음 시험은 비행 자료를 검토한 뒤 정합니다.
+
+익명 채점에서 개정 답안은 X였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/steve-jobs-presentation/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/steve-jobs-presentation.json).
 
 <details>
 <summary>실행 기록</summary>
 
-각 답안은 Codex CLI 0.167.0, low 추론 설정의 별도 임시 읽기 전용 세션에서 생성했습니다. 같은 문항의 다른 답안이나 다른 언어의 답안은 입력하지 않았습니다.
-
-SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `172a5e6964a7` / `ff6014188315` / `e98f1437f81d`.
+미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `24a22d2a3e7c` / `ff6014188315` / `a51853b9dd0b`.
 
 </details>

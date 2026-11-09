@@ -94,5 +94,22 @@
       "State which value is hypothetical. Return just the technical note."
     ],
     "method": "nist-technical-publication"
+  },
+  {
+    "id": "scale-on-both-sides",
+    "method": "nist-technical-publication",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "standard",
+    "source": "A detector records an integrated charge of 6 × 10⁻⁹ C in 3 s. Write a note giving the average current in A, including a dimensionally consistent equation. The interval is illustrative.",
+    "ruleIds": [
+      "measurement-integrity"
+    ],
+    "sourceIds": [
+      "nist-authors"
+    ],
+    "expectations": [
+      "Both sides of the equation retain the scale and compatible dimensions. Give 2 × 10⁻⁹ A and preserve the illustrative status."
+    ]
   }
 ]
