@@ -79,5 +79,62 @@
     "expectations": [
       "Keep sending the acknowledgement optional while preserving the identifier requirement when one is sent."
     ]
+  },
+  {
+    "id": "advisory-route",
+    "method": "ietf-rfc",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "standard",
+    "source": "An internal protocol may suggest an alternate route when a node is congested. A sender can ignore the hint. The route can still drop the packet. Write a short specification that says what receiving a hint means.",
+    "ruleIds": [
+      "requirement-strength"
+    ],
+    "sourceIds": [
+      "bcp14"
+    ],
+    "expectations": [
+      "Distinguish the optional choice of route from the possibility of packet loss even when the sender follows the hint. Do not invent a requirement to change routes."
+    ]
+  },
+  {
+    "id": "handoff-roles",
+    "method": "ietf-rfc",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "standard",
+    "source": "In this fictional protocol, section 2 of the supplied base spec permits a dispatcher to hand off an expired job. Section 3 prohibits the recipient from accepting an expired job. Use BCP 14 and identify the role of the base spec. A status screen can show the job ID as hex or decimal.",
+    "ruleIds": [
+      "requirement-strength",
+      "reference-role"
+    ],
+    "sourceIds": [
+      "bcp14",
+      "rfc7322"
+    ],
+    "expectations": [
+      "Describe the dispatcher’s permission with MAY and the recipient’s prohibition with MUST NOT. Keep the roles distinct.",
+      "If references are classified, the supplied base specification is normative for both behaviors.",
+      "The two display formats do not establish a new normative permission for an operator or status screen."
+    ]
+  },
+  {
+    "id": "qualified-negative",
+    "method": "ietf-rfc",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "standard",
+    "source": "An internal format uses BCP 14. A formatter SHOULD NOT strip trailing zeroes unless the field is labeled approximate. The formatter MAY preserve trailing zeroes in all fields. Render these requirements in prose, without a table.",
+    "ruleIds": [
+      "requirement-strength",
+      "preserve-meaning"
+    ],
+    "sourceIds": [
+      "bcp14"
+    ],
+    "expectations": [
+      "Keep the conditional SHOULD NOT and its exception; retain the permission to preserve zeroes. Do not strengthen the recommendation to MUST NOT, drop the negation or change the formatter into another actor.",
+      "Respect the requested prose format."
+    ]
   }
 ]

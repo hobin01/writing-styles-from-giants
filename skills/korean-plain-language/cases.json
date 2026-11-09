@@ -102,5 +102,24 @@
       "지난해의 허용 조건을 해요체 과거형으로 유지한다.",
       "현재도 환급을 신청할 수 있다고 암시하지 않는다."
     ]
+  },
+  {
+    "id": "laboratory-induction-exemption",
+    "type": "exception",
+    "locale": "ko",
+    "source": "연구실 실습 안내입니다. 재수강생은 기초 교육을 생략해도 되지만, 첫 수강생은 기초 교육을 받아야 해요. 두 집단 모두 실험 직전에 장비를 점검해야 해요. 두 집단에 적용되는 행동을 해요체로 짧게 알려 주세요.",
+    "ruleIds": [
+      "logical-sentences",
+      "register-and-modality"
+    ],
+    "sourceIds": [
+      "nikl-guide"
+    ],
+    "expectations": [
+      "재수강생이 생략할 수 있는 것은 기초 교육이라고 밝히고 첫 수강생의 기초 교육 의무를 유지한다.",
+      "장비 점검은 첫 수강생과 재수강생 모두에게 필요한 의무이며 생략할 수 있다는 뜻을 주지 않는다. 해요체를 유지한다."
+    ],
+    "level": "standard",
+    "method": "korean-plain-language"
   }
 ]

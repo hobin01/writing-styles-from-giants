@@ -1,6 +1,6 @@
 {
   "method": "korean-plain-language",
-  "methodVersion": "0.1.2",
+  "methodVersion": "0.1.9",
   "locale": "ko",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -10,7 +10,7 @@
       "adaptation": false
     },
     "referents-and-particles": {
-      "instruction": "생략된 주어나 지시 대상 때문에 뜻이 모호한 경우만 보완한다. 조사·수식 범위를 확인하고, 알 수 없는 행위자는 추정하지 않는다.",
+      "instruction": "지시 대상이나 수식 범위가 모호할 때만 보완하고 행위자를 추측하지 않는다. 제안 문구만 따로 읽어 ‘만’이 어느 조건을 한정하는지, ‘모두’ 뒤에 든 절차와 예시가 모든 집단에 실제로 적용되는지 확인한다.",
       "adaptation": true
     },
     "register-and-modality": {
@@ -22,7 +22,7 @@
       "adaptation": true
     },
     "logical-sentences": {
-      "instruction": "문장 성분의 호응과 조건의 적용 범위를 확인한다. 문장을 나눌 때도 어느 조건이 어느 행동에 적용되는지 보존한다.",
+      "instruction": "문장을 나눌 때도 문장 성분의 호응과 각 조건의 범위를 유지한다. 비교 편집을 요청받으면 사람별로 한 항목씩 쓰고, 수치를 물었을 때에는 이름 뒤에 정확한 값과 단위를 먼저 밝힌다. 포함·제외 사유와 해당 집단의 면제 절차를 명시하고 공통 의무는 함께 설명한다.",
       "adaptation": true
     }
   }

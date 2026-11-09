@@ -1,6 +1,6 @@
 {
   "method": "asd-ste100",
-  "methodVersion": "0.1.3",
+  "methodVersion": "0.1.4",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -10,7 +10,7 @@
       "adaptation": false
     },
     "consistent-terms": {
-      "instruction": "Use a stable technical name for each concept; define necessary unfamiliar terms instead of cycling through synonyms.",
+      "instruction": "When the user supplies a required component name, use the whole name for every mention of that component, including headings, cautions and summaries. Retain distinct names for distinct concepts.",
       "adaptation": true
     },
     "explicit-action": {

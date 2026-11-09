@@ -2,7 +2,7 @@
 
 [한국어](standard.ko.md)
 
-2026-11-08 · `korean-plain-language` 0.1.2 · English · `gpt-6-luna`
+2026-11-09 · `korean-plain-language` 0.1.9 · English · `gpt-6-luna`
 
 ### Case and sources
 
@@ -28,15 +28,12 @@
 
 ### With the skill at standard
 
-> **Editorial memo**
+> The draft’s “지우와 민서는 지금 환급금을 받아요” says Jiwoo and Minseo are receiving refunds now. The pilot’s refund was a past opportunity to apply for payment, so this wording may wrongly suggest a current payment or a guaranteed one. Replace it with **“환급금을 신청할 수 있었어요”** (“They could apply for a refund”).
 >
-> The draft, “지우와 민서는 지금 환급금을 받아요” (“Jiwoo and Minseo receive refunds now”), makes a past pilot sound current and suggests payment is automatic. Both are misleading: the refunds were available during the 2024 pilot, and eligible participants still had to apply.
+> - **Jiwoo — 7,000 won.** The first physical pass was completed before registration, so it did not qualify. The second was completed after registration and without a refund, so Jiwoo could apply for 7,000 won. The third was refunded on day 18, so it did not qualify as a completed 30-day pass used without a refund.
+> - **Minseo — 14,000 won.** Both mobile passes were completed without refunds. Mobile cards did not need separate registration, so each pass could qualify for 7,000 won.
 >
-> Jiwoo could have applied for **7,000 won**. The first physical pass was completed before registration, so it did not count; the second was completed after registration and was not refunded, so it qualified. The third pass was refunded on day 18 and was not a completed, unrefunded 30-day pass.
->
-> Minseo could have applied for **14,000 won**. Both completed mobile passes were unrefunded and qualified; mobile cards did not require separate card registration. Minseo still needed to submit a refund application.
->
-> A short 해요체 replacement is: **“2024년 시범사업 당시, 조건을 충족한 이용자는 환급을 신청할 수 있었어요.”** This makes the timing past and preserves the meaning as permission to apply, not a promise of payment.
+> Both still had to apply; eligibility did not mean the refund was already received.
 
 ### What changed
 
@@ -46,13 +43,13 @@
 | Correctly gives Minseo 14,000 won for two completed passes; distinguishes not having to register the mobile card from having to apply for either refund. | Met | Met |
 | Explains the draft's timing and payment implications in English and proposes Korean 해요체 wording that conveys past eligibility to apply without implying current entitlement or automatic payment. | Missed | Met |
 
-**Masked review** (Y = baseline; X = standard). Both calculate 7,000 won for Jiwoo and 14,000 for Minseo, distinguish registration from applying, and explain the draft’s misleading present tense in English. X proposes Korean wording anchored to the 2024 pilot and uses 신청할 수 있었어요. Y’s replacement uses 신청할 수 있어요, which can still suggest current eligibility despite the accurate English explanation.
+**Review.** Jiwoo could apply for 7,000 won and Minseo for 14,000. Mobile registration was waived, but both people still needed to apply. The proposed Korean wording describes eligibility at the time.
+
+Masked reviewer assignment: X was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/korean-plain-language/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/korean-plain-language.json).
 
 <details>
 <summary>Run record</summary>
 
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `c0be7cf32505` / `b2b7f3a4df0d` / `cdfd5fc43c0c`.
+Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `22797d4c7797` / `b2b7f3a4df0d` / `af8afbb2a4fc`.
 
 </details>

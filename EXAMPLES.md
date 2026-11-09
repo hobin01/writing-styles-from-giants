@@ -6,13 +6,11 @@ Start with a question about [independent DNS caches](#feynman-technique), [a Mar
 
 ## How to read the evidence
 
-We generated the English and Korean examples independently on 2026-11-08. Both languages use the same case facts and comparable reasoning, with format and language scope stated in the prompts. For example, the Korean plain-language task in this gallery asks for an English editorial explanation of Korean wording. The Korean New Hart’s example retains an English exhibition label and requests a Korean editorial note.
+Each method has one English request and three checks. The Korean gallery uses its own request and answers for the same case. For the November 9 repairs, we kept the November 8 baseline answers, questions and rubric wording. We revised the 13 methods that missed a standard check in either language, testing both languages again after each revision.
 
-Codex CLI 0.167.0 requested `gpt-6-luna` at low reasoning effort. Each answer ran in a fresh read-only session in its own temporary directory outside the checkout. Both arms received only their own request; the treatment also received the selected method and its applicable instructions. No session received another answer, and the run checker rejected tool activity. The backend model build was not reported. Markdown math delimiters, hard breaks and whitespace-only lines are formatted for display; each page records hashes of the raw answers.
+All 66 English standard checks are met on the displayed answers. Compared with the controls, **11** English standard answers meet more checks and **11** tie. Nine unchanged profiles keep their November 8 runs. Each revised method also has a different transfer problem. The record contains every accepted attempt, including earlier failures and cases where direct inspection overruled a masked grade. These development results describe the published questions. [Run details and raw records](evals/runs/2026-11-09-standard/README.md) · [November 8 English gallery](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/EXAMPLES.md).
 
-Reviewers set three checks per language before generation and graded with condition labels withheld. Some outputs revealed a method name or audit, limiting masking. In the 22 English pairs, the standard answer met more checks in 7 tasks, the same number in 12 and fewer in 3. These checks do not measure general writing quality or establish a language ranking. Each skill has one final pair per language.
-
-The two galleries contain 88 primary answers. The English ELI5 page and the Korean Seoul subway-map page each preserve two answers to an earlier wording. One Korean rubric gloss on the Mars Climate Orbiter page was corrected after generation, then assessed again without condition labels. The HTML pages keep the first results and one fresh treatment per language after an inconsistency between the page text and displayed numbers. These six additional answers are outside the counts above. The [previous gallery](https://github.com/hobin01/writing-styles-from-giants/blob/06f7e14e4b9f1e1081e817d7f828278def138742/EXAMPLES.md) preserves the earlier Luna assessment and its retests.
+Both conditions used GPT-6 Luna at low reasoning effort in independent read-only sessions. The writer saw only its own language’s request and, for standard, the selected method. Some answers visibly identify their method. English and Korean were generated separately, including mixed-language editing tasks.
 
 Edit `skills/<id>/examples/standard.md` (English) or `standard.ko.md` (Korean) and run `python3 scripts/build_example_gallery.py` to rebuild both galleries.
 
@@ -90,7 +88,7 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `e75c268d420b
 
 [한국어](EXAMPLES.ko.md#answer-with-html)
 
-2026-11-08 · `answer-with-html` 0.1.2 · English · `gpt-6-luna`
+2026-11-09 · `answer-with-html` 0.1.8 · English · `gpt-6-luna`
 
 ### Case and sources
 
@@ -334,260 +332,110 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `e75c268d420b
 ### With the skill at standard
 
 ````html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Communicating with Perseverance: the wait for a reply</title>
+  <title>Communicating with Perseverance</title>
   <style>
     :root {
       color-scheme: light;
-      --ink: #202b35;
-      --muted: #52616c;
-      --paper: #f5f3ed;
-      --panel: #fffefa;
-      --line: #d7d9d6;
-      --earth: #176b87;
-      --rover: #ad4d2c;
-      --accent: #7058a5;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #17212b;
+      background: #f4f6f8;
     }
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font: 16px/1.55 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
+    body { margin: 0; padding: 1.25rem; }
     main {
-      width: min(900px, calc(100% - 32px));
+      width: min(100%, 42rem);
       margin: 0 auto;
-      padding: 40px 0 56px;
+      padding: clamp(1.1rem, 5vw, 2rem);
+      background: #fff;
+      border: 1px solid #d8e0e7;
+      border-radius: 1rem;
+      box-shadow: 0 0.5rem 1.5rem #17212b0d;
     }
-    header { max-width: 720px; margin-bottom: 28px; }
-    .eyebrow {
-      color: var(--rover);
-      font-size: .78rem;
-      font-weight: 750;
-      letter-spacing: .12em;
-      text-transform: uppercase;
+    h1 { margin: 0 0 .5rem; font-size: clamp(1.5rem, 5vw, 2rem); line-height: 1.2; }
+    p { line-height: 1.55; }
+    .intro { margin-top: 0; color: #455462; }
+    .assumptions {
+      padding: .85rem 1rem;
+      background: #f1f5f8;
+      border-radius: .65rem;
     }
-    h1 {
-      max-width: 700px;
-      margin: 8px 0 12px;
-      font-size: clamp(2rem, 6vw, 3.4rem);
-      line-height: 1.06;
-      letter-spacing: -.04em;
-    }
-    p { margin: 0 0 12px; }
-    .intro { color: var(--muted); font-size: 1.08rem; }
-    .panel {
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: var(--panel);
-      padding: clamp(20px, 4vw, 32px);
-      box-shadow: 0 12px 30px rgb(32 43 53 / 5%);
-    }
-    .control-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 8px 20px;
-      margin-bottom: 10px;
-    }
-    label { font-weight: 700; }
-    output {
-      color: var(--accent);
-      font-size: 1.35rem;
-      font-weight: 800;
-      font-variant-numeric: tabular-nums;
-    }
-    input[type="range"] {
-      display: block;
-      width: 100%;
-      min-height: 36px;
-      margin: 0;
-      accent-color: var(--accent);
-      cursor: pointer;
-    }
+    label { display: block; margin: 1.35rem 0 .45rem; font-weight: 700; }
+    input[type="range"] { width: 100%; accent-color: #176b87; }
     .range-labels {
       display: flex;
       justify-content: space-between;
-      color: var(--muted);
-      font-size: .85rem;
-    }
-    .timeline-wrap { margin-top: 30px; }
-    .timeline-title {
-      margin: 0 0 8px;
-      font-size: 1rem;
-    }
-    .timeline {
-      display: grid;
-      grid-template-columns: minmax(100px, 1fr) 38px minmax(100px, 1fr) 38px minmax(100px, 1fr);
-      align-items: center;
-      gap: 8px;
-      margin: 16px 0;
-    }
-    .event {
-      min-height: 112px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 14px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: #fff;
-    }
-    .event small { color: var(--muted); }
-    .event strong {
-      display: block;
-      margin: 4px 0;
-      font-size: 1.5rem;
-      font-variant-numeric: tabular-nums;
-      line-height: 1.15;
-    }
-    .event.earth strong { color: var(--earth); }
-    .event.rover strong { color: var(--rover); }
-    .arrow { color: var(--muted); text-align: center; font-size: 1.3rem; }
-    .formula {
-      padding: 16px;
-      border-left: 4px solid var(--accent);
-      border-radius: 0 10px 10px 0;
-      background: #f3f0fa;
-      font-variant-numeric: tabular-nums;
-    }
-    .formula strong { color: var(--accent); }
-    .explain {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin-top: 24px;
-    }
-    .explain h2 { margin: 0 0 6px; font-size: 1.05rem; }
-    .explain p { color: var(--muted); }
-    .note {
-      margin-top: 22px;
-      padding-top: 16px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
+      color: #536372;
       font-size: .9rem;
     }
-    @media (max-width: 620px) {
-      main { padding-top: 28px; }
-      .timeline {
-        grid-template-columns: 1fr;
-        gap: 5px;
-      }
-      .event { min-height: 88px; }
-      .arrow { transform: rotate(90deg); }
-      .explain { grid-template-columns: 1fr; gap: 8px; }
+    output {
+      display: block;
+      margin-top: 1.25rem;
+      padding: 1rem;
+      border-left: .3rem solid #176b87;
+      background: #edf7fa;
+      border-radius: .35rem;
+      font-size: 1.08rem;
+      font-weight: 650;
+      line-height: 1.65;
+      overflow-wrap: anywhere;
     }
-    @media (prefers-reduced-motion: no-preference) {
-      output, .event strong { transition: color .15s ease; }
+    .explanation { margin-bottom: 0; color: #455462; }
+    @media (max-width: 24rem) {
+      body { padding: .6rem; }
+      main { padding: 1rem; }
     }
   </style>
 </head>
 <body>
   <main>
-    <header>
-      <div class="eyebrow">A communication timing exhibit</div>
-      <h1>Sending a message to Perseverance</h1>
-      <p class="intro">A radio signal takes time to cross the distance between Earth and Mars. Even after the rover has prepared a reply, it may need to wait for its next transmission slot.</p>
-    </header>
+    <h1>Communicating with Perseverance</h1>
+    <p class="intro">A reply takes time to travel, be prepared, and wait for an available transmission slot.</p>
 
-    <section class="panel" aria-labelledby="model-title">
-      <h2 id="model-title" style="margin:0 0 4px">Explore one hypothetical contact</h2>
-      <p>Earth sends at minute 0. Perseverance prepares a reply for 10 minutes after receiving the message, then transmits only at minutes 25, 50, 75, and so on.</p>
+    <p class="assumptions"><strong>Hypothetical schedule:</strong> Earth transmits at minute 0. After receiving the signal, the rover needs 10 minutes to prepare its reply. It may begin transmitting at minutes 25, 50, 75, and so on. If it is ready exactly at a slot, it can use that slot. Both signal legs have the same one-way delay. NASA reports that the one-way signal delay is about 3 to 22 minutes.</p>
 
-      <div class="control-row">
-        <label for="delay">One-way signal delay</label>
-        <output id="delay-value" for="delay">15 minutes</output>
-      </div>
-      <input id="delay" type="range" min="3" max="22" step="1" value="15"
-             aria-describedby="delay-help">
-      <div class="range-labels" aria-hidden="true"><span>3 minutes</span><span>22 minutes</span></div>
-      <p id="delay-help" class="note" style="margin-top:8px;padding:0;border:0">Use the arrow keys to change the delay by one minute.</p>
+    <label for="delay">One-way signal delay: <span id="delay-value">15</span> minutes</label>
+    <input id="delay" type="range" min="3" max="22" step="1" value="15" aria-describedby="range-hint">
+    <div class="range-labels" id="range-hint"><span>3 minutes</span><span>22 minutes</span></div>
 
-      <div class="timeline-wrap" aria-live="polite" aria-atomic="true">
-        <h3 class="timeline-title">What happens when the one-way delay is <span id="delay-inline">15</span> minutes?</h3>
-        <div class="timeline" aria-label="Message timeline">
-          <div class="event earth">
-            <small>Earth transmits</small>
-            <strong>Minute 0</strong>
-            <small>Message begins its journey</small>
-          </div>
-          <div class="arrow" aria-hidden="true">→</div>
-          <div class="event rover">
-            <small>Rover ready / transmits</small>
-            <strong><span id="ready-time">25</span> / <span id="send-time">25</span></strong>
-            <small>Ready at <span id="ready-label">25</span>; uses slot at <span id="send-label">25</span></small>
-          </div>
-          <div class="arrow" aria-hidden="true">→</div>
-          <div class="event earth">
-            <small>Earth receives reply</small>
-            <strong>Minute <span id="receive-time">40</span></strong>
-            <small>One more signal crossing</small>
-          </div>
-        </div>
-        <p class="formula">
-          Message reaches rover at <span id="arrival-time">15</span>. It is ready at
-          <span id="formula-ready">25</span> (= <span id="arrival-formula">15</span> + 10).
-          The next available slot is minute <span id="formula-slot">25</span>;
-          Earth receives the reply at <strong>minute <span id="formula-receive">40</span></strong>.
-        </p>
-      </div>
+    <output id="result" aria-live="polite">Rover receives Earth’s signal at minute 15 · Reply ready at minute 25 · Rover transmits at minute 25 · Earth receives reply at minute 40</output>
 
-      <div class="explain">
-        <div>
-          <h2>Why does 15 → 16 jump?</h2>
-          <p>At a 15-minute delay, the rover receives the message at 15 and is ready at 25, exactly on a slot. At 16 minutes, it receives the message at 16 and is ready at 26, just after that slot. It must wait until minute 50 to transmit. With the return signal also taking 16 minutes, Earth receives the reply at minute 66.</p>
-        </div>
-        <div>
-          <h2>The rule behind the wait</h2>
-          <p>Readiness time is the one-way delay plus 10 minutes. The rover transmits at the first 25-minute slot at or after it is ready. If it is ready exactly at a slot, it can use that slot. The reply then takes one more one-way delay to reach Earth.</p>
-        </div>
-      </div>
-      <p class="note">This schedule is hypothetical. NASA reports that the one-way signal delay between Earth and Perseverance can be about 3 to 22 minutes. The exhibit uses the same delay for both signal legs.</p>
-    </section>
+    <p class="explanation">The rover’s preparation ends 10 minutes after it receives the signal. The transmission time is the first available 25-minute slot at or after that ready time. From a 15-minute delay, the rover is ready exactly at minute 25 and can transmit then. Increasing the delay to 16 moves readiness to minute 26, just past that slot, so the rover waits for the next one. Earth then receives the reply after the same one-way signal delay.</p>
   </main>
 
   <script>
     (() => {
       const slider = document.getElementById("delay");
-      const value = document.getElementById("delay-value");
-      const ids = [
-        "delay-inline", "ready-time", "send-time", "ready-label", "send-label",
-        "receive-time", "arrival-time", "formula-ready", "arrival-formula",
-        "formula-slot", "formula-receive"
-      ];
-      const fields = Object.fromEntries(ids.map(id => [id, document.getElementById(id)]));
+      const delayValue = document.getElementById("delay-value");
+      const result = document.getElementById("result");
 
-      function update() {
-        const delay = Number(slider.value);
-        if (!Number.isInteger(delay) || delay < 3 || delay > 22) return;
-
-        const arrival = delay;
-        const ready = arrival + 10;
-        const slot = Math.ceil(ready / 25) * 25;
-        const receive = slot + delay;
-
-        value.textContent = `${delay} minutes`;
-        fields["delay-inline"].textContent = delay;
-        fields["arrival-time"].textContent = arrival;
-        fields["formula-ready"].textContent = ready;
-        fields["arrival-formula"].textContent = arrival;
-        fields["ready-time"].textContent = ready;
-        fields["ready-label"].textContent = ready;
-        fields["send-time"].textContent = slot;
-        fields["send-label"].textContent = slot;
-        fields["formula-slot"].textContent = slot;
-        fields["receive-time"].textContent = receive;
-        fields["formula-receive"].textContent = receive;
+      function calculate(rawValue) {
+        const parsed = Number(rawValue);
+        const delay = Number.isFinite(parsed)
+          ? Math.min(22, Math.max(3, Math.round(parsed)))
+          : 15;
+        const ready = delay + 10;
+        const transmit = Math.ceil(ready / 25) * 25;
+        const earthReceives = transmit + delay;
+        return { delay, ready, transmit, earthReceives };
       }
 
-      slider.addEventListener("input", update);
-      update();
+      function render() {
+        const values = calculate(slider.value);
+        delayValue.textContent = String(values.delay);
+        result.textContent =
+          `Rover receives Earth’s signal at minute ${values.delay} · ` +
+          `Reply ready at minute ${values.ready} · ` +
+          `Rover transmits at minute ${values.transmit} · ` +
+          `Earth receives reply at minute ${values.earthReceives}`;
+      }
+
+      slider.addEventListener("input", render);
+      render();
     })();
   </script>
 </body>
@@ -602,226 +450,14 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `e75c268d420b
 | For a 16-minute delay the page shows 26, 50 and 66; it explains the missed contact slot rather than treating every extra minute as a proportional change. | Met | Met |
 | A labeled keyboard-operable control in English covers 3–22 whole minutes; Earth receipt updates to 28 at 3 and 72 at 22 without external resources. | Met | Met |
 
-**Masked review** (X = baseline; Y = standard). Y gives the correct initial 25/25/40, the 16-minute case 26/50/66, and the reason for missing the contact window. X gets the 16-minute schedule and endpoint keyboard checks right but starts Earth receipt at 55 instead of 40 both with and without scripts. Its explanation therefore describes the jump as 55 to 66. Both pages use English and make no network requests.
+**Review.** Browser replay checks the script-free initial values (25/25/40), the missed slot at 16 minutes (26/50/66) and both keyboard endpoints. The timing explanation agrees with the display.
 
-In Chromium 156.0.8078.80 the baseline initially showed Earth receiving the reply at minute 55. The skill page correctly showed ready/transmit/receive at 25/25/40 both with scripts disabled and at startup. Both pages reached 26/50/66 when the delay changed to 16 and calculated the two slider endpoints correctly. No page requested a network resource, threw a script error or overflowed at 320 CSS pixels.
-
-<details>
-<summary>Separate retest · version 0.1.3</summary>
-
-The revision uses the same worked values to check the static HTML, live control and explanatory prose. This fresh standard answer correctly gave 25/25/40 initially and 26/50/66 after one keypress. With JavaScript disabled its initial result remained readable, and the text explains the 26-minute increase correctly.
-
-````html
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Perseverance: a signal with a wait</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #101820;
-      --panel: #182630;
-      --line: #35505e;
-      --text: #f2f5f3;
-      --muted: #b8c7cc;
-      --earth: #64c5e8;
-      --rover: #f2b36d;
-      --reply: #9dd9a7;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font: 16px/1.55 system-ui, sans-serif;
-    }
-    main { max-width: 900px; margin: auto; padding: 32px 20px 48px; }
-    h1 { margin: 0 0 12px; font-size: clamp(1.8rem, 5vw, 3rem); line-height: 1.1; }
-    h2 { margin: 0 0 12px; font-size: 1.25rem; }
-    p { margin: 8px 0; }
-    .intro { max-width: 68ch; color: var(--muted); }
-    .answer {
-      margin: 24px 0;
-      padding: 18px 20px;
-      border-left: 4px solid var(--rover);
-      background: var(--panel);
-      border-radius: 8px;
-    }
-    .answer strong { color: var(--rover); }
-    .panel {
-      margin-top: 18px;
-      padding: 20px;
-      border: 1px solid var(--line);
-      background: var(--panel);
-      border-radius: 12px;
-    }
-    label { display: block; font-weight: 700; }
-    input[type="range"] { display: block; width: 100%; margin: 14px 0 4px; accent-color: var(--earth); }
-    .range-labels { display: flex; justify-content: space-between; color: var(--muted); font-size: .9rem; }
-    output { color: var(--earth); }
-    .timeline-wrap { overflow-x: auto; margin: 20px 0 8px; }
-    svg { display: block; width: 100%; min-width: 540px; height: auto; }
-    .events {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 16px;
-    }
-    .event { padding: 12px; border-top: 3px solid var(--line); }
-    .event:nth-child(1) { border-color: var(--rover); }
-    .event:nth-child(2) { border-color: var(--earth); }
-    .event:nth-child(3) { border-color: var(--reply); }
-    .event span { display: block; color: var(--muted); font-size: .9rem; }
-    .event strong { font-size: 1.2rem; }
-    .note { color: var(--muted); font-size: .95rem; }
-    .earth { color: var(--earth); }
-    .rover { color: var(--rover); }
-    .reply { color: var(--reply); }
-    @media (max-width: 600px) {
-      main { padding: 24px 14px 36px; }
-      .panel { padding: 16px; }
-      .events { grid-template-columns: 1fr; gap: 4px; }
-      .event { padding: 10px 12px; }
-    }
-  </style>
-</head>
-<body>
-<main>
-  <header>
-    <h1>Perseverance: a signal with a wait</h1>
-    <p class="intro">A message to Mars takes time to travel. Then the rover must prepare its reply, and the next transmission opportunity may not be immediate.</p>
-  </header>
-
-  <section class="answer" aria-label="Initial answer">
-    <p>With a <strong>15-minute one-way delay</strong>, Earth’s signal arrives at minute 15. Perseverance is ready at minute 25, can transmit at minute 25, and Earth receives the reply at minute 40.</p>
-  </section>
-
-  <section class="panel" aria-labelledby="schedule-heading">
-    <h2 id="schedule-heading">Explore the hypothetical schedule</h2>
-    <label for="delay">One-way signal delay: <output id="delay-value" for="delay">15 minutes</output></label>
-    <input id="delay" type="range" min="3" max="22" step="1" value="15">
-    <div class="range-labels" aria-hidden="true"><span>3 minutes</span><span>22 minutes</span></div>
-
-    <div class="timeline-wrap">
-      <svg viewBox="0 0 800 190" role="img" aria-labelledby="timeline-title timeline-desc">
-        <title id="timeline-title">Signal timeline for the selected one-way delay</title>
-        <desc id="timeline-desc">Earth transmits at minute 0. The rover receives the signal, prepares for 10 minutes, waits for a transmission slot, and sends a reply. Earth receives it after the same one-way delay.</desc>
-        <defs>
-          <marker id="arrow-earth" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#64c5e8"/></marker>
-          <marker id="arrow-reply" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#9dd9a7"/></marker>
-        </defs>
-        <line x1="65" y1="105" x2="735" y2="105" stroke="#35505e" stroke-width="2"/>
-        <line x1="65" y1="98" x2="65" y2="112" stroke="#b8c7cc" stroke-width="2"/>
-        <text x="65" y="135" fill="#b8c7cc" font-size="13" text-anchor="middle">0</text>
-        <g id="slot-markers" fill="#b8c7cc" font-size="11" text-anchor="middle"></g>
-        <line id="outbound-line" x1="65" y1="56" x2="65" y2="56" stroke="#64c5e8" stroke-width="4" marker-end="url(#arrow-earth)"/>
-        <line id="return-line" x1="65" y1="78" x2="65" y2="78" stroke="#9dd9a7" stroke-width="4" marker-end="url(#arrow-reply)"/>
-        <circle id="ready-point" cx="65" cy="105" r="7" fill="#f2b36d"/>
-        <circle id="send-point" cx="65" cy="105" r="7" fill="#64c5e8"/>
-        <circle id="receive-point" cx="65" cy="105" r="7" fill="#9dd9a7"/>
-        <text id="transmit-label" x="65" y="42" fill="#64c5e8" font-size="12">Earth transmits · 0</text>
-        <text id="ready-label" x="65" y="158" fill="#f2b36d" font-size="12">Rover ready · 25</text>
-        <text id="send-label" x="65" y="72" fill="#64c5e8" font-size="12">Rover transmits · 25</text>
-        <text id="receive-label" x="65" y="178" fill="#9dd9a7" font-size="12">Earth receives · 40</text>
-      </svg>
-    </div>
-
-    <div class="events" aria-live="polite">
-      <div class="event"><span>Rover ready</span><strong id="ready-time">25 min</strong><span>Signal arrival + 10 minutes to prepare</span></div>
-      <div class="event"><span>Rover can transmit</span><strong id="send-time">25 min</strong><span>First slot at or after readiness</span></div>
-      <div class="event"><span>Earth receives reply</span><strong id="receive-time">40 min</strong><span>Transmit time + one-way delay</span></div>
-    </div>
-  </section>
-
-  <section class="panel" aria-labelledby="why-heading">
-    <h2 id="why-heading">Why does 15 → 16 make the answer jump?</h2>
-    <p>The rover is ready <span class="rover" id="ready-explain">25</span> minutes after Earth transmits: the one-way delay plus 10 minutes of preparation. Transmission slots occur every 25 minutes, starting at minute 25. Readiness exactly on a slot qualifies.</p>
-    <p id="jump-explain">At a 15-minute delay, readiness is exactly minute 25, so the rover uses that slot and Earth gets the reply at minute 40.</p>
-    <p class="note">At 16 minutes, readiness moves to minute 26, just after the minute-25 slot. The rover must wait for minute 50, so Earth receives the reply at minute 66. A one-minute increase in signal delay causes a 26-minute increase in this hypothetical total time because it crosses a slot boundary.</p>
-    <p class="note">Model assumptions: Earth transmits at minute 0; the rover prepares for 10 minutes after receiving the signal; slots are at minutes 25, 50, 75, and so on; and both signal legs have the same delay. NASA reports a one-way signal delay of about 3 to 22 minutes. This schedule is hypothetical.</p>
-  </section>
-</main>
-<script>
-  (() => {
-    const slider = document.getElementById("delay");
-    const delayValue = document.getElementById("delay-value");
-    const readyTime = document.getElementById("ready-time");
-    const sendTime = document.getElementById("send-time");
-    const receiveTime = document.getElementById("receive-time");
-    const readyExplain = document.getElementById("ready-explain");
-    const jumpExplain = document.getElementById("jump-explain");
-    const svg = document.querySelector("svg");
-    const ns = "http://www.w3.org/2000/svg";
-    const x = minute => 65 + minute * 5.2;
-    const set = (id, attrs) => {
-      const element = document.getElementById(id);
-      for (const [key, value] of Object.entries(attrs)) element.setAttribute(key, value);
-    };
-
-    function update() {
-      const delay = Number(slider.value);
-      if (!Number.isFinite(delay) || delay < 3 || delay > 22 || !Number.isInteger(delay)) return;
-      const ready = delay + 10;
-      const send = Math.ceil(ready / 25) * 25;
-      const receive = send + delay;
-      delayValue.textContent = `${delay} minutes`;
-      readyTime.textContent = `${ready} min`;
-      sendTime.textContent = `${send} min`;
-      receiveTime.textContent = `${receive} min`;
-      readyExplain.textContent = ready;
-
-      jumpExplain.textContent = delay === 15
-        ? "At a 15-minute delay, readiness is exactly minute 25, so the rover uses that slot and Earth gets the reply at minute 40."
-        : delay === 16
-          ? "At a 16-minute delay, readiness is minute 26, just after the minute-25 slot. The rover must wait for minute 50, so Earth receives the reply at minute 66."
-          : `At a ${delay}-minute delay, the signal arrives at minute ${delay}; after 10 minutes of preparation, the rover is ready at minute ${ready}. The first eligible slot is minute ${send}, and Earth receives the reply at minute ${receive}.`;
-
-      const end = Math.max(100, receive);
-      const scale = 670 / end;
-      const px = minute => 65 + minute * scale;
-      const slots = document.getElementById("slot-markers");
-      slots.replaceChildren();
-      for (let minute = 25; minute <= end; minute += 25) {
-        const tick = document.createElementNS(ns, "line");
-        tick.setAttribute("x1", px(minute)); tick.setAttribute("x2", px(minute));
-        tick.setAttribute("y1", 98); tick.setAttribute("y2", 112);
-        tick.setAttribute("stroke", minute === send ? "#64c5e8" : "#8196a0");
-        slots.appendChild(tick);
-        const label = document.createElementNS(ns, "text");
-        label.setAttribute("x", px(minute)); label.setAttribute("y", 135);
-        label.textContent = String(minute);
-        slots.appendChild(label);
-      }
-      set("outbound-line", {x1: px(0), y1: 56, x2: px(delay), y2: 56});
-      set("return-line", {x1: px(send), y1: 78, x2: px(receive), y2: 78});
-      set("ready-point", {cx: px(ready), cy: 105});
-      set("send-point", {cx: px(send), cy: 105});
-      set("receive-point", {cx: px(receive), cy: 105});
-      set("transmit-label", {x: px(0), y: 42});
-      set("ready-label", {x: px(ready), y: 158});
-      set("send-label", {x: px(send), y: 72});
-      set("receive-label", {x: px(receive), y: 178});
-      document.getElementById("timeline-desc").textContent =
-        `Earth transmits at minute 0. The signal arrives after ${delay} minutes. The rover is ready at minute ${ready}, transmits at minute ${send}, and Earth receives the reply at minute ${receive}.`;
-    }
-    slider.addEventListener("input", update);
-    update();
-  })();
-</script>
-</body>
-</html>
-````
-
-</details>
+Masked reviewer assignment: X was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/answer-with-html/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/answer-with-html.json).
 
 <details>
 <summary>Run record</summary>
 
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `a45f928bc29a` / `0c1e69b04eac` / `8ace5b1684cb`.
+Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `318335a72a76` / `0c1e69b04eac` / `8ef4267b1104`.
 
 </details>
 
@@ -897,7 +533,7 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `d69f028ec500
 
 [한국어](EXAMPLES.ko.md#asd-ste100)
 
-2026-11-08 · `asd-ste100` 0.1.3 · English · `gpt-6-luna`
+2026-11-09 · `asd-ste100` 0.1.4 · English · `gpt-6-luna`
 
 ### Case and sources
 
@@ -925,19 +561,17 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `d69f028ec500
 
 ### With the skill at standard
 
-> ## Recovery handover
+> ## Bootloader recovery handover
 >
-> Keep power connected until both indications are present: a steady flashing pattern on the green activity LED and a green HDMI screen. Disconnect power only after you observe both indications. Remove the recovery microSD card only after power is disconnected.
->
-> In this bench drill, staff check each board at 0, 15, 30, 45, and 60 seconds. Once an indication appears, it persists.
+> Keep the HDMI displays attached. At each check, observe both the steady flashing pattern on the green activity LED and a green HDMI screen. Disconnect power only after both indications are present. Remove the recovery microSD card only after power is disconnected.
 >
 > | Station | First check with both indications | Safe action |
 > |---|---:|---|
-> | North | 30 seconds | Both indications are present. Disconnect power, then remove the recovery microSD card. |
-> | South | 45 seconds | Both indications are present. Disconnect power, then remove the recovery microSD card. |
-> | East | None by 60 seconds | Keep power connected. Do not remove the recovery microSD card; wait until both indications are present. |
+> | North | 30 seconds | Disconnect power, then remove the recovery microSD card. |
+> | South | 45 seconds | Disconnect power, then remove the recovery microSD card. |
+> | East | None by 60 seconds | Keep power connected and the recovery microSD card installed. |
 >
-> Elapsed time alone does not authorize removal. North and South qualify at their first listed check when both indications are present. East does not qualify at 60 seconds because its HDMI screen is not green.
+> Elapsed time alone does not authorize removal. At East, the HDMI screen is still not green at 60 seconds, so both required indications are not present.
 
 ### What changed
 
@@ -947,14 +581,14 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `d69f028ec500
 | For East at 60 s, withholds disconnect/removal and does not imply that a fixed timeout proves success or establishes hardware failure. | Met | Met |
 | States the correct sequence in technician-usable English: observe both signals, disconnect power, then remove the recovery microSD card; calls the card consistently by the same name. | Missed | Met |
 
-**Masked review** (Y = baseline; X = standard). Both give 30 s for North, 45 s for South and no qualifying observation for East by 60 s. Both keep East powered and put disconnection before removal. X repeats “recovery microSD card” in each station row; Y shortens it to “the card” in the East row. The safety decisions agree.
+**Review.** North qualifies at 30 seconds and South at 45. East stays powered with the recovery microSD card in place. The handover uses the required component name throughout.
+
+Masked reviewer assignment: X was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/asd-ste100/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/asd-ste100.json).
 
 <details>
 <summary>Run record</summary>
 
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `6600af844428` / `9f618db8c88e` / `369141520448`.
+Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `441382171a3a` / `9f618db8c88e` / `aba6aa20f2e6`.
 
 </details>
 
@@ -1091,7 +725,7 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `1bf8f74acf77
 
 [한국어](EXAMPLES.ko.md#eli5)
 
-2026-11-08 · `eli5` 0.1.2 · English · `gpt-6-luna`
+2026-11-09 · `eli5` 0.1.18 · English · `gpt-6-luna`
 
 ### Case and sources
 
@@ -1108,7 +742,11 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `1bf8f74acf77
 
 ### With the skill at standard
 
-> When you fluff a blanket, it traps air in its little spaces. The air does not make heat; it slows heat from leaving, so let’s compare the jars over the same 10 minutes: the fluffy jar lost 2 degrees, and the wet, flat one lost 3. So the fluffy jar cooled more slowly. These jars show how coat air can help keep an otter warm, but they were not tested for floating, so they cannot show that. Real sea otters groom their fur to trap air, which helps them stay warm and float.
+> The caregivers groomed pup 696 to help keep him warm.\
+> The air trapped in his fluffy fur slows heat from escaping; it doesn’t make heat.\
+> The flat wet coat cooled faster: on average, it lost 6 degrees in 20 minutes, while the fluffy coat lost 4.\
+> The jars didn’t test floating.\
+> In real sea otters, air trapped in their fur helps them float.
 
 ### What changed
 
@@ -1116,35 +754,16 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `1bf8f74acf77
 | --- | --- | --- |
 | Uses an equal-time comparison to explain the apparent reversal (2 degrees versus 3 per 10 minutes, or equivalent rates) and identifies the fluffy coat as slower to cool on average. | Missed | Met |
 | Connects grooming to trapped air keeping warmth from leaving as fast, without claiming that air creates heat or substituting an invented biological mechanism. | Met | Met |
-| In at most five short child-facing sentences, separates the jars’ untested floating behavior from the fact that trapped air also helps real otters float. | Met | Missed |
+| In at most five short child-facing sentences, separates the jars’ untested floating behavior from the fact that trapped air also helps real otters float. | Met | Met |
 
-**Masked review** (Y = baseline; X = standard). X computes 2 versus 3 degrees per ten minutes; Y notices the unequal observation times but leaves the normalized comparison for the child to calculate. Both explain that air slows heat loss, that the jars were not tested for floating, and that trapped air helps actual otters float. X fits five sentences but packs the calculation, a semicolon and a colon into one long sentence for a five-year-old; Y fits the shorter, child-facing format better. The 2 degrees per ten minutes is a normalized average. The demonstration did not measure the fluffy jar's drop in its first ten minutes.
+**Review.** The answer compares average losses of 6 and 4 degrees per 20 minutes (3 and 2 per 10). This rescales the wet jar’s 10-minute measurement. It tells the child why grooming matters, why air slows heat loss and why the jar test cannot establish buoyancy.
 
-<details>
-<summary>Earlier wording and both returned answers</summary>
-
-The initial prompt compared total heat loss in unequal intervals. We clarified that the child was comparing cooling rates and reran both English arms. Only the final pair is scored above.
-
-**Earlier prompt**
-
-> At Monterey Bay Aquarium, a five-year-old asks why caregivers groomed rescued sea otter pup 696. In a classroom demonstration invented for this question, two equally warm jars have identical model coats in the same cold bath. With air trapped in the fluffy coat, one jar cools 4 degrees in 20 minutes. With the coat wet and flat, the other cools 3 degrees in 10 minutes. A child says the fluffy jar lost more warmth because four is more than three. Neither jar was tested for floating. Real sea otters lack thick blubber; grooming traps air in their fur, which helps them stay warm and float. Answer the child in at most five short sentences: use a fair comparison, explain whether air makes heat, and say what the jars can and cannot show about floating. Write the answer in English.
-
-**Earlier baseline**
-
-> You’re right that 4 is more than 3, but the jars were checked for different lengths of time, so that isn’t a fair comparison. Air doesn’t make heat; trapped air slows heat from escaping, like a blanket. The jars suggest that fluffy fur can help keep warmth in. They weren’t tested for floating, so they can’t show whether the fur helps otters float.
-
-**Earlier standard answer**
-
-> Sea otters groom their fur to keep it fluffy, with tiny pockets of air inside. The jars cooled at different speeds: the fluffy jar lost 2 degrees in 10 minutes, while the wet jar lost 3 degrees in 10 minutes, so the wet one cooled faster. The air does not make heat; it helps the otter keep its body heat. The jars show how the coats slow cooling, but they cannot show whether air helps an otter float because neither jar was tested for floating.
-
-</details>
+Masked reviewer assignment: X was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/eli5/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/eli5.json).
 
 <details>
 <summary>Run record</summary>
 
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `10536a49c052` / `b13daecf86ad` / `a8ba35d193a1`.
+Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `fdd792c71803` / `b13daecf86ad` / `66f424b317e0`.
 
 </details>
 
@@ -1154,7 +773,7 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `10536a49c052
 
 [한국어](EXAMPLES.ko.md#federal-plain-language)
 
-2026-11-08 · `federal-plain-language` 0.1.2 · English · `gpt-6-luna`
+2026-11-09 · `federal-plain-language` 0.1.22 · English · `gpt-6-luna`
 
 ### Case and sources
 
@@ -1172,7 +791,7 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `10536a49c052
 
 ### With the skill at standard
 
-> Both you and your child need identity evidence for the replacement card application. For your child, get an issuer-certified copy of a current state-issued non-driver ID; it takes 15 minutes, while the original passport takes 40. For yourself, use your original driver’s license; it takes 35 minutes, while an issuer-certified passport copy takes 25. The fastest valid route is the child’s certified ID and your certified passport copy, which takes 40 minutes total. The notarized passport photocopy is not accepted, and the birth certificate proves age or citizenship, not identity.
+> Use the child’s issuer-certified state non-driver ID (15 minutes) and the parent’s issuer-certified passport copy (25 minutes). Together they take 40 minutes, within the 45-minute limit. The notarized passport photocopy takes only 5 minutes, but SSA does not accept notarized photocopies as identity evidence. The birth certificate proves the child’s age or citizenship, not identity.
 
 ### What changed
 
@@ -1180,16 +799,16 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `10536a49c052
 | --- | --- | --- |
 | Identifies the child's issuer-certified non-driver ID plus the parent's issuer-certified passport copy, totals 40 minutes and fits the 45-minute limit. | Met | Met |
 | Explains both rejected shortcuts: the original birth certificate is insufficient for the child's identity and the notarized copy is insufficient for the parent's identity. | Met | Met |
-| Gives the parent an actionable English identity-only answer in no more than five sentences without implying the full application is complete. | Met | Missed |
+| Gives the parent an actionable English identity-only answer in no more than five sentences without implying the full application is complete. | Met | Met |
 
-**Masked review** (X = baseline; Y = standard). Both identify the 15 + 25 = 40 minute combination and reject the birth certificate and notarized photocopy as identity shortcuts. X gives one consistent route. Y first tells the parent to use a 35-minute license, making that trip 50 minutes, then recommends the 25-minute passport copy instead.
+**Review.** The parent gets a feasible 40-minute plan and a reason to reject each shortcut. The answer stays within five sentences and addresses identity evidence only.
+
+Masked reviewer assignment: Y was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/federal-plain-language/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/federal-plain-language.json).
 
 <details>
 <summary>Run record</summary>
 
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `5ba332f74f16` / `cd08aed6cec9` / `6dc26dbd3b6c`.
+Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `90ceac7f7264` / `cd08aed6cec9` / `68130696a7c4`.
 
 </details>
 
@@ -1199,7 +818,7 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `5ba332f74f16
 
 [한국어](EXAMPLES.ko.md#feynman-technique)
 
-2026-11-08 · `feynman-technique` 0.1.3 · English · `gpt-6-luna`
+2026-11-09 · `feynman-technique` 0.1.8 · English · `gpt-6-luna`
 
 ### Case and sources
 
@@ -1219,26 +838,24 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `5ba332f74f16
 
 ### With the skill at standard
 
-> Harbor’s NXDOMAIN at 12:00 is cached for 300 seconds: RFC 2308 uses the smaller of the SOA TTL (900 seconds) and MINIMUM (300 seconds). The cache stores that the name does not exist, so at 12:06 Harbor can still receive NXDOMAIN even though the operator added the A record at 12:04. Harbor’s negative cache expires at 12:05.
->
-> Hill’s independent resolver starts its own 300-second timer from its NXDOMAIN at 12:03, so it can also receive NXDOMAIN at 12:06; that cache expires at 12:08. After each cache expires, a query can reach the updated authority and see the A record. If Hill had not queried before 12:04, it would have no cached NXDOMAIN, so its first query at 12:06 could reach the authority and return the A record.
+> **Incident explanation (junior developer):** RFC 2308 sets the negative-cache lifetime to the smaller of the SOA TTL (900 seconds) and SOA MINIMUM (300 seconds), so each resolver can keep its own NXDOMAIN result for 300 seconds from when it received that answer. Harbor received NXDOMAIN at 12:00, so its entry expires at **12:05**. Hill received NXDOMAIN at 12:03, so its entry expires at **12:08**. The A record was created at 12:04, but that does not erase either resolver’s cached result. At 12:06, Harbor’s entry has expired and, with the authority reachable and updated, Harbor can see the A record; Hill’s entry is still valid, so Hill can still see NXDOMAIN until 12:08. If Hill had not queried before 12:04, it would have no negative entry to serve at 12:06 and could query the authority and see the A record. The two resolvers’ cache timers start independently when each receives NXDOMAIN.
 
 ### What changed
 
 | Check fixed before generation | Without | Standard |
 | --- | --- | --- |
 | Computes the 300-second lifetime and the 12:05 Harbor and 12:08 Hill expirations from their own original queries. | Met | Met |
-| At 12:06 Harbor can fetch the new address while Hill can still serve NXDOMAIN; creating the record did not restart or invalidate Hill's cached lifetime. | Missed | Missed |
+| At 12:06 Harbor can fetch the new address while Hill can still serve NXDOMAIN; creating the record did not restart or invalidate Hill's cached lifetime. | Missed | Met |
 | Explains for a junior developer why Hill with no earlier negative entry could fetch the new address at 12:06 under the stated assumptions, without implying a simultaneous global update. | Met | Met |
 
-**Masked review** (X = baseline; Y = standard). Both derive 300 seconds, the 12:05 and 12:08 expirations, and Hill’s counterfactual. X initially says both resolvers can still return the cached negative answer at 12:06, then corrects itself for Harbor. Y says Harbor can still see NXDOMAIN at 12:06 even though it gives Harbor’s earlier expiration. Only Hill can reuse that negative entry.
+**Review.** The two expirations come from different first queries. At 12:06 only Hill can still reuse its negative entry; without that earlier query, Hill could fetch the new address.
+
+Masked reviewer assignment: X was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/feynman-technique/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/feynman-technique.json).
 
 <details>
 <summary>Run record</summary>
 
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `9249d0cc1aa8` / `dae944fee0be` / `1f151137eb92`.
+Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `5527bddea967` / `dae944fee0be` / `e3260298686a`.
 
 </details>
 
@@ -1477,7 +1094,7 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `41f1b8c56caa
 
 [한국어](EXAMPLES.ko.md#ietf-rfc)
 
-2026-11-08 · `ietf-rfc` 0.1.3 · English · `gpt-6-luna`
+2026-11-09 · `ietf-rfc` 0.1.10 · English · `gpt-6-luna`
 
 ### Case and sources
 
@@ -1507,20 +1124,39 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `41f1b8c56caa
 
 ### With the skill at standard
 
-> ## Retry timing for illustrative rate-limit responses
+> # Rate-Limit Response Examples
 >
-> This internal specification covers the client’s suggested retry time for two illustrative HTTP 429 responses. The server chooses whether to send a 429 response; if it does, RFC 6585 says its content should explain the condition, `Retry-After` is optional, and caches cannot store the response. The examples assume synchronized clocks.
+> **Status:** Internal illustrative specification.
 >
-> In this specification, uppercase requirement keywords have their BCP 14 meanings (RFC 2119 and RFC 8174). **MUST** and **MAY** describe requirements and permissions; they do not add client behavior beyond the cited sources.
+> ## Scope and terminology
 >
-> In both examples, the server sends the response at 09:00:00 UTC and the client receives it at 09:00:05 UTC.
+> This specification covers two illustrative HTTP 429 responses and the client’s suggested retry times. “Receipt” means receipt by the client. Clocks are assumed synchronized.
 >
-> - With `Retry-After: 45`, the value is a nonnegative delay measured after receipt. The client’s suggested retry time is **09:00:50 UTC**.
-> - With `Retry-After` set to an HTTP date equivalent to **09:01:00 UTC** that day, the client’s suggested retry time is **09:01:00 UTC**.
+> ## Requirements
 >
-> Neither time promises that a retry will succeed or that the rate limit will have cleared.
+> The key words **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT**, and **MAY** are to be interpreted as described in BCP 14 (RFC 2119 and RFC 8174) when, and only when, they appear in uppercase.
 >
-> **References.** RFC 6585 and RFC 9110 are normative for this behavior; RFC 2119 and RFC 8174 define the stated keyword convention. No IANA action is required.
+> | Actor | BCP 14 | Behavior and condition |
+> |---|---|---|
+> | Server | MAY | Choose status code 429 to indicate that the client has sent too many requests in a given amount of time. |
+> | Server | SHOULD | Include a response representation that explains the condition. |
+> | Server | MAY | Include `Retry-After` in a 429 response. |
+> | Cache | MUST NOT | Store a 429 response. |
+>
+> ## Suggested retry times
+>
+> RFC 9110 allows `Retry-After` to contain either an HTTP date or a nonnegative delay in seconds measured after receipt. In both examples, the response is sent at 09:00:00 UTC and received at 09:00:05 UTC.
+>
+> - With `Retry-After: 45`, the suggested retry time is **09:00:50 UTC** (45 seconds after receipt).
+> - With `Retry-After` set to an HTTP date equivalent to **09:01:00 UTC** that day, the suggested retry time is **09:01:00 UTC**.
+>
+> Neither time promises that the rate limit will have cleared or that a subsequent request will succeed. The client has no retry obligation specified here.
+>
+> ## References
+>
+> **Normative:** RFC 6585 (429 responses); RFC 9110 (`Retry-After` formats). RFC 2119 and RFC 8174 define BCP 14 keyword meanings.
+>
+> **IANA:** No IANA action applies to these examples.
 
 ### What changed
 
@@ -1530,14 +1166,14 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `41f1b8c56caa
 | Correctly computes 09:00:50 UTC for the 45-second delay after receipt and 09:01:00 UTC for the date value. | Met | Met |
 | Frames those times as suggested waits rather than a new client MUST/SHOULD, and states that a retry is not guaranteed to succeed. | Met | Met |
 
-**Masked review** (X = baseline; Y = standard). Both give the two times (09:00:50 and 09:01:00 UTC), preserve the server’s choice and retry semantics, and withhold any guarantee of success. X uses a table and an explicit cache MUST NOT. Y explains the cache prohibition in prose and supplies references. Both convey the content recommendation using lowercase “should,” rather than an uppercase BCP 14 keyword.
+**Review.** The specification keeps each requirement with its actor. The two retry times are 09:00:50 and 09:01:00 UTC; neither obliges the client to retry or promises success.
+
+Masked reviewer assignment: Y was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/ietf-rfc/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/ietf-rfc.json).
 
 <details>
 <summary>Run record</summary>
 
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `1613a9080cdb` / `0e16e6d9aec6` / `db3dd8aedeae`.
+Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `a03848dad0d2` / `0e16e6d9aec6` / `18eb49ccc918`.
 
 </details>
 
@@ -1601,7 +1237,7 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `85287f2bd34d
 
 [한국어](EXAMPLES.ko.md#korean-plain-language)
 
-2026-11-08 · `korean-plain-language` 0.1.2 · English · `gpt-6-luna`
+2026-11-09 · `korean-plain-language` 0.1.9 · English · `gpt-6-luna`
 
 ### Case and sources
 
@@ -1627,15 +1263,12 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `85287f2bd34d
 
 ### With the skill at standard
 
-> **Editorial memo**
+> The draft’s “지우와 민서는 지금 환급금을 받아요” says Jiwoo and Minseo are receiving refunds now. The pilot’s refund was a past opportunity to apply for payment, so this wording may wrongly suggest a current payment or a guaranteed one. Replace it with **“환급금을 신청할 수 있었어요”** (“They could apply for a refund”).
 >
-> The draft, “지우와 민서는 지금 환급금을 받아요” (“Jiwoo and Minseo receive refunds now”), makes a past pilot sound current and suggests payment is automatic. Both are misleading: the refunds were available during the 2024 pilot, and eligible participants still had to apply.
+> - **Jiwoo — 7,000 won.** The first physical pass was completed before registration, so it did not qualify. The second was completed after registration and without a refund, so Jiwoo could apply for 7,000 won. The third was refunded on day 18, so it did not qualify as a completed 30-day pass used without a refund.
+> - **Minseo — 14,000 won.** Both mobile passes were completed without refunds. Mobile cards did not need separate registration, so each pass could qualify for 7,000 won.
 >
-> Jiwoo could have applied for **7,000 won**. The first physical pass was completed before registration, so it did not count; the second was completed after registration and was not refunded, so it qualified. The third pass was refunded on day 18 and was not a completed, unrefunded 30-day pass.
->
-> Minseo could have applied for **14,000 won**. Both completed mobile passes were unrefunded and qualified; mobile cards did not require separate card registration. Minseo still needed to submit a refund application.
->
-> A short 해요체 replacement is: **“2024년 시범사업 당시, 조건을 충족한 이용자는 환급을 신청할 수 있었어요.”** This makes the timing past and preserves the meaning as permission to apply, not a promise of payment.
+> Both still had to apply; eligibility did not mean the refund was already received.
 
 ### What changed
 
@@ -1645,14 +1278,14 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `85287f2bd34d
 | Correctly gives Minseo 14,000 won for two completed passes; distinguishes not having to register the mobile card from having to apply for either refund. | Met | Met |
 | Explains the draft's timing and payment implications in English and proposes Korean 해요체 wording that conveys past eligibility to apply without implying current entitlement or automatic payment. | Missed | Met |
 
-**Masked review** (Y = baseline; X = standard). Both calculate 7,000 won for Jiwoo and 14,000 for Minseo, distinguish registration from applying, and explain the draft’s misleading present tense in English. X proposes Korean wording anchored to the 2024 pilot and uses 신청할 수 있었어요. Y’s replacement uses 신청할 수 있어요, which can still suggest current eligibility despite the accurate English explanation.
+**Review.** Jiwoo could apply for 7,000 won and Minseo for 14,000. Mobile registration was waived, but both people still needed to apply. The proposed Korean wording describes eligibility at the time.
+
+Masked reviewer assignment: X was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/korean-plain-language/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/korean-plain-language.json).
 
 <details>
 <summary>Run record</summary>
 
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `c0be7cf32505` / `b2b7f3a4df0d` / `cdfd5fc43c0c`.
+Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `22797d4c7797` / `b2b7f3a4df0d` / `af8afbb2a4fc`.
 
 </details>
 
@@ -1662,7 +1295,7 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `c0be7cf32505
 
 [한국어](EXAMPLES.ko.md#microsoft-writing-style)
 
-2026-11-08 · `microsoft-writing-style` 0.1.2 · English · `gpt-6-luna`
+2026-11-09 · `microsoft-writing-style` 0.1.11 · English · `gpt-6-luna`
 
 ### Case and sources
 
@@ -1685,30 +1318,36 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `c0be7cf32505
 
 ### With the skill at standard
 
-> Open Clipboard history with **Windows logo key + V**. To keep the delivery address and return reference without retyping either:
+> To leave exactly the delivery address and return reference in this PC’s clipboard history, first protect the address, then remove the obsolete access code and both draft notes. **Clear all removes every unpinned entry**, so pin the return reference before you use it.
 >
-> 1. If the return reference is not pinned, select **See more (...)** next to it, then **Pin**.
-> 2. Select **Clear all**. This removes the unpinned obsolete access code and both draft notes. The address and return reference stay because they’re pinned.
-> 3. Check Clipboard history. Exactly two entries should remain: the delivery address and return reference. Both should show as pinned.
+> Press **Windows logo key + V** to open Clipboard history.
 >
-> Pin the return reference before selecting **Clear all**; otherwise, Clear all removes it. These steps affect clipboard history on this PC.
+> | Item | Current state | What to do now |
+> |---|---|---|
+> | Delivery address | Pinned | Leave it as it is. |
+> | Obsolete access code | Pinned | Select **See more (...)**, then **Delete**. |
+> | Return reference | Unpinned | Pin it. |
+> | First draft note | Unpinned | Leave it for **Clear all**. |
+> | Second draft note | Unpinned | Leave it for **Clear all**. |
+>
+> After those steps, select **Clear all**. Check Clipboard history: the delivery address and return reference should be the only two entries left.
 
 ### What changed
 
 | Check fixed before generation | Without | Standard |
 | --- | --- | --- |
 | Uses Windows logo key + V and pins the return reference before Clear all; keeps the already pinned delivery address. | Met | Met |
-| Uses See more (...) then Delete for the obsolete pinned access code, or expressly unpins it before Clear all so it is removed; does not imply Clear all alone deletes pinned items. | Missed | Missed |
-| Gives user-facing steps that end with exactly the address and return reference, remove the two drafts and make no unsupported claim about other devices. | Missed | Missed |
+| Uses See more (...) then Delete for the obsolete pinned access code, or expressly unpins it before Clear all so it is removed; does not imply Clear all alone deletes pinned items. | Missed | Met |
+| Gives user-facing steps that end with exactly the address and return reference, remove the two drafts and make no unsupported claim about other devices. | Missed | Met |
 
-**Masked review** (X = baseline; Y = standard). Both tell the reader to pin the return reference before Clear all. X unnecessarily asks the reader to pin the already pinned address as well. Both incorrectly describe the obsolete access code as unpinned: it survives Clear all, and neither answer deletes or unpins it. Their checks for a final two-item history cannot repair that missing step.
+**Review.** The sequence protects the unpinned return reference, keeps the pinned address and removes the unwanted pinned code separately. The two drafts go in the bulk clear.
+
+Masked reviewer assignment: Y was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/microsoft-writing-style/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/microsoft-writing-style.json).
 
 <details>
 <summary>Run record</summary>
 
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `fe6a3443c596` / `4df37c28e2f2` / `3db328b316a7`.
+Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `0478d6d5cc87` / `4df37c28e2f2` / `8db00fcc99c0`.
 
 </details>
 
@@ -1718,7 +1357,7 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `fe6a3443c596
 
 [한국어](EXAMPLES.ko.md#minto-pyramid)
 
-2026-11-08 · `minto-pyramid` 0.2.2 · English · `gpt-6-luna`
+2026-11-09 · `minto-pyramid` 0.2.6 · English · `gpt-6-luna`
 
 ### Case and sources
 
@@ -1735,7 +1374,7 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `fe6a3443c596
 
 ### With the skill at standard
 
-> North is the stronger pilot choice: applying FHWA’s estimated crash modification factor of 0.87 to the expected counts implies about 2.6 fewer vehicle–pedestrian crashes at North’s crossings (20 × 0.13), compared with 0.65 fewer at South’s (5 × 0.13). The 3–7 second WALK head start may give pedestrians time to enter the crossing before turning drivers receive green, making them more visible and reducing conflicts. To measure the pilot’s local effect, compare crash changes at the treated crossings before and after installation with changes over the same periods at similar untreated crossings, accounting for differences in baseline crash trends and exposure.
+> Cities face vehicle–pedestrian crash risks at both groups of signalized crossings, and the committee can fund one pilot at either site. Which should it choose to avert more crashes, and how can it assess the pilot’s effect? Apply FHWA’s three-city study factor of 0.87 as an estimate: North’s expected 20 crashes would fall to 17.4, or about 2.6 fewer; South’s 5 would fall to 4.35, or about 0.65 fewer. I recommend North because the same estimated proportional reduction yields a larger absolute decrease there. The 3–7 second WALK head start could give pedestrians time to enter the crossing before turning drivers get green, making them more visible to drivers turning through the intersection. To measure the local effect, compare the change in vehicle–pedestrian crashes at North before and after the pilot with the change over the same periods at comparable untreated signalized crossings; matching traffic, turning patterns, and crash trends would make that comparison more credible. The estimates transfer the study factor to North and South, so they are not guaranteed local results.
 
 ### What changed
 
@@ -1745,14 +1384,14 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `fe6a3443c596
 | Recommends North under the stated equal-cost objective and explains how the early WALK relates to turning vehicles or pedestrian visibility. | Met | Met |
 | Labels the estimates conditional on transfer from the study and proposes a local treated-versus-credible-without-treatment comparison to test the effect. | Met | Met |
 
-**Masked review** (Y = baseline; X = standard). Both recommend North, project reductions of 2.6 versus 0.65, explain the visibility mechanism and propose comparing changes with similar untreated crossings over the same periods. X mentions baseline trends and exposure; Y names pedestrian and vehicle volumes. Neither presents the forecast as a measured local benefit.
+**Review.** The recommendation rests on 2.6 versus 0.65 expected crashes prevented at equal cost, conditional on local transfer. Comparable untreated intersections give the city a way to test that forecast.
+
+Masked reviewer assignment: Y was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/minto-pyramid/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/minto-pyramid.json).
 
 <details>
 <summary>Run record</summary>
 
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `1c5f170eb9d4` / `447627226ac3` / `60b342fd8bcc`.
+Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `8063d7e2ee16` / `447627226ac3` / `e506e806dc95`.
 
 </details>
 
@@ -1762,7 +1401,7 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `1c5f170eb9d4
 
 [한국어](EXAMPLES.ko.md#new-harts-rules)
 
-2026-11-08 · `new-harts-rules` 0.1.2 · English · `gpt-6-luna`
+2026-11-09 · `new-harts-rules` 0.1.6 · English · `gpt-6-luna`
 
 ### Case and sources
 
@@ -1782,9 +1421,9 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `1c5f170eb9d4
 
 ### With the skill at standard
 
-> “In ‘Housing, England and Wales: Census 2021’, ONS reported that 42.1 per cent of London households had no car or van available, compared with 23.3 per cent across England and Wales—a gap of 18.8 percentage points. The London share was 81 per cent higher.”
+> In “Housing, England and Wales: Census 2021”, ONS reported that 42.1 per cent of households in London had no car or van available, compared with 23.3 per cent across England and Wales. The London share was 18.8 percentage points higher, or 81 per cent greater relative to the England-and-Wales share.
 >
-> **Editorial note:** The denominator is households with no car or van available, not Londoners. The 18.8-point gap is 42.1 minus 23.3; the 81 per cent relative excess is that gap divided by 23.3, rounded to the nearest whole per cent. “Per cent” follows the stated house style; the ONS title remains verbatim. Edition: *New Hart’s Rules*, second edition (2014); level: standard. No relevant passage was supplied, so the spelling decision is attributed to house style, not to the book.
+> Editorial note: The denominator is households, not Londoners. The spelling “per cent” follows the stated house style; no relevant passage from *New Hart’s Rules*, second edition (2014), was supplied, so this spelling decision is not attributed to the book.
 
 ### What changed
 
@@ -1792,16 +1431,16 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `1c5f170eb9d4
 | --- | --- | --- |
 | Keeps the title 'Housing, England and Wales: Census 2021' verbatim and the measurements at the household level, including no car or van available. | Met | Met |
 | Uses 18.8 percentage points and about 81 per cent relative excess over 23.3%, keeping the measures distinct. | Met | Met |
-| Uses ‘per cent’ for percentages in English prose; the English note identifies the denominator and exhibition house style without claiming verification from the book. | Met | Missed |
+| Uses ‘per cent’ for percentages in English prose; the English note identifies the denominator and exhibition house style without claiming verification from the book. | Met | Met |
 
-**Masked review** (Y = baseline; X = standard). Both retain the bulletin title, report household shares, and distinguish 18.8 percentage points from an 81 per cent relative excess. Y correctly describes households as the denominator. X calls households *with no car or van* the denominator in its note; those households form the numerator of each area's share. X also adds an unrequested edition and level, which may reveal the condition.
+**Review.** The label measures households and distinguishes the 18.8-point difference from the roughly 81 per cent relative excess. The spelling choice comes from the exhibition’s own house style.
+
+Masked reviewer assignment: X was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/new-harts-rules/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/new-harts-rules.json).
 
 <details>
 <summary>Run record</summary>
 
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `984d898d4573` / `59f8ac49842a` / `0fe1907dab99`.
+Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `9b8e75069344` / `59f8ac49842a` / `0f0790f8516b`.
 
 </details>
 
@@ -1811,7 +1450,7 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `984d898d4573
 
 [한국어](EXAMPLES.ko.md#nist-technical-publication)
 
-2026-11-08 · `nist-technical-publication` 0.1.3 · English · `gpt-6-luna`
+2026-11-09 · `nist-technical-publication` 0.1.4 · English · `gpt-6-luna`
 
 ### Case and sources
 
@@ -1839,70 +1478,25 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `984d898d4573
 
 ### With the skill at standard
 
-> ## NIST-F2: upgrade comparison
+> ## NIST-F2 uncertainty improvement note
 >
-> ### Basis
+> The July–August 2013 evaluation reported a Type A statistical fractional frequency uncertainty of **0.44 × 10⁻¹⁵** and a Type B systematic uncertainty of **0.11 × 10⁻¹⁵**. Microwave-amplitude effects dominated Type B; the 80 K environment reduced the blackbody-radiation uncertainty by more than fiftyfold.
 >
-> During the July–August 2013 evaluation, Type A statistical fractional frequency uncertainty was $0.44 \times 10^{-15}$, and Type B systematic uncertainty was $0.11 \times 10^{-15}$. The 80 K environment reduced the blackbody-radiation uncertainty by more than fiftyfold, while microwave-amplitude effects dominated Type B.
->
-> For this comparison, the two uncertainty components are assumed independent and combined by root-sum-square:
->
+> For this comparison, assume the Type A and Type B components are independent and combine them by root-sum-square:
 >
 > $$
 > u_{\mathrm{combined}}=\sqrt{u_A^2+u_B^2}.
 > $$
 >
->
-> ### Results
->
-> | Case | Type A ($\times 10^{-15}$) | Type B ($\times 10^{-15}$) | Combined ($\times 10^{-15}$) |
+> | Scenario | Type A uncertainty (× 10⁻¹⁵) | Type B uncertainty (× 10⁻¹⁵) | Combined uncertainty (× 10⁻¹⁵) |
 > |---|---:|---:|---:|
 > | Present | 0.44 | 0.11 | 0.454 |
 > | Halve Type A | 0.22 | 0.11 | 0.246 |
 > | Halve Type B | 0.44 | 0.055 | 0.443 |
 >
-> Values are rounded to three significant figures. For example, the present result is $\sqrt{0.44^2+0.11^2}=0.4536$, in units of $10^{-15}$.
+> The table values are coefficients on the stated common scale; for example, the present combined uncertainty is **0.454 × 10⁻¹⁵**. On this metric, choose the Type A upgrade: it lowers the combined uncertainty more than halving Type B.
 >
-> ### Recommendation
->
-> On combined uncertainty alone, choose the hypothetical Type A upgrade: it lowers the result to $0.246 \times 10^{-15}$, compared with $0.443 \times 10^{-15}$ for halving Type B. This comparison assumes the upgrades cost the same and affect only the stated component.
->
-> Cooling reduced the blackbody-radiation contribution, but that contribution is only one part of Type B, which is dominated by microwave-amplitude effects; Type A also contributes to the combined uncertainty. Therefore, the more-than-fiftyfold reduction in blackbody-radiation uncertainty does not establish a fiftyfold reduction in overall uncertainty.
-
-<details>
-<summary>Original math delimiters</summary>
-
-````text
-## NIST-F2: upgrade comparison
-
-### Basis
-
-During the July–August 2013 evaluation, Type A statistical fractional frequency uncertainty was \(0.44 \times 10^{-15}\), and Type B systematic uncertainty was \(0.11 \times 10^{-15}\). The 80 K environment reduced the blackbody-radiation uncertainty by more than fiftyfold, while microwave-amplitude effects dominated Type B.
-
-For this comparison, the two uncertainty components are assumed independent and combined by root-sum-square:
-
-\[
-u_{\mathrm{combined}}=\sqrt{u_A^2+u_B^2}.
-\]
-
-### Results
-
-| Case | Type A (\(\times 10^{-15}\)) | Type B (\(\times 10^{-15}\)) | Combined (\(\times 10^{-15}\)) |
-|---|---:|---:|---:|
-| Present | 0.44 | 0.11 | 0.454 |
-| Halve Type A | 0.22 | 0.11 | 0.246 |
-| Halve Type B | 0.44 | 0.055 | 0.443 |
-
-Values are rounded to three significant figures. For example, the present result is \(\sqrt{0.44^2+0.11^2}=0.4536\), in units of \(10^{-15}\).
-
-### Recommendation
-
-On combined uncertainty alone, choose the hypothetical Type A upgrade: it lowers the result to \(0.246 \times 10^{-15}\), compared with \(0.443 \times 10^{-15}\) for halving Type B. This comparison assumes the upgrades cost the same and affect only the stated component.
-
-Cooling reduced the blackbody-radiation contribution, but that contribution is only one part of Type B, which is dominated by microwave-amplitude effects; Type A also contributes to the combined uncertainty. Therefore, the more-than-fiftyfold reduction in blackbody-radiation uncertainty does not establish a fiftyfold reduction in overall uncertainty.
-````
-
-</details>
+> Cooling alone does not establish a fiftyfold improvement in overall uncertainty. The reported reduction applies to the blackbody-radiation component, while other uncertainty sources remain; microwave-amplitude effects dominated Type B, and Type A was larger than Type B in this evaluation.
 
 ### What changed
 
@@ -1912,14 +1506,14 @@ Cooling reduced the blackbody-radiation contribution, but that contribution is o
 | Correctly calculates both hypothetical totals (about 0.246 × 10⁻¹⁵ if Type A halves and 0.443 × 10⁻¹⁵ if Type B halves) and favors Type A for the larger reduction at equal cost. | Met | Met |
 | Keeps the projections separate from the 2013 observations, bounds the fiftyfold reduction to the blackbody contribution, and identifies microwave amplitude as the dominant Type B effect. | Met | Met |
 
-**Masked review** (X = baseline; Y = standard). Both give the three combined values as 0.454, 0.246 and 0.443 × 10⁻¹⁵, choose Type A, and keep the fiftyfold reduction specific to blackbody radiation. X gives the component values as bare decimals in its table without stating their scale; Y labels all columns and identifies the 2013 measurements. Y's intermediate 0.4536 should be about 0.45354, which still rounds to the stated 0.454.
+**Review.** With independent components, the current combined fractional uncertainty is about 0.454 × 10⁻¹⁵. Halving Type A gives 0.246 × 10⁻¹⁵ versus 0.443 × 10⁻¹⁵ for Type B. The fiftyfold change belongs to the blackbody contribution.
+
+Masked reviewer assignment: X was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/nist-technical-publication/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/nist-technical-publication.json).
 
 <details>
 <summary>Run record</summary>
 
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `33e35b943513` / `25ee98c46dab` / `97c03562d708`.
+Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `d936b66143cd` / `25ee98c46dab` / `2e5b1c8bcbd6`.
 
 </details>
 
@@ -1972,7 +1566,7 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `90ee273da21c
 
 [한국어](EXAMPLES.ko.md#socratic-self-questioning)
 
-2026-11-08 · `socratic-self-questioning` 0.1.2 · English · `gpt-6-luna`
+2026-11-09 · `socratic-self-questioning` 0.1.6 · English · `gpt-6-luna`
 
 ### Case and sources
 
@@ -1988,7 +1582,7 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `90ee273da21c
 
 ### With the skill at standard
 
-> The forecast implies six additional employment days for each of 500 residents, since 3,000 ÷ 500 = 6. In Finland’s experiment, recipients averaged 78 employment days—six more than the comparison group, whose mean was therefore 72 days. But that second-year difference cannot be attributed to basic income alone: a 2018 benefit reform affected the groups differently, and researchers could not separate its effect from the basic-income effect; year one showed no group-level employment effect. The local forecast would apply only if paying these residents produced the same six-day difference against a comparable local comparison group, with relevant conditions and policy effects sufficiently similar.
+> The brief predicts 3,000 additional employment days by multiplying 500 residents by six days each. In Finland, unemployed benefit recipients selected for the experiment averaged 78 employment days from November 2017 through October 2018—six more than the comparison group’s 72—but there was no group-level employment effect in year one. The comparison group’s mean was 78 − 6 = 72 days. Because the 2018 benefit reform affected the groups differently, researchers could not isolate its effect from the second-year basic-income effect. The Finnish result therefore does not establish that paying local residents would add six days per person; the forecast applies only if the local recipients and comparison group are comparable and the payment produces the same six-day difference under local conditions.
 
 ### What changed
 
@@ -1996,16 +1590,16 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `90ee273da21c
 | --- | --- | --- |
 | Recovers a comparison mean of 72 days and identifies 3,000 as 500 times the six-day observed difference, not an observed local gain. | Met | Met |
 | Addresses both the lack of a first-year group-level effect and the asymmetric 2018 reform as a reason the second-year difference does not isolate basic income's effect. | Met | Met |
-| Limits the evidence to unemployed benefit recipients and identifies a transfer assumption for 500 local residents, without claiming the experiment proves no effect in any year. | Missed | Missed |
+| Limits the evidence to unemployed benefit recipients and identifies a transfer assumption for 500 local residents, without claiming the experiment proves no effect in any year. | Missed | Met |
 
-**Masked review** (Y = baseline; X = standard). Both recover the 72-day comparison mean and explain the limitations from the first-year result and the 2018 reform. Both recognize that transferring the six-day difference requires comparable local conditions, but omit that the Finnish participants were unemployed benefit recipients. Y explicitly calls the 3,000 days an extrapolation; X reconstructs it by division.
+**Review.** The comparison mean is 72 days. The 3,000 days are an extrapolation from six days per person. The answer identifies the studied population, the uneven reform exposure and the assumption needed for a local forecast.
+
+Masked reviewer assignment: Y was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/socratic-self-questioning/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/socratic-self-questioning.json).
 
 <details>
 <summary>Run record</summary>
 
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `73849e50a54b` / `b7784aaaace2` / `15fcfc0f0a6a`.
+Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `6c4c77094da2` / `b7784aaaace2` / `1af4e026b8f6`.
 
 </details>
 
@@ -2015,7 +1609,7 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `73849e50a54b
 
 [한국어](EXAMPLES.ko.md#steve-jobs-presentation)
 
-2026-11-08 · `steve-jobs-presentation` 0.1.1 · English · `gpt-6-luna`
+2026-11-09 · `steve-jobs-presentation` 0.1.8 · English · `gpt-6-luna`
 
 ### Case and sources
 
@@ -2035,13 +1629,11 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `73849e50a54b
 
 ### With the skill at standard
 
-> **Method status:** Jobs-inspired presentation structure · standard
+> 1. “On 19 April 2021, Ingenuity flew autonomously at Wright Brothers Field on Mars, reaching about 3 meters. The flight demonstrated powered, controlled flight on another planet.”
 >
-> 1. **The milestone:** “On 19 April 2021, Ingenuity flew autonomously at Wright Brothers Field on Mars. It reached about 3 metres, hovered for 30 seconds, and landed 39.1 seconds after takeoff. The flight demonstrated powered, controlled flight on another planet.”
+> 2. “It hovered for 30 seconds of its 39.1-second flight—about 77 percent. I would not label 3 meters divided by total flight time as average climb speed: the remaining 9.1 seconds include ascent and descent, so they do not tell us how long the climb took.”
 >
-> 2. **What the timing tells us:** “The hover took about 77% of the flight: 30 divided by 39.1. I would not label 3 metres divided by the whole flight time—about 0.077 metres per second—as the average climb speed. The total includes the 30-second hover and time spent descending, so the remaining 9.1 seconds cannot tell us how long the climb took.”
->
-> 3. **What comes next:** “The flight establishes the milestone; the timing alone does not establish climb speed. After reviewing the flight data, the team could decide whether it supports a climb-speed estimate and what, if anything, to investigate in a later flight. That would be a decision based on the data, not a claim that a later test succeeded.”
+> 3. “After reviewing the flight data, the team can decide what to change or measure in a future flight; that review alone cannot tell us whether a later test will succeed.”
 
 ### What changed
 
@@ -2049,15 +1641,15 @@ SHA-256 prefixes (entrypoint / baseline answer / standard answer): `73849e50a54b
 | --- | --- | --- |
 | Reports the first Mars flight as autonomous, powered and controlled, retains about 3 m and distinguishes 30 s of hover from 39.1 s total. | Met | Met |
 | Derives roughly 77% hovering and identifies the remaining 9.1 s as non-hover time including ascent and descent; rejects using total time to infer climb speed. | Met | Met |
-| Uses three short audience-facing beats and closes on reviewing the flight data to inform the next test, without claiming future success. | Met | Missed |
+| Uses three short audience-facing beats and closes on reviewing the flight data to inform the next test, without claiming future success. | Met | Met |
 
-**Masked review** (X = baseline; Y = standard). Both give the roughly 77% hover share, separate the 9.1 seconds of ascent and descent, and decline to infer climb speed. X gives three brief, speakable beats. Y's second beat is longer and the visible method status is additional material outside the requested three beats; its closing decision is still conditional on the data.
+**Review.** The three spoken beats distinguish the 30-second hover from the whole flight. Ascent and descent share the remaining 9.1 seconds; reviewing the flight data informs the next test.
+
+Masked reviewer assignment: X was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/steve-jobs-presentation/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/steve-jobs-presentation.json).
 
 <details>
 <summary>Run record</summary>
 
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `172a5e6964a7` / `7cd7cfac8849` / `b1d810da602d`.
+Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `24a22d2a3e7c` / `7cd7cfac8849` / `5e0194f544ea`.
 
 </details>

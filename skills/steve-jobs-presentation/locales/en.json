@@ -1,6 +1,6 @@
 {
   "method": "steve-jobs-presentation",
-  "methodVersion": "0.1.1",
+  "methodVersion": "0.1.8",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -14,15 +14,15 @@
       "adaptation": true
     },
     "signposted-sequence": {
-      "instruction": "Develop a small sequence of distinct ideas or stories and connect each to the central message.",
+      "instruction": "Use a distinct spoken idea per beat, honor the requested count, and keep the explanation brief enough to deliver aloud. Put process notes outside the script.",
       "adaptation": true
     },
     "honest-demonstration": {
-      "instruction": "Use an available concrete demonstration, comparison, or evidence-backed example; distinguish a proposed demo from one actually observed.",
+      "instruction": "Use a concrete demonstration or comparison supported by evidence. Distinguish observed from proposed. For questions about timing, name the measured share, numerical remainder and its stages; for a round trip, describe both directions and omit unsupported quotients.",
       "adaptation": true
     },
     "supported-payoff": {
-      "instruction": "Close by returning to the central benefit and a supported implication or next step while preserving material limitations.",
+      "instruction": "Close on the supported implication of the central message for the audience. If asked about another test, connect review of current observations to a decision about that future test and keep its outcome conditional.",
       "adaptation": false
     }
   }

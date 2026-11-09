@@ -59,5 +59,24 @@
     ],
     "knownBadRewrite": "New Hart’s Rules always requires the serial comma in every sentence.",
     "method": "new-harts-rules"
+  },
+  {
+    "id": "equipment-pass-share",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "source": "A workshop sign says “88 per cent of successful tests passed”. In fact 44 of all 50 inspections passed, up from 40 of 50 last quarter. Rewrite the sign and add an editorial note identifying the unit and relative increase since last quarter. House style uses “inspections” throughout.",
+    "ruleIds": [
+      "preserve-meaning",
+      "edition-and-house-style"
+    ],
+    "sourceIds": [
+      "hart-preview"
+    ],
+    "expectations": [
+      "Both the sign and note describe the base as all 50 inspections, with 44 passing now and 40 previously.",
+      "Distinguish an increase from 80 to 88 per cent (8 percentage points) from a 10 per cent relative increase based on the previous share. Attribute wording to workshop style."
+    ],
+    "level": "standard",
+    "method": "new-harts-rules"
   }
 ]

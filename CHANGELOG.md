@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Repair the 13 methods that missed standard checks in either gallery. Preserve the original controls, publish each revised English and Korean answer, and archive every accepted retry and the 13 transfer problems.
+
 - Support a user-scope Codex link to the live WSG checkout. Resolve method references from that checkout when writing in another project.
 
 - Publish English and Korean examples for all 22 methods. Each language has independently generated GPT-6 Luna baseline and standard answers, a local review and a full gallery.

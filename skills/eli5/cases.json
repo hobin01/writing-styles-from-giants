@@ -62,17 +62,19 @@
     "type": "ordinary",
     "locale": "en",
     "level": "standard",
-    "source": "A child sees two toy trains moving at steady speeds: the red train travels 12 equal tiles in four clock beats, the blue one 10 tiles in two beats. Explain which is faster and whether this tells us which can pull a heavier wagon.",
+    "source": "Two toy trains can change speed. Red crosses 12 equal tiles in four clock beats, blue 10 tiles in two beats. A separate load test shows red can pull a heavier wagon. In four short sentences, tell a child which was faster on average, whether the race showed which can pull more, and what the load test found.",
     "ruleIds": [
       "show-mechanism",
-      "bounded-model"
+      "bounded-model",
+      "child-check"
     ],
     "sourceIds": [
       "eli5-community"
     ],
     "expectations": [
-      "Compare the blue train’s five tiles per beat to the red train’s three using terms a child can picture.",
-      "Distance and time establish relative speed; this test gives no information about the weight each can pull."
+      "Give both averages in familiar units: five tiles per beat for blue versus three for red. Do not claim either train actually crossed that many tiles in each beat.",
+      "The race measured speed, not pulling ability. Say that the separate load test established red could pull more.",
+      "Use at most four brief read-aloud sentences; omit an unrelated analogy."
     ],
     "method": "eli5"
   }

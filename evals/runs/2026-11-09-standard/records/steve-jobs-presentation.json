@@ -1,0 +1,779 @@
+{
+  "method": "steve-jobs-presentation",
+  "model": "gpt-6-luna",
+  "level": "standard",
+  "parent_commit": "20f24c66c7e89e6ce1007249c83c33932998bf01",
+  "cases": {
+    "en": {
+      "prompt": "Write three short speaker beats for a museum briefing as of 19 April 2021. Ingenuity flew autonomously at Wright Brothers Field on Mars to about 3 m, hovered for 30 seconds, and landed 39.1 seconds after takeoff. The flight proves powered, controlled flight on another planet. A proposed slide calls 3 m divided by the whole flight time 'the average climb speed.' Decide whether to use that metric. Give the audience a defensible proportion for time spent hovering and explain why the remaining time does or does not identify climb speed. Close with what the team could decide after reviewing flight data; do not assume a later test succeeded. Write the answer in English.",
+      "checks": [
+        "Reports the first Mars flight as autonomous, powered and controlled, retains about 3 m and distinguishes 30 s of hover from 39.1 s total.",
+        "Derives roughly 77% hovering and identifies the remaining 9.1 s as non-hover time including ascent and descent; rejects using total time to infer climb speed.",
+        "Uses three short audience-facing beats and closes on reviewing the flight data to inform the next test, without claiming future success."
+      ],
+      "control_checks": [
+        true,
+        true,
+        true
+      ],
+      "previous_standard_checks": [
+        true,
+        true,
+        false
+      ]
+    },
+    "ko": {
+      "prompt": "2021년 4월 19일을 기준으로 박물관에서 발표할 짧은 한국어 발화 세 대목을 써 주세요. 인제뉴어티는 화성의 라이트 브라더스 비행장에서 자율 비행으로 약 3 m까지 올라가 30초간 제자리 비행을 했고, 이륙 후 39.1초에 착륙했습니다. 다른 행성에서 동력을 사용해 제어 비행을 할 수 있음을 보여 준 비행입니다. 준비 중인 슬라이드에는 3 m를 전체 비행 시간으로 나눈 값을 ‘평균 상승 속도’라고 적었습니다. 이 지표를 쓸지 결정해 주세요. 비행 시간 중 제자리 비행의 비율을 제시하고 나머지 시간으로 상승 속도를 알아낼 수 있는지 설명해 주세요. 비행 자료를 검토한 뒤 연구진이 다음 시험에 대해 무엇을 결정할 수 있는지로 마무리하세요. 후속 비행이 이미 성공했다고 가정하지 마세요.",
+      "checks": [
+        "화성 최초의 자율 동력·제어 비행이라는 의미와 약 3 m 높이를 유지하고, 30초 제자리 비행과 전체 39.1초를 구분한다.",
+        "제자리 비행은 약 77%이며 남은 9.1초에는 상승과 하강이 들어감을 설명한다. 전체 시간에서 상승 속도를 유도하는 계산을 배척한다.",
+        "관객에게 말할 짧은 세 대목으로 구성하고, 앞으로의 성공을 단언하지 않고 비행 자료 검토가 다음 시험을 정하는 근거라고 마무리한다."
+      ],
+      "control_checks": [
+        true,
+        true,
+        true
+      ],
+      "previous_standard_checks": [
+        true,
+        true,
+        false
+      ]
+    },
+    "transfer": {
+      "prompt": "과학관 청중에게 말할 짧은 세 대목을 써 주세요. 실험용 모형 잠수정이 총 50초 동안 운항했고 그중 30초 동안 4 m 깊이에 머물렀습니다. 나머지 시간에는 잠항과 부상이 모두 포함됩니다. 머문 시간의 비율, 이 기록으로 잠항 속도를 알 수 있는지, 다음 시험을 무엇을 보고 정할지 설명하세요. 후속 성공은 확인되지 않았습니다.",
+      "checks": [
+        "정지 구간은 전체의 60%이고 깊이는 4 m이다.",
+        "남은 20초에는 잠항과 부상이 모두 들어 있어 잠항 속도를 계산할 수 없다고 말한다.",
+        "짧은 청중용 세 대목으로 구성하고 기록 검토를 다음 시험의 근거로 제시한다."
+      ],
+      "control": "**첫째**, 실험용 모형 잠수정은 총 50초 동안 운항했고, 그중 30초를 수심 4m에서 머물렀습니다. 전체 시간의 **60%**를 그 깊이에서 보낸 셈입니다.\n\n**둘째**, 이 기록만으로는 잠항 속도를 알 수 없습니다. 나머지 20초에는 잠항과 부상이 모두 포함되지만, 각각 얼마나 걸렸는지, 이동 거리가 얼마였는지 알 수 없기 때문입니다.\n\n**셋째**, 다음 시험에서는 잠항과 부상에 걸린 시간, 각 구간의 수심 변화를 기록해 속도를 계산할 수 있게 해야 합니다. 또 목표 수심에 도달하고 유지한 뒤 안전하게 부상하는지도 확인해야 합니다. **아직 후속 시험의 성공 여부는 확인되지 않았습니다.**"
+    }
+  },
+  "revisions": [
+    {
+      "version": "0.1.2",
+      "method_input_sha256": "fa538b4c61e1a40773a15e56bf7c1a30c84ccd36d691275a05fa43a313a1d705",
+      "input_patch_from_final": "--- 0.1.8\n+++ 0.1.2\n@@ -13,9 +13,9 @@\n Apply only the rules enabled by the selected level.\n \n 1. Identify the audience's question and one central benefit or message supported by the material.\n-2. Arrange a small sequence around the audience's question. Honor a requested count. For a short script, draft one or two speakable sentences per beat. For slides, use sparse visual prompts. Cut throat-clearing and repetition before dropping a required fact.\n-3. Use a concrete example or demonstration the evidence supports. Label a proposed demo or an illustrative value as such. If the audience needs to understand part of a measured total, speak the share and the numerical remainder with its unit. Name the activities that occupy the remainder. For a round trip, describe motion in both directions. “Loading and unloading share the remaining four minutes, so we cannot time loading alone.”\n-4. Close on what the central message means for the audience. When the requested next step is a test, link two actions in the final beat: “We'll review [observations from this test]. That will help us decide [what to try or change in the next one].” Keep future outcomes conditional and production notes outside the script.\n+2. Arrange a small sequence around the audience's question. Honor a requested count. For short speaker beats give only lines someone could say aloud; move a reason to the next beat if one becomes a paragraph of calculations. Use one or two short sentences per beat when the evidence allows.\n+3. Use a concrete demonstration, comparison, or example when supported. Compute a proposed metric before speaking. Say what the evidence establishes and give the reason an unsupported metric fails; reciting its numerical value can give it undue weight.\n+4. End with the decision the evidence can inform. When a result is still unknown, use a conditional next step. Stop there; keep production notes and method labels out of the speaker's script.\n \n Never fabricate personal experience, quotations, audience reactions, product performance, or a demonstration claimed to have occurred. A memorable sequence is not evidence that a product works.\n \n@@ -130,7 +130,7 @@\n     },\n     {\n       \"id\": \"honest-demonstration\",\n-      \"intent\": \"Use a concrete demonstration or comparison supported by evidence. Distinguish observed from proposed. For questions about timing, name the measured share, numerical remainder and its stages; for a round trip, describe both directions and omit unsupported quotients.\",\n+      \"intent\": \"Use an available concrete demonstration, comparison, or evidence-backed example; distinguish a proposed demo from one actually observed.\",\n       \"classification\": \"guideline\",\n       \"provenance\": \"adaptation\",\n       \"rationale\": \"Original operational application of the identified source within the documented read scope.\",\n@@ -149,7 +149,7 @@\n     },\n     {\n       \"id\": \"supported-payoff\",\n-      \"intent\": \"Close on the supported implication of the central message for the audience. If asked about another test, connect review of current observations to a decision about that future test and keep its outcome conditional.\",\n+      \"intent\": \"Close by returning to the central benefit and a supported implication or next step while preserving material limitations.\",\n       \"classification\": \"guideline\",\n       \"provenance\": \"project-original\",\n       \"rationale\": \"Original presentation completion step inferred for this project, not an attributed universal Jobs rule.\",\n@@ -166,7 +166,7 @@\n     }\n   ],\n   \"schemaVersion\": 1,\n-  \"version\": \"0.1.8\",\n+  \"version\": \"0.1.2\",\n   \"status\": \"experimental\",\n   \"applicability\": {\n     \"genres\": [\n@@ -189,7 +189,7 @@\n <en.json>\n {\n   \"method\": \"steve-jobs-presentation\",\n-  \"methodVersion\": \"0.1.8\",\n+  \"methodVersion\": \"0.1.2\",\n   \"locale\": \"en\",\n   \"status\": \"experimental\",\n   \"reviewedSourceRules\": [],\n@@ -207,11 +207,11 @@\n       \"adaptation\": true\n     },\n     \"honest-demonstration\": {\n-      \"instruction\": \"Use a concrete demonstration or comparison supported by evidence. Distinguish observed from proposed. For questions about timing, name the measured share, numerical remainder and its stages; for a round trip, describe both directions and omit unsupported quotients.\",\n+      \"instruction\": \"Use an available concrete demonstration, comparison, or evidence-backed example; distinguish a proposed demo from one actually observed.\",\n       \"adaptation\": true\n     },\n     \"supported-payoff\": {\n-      \"instruction\": \"Close on the supported implication of the central message for the audience. If asked about another test, connect review of current observations to a decision about that future test and keep its outcome conditional.\",\n+      \"instruction\": \"Close by returning to the central benefit and a supported implication or next step while preserving material limitations.\",\n       \"adaptation\": false\n     }\n   }\n",
+      "runs": {
+        "en": {
+          "answer": "- “What did Ingenuity achieve at Wright Brothers Field on Mars? It flew autonomously, proving powered, controlled flight on another planet.”\n- “It climbed to about 3 meters, hovered for 30 seconds, and landed 39.1 seconds after takeoff. Hovering was about 77% of the flight. I wouldn’t call 3 meters divided by the full flight time the average climb speed: that time includes hovering and landing, and the remaining 9.1 seconds doesn’t tell us how long the climb took.”\n- “After reviewing the flight data, the team can decide what the measurements support and whether they’re ready to plan another test.”",
+          "answer_sha256": "f4a2e3909c223fd06b307e1384cf24ff7d186e6beead2ba0ec52f279ea7bf4a4",
+          "prompt_sha256": "e85861836e72afb3d650952fe00767d4f138ed997a6fa23bcfb5b77d8f109f88",
+          "masked_review": {
+            "X": [
+              true,
+              true,
+              true
+            ],
+            "Y": [
+              true,
+              true,
+              true
+            ],
+            "X_notes": [
+              "It says the flight was autonomous and demonstrated powered, controlled flight, with about 3 m, 30 s hovering, and 39.1 s total.",
+              "It calculates about 77%, identifies the remaining 9.1 s as ascent and descent, and rejects inferring climb speed from total time.",
+              "It gives three short beats and closes on reviewing data to decide whether to attempt another flight without claiming success."
+            ],
+            "Y_notes": [
+              "It says the flight was autonomous and proves powered, controlled flight, with about 3 m, 30 s hovering, and 39.1 s total.",
+              "It gives about 77%, identifies 9.1 s as non-hover time that does not reveal climb duration, and rejects the proposed metric.",
+              "It gives three audience-facing beats and closes on using reviewed data to decide about a future test without claiming success."
+            ],
+            "standard_label": "Y"
+          },
+          "adjudicated_standard": [
+            true,
+            false,
+            false
+          ],
+          "adjudication_note": "The long second beat does not identify both ascent and descent in the remaining time. The next flight is left open, but the requested short speech is not sustained."
+        },
+        "ko": {
+          "answer": "1. 박물관에서 궁금한 점은 이겁니다. 인제뉴어티는 화성에서 동력 비행을 해낼 수 있었을까요? 2021년 4월 19일, 라이트 브라더스 비행장에서 자율 비행으로 약 3 m까지 올라 제자리에서 30초간 비행했고, 이륙 후 39.1초에 착륙했습니다.\n\n2. 전체 비행 시간 39.1초 가운데 제자리 비행은 약 77%입니다. 3 m를 39.1초로 나눈 값은 전체 비행의 평균 높이 변화율일 뿐이므로 슬라이드의 ‘평균 상승 속도’는 쓰지 않는 편이 정확합니다. 제자리 비행을 뺀 나머지 약 9.1초만으로는 상승 속도를 알아낼 수 없습니다. 그 시간에는 하강과 착륙도 포함되며, 상승에 걸린 시간은 주어지지 않았기 때문입니다.\n\n3. 이 비행은 다른 행성에서 동력을 사용해 제어 비행을 할 수 있음을 보여 줬습니다. 비행 자료를 검토한 뒤 연구진은 무엇을 확인했고 무엇을 아직 모르는지 따져, 다음 시험에서 어떤 비행을 시도할지 결정할 수 있습니다.",
+          "answer_sha256": "552972dd2e9264a9f0769a114928783aa197acb7a58e6c710d328ef4acc62016",
+          "prompt_sha256": "aeaee42a98778d9624765ef1087f43edffa037c5dfced0aa8cd4b9ac08dab6b3",
+          "masked_review": {
+            "X": [
+              false,
+              true,
+              true
+            ],
+            "Y": [
+              true,
+              true,
+              true
+            ],
+            "X_notes": [
+              "첫 대목은 자율 동력 비행의 의미와 약 3 m를 말하지만, 30초 제자리 비행과 전체 39.1초를 구분하지 않습니다.",
+              "약 77%와 남은 9.1초에 상승·하강이 포함됨을 설명하고, 그 시간만으로 상승 속도를 알 수 없다고 합니다.",
+              "세 대목으로 구성하고, 자료 검토가 다음 시험의 목표와 비행 계획을 정하는 근거라고 마무리합니다."
+            ],
+            "Y_notes": [
+              "자율 동력·제어 비행의 의미를 밝히고 약 3 m, 30초 제자리 비행, 전체 39.1초를 구분합니다.",
+              "약 77%와 남은 9.1초를 설명하며, 상승 시간을 알 수 없어 상승 속도를 유도할 수 없다고 합니다.",
+              "세 대목으로 구성하고, 후속 성공을 단언하지 않은 채 자료 검토를 다음 시험 결정의 근거로 제시합니다."
+            ],
+            "standard_label": "Y"
+          },
+          "adjudicated_standard": [
+            true,
+            false,
+            false
+          ],
+          "adjudication_note": "상승과 하강을 구분할 수 없다는 점은 설명했지만 최대 높이/전체 시간을 평균 높이 변화율이라고 잘못 이름 붙였고, 가운데 대목이 긴 설명으로 늘어졌다."
+        },
+        "transfer": {
+          "answer": "- “실험용 모형 잠수정은 총 50초 동안 운항했고, 그중 30초 동안 수심 4m에 머물렀습니다. 전체 운항 시간의 60%입니다.”\n- “나머지 20초에는 잠항과 부상이 모두 포함됩니다. 이 기록만으로는 각 동작에 걸린 시간을 알 수 없어 잠항 속도를 계산할 수 없습니다.”\n- “다음 시험에서는 잠항과 부상에 각각 걸린 시간, 이동한 깊이를 따로 기록해 봅시다. 그러면 속도를 계산할 수 있고, 아직 확인되지 않은 후속 성공 여부도 살펴볼 수 있습니다.”",
+          "answer_sha256": "cabdd4362ea6b37b9104cfd7da1ca75b529aaba9f209eec0ffd27319418b3963",
+          "prompt_sha256": "22800c2161c22a94aa187c2f5d63aedb0ac1a88131e313eea0a81a19f1724f68",
+          "masked_review": {
+            "X": [
+              true,
+              true,
+              true
+            ],
+            "Y": [
+              true,
+              true,
+              true
+            ],
+            "X_notes": [
+              "30초 동안 4m에 머물렀고 전체 시간의 60%라고 했습니다.",
+              "나머지 20초에 잠항과 부상이 모두 포함되어 잠항 속도를 계산할 수 없다고 했습니다.",
+              "세 대목으로 구성했고, 기록할 시간과 깊이를 다음 시험의 근거로 제시했습니다."
+            ],
+            "Y_notes": [
+              "30초 동안 수심 4m에서 머물렀고 전체의 60%라고 했습니다.",
+              "나머지 20초에 잠항과 부상이 모두 포함되어 속도를 알 수 없다고 했습니다.",
+              "세 대목으로 구성하고 다음 시험의 기록 항목을 제시했습니다."
+            ],
+            "standard_label": "X"
+          },
+          "adjudicated_standard": [
+            true,
+            true,
+            false
+          ],
+          "adjudication_note": "마지막 발화는 다음 실험의 추가 측정을 제안한다. 기존 운항 기록을 검토해 다음 시험을 정한다는 연결이 없다."
+        }
+      }
+    },
+    {
+      "version": "0.1.3",
+      "method_input_sha256": "3bf7f56014c601788ccf4fb3b3932918dc1df319ca02f2cff38639bcc5bf571f",
+      "input_patch_from_final": "--- 0.1.8\n+++ 0.1.3\n@@ -13,9 +13,9 @@\n Apply only the rules enabled by the selected level.\n \n 1. Identify the audience's question and one central benefit or message supported by the material.\n-2. Arrange a small sequence around the audience's question. Honor a requested count. For a short script, draft one or two speakable sentences per beat. For slides, use sparse visual prompts. Cut throat-clearing and repetition before dropping a required fact.\n-3. Use a concrete example or demonstration the evidence supports. Label a proposed demo or an illustrative value as such. If the audience needs to understand part of a measured total, speak the share and the numerical remainder with its unit. Name the activities that occupy the remainder. For a round trip, describe motion in both directions. “Loading and unloading share the remaining four minutes, so we cannot time loading alone.”\n-4. Close on what the central message means for the audience. When the requested next step is a test, link two actions in the final beat: “We'll review [observations from this test]. That will help us decide [what to try or change in the next one].” Keep future outcomes conditional and production notes outside the script.\n+2. Arrange a small sequence around the audience's question. Honor a requested count. For a short script, draft one or two speakable sentences per beat. Spread evidence and explanation across the beats. Cut throat-clearing questions and repeated conclusions before dropping a required fact.\n+3. Use a concrete demonstration or comparison. Match the numerator and denominator of a proposed measure to the same event. If an interval spans several stages, name the relevant stages and what extra measurement would isolate the one the audience asked about. If the quotient does not measure the proposed quantity, leave it off the slide; do not give it a plausible-sounding new physical name. Say only the valid comparison and the reason for the limit.\n+4. End with the decision the evidence can inform. When a result is still unknown, use a conditional next step. Stop there; keep production notes and method labels out of the speaker's script.\n \n Never fabricate personal experience, quotations, audience reactions, product performance, or a demonstration claimed to have occurred. A memorable sequence is not evidence that a product works.\n \n@@ -130,7 +130,7 @@\n     },\n     {\n       \"id\": \"honest-demonstration\",\n-      \"intent\": \"Use a concrete demonstration or comparison supported by evidence. Distinguish observed from proposed. For questions about timing, name the measured share, numerical remainder and its stages; for a round trip, describe both directions and omit unsupported quotients.\",\n+      \"intent\": \"Check the quantities against the event a comparison claims to measure. Name any stages that prevent isolation of the requested quantity and omit a misleading quotient. Distinguish observed and proposed demonstrations.\",\n       \"classification\": \"guideline\",\n       \"provenance\": \"adaptation\",\n       \"rationale\": \"Original operational application of the identified source within the documented read scope.\",\n@@ -149,7 +149,7 @@\n     },\n     {\n       \"id\": \"supported-payoff\",\n-      \"intent\": \"Close on the supported implication of the central message for the audience. If asked about another test, connect review of current observations to a decision about that future test and keep its outcome conditional.\",\n+      \"intent\": \"Close by returning to the central benefit and a supported implication or next step while preserving material limitations.\",\n       \"classification\": \"guideline\",\n       \"provenance\": \"project-original\",\n       \"rationale\": \"Original presentation completion step inferred for this project, not an attributed universal Jobs rule.\",\n@@ -166,7 +166,7 @@\n     }\n   ],\n   \"schemaVersion\": 1,\n-  \"version\": \"0.1.8\",\n+  \"version\": \"0.1.3\",\n   \"status\": \"experimental\",\n   \"applicability\": {\n     \"genres\": [\n@@ -189,7 +189,7 @@\n <en.json>\n {\n   \"method\": \"steve-jobs-presentation\",\n-  \"methodVersion\": \"0.1.8\",\n+  \"methodVersion\": \"0.1.3\",\n   \"locale\": \"en\",\n   \"status\": \"experimental\",\n   \"reviewedSourceRules\": [],\n@@ -207,11 +207,11 @@\n       \"adaptation\": true\n     },\n     \"honest-demonstration\": {\n-      \"instruction\": \"Use a concrete demonstration or comparison supported by evidence. Distinguish observed from proposed. For questions about timing, name the measured share, numerical remainder and its stages; for a round trip, describe both directions and omit unsupported quotients.\",\n+      \"instruction\": \"Check the quantities against the event a comparison claims to measure. Name any stages that prevent isolation of the requested quantity and omit a misleading quotient. Distinguish observed and proposed demonstrations.\",\n       \"adaptation\": true\n     },\n     \"supported-payoff\": {\n-      \"instruction\": \"Close on the supported implication of the central message for the audience. If asked about another test, connect review of current observations to a decision about that future test and keep its outcome conditional.\",\n+      \"instruction\": \"Close by returning to the central benefit and a supported implication or next step while preserving material limitations.\",\n       \"adaptation\": false\n     }\n   }\n",
+      "runs": {
+        "en": {
+          "answer": "1. **Why it matters:** Ingenuity flew autonomously at Wright Brothers Field on Mars, proving powered, controlled flight on another planet.\n\n2. **What the flight showed:** It reached about 3 m, hovered for 30 seconds, and landed 39.1 seconds after takeoff. That puts hovering at about 77% of the flight (30 ÷ 39.1). I would leave “average climb speed” off the slide: the remaining 9.1 seconds includes other flight stages, so it does not isolate the time spent climbing.\n\n3. **What comes next:** After reviewing the flight data, the team can decide whether it supports a valid climb-speed estimate and what to try on a subsequent flight.",
+          "answer_sha256": "964e7cedbebd4cec2a77e86b5fbf88eb79811457a544cc2a029f7773a7e66bf2",
+          "prompt_sha256": "e85861836e72afb3d650952fe00767d4f138ed997a6fa23bcfb5b77d8f109f88",
+          "masked_review": {
+            "X": [
+              true,
+              true,
+              true
+            ],
+            "X_notes": [
+              "X says the flight was autonomous and proved powered, controlled flight on Mars, and gives about 3 m, 30 seconds hovering, and 39.1 seconds total.",
+              "X calculates 30 ÷ 39.1 as about 77%, identifies 9.1 seconds as other flight stages, and rejects inferring climb speed from total time.",
+              "X uses three audience-facing beats and ends with reviewing data to guide a subsequent flight, without claiming it succeeded."
+            ],
+            "Y": [
+              true,
+              true,
+              true
+            ],
+            "Y_notes": [
+              "Y describes the first flight as autonomous, powered, and controlled, and gives about 3 metres, 30 seconds hovering, and 39.1 seconds total.",
+              "Y reports about 77% hovering, identifies the remaining 9.1 seconds as including ascent and descent, and rejects inferring climb speed.",
+              "Y has three audience-facing beats and closes on reviewing data to decide about another flight, without claiming a later test succeeded."
+            ],
+            "standard_label": "X"
+          },
+          "adjudicated_standard": [
+            true,
+            false,
+            true
+          ],
+          "adjudication_note": "The second beat identifies only unspecified “other flight stages,” not ascent and descent in the remaining time."
+        },
+        "ko": {
+          "answer": "1. 박물관에서 궁금하실 질문은 이것입니다. 지구가 아닌 곳에서도 동력 비행을 제어할 수 있을까요?\n\n2. 2021년 4월 19일, 인제뉴어티는 화성의 라이트 브라더스 비행장에서 자율 비행으로 약 3m까지 올라가 30초간 제자리 비행을 했고, 이륙 후 39.1초에 착륙했습니다. 제자리 비행은 전체 비행 시간의 약 77%입니다. 하지만 나머지 9.1초에도 하강과 착륙이 포함되므로, 그 시간을 빼서 상승 속도를 계산할 수는 없습니다. 따라서 슬라이드의 ‘평균 상승 속도’는 빼야 합니다. 3m를 전체 비행 시간으로 나눈 값은 상승만을 측정하지 않습니다.\n\n3. 이 비행은 다른 행성에서도 동력을 사용해 제어 비행을 할 수 있음을 보여 줬습니다. 연구진은 비행 자료를 검토해 다음 시험에서 무엇을 확인할지 결정할 수 있습니다. 후속 비행의 결과는 아직 알 수 없습니다.",
+          "answer_sha256": "2dde2b781fec927b3e14ebe934916ea859e5490ee3ecf265b3b936c44504dd7f",
+          "prompt_sha256": "aeaee42a98778d9624765ef1087f43edffa037c5dfced0aa8cd4b9ac08dab6b3",
+          "masked_review": {
+            "X": [
+              true,
+              true,
+              true
+            ],
+            "X_notes": [
+              "X는 다른 행성에서 제어 비행을 보였고, 약 3m·30초 제자리 비행·39.1초 착륙을 구분합니다.",
+              "X는 제자리 비행을 약 77%로 제시하고, 남은 9.1초에 하강과 착륙이 있어 상승 속도를 계산할 수 없다고 설명합니다.",
+              "X는 짧은 세 대목으로 구성하고, 자료 검토가 다음 시험을 정할 근거라고 하며 후속 결과를 단언하지 않습니다."
+            ],
+            "Y": [
+              false,
+              false,
+              false
+            ],
+            "Y_notes": [
+              "Y는 약 3m와 제어 비행의 의미를 언급하지만, 30초 제자리 비행을 제시하지 않습니다.",
+              "Y는 약 77%와 남은 9.1초를 설명하지만, 그 시간에 상승도 포함된다는 점을 누락합니다.",
+              "Y는 세 단락이지만, 관객에게 말할 세 대목으로 명확히 구성하지 않고 후속 시험의 성공 여부를 명시하지 않습니다."
+            ],
+            "standard_label": "X"
+          },
+          "adjudicated_standard": [
+            true,
+            true,
+            false
+          ],
+          "adjudication_note": "수치와 조건은 들어 있지만 가운데 한 대목에 다섯 문장을 몰아넣어 요청한 짧은 세 대목의 형식을 놓쳤다."
+        },
+        "transfer": {
+          "answer": "1. 실험용 모형 잠수정은 총 50초 동안 운항했고, 그중 30초를 수심 4m에 머물렀습니다. 관람객 여러분께서는 전체 운항에서 실제로 깊이에 머문 시간이 얼마나 되는지 보실 수 있습니다.\n\n2. 머문 시간은 전체 운항의 60%입니다. 나머지 20초에는 잠항과 부상이 모두 포함되어 있으므로, 이 기록만으로 잠항 속도를 알 수는 없습니다.\n\n3. 다음 시험에서는 잠항에 걸린 시간과 잠항한 깊이를 따로 기록해 잠항 속도를 계산할 수 있는지 확인하면 좋겠습니다. 후속 시험의 성공 여부는 아직 확인되지 않았습니다.",
+          "answer_sha256": "82f7e16535ec3c36fd9db1a8bfd44d8852c7bef2ecdca6ee8d30ed216df56997",
+          "prompt_sha256": "22800c2161c22a94aa187c2f5d63aedb0ac1a88131e313eea0a81a19f1724f68",
+          "masked_review": {
+            "X": [
+              true,
+              true,
+              true
+            ],
+            "X_notes": [
+              "30초 중 50초의 60%를 수심 4m에서 보냈다고 했습니다.",
+              "남은 20초에 잠항과 부상이 모두 포함되어 잠항 속도를 알 수 없다고 했습니다.",
+              "세 대목으로 구성하고 구간별 시간과 수심 변화를 기록해 다음 시험을 정하자고 했습니다."
+            ],
+            "Y": [
+              true,
+              true,
+              true
+            ],
+            "Y_notes": [
+              "총 50초 중 30초를 수심 4m에 머물렀다고 했습니다.",
+              "남은 20초에 잠항과 부상이 포함되어 잠항 속도를 알 수 없다고 했습니다.",
+              "세 대목으로 구성하고 잠항 시간과 깊이를 따로 기록하자고 했습니다."
+            ],
+            "standard_label": "Y"
+          },
+          "adjudicated_standard": [
+            true,
+            true,
+            false
+          ],
+          "adjudication_note": "다음 시험에서 무엇을 측정할지는 제안하지만 기존 기록 검토를 다음 시험 결정의 근거로 삼지는 않는다."
+        }
+      }
+    },
+    {
+      "version": "0.1.4",
+      "method_input_sha256": "48f5d30319902f7b43b087365fc079217f4dfce0aca90142780381fb1d8bdbf5",
+      "input_patch_from_final": "--- 0.1.8\n+++ 0.1.4\n@@ -13,9 +13,9 @@\n Apply only the rules enabled by the selected level.\n \n 1. Identify the audience's question and one central benefit or message supported by the material.\n-2. Arrange a small sequence around the audience's question. Honor a requested count. For a short script, draft one or two speakable sentences per beat. For slides, use sparse visual prompts. Cut throat-clearing and repetition before dropping a required fact.\n-3. Use a concrete example or demonstration the evidence supports. Label a proposed demo or an illustrative value as such. If the audience needs to understand part of a measured total, speak the share and the numerical remainder with its unit. Name the activities that occupy the remainder. For a round trip, describe motion in both directions. “Loading and unloading share the remaining four minutes, so we cannot time loading alone.”\n-4. Close on what the central message means for the audience. When the requested next step is a test, link two actions in the final beat: “We'll review [observations from this test]. That will help us decide [what to try or change in the next one].” Keep future outcomes conditional and production notes outside the script.\n+2. Arrange a small sequence around the audience's question. Honor a requested count. For a short script, draft one or two speakable sentences per beat. Spread evidence and explanation across the beats. Cut throat-clearing questions and repeated conclusions before dropping a required fact.\n+3. Use a concrete demonstration or comparison. Check what happens between the stated start and finish. For a multistage measure, say the stages' names aloud in the script and name the missing measurement. “The loading and unloading share a timer, so we cannot tell how long loading took” gives the audience the reason; “several stages are involved” hides it. Keep valid comparisons and leave an unsupported quotient off the slide.\n+4. End with the decision the evidence can inform. When a result is still unknown, use a conditional next step. Stop there; keep production notes and method labels out of the speaker's script.\n \n Never fabricate personal experience, quotations, audience reactions, product performance, or a demonstration claimed to have occurred. A memorable sequence is not evidence that a product works.\n \n@@ -130,7 +130,7 @@\n     },\n     {\n       \"id\": \"honest-demonstration\",\n-      \"intent\": \"Use a concrete demonstration or comparison supported by evidence. Distinguish observed from proposed. For questions about timing, name the measured share, numerical remainder and its stages; for a round trip, describe both directions and omit unsupported quotients.\",\n+      \"intent\": \"Match each quantity to its measured event. Explain a multistage interval by naming its stages in the spoken copy and identifying the missing measurement. Omit unsupported metrics and distinguish observed and proposed demonstrations.\",\n       \"classification\": \"guideline\",\n       \"provenance\": \"adaptation\",\n       \"rationale\": \"Original operational application of the identified source within the documented read scope.\",\n@@ -149,7 +149,7 @@\n     },\n     {\n       \"id\": \"supported-payoff\",\n-      \"intent\": \"Close on the supported implication of the central message for the audience. If asked about another test, connect review of current observations to a decision about that future test and keep its outcome conditional.\",\n+      \"intent\": \"Close by returning to the central benefit and a supported implication or next step while preserving material limitations.\",\n       \"classification\": \"guideline\",\n       \"provenance\": \"project-original\",\n       \"rationale\": \"Original presentation completion step inferred for this project, not an attributed universal Jobs rule.\",\n@@ -166,7 +166,7 @@\n     }\n   ],\n   \"schemaVersion\": 1,\n-  \"version\": \"0.1.8\",\n+  \"version\": \"0.1.4\",\n   \"status\": \"experimental\",\n   \"applicability\": {\n     \"genres\": [\n@@ -189,7 +189,7 @@\n <en.json>\n {\n   \"method\": \"steve-jobs-presentation\",\n-  \"methodVersion\": \"0.1.8\",\n+  \"methodVersion\": \"0.1.4\",\n   \"locale\": \"en\",\n   \"status\": \"experimental\",\n   \"reviewedSourceRules\": [],\n@@ -207,11 +207,11 @@\n       \"adaptation\": true\n     },\n     \"honest-demonstration\": {\n-      \"instruction\": \"Use a concrete demonstration or comparison supported by evidence. Distinguish observed from proposed. For questions about timing, name the measured share, numerical remainder and its stages; for a round trip, describe both directions and omit unsupported quotients.\",\n+      \"instruction\": \"Match each quantity to its measured event. Explain a multistage interval by naming its stages in the spoken copy and identifying the missing measurement. Omit unsupported metrics and distinguish observed and proposed demonstrations.\",\n       \"adaptation\": true\n     },\n     \"supported-payoff\": {\n-      \"instruction\": \"Close on the supported implication of the central message for the audience. If asked about another test, connect review of current observations to a decision about that future test and keep its outcome conditional.\",\n+      \"instruction\": \"Close by returning to the central benefit and a supported implication or next step while preserving material limitations.\",\n       \"adaptation\": false\n     }\n   }\n",
+      "runs": {
+        "en": {
+          "answer": "1. “Ingenuity flew autonomously at Wright Brothers Field on Mars, climbed to about 3 meters, hovered for 30 seconds, and landed 39.1 seconds after takeoff. The flight proves powered, controlled flight on another planet.”\n\n2. “The hover took about 77% of the 39.1-second flight. We should not call 3 meters divided by the whole flight time the average climb speed: that time includes the 30-second hover and the descent, and the total does not tell us how long the climb took.”\n\n3. “After reviewing the flight data, the team can decide whether it supports a defensible climb-speed measurement and what to investigate next. Any further test remains a proposal until its result is known.”",
+          "answer_sha256": "0df0bbbc3e2a03d83b05cfa6ee742c693b00ef4e9e7c7464ab561acc735ea849",
+          "prompt_sha256": "e85861836e72afb3d650952fe00767d4f138ed997a6fa23bcfb5b77d8f109f88",
+          "masked_review": {
+            "X": [
+              true,
+              true,
+              true
+            ],
+            "X_notes": [
+              "X says the flight was autonomous and demonstrated powered, controlled flight, reaching about 3 metres and hovering 30 seconds before landing at 39.1 seconds.",
+              "X reports about 77% hovering and says the remaining 9.1 seconds include ascent and descent, so total time cannot establish climb speed.",
+              "X gives three short beats and closes with reviewing flight data to decide whether to attempt another flight, without claiming it succeeded."
+            ],
+            "Y": [
+              true,
+              false,
+              true
+            ],
+            "Y_notes": [
+              "Y states the flight was autonomous, at Wright Brothers Field on Mars, reached about 3 meters, hovered 30 seconds, and landed after 39.1 seconds, proving powered, controlled flight.",
+              "Y reports about 77% hover and rejects the metric, but does not identify the remaining 9.1 seconds as non-hover time including both ascent and descent.",
+              "Y uses three audience-facing beats and leaves further testing contingent on results, without claiming future success."
+            ],
+            "standard_label": "Y"
+          },
+          "adjudicated_standard": [
+            true,
+            false,
+            true
+          ]
+        },
+        "ko": {
+          "answer": "화성의 라이트 브라더스 비행장에서 인제뉴어티는 자율 비행으로 약 3 m까지 올라가 30초 동안 제자리 비행을 했습니다.\n\n전체 비행은 이륙 후 39.1초에 착륙하며 끝났습니다. 제자리 비행은 전체 시간의 약 77%입니다. 하지만 3 m를 39.1초로 나눈 값은 상승과 제자리 비행을 합친 전체 시간에 대한 비율이므로 ‘평균 상승 속도’라고 부를 수 없습니다. 제자리 비행 시간을 빼더라도 나머지 시간에는 상승과 하강이 포함되므로, 이 정보만으로는 상승 속도를 알 수 없습니다.\n\n이 비행은 다른 행성에서 동력을 사용한 제어 비행이 가능함을 보여 줬습니다. 연구진은 비행 자료를 검토해 다음 시험의 목표와 필요한 측정을 정할 수 있습니다. 후속 비행의 성과는 아직 알 수 없습니다.",
+          "answer_sha256": "65c92c5a5d10089493fd1ec1cf0adb285da871033a23d223e633587308580bcf",
+          "prompt_sha256": "aeaee42a98778d9624765ef1087f43edffa037c5dfced0aa8cd4b9ac08dab6b3",
+          "masked_review": {
+            "X": [
+              true,
+              true,
+              true
+            ],
+            "X_notes": [
+              "인제뉴어티가 다른 행성에서 동력 제어 비행을 보였고 약 3미터까지 올랐다고 합니다.",
+              "30초는 약 77%이며 남은 9.1초에 상승·하강·착륙이 포함되어 전체 시간으로 상승 속도를 낼 수 없다고 설명합니다.",
+              "세 문단으로 구성하고 자료 검토를 통해 다음 시험의 목표와 계획을 정한다고 마무리합니다."
+            ],
+            "Y": [
+              false,
+              true,
+              true
+            ],
+            "Y_notes": [
+              "약 3 m와 30초 제자리 비행은 제시하지만, 다른 행성 최초의 비행이라는 의미를 명시하지 않습니다.",
+              "제자리 비행을 약 77%로 제시하고 나머지 시간에 상승과 하강이 포함되어 상승 속도를 알 수 없다고 설명합니다.",
+              "짧은 세 문단으로 구성하고 자료 검토를 다음 시험의 근거로 삼으며 후속 성공을 단언하지 않습니다."
+            ],
+            "standard_label": "Y"
+          },
+          "adjudicated_standard": [
+            true,
+            false,
+            true
+          ],
+          "adjudication_note": "다른 행성의 동력·제어 자율 비행과 고도·시간을 설명했지만 제자리 비행을 제외한 9.1초를 계산해 제시하지 않았다."
+        },
+        "transfer": {
+          "answer": "1. 실험용 모형 잠수정은 총 50초 동안 운항했고, 그중 30초를 수심 4m에서 머물렀습니다. 전체 운항 시간의 60%입니다.\n\n2. 나머지 20초에는 잠항과 부상이 모두 포함됩니다. 두 구간을 따로 잰 기록이 없으므로, 이 기록만으로는 잠항 속도를 알 수 없습니다.\n\n3. 다음 시험에서는 잠항과 부상에 각각 걸린 시간을 따로 측정하면 좋겠습니다. 그 결과를 보고 잠항 속도를 계산할 수 있는지 판단할 수 있습니다. 후속 시험의 성공 여부는 아직 확인되지 않았습니다.",
+          "answer_sha256": "361bd6a9039f8277f274ac21da17d72ba6f9ad5587b1d59e256fb6de0934d5fc",
+          "prompt_sha256": "22800c2161c22a94aa187c2f5d63aedb0ac1a88131e313eea0a81a19f1724f68",
+          "masked_review": {
+            "X": [
+              true,
+              true,
+              true
+            ],
+            "X_notes": [
+              "첫째 대목은 수심 4m에서 30초를 머물렀고 전체의 60%라고 합니다.",
+              "둘째 대목은 남은 20초에 잠항과 부상이 모두 포함되어 속도를 알 수 없다고 설명합니다.",
+              "세 대목으로 나누고 다음 시험에서 구간별 시간과 수심 변화를 기록하자고 제안합니다."
+            ],
+            "Y": [
+              true,
+              true,
+              true
+            ],
+            "Y_notes": [
+              "첫째 항목은 수심 4m에서 30초를 머물렀고 전체의 60%라고 합니다.",
+              "둘째 항목은 남은 20초에 잠항과 부상이 포함되어 속도를 알 수 없다고 합니다.",
+              "세 항목으로 나누고 구간별 시간을 측정해 다음 시험을 판단하자고 합니다."
+            ],
+            "standard_label": "Y"
+          },
+          "adjudicated_standard": [
+            true,
+            true,
+            false
+          ],
+          "adjudication_note": "다음 시험부터 측정을 바꾸자고만 말한다. 현재 운항 기록의 검토를 다음 시험과 연결하지 않는다."
+        }
+      }
+    },
+    {
+      "version": "0.1.5",
+      "method_input_sha256": "62768ed6e44e49c57b3480b272a18681e91d36f6d7bb22da7b09a995d6c212ca",
+      "input_patch_from_final": "--- 0.1.8\n+++ 0.1.5\n@@ -13,9 +13,9 @@\n Apply only the rules enabled by the selected level.\n \n 1. Identify the audience's question and one central benefit or message supported by the material.\n-2. Arrange a small sequence around the audience's question. Honor a requested count. For a short script, draft one or two speakable sentences per beat. For slides, use sparse visual prompts. Cut throat-clearing and repetition before dropping a required fact.\n-3. Use a concrete example or demonstration the evidence supports. Label a proposed demo or an illustrative value as such. If the audience needs to understand part of a measured total, speak the share and the numerical remainder with its unit. Name the activities that occupy the remainder. For a round trip, describe motion in both directions. “Loading and unloading share the remaining four minutes, so we cannot time loading alone.”\n-4. Close on what the central message means for the audience. When the requested next step is a test, link two actions in the final beat: “We'll review [observations from this test]. That will help us decide [what to try or change in the next one].” Keep future outcomes conditional and production notes outside the script.\n+2. Arrange a small sequence around the audience's question. Honor a requested count. For a short script, draft one or two speakable sentences per beat. Spread evidence and explanation across the beats. Cut throat-clearing questions and repeated conclusions before dropping a required fact.\n+3. Use a concrete demonstration or comparison. For part of a measured total, speak the share and the numerical remainder with its unit. Explain what fills that remainder. “The press ran for 12 minutes; eight were spent printing. Loading and unloading share the remaining four minutes, so we cannot time loading alone.” Keep valid comparisons and omit an unsupported quotient.\n+4. End with a decision grounded in the evidence already collected: what will the team examine, and how could it change the next test? Separate that decision from any future measurement. Stop there; keep production notes and method labels out of the speaker's script.\n \n Never fabricate personal experience, quotations, audience reactions, product performance, or a demonstration claimed to have occurred. A memorable sequence is not evidence that a product works.\n \n@@ -130,7 +130,7 @@\n     },\n     {\n       \"id\": \"honest-demonstration\",\n-      \"intent\": \"Use a concrete demonstration or comparison supported by evidence. Distinguish observed from proposed. For questions about timing, name the measured share, numerical remainder and its stages; for a round trip, describe both directions and omit unsupported quotients.\",\n+      \"intent\": \"Match each quantity to its measured event. Explain a multistage interval by naming its stages in the spoken copy and identifying the missing measurement. Omit unsupported metrics and distinguish observed and proposed demonstrations.\",\n       \"classification\": \"guideline\",\n       \"provenance\": \"adaptation\",\n       \"rationale\": \"Original operational application of the identified source within the documented read scope.\",\n@@ -149,7 +149,7 @@\n     },\n     {\n       \"id\": \"supported-payoff\",\n-      \"intent\": \"Close on the supported implication of the central message for the audience. If asked about another test, connect review of current observations to a decision about that future test and keep its outcome conditional.\",\n+      \"intent\": \"Close with what the existing observations can tell the team and how reviewing them informs the next decision. Distinguish that review from future measurements and keep their outcomes conditional.\",\n       \"classification\": \"guideline\",\n       \"provenance\": \"project-original\",\n       \"rationale\": \"Original presentation completion step inferred for this project, not an attributed universal Jobs rule.\",\n@@ -166,7 +166,7 @@\n     }\n   ],\n   \"schemaVersion\": 1,\n-  \"version\": \"0.1.8\",\n+  \"version\": \"0.1.5\",\n   \"status\": \"experimental\",\n   \"applicability\": {\n     \"genres\": [\n@@ -189,7 +189,7 @@\n <en.json>\n {\n   \"method\": \"steve-jobs-presentation\",\n-  \"methodVersion\": \"0.1.8\",\n+  \"methodVersion\": \"0.1.5\",\n   \"locale\": \"en\",\n   \"status\": \"experimental\",\n   \"reviewedSourceRules\": [],\n@@ -207,11 +207,11 @@\n       \"adaptation\": true\n     },\n     \"honest-demonstration\": {\n-      \"instruction\": \"Use a concrete demonstration or comparison supported by evidence. Distinguish observed from proposed. For questions about timing, name the measured share, numerical remainder and its stages; for a round trip, describe both directions and omit unsupported quotients.\",\n+      \"instruction\": \"Match each quantity to its measured event. Explain a multistage interval by naming its stages in the spoken copy and identifying the missing measurement. Omit unsupported metrics and distinguish observed and proposed demonstrations.\",\n       \"adaptation\": true\n     },\n     \"supported-payoff\": {\n-      \"instruction\": \"Close on the supported implication of the central message for the audience. If asked about another test, connect review of current observations to a decision about that future test and keep its outcome conditional.\",\n+      \"instruction\": \"Close with what the existing observations can tell the team and how reviewing them informs the next decision. Distinguish that review from future measurements and keep their outcomes conditional.\",\n       \"adaptation\": false\n     }\n   }\n",
+      "runs": {
+        "en": {
+          "answer": "1. **What did Ingenuity prove?** On 19 April 2021, it flew autonomously at Wright Brothers Field on Mars, rising about 3 meters, hovering, and landing 39.1 seconds after takeoff. The flight demonstrated powered, controlled flight on another planet.\n\n2. **How much of the flight was hovering?** It hovered for 30 of the 39.1 seconds—about 77% of the flight. The remaining 9.1 seconds covered both ascent and descent, so they do not tell us how long the climb took. I would not call 3 meters divided by the whole flight time “average climb speed.”\n\n3. **What should we examine next?** Review the flight data to identify the ascent and descent intervals and decide whether they support a climb-speed estimate. Any estimate depends on what the data show; the total flight time alone is not enough.",
+          "answer_sha256": "b45494780959d6449c86dfcac7baab96c101aab7087f3c9eebb9c134b7d954e4",
+          "prompt_sha256": "e85861836e72afb3d650952fe00767d4f138ed997a6fa23bcfb5b77d8f109f88",
+          "masked_review": {
+            "X": [
+              true,
+              true,
+              true
+            ],
+            "X_notes": [
+              "X says the flight was autonomous and demonstrated powered, controlled flight, and gives about 3 metres, 30 seconds hovering, and 39.1 seconds total.",
+              "X reports about 77% hovering and says the remaining 9.1 seconds include ascent and descent, so total time does not establish climb speed.",
+              "X has three short audience-facing beats and closes with reviewing flight data to inform a decision, without claiming a later test succeeded."
+            ],
+            "Y": [
+              true,
+              true,
+              false
+            ],
+            "Y_notes": [
+              "Y says the flight was autonomous and demonstrated powered, controlled flight, and gives about 3 meters, 30 seconds hovering, and 39.1 seconds total.",
+              "Y reports about 77% hovering and identifies the remaining 9.1 seconds as covering ascent and descent; it rejects deriving climb speed from total time alone.",
+              "Y has three beats, but closes on deciding whether the intervals support a climb-speed estimate rather than deciding whether to attempt the next test."
+            ],
+            "standard_label": "Y"
+          },
+          "adjudicated_standard": [
+            true,
+            true,
+            false
+          ],
+          "adjudication_note": "Flight data are proposed only to estimate climb speed. The closing does not explain how the review informs the next test."
+        },
+        "ko": {
+          "answer": "1. “인제뉴어티는 2021년 4월 19일 화성의 라이트 브라더스 비행장에서 자율 비행으로 약 3미터까지 올라갔습니다. 다른 행성에서 동력을 사용해 제어 비행을 할 수 있음을 보여 준 비행입니다.”\n\n2. “이륙 후 착륙까지는 39.1초였고, 그중 30초, 약 77%는 제자리 비행이었습니다. 나머지 약 9.1초에는 상승과 착륙이 포함되므로, 그 시간을 상승에만 쓴 것으로 볼 수 없습니다. 따라서 3미터를 전체 비행 시간으로 나눈 값은 평균 상승 속도가 아니며, 슬라이드에서 그 지표를 쓰지 않겠습니다.”\n\n3. “연구진은 비행 자료를 검토해 상승과 착륙에 각각 얼마나 걸렸는지 알 수 있는지 살펴볼 수 있습니다. 그 자료를 바탕으로 다음 시험에서 무엇을 측정하거나 조정할지 결정할 수 있습니다.”",
+          "answer_sha256": "5356081e14dcee69fd0d80644990a17cf4750c3de669fc0346b6646c0461836c",
+          "prompt_sha256": "aeaee42a98778d9624765ef1087f43edffa037c5dfced0aa8cd4b9ac08dab6b3",
+          "masked_review": {
+            "X": [
+              true,
+              true,
+              true
+            ],
+            "X_notes": [
+              "X는 자율 동력·제어 비행과 약 3미터 높이를 언급하고 30초 제자리 비행과 39.1초 전체 시간을 구분합니다.",
+              "X는 제자리 비행 비율을 약 77%로 제시하고 남은 9.1초에 상승과 하강·착륙이 포함돼 상승 속도를 구할 수 없다고 설명합니다.",
+              "X는 세 짧은 발화 대목으로 구성하고, 자료 검토가 다음 시험의 목표와 계획을 정하는 근거라고 마무리합니다."
+            ],
+            "Y": [
+              true,
+              true,
+              true
+            ],
+            "Y_notes": [
+              "Y는 자율 동력·제어 비행과 약 3미터 높이를 언급하고 30초 제자리 비행과 39.1초 전체 시간을 구분합니다.",
+              "Y는 제자리 비행을 약 77%로 제시하고 남은 9.1초에 상승과 착륙이 포함돼 상승 속도를 구할 수 없다고 설명합니다.",
+              "Y는 세 발화 대목으로 구성하며 후속 성공을 단언하지 않고 자료 검토가 다음 시험의 측정·조정 결정을 뒷받침한다고 마무리합니다."
+            ],
+            "standard_label": "Y"
+          },
+          "adjudicated_standard": [
+            true,
+            false,
+            true
+          ],
+          "adjudication_note": "남은 9.1초를 계산했지만 하강 구간을 착륙 사건으로 바꿔 상승과 하강에 걸린 시간을 분리할 수 없는 이유를 정확히 나타내지 못했다."
+        },
+        "transfer": {
+          "answer": "1. “실험용 모형 잠수정은 총 50초 동안 운항했고, 그중 30초 동안 수심 4 m에 머물렀습니다. 전체 운항 시간의 60%입니다.”\n\n2. “나머지 20초에는 잠항과 부상이 모두 포함됩니다. 이 기록만으로는 잠항 속도를 알 수 없습니다. 잠항에만 걸린 시간을 따로 재지 않았기 때문입니다.”\n\n3. “기록을 살펴 잠항과 부상에 각각 어떤 측정이 필요한지 정하고, 다음 시험에서 확인해 봅시다. 후속 시험의 성공 여부는 아직 확인되지 않았습니다.”",
+          "answer_sha256": "b3859e8872c755b07beb39444c9ddf87878be707afa902ff8ad4d501eef6c395",
+          "prompt_sha256": "22800c2161c22a94aa187c2f5d63aedb0ac1a88131e313eea0a81a19f1724f68",
+          "masked_review": {
+            "X": [
+              true,
+              true,
+              true
+            ],
+            "X_notes": [
+              "첫 대목은 전체 50초 중 수심 4m에 머문 30초가 60%라고 말합니다.",
+              "둘째 대목은 나머지 20초에 잠항과 부상이 모두 포함되어 잠항 속도를 알 수 없다고 합니다.",
+              "세 대목으로 구성하고 기록을 살펴 다음 시험의 측정을 정하자고 제시합니다."
+            ],
+            "Y": [
+              true,
+              true,
+              true
+            ],
+            "Y_notes": [
+              "첫째 대목은 30초 동안 수심 4m에 머문 시간이 전체의 60%라고 합니다.",
+              "둘째 대목은 나머지 20초에 잠항과 부상이 포함되어 잠항 속도를 알 수 없다고 합니다.",
+              "세 대목으로 구성하고 다음 시험의 측정 항목을 기록에 근거해 제안합니다."
+            ],
+            "standard_label": "X"
+          },
+          "adjudicated_standard": [
+            true,
+            true,
+            true
+          ]
+        }
+      }
+    },
+    {
+      "version": "0.1.6",
+      "method_input_sha256": "0f86ba0afa7d55379cf9d347ed9c5a7785bb308cbea20c35d10215762a2539c4",
+      "input_patch_from_final": "--- 0.1.8\n+++ 0.1.6\n@@ -13,9 +13,9 @@\n Apply only the rules enabled by the selected level.\n \n 1. Identify the audience's question and one central benefit or message supported by the material.\n-2. Arrange a small sequence around the audience's question. Honor a requested count. For a short script, draft one or two speakable sentences per beat. For slides, use sparse visual prompts. Cut throat-clearing and repetition before dropping a required fact.\n-3. Use a concrete example or demonstration the evidence supports. Label a proposed demo or an illustrative value as such. If the audience needs to understand part of a measured total, speak the share and the numerical remainder with its unit. Name the activities that occupy the remainder. For a round trip, describe motion in both directions. “Loading and unloading share the remaining four minutes, so we cannot time loading alone.”\n-4. Close on what the central message means for the audience. When the requested next step is a test, link two actions in the final beat: “We'll review [observations from this test]. That will help us decide [what to try or change in the next one].” Keep future outcomes conditional and production notes outside the script.\n+2. Arrange a small sequence around the audience's question. Honor a requested count. For a short script, draft one or two speakable sentences per beat. Spread evidence and explanation across the beats. Cut throat-clearing questions and repeated conclusions before dropping a required fact.\n+3. Use a concrete demonstration or comparison. For part of a measured total, speak the share and the numerical remainder with its unit. Name the activities that use the remaining time; an end event alone cannot describe the stage leading to it. “The press ran for 12 minutes; eight were spent printing. Loading and unloading share the remaining four minutes, so we cannot time loading alone.” Keep valid comparisons and omit an unsupported quotient.\n+4. For a proposed next test, finish the final spoken beat with **two linked actions**: “We'll review [observations from this test]. That will help us decide [what to try or change in the next one].” Fill the second part with a decision about the next test itself; a better estimate of the last result answers a different question. Keep future outcomes conditional and production notes outside the script.\n \n Never fabricate personal experience, quotations, audience reactions, product performance, or a demonstration claimed to have occurred. A memorable sequence is not evidence that a product works.\n \n@@ -130,7 +130,7 @@\n     },\n     {\n       \"id\": \"honest-demonstration\",\n-      \"intent\": \"Use a concrete demonstration or comparison supported by evidence. Distinguish observed from proposed. For questions about timing, name the measured share, numerical remainder and its stages; for a round trip, describe both directions and omit unsupported quotients.\",\n+      \"intent\": \"Match each quantity to its measured event. Explain a multistage interval by naming its stages in the spoken copy and identifying the missing measurement. Omit unsupported metrics and distinguish observed and proposed demonstrations.\",\n       \"classification\": \"guideline\",\n       \"provenance\": \"adaptation\",\n       \"rationale\": \"Original operational application of the identified source within the documented read scope.\",\n@@ -149,7 +149,7 @@\n     },\n     {\n       \"id\": \"supported-payoff\",\n-      \"intent\": \"Close on the supported implication of the central message for the audience. If asked about another test, connect review of current observations to a decision about that future test and keep its outcome conditional.\",\n+      \"intent\": \"When the audience asks about a next test, connect a specific review of current observations to a decision about that future test in the closing beat. Keep future outcomes conditional.\",\n       \"classification\": \"guideline\",\n       \"provenance\": \"project-original\",\n       \"rationale\": \"Original presentation completion step inferred for this project, not an attributed universal Jobs rule.\",\n@@ -166,7 +166,7 @@\n     }\n   ],\n   \"schemaVersion\": 1,\n-  \"version\": \"0.1.8\",\n+  \"version\": \"0.1.6\",\n   \"status\": \"experimental\",\n   \"applicability\": {\n     \"genres\": [\n@@ -189,7 +189,7 @@\n <en.json>\n {\n   \"method\": \"steve-jobs-presentation\",\n-  \"methodVersion\": \"0.1.8\",\n+  \"methodVersion\": \"0.1.6\",\n   \"locale\": \"en\",\n   \"status\": \"experimental\",\n   \"reviewedSourceRules\": [],\n@@ -207,11 +207,11 @@\n       \"adaptation\": true\n     },\n     \"honest-demonstration\": {\n-      \"instruction\": \"Use a concrete demonstration or comparison supported by evidence. Distinguish observed from proposed. For questions about timing, name the measured share, numerical remainder and its stages; for a round trip, describe both directions and omit unsupported quotients.\",\n+      \"instruction\": \"Match each quantity to its measured event. Explain a multistage interval by naming its stages in the spoken copy and identifying the missing measurement. Omit unsupported metrics and distinguish observed and proposed demonstrations.\",\n       \"adaptation\": true\n     },\n     \"supported-payoff\": {\n-      \"instruction\": \"Close on the supported implication of the central message for the audience. If asked about another test, connect review of current observations to a decision about that future test and keep its outcome conditional.\",\n+      \"instruction\": \"When the audience asks about a next test, connect a specific review of current observations to a decision about that future test in the closing beat. Keep future outcomes conditional.\",\n       \"adaptation\": false\n     }\n   }\n",
+      "runs": {
+        "en": {
+          "answer": "1. “On 19 April 2021, Ingenuity flew autonomously at Wright Brothers Field on Mars, reaching about 3 meters. The flight demonstrated powered, controlled flight on another planet.”\n\n2. “Ingenuity hovered for 30 of the flight’s 39.1 seconds—about 77 percent. The remaining 9.1 seconds cover both the climb and landing, so dividing 3 meters by the full flight time would not give average climb speed; we don’t have the climb time from these figures.”\n\n3. “We’ll review the flight data to see what it tells us about the climb and landing. That will help us decide what measurements or conditions to include in a next flight test.”",
+          "answer_sha256": "4adbcc0f6dc1856e9d0ace1da828fb9c40ccab0aadccbb139609c4e6b1be083c",
+          "prompt_sha256": "e85861836e72afb3d650952fe00767d4f138ed997a6fa23bcfb5b77d8f109f88",
+          "masked_review": {
+            "X": [
+              true,
+              true,
+              true
+            ],
+            "X_notes": [
+              "X reports an autonomous flight at Wright Brothers Field, about 3 m, and powered, controlled flight on another planet, distinguishing 30 seconds of hover from 39.1 seconds total.",
+              "X calculates about 77% hovering, identifies the remaining 9.1 seconds as covering climb and landing, and says total flight time cannot establish climb speed.",
+              "X has three audience-facing beats and closes on reviewing flight data to decide what to include in a next test, without claiming it succeeded."
+            ],
+            "Y": [
+              true,
+              true,
+              true
+            ],
+            "Y_notes": [
+              "Y describes the first flight as autonomous, gives about 3 m, 30 seconds hovering, and 39.1 seconds total, and calls it powered, controlled flight on another planet.",
+              "Y gives about 77% hovering, says the remaining 9.1 seconds include ascent and descent, and rejects inferring climb speed from the full flight time.",
+              "Y uses three audience-facing beats and closes on reviewing data to inform whether to attempt another flight, without claiming later success."
+            ],
+            "standard_label": "X"
+          },
+          "adjudicated_standard": [
+            true,
+            false,
+            true
+          ],
+          "adjudication_note": "The 9.1-second remainder and 77% are correct; “climb and landing” never names the descent interval. The final beat connects data review to what to measure on the next test."
+        },
+        "ko": {
+          "valid": false,
+          "reason": "The isolated runner rejected this arm, including on retries. The diagnostic replay reported a web_search item in an otherwise completed turn. No text was accepted or graded."
+        },
+        "transfer": {
+          "answer": "1. “모형 잠수정은 총 50초 동안 운항했고, 그중 30초 동안 수심 4 m에 머물렀습니다. 전체 시간의 60%를 그 깊이에서 보낸 셈입니다.”\n\n2. “나머지 20초에는 잠항과 부상이 모두 포함되어 있습니다. 이 기록만으로는 잠항에 걸린 시간을 따로 알 수 없어 잠항 속도를 계산할 수 없습니다.”\n\n3. “이번 기록에서 잠항과 부상에 각각 얼마나 걸렸는지 살펴보겠습니다. 그 관찰을 바탕으로 다음 시험에서 무엇을 측정할지 정하겠습니다.”",
+          "answer_sha256": "db76106b40a6796b61466ae20a8bc47145cf72570d8fbad98b9407a842985c92",
+          "prompt_sha256": "22800c2161c22a94aa187c2f5d63aedb0ac1a88131e313eea0a81a19f1724f68",
+          "masked_review": {
+            "X": [
+              true,
+              true,
+              true
+            ],
+            "X_notes": [
+              "첫째 대목은 30초를 50초의 60%로 계산하고 수심 4 m를 밝힙니다.",
+              "둘째 대목은 남은 20초에 잠항과 부상이 모두 포함되어 잠항 속도를 계산할 수 없다고 합니다.",
+              "세 대목으로 나누고 이번 기록을 살펴본 뒤 다음 시험에서 측정할 것을 정한다고 합니다."
+            ],
+            "Y": [
+              true,
+              true,
+              true
+            ],
+            "Y_notes": [
+              "첫째 대목은 30초를 전체 50초의 60%로, 수심을 4 m로 제시합니다.",
+              "둘째 대목은 남은 20초에 잠항과 부상이 포함되어 속도를 알 수 없다고 설명합니다.",
+              "세 대목으로 구성하고 기록할 항목을 근거로 다음 시험을 제안합니다."
+            ],
+            "standard_label": "X"
+          },
+          "adjudicated_standard": [
+            true,
+            true,
+            true
+          ]
+        }
+      }
+    },
+    {
+      "version": "0.1.7",
+      "method_input_sha256": "258bc69017a7aa9f9fa3cbb2ca45808c5562ebee2cd22b2f65128b08d16afb51",
+      "input_patch_from_final": "--- 0.1.8\n+++ 0.1.7\n@@ -13,9 +13,9 @@\n Apply only the rules enabled by the selected level.\n \n 1. Identify the audience's question and one central benefit or message supported by the material.\n-2. Arrange a small sequence around the audience's question. Honor a requested count. For a short script, draft one or two speakable sentences per beat. For slides, use sparse visual prompts. Cut throat-clearing and repetition before dropping a required fact.\n-3. Use a concrete example or demonstration the evidence supports. Label a proposed demo or an illustrative value as such. If the audience needs to understand part of a measured total, speak the share and the numerical remainder with its unit. Name the activities that occupy the remainder. For a round trip, describe motion in both directions. “Loading and unloading share the remaining four minutes, so we cannot time loading alone.”\n-4. Close on what the central message means for the audience. When the requested next step is a test, link two actions in the final beat: “We'll review [observations from this test]. That will help us decide [what to try or change in the next one].” Keep future outcomes conditional and production notes outside the script.\n+2. Arrange a small sequence around the audience's question. Honor a requested count. For a short script, draft one or two speakable sentences per beat. Spread evidence and explanation across the beats. Cut throat-clearing questions and repeated conclusions before dropping a required fact.\n+3. Use a concrete demonstration or comparison. For part of a measured total, speak the share and the numerical remainder with its unit. Name every activity that occupies the remainder. When a trial goes out and returns to its starting point, name the motion in both directions; arrival labels the end but does not describe the trip back. “Loading and unloading share the remaining four minutes, so we cannot time loading alone.” Keep valid comparisons and omit an unsupported quotient.\n+4. For a proposed next test, finish the final spoken beat with **two linked actions**: “We'll review [observations from this test]. That will help us decide [what to try or change in the next one].” Fill the second part with a decision about the next test itself; a better estimate of the last result answers a different question. Keep future outcomes conditional and production notes outside the script.\n \n Never fabricate personal experience, quotations, audience reactions, product performance, or a demonstration claimed to have occurred. A memorable sequence is not evidence that a product works.\n \n@@ -130,7 +130,7 @@\n     },\n     {\n       \"id\": \"honest-demonstration\",\n-      \"intent\": \"Use a concrete demonstration or comparison supported by evidence. Distinguish observed from proposed. For questions about timing, name the measured share, numerical remainder and its stages; for a round trip, describe both directions and omit unsupported quotients.\",\n+      \"intent\": \"Name the measured share, numerical remainder and stages that account for it. For a round trip, describe motion in both directions rather than naming only the arrival. Identify what was not separately measured and leave unsupported quotients off the slide.\",\n       \"classification\": \"guideline\",\n       \"provenance\": \"adaptation\",\n       \"rationale\": \"Original operational application of the identified source within the documented read scope.\",\n@@ -149,7 +149,7 @@\n     },\n     {\n       \"id\": \"supported-payoff\",\n-      \"intent\": \"Close on the supported implication of the central message for the audience. If asked about another test, connect review of current observations to a decision about that future test and keep its outcome conditional.\",\n+      \"intent\": \"When the audience asks about a next test, connect a specific review of current observations to a decision about that future test in the closing beat. Keep future outcomes conditional.\",\n       \"classification\": \"guideline\",\n       \"provenance\": \"project-original\",\n       \"rationale\": \"Original presentation completion step inferred for this project, not an attributed universal Jobs rule.\",\n@@ -166,7 +166,7 @@\n     }\n   ],\n   \"schemaVersion\": 1,\n-  \"version\": \"0.1.8\",\n+  \"version\": \"0.1.7\",\n   \"status\": \"experimental\",\n   \"applicability\": {\n     \"genres\": [\n@@ -189,7 +189,7 @@\n <en.json>\n {\n   \"method\": \"steve-jobs-presentation\",\n-  \"methodVersion\": \"0.1.8\",\n+  \"methodVersion\": \"0.1.7\",\n   \"locale\": \"en\",\n   \"status\": \"experimental\",\n   \"reviewedSourceRules\": [],\n@@ -207,11 +207,11 @@\n       \"adaptation\": true\n     },\n     \"honest-demonstration\": {\n-      \"instruction\": \"Use a concrete demonstration or comparison supported by evidence. Distinguish observed from proposed. For questions about timing, name the measured share, numerical remainder and its stages; for a round trip, describe both directions and omit unsupported quotients.\",\n+      \"instruction\": \"Name the measured share, numerical remainder and stages that account for it. For a round trip, describe motion in both directions rather than naming only the arrival. Identify what was not separately measured and leave unsupported quotients off the slide.\",\n       \"adaptation\": true\n     },\n     \"supported-payoff\": {\n-      \"instruction\": \"Close on the supported implication of the central message for the audience. If asked about another test, connect review of current observations to a decision about that future test and keep its outcome conditional.\",\n+      \"instruction\": \"When the audience asks about a next test, connect a specific review of current observations to a decision about that future test in the closing beat. Keep future outcomes conditional.\",\n       \"adaptation\": false\n     }\n   }\n",
+      "runs": {
+        "en": {
+          "answer": "1. **The milestone:** On 19 April 2021, Ingenuity flew autonomously at Wright Brothers Field on Mars. It proved powered, controlled flight on another planet.\n\n2. **What the timing shows:** The helicopter hovered for 30 of its 39.1 seconds in flight—about 77%. The other 9.1 seconds covered the rest of the flight, including climbing and landing. We shouldn’t label 3 meters divided by the full 39.1 seconds “average climb speed”: the total time includes the hover and descent, so it doesn’t measure climbing alone.\n\n3. **What comes next:** We’ll review the flight data to see what it shows about the climb and landing. That will help us decide what to measure or change in a next flight test.",
+          "answer_sha256": "3f020ad3e3c41f0dd61d44632e90279f806bf248fb950c3aaeb36daab1027f8b",
+          "prompt_sha256": "e85861836e72afb3d650952fe00767d4f138ed997a6fa23bcfb5b77d8f109f88",
+          "masked_review": {
+            "X": [
+              true,
+              true,
+              true
+            ],
+            "X_notes": [
+              "It says the flight was autonomous and demonstrated powered, controlled flight, with about 3 metres, 30 seconds hovering, and 39.1 seconds total.",
+              "It reports about 77% hovering and 9.1 seconds for ascent and descent, and says the full-time ratio cannot establish climb speed.",
+              "It gives three audience-facing beats and closes with reviewing data to decide whether to attempt another flight, without claiming success."
+            ],
+            "Y": [
+              true,
+              false,
+              true
+            ],
+            "Y_notes": [
+              "It says the flight was autonomous and proved powered, controlled flight, while distinguishing 30 seconds hovering from 39.1 seconds total.",
+              "It reports about 77% and rejects the full-time ratio, but does not state that the 9.1 seconds include both ascent and descent; it says climbing and landing.",
+              "It gives three audience-facing beats and says data will inform a next test without claiming it succeeded."
+            ],
+            "standard_label": "Y"
+          },
+          "adjudicated_standard": [
+            true,
+            true,
+            true
+          ],
+          "adjudication_note": "Across the same beat it gives 9.1 seconds for climbing and landing and explicitly names descent alongside the hover in the total time. It rejects the proposed climb speed and closes on what to measure in the next test."
+        },
+        "ko": {
+          "answer": "### 박물관 발화\n\n**비행의 의미:** 2021년 4월 19일, 인제뉴어티는 화성의 라이트 브라더스 비행장에서 자율 비행으로 약 3 m까지 올라갔습니다. 다른 행성에서 동력을 사용해 제어 비행을 할 수 있음을 보여 준 비행입니다.\n\n**시간 기록:** 약 30초 동안 제자리 비행을 했고, 이륙 후 39.1초에 착륙했습니다. 따라서 비행 시간의 약 77%가 제자리 비행이었으며, 나머지 약 9.1초에는 상승과 하강이 모두 포함됩니다.\n\n**슬라이드와 다음 단계:** 3 m를 전체 비행 시간으로 나눈 값을 ‘평균 상승 속도’라고 부르면 상승만의 속도가 되지 않으므로, 그 지표는 쓰지 않는 편이 정확합니다. 나머지 9.1초만으로도 상승 속도를 따로 알아낼 수는 없습니다. 연구진은 비행 자료를 검토해 다음 시험에서 어떤 비행 구간과 시간을 측정할지 결정할 수 있습니다.",
+          "answer_sha256": "bec965899ce28f5823c3c4919f7fb2e58637797eca6a60a5e2ac09e59dad068e",
+          "prompt_sha256": "aeaee42a98778d9624765ef1087f43edffa037c5dfced0aa8cd4b9ac08dab6b3",
+          "masked_review": {
+            "X": [
+              true,
+              true,
+              true
+            ],
+            "X_notes": [
+              "첫 대목은 화성의 자율 동력·제어 비행 의미와 약 3 m 높이를 말하고, 둘째 대목은 30초 제자리 비행과 39.1초 전체 시간을 구분합니다.",
+              "제자리 비행 비율을 약 77%로 제시하고, 남은 9.1초에 상승과 하강이 포함되며 상승 속도를 따로 알 수 없다고 설명합니다.",
+              "짧은 세 대목으로 구성하고, 자료 검토를 통해 다음 시험에서 측정할 구간과 시간을 결정할 수 있다고 마무리합니다."
+            ],
+            "Y": [
+              true,
+              true,
+              true
+            ],
+            "Y_notes": [
+              "첫 대목은 화성의 자율 동력·제어 비행 의미와 약 3 m 높이를 말하고, 둘째 대목은 30초 제자리 비행과 39.1초 전체 시간을 구분합니다.",
+              "약 77%와 남은 약 9.1초를 제시하며, 상승·하강·착륙이 포함되어 상승 속도를 유도할 수 없다고 설명합니다.",
+              "짧은 세 대목으로 구성하고, 비행 자료 검토로 다음 시험의 목표와 계획을 정할 수 있다고 마무리합니다."
+            ],
+            "standard_label": "X"
+          },
+          "adjudicated_standard": [
+            true,
+            true,
+            true
+          ]
+        },
+        "transfer": {
+          "answer": "1. “모형 잠수정은 총 50초 운항했고, 그중 30초 동안 수심 4 m에 머물렀습니다. 전체 시간의 60%입니다.”\n\n2. “나머지 20초에는 잠항과 부상이 모두 포함되어 있어, 이 기록만으로는 잠항 속도를 따로 알 수 없습니다.”\n\n3. “이번 기록에서 잠항과 부상에 각각 얼마나 걸렸는지 살펴보겠습니다. 그 결과를 바탕으로 다음 시험에서 어떤 구간을 따로 측정할지 정하겠습니다.”",
+          "answer_sha256": "aa1805fa9e00e675b65e1c9aa3508992402019134b7ed3901193e00b90f070f3",
+          "prompt_sha256": "22800c2161c22a94aa187c2f5d63aedb0ac1a88131e313eea0a81a19f1724f68",
+          "masked_review": {
+            "X": [
+              true,
+              true,
+              true
+            ],
+            "X_notes": [
+              "X는 정지 시간을 전체의 60%로, 깊이를 4m로 제시합니다.",
+              "X는 나머지 20초에 잠항과 부상이 모두 포함되어 잠항 속도를 알 수 없다고 합니다.",
+              "X는 짧은 세 대목이며, 구간별 기록을 다음 시험 계획의 근거로 듭니다."
+            ],
+            "Y": [
+              true,
+              true,
+              true
+            ],
+            "Y_notes": [
+              "Y는 정지 시간을 전체의 60%로, 깊이를 4m로 제시합니다.",
+              "Y는 나머지 20초에 잠항과 부상이 모두 포함되어 잠항 속도를 알 수 없다고 합니다.",
+              "Y는 짧은 세 대목이며, 기록 검토를 다음 시험에서 측정할 구간을 정하는 근거로 제시합니다."
+            ],
+            "standard_label": "Y"
+          },
+          "adjudicated_standard": [
+            true,
+            true,
+            true
+          ]
+        }
+      }
+    },
+    {
+      "version": "0.1.8",
+      "method_input_sha256": "1d589939d6c6b5b22d7091be6f2c75d38708507f318ac8c68e6744d59cdf96e7",
+      "runs": {
+        "en": {
+          "answer": "1. “On 19 April 2021, Ingenuity flew autonomously at Wright Brothers Field on Mars, reaching about 3 meters. The flight demonstrated powered, controlled flight on another planet.”\n\n2. “It hovered for 30 seconds of its 39.1-second flight—about 77 percent. I would not label 3 meters divided by total flight time as average climb speed: the remaining 9.1 seconds include ascent and descent, so they do not tell us how long the climb took.”\n\n3. “After reviewing the flight data, the team can decide what to change or measure in a future flight; that review alone cannot tell us whether a later test will succeed.”",
+          "answer_sha256": "5e0194f544ea5af1e1ecb0cee640a8fd10ae7122541a58e3fc4a64c8e5cfcb92",
+          "prompt_sha256": "e85861836e72afb3d650952fe00767d4f138ed997a6fa23bcfb5b77d8f109f88",
+          "masked_review": {
+            "X": [
+              true,
+              true,
+              true
+            ],
+            "X_notes": [
+              "X says Ingenuity flew autonomously and demonstrated powered, controlled flight, reaching about 3 meters; it distinguishes 30 seconds hovering from 39.1 seconds total.",
+              "X calculates about 77% hovering and says the remaining 9.1 seconds include ascent and descent, so total time cannot reveal climb speed.",
+              "X uses three audience-facing beats and ends with reviewing the data to guide a future flight without claiming success."
+            ],
+            "Y": [
+              true,
+              true,
+              true
+            ],
+            "Y_notes": [
+              "Y describes an autonomous first flight, about 3 metres, 30 seconds hovering, 39.1 seconds total, and powered, controlled flight on another planet.",
+              "Y gives about 77% hovering, identifies the remaining 9.1 seconds as including ascent and descent, and rejects total time as a basis for climb speed.",
+              "Y uses three beats and closes on reviewing data to decide whether to attempt another flight, without claiming that a later test succeeded."
+            ],
+            "standard_label": "X"
+          },
+          "adjudicated_standard": [
+            true,
+            true,
+            true
+          ]
+        },
+        "ko": {
+          "answer": "인제뉴어티는 화성의 라이트 브라더스 비행장에서 자율 비행으로 약 3 m까지 올라가 30초간 제자리 비행을 한 뒤, 이륙 후 39.1초에 착륙했습니다. 다른 행성에서 동력을 사용해 제어 비행을 할 수 있음을 보여 준 비행입니다.\n\n제자리 비행은 전체 39.1초 중 30초, 약 77%입니다. 남은 약 9.1초에는 상승과 하강이 모두 포함되므로, 그 시간만으로 상승 속도를 알 수 없습니다. 따라서 3 m를 전체 비행 시간으로 나눈 값을 ‘평균 상승 속도’라고 쓰지 않겠습니다.\n\n연구진은 비행 자료를 검토해 상승과 하강의 시간 및 경로를 살펴볼 수 있습니다. 그 관찰을 바탕으로 다음 시험에서 무엇을 조정하거나 측정할지 결정할 수 있습니다.",
+          "answer_sha256": "a51853b9dd0bdfe07a01d852368ce21fc28d9d286f065b10981659109951e42a",
+          "prompt_sha256": "aeaee42a98778d9624765ef1087f43edffa037c5dfced0aa8cd4b9ac08dab6b3",
+          "masked_review": {
+            "X": [
+              true,
+              true,
+              true
+            ],
+            "X_notes": [
+              "첫 대목은 화성의 첫 동력·제어 비행의 의미와 약 3 m, 30초 제자리 비행, 39.1초 착륙을 구분합니다.",
+              "둘째 대목은 약 77%와 남은 9.1초의 상승·하강을 설명하고 전체 시간으로 상승 속도를 구하는 표기를 거부합니다.",
+              "세 대목으로 구성되며 미래의 성공을 단언하지 않고 자료 검토를 다음 시험 결정의 근거로 제시합니다."
+            ],
+            "Y": [
+              false,
+              false,
+              true
+            ],
+            "Y_notes": [
+              "자율 동력·제어 비행의 의미와 높이는 설명하지만, 비행이 화성 최초였다는 점과 30초 제자리 비행을 명시하지 않습니다.",
+              "약 77%와 9.1초를 제시하지만, 남은 시간에 상승·하강·착륙이 포함된다고 하며 체크의 요구 표현과 다릅니다.",
+              "세 대목으로 구성되고 후속 성공을 단언하지 않으며 자료 검토가 다음 시험의 목표와 계획을 정하는 근거라고 마무리합니다."
+            ],
+            "standard_label": "X"
+          },
+          "adjudicated_standard": [
+            true,
+            true,
+            true
+          ]
+        },
+        "transfer": {
+          "answer": "- **기록:** 모형 잠수정은 50초 동안 운항했고, 그중 30초, 즉 60%를 수심 4m에 머물렀습니다.\n- **알 수 있는 것:** 나머지 20초에는 잠항과 부상이 모두 포함됩니다. 두 구간의 시간이 따로 기록되지 않아 잠항 속도는 이 기록만으로 알 수 없습니다.\n- **다음 시험:** 잠항과 부상 시간을 각각 기록해 보겠습니다. 이번 관측을 검토하면 다음 시험에서 무엇을 측정할지 정하는 데 도움이 됩니다. 후속 시험의 성공 여부는 아직 확인되지 않았습니다.",
+          "answer_sha256": "eea9ca0ed3b3a139676dde1fbbaab99000f506cd8caf184b958efde81292d2e8",
+          "prompt_sha256": "22800c2161c22a94aa187c2f5d63aedb0ac1a88131e313eea0a81a19f1724f68",
+          "masked_review": {
+            "X": [
+              true,
+              true,
+              true
+            ],
+            "X_notes": [
+              "전체 50초 중 30초를 수심 4m에서 보냈고 이를 60%라고 했습니다.",
+              "나머지 20초에 잠항과 부상이 모두 포함되어 잠항 속도를 알 수 없다고 했습니다.",
+              "세 대목으로 구성하고 다음 시험을 기록 검토와 구간별 측정에 근거해 정합니다."
+            ],
+            "Y": [
+              true,
+              true,
+              true
+            ],
+            "Y_notes": [
+              "전체 50초 중 30초, 즉 60%를 수심 4m에 머물렀다고 했습니다.",
+              "나머지 20초에 잠항과 부상이 포함되고 기록만으로 잠항 속도를 알 수 없다고 했습니다.",
+              "짧은 세 대목으로 구성하고 관측 기록 검토를 다음 시험에서 측정할 내용의 근거로 제시합니다."
+            ],
+            "standard_label": "Y"
+          },
+          "adjudicated_standard": [
+            true,
+            true,
+            true
+          ]
+        }
+      }
+    }
+  ]
+}

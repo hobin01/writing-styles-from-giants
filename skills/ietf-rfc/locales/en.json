@@ -1,6 +1,6 @@
 {
   "method": "ietf-rfc",
-  "methodVersion": "0.1.3",
+  "methodVersion": "0.1.10",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -14,7 +14,7 @@
       "adaptation": false
     },
     "requirement-strength": {
-      "instruction": "Preserve obligation strength and use BCP 14 uppercase keywords only with an explicit declaration of their meaning. Distinguish optional message selection from requirements on that message once selected.",
+      "instruction": "Include one normative clause per explicit source rule and none for ordinary facts, allowed representations or worked events. Preserve every governed actor, action, condition, literal keyword (including negative, qualified or alternative forms) and source strength. After declaring BCP 14, keep the English keyword next to its clause even in translation. Distinguish a prohibition from physical inability. Rules taken from a referenced standard still bind their original actors. In a translation, pair the source keyword with wording that expresses its force; preserve prohibitions as prohibitions even when no new requirement is being created.",
       "adaptation": false
     },
     "specification-structure": {
@@ -22,7 +22,7 @@
       "adaptation": false
     },
     "reference-role": {
-      "instruction": "Distinguish documents needed to implement the specification from contextual or explanatory references.",
+      "instruction": "A document supplying a requirement that an implementation must follow is normative for that behavior. Classify other material as informative only when it supplies background.",
       "adaptation": false
     }
   }

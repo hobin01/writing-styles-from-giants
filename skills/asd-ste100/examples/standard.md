@@ -2,7 +2,7 @@
 
 [한국어](standard.ko.md)
 
-2026-11-08 · `asd-ste100` 0.1.3 · English · `gpt-6-luna`
+2026-11-09 · `asd-ste100` 0.1.4 · English · `gpt-6-luna`
 
 ### Case and sources
 
@@ -30,19 +30,17 @@
 
 ### With the skill at standard
 
-> ## Recovery handover
+> ## Bootloader recovery handover
 >
-> Keep power connected until both indications are present: a steady flashing pattern on the green activity LED and a green HDMI screen. Disconnect power only after you observe both indications. Remove the recovery microSD card only after power is disconnected.
->
-> In this bench drill, staff check each board at 0, 15, 30, 45, and 60 seconds. Once an indication appears, it persists.
+> Keep the HDMI displays attached. At each check, observe both the steady flashing pattern on the green activity LED and a green HDMI screen. Disconnect power only after both indications are present. Remove the recovery microSD card only after power is disconnected.
 >
 > | Station | First check with both indications | Safe action |
 > |---|---:|---|
-> | North | 30 seconds | Both indications are present. Disconnect power, then remove the recovery microSD card. |
-> | South | 45 seconds | Both indications are present. Disconnect power, then remove the recovery microSD card. |
-> | East | None by 60 seconds | Keep power connected. Do not remove the recovery microSD card; wait until both indications are present. |
+> | North | 30 seconds | Disconnect power, then remove the recovery microSD card. |
+> | South | 45 seconds | Disconnect power, then remove the recovery microSD card. |
+> | East | None by 60 seconds | Keep power connected and the recovery microSD card installed. |
 >
-> Elapsed time alone does not authorize removal. North and South qualify at their first listed check when both indications are present. East does not qualify at 60 seconds because its HDMI screen is not green.
+> Elapsed time alone does not authorize removal. At East, the HDMI screen is still not green at 60 seconds, so both required indications are not present.
 
 ### What changed
 
@@ -52,13 +50,13 @@
 | For East at 60 s, withholds disconnect/removal and does not imply that a fixed timeout proves success or establishes hardware failure. | Met | Met |
 | States the correct sequence in technician-usable English: observe both signals, disconnect power, then remove the recovery microSD card; calls the card consistently by the same name. | Missed | Met |
 
-**Masked review** (Y = baseline; X = standard). Both give 30 s for North, 45 s for South and no qualifying observation for East by 60 s. Both keep East powered and put disconnection before removal. X repeats “recovery microSD card” in each station row; Y shortens it to “the card” in the East row. The safety decisions agree.
+**Review.** North qualifies at 30 seconds and South at 45. East stays powered with the recovery microSD card in place. The handover uses the required component name throughout.
+
+Masked reviewer assignment: X was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/asd-ste100/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/asd-ste100.json).
 
 <details>
 <summary>Run record</summary>
 
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `6600af844428` / `9f618db8c88e` / `369141520448`.
+Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `441382171a3a` / `9f618db8c88e` / `aba6aa20f2e6`.
 
 </details>

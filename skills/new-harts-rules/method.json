@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "new-harts-rules",
-  "version": "0.1.2",
+  "version": "0.1.6",
   "status": "experimental",
   "title": "New Hart’s Rules source-assisted editing",
   "kind": "process",
@@ -37,7 +37,7 @@
   "rules": [
     {
       "id": "preserve-meaning",
-      "intent": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code at every level.",
+      "intent": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code. Derive the counted noun and whole population from source data and use them in both edited copy and notes. Identify the comparison base of relative changes.",
       "classification": "invariant",
       "provenance": "project-original",
       "rationale": "Shared project meaning-preservation requirement; style never authorizes factual change.",
@@ -88,7 +88,7 @@
     },
     {
       "id": "consistent-decisions",
-      "intent": "Apply a verified editorial decision consistently to editable prose while preserving quotations, code, citations, and intentional exceptions.",
+      "intent": "Write every editable instance in the requested house form, including numbers in text and editorial notes. Scan both for the superseded form; only exact protected spans retain it.",
       "classification": "guideline",
       "provenance": "project-original",
       "rationale": "Project editing workflow, not a claim that a book-wide checklist was inspected.",

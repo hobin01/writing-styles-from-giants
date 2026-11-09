@@ -1,6 +1,6 @@
 {
   "method": "federal-plain-language",
-  "methodVersion": "0.1.2",
+  "methodVersion": "0.1.22",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -14,7 +14,7 @@
       "adaptation": false
     },
     "usable-organization": {
-      "instruction": "Put the answer and required action where the reader can find them; group prerequisites, steps, and exceptions coherently.",
+      "instruction": "Lead with the reader’s answer or action and keep conditions beside their step. For a shared budget, keep each option under its own need. For each eligible first option subtract its cost from the limit and look for a compatible second option within the remainder. Recalculate the selected total against the original limit before recommending. Keep any later slack distinct from the original budget.",
       "adaptation": false
     },
     "clear-expression": {

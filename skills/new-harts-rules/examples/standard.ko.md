@@ -2,7 +2,7 @@
 
 [English](standard.md)
 
-2026-11-08 · `new-harts-rules` 0.1.2 · 한국어 · `gpt-6-luna`
+2026-11-09 · `new-harts-rules` 0.1.6 · 한국어 · `gpt-6-luna`
 
 ### 사례와 출처
 
@@ -28,13 +28,13 @@
 
 ### 스킬 적용 답안 · standard
 
-> ### English exhibition text
+> **영어 전시문**
 >
-> In “Housing, England and Wales: Census 2021”, ONS reported that 42.1 per cent of London households could not access a car or van in 2021, a difference of 18.8 percentage points from the 23.3 per cent across England and Wales. This is 81 per cent higher than the England and Wales rate.
+> In “Housing, England and Wales: Census 2021”, ONS reported that 42.1 per cent of London households could not access a car or van in 2021, 18.8 percentage points above the England and Wales figure of 23.3 per cent. This was 81 per cent higher than the England and Wales figure.
 >
-> ### 편집 메모
+> **편집 메모**
 >
-> 분모를 구분했습니다. 18.8퍼센트포인트는 두 비율의 차이(42.1−23.3)이고, 상대 초과율 81퍼센트는 그 차이를 잉글랜드·웨일스 전체 비율 23.3으로 나눈 뒤 가장 가까운 정수로 반올림한 값입니다. 본문의 백분율은 전시회 자체 지침에 따라 ‘per cent’로 표기했으며, New Hart’s Rules 원문 구절이 제공되지 않아 해당 표기 판단을 그 책의 규칙으로 돌리지 않았습니다.
+> 분모는 잉글랜드·웨일스 전체 가구의 비율 23.3%입니다. 런던과의 차이는 42.1%−23.3%=18.8퍼센트포인트이고, 이를 23.3%로 나눈 상대 초과율은 약 81%입니다. 본문에는 전시회 자체 지침에 따라 ‘per cent’를 썼으며, 이 표기 판단은 하우스 스타일에 따른 것입니다. New Hart’s Rules 제2판(2014)의 관련 원문 구절은 제공되지 않아 해당 책의 세부 규칙으로 판단하지 않았습니다.
 
 ### 두 답안의 차이
 
@@ -44,13 +44,13 @@
 | 18.8퍼센트포인트 차이와 23.3%를 기준으로 한 약 81% 상대 초과를 구분한다. | 충족 | 충족 |
 | 영어 본문의 백분율에 per cent를 사용하고, 한국어 편집 메모가 분모와 전시회의 표기 지침을 설명하며 확인하지 않은 책 규칙을 근거로 삼지 않는다. | 충족 | 충족 |
 
-**블라인드 검토** (Y = 미적용, X = 스킬 적용). 두 답 모두 영어 전시문에서 자료 제목과 가구 단위를 지키고, 18.8퍼센트포인트와 약 81% 상대 초과를 구분합니다. 한국어 편집 메모에서 두 답 모두 23.3을 상대 비교의 분모로 제시하고 영어 본문의 ‘per cent’를 전시회 표기 지침으로 설명합니다. Y는 가구 단위로 초안을 고친 이유도 명시합니다.
+**검토 결과.** 측정 대상을 가구로 유지하고 18.8퍼센트포인트의 격차와 약 81%의 상대 초과를 구분합니다. 영문 본문의 표기 근거는 전시회 지침입니다.
+
+익명 채점에서 개정 답안은 X였습니다. 표에는 기존 미적용 답안의 판정을 그대로 실었습니다. [이전 답안과 점수](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/new-harts-rules/examples/standard.ko.md) · [모든 시도와 판정 근거](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/new-harts-rules.json).
 
 <details>
 <summary>실행 기록</summary>
 
-각 답안은 Codex CLI 0.167.0, low 추론 설정의 별도 임시 읽기 전용 세션에서 생성했습니다. 같은 문항의 다른 답안이나 다른 언어의 답안은 입력하지 않았습니다.
-
-SHA-256 앞 12자리 (스킬 지침 / 미적용 원문 / 적용 원문): `984d898d4573` / `401e71e2374b` / `d56137d09d96`.
+미적용 답안은 2026-11-08에 생성했습니다. 개정 답안은 2026-11-09에 Codex CLI 0.167.0, low 추론 설정으로 읽기 전용 독립 세션에서 생성했습니다. SHA-256 앞 12자리 (스킬 지침 / 기존 미적용 원문 / 개정 답안): `9b8e75069344` / `401e71e2374b` / `495020e17085`.
 
 </details>

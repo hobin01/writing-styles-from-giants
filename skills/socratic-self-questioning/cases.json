@@ -62,5 +62,24 @@
     "knownBadRewrite": "Users prefer the new navigation.",
     "method": "socratic-self-questioning",
     "request": "Revise a claim that this survey generalizes to all subscribers, giving the strongest supported conclusion."
+  },
+  {
+    "id": "opt-in-evidence",
+    "type": "meaning-preservation",
+    "source": "An accessibility office says all commuters will read the new sign faster. Volunteer cyclists familiar with the route read it in five seconds on average, two seconds faster than similar cyclists shown the old sign. A new lamp lit only the new sign. Recover the old timing and assess the claim.",
+    "ruleIds": [
+      "test-assumptions",
+      "revise-calibration"
+    ],
+    "expectations": [
+      "Report five seconds versus seven for volunteer cyclists familiar with the route. Only the new sign was lit by the new lamp, so the sign change alone cannot explain the difference with certainty.",
+      "Extending the result to unfamiliar commuters or other conditions requires comparable effects; this test did not measure them."
+    ],
+    "sourceIds": [
+      "plato-apology"
+    ],
+    "level": "standard",
+    "locale": "en",
+    "method": "socratic-self-questioning"
   }
 ]

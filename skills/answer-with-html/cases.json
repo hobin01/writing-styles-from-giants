@@ -56,5 +56,40 @@
     "locale": "en",
     "knownBadRewrite": "Inject the image markup into innerHTML and label the model as always reducing cost by 5%.",
     "method": "answer-with-html"
+  },
+  {
+    "id": "tiered-postage",
+    "method": "answer-with-html",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "standard",
+    "source": "Create an offline HTML postage calculator for whole-gram parcels from 1 through 40 g. Shipping costs 2 tokens for each started block of 20 g. Start at 20 g. Explain the change at 21 g. This is a fictional tariff.",
+    "ruleIds": [
+      "consistent-model",
+      "accessible-fallback"
+    ],
+    "sourceIds": [],
+    "expectations": [
+      "With scripts disabled the default reads 2 tokens. At 21 g the control displays 4 tokens, and the explanation identifies the second block as the reason.",
+      "The price stays 2 tokens below and at the first upper boundary.",
+      "An explanation can name the extra block in words. If it prints the changed price, it must share the calculation used for the live display."
+    ]
+  },
+  {
+    "id": "charging-delay",
+    "method": "answer-with-html",
+    "type": "ordinary",
+    "locale": "en",
+    "level": "standard",
+    "source": "Create a small HTML comparison of two battery-charge logs. The first charge started at 08:03 and ended at 08:16; the second started at 08:10 and ended at 08:30. Show how much longer charging took on the second day.",
+    "ruleIds": [
+      "consistent-model",
+      "accessible-fallback"
+    ],
+    "sourceIds": [],
+    "expectations": [
+      "The charge durations are 13 and 20 minutes, a difference of 7 minutes. The 14-minute change in end time expresses a different quantity.",
+      "The static comparison remains readable on a narrow screen."
+    ]
   }
 ]

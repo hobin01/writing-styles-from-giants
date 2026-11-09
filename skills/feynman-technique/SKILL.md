@@ -10,9 +10,11 @@ Explain how one event leads to the next. A **gap** is the particular step you ca
 Use only the rules enabled by the selected level below.
 
 1. Apply `audience-prerequisites`: use the requested audience and state only the prerequisites that matter. Fit the causal links into the requested form. In a short paragraph, let the example explain the mechanism without a second recap.
-2. Apply `mechanism-and-gaps`: draft the causal or logical links. Replace circular definitions with an actual relation. Check uncertain links against supplied evidence or appropriate sources; if unavailable, state the remaining gap.
+2. Apply `mechanism-and-gaps`: connect the steps that produce the result. Replace a circular definition with an actual relation; check any uncertain link against evidence or name the unresolved gap. For independent timelines, give each instance its own start, exact transition time and state at the observation. In a what-if, report the changed instance first. If removing an event means a barrier was never created, follow the unrestricted path for that instance.
 3. Apply `bounded-simplification`: revise the explanation using necessary terms with definitions and a concrete example. An analogy is optional; identify the point where it stops matching.
 4. In strict mode, apply `transfer-check` with a new worked example, prediction, or counterexample. When the mechanism depends on memory, follow the same input on both sides of a stated reset or change of state. Give the outcome on each side and identify any unknown. A worked prediction checks the explanation; an actual learner response is needed to assess understanding.
+
+Two lamps go dark three beats after each is lit. At beat five the first lamp, lit on beat one, is dark: its light ended on beat four. The second, lit on beat three, stays lit until beat six. If the second was never lit, it is dark at beat five; removing its start did not keep it lit. The first lamp's trace is unchanged.
 
 ## Predict a Python cache hit, then clear the cache
 

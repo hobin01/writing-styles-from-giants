@@ -63,7 +63,7 @@
     },
     {
       "id": "signposted-sequence",
-      "intent": "Develop a small sequence of distinct ideas or stories and connect each to the central message.",
+      "intent": "Use a distinct spoken idea per beat, honor the requested count, and keep the explanation brief enough to deliver aloud. Put process notes outside the script.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Original operational application of the identified source within the documented read scope.",
@@ -83,7 +83,7 @@
     },
     {
       "id": "honest-demonstration",
-      "intent": "Use an available concrete demonstration, comparison, or evidence-backed example; distinguish a proposed demo from one actually observed.",
+      "intent": "Use a concrete demonstration or comparison supported by evidence. Distinguish observed from proposed. For questions about timing, name the measured share, numerical remainder and its stages; for a round trip, describe both directions and omit unsupported quotients.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Original operational application of the identified source within the documented read scope.",
@@ -102,7 +102,7 @@
     },
     {
       "id": "supported-payoff",
-      "intent": "Close by returning to the central benefit and a supported implication or next step while preserving material limitations.",
+      "intent": "Close on the supported implication of the central message for the audience. If asked about another test, connect review of current observations to a decision about that future test and keep its outcome conditional.",
       "classification": "guideline",
       "provenance": "project-original",
       "rationale": "Original presentation completion step inferred for this project, not an attributed universal Jobs rule.",
@@ -119,7 +119,7 @@
     }
   ],
   "schemaVersion": 1,
-  "version": "0.1.1",
+  "version": "0.1.8",
   "status": "experimental",
   "applicability": {
     "genres": [

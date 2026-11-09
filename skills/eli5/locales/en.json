@@ -1,6 +1,6 @@
 {
   "method": "eli5",
-  "methodVersion": "0.1.2",
+  "methodVersion": "0.1.18",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -10,19 +10,19 @@
       "adaptation": false
     },
     "familiar-start": {
-      "instruction": "Start with an experience the intended child can recognize and introduce one unfamiliar idea at a time.",
+      "instruction": "Choose an experience the child recognizes. For a why question, name the actual actor and the change they made. Omit optional background.",
       "adaptation": true
     },
     "show-mechanism": {
-      "instruction": "Explain what happens and why with a concrete sequence; explain a necessary new term at first use.",
+      "instruction": "Explain the action and its effects in small causal steps. Define a necessary new word. State when a cause is unknown.",
       "adaptation": true
     },
     "bounded-model": {
-      "instruction": "Use a concrete example or analogy only when it helps; state the important way the simplified model differs from reality. When amounts span different times or sample sizes, compare them on a common basis and explain what the example can actually show.",
+      "instruction": "Use literal examples or bounded analogies when useful. Give only the common-scale averages when comparing speeds; keep each figure beside its subject and put the named winner directly with its comparative verb. Distinguish individual rates from the difference between them. State untested properties and the specific cause of any separately established real effect.",
       "adaptation": true
     },
     "child-check": {
-      "instruction": "Offer a small prediction or retelling question when learning is the task; use respectful language and a read-aloud form when appropriate.",
+      "instruction": "In a capped demonstration explanation, use the short spoken frames once for each needed job: correct actor and immediate purpose, actual mechanism and any misconception, a named comparison result with common-scale averages, the untested property and the independently known cause and effect. Each filled frame yields one sentence. Skip unneeded frames. Offer a prediction only when teaching is requested.",
       "adaptation": false
     }
   }

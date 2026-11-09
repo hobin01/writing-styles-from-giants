@@ -2,7 +2,7 @@
 
 [한국어](standard.ko.md)
 
-2026-11-08 · `minto-pyramid` 0.2.2 · English · `gpt-6-luna`
+2026-11-09 · `minto-pyramid` 0.2.6 · English · `gpt-6-luna`
 
 ### Case and sources
 
@@ -19,7 +19,7 @@
 
 ### With the skill at standard
 
-> North is the stronger pilot choice: applying FHWA’s estimated crash modification factor of 0.87 to the expected counts implies about 2.6 fewer vehicle–pedestrian crashes at North’s crossings (20 × 0.13), compared with 0.65 fewer at South’s (5 × 0.13). The 3–7 second WALK head start may give pedestrians time to enter the crossing before turning drivers receive green, making them more visible and reducing conflicts. To measure the pilot’s local effect, compare crash changes at the treated crossings before and after installation with changes over the same periods at similar untreated crossings, accounting for differences in baseline crash trends and exposure.
+> Cities face vehicle–pedestrian crash risks at both groups of signalized crossings, and the committee can fund one pilot at either site. Which should it choose to avert more crashes, and how can it assess the pilot’s effect? Apply FHWA’s three-city study factor of 0.87 as an estimate: North’s expected 20 crashes would fall to 17.4, or about 2.6 fewer; South’s 5 would fall to 4.35, or about 0.65 fewer. I recommend North because the same estimated proportional reduction yields a larger absolute decrease there. The 3–7 second WALK head start could give pedestrians time to enter the crossing before turning drivers get green, making them more visible to drivers turning through the intersection. To measure the local effect, compare the change in vehicle–pedestrian crashes at North before and after the pilot with the change over the same periods at comparable untreated signalized crossings; matching traffic, turning patterns, and crash trends would make that comparison more credible. The estimates transfer the study factor to North and South, so they are not guaranteed local results.
 
 ### What changed
 
@@ -29,13 +29,13 @@
 | Recommends North under the stated equal-cost objective and explains how the early WALK relates to turning vehicles or pedestrian visibility. | Met | Met |
 | Labels the estimates conditional on transfer from the study and proposes a local treated-versus-credible-without-treatment comparison to test the effect. | Met | Met |
 
-**Masked review** (Y = baseline; X = standard). Both recommend North, project reductions of 2.6 versus 0.65, explain the visibility mechanism and propose comparing changes with similar untreated crossings over the same periods. X mentions baseline trends and exposure; Y names pedestrian and vehicle volumes. Neither presents the forecast as a measured local benefit.
+**Review.** The recommendation rests on 2.6 versus 0.65 expected crashes prevented at equal cost, conditional on local transfer. Comparable untreated intersections give the city a way to test that forecast.
+
+Masked reviewer assignment: Y was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/minto-pyramid/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/minto-pyramid.json).
 
 <details>
 <summary>Run record</summary>
 
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `1c5f170eb9d4` / `447627226ac3` / `60b342fd8bcc`.
+Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `8063d7e2ee16` / `447627226ac3` / `e506e806dc95`.
 
 </details>

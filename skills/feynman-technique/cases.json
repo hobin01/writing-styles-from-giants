@@ -82,5 +82,25 @@
     "expectations": [
       "The second call hits; the first call after clearing misses while returning the same normalized station name."
     ]
+  },
+  {
+    "id": "irrigation-timers",
+    "type": "ordinary",
+    "source": "Each greenhouse valve stays open for six minutes after its own trigger, then shuts. West triggers at 08:01; East at 08:05. A monitor updates its display at 08:06 without controlling either valve. What does each valve do at 08:08? What if East had never triggered?",
+    "ruleIds": [
+      "mechanism-and-gaps",
+      "bounded-simplification"
+    ],
+    "expectations": [
+      "West closed at 08:07; East remains open until 08:11. The display update controls neither timer.",
+      "Without the East trigger its valve would stay closed; West is unaffected."
+    ],
+    "sourceIds": [
+      "goodstein-1996",
+      "young-2011"
+    ],
+    "level": "standard",
+    "locale": "en",
+    "method": "feynman-technique"
   }
 ]

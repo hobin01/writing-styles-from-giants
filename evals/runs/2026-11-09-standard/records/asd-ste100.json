@@ -1,0 +1,160 @@
+{
+  "method": "asd-ste100",
+  "model": "gpt-6-luna",
+  "level": "standard",
+  "parent_commit": "20f24c66c7e89e6ce1007249c83c33932998bf01",
+  "cases": {
+    "en": {
+      "prompt": "Write a concise English handover for technicians finishing a Raspberry Pi 4 Model B bootloader recovery with HDMI displays attached. Before disconnecting power they must observe both a steady flashing pattern on the green activity LED and a green HDMI screen. Remove the recovery microSD card only after power is disconnected. In this illustrative bench drill, staff check each board at 0, 15, 30, 45 and 60 seconds. Once an indication appears it persists. At North the LED pattern starts at 16 s and the HDMI screen turns green at 29 s. At South the screen turns green at 33 s and the LED pattern starts at 41 s. At East the LED pattern starts at 21 s and the screen is still not green at 60 s. No power has yet been disconnected. Give the first qualifying check for each station and the safe action there. Explain whether the elapsed time alone can authorize removal. Use one consistent name for the recovery microSD card.",
+      "checks": [
+        "Derives North’s first qualifying check as 30 s and South’s as 45 s, using observation times rather than the raw times at which indicators changed.",
+        "For East at 60 s, withholds disconnect/removal and does not imply that a fixed timeout proves success or establishes hardware failure.",
+        "States the correct sequence in technician-usable English: observe both signals, disconnect power, then remove the recovery microSD card; calls the card consistently by the same name."
+      ],
+      "control_checks": [
+        true,
+        true,
+        false
+      ],
+      "previous_standard_checks": [
+        true,
+        true,
+        true
+      ]
+    },
+    "ko": {
+      "prompt": "HDMI 화면이 연결된 Raspberry Pi 4 Model B의 부트로더 복구 마무리 절차를 기술자에게 인계할 한국어 메모를 간결하게 써 주세요. 전원을 분리하려면 녹색 활동 LED가 일정하게 깜박이는 상태와 HDMI 화면이 녹색으로 표시되는 상태를 모두 확인해야 합니다. 복구용 microSD 카드는 전원을 분리한 다음에만 뺍니다. 이 가상 훈련에서는 각 작업대를 0초, 15초, 30초, 45초, 60초에 점검합니다. 한번 나타난 신호는 유지됩니다. North에서는 16초에 LED가 해당 패턴으로 깜박이기 시작하고 29초에 화면이 녹색이 됩니다. South에서는 33초에 화면이 녹색이 되고 41초에 LED가 해당 패턴으로 깜박이기 시작합니다. East에서는 21초에 LED가 해당 패턴으로 깜박이기 시작하지만 60초에도 화면이 녹색이 아닙니다. 아직 어느 작업대에서도 전원을 분리하지 않았습니다. 각 작업대에서 두 신호를 처음 확인할 수 있는 점검 시각과 그때 취할 안전한 조치를 알려 주세요. 경과 시간만으로 카드를 빼도 되는지도 설명하고, 카드 이름은 ‘복구용 microSD 카드’로 통일해 주세요.",
+      "checks": [
+        "신호가 실제로 나타난 순간과 점검 시각을 구분해, North의 첫 적격 점검은 30초, South는 45초라고 판단한다.",
+        "East는 60초에도 전원을 분리하거나 카드를 빼지 않는다. 경과 시간만으로 성공이나 하드웨어 고장을 단정하지 않는다.",
+        "기술자가 따를 순서인 두 신호 확인 → 전원 분리 → 복구용 microSD 카드 제거를 지키고 카드 이름을 일관되게 쓴다."
+      ],
+      "control_checks": [
+        true,
+        true,
+        false
+      ],
+      "previous_standard_checks": [
+        true,
+        true,
+        false
+      ]
+    },
+    "transfer": {
+      "prompt": "Write a concise handover for a bench technician. Do not unlatch the battery module until the isolation lamp is blue and a meter shows zero volts. After unlatching, remove the battery module. Bay Birch has a blue lamp but reads 4 V. Bay Cedar has a blue lamp and reads 0 V. Use “battery module” throughout.",
+      "checks": [
+        "Birch remains latched because its meter reads 4 V.",
+        "For Cedar confirm both conditions, then unlatch, then remove.",
+        "Uses the specified component name consistently and gives no permission to bypass a prerequisite."
+      ],
+      "control": "- **Bay Birch:** Do not unlatch the battery module. The isolation lamp is blue, but the meter reads 4 V.\n- **Bay Cedar:** The isolation lamp is blue and the meter reads 0 V. Unlatch, then remove the battery module."
+    }
+  },
+  "revisions": [
+    {
+      "version": "0.1.4",
+      "method_input_sha256": "bfc9cd58a300f48237acd7b0d8e0b550bcfc12633e7db05e73bc036271983f51",
+      "runs": {
+        "en": {
+          "answer": "## Bootloader recovery handover\n\nKeep the HDMI displays attached. At each check, observe both the steady flashing pattern on the green activity LED and a green HDMI screen. Disconnect power only after both indications are present. Remove the recovery microSD card only after power is disconnected.\n\n| Station | First check with both indications | Safe action |\n|---|---:|---|\n| North | 30 seconds | Disconnect power, then remove the recovery microSD card. |\n| South | 45 seconds | Disconnect power, then remove the recovery microSD card. |\n| East | None by 60 seconds | Keep power connected and the recovery microSD card installed. |\n\nElapsed time alone does not authorize removal. At East, the HDMI screen is still not green at 60 seconds, so both required indications are not present.",
+          "answer_sha256": "aba6aa20f2e6f59e4f94ecc35b0988586f57cf31804ac393254242ece96196b2",
+          "prompt_sha256": "6f59e662dc6455a822c21dd7cae44ad85ab5ac8b5ffd0f5cdab5da2524320045",
+          "masked_review": {
+            "X": [
+              true,
+              true,
+              true
+            ],
+            "Y": [
+              true,
+              true,
+              true
+            ],
+            "X_notes": [
+              "North and South are listed at the first checks after both signals appear: 30 s and 45 s.",
+              "For East, it says to keep power connected and the card installed, and says elapsed time alone does not authorize removal.",
+              "It instructs technicians to observe both signals, disconnect power, then remove the consistently named recovery microSD card."
+            ],
+            "Y_notes": [
+              "North and South are listed at the first checks showing both signals: 30 s and 45 s.",
+              "For East, it says to keep power connected and not remove the card; elapsed time alone does not authorize removal.",
+              "It instructs technicians to confirm both signals, disconnect power, then remove the consistently named recovery microSD card."
+            ],
+            "standard_label": "X"
+          },
+          "adjudicated_standard": [
+            true,
+            true,
+            true
+          ]
+        },
+        "ko": {
+          "answer": "**부트로더 복구 마무리 메모**\n\n전원을 분리하기 전에 녹색 활동 LED가 일정하게 깜박이는지, HDMI 화면이 녹색인지 모두 확인합니다. 복구용 microSD 카드는 전원을 분리한 다음에만 뺍니다. 한 번 나타난 신호는 유지됩니다.\n\n| 작업대 | 두 신호를 처음 확인하는 점검 시각 | 안전한 조치 |\n|---|---:|---|\n| North | 30초 | 두 신호를 확인한 뒤 전원을 분리합니다. 복구용 microSD 카드는 전원이 분리된 다음에 뺍니다. |\n| South | 45초 | 두 신호를 확인한 뒤 전원을 분리합니다. 복구용 microSD 카드는 전원이 분리된 다음에 뺍니다. |\n| East | 아직 확인 불가 | 화면이 녹색이 아니므로 전원을 분리하지 말고 복구용 microSD 카드를 빼지 않습니다. |\n\n경과 시간만으로는 복구용 microSD 카드를 빼면 안 됩니다. 각 작업대에서 두 신호를 모두 확인하고 전원을 분리한 다음에만 뺍니다.",
+          "answer_sha256": "85329a442f12115cdf43777a421fa02943364f41f26981cd85e9f135709dd9c2",
+          "prompt_sha256": "7fc2fa54631e8d052a76df3cf58ac7537a662df2d9664115b7a4b55e30ae06d4",
+          "masked_review": {
+            "X": [
+              true,
+              true,
+              true
+            ],
+            "X_notes": [
+              "North 16초와 29초 신호는 30초 점검에서 처음 함께 확인됩니다.",
+              "East는 60초에도 함께 확인할 수 없다고 하며 전원 분리나 카드 제거를 보류하고 시간만으로 결론을 내리지 않습니다.",
+              "두 신호 확인 후 전원 분리, 그다음 복구용 microSD 카드 제거 순서를 지키며 카드 이름도 일관됩니다."
+            ],
+            "Y": [
+              true,
+              true,
+              true
+            ],
+            "Y_notes": [
+              "North 30초, South 45초에 처음 함께 확인한다고 구분합니다.",
+              "East는 화면이 녹색이 아니므로 전원 분리와 카드 제거를 하지 않으며 시간만으로 제거하지 말라고 합니다.",
+              "두 신호 확인, 전원 분리, 복구용 microSD 카드 제거 순서를 지키고 명칭을 일관되게 씁니다."
+            ],
+            "standard_label": "Y"
+          },
+          "adjudicated_standard": [
+            true,
+            true,
+            true
+          ]
+        },
+        "transfer": {
+          "answer": "**Bench handover**\n\n- **Bay Birch:** Do not unlatch the battery module. The isolation lamp is blue, but the meter reads 4 V.\n- **Bay Cedar:** The isolation lamp is blue, and the meter reads 0 V. Unlatch the battery module, then remove the battery module.\n\n**Method:** ASD-STE100-inspired, standard level.",
+          "answer_sha256": "0276f48c8c6219ef7e2f0a6a71c0423345f1f674fe5efd8e1ba363eca2ea2c9c",
+          "prompt_sha256": "816a5bbc3ef334fbc51b80ed775adc75e81e02a467843ef96c3a37279f37a21a",
+          "masked_review": {
+            "X": [
+              true,
+              true,
+              true
+            ],
+            "Y": [
+              true,
+              true,
+              true
+            ],
+            "X_notes": [
+              "Birch stays latched because the meter reads 4 V.",
+              "For Cedar, it confirms the blue lamp and 0 V before unlatching and removing the battery module.",
+              "It consistently says “battery module” and gives no bypass permission."
+            ],
+            "Y_notes": [
+              "Birch stays latched because the meter reads 4 V.",
+              "For Cedar, it confirms the blue lamp and 0 V before unlatching and removing the battery module.",
+              "It consistently uses “battery module” and gives no bypass permission."
+            ],
+            "standard_label": "X"
+          },
+          "adjudicated_standard": [
+            true,
+            true,
+            true
+          ]
+        }
+      }
+    }
+  ]
+}

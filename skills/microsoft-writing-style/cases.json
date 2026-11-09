@@ -76,5 +76,43 @@
     "method": "microsoft-writing-style",
     "level": "standard",
     "locale": "en"
+  },
+  {
+    "id": "queue-cleanup",
+    "method": "microsoft-writing-style",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "standard",
+    "source": "In a mock print queue, Cancel waiting removes only waiting jobs. Cancel job removes one named job. Pause keeps a waiting job out of Cancel waiting. The plan is paused, the report is waiting, the obsolete poster is paused and the proof is waiting. Keep the plan and report, remove the rest, and use Cancel waiting.",
+    "ruleIds": [
+      "reader-action",
+      "consistent-terms"
+    ],
+    "sourceIds": [
+      "ms-top-ten"
+    ],
+    "expectations": [
+      "Pause the report before Cancel waiting; leave the paused plan alone.",
+      "Use Cancel job for the paused poster and Cancel waiting for the waiting proof. Verify that exactly the plan and report remain.",
+      "Do not pause a job already paused, pause a job to be removed, or invent an unlisted control. Apply single-job commands to one named job at a time."
+    ]
+  },
+  {
+    "id": "label-and-effect",
+    "method": "microsoft-writing-style",
+    "type": "meaning-preservation",
+    "locale": "en",
+    "level": "standard",
+    "source": "Explain the fictitious editor control. Detach removes a panel from the workspace without deleting its file. “Detach” is the control name.",
+    "ruleIds": [
+      "consistent-terms",
+      "reader-action"
+    ],
+    "sourceIds": [
+      "ms-top-ten"
+    ],
+    "expectations": [
+      "Tell the reader to select Detach, with the effect outside the literal label. Keep the distinction between removing the panel and deleting its file."
+    ]
   }
 ]

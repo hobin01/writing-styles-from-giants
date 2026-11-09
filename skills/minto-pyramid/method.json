@@ -44,7 +44,7 @@
     },
     {
       "id": "reader-question",
-      "intent": "Identify the reader's actual question and give a governing answer at the appropriate opening point.",
+      "intent": "Identify the reader's question and state a supported governing answer at the appropriate opening point. For a brief based on supplied evidence, use those facts and label any missing local premise as an assumption or unresolved choice.",
       "classification": "guideline",
       "provenance": "faithful-summary",
       "rationale": "Original operational application of the identified source within the documented read scope.",
@@ -83,7 +83,7 @@
     },
     {
       "id": "evidence-links",
-      "intent": "Check that every supporting point answers the question above it and is supported by facts below it. Distinguish evidence that justifies trying an option from a comparison that could show its effect in the proposed setting.",
+      "intent": "Check claims against their supporting facts, preserving contrary evidence, conditions and uncertainty. In a numerical comparison compute each option's requested change before rounding, then verify against the original amount. Distinguish a forecast that transfers external evidence from a local test with a credible untreated comparison.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Original operational application of the identified source within the documented read scope.",
@@ -142,7 +142,7 @@
     }
   ],
   "schemaVersion": 1,
-  "version": "0.2.2",
+  "version": "0.2.6",
   "status": "experimental",
   "applicability": {
     "genres": [

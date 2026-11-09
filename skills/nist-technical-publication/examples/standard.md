@@ -2,7 +2,7 @@
 
 [한국어](standard.ko.md)
 
-2026-11-08 · `nist-technical-publication` 0.1.3 · English · `gpt-6-luna`
+2026-11-09 · `nist-technical-publication` 0.1.4 · English · `gpt-6-luna`
 
 ### Case and sources
 
@@ -30,70 +30,25 @@
 
 ### With the skill at standard
 
-> ## NIST-F2: upgrade comparison
+> ## NIST-F2 uncertainty improvement note
 >
-> ### Basis
+> The July–August 2013 evaluation reported a Type A statistical fractional frequency uncertainty of **0.44 × 10⁻¹⁵** and a Type B systematic uncertainty of **0.11 × 10⁻¹⁵**. Microwave-amplitude effects dominated Type B; the 80 K environment reduced the blackbody-radiation uncertainty by more than fiftyfold.
 >
-> During the July–August 2013 evaluation, Type A statistical fractional frequency uncertainty was $0.44 \times 10^{-15}$, and Type B systematic uncertainty was $0.11 \times 10^{-15}$. The 80 K environment reduced the blackbody-radiation uncertainty by more than fiftyfold, while microwave-amplitude effects dominated Type B.
->
-> For this comparison, the two uncertainty components are assumed independent and combined by root-sum-square:
->
+> For this comparison, assume the Type A and Type B components are independent and combine them by root-sum-square:
 >
 > $$
 > u_{\mathrm{combined}}=\sqrt{u_A^2+u_B^2}.
 > $$
 >
->
-> ### Results
->
-> | Case | Type A ($\times 10^{-15}$) | Type B ($\times 10^{-15}$) | Combined ($\times 10^{-15}$) |
+> | Scenario | Type A uncertainty (× 10⁻¹⁵) | Type B uncertainty (× 10⁻¹⁵) | Combined uncertainty (× 10⁻¹⁵) |
 > |---|---:|---:|---:|
 > | Present | 0.44 | 0.11 | 0.454 |
 > | Halve Type A | 0.22 | 0.11 | 0.246 |
 > | Halve Type B | 0.44 | 0.055 | 0.443 |
 >
-> Values are rounded to three significant figures. For example, the present result is $\sqrt{0.44^2+0.11^2}=0.4536$, in units of $10^{-15}$.
+> The table values are coefficients on the stated common scale; for example, the present combined uncertainty is **0.454 × 10⁻¹⁵**. On this metric, choose the Type A upgrade: it lowers the combined uncertainty more than halving Type B.
 >
-> ### Recommendation
->
-> On combined uncertainty alone, choose the hypothetical Type A upgrade: it lowers the result to $0.246 \times 10^{-15}$, compared with $0.443 \times 10^{-15}$ for halving Type B. This comparison assumes the upgrades cost the same and affect only the stated component.
->
-> Cooling reduced the blackbody-radiation contribution, but that contribution is only one part of Type B, which is dominated by microwave-amplitude effects; Type A also contributes to the combined uncertainty. Therefore, the more-than-fiftyfold reduction in blackbody-radiation uncertainty does not establish a fiftyfold reduction in overall uncertainty.
-
-<details>
-<summary>Original math delimiters</summary>
-
-````text
-## NIST-F2: upgrade comparison
-
-### Basis
-
-During the July–August 2013 evaluation, Type A statistical fractional frequency uncertainty was \(0.44 \times 10^{-15}\), and Type B systematic uncertainty was \(0.11 \times 10^{-15}\). The 80 K environment reduced the blackbody-radiation uncertainty by more than fiftyfold, while microwave-amplitude effects dominated Type B.
-
-For this comparison, the two uncertainty components are assumed independent and combined by root-sum-square:
-
-\[
-u_{\mathrm{combined}}=\sqrt{u_A^2+u_B^2}.
-\]
-
-### Results
-
-| Case | Type A (\(\times 10^{-15}\)) | Type B (\(\times 10^{-15}\)) | Combined (\(\times 10^{-15}\)) |
-|---|---:|---:|---:|
-| Present | 0.44 | 0.11 | 0.454 |
-| Halve Type A | 0.22 | 0.11 | 0.246 |
-| Halve Type B | 0.44 | 0.055 | 0.443 |
-
-Values are rounded to three significant figures. For example, the present result is \(\sqrt{0.44^2+0.11^2}=0.4536\), in units of \(10^{-15}\).
-
-### Recommendation
-
-On combined uncertainty alone, choose the hypothetical Type A upgrade: it lowers the result to \(0.246 \times 10^{-15}\), compared with \(0.443 \times 10^{-15}\) for halving Type B. This comparison assumes the upgrades cost the same and affect only the stated component.
-
-Cooling reduced the blackbody-radiation contribution, but that contribution is only one part of Type B, which is dominated by microwave-amplitude effects; Type A also contributes to the combined uncertainty. Therefore, the more-than-fiftyfold reduction in blackbody-radiation uncertainty does not establish a fiftyfold reduction in overall uncertainty.
-````
-
-</details>
+> Cooling alone does not establish a fiftyfold improvement in overall uncertainty. The reported reduction applies to the blackbody-radiation component, while other uncertainty sources remain; microwave-amplitude effects dominated Type B, and Type A was larger than Type B in this evaluation.
 
 ### What changed
 
@@ -103,13 +58,13 @@ Cooling reduced the blackbody-radiation contribution, but that contribution is o
 | Correctly calculates both hypothetical totals (about 0.246 × 10⁻¹⁵ if Type A halves and 0.443 × 10⁻¹⁵ if Type B halves) and favors Type A for the larger reduction at equal cost. | Met | Met |
 | Keeps the projections separate from the 2013 observations, bounds the fiftyfold reduction to the blackbody contribution, and identifies microwave amplitude as the dominant Type B effect. | Met | Met |
 
-**Masked review** (X = baseline; Y = standard). Both give the three combined values as 0.454, 0.246 and 0.443 × 10⁻¹⁵, choose Type A, and keep the fiftyfold reduction specific to blackbody radiation. X gives the component values as bare decimals in its table without stating their scale; Y labels all columns and identifies the 2013 measurements. Y's intermediate 0.4536 should be about 0.45354, which still rounds to the stated 0.454.
+**Review.** With independent components, the current combined fractional uncertainty is about 0.454 × 10⁻¹⁵. Halving Type A gives 0.246 × 10⁻¹⁵ versus 0.443 × 10⁻¹⁵ for Type B. The fiftyfold change belongs to the blackbody contribution.
+
+Masked reviewer assignment: X was the revised answer. The table retains the original control grades. [Previous pair and scores](https://github.com/hobin01/writing-styles-from-giants/blob/20f24c66c7e89e6ce1007249c83c33932998bf01/skills/nist-technical-publication/examples/standard.md) · [All attempts and adjudications](https://github.com/hobin01/writing-styles-from-giants/blob/main/evals/runs/2026-11-09-standard/records/nist-technical-publication.json).
 
 <details>
 <summary>Run record</summary>
 
-Each arm was a separate ephemeral read-only Codex CLI 0.167.0 session with low reasoning effort. Neither session was given the other answer or an answer in the other language.
-
-SHA-256 prefixes (entrypoint / baseline answer / standard answer): `33e35b943513` / `25ee98c46dab` / `97c03562d708`.
+Baseline generated 2026-11-08. Revised treatment generated independently on 2026-11-09 with Codex CLI 0.167.0, low reasoning, in a fresh read-only session. SHA-256 prefixes (entrypoint / original baseline / revised answer): `d936b66143cd` / `25ee98c46dab` / `2e5b1c8bcbd6`.
 
 </details>

@@ -1,6 +1,6 @@
 {
   "method": "microsoft-writing-style",
-  "methodVersion": "0.1.2",
+  "methodVersion": "0.1.11",
   "locale": "en",
   "status": "experimental",
   "reviewedSourceRules": [],
@@ -10,7 +10,7 @@
       "adaptation": false
     },
     "reader-action": {
-      "instruction": "Lead with what the reader needs to know or do, with necessary prerequisites adjacent. Trace each action from the reader's starting state to the requested result, including the items a bulk action preserves.",
+      "instruction": "In the reader-facing setup give each item, its actual current state and its immediate action, in source order. Leave a wanted exempt item alone; protect an affected keeper; individually remove an exempt unwanted item; leave an affected unwanted item for bulk removal. Only then issue the bulk command and verify what remains. Evaluate the bulk command on the state left by the setup actions; entries already removed cannot survive it.",
       "adaptation": false
     },
     "concise-helpful-wording": {
@@ -18,7 +18,7 @@
       "adaptation": false
     },
     "consistent-terms": {
-      "instruction": "Use consistent product, technical, and UI terms; preserve actual interface labels and code.",
+      "instruction": "For controls defined in prose, separate each grammatical subject (literal control name) from its full finite verb phrase (effect) in a short key. The label alone belongs after “select.” A label that consumes the action verb or entire sentence cannot identify the control. Preserve explicitly marked labels, code and identifiers.",
       "adaptation": false
     },
     "global-comprehension": {

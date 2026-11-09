@@ -33,7 +33,7 @@
     },
     {
       "id": "explanatory-question",
-      "intent": "Build the page around the user's explanatory question and a readable initial answer; add interaction only for a meaningful conceptual change.",
+      "intent": "For a requested interactive calculation, center the artifact on the assumptions, labeled control, one result and its cause. Add a diagram, timeline or table only when requested or when it explains a distinct relationship; a second numerical account introduces avoidable drift.",
       "classification": "guideline",
       "provenance": "project-original",
       "rationale": "Owner-defined HTML delivery method; comparator implementation is not adopted.",
@@ -50,7 +50,7 @@
     },
     {
       "id": "consistent-model",
-      "intent": "Keep formulas, assumptions and units consistent. Check initial values and both sides of a boundary against the same calculation in the static HTML, controls and explanatory text.",
+      "intent": "Compute and write the starting inputs and results in one script-free numerical readout. Compute live results with one model and update that same readout on load and input. Keep the explanation qualitative or render its numerical claims from the same model; avoid independently typed copies. Verify equality and neighboring states against the source and distinguish clock readings from durations.",
       "classification": "guideline",
       "provenance": "project-original",
       "rationale": "Original correctness constraint for an interactive explanation.",
@@ -118,7 +118,7 @@
     }
   ],
   "schemaVersion": 1,
-  "version": "0.1.3",
+  "version": "0.1.8",
   "status": "experimental",
   "applicability": {
     "genres": [
