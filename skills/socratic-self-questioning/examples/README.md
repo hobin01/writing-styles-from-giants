@@ -1,13 +1,11 @@
-# socratic-self-questioning examples
+# Socratic self-questioning · 소크라테스식 자문
 
-All three levels answer the same question. The standard page includes the question and sources. GPT-6 Luna generated each answer independently in its requested language.
+Examine a claim by asking what it means, what supports it and which challenge could change it. Return the conclusion the evidence still supports.
 
-세 레벨 모두 같은 질문을 사용합니다. 질문과 출처는 standard 페이지에 있습니다. 한국어 답도 각 레벨에서 한국어로 직접 생성했습니다.
+주장이 정확히 무슨 뜻인지, 근거가 무엇인지, 어떤 반론이면 판단이 달라질지 스스로 묻고 근거가 버티는 범위에서 답합니다.
 
 | Level | English | 한국어 |
 | --- | --- | --- |
-| light | [English](light.md) | [한국어](light.ko.md) |
-| standard | [English](standard.md) | [한국어](standard.ko.md) |
-| strict | [English](strict.md) | [한국어](strict.ko.md) |
-
-[Method instructions](../SKILL.md)
+| `light` | Define the claim and resolve the ambiguity that matters most. [Example](light.md) | 주장의 뜻을 밝히고 결론에 가장 큰 영향을 주는 모호한 말을 풉니다. [예제](light.ko.md) |
+| `standard` | Test a consequential assumption with an alternative or counterexample, then revise the claim. [Example](standard.md) | 다른 설명이나 반례로 중요한 가정을 시험하고 주장의 범위를 조정합니다. [예제](standard.ko.md) |
+| `strict` | Address the strongest remaining challenge and stop once further questions would no longer change the conclusion. [Example](strict.md) | 남은 반론 중 가장 중요한 것을 검토하고, 더 물어도 결론이 달라지지 않을 때 멈춥니다. [예제](strict.ko.md) |

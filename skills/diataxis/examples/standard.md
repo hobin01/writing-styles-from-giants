@@ -1,6 +1,6 @@
 # Which Kubernetes rollout did the green CI job actually observe?
 
-[한국어](standard.ko.md) · [light](light.md) · [strict](strict.md)
+[한국어](standard.ko.md) · [light](light.md) · **standard** · [strict](strict.md)
 
 ### Question
 
@@ -8,7 +8,7 @@
 
 **Sources** · [Kubernetes command reference, kubectl rollout status](https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/kubectl_rollout_status/)
 
-### Standard
+### With the skill
 
 > CI followed the latest rollout, so it verified revision 8. The command’s success does not show that revision 7 completed.
 >
@@ -19,6 +19,22 @@
 > ```
 >
 > To return the current status immediately:
+>
+> ```sh
+> kubectl rollout status deployment/checkout-api --watch=false
+> ```
+
+### Without the skill
+
+> CI watched the latest rollout, so it verified revision 8.
+>
+> Watch only revision 7:
+>
+> ```sh
+> kubectl rollout status deployment/checkout-api --revision=7
+> ```
+>
+> Return the current status immediately:
 >
 > ```sh
 > kubectl rollout status deployment/checkout-api --watch=false

@@ -1,6 +1,6 @@
 # Tracking two Linux log files behind the same pathname
 
-[한국어](standard.ko.md) · [light](light.md) · [strict](strict.md)
+[한국어](standard.ko.md) · [light](light.md) · **standard** · [strict](strict.md)
 
 ### Question
 
@@ -8,7 +8,7 @@
 
 **Sources** · [Linux man-pages 6.19, unlink(2)](https://man7.org/linux/man-pages/man2/unlink.2.html)
 
-### Standard
+### With the skill
 
 > A file descriptor refers to an open file independently of the pathname used to open it. Removing the last hard link removes the pathname reference; the file’s data remains allocated while an open descriptor still refers to it. Creating a new file at that pathname creates a separate file.
 >
@@ -18,3 +18,10 @@
 > - **18:25, after the monitor closes:** The original file has no remaining open descriptors and no pathname, so its data is released. New file: 7 MiB. **Total allocated file data: 7 MiB.**
 >
 > These totals count the two files’ data and exclude metadata, as specified.
+
+### Without the skill
+
+> The append goes to the original, unlinked file because the writer’s descriptor still refers to that inode. The new `/var/log/jobs.log` is a separate file and remains 7 MiB.
+>
+> - **18:23, writer closes:** The original file still has a linkless open descriptor held by the monitor, so its 28 MiB remains allocated. The new file has 7 MiB allocated.
+> - **18:25, monitor closes:** The original file has no links or open descriptors, so it is deleted and its 28 MiB is freed. The new file’s 7 MiB remains allocated.

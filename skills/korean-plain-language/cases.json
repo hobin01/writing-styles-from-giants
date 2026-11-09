@@ -128,16 +128,18 @@
     "type": "meaning-preservation",
     "locale": "ko",
     "level": "light",
-    "source": "Last year, visitors could request a refund only upon showing the original receipt. The Korean draft incorrectly says 지금은 영수증 없이도 환급받아요. What should it say in Korean? Explain the edit in English.",
+    "source": "During last year's completed festival, Noa could request a refund only upon showing the original receipt. Today the desk accepts exchanges only. It is unknown whether Noa applied. The Korean draft says 지금은 영수증 없이도 환급받아요. What should it say in Korean? Explain the edit in English.",
     "ruleIds": [
       "preserve-meaning",
-      "register-and-modality"
+      "referents-and-particles"
     ],
     "sourceIds": [
       "nikl-guide"
     ],
     "expectations": [
-      "The replacement is Korean, stays retrospective and requires the original receipt; the accompanying explanation is in English."
-    ]
+      "Read the Korean replacement alone. It must locate the permission in the ended festival, keep the original receipt condition and express that Noa could request a refund at that time. It cannot imply that applications are open now or that Noa received a refund.",
+      "Preserve the exchange option available today. In the English explanation, refer to Noa by name or a gender-neutral expression. Deliver just the requested edit and explanation."
+    ],
+    "knownBadRewrite": "Noa could apply because she had the receipt. 지난해 축제에서 노아는 영수증을 보여 주면 환급을 신청할 수 있어요."
   }
 ]

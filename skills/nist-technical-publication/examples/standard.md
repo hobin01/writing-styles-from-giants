@@ -1,6 +1,6 @@
 # Which improvement would reduce the uncertainty of NIST-F2 more?
 
-[한국어](standard.ko.md) · [light](light.md) · [strict](strict.md)
+[한국어](standard.ko.md) · [light](light.md) · **standard** · [strict](strict.md)
 
 ### Question
 
@@ -8,7 +8,7 @@
 
 **Sources** · [Heavner et al., First Accuracy Evaluation of NIST-F2, Metrologia (2014)](https://www.nist.gov/publications/first-accuracy-evaluation-nist-f2)
 
-### Standard
+### With the skill
 
 > ## Comparison of the two upgrades
 >
@@ -37,3 +37,11 @@
 > ## What the fiftyfold figure means
 >
 > No. The statement that the 80 K environment reduced blackbody-radiation uncertainty by more than a factor of 50 applies to that uncertainty contribution. It does not give the clock’s overall uncertainty improvement. That would require the blackbody contribution before and after cooling, along with the other uncertainty components and how they combine.
+
+### Without the skill
+
+> Halving the Type A component reduces combined uncertainty from $\sqrt{0.44^2+0.11^2}\approx0.454$ to $\sqrt{0.22^2+0.11^2}\approx0.246$, in units of $10^{-15}$.
+>
+> Halving Type B gives $\sqrt{0.44^2+0.055^2}\approx0.443$. So halving Type A reduces the combined uncertainty more.
+>
+> The factor of more than 50 applies to the blackbody-radiation uncertainty, not to the clock’s overall uncertainty. Without the other uncertainty contributions and the blackbody term’s size before the reduction, it does not tell us how much overall uncertainty improved.

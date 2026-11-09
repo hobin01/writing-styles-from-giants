@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "korean-plain-language",
-  "version": "0.1.15",
+  "version": "0.1.26",
   "status": "experimental",
   "title": "Korean plain-language companion",
   "kind": "sentence",
@@ -39,7 +39,7 @@
   "rules": [
     {
       "id": "preserve-meaning",
-      "intent": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations, and code, including obligation versus permission.",
+      "intent": "Preserve facts, numbers, units, negation, conditions, exceptions, uncertainty, quotations, citations and code. In the replacement itself, retain the period and distinguish permission or obligation from what actually happened. Attribute only personal details the source establishes, in both the edit and its explanation.",
       "classification": "invariant",
       "provenance": "project-original",
       "rationale": "Project meaning-preservation requirement, independent of any editorial source.",
@@ -114,7 +114,7 @@
     },
     {
       "id": "logical-sentences",
-      "intent": "Repair predicate agreement and preserve each condition when splitting sentences. In a requested comparison, give each group a separate entry with its numerical result and unit when asked, reasons, and any explicit exemption. State any duty shared by the groups.",
+      "intent": "Repair predicate agreement and preserve each condition when splitting sentences. In a requested comparison, give each group a separate entry with its numerical result and unit when asked, reasons, and any explicit exemption. Connect a shared prerequisite to the outcome it enables. Check each group’s stated count against its qualifying events before quoting a total.",
       "classification": "guideline",
       "provenance": "adaptation",
       "rationale": "Original operational interpretation of pp.15 and28–32 about visible organization and grammatical accuracy. English active-voice and word-count rules do not transfer literally.",

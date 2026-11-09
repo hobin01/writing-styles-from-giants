@@ -1,6 +1,6 @@
 # What can Ingenuity’s flight times tell us?
 
-[한국어](standard.ko.md) · [light](light.md) · [strict](strict.md)
+[한국어](standard.ko.md) · [light](light.md) · **standard** · [strict](strict.md)
 
 ### Question
 
@@ -8,10 +8,18 @@
 
 **Sources** · [NASA, NASA’s Ingenuity Mars Helicopter Succeeds in Historic First Flight (April 19, 2021)](https://www.nasa.gov/news-release/nasas-ingenuity-mars-helicopter-succeeds-in-historic-first-flight/)
 
-### Standard
+### With the skill
 
 > The first flight showed that a powered, controlled aircraft could fly autonomously on Mars.
 >
 > Ingenuity hovered for 30 seconds of its 39.1-second flight—about 77% of the total. The other 9.1 seconds were shared by the climb and descent, so the flight time alone cannot tell us how long the climb took.
 >
 > Dividing 3 m by 39.1 s does not give the average climb speed: the total flight time includes the hover and descent. The times show that Ingenuity reached about 3 m and sustained a 30-second hover, but they don’t establish its climb speed. The team could review the first flight’s flight data to decide whether a later test should change the height, duration, or flight path; what to try next would depend on that review.
+
+### Without the skill
+
+> The flight demonstrated that powered, controlled flight is possible in Mars’ thin atmosphere. Ingenuity rose, held position, and landed under its own control, guided by onboard systems rather than a pilot steering it in real time.
+>
+> Dividing 3 m by 39.1 s gives about **0.077 m/s**, but that is only the change in altitude divided by the *entire flight time*. It is not the average climb speed: the 39.1 seconds include the 30-second hover and the descent. The times show that the hover occupied most of the flight. They don’t tell us the climb duration or speed, or exactly how long the descent took. We’d need the flight’s altitude-versus-time data for that.
+>
+> The team could use that data, along with the helicopter’s sensor and performance records, to check how closely the flight matched its planned profile and how it handled takeoff, hovering, and landing. If the data showed stable control and adequate margins, they could try a modest next step—such as a higher or longer flight, or a short translation—while changing only what the results supported.

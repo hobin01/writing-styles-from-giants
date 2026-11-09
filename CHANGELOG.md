@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 
-- Publish all 22 methods at light, standard and strict on neutral case questions. The English and Korean galleries contain independently generated GPT-6 Luna answers at every level.
+- Publish all 22 methods at light, standard and strict in English and Korean. Each level page contains the neutral case question, GPT-6 Luna’s answer with the skill and its answer to the same question without the skill. Each method’s example README explains its three levels. The Korean editing skill now checks that a historical caption preserves when a person was eligible and for how much.
 - Support explicit method selection, automatic matching and bilingual help from the project or a user-scope Codex link to the live checkout.
 - Add worked examples to the writing skills, including runnable HTML explanations.
 

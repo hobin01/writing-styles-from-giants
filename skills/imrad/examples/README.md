@@ -1,13 +1,11 @@
-# imrad examples
+# IMRaD · 연구 질문에서 결과 해석까지
 
-All three levels answer the same question. The standard page includes the question and sources. GPT-6 Luna generated each answer independently in its requested language.
+Organize a study around its question, what researchers did, what they observed and what the observations support.
 
-세 레벨 모두 같은 질문을 사용합니다. 질문과 출처는 standard 페이지에 있습니다. 한국어 답도 각 레벨에서 한국어로 직접 생성했습니다.
+연구의 질문, 수행한 방법, 관측 결과, 결과가 뒷받침하는 해석을 구분해 씁니다.
 
 | Level | English | 한국어 |
 | --- | --- | --- |
-| light | [English](light.md) | [한국어](light.ko.md) |
-| standard | [English](standard.md) | [한국어](standard.ko.md) |
-| strict | [English](strict.md) | [한국어](strict.ko.md) |
-
-[Method instructions](../SKILL.md)
+| `light` | Open with the research question. Place observations near their interpretation. [Example](light.md) | 연구 질문을 먼저 밝히고, 관측 결과와 그에 대한 해석을 가까이 둡니다. [예제](light.ko.md) |
+| `standard` | Use Introduction, Methods, Results and Discussion for their distinct purposes, respecting any requested journal format. [Example](standard.md) | 서론·방법·결과·논의의 역할에 맞게 내용을 나눕니다. 지정된 학술지 양식이 있으면 따릅니다. [예제](standard.ko.md) |
+| `strict` | Reconcile quantities and claims across sections and identify missing details that matter to interpretation. [Example](strict.md) | 각 절의 수치와 주장이 일치하는지 확인하고, 해석에 영향을 주는 빠진 정보를 짚습니다. [예제](strict.ko.md) |

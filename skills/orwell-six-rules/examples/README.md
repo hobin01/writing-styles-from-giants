@@ -1,15 +1,11 @@
-# orwell-six-rules examples
+# Orwell’s six writing rules · 조지 오웰의 글쓰기 여섯 원칙
 
-All three levels answer the same question. The standard page includes the question and sources. GPT-6 Luna generated each answer independently in its requested language.
+Replace worn phrases and needless words with precise language. Retain any expression that carries necessary meaning. Korean uses the principles of clarity and precision.
 
-세 레벨 모두 같은 질문을 사용합니다. 질문과 출처는 standard 페이지에 있습니다. 한국어 답도 각 레벨에서 한국어로 직접 생성했습니다.
+상투적인 표현과 군더더기를 걷어내고 뜻이 정확한 말을 고릅니다. 필요한 전문어나 표현은 남깁니다. 한국어에는 뜻과 명료성에 관한 원칙을 적용합니다.
 
 | Level | English | 한국어 |
 | --- | --- | --- |
-| light | [English](light.md) | [한국어](light.ko.md) |
-| standard | [English](standard.md) | [한국어](standard.ko.md) |
-| strict | [English](strict.md) | [한국어](strict.ko.md) |
-
-For Korean, the transferable editing rules cover meaning, unnecessary wording and precision. 한국어에는 영어 단어의 길이나 어원에 관한 규칙을 적용하지 않습니다.
-
-[Method instructions](../SKILL.md)
+| `light` | Refresh stale expressions, use familiar accurate words and trim empty phrases. [Example](light.md) | 상투어를 풀고, 뜻이 같은 쉬운 말을 고르며, 의미 없는 표현을 덜어냅니다. [예제](light.ko.md) |
+| `standard` | Apply all six rules where relevant, including checks on agency and jargon. [Example](standard.md) | 누가 행동했는지, 전문어가 필요한지까지 살피며 해당하는 여섯 원칙을 적용합니다. [예제](standard.ko.md) |
+| `strict` | Check each applicable rule and preserve exceptions when a mechanical edit would distort meaning. [Example](strict.md) | 각 원칙을 하나씩 점검하고 기계적으로 고치면 뜻이 달라지는 표현은 살립니다. [예제](strict.ko.md) |

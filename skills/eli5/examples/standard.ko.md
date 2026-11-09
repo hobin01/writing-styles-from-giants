@@ -1,6 +1,6 @@
 # 물에 뜬 얼음이 녹으면 수위가 달라질까?
 
-[English](standard.md) · [light](light.ko.md) · [strict](strict.ko.md)
+[English](standard.md) · [light](light.ko.md) · **standard** · [strict](strict.ko.md)
 
 ### 질문
 
@@ -8,7 +8,7 @@
 
 **출처** · [USGS, Water Density](https://www.usgs.gov/water-science-school/science/water-density) · [NASA, Melting Ocean Ice Affects Sea Level – Unlike Ice Cubes in a Glass](https://sealevel.nasa.gov/news/261/melting-ocean-ice-affects-sea-level-unlike-ice-cubes-in-a-glass/)
 
-### Standard
+### 스킬 적용
 
 > 컵에 얼음 한 덩어리가 떠 있어. 얼음은 90그램이고, 부피는 100밀리리터야. 물 1밀리리터는 1그램이야.
 >
@@ -17,3 +17,9 @@
 > 얼음 전체 부피는 100밀리리터야. 그중 물속에 있는 부분이 90밀리리터니까, 물 위로 나온 부분은 10밀리리터야.
 >
 > 얼음이 녹으면 90그램의 물이 돼. 그 물도 90밀리리터를 차지해. 얼음이 떠 있을 때 밀어낸 물의 양과 같으니, 얼음이 녹아도 물 높이는 그대로야.
+
+### 스킬 미적용
+
+> 얼음의 밀도는 90그램 ÷ 100밀리리터 = 0.9그램/밀리리터입니다. 물에 떠 있는 얼음은 자기 무게만큼의 물을 밀어내므로, 얼음이 잠긴 부피는 90밀리리터입니다. 따라서 물 위로 나온 부분의 부피는 **10밀리리터**입니다.
+>
+> 얼음이 녹으면 얼음은 90그램의 물이 되고, 그 물의 부피는 90밀리리터입니다. 녹기 전 얼음이 밀어내던 물의 부피도 90밀리리터이므로, 물 높이는 **변하지 않습니다**.

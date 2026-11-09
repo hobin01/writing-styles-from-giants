@@ -26,7 +26,7 @@ The commands default to `standard` on each writing request. Codex can also use t
 
 Present: 21 experimental methods plus a Korean-specific linguistic companion, source-to-rule metadata, per-level policies, ordinary/exception/meaning-preservation cases, per-skill Ponytail review, and catalog validation with behavioral unit tests. [CATALOG_CONSOLIDATION.md](CATALOG_CONSOLIDATION.md) records three overlap removals, retained distinctions, and migration. [CATALOG_REVIEW.md](CATALOG_REVIEW.md) documents the original per-skill content review. Existing foundation documentation, CI, and release definitions remain.
 
-The [WSG commands](../commands/WSG.md) support explicit selection, automatic matching and bilingual help. The [English](../EXAMPLES.md) and [Korean](../EXAMPLES.ko.md) galleries show all three levels of each method on a question about a real case. Each answer comes from its own GPT-6 Luna session. [Host verification](COMPATIBILITY.md) covers tested discovery and invocation paths.
+The [WSG commands](../commands/WSG.md) support explicit selection, automatic matching and bilingual help. Each method has six example pages covering three levels in English and Korean. Every page shows the question and GPT-6 Luna’s answers with and without the skill. The three levels share one no-skill answer per question and language. Browse the [English](../EXAMPLES.md) or [Korean](../EXAMPLES.ko.md) gallery. [Host verification](COMPATIBILITY.md) covers tested discovery and invocation paths.
 
 Pending: installer lifecycle integration, independent native-language and reader review, repeated comparative evaluations, release workflow verification, and repository protection settings. All methods retain experimental status.
 

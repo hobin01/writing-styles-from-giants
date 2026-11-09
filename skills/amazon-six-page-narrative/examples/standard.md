@@ -1,6 +1,6 @@
 # Which bridge review should happen before proposed stockpiling?
 
-[한국어](standard.ko.md) · [light](light.md) · [strict](strict.md)
+[한국어](standard.ko.md) · [light](light.md) · **standard** · [strict](strict.md)
 
 ### Question
 
@@ -8,10 +8,16 @@
 
 **Sources** · [NTSB, investigation HWY07MH024, Collapse of I-35W Highway Bridge, Minneapolis, Minnesota](https://www.ntsb.gov/investigations/Pages/HWY07MH024.aspx)
 
-### Standard
+### With the skill
 
 > River Street should receive the immediate load-rating review. The screening estimate gives its plate a capacity of 100 units, while its existing load, deck modification, and proposed stockpile would impose 68 + 18 + 24 = 110 units simultaneously—10 units above the estimate. That is the clearest evidence that planned loading could exceed capacity, matching the owner’s stated priority.
 >
 > Canal Street’s corresponding loads total 95 units, but its plate capacity is unknown. That missing capacity estimate prevents a comparison with the screening objective; it is not evidence that Canal Street is safe. The I-35W investigation also shows why omitted plate capacity and combined loads matter: investigators found undersized U10 gusset plates omitted from earlier load ratings, and modifications, traffic, and construction loads acted together at collapse.
 >
 > Neither stockpile should proceed now. River Street’s proposed loading exceeds its estimated capacity, and Canal Street has no known capacity for comparison. Neither bridge has a final engineering assessment, and the absence of new visible damage does not resolve that uncertainty. Proceed only after an engineering assessment supports the planned simultaneous loads.
+
+### Without the skill
+
+> Review River Street first. The screening gives it the clearest evidence of a possible overload: its simultaneous loads total 110 units against an estimated capacity of 100.
+>
+> Do not approve either stockpile now. River Street’s proposed stockpile would bring the screened total above its estimated capacity. Canal Street’s capacity is unknown, and the combined loads alone do not establish that its stockpile is safe. Neither bridge has a final engineering assessment, so defer both stockpiles until qualified engineers complete the needed reviews and determine acceptable loading.

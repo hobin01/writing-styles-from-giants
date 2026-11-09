@@ -1,11 +1,21 @@
 # 화성 기후 궤도선의 항법 추정은 단위 착오로 어떻게 빗나갔을까요?
 
-[English](light.md) · [standard](standard.ko.md) · [strict](strict.ko.md)
+[English](light.md) · **light** · [standard](standard.ko.md) · [strict](strict.ko.md)
 
-[질문과 출처](standard.ko.md#질문)
+### 질문
 
-### Light
+> 1999년 화성 기후 궤도선에 관한 초안에는 ‘운용상의 불일치가 170 km 추락을 야기했다. SM_FORCES는 추력기 충격량을 파운드힘초로 보냈고 항법 팀은 이를 뉴턴초로 읽었다. 탐사선은 대기에서 불탔다’라고 쓰여 있다. 실제로는 궤도 추정의 오차가 누적되어 탐사선이 계획보다 약 170 km 더 낮게 화성에 접근했다. NASA는 탐사선이 대기 중에서 파괴됐는지 태양 궤도로 빠져나갔는지 판별하지 못했다. SM_FORCES가 숫자 2를 보냈다고 가정하자. 실제 비행 측정값이 아닌 계산 예이며, 1파운드힘초는 약 4.45뉴턴초다. 단위 오류와 탐사선의 행방을 다룬 이 초안은 어떻게 고치면 좋을까?
+
+**출처** · [Cornelius J. Dennehy / NASA, Best Practices for the Design, Development, and Operation of Robust and Reliable Space Vehicle Guidance, Navigation, and Control Systems (NASA/TP–20230005922, April 2023)](https://ntrs.nasa.gov/api/citations/20230005922/downloads/20230005922.pdf)
+
+### 스킬 적용
 
 > 운용상의 단위 오류로 궤도 추정 오차가 누적됐다. SM_FORCES는 추력기 충격량을 파운드힘초로 보냈지만, 항법 팀은 이를 뉴턴초로 해석했다. 그 결과 탐사선은 계획보다 약 170 km 더 낮게 화성에 접근했다. NASA는 탐사선이 대기 중에서 파괴됐는지, 태양 궤도로 빠져나갔는지 판별하지 못했다.
 >
 > 단위 환산의 계산 예를 들면, SM_FORCES가 보낸 2 파운드힘초는 $2 \times 4.45 = 8.9$ 뉴턴초다. 파운드힘초 단위를 약분하면 뉴턴초가 남는다. 항법 팀이 숫자 2를 뉴턴초로 읽으면, 실제 값보다 작은 충격량으로 해석한다. 이 숫자는 설명을 위한 가정이며 실제 비행 측정값은 아니다.
+
+### 스킬 미적용
+
+> 초안을 다음과 같이 고치면 정확합니다.
+>
+> > 단위 변환 오류와 궤도 추정 오차가 겹치면서 화성 기후 궤도선은 계획보다 약 170 km 낮은 고도로 화성에 접근했다. SM_FORCES가 추력기 충격량을 파운드힘초 단위로 보냈지만 항법 팀은 이를 뉴턴초로 해석했다. 예를 들어 SM_FORCES가 숫자 2를 보냈다고 가정하면, 이는 실제 비행 측정값이 아닌 계산 예로 약 8.9뉴턴초에 해당한다. 다만 탐사선이 대기 중에서 파괴됐는지, 화성의 중력을 벗어나 태양 궤도로 빠져나갔는지는 NASA가 확인하지 못했다.

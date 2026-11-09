@@ -1,6 +1,6 @@
 # When one more minute of Mars delay costs a whole contact window
 
-[한국어](standard.ko.md) · [light](light.md) · [strict](strict.md)
+[한국어](standard.ko.md) · [light](light.md) · **standard** · [strict](strict.md)
 
 ### Question
 
@@ -8,7 +8,7 @@
 
 **Sources** · [NASA/JPL, Speaking Percy's Language: How to Talk so Perseverance Will Listen](https://science.nasa.gov/blog/speaking-percys-language-how-to-talk-so-perseverance-will-listen/)
 
-### Standard
+### With the skill
 
 [HTML file · download and open in a browser](standard.html)
 
@@ -107,3 +107,11 @@
 </body>
 </html>
 ````
+
+### Without the skill
+
+> At a 15-minute one-way delay, the signal reaches Perseverance at minute 15. It is ready to reply at minute 25, exactly when a sending slot opens. The reply then takes 15 minutes to reach Earth, arriving at minute 40.
+>
+> At a 16-minute delay, the signal arrives at minute 16, so the rover is ready at minute 26. It misses the minute-25 slot and must wait for the minute-50 slot. The reply takes 16 minutes to return, so Earth receives it at minute 66.
+>
+> A one-minute increase in travel time makes Earth wait 26 minutes longer because the rover’s fixed sending slots turn a small delay into a 25-minute wait for the next slot.

@@ -2,7 +2,7 @@
 
 [한국어 예제](EXAMPLES.ko.md)
 
-Pick a question below to see how the same skill answers at `light`, `standard` and `strict`. The question supplies the facts. The selected skill supplies the writing method. GPT-6 Luna answered each language and level separately.
+For each question, compare the answer with the skill at `light`, `standard` or `strict` to the answer GPT-6 Luna gave without the skill. The question and the answer without the skill stay the same across all three levels. English and Korean were generated separately.
 
 <!-- Generated from the portable examples. -->
 
@@ -41,11 +41,21 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 
 ### Light
 
+#### With the skill
+
 > Prioritize the **River Street bridge** for the immediate load-rating review. Its estimated plate capacity is 100 units, while its existing load, deck modification, and proposed stockpile would impose a combined 110 units at the same time. That estimate indicates planned loading could exceed capacity by 10 units.
 >
 > Neither stockpile should go ahead now. River Street’s estimated combined load exceeds its estimated capacity. Canal Street’s plate capacity is unknown, so there is no evidence that its combined 95-unit load would stay within capacity. The absence of newly visible damage does not resolve either uncertainty, and neither bridge has a final engineering assessment.
 
+#### Without the skill
+
+> Review River Street first. The screening gives it the clearest evidence of a possible overload: its simultaneous loads total 110 units against an estimated capacity of 100.
+>
+> Do not approve either stockpile now. River Street’s proposed stockpile would bring the screened total above its estimated capacity. Canal Street’s capacity is unknown, and the combined loads alone do not establish that its stockpile is safe. Neither bridge has a final engineering assessment, so defer both stockpiles until qualified engineers complete the needed reviews and determine acceptable loading.
+
 ### Standard
+
+#### With the skill
 
 > River Street should receive the immediate load-rating review. The screening estimate gives its plate a capacity of 100 units, while its existing load, deck modification, and proposed stockpile would impose 68 + 18 + 24 = 110 units simultaneously—10 units above the estimate. That is the clearest evidence that planned loading could exceed capacity, matching the owner’s stated priority.
 >
@@ -53,11 +63,25 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 >
 > Neither stockpile should proceed now. River Street’s proposed loading exceeds its estimated capacity, and Canal Street has no known capacity for comparison. Neither bridge has a final engineering assessment, and the absence of new visible damage does not resolve that uncertainty. Proceed only after an engineering assessment supports the planned simultaneous loads.
 
+#### Without the skill
+
+> Review River Street first. The screening gives it the clearest evidence of a possible overload: its simultaneous loads total 110 units against an estimated capacity of 100.
+>
+> Do not approve either stockpile now. River Street’s proposed stockpile would bring the screened total above its estimated capacity. Canal Street’s capacity is unknown, and the combined loads alone do not establish that its stockpile is safe. Neither bridge has a final engineering assessment, so defer both stockpiles until qualified engineers complete the needed reviews and determine acceptable loading.
+
 ### Strict
+
+#### With the skill
 
 > Review River Street first. Its estimated capacity is 100 units, while its existing load, deck modification, and proposed stockpile would impose 68 + 18 + 24 = 110 units simultaneously—10 units above the estimate. That is the clearest evidence that planned loading could exceed capacity, matching the owner’s stated priority. The estimate is not a final engineering assessment, so the review should confirm the capacity and combined loading before any decision to proceed.
 >
 > Do not allow either stockpile to go ahead now. River Street’s proposed combined load exceeds its estimated capacity. Canal Street’s combined load would be 95 units, but its plate capacity is unknown, so there is not enough evidence to establish that the stockpile is within capacity. Neither inspection found new visible damage, but that does not resolve the capacity questions.
+
+#### Without the skill
+
+> Review River Street first. The screening gives it the clearest evidence of a possible overload: its simultaneous loads total 110 units against an estimated capacity of 100.
+>
+> Do not approve either stockpile now. River Street’s proposed stockpile would bring the screened total above its estimated capacity. Canal Street’s capacity is unknown, and the combined loads alone do not establish that its stockpile is safe. Neither bridge has a final engineering assessment, so defer both stockpiles until qualified engineers complete the needed reviews and determine acceptable loading.
 
 ## answer-with-html
 
@@ -70,6 +94,8 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 **Sources** · [NASA/JPL, Speaking Percy's Language: How to Talk so Perseverance Will Listen](https://science.nasa.gov/blog/speaking-percys-language-how-to-talk-so-perseverance-will-listen/)
 
 ### Light
+
+#### With the skill
 
 [HTML file · download and open in a browser](skills/answer-with-html/examples/light.html)
 
@@ -160,7 +186,17 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 </html>
 ````
 
+#### Without the skill
+
+> At a 15-minute one-way delay, the signal reaches Perseverance at minute 15. It is ready to reply at minute 25, exactly when a sending slot opens. The reply then takes 15 minutes to reach Earth, arriving at minute 40.
+>
+> At a 16-minute delay, the signal arrives at minute 16, so the rover is ready at minute 26. It misses the minute-25 slot and must wait for the minute-50 slot. The reply takes 16 minutes to return, so Earth receives it at minute 66.
+>
+> A one-minute increase in travel time makes Earth wait 26 minutes longer because the rover’s fixed sending slots turn a small delay into a 25-minute wait for the next slot.
+
 ### Standard
+
+#### With the skill
 
 [HTML file · download and open in a browser](skills/answer-with-html/examples/standard.html)
 
@@ -260,7 +296,17 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 </html>
 ````
 
+#### Without the skill
+
+> At a 15-minute one-way delay, the signal reaches Perseverance at minute 15. It is ready to reply at minute 25, exactly when a sending slot opens. The reply then takes 15 minutes to reach Earth, arriving at minute 40.
+>
+> At a 16-minute delay, the signal arrives at minute 16, so the rover is ready at minute 26. It misses the minute-25 slot and must wait for the minute-50 slot. The reply takes 16 minutes to return, so Earth receives it at minute 66.
+>
+> A one-minute increase in travel time makes Earth wait 26 minutes longer because the rover’s fixed sending slots turn a small delay into a 25-minute wait for the next slot.
+
 ### Strict
+
+#### With the skill
 
 [HTML file · download and open in a browser](skills/answer-with-html/examples/strict.html)
 
@@ -356,6 +402,14 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 </html>
 ````
 
+#### Without the skill
+
+> At a 15-minute one-way delay, the signal reaches Perseverance at minute 15. It is ready to reply at minute 25, exactly when a sending slot opens. The reply then takes 15 minutes to reach Earth, arriving at minute 40.
+>
+> At a 16-minute delay, the signal arrives at minute 16, so the rover is ready at minute 26. It misses the minute-25 slot and must wait for the minute-50 slot. The reply takes 16 minutes to return, so Earth receives it at minute 66.
+>
+> A one-minute increase in travel time makes Earth wait 26 minutes longer because the rover’s fixed sending slots turn a small delay into a 25-minute wait for the next slot.
+
 ## aristotle-syllogism
 
 **Can new moon and central alignment alone establish a total solar eclipse?** · [한국어](EXAMPLES.ko.md#aristotle-syllogism)
@@ -368,11 +422,28 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 
 ### Light
 
+#### With the skill
+
 > The premise gives a one-way relation: every total solar eclipse happens at new moon. So a listed new moon alone does not establish that totality will happen; the calendar gives no further information. On a date that is not a new moon, there cannot be a total solar eclipse, given the premise.
 >
 > In the hypothetical view, the disks are exactly centered. If the Moon is 0.48° across and the Sun is 0.54° across, the Moon appears smaller and leaves a ring of the Sun visible. If the Moon is 0.56° across, it appears larger and covers the Sun’s disk completely. These are hypothetical comparisons, not measurements of the actual annular eclipse of 14 October 2023.
 
+#### Without the skill
+
+> A total solar eclipse can occur only at new moon, but a new moon does not guarantee totality. The Moon’s shadow must also cross the observer’s location.
+>
+> On a date that is not a new moon, there cannot be a solar eclipse. On a listed new moon date, the calendar alone tells you nothing about whether an eclipse occurs or whether it is total at any particular spot.
+>
+> In the hypothetical perfectly centered view, the Sun is 0.54° across:
+>
+> - If the Moon is 0.48° across, it is too small to cover the Sun fully, so a bright ring remains: an **annular eclipse**.
+> - If the Moon is 0.56° across, it is large enough to cover the Sun fully: a **total eclipse**.
+>
+> These are hypothetical comparisons, not measurements of the 14 October 2023 annular eclipse.
+
 ### Standard
+
+#### With the skill
 
 > The premise says total solar eclipses occur only at new moon. It does not say that every new moon has a total eclipse, so the calendar entry alone provides no information about whether totality will occur on that date. On a date that is not a new moon, the premise rules out a total solar eclipse.
 >
@@ -383,7 +454,22 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 >
 > These are deductions from the stated hypothetical sizes and alignment. The actual annular eclipse of 14 October 2023 is a separate event; neither hypothetical drawing measures it.
 
+#### Without the skill
+
+> A total solar eclipse can occur only at new moon, but a new moon does not guarantee totality. The Moon’s shadow must also cross the observer’s location.
+>
+> On a date that is not a new moon, there cannot be a solar eclipse. On a listed new moon date, the calendar alone tells you nothing about whether an eclipse occurs or whether it is total at any particular spot.
+>
+> In the hypothetical perfectly centered view, the Sun is 0.54° across:
+>
+> - If the Moon is 0.48° across, it is too small to cover the Sun fully, so a bright ring remains: an **annular eclipse**.
+> - If the Moon is 0.56° across, it is large enough to cover the Sun fully: a **total eclipse**.
+>
+> These are hypothetical comparisons, not measurements of the 14 October 2023 annular eclipse.
+
 ### Strict
+
+#### With the skill
 
 > The claim is one-way: every total solar eclipse happens at new moon. It does not say that every new moon has a total solar eclipse.
 >
@@ -397,6 +483,19 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 >
 > These are deductions from the stated sizes and alignment. They do not describe or measure the actual annular eclipse of 14 October 2023.
 
+#### Without the skill
+
+> A total solar eclipse can occur only at new moon, but a new moon does not guarantee totality. The Moon’s shadow must also cross the observer’s location.
+>
+> On a date that is not a new moon, there cannot be a solar eclipse. On a listed new moon date, the calendar alone tells you nothing about whether an eclipse occurs or whether it is total at any particular spot.
+>
+> In the hypothetical perfectly centered view, the Sun is 0.54° across:
+>
+> - If the Moon is 0.48° across, it is too small to cover the Sun fully, so a bright ring remains: an **annular eclipse**.
+> - If the Moon is 0.56° across, it is large enough to cover the Sun fully: a **total eclipse**.
+>
+> These are hypothetical comparisons, not measurements of the 14 October 2023 annular eclipse.
+
 ## asd-ste100
 
 **When can each Raspberry Pi 4 recovery station be powered down?** · [한국어](EXAMPLES.ko.md#asd-ste100)
@@ -409,11 +508,21 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 
 ### Light
 
+#### With the skill
+
 > - **North:** Disconnect power at the 30-second check. Both indications have appeared by then. After disconnecting power, remove the recovery microSD card.
 > - **South:** Disconnect power at the 45-second check. Both indications have appeared by then. After disconnecting power, remove the recovery microSD card.
 > - **East:** Do not disconnect power at any listed check. The HDMI screen is still not green at 60 seconds, so both required indications are not present. Keep the recovery microSD card in place.
 
+#### Without the skill
+
+> - **North:** Disconnect at the **30-second check**; both indications have appeared by then. After disconnecting power, remove the recovery microSD card.
+> - **South:** Disconnect at the **45-second check**; both indications have appeared by then. After disconnecting power, remove the recovery microSD card.
+> - **East:** **Do not disconnect at any listed check.** The screen is not green by 60 seconds, so keep the board powered and leave the recovery microSD card in place.
+
 ### Standard
+
+#### With the skill
 
 > Disconnect power only after both indications are present. Use the first check at or after the later indication.
 >
@@ -423,11 +532,25 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 > | South | 45 s | Remove after disconnecting power. |
 > | East | No check time is safe | Keep the card in place. The screen is not green at 60 s, so both indications are not present. |
 
+#### Without the skill
+
+> - **North:** Disconnect at the **30-second check**; both indications have appeared by then. After disconnecting power, remove the recovery microSD card.
+> - **South:** Disconnect at the **45-second check**; both indications have appeared by then. After disconnecting power, remove the recovery microSD card.
+> - **East:** **Do not disconnect at any listed check.** The screen is not green by 60 seconds, so keep the board powered and leave the recovery microSD card in place.
+
 ### Strict
+
+#### With the skill
 
 > - **North:** Disconnect power at the 30-second check. Both indications are present. Then remove the recovery microSD card.
 > - **South:** Disconnect power at the 45-second check. Both indications are present. Then remove the recovery microSD card.
 > - **East:** Do not disconnect power during the 60-second exercise. The screen is not green, so the required indications are not both present. Leave the recovery microSD card in place.
+
+#### Without the skill
+
+> - **North:** Disconnect at the **30-second check**; both indications have appeared by then. After disconnecting power, remove the recovery microSD card.
+> - **South:** Disconnect at the **45-second check**; both indications have appeared by then. After disconnecting power, remove the recovery microSD card.
+> - **East:** **Do not disconnect at any listed check.** The screen is not green by 60 seconds, so keep the board powered and leave the recovery microSD card in place.
 
 ## boring-professor
 
@@ -441,12 +564,23 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 
 ### Light
 
+#### With the skill
+
 > The writer’s descriptor still refers to the original, unlinked file. Creating a new file at the same pathname does not change what existing descriptors refer to. Therefore, the 4 MiB append goes to the original file.
 >
 > - **18:23, writer closes:** Original file: 24 MiB + 4 MiB = **28 MiB**. New file: **7 MiB**. Total allocated file data: **35 MiB**.
 > - **18:25, monitor closes:** The original file has no open descriptors or hard links, so its data is released. New file: **7 MiB**. Total allocated file data: **7 MiB**.
 
+#### Without the skill
+
+> The append goes to the original, unlinked file because the writer’s descriptor still refers to that inode. The new `/var/log/jobs.log` is a separate file and remains 7 MiB.
+>
+> - **18:23, writer closes:** The original file still has a linkless open descriptor held by the monitor, so its 28 MiB remains allocated. The new file has 7 MiB allocated.
+> - **18:25, monitor closes:** The original file has no links or open descriptors, so it is deleted and its 28 MiB is freed. The new file’s 7 MiB remains allocated.
+
 ### Standard
+
+#### With the skill
 
 > A file descriptor refers to an open file independently of the pathname used to open it. Removing the last hard link removes the pathname reference; the file’s data remains allocated while an open descriptor still refers to it. Creating a new file at that pathname creates a separate file.
 >
@@ -457,7 +591,16 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 >
 > These totals count the two files’ data and exclude metadata, as specified.
 
+#### Without the skill
+
+> The append goes to the original, unlinked file because the writer’s descriptor still refers to that inode. The new `/var/log/jobs.log` is a separate file and remains 7 MiB.
+>
+> - **18:23, writer closes:** The original file still has a linkless open descriptor held by the monitor, so its 28 MiB remains allocated. The new file has 7 MiB allocated.
+> - **18:25, monitor closes:** The original file has no links or open descriptors, so it is deleted and its 28 MiB is freed. The new file’s 7 MiB remains allocated.
+
 ### Strict
+
+#### With the skill
 
 > A hard link is a directory entry that refers to a file’s inode. Removing the last hard link removes the pathname reference, but an open file descriptor can keep the original file’s inode and data available. Creating a new file at the same pathname creates a different file. An open descriptor continues to refer to the file it originally opened.
 >
@@ -467,6 +610,13 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 > - **Immediately after the monitor closes at 18:25:** original file: 0 MiB, because it has no remaining hard links or open descriptors; new file: 7 MiB. **Total: 0 MiB + 7 MiB = 7 MiB.**
 >
 > The append is in the **original file**, which no longer has a pathname after 18:20. The total counts file data that remains allocated; it excludes metadata as specified.
+
+#### Without the skill
+
+> The append goes to the original, unlinked file because the writer’s descriptor still refers to that inode. The new `/var/log/jobs.log` is a separate file and remains 7 MiB.
+>
+> - **18:23, writer closes:** The original file still has a linkless open descriptor held by the monitor, so its 28 MiB remains allocated. The new file has 7 MiB allocated.
+> - **18:25, monitor closes:** The original file has no links or open descriptors, so it is deleted and its 28 MiB is freed. The new file’s 7 MiB remains allocated.
 
 ## diataxis
 
@@ -479,6 +629,8 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 **Sources** · [Kubernetes command reference, kubectl rollout status](https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/kubectl_rollout_status/)
 
 ### Light
+
+#### With the skill
 
 > CI verified **revision 8**, the latest rollout when the watch followed it. The command’s success does not establish that revision 7 finished successfully.
 >
@@ -494,7 +646,25 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 > kubectl rollout status deployment/checkout-api --watch=false
 > ```
 
+#### Without the skill
+
+> CI watched the latest rollout, so it verified revision 8.
+>
+> Watch only revision 7:
+>
+> ```sh
+> kubectl rollout status deployment/checkout-api --revision=7
+> ```
+>
+> Return the current status immediately:
+>
+> ```sh
+> kubectl rollout status deployment/checkout-api --watch=false
+> ```
+
 ### Standard
+
+#### With the skill
 
 > CI followed the latest rollout, so it verified revision 8. The command’s success does not show that revision 7 completed.
 >
@@ -510,7 +680,25 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 > kubectl rollout status deployment/checkout-api --watch=false
 > ```
 
+#### Without the skill
+
+> CI watched the latest rollout, so it verified revision 8.
+>
+> Watch only revision 7:
+>
+> ```sh
+> kubectl rollout status deployment/checkout-api --revision=7
+> ```
+>
+> Return the current status immediately:
+>
+> ```sh
+> kubectl rollout status deployment/checkout-api --watch=false
+> ```
+
 ### Strict
+
+#### With the skill
 
 > CI watched the latest rollout, so it verified **revision 8**. Revision 7 was superseded before the command succeeded.
 >
@@ -521,6 +709,22 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 > ```
 >
 > To return the current status immediately:
+>
+> ```sh
+> kubectl rollout status deployment/checkout-api --watch=false
+> ```
+
+#### Without the skill
+
+> CI watched the latest rollout, so it verified revision 8.
+>
+> Watch only revision 7:
+>
+> ```sh
+> kubectl rollout status deployment/checkout-api --revision=7
+> ```
+>
+> Return the current status immediately:
 >
 > ```sh
 > kubectl rollout status deployment/checkout-api --watch=false
@@ -538,11 +742,21 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 
 ### Light
 
+#### With the skill
+
 > Look at the ice floating in the glass. The part under the water pushes water aside. The ice weighs 90 grams, so it pushes aside 90 milliliters of water. Since the whole ice takes up 100 milliliters of space, 10 milliliters’ worth sticks out above the water.
 >
 > When the ice melts, it becomes 90 milliliters of liquid water. That is the same amount the ice pushed aside while floating, so the water line stays at the same height.
 
+#### Without the skill
+
+> The ice weighs 90 grams, so it must displace 90 milliliters of water to float. Since it takes up 100 milliliters, **10 milliliters of the ice sticks out**.
+>
+> After it melts, it becomes 90 milliliters of water. The floating ice had already displaced that same 90 milliliters, so **the water line stays at the same height**.
+
 ### Standard
+
+#### With the skill
 
 > Look at the ice floating in the glass. Some of it is under the water, and some sticks out.
 >
@@ -552,13 +766,27 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 >
 > When the ice melts, it becomes 90 milliliters of water. That is the same amount of water the floating ice pushed aside, so the water line stays at the same height.
 
+#### Without the skill
+
+> The ice weighs 90 grams, so it must displace 90 milliliters of water to float. Since it takes up 100 milliliters, **10 milliliters of the ice sticks out**.
+>
+> After it melts, it becomes 90 milliliters of water. The floating ice had already displaced that same 90 milliliters, so **the water line stays at the same height**.
+
 ### Strict
+
+#### With the skill
 
 > Look at the ice floating in the glass. The ice weighs 90 grams. In this example, each milliliter of water weighs 1 gram, so the ice pushes aside 90 milliliters of water to hold itself up.
 >
 > The whole piece of ice takes up 100 milliliters of space. The part under the water takes up 90 milliliters, so 10 milliliters’ worth sticks out above the water.
 >
 > When the ice melts, it becomes 90 milliliters of water. That is the same amount of water the floating ice pushed aside. So the water line will stay at the same height.
+
+#### Without the skill
+
+> The ice weighs 90 grams, so it must displace 90 milliliters of water to float. Since it takes up 100 milliliters, **10 milliliters of the ice sticks out**.
+>
+> After it melts, it becomes 90 milliliters of water. The floating ice had already displaced that same 90 milliliters, so **the water line stays at the same height**.
 
 ## federal-plain-language
 
@@ -581,15 +809,25 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 >
 > The times add together. What can I get in time that covers both of us?
 
-**Sources** · [SSA, U.S. Citizen/Child — Replacement Social Security Card (October 2026)](https://www.ssa.gov/pubs/EN-05-10514.pdf)
+**Sources** · [SSA, U.S. Citizen/Child — Replacement Social Security Card (October 2026)](https://www.ssa.gov/pubs/EN-05-10514.pdf) · The child’s certified ID copy and the parent’s certified passport copy take 40 minutes in this exercise (15 + 25).
 
 ### Light
+
+#### With the skill
 
 > You can collect the child’s issuer-certified state non-driver ID in 15 minutes and your issuer-certified passport copy in 25 minutes. Together, they take **40 minutes** and provide proof of identity for both of you.
 >
 > The birth certificate can establish age or citizenship, but it does not replace the child’s proof of identity. The notarized passport photocopy does not count.
 
+#### Without the skill
+
+> You can collect the child’s issuer-certified non-driver ID (15 minutes) and your issuer-certified passport copy (25 minutes). Together, they take **40 minutes** and provide proof of identity for both of you.
+>
+> Your birth certificate establishes the child’s age or citizenship, but it does not replace the child’s identity proof. The notarized passport photocopy does not count.
+
 ### Standard
+
+#### With the skill
 
 > For your child, an issuer-certified copy of the state non-driver ID takes 15 minutes. The birth certificate can establish age or citizenship, but it does not meet the leaflet’s identity requirement.
 >
@@ -597,13 +835,27 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 >
 > Get the certified state ID copy and certified passport copy: 15 + 25 = 40 minutes. That covers both identity requirements within your 45 minutes.
 
+#### Without the skill
+
+> You can collect the child’s issuer-certified non-driver ID (15 minutes) and your issuer-certified passport copy (25 minutes). Together, they take **40 minutes** and provide proof of identity for both of you.
+>
+> Your birth certificate establishes the child’s age or citizenship, but it does not replace the child’s identity proof. The notarized passport photocopy does not count.
+
 ### Strict
+
+#### With the skill
 
 > **Child:** The state non-driver ID is accepted, and its issuer-certified copy takes 15 minutes. The birth certificate can establish age or citizenship, but it does not meet the child’s identity requirement.
 >
 > **Parent:** The issuer-certified passport copy is accepted and takes 25 minutes. The notarized photocopy is not accepted. The original driver’s license is accepted, but takes 35 minutes.
 >
 > **Get the child’s certified ID copy and your certified passport copy.** They take 15 + 25 = **40 minutes**, within your 45-minute limit. Both documents are originals or copies certified by the issuer.
+
+#### Without the skill
+
+> You can collect the child’s issuer-certified non-driver ID (15 minutes) and your issuer-certified passport copy (25 minutes). Together, they take **40 minutes** and provide proof of identity for both of you.
+>
+> Your birth certificate establishes the child’s age or citizenship, but it does not replace the child’s identity proof. The notarized passport photocopy does not count.
 
 ## feynman-technique
 
@@ -617,17 +869,35 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 
 ### Light
 
+#### With the skill
+
 > Bay cached **NXDOMAIN**, meaning the name `photos.example.org` did not exist, at 09:10. Its negative-cache lifetime is the smaller of 240 and 600 seconds: 240 seconds, so that answer expires at 09:14. Ridge cached the same answer at 09:12; its 240-second lifetime expires at 09:16.
 >
 > The operator adds the A record at 09:13, but that does not change either resolver’s cached answer. At 09:15, Bay’s negative entry has expired, so it can query the reachable authority and return the new record. Ridge’s entry is still valid until 09:16, so it can still return NXDOMAIN. Ridge can first pick up the new record at or after 09:16, when its cached negative answer expires and a query can reach the authority.
 
+#### Without the skill
+
+> The negative-cache lifetime is the smaller of the SOA TTL and SOA MINIMUM: **240 seconds**. Bay’s NXDOMAIN cache expires at **09:14**; Ridge’s expires at **09:16**.
+>
+> So at 09:15, Bay can query the updated authority and get the new A record, while Ridge can still answer from its cached NXDOMAIN. Ridge can first pick up the new record at **09:16**, when its negative cache expires.
+
 ### Standard
+
+#### With the skill
 
 > NXDOMAIN means the resolver was told that `photos.example.org` does not exist. For each resolver, the negative-cache lifetime is the smaller of the SOA TTL and SOA MINIMUM: `min(240, 600) = 240` seconds.
 >
 > Bay received NXDOMAIN at 09:10, so its cached answer expires at 09:14. Ridge received NXDOMAIN at 09:12, so its answer expires at 09:16. Adding the A record at 09:13 updates the authority, but it does not erase either resolver’s cached answer. At 09:15, Bay’s negative entry has expired and it can query the updated authority and return the new record. Ridge’s entry is still valid until 09:16, so it can still return NXDOMAIN. Ridge can first pick up the new record at 09:16, when its cached answer expires and a subsequent query can reach the authority.
 
+#### Without the skill
+
+> The negative-cache lifetime is the smaller of the SOA TTL and SOA MINIMUM: **240 seconds**. Bay’s NXDOMAIN cache expires at **09:14**; Ridge’s expires at **09:16**.
+>
+> So at 09:15, Bay can query the updated authority and get the new A record, while Ridge can still answer from its cached NXDOMAIN. Ridge can first pick up the new record at **09:16**, when its negative cache expires.
+
 ### Strict
+
+#### With the skill
 
 > NXDOMAIN means the authoritative DNS response said **photos.example.org does not exist** when each resolver looked it up. A negative cache stores that answer temporarily so repeated queries do not have to go back to the authority. Here, each resolver’s cache time is the smaller of 240 and 600 seconds: 240 seconds.
 >
@@ -636,6 +906,12 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 > Ridge’s timeline: it received NXDOMAIN at 09:12, so its cached answer expires at 09:16. At 09:15 it can still answer from that cache, so its client can receive NXDOMAIN while Bay’s client gets the A record. Ridge can first pick up the new record on a query at or after 09:16, when the cached answer has expired and Ridge can ask the updated authority.
 >
 > For a transfer check, keep both lookup times and the record addition fixed, but move Ridge’s next query to 09:16: its old answer is expired then, so it can fetch the A record. The precise time that query arrives is separate; no new query is assumed to occur automatically at expiry.
+
+#### Without the skill
+
+> The negative-cache lifetime is the smaller of the SOA TTL and SOA MINIMUM: **240 seconds**. Bay’s NXDOMAIN cache expires at **09:14**; Ridge’s expires at **09:16**.
+>
+> So at 09:15, Bay can query the updated authority and get the new A record, while Ridge can still answer from its cached NXDOMAIN. Ridge can first pick up the new record at **09:16**, when its negative cache expires.
 
 ## google-design-doc
 
@@ -649,6 +925,8 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 
 ### Light
 
+#### With the skill
+
 > ## Shift decision
 >
 > **Do not start the index build on this shift.** Ordinary `CREATE INDEX` violates the requirement that order inserts remain available. `CREATE INDEX CONCURRENTLY` permits writes, but its rehearsal p95 write latency was 51 ms.
@@ -661,7 +939,15 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 >
 > If a concurrent build fails, check whether it left an invalid index. The planner ignores that index, but writes still maintain it; remove the invalid index before retrying. Production performance should be observed during any later approved rollout.
 
+#### Without the skill
+
+> Do not start the production index build on this shift. A concurrent build keeps INSERTs available, but the rehearsal p95 was 51 ms—27.5% above the 40 ms baseline, exceeding the 20% limit of 48 ms. Production performance is also unknown, and the build can take time or leave an invalid index that still adds write overhead if it fails.
+>
+> A later production attempt is justified after a rehearsal meets the 48 ms p95 limit and the rollout plan accounts for the two scans, possible waits on transactions, and checking for and removing any invalid index left by a failed build. During the production attempt, monitor write latency and build progress, with a rollback plan if the latency limit is breached.
+
 ### Standard
+
+#### With the skill
 
 > ## Proposal for this shift
 >
@@ -683,7 +969,15 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 >
 > If the representative rehearsal passes and the store can preserve insert availability, reviewers can consider authorizing a production attempt. Approval has not been given.
 
+#### Without the skill
+
+> Do not start the production index build on this shift. A concurrent build keeps INSERTs available, but the rehearsal p95 was 51 ms—27.5% above the 40 ms baseline, exceeding the 20% limit of 48 ms. Production performance is also unknown, and the build can take time or leave an invalid index that still adds write overhead if it fails.
+>
+> A later production attempt is justified after a rehearsal meets the 48 ms p95 limit and the rollout plan accounts for the two scans, possible waits on transactions, and checking for and removing any invalid index left by a failed build. During the production attempt, monitor write latency and build progress, with a rollback plan if the latency limit is breached.
+
 ### Strict
+
+#### With the skill
 
 > # Index build proposal
 >
@@ -710,6 +1004,12 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 >
 > Repeat the concurrent-build rehearsal in a representative test setting. Authorize a production attempt only if the rehearsal p95 write latency is **at most 48 ms** and the build keeps `INSERT`s available. Production performance remains unmeasured; observe it during any subsequently approved rollout. No production attempt is approved by this proposal.
 
+#### Without the skill
+
+> Do not start the production index build on this shift. A concurrent build keeps INSERTs available, but the rehearsal p95 was 51 ms—27.5% above the 40 ms baseline, exceeding the 20% limit of 48 ms. Production performance is also unknown, and the build can take time or leave an invalid index that still adds write overhead if it fails.
+>
+> A later production attempt is justified after a rehearsal meets the 48 ms p95 limit and the rollout plan accounts for the two scans, possible waits on transactions, and checking for and removing any invalid index left by a failed build. During the production attempt, monitor write latency and build progress, with a rollback plan if the latency limit is breached.
+
 ## gtm-formal
 
 **When do two Raft candidates need the same vote?** · [한국어](EXAMPLES.ko.md#gtm-formal)
@@ -721,6 +1021,8 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 **Sources** · [Ongaro and Ousterhout, In Search of an Understandable Consensus Algorithm, §5.2](https://raft.github.io/raft.pdf) · [etcd v3.5 FAQ, fault tolerance](https://etcd.io/docs/v3.5/faq/#what-is-failure-tolerance)
 
 ### Light
+
+#### With the skill
 
 > Let $N$ be the number of servers and $q$ the minimum votes required to win. Assume each server can vote for at most one of the two candidates during the term.
 >
@@ -737,7 +1039,18 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 >
 > A safe threshold prevents two winners but does not guarantee a winner. For example, in a seven-server cluster with threshold four, if the votes split $3$–$3$ and one server abstains, neither candidate reaches four.
 
+#### Without the skill
+
+> To prevent two candidates from winning the same term, the minimum vote threshold must be **more than half the servers**. If two candidates each reached that threshold, their vote sets would overlap, which is impossible when each server votes for at most one candidate.
+>
+> - **Seven servers:** Four votes is safe. Two sets of four would require eight votes, but only seven servers can vote.
+> - **Eight servers:** Four votes is not safe. The votes could split four to each candidate, giving both a win. The threshold must be at least five.
+>
+> A safe threshold does not guarantee a winner. Votes might split among candidates so that none reaches the minimum—for example, in a seven-server cluster with a four-vote threshold, a 3–2–2 split leaves no winner.
+
 ### Standard
+
+#### With the skill
 
 > Let $N$ be the number of servers, and let $T$ be the minimum votes required for a candidate to win. Each server can vote for at most one candidate during the term. Thus, for any two distinct candidates with vote counts $v_1$ and $v_2$,
 > $$
@@ -753,7 +1066,18 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 >
 > A safe threshold does not guarantee a winner. For example, with seven servers and threshold four, if votes split $3$–$3$ and one server abstains, neither candidate reaches four. Thus a threshold can prevent multiple winners while still allowing no winner.
 
+#### Without the skill
+
+> To prevent two candidates from winning the same term, the minimum vote threshold must be **more than half the servers**. If two candidates each reached that threshold, their vote sets would overlap, which is impossible when each server votes for at most one candidate.
+>
+> - **Seven servers:** Four votes is safe. Two sets of four would require eight votes, but only seven servers can vote.
+> - **Eight servers:** Four votes is not safe. The votes could split four to each candidate, giving both a win. The threshold must be at least five.
+>
+> A safe threshold does not guarantee a winner. Votes might split among candidates so that none reaches the minimum—for example, in a seven-server cluster with a four-vote threshold, a 3–2–2 split leaves no winner.
+
 ### Strict
+
+#### With the skill
 
 > Let $N\in\{7,8\}$ be the number of servers, and let $T$ be the minimum number of votes each candidate needs to win. Assume each server casts at most one vote in the term, and both candidates win exactly when each receives at least $T$ votes.
 >
@@ -767,6 +1091,15 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 >
 > A safe threshold does not guarantee a winner. For example, in the seven-server cluster with threshold four, if no server votes, neither candidate reaches four votes. More generally, votes may be split so that each candidate receives fewer than $T$.
 
+#### Without the skill
+
+> To prevent two candidates from winning the same term, the minimum vote threshold must be **more than half the servers**. If two candidates each reached that threshold, their vote sets would overlap, which is impossible when each server votes for at most one candidate.
+>
+> - **Seven servers:** Four votes is safe. Two sets of four would require eight votes, but only seven servers can vote.
+> - **Eight servers:** Four votes is not safe. The votes could split four to each candidate, giving both a win. The threshold must be at least five.
+>
+> A safe threshold does not guarantee a winner. Votes might split among candidates so that none reaches the minimum—for example, in a seven-server cluster with a four-vote threshold, a 3–2–2 split leaves no winner.
+
 ## hunminjeongeum
 
 **How much of a Seoul journey can a better map shorten?** · [한국어](EXAMPLES.ko.md#hunminjeongeum)
@@ -779,23 +1112,41 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 
 ### Light
 
+#### With the skill
+
 > On the old map, this passenger needed 200 seconds to find the transfer because transfer stations were hard to distinguish from ordinary stops. The redesign puts the connecting line colours in a single transfer symbol, making the transfer easier to locate.
 >
 > Applying the largest reported reduction of about 69% saves about 138 seconds from the search time, leaving about 62 seconds. The nine-minute ride is unchanged, so the trip’s total time falls from 740 seconds to about 602 seconds—a saving of about 138 seconds, or 2 minutes 18 seconds. This is the result if the passenger experiences the largest reduction measured in the experiment; it does not mean every passenger will save that much.
 
+#### Without the skill
+
+> At a 69% reduction, finding the transfer would take about 62 seconds instead of 200, saving roughly 138 seconds (2 minutes 18 seconds). The trip would take about 10 minutes 2 seconds including the nine-minute ride.
+
 ### Standard
+
+#### With the skill
 
 > When transfer stations were hard to distinguish from ordinary stops, the 2023 map’s single symbol showing the connecting line colours helped passengers spot a transfer. If this passenger saw the largest reported reduction in search time, finding the transfer would take about 62 seconds instead of 200 seconds—a saving of about 138 seconds.
 >
 > The nine-minute ride is unchanged. In seconds, the trip’s total time would go from 740 seconds (200 + 540) to about 602 seconds (62 + 540), a reduction of about 138 seconds. This applies the experiment’s reported maximum reduction of about 69% to the time spent finding the transfer; the result is conditional, and the experiment does not establish that every passenger would save this much.
 
+#### Without the skill
+
+> At a 69% reduction, finding the transfer would take about 62 seconds instead of 200, saving roughly 138 seconds (2 minutes 18 seconds). The trip would take about 10 minutes 2 seconds including the nine-minute ride.
+
 ### Strict
+
+#### With the skill
 
 > For a passenger who had trouble spotting a transfer station among ordinary stops, the 2023 map’s single symbol showing the connecting line colours could make the transfer quicker to find.
 >
 > At the largest reported reduction, the 200-second search would take about 62 seconds: 200 × (1 − 0.69) = 62. The nine-minute train ride is unchanged, so the whole trip would go from 740 seconds to about 602 seconds—a saving of about 138 seconds.
 >
 > So, if this passenger saw the largest reduction measured in the experiment, the trip could be about 138 seconds shorter. The result comes from an eye-tracking experiment with Korean and international participants in their twenties and thirties; it does not establish the reduction for every passenger.
+
+#### Without the skill
+
+> At a 69% reduction, finding the transfer would take about 62 seconds instead of 200, saving roughly 138 seconds (2 minutes 18 seconds). The trip would take about 10 minutes 2 seconds including the nine-minute ride.
 
 ## ietf-rfc
 
@@ -808,6 +1159,8 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 **Sources** · [IETF RFC 6585 §4, 429 Too Many Requests](https://www.rfc-editor.org/rfc/rfc6585.html#section-4) · [IETF RFC 9110 §10.2.3, Retry-After](https://www.rfc-editor.org/rfc/rfc9110.html#section-10.2.3)
 
 ### Light
+
+#### With the skill
 
 > ### Scope and roles
 >
@@ -828,7 +1181,20 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 >
 > These are suggested retry times, not guarantees that a retry will succeed. The client could still receive another 429 or another response.
 
+#### Without the skill
+
+> The server has returned two valid indications of when to retry. RFC 9110 allows `Retry-After` to be either a delay in seconds or an HTTP date. The two responses therefore give:
+>
+> - **First response:** `45` seconds after receipt at 09:00:05 UTC, so the client should wait until **09:00:50 UTC**.
+> - **Second response:** the date **09:01:00 UTC**, so the client should wait until that time.
+>
+> The client should treat each response on its own; the values are not cumulative. A 429 signals rate limiting, and the server should explain the condition when practical. It may use `Retry-After` to guide the client, but the header does not guarantee that a retry will succeed: the client could still be rate limited or receive another 429.
+>
+> A cache **must not store either 429 response**. That restriction does not prevent the client from receiving the responses or acting on their retry guidance.
+
 ### Standard
+
+#### With the skill
 
 > ### Interpretation of the 429 responses
 >
@@ -847,7 +1213,20 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 >
 > IANA applicability: these rules do not request an IANA action.
 
+#### Without the skill
+
+> The server has returned two valid indications of when to retry. RFC 9110 allows `Retry-After` to be either a delay in seconds or an HTTP date. The two responses therefore give:
+>
+> - **First response:** `45` seconds after receipt at 09:00:05 UTC, so the client should wait until **09:00:50 UTC**.
+> - **Second response:** the date **09:01:00 UTC**, so the client should wait until that time.
+>
+> The client should treat each response on its own; the values are not cumulative. A 429 signals rate limiting, and the server should explain the condition when practical. It may use `Retry-After` to guide the client, but the header does not guarantee that a retry will succeed: the client could still be rate limited or receive another 429.
+>
+> A cache **must not store either 429 response**. That restriction does not prevent the client from receiving the responses or acting on their retry guidance.
+
 ### Strict
+
+#### With the skill
 
 > ## Interpretation of the 429 responses
 >
@@ -879,6 +1258,17 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 >
 > `Retry-After` indicates when to try again; it does not guarantee that a later request will succeed. The server could still send another 429 if the client retries while the rate condition persists.
 
+#### Without the skill
+
+> The server has returned two valid indications of when to retry. RFC 9110 allows `Retry-After` to be either a delay in seconds or an HTTP date. The two responses therefore give:
+>
+> - **First response:** `45` seconds after receipt at 09:00:05 UTC, so the client should wait until **09:00:50 UTC**.
+> - **Second response:** the date **09:01:00 UTC**, so the client should wait until that time.
+>
+> The client should treat each response on its own; the values are not cumulative. A 429 signals rate limiting, and the server should explain the condition when practical. It may use `Retry-After` to guide the client, but the header does not guarantee that a retry will succeed: the client could still be rate limited or receive another 429.
+>
+> A cache **must not store either 429 response**. That restriction does not prevent the client from receiving the responses or acting on their retry guidance.
+
 ## imrad
 
 **What ten years of LIGO background would imply for GW150914** · [한국어](EXAMPLES.ko.md#imrad)
@@ -891,13 +1281,23 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 
 ### Light
 
+#### With the skill
+
 > What do the GW150914 observations establish, and what does the ten-year rate imply if the rate stays the same?
 >
 > **Observations.** On 14 September 2015, the LIGO instruments at Livingston and Hanford recorded GW150914. The signal rose from 35 to 250 Hz and reached a peak dimensionless strain of $1.0 \times 10^{-21}$. Researchers found that it matched a predicted waveform for a binary black-hole merger. In this search, noise candidates at least this significant were estimated to occur at a rate below one per 203,000 years.
 >
 > **Interpretation.** The waveform match supports a binary black-hole merger interpretation. The rate estimate is an upper bound: it does not establish that the rate is zero, or give the probability that GW150914 was noise. If the rate stays the same for ten years, the expected number of such noise candidates is below $10/203{,}000 \approx 0.0000493$. Zero and some false alarms are both compatible with that bound. It cannot guarantee zero false alarms in ten years, and it does not establish that the probability GW150914 was noise is zero.
 
+#### Without the skill
+
+> The observations show that both LIGO instruments recorded a signal consistent with the predicted waveform of a binary black-hole merger. The stated rate means that, under the search’s noise model, candidates at least this significant would occur on average fewer than once per 203,000 years.
+>
+> If that rate stays the same, the expected number in ten years is fewer than $10/203{,}000 \approx 4.9\times10^{-5}$. That makes a false alarm over ten years very unlikely, but it does not guarantee zero: a rate is an average, and a rare event can still occur. Nor does this rate alone establish that the probability GW150914 was noise is zero; it quantifies how often noise would produce a candidate this significant under the model, not the probability that this particular candidate was noise.
+
 ### Standard
+
+#### With the skill
 
 > ## Introduction
 >
@@ -917,7 +1317,15 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 >
 > The ten-year calculation bounds the expected count; it does not guarantee that ten years contain zero false alarms. Zero and some such candidates are both compatible with the bound. The rate estimate also does not establish that the probability GW150914 was noise is zero. The supplied observations support the waveform match and a very low estimated background rate, but they do not give a probability that this particular signal was noise.
 
+#### Without the skill
+
+> The observations show that both LIGO instruments recorded a signal consistent with the predicted waveform of a binary black-hole merger. The stated rate means that, under the search’s noise model, candidates at least this significant would occur on average fewer than once per 203,000 years.
+>
+> If that rate stays the same, the expected number in ten years is fewer than $10/203{,}000 \approx 4.9\times10^{-5}$. That makes a false alarm over ten years very unlikely, but it does not guarantee zero: a rate is an average, and a rare event can still occur. Nor does this rate alone establish that the probability GW150914 was noise is zero; it quantifies how often noise would produce a candidate this significant under the model, not the probability that this particular candidate was noise.
+
 ### Strict
+
+#### With the skill
 
 > ## Introduction
 >
@@ -937,45 +1345,75 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 >
 > The supplied account does not specify how the rate was estimated, its uncertainty, or the comparison and analysis procedures in enough detail to assess reproducibility or the strength of the probability claim.
 
+#### Without the skill
+
+> The observations show that both LIGO instruments recorded a signal consistent with the predicted waveform of a binary black-hole merger. The stated rate means that, under the search’s noise model, candidates at least this significant would occur on average fewer than once per 203,000 years.
+>
+> If that rate stays the same, the expected number in ten years is fewer than $10/203{,}000 \approx 4.9\times10^{-5}$. That makes a false alarm over ten years very unlikely, but it does not guarantee zero: a rate is an average, and a rare event can still occur. Nor does this rate alone establish that the probability GW150914 was noise is zero; it quantifies how often noise would produce a candidate this significant under the model, not the probability that this particular candidate was noise.
+
 ## korean-plain-language
 
 **Which passes qualified for Seoul’s 2024 refund?** · [한국어](EXAMPLES.ko.md#korean-plain-language)
 
 ### Question
 
-> A Korean exhibit caption about Seoul’s 2024 youth Climate Card pilot says “지우와 민서는 지금 환급금을 받아요.” Under that pilot a completed 30-day pass used without a refund could qualify for 7,000 won. Physical cards counted only after registration; mobile cards needed no separate registration. Both required a refund application. Jiwoo finished one physical pass before registration and another after registration, then refunded a third pass on day 18. Minseo completed two mobile passes without refund. All other conditions were met. How should the Korean caption read, and what amount was each person eligible to apply for? Give any explanation in English.
+> A Korean exhibit caption about Seoul’s 2024 youth Climate Card pilot says “지우와 민서는 지금 환급금을 받아요.” Under that pilot a completed 30-day pass used without a refund could qualify for 7,000 won. Physical cards counted only after registration; mobile cards needed no separate registration. A pass holder had to apply to receive the pilot payment, whichever card they used. Jiwoo finished one physical pass before registration and another after registration, then refunded a third pass on day 18. Minseo completed two mobile passes without refund. All other conditions were met. In English, explain how much each person was eligible to apply for and why. Then give the exhibit its replacement caption in Korean.
 
 **Sources** · [서울특별시 내 손안에 서울, ‘월 5만원대’ 청년 맞춤형 기후동행카드 나온다 (2024-02-21)](https://mediahub.seoul.go.kr/archives/2010350)
 
 ### Light
 
-> Jiwoo’s first physical pass was completed before registration, so it did not qualify. The second was completed after registration and was not refunded, so it qualified for ₩7,000. The third pass was refunded on day 18, so it did not qualify.
+#### With the skill
+
+> Jiwoo: Only the physical pass completed after registration qualified. The pass completed before registration did not count, and the third pass was refunded on day 18, so it did not meet the completed 30-day condition. 1 × 7,000 won = 7,000 won.
 >
-> Minseo’s two completed mobile passes were not refunded. Mobile cards required no separate registration, so both qualified: 2 × ₩7,000 = ₩14,000.
+> Minseo: Both completed mobile passes qualified; mobile cards did not need separate registration. 2 × 7,000 won = 14,000 won.
 >
-> > 지우와 민서는 환급을 신청하면 각각 7,000원과 14,000원을 받을 수 있었어요.
+> Both had to apply to receive the payment, so the source does not establish that either person actually received it.
+>
+> > 2024년 서울 청년 기후동행카드 시범사업에서 지우는 7,000원을, 민서는 14,000원을 신청할 수 있었어요.
+
+#### Without the skill
+
+> Jiwoo was eligible to apply for ₩7,000 for the pass completed after registering the physical card. The earlier pass did not count because the card was unregistered, and the pass refunded on day 18 did not qualify. Minseo was eligible to apply for ₩14,000: both completed mobile passes went unused for a refund, and mobile cards did not require separate registration. Both had to apply to receive the payment.
+>
+> **Replacement caption:** 지우는 7천 원, 민서는 1만 4천 원의 환급금을 신청할 수 있어요.
 
 ### Standard
 
-> The caption should describe eligibility at the time of the 2024 pilot, rather than say they receive a refund now.
+#### With the skill
+
+> Jiwoo: Only the 30-day physical pass completed after registration counted. The pass completed before registration did not qualify, and the pass refunded on day 18 did not qualify. One pass × 7,000 won = 7,000 won.
 >
-> - **Jiwoo:** The pass completed before registering the physical card did not qualify; the one completed after registration did. The third pass was refunded and did not qualify. **1 eligible pass × ₩7,000 = ₩7,000.**
-> - **Minseo:** Both completed mobile passes qualified; mobile cards did not need separate registration. **2 eligible passes × ₩7,000 = ₩14,000.**
+> Minseo: Both completed mobile passes counted; mobile cards needed no separate registration. Two passes × 7,000 won = 14,000 won.
 >
-> Both still had to apply for the refund.
+> Both had to apply to receive the pilot payment. The information does not establish that either person actually received it.
 >
-> > 2024년 시범사업 당시 지우는 7,000원, 민서는 14,000원의 환급금을 신청할 수 있었어요.
+> 2024년 서울 청년 기후동행카드 시범사업에서 지우는 환급금 7,000원을, 민서는 14,000원을 신청할 수 있었어요. 두 사람 모두 지급을 신청해야 했어요.
+
+#### Without the skill
+
+> Jiwoo was eligible to apply for ₩7,000 for the pass completed after registering the physical card. The earlier pass did not count because the card was unregistered, and the pass refunded on day 18 did not qualify. Minseo was eligible to apply for ₩14,000: both completed mobile passes went unused for a refund, and mobile cards did not require separate registration. Both had to apply to receive the payment.
+>
+> **Replacement caption:** 지우는 7천 원, 민서는 1만 4천 원의 환급금을 신청할 수 있어요.
 
 ### Strict
 
-> Under the 2024 pilot rules, Jiwoo’s first pass did not qualify because it was used before the physical card was registered. The second qualified, but the pass refunded on day 18 did not meet the 30-day condition.
+#### With the skill
+
+> Jiwoo: Only the physical pass completed after registration qualified; the pass completed before registration did not count, and the third pass was refunded before 30 days. Jiwoo was eligible to apply for 7,000 won.
 >
-> Minseo’s two completed mobile passes qualified; mobile cards did not need separate registration. Both people still had to apply for the refund.
+> Minseo: Both completed mobile passes qualified. Mobile cards needed no separate registration. Minseo was eligible to apply for 14,000 won.
 >
-> Jiwoo: 1 eligible pass × 7,000 won = 7,000 won.\
-> Minseo: 2 eligible passes × 7,000 won = 14,000 won.
+> Both had to apply to receive the pilot payment. The source establishes eligibility to apply, not that either person received the money.
 >
-> > 2024년 청년 기후동행카드 시범사업에서 지우는 환급 신청을 하면 7,000원을 받을 수 있었고, 민서는 14,000원을 받을 수 있었어요.
+> > 2024년 서울 청년 기후동행카드 시범사업에서 지우는 환급금 7,000원을 신청할 수 있었어요. 민서는 환급금 14,000원을 신청할 수 있었어요.
+
+#### Without the skill
+
+> Jiwoo was eligible to apply for ₩7,000 for the pass completed after registering the physical card. The earlier pass did not count because the card was unregistered, and the pass refunded on day 18 did not qualify. Minseo was eligible to apply for ₩14,000: both completed mobile passes went unused for a refund, and mobile cards did not require separate registration. Both had to apply to receive the payment.
+>
+> **Replacement caption:** 지우는 7천 원, 민서는 1만 4천 원의 환급금을 신청할 수 있어요.
 
 ## microsoft-writing-style
 
@@ -985,9 +1423,11 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 
 > My Windows 11 clipboard history has five entries. A delivery address and an obsolete access code are pinned. A return reference and two draft notes are unpinned. I want to keep just the address and the return reference without typing either again. The interface is in English: Windows logo key + V opens Clipboard history, Pin protects an entry from Clear all, Clear all removes unpinned entries, and See more (...) > Delete removes one entry. How can I use Clear all on this PC and still end up with exactly those two items?
 
-**Sources** · [Microsoft Support, Using the clipboard](https://support.microsoft.com/en-us/windows/apps/using-the-clipboard)
+**Sources** · [Microsoft Support, Using the clipboard](https://support.microsoft.com/en-us/windows/apps/using-the-clipboard) · To keep the return reference, pin it before choosing **Clear all**.
 
 ### Light
+
+#### With the skill
 
 > 1. Press **Windows logo key + V** to open Clipboard history.
 > 2. In Clipboard history, keep the pinned delivery address as it is.
@@ -998,7 +1438,19 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 >
 > Check that the delivery address and return reference remain.
 
+#### Without the skill
+
+> In Clipboard history, delete the obsolete access code first:
+>
+> 1. Press **Windows logo key + V**.
+> 2. Find the access code, select **See more (…) > Delete**.
+> 3. Select **Clear all**.
+>
+> The pinned address stays protected, and Clear all removes the unpinned return reference and both draft notes. To keep the return reference without retyping it, copy it again from its original source and pin the new clipboard entry. You’ll then have exactly the address and return reference.
+
 ### Standard
+
+#### With the skill
 
 > Open Clipboard history with Windows logo key + V, then set up the entries:
 >
@@ -1012,7 +1464,19 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 >
 > After those steps, select **Clear all**. Check Clipboard history: it should contain only the delivery address and return reference.
 
+#### Without the skill
+
+> In Clipboard history, delete the obsolete access code first:
+>
+> 1. Press **Windows logo key + V**.
+> 2. Find the access code, select **See more (…) > Delete**.
+> 3. Select **Clear all**.
+>
+> The pinned address stays protected, and Clear all removes the unpinned return reference and both draft notes. To keep the return reference without retyping it, copy it again from its original source and pin the new clipboard entry. You’ll then have exactly the address and return reference.
+
 ### Strict
+
+#### With the skill
 
 > | Entry | Current state | Keep or remove | Action to take now |
 > |---|---|---|---|
@@ -1023,6 +1487,16 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 > | Draft note 2 | Unpinned | Remove | Leave it unpinned. |
 >
 > Press **Windows logo key + V** to open Clipboard history. After the setup actions above, select **Clear all**. The address stays pinned, the return reference is now pinned, and the unpinned draft notes are removed. Check that Clipboard history contains exactly the delivery address and return reference.
+
+#### Without the skill
+
+> In Clipboard history, delete the obsolete access code first:
+>
+> 1. Press **Windows logo key + V**.
+> 2. Find the access code, select **See more (…) > Delete**.
+> 3. Select **Clear all**.
+>
+> The pinned address stays protected, and Clear all removes the unpinned return reference and both draft notes. To keep the return reference without retyping it, copy it again from its original source and pin the new clipboard entry. You’ll then have exactly the address and return reference.
 
 ## minto-pyramid
 
@@ -1036,17 +1510,35 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 
 ### Light
 
+#### With the skill
+
 > **Run the pilot at North.** If the three-city study’s crash modification factor (CMF) of 0.87 applies locally, the estimated reduction is 13%: about **2.6 crashes at North** (20 × 0.13) versus **0.65 at South** (5 × 0.13) over the same period. The estimate favors North because its baseline expected crash count is higher; it is a forecast based on transferring the study result, not a local effect measurement.
 >
 > To assess the local effect, compare changes in vehicle–pedestrian crashes at North before and after the pilot with changes over the same periods at comparable signalized crossings without the interval. Choose comparison crossings with similar turning traffic and crash patterns, and account for differences in exposure, such as pedestrian and vehicle volumes. This comparison helps separate the pilot’s effect from broader changes, though the result will remain uncertain if crash counts are small.
 
+#### Without the skill
+
+> Run the pilot at **North**. A crash modification factor (CMF) of 0.87 represents an estimated 13% reduction. Applied to the forecasts, that is about **2.6 crashes prevented at North** versus **0.65 at South** over the same period. North therefore offers the larger expected benefit, assuming the study’s estimate applies similarly at both locations.
+>
+> To learn whether the interval works locally, collect comparable before-and-after crash data at North and at a similar untreated site, ideally using several years of data because crashes are relatively rare. Compare how crashes change at the pilot site with changes at the comparison site, accounting for pedestrian and vehicle volumes and other changes in street conditions. Also track driver yielding and pedestrian conflicts as more frequent, early indicators. A single site’s before-and-after crash count may be too noisy to establish an effect.
+
 ### Standard
+
+#### With the skill
 
 > Run the pilot at **North**, assuming the FHWA estimate applies equally to both locations. Applying the crash modification factor of 0.87 implies a 13% reduction: about **2.6 fewer crashes at North** (20 × 0.13) versus **0.65 fewer at South** (5 × 0.13). These are forecasts based on transferring a three-city study result; the local effect may differ.
 >
 > To estimate the local effect, compare the change in vehicle–pedestrian crashes at North before and after the pilot with the change over the same periods at a similar untreated group of crossings. Choose comparison crossings with similar crash patterns, turning traffic, and pedestrian exposure, and account for differences in exposure or other safety changes. This comparison helps separate the pilot’s effect from citywide trends and other changes, though rare crashes and differences between sites may leave uncertainty.
 
+#### Without the skill
+
+> Run the pilot at **North**. A crash modification factor (CMF) of 0.87 represents an estimated 13% reduction. Applied to the forecasts, that is about **2.6 crashes prevented at North** versus **0.65 at South** over the same period. North therefore offers the larger expected benefit, assuming the study’s estimate applies similarly at both locations.
+>
+> To learn whether the interval works locally, collect comparable before-and-after crash data at North and at a similar untreated site, ideally using several years of data because crashes are relatively rare. Compare how crashes change at the pilot site with changes at the comparison site, accounting for pedestrian and vehicle volumes and other changes in street conditions. Also track driver yielding and pedestrian conflicts as more frequent, early indicators. A single site’s before-and-after crash count may be too noisy to establish an effect.
+
 ### Strict
+
+#### With the skill
 
 > Run the pilot at **North**. Assuming the three-city study’s crash modification factor (CMF) of 0.87 applies locally, it implies a 13% reduction in vehicle–pedestrian crashes:
 >
@@ -1056,6 +1548,12 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 > North therefore offers the larger expected reduction, though these are forecasts based on transferring the study result—not guaranteed local outcomes.
 >
 > To measure the local effect, compare changes in crashes at North with changes over the same periods at a comparable untreated group of crossings. Use multiple pre- and post-pilot periods and check that the groups had similar trends before the pilot. Account for exposure, such as pedestrian and turning-vehicle volumes, and report uncertainty; crashes may be too rare for a short pilot to show a clear difference.
+
+#### Without the skill
+
+> Run the pilot at **North**. A crash modification factor (CMF) of 0.87 represents an estimated 13% reduction. Applied to the forecasts, that is about **2.6 crashes prevented at North** versus **0.65 at South** over the same period. North therefore offers the larger expected benefit, assuming the study’s estimate applies similarly at both locations.
+>
+> To learn whether the interval works locally, collect comparable before-and-after crash data at North and at a similar untreated site, ideally using several years of data because crashes are relatively rare. Compare how crashes change at the pilot site with changes at the comparison site, accounting for pedestrian and vehicle volumes and other changes in street conditions. Also track driver yielding and pedestrian conflicts as more frequent, early indicators. A single site’s before-and-after crash count may be too noisy to establish an effect.
 
 ## new-harts-rules
 
@@ -1069,15 +1567,33 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 
 ### Light
 
+#### With the skill
+
 > “In ‘Housing, England and Wales: Census 2021’, ONS showed that 42.1% of London households had no car or van available in 2021, 18.8 percentage points higher than the 23.3% across England and Wales. This was 80.7% above the England-and-Wales figure.”
+
+#### Without the skill
+
+> “In ‘Housing, England and Wales: Census 2021’, ONS showed that 42.1% of London households had no car or van available in 2021, 18.8 percentage points higher than the 23.3% figure for England and Wales. That is about 80.7% higher than the England-and-Wales figure.”
 
 ### Standard
 
+#### With the skill
+
 > “In ‘Housing, England and Wales: Census 2021’, ONS showed that 42.1% of households in London had no car or van available in 2021, compared with 23.3% across England and Wales—a gap of 18.8 percentage points. London’s figure was 80.7% higher than the England-and-Wales figure.”
+
+#### Without the skill
+
+> “In ‘Housing, England and Wales: Census 2021’, ONS showed that 42.1% of London households had no car or van available in 2021, 18.8 percentage points higher than the 23.3% figure for England and Wales. That is about 80.7% higher than the England-and-Wales figure.”
 
 ### Strict
 
+#### With the skill
+
 > “In ‘Housing, England and Wales: Census 2021’, ONS showed that 42.1% of London households had no car or van available in 2021, compared with 23.3% of households across England and Wales. The London figure was 18.8 percentage points higher, or 80.7% higher than the England-and-Wales figure.”
+
+#### Without the skill
+
+> “In ‘Housing, England and Wales: Census 2021’, ONS showed that 42.1% of London households had no car or van available in 2021, 18.8 percentage points higher than the 23.3% figure for England and Wales. That is about 80.7% higher than the England-and-Wales figure.”
 
 ## nist-technical-publication
 
@@ -1090,6 +1606,8 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 **Sources** · [Heavner et al., First Accuracy Evaluation of NIST-F2, Metrologia (2014)](https://www.nist.gov/publications/first-accuracy-evaluation-nist-f2)
 
 ### Light
+
+#### With the skill
 
 > ## Comparison
 >
@@ -1121,7 +1639,17 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 >
 > No. The more-than-50-fold reduction applies to the **blackbody-radiation uncertainty** in the 80 K environment. It does not state how much the clock’s overall uncertainty improved. That would require the blackbody contribution before and after cooling and the other uncertainty components used in the overall combination.
 
+#### Without the skill
+
+> Halving the Type A component reduces combined uncertainty from $\sqrt{0.44^2+0.11^2}\approx0.454$ to $\sqrt{0.22^2+0.11^2}\approx0.246$, in units of $10^{-15}$.
+>
+> Halving Type B gives $\sqrt{0.44^2+0.055^2}\approx0.443$. So halving Type A reduces the combined uncertainty more.
+>
+> The factor of more than 50 applies to the blackbody-radiation uncertainty, not to the clock’s overall uncertainty. Without the other uncertainty contributions and the blackbody term’s size before the reduction, it does not tell us how much overall uncertainty improved.
+
 ### Standard
+
+#### With the skill
 
 > ## Comparison of the two upgrades
 >
@@ -1151,7 +1679,17 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 >
 > No. The statement that the 80 K environment reduced blackbody-radiation uncertainty by more than a factor of 50 applies to that uncertainty contribution. It does not give the clock’s overall uncertainty improvement. That would require the blackbody contribution before and after cooling, along with the other uncertainty components and how they combine.
 
+#### Without the skill
+
+> Halving the Type A component reduces combined uncertainty from $\sqrt{0.44^2+0.11^2}\approx0.454$ to $\sqrt{0.22^2+0.11^2}\approx0.246$, in units of $10^{-15}$.
+>
+> Halving Type B gives $\sqrt{0.44^2+0.055^2}\approx0.443$. So halving Type A reduces the combined uncertainty more.
+>
+> The factor of more than 50 applies to the blackbody-radiation uncertainty, not to the clock’s overall uncertainty. Without the other uncertainty contributions and the blackbody term’s size before the reduction, it does not tell us how much overall uncertainty improved.
+
 ### Strict
+
+#### With the skill
 
 > ## Comparison
 >
@@ -1181,6 +1719,14 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 >
 > No. The factor of more than 50 applies to the **blackbody-radiation uncertainty** in the 80 K environment. It does not give the clock’s overall uncertainty improvement. That would require the blackbody contribution before and after cooling, along with the other uncertainty contributions and their combination. The reported Type B total is also dominated by microwave-amplitude effects, so the blackbody reduction alone cannot determine the change in total uncertainty.
 
+#### Without the skill
+
+> Halving the Type A component reduces combined uncertainty from $\sqrt{0.44^2+0.11^2}\approx0.454$ to $\sqrt{0.22^2+0.11^2}\approx0.246$, in units of $10^{-15}$.
+>
+> Halving Type B gives $\sqrt{0.44^2+0.055^2}\approx0.443$. So halving Type A reduces the combined uncertainty more.
+>
+> The factor of more than 50 applies to the blackbody-radiation uncertainty, not to the clock’s overall uncertainty. Without the other uncertainty contributions and the blackbody term’s size before the reduction, it does not tell us how much overall uncertainty improved.
+
 ## orwell-six-rules
 
 **What a unit mix-up did to the Mars Climate Orbiter estimate** · [한국어](EXAMPLES.ko.md#orwell-six-rules)
@@ -1193,21 +1739,39 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 
 ### Light
 
+#### With the skill
+
 > SM_FORCES sent thruster impulses in pound-force seconds, but navigation treated the values as newton-seconds. For example, 2 pound-force seconds is about 8.9 newton-seconds; if navigation read the unchanged numeral as 2 newton-seconds, it undercounted the impulse. The number 2 is illustrative, not a flight measurement.
 >
 > The trajectory estimate accumulated error, and the spacecraft approached Mars about 170 km lower than planned. NASA could not determine whether it was destroyed in the atmosphere or escaped into a solar orbit.
 
+#### Without the skill
+
+> “The navigation system treated SM_FORCES’ thruster impulses as newton-seconds, though they were in pound-force seconds. Thus a value of 2 pound-force seconds corresponds to about 8.9 newton-seconds; 2 is only an illustration, not a flight measurement. The resulting trajectory error brought the spacecraft to Mars about 170 km lower than planned. NASA could not determine whether it was destroyed in the atmosphere or escaped into solar orbit.”
+
 ### Standard
+
+#### With the skill
 
 > The SM_FORCES component sent thruster impulses in pound-force seconds, but navigation read the values as newton-seconds. For example, 2 pound-force seconds × 4.45 newton-seconds per pound-force second ≈ 8.9 newton-seconds. If navigation treated the unchanged numeral 2 as newton-seconds, it read an impulse of 2 newton-seconds. The 2 is illustrative, not a flight measurement.
 >
 > The trajectory estimate accumulated error, and the spacecraft approached Mars about 170 km lower than planned. NASA could not determine whether it was destroyed in the atmosphere or escaped into a solar orbit. Its fate remains unknown.
 
+#### Without the skill
+
+> “The navigation system treated SM_FORCES’ thruster impulses as newton-seconds, though they were in pound-force seconds. Thus a value of 2 pound-force seconds corresponds to about 8.9 newton-seconds; 2 is only an illustration, not a flight measurement. The resulting trajectory error brought the spacecraft to Mars about 170 km lower than planned. NASA could not determine whether it was destroyed in the atmosphere or escaped into solar orbit.”
+
 ### Strict
+
+#### With the skill
 
 > SM_FORCES sent thruster impulses in pound-force seconds, but navigation read the values as newton-seconds. For example, 2 pound-force seconds is about 8.9 newton-seconds; if navigation treated the unchanged numeral 2 as newton-seconds, it read about 2 newton-seconds. The number 2 is illustrative, not a flight measurement.
 >
 > The trajectory estimate accumulated error, and the spacecraft approached Mars about 170 km lower than planned. NASA could not determine whether it was destroyed in the atmosphere or escaped into a solar orbit.
+
+#### Without the skill
+
+> “The navigation system treated SM_FORCES’ thruster impulses as newton-seconds, though they were in pound-force seconds. Thus a value of 2 pound-force seconds corresponds to about 8.9 newton-seconds; 2 is only an illustration, not a flight measurement. The resulting trajectory error brought the spacecraft to Mars about 170 km lower than planned. NASA could not determine whether it was destroyed in the atmosphere or escaped into solar orbit.”
 
 ## socratic-self-questioning
 
@@ -1221,13 +1785,23 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 
 ### Light
 
+#### With the skill
+
 > The key ambiguity is what the city means by “2,400 extra employment days”: compared with what would have happened without the basic income, over what period, and for whom?
 >
 > Among Finland’s 2,000 randomly selected unemployed benefit recipients, the reported average was 78 employment days from November 2017 to October 2018—six more than the comparison group. But there was no group-level employment effect in the first year. In the second year, a 2018 benefit reform affected the groups differently, and its effect could not be separated from basic income’s.
 >
 > So the Finnish evidence does not establish that basic income caused the six-day difference, or that it would apply to the city’s 400 residents. The estimate of 2,400 days is the arithmetic result of multiplying 400 by six; it is supported as a forecast only if the city’s residents and program resemble the Finnish study group and conditions, and if the second-year difference was caused by basic income rather than the reform.
 
+#### Without the skill
+
+> The arithmetic is clear: 400 residents × six additional employment days = 2,400 days. But the Finnish evidence does not establish that basic income caused those six days.
+>
+> In the first year, researchers found no group-level employment effect. In the second, participants averaged six more days than the comparison group, but a benefit reform affected the groups differently, so researchers could not separate the reform’s effect from basic income’s. The city can present 2,400 days as a scenario based on that observed difference, but not as an evidence-backed forecast of what its basic-income program will produce.
+
 ### Standard
+
+#### With the skill
 
 > The estimate assumes the Finnish result transfers to the city’s 400 residents. But what does “six more days” describe? It is the difference in average employment days between the trial groups from November 2017 to October 2018—not an increase caused by basic income across the full trial.
 >
@@ -1235,11 +1809,25 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 >
 > So the Finnish evidence does not establish that basic income caused the six-day difference, or that the city should expect 2,400 extra employment days. That forecast would require the second-year difference to be attributable to basic income and to carry over to the city’s 400 residents. The trial result alone does not establish either condition.
 
+#### Without the skill
+
+> The arithmetic is clear: 400 residents × six additional employment days = 2,400 days. But the Finnish evidence does not establish that basic income caused those six days.
+>
+> In the first year, researchers found no group-level employment effect. In the second, participants averaged six more days than the comparison group, but a benefit reform affected the groups differently, so researchers could not separate the reform’s effect from basic income’s. The city can present 2,400 days as a scenario based on that observed difference, but not as an evidence-backed forecast of what its basic-income program will produce.
+
 ### Strict
+
+#### With the skill
 
 > The city’s estimate is **2,400 extra employment days**, or six extra days for each of 400 residents. The Finnish result does not establish that rate as an effect of basic income: the six-day difference was observed from November 2017 to October 2018, after a benefit reform affected the groups differently. The experiment found no group-level employment effect in its first year, and it could not separate the reform’s second-year effect from basic income’s.
 >
 > So the Finnish evidence supports citing six days as an observed second-year difference among the 2,000 randomly selected unemployed benefit recipients who received €560 a month—not as six days caused by basic income or a reliable forecast for the city. The estimate would follow only if the city’s residents and program produced a comparable effect and other factors did not account for the Finnish difference; the evidence provided does not establish those conditions.
+
+#### Without the skill
+
+> The arithmetic is clear: 400 residents × six additional employment days = 2,400 days. But the Finnish evidence does not establish that basic income caused those six days.
+>
+> In the first year, researchers found no group-level employment effect. In the second, participants averaged six more days than the comparison group, but a benefit reform affected the groups differently, so researchers could not separate the reform’s effect from basic income’s. The city can present 2,400 days as a scenario based on that observed difference, but not as an evidence-backed forecast of what its basic-income program will produce.
 
 ## steve-jobs-presentation
 
@@ -1253,13 +1841,25 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 
 ### Light
 
+#### With the skill
+
 > Ingenuity’s first flight showed that a powered, controlled flight on Mars was possible.
 >
 > The helicopter rose to about 3 m and landed 39.1 seconds after takeoff. The 30-second hover was about three quarters of the flight; rising and descending shared the other 9.1 seconds, so the total time does not tell us how long the climb took. Dividing 3 m by 39.1 seconds gives a rough height-over-total-time ratio, not its average climb speed.
 >
 > The team could review the flight data to assess how Ingenuity performed during takeoff, hover, and landing, then use that evidence to choose what to try on a later flight.
 
+#### Without the skill
+
+> The flight demonstrated that powered, controlled flight is possible in Mars’ thin atmosphere. Ingenuity rose, held position, and landed under its own control, guided by onboard systems rather than a pilot steering it in real time.
+>
+> Dividing 3 m by 39.1 s gives about **0.077 m/s**, but that is only the change in altitude divided by the *entire flight time*. It is not the average climb speed: the 39.1 seconds include the 30-second hover and the descent. The times show that the hover occupied most of the flight. They don’t tell us the climb duration or speed, or exactly how long the descent took. We’d need the flight’s altitude-versus-time data for that.
+>
+> The team could use that data, along with the helicopter’s sensor and performance records, to check how closely the flight matched its planned profile and how it handled takeoff, hovering, and landing. If the data showed stable control and adequate margins, they could try a modest next step—such as a higher or longer flight, or a short translation—while changing only what the results supported.
+
 ### Standard
+
+#### With the skill
 
 > The first flight showed that a powered, controlled aircraft could fly autonomously on Mars.
 >
@@ -1267,10 +1867,28 @@ Pick a question below to see how the same skill answers at `light`, `standard` a
 >
 > Dividing 3 m by 39.1 s does not give the average climb speed: the total flight time includes the hover and descent. The times show that Ingenuity reached about 3 m and sustained a 30-second hover, but they don’t establish its climb speed. The team could review the first flight’s flight data to decide whether a later test should change the height, duration, or flight path; what to try next would depend on that review.
 
+#### Without the skill
+
+> The flight demonstrated that powered, controlled flight is possible in Mars’ thin atmosphere. Ingenuity rose, held position, and landed under its own control, guided by onboard systems rather than a pilot steering it in real time.
+>
+> Dividing 3 m by 39.1 s gives about **0.077 m/s**, but that is only the change in altitude divided by the *entire flight time*. It is not the average climb speed: the 39.1 seconds include the 30-second hover and the descent. The times show that the hover occupied most of the flight. They don’t tell us the climb duration or speed, or exactly how long the descent took. We’d need the flight’s altitude-versus-time data for that.
+>
+> The team could use that data, along with the helicopter’s sensor and performance records, to check how closely the flight matched its planned profile and how it handled takeoff, hovering, and landing. If the data showed stable control and adequate margins, they could try a modest next step—such as a higher or longer flight, or a short translation—while changing only what the results supported.
+
 ### Strict
+
+#### With the skill
 
 > Ingenuity’s first flight showed that a small rotorcraft could take off, hover, and land autonomously in the thin Martian atmosphere.
 >
 > It reached about 3 m and hovered for 30 of the flight’s 39.1 seconds—about 77% of the flight. Takeoff, climb, descent, and landing shared the remaining 9.1 seconds, so the total time cannot tell us how long the climb alone took. Dividing 3 m by 39.1 seconds gives about 0.077 m/s, but that is not its average climb speed: it divides the peak height by the entire flight duration, including the hover and other stages.
 >
 > The team could use the first flight’s recorded data to assess how the aircraft and its systems performed, then decide whether to adjust the next flight’s altitude, duration, or other conditions. Those data could guide the next attempt; they don’t by themselves establish how a changed flight would perform.
+
+#### Without the skill
+
+> The flight demonstrated that powered, controlled flight is possible in Mars’ thin atmosphere. Ingenuity rose, held position, and landed under its own control, guided by onboard systems rather than a pilot steering it in real time.
+>
+> Dividing 3 m by 39.1 s gives about **0.077 m/s**, but that is only the change in altitude divided by the *entire flight time*. It is not the average climb speed: the 39.1 seconds include the 30-second hover and the descent. The times show that the hover occupied most of the flight. They don’t tell us the climb duration or speed, or exactly how long the descent took. We’d need the flight’s altitude-versus-time data for that.
+>
+> The team could use that data, along with the helicopter’s sensor and performance records, to check how closely the flight matched its planned profile and how it handled takeoff, hovering, and landing. If the data showed stable control and adequate margins, they could try a modest next step—such as a higher or longer flight, or a short translation—while changing only what the results supported.

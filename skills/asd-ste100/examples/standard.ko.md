@@ -1,6 +1,6 @@
 # 라즈베리 파이 4 복구 작업대별로 언제 전원을 끌 수 있을까?
 
-[English](standard.md) · [light](light.ko.md) · [strict](strict.ko.md)
+[English](standard.md) · [light](light.ko.md) · **standard** · [strict](strict.ko.md)
 
 ### 질문
 
@@ -8,7 +8,7 @@
 
 **출처** · [Raspberry Pi, Raspberry Pi computer hardware documentation](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#reflash-the-bootloader)
 
-### Standard
+### 스킬 적용
 
 > 표시가 한 번 나타나면 계속 유지되므로, 각 확인 시각에 두 조건이 모두 충족되면 전원을 분리할 수 있습니다.
 >
@@ -19,3 +19,13 @@
 > | 동쪽 | 아직 없음 | 60초 확인 때 화면이 녹색이 아니었으므로 전원을 연결한 상태로 둡니다. |
 >
 > 복구용 microSD 카드는 해당 장비의 전원을 분리한 뒤에만 꺼냅니다.
+
+### 스킬 미적용
+
+> 표시가 한 번 나타나면 계속 유지되므로, 다음 확인 시각이 전원을 분리할 수 있는 첫 시각입니다. LED 패턴과 녹색 화면이 모두 확인된 뒤에만 전원을 분리하세요.
+>
+> - **북쪽:** LED는 16초, 화면은 29초에 나타났으므로 **30초 확인 때** 두 조건이 모두 충족됩니다. 그때 전원을 분리하세요.
+> - **남쪽:** LED는 41초, 화면은 33초에 나타났으므로 **45초 확인 때** 모두 충족됩니다. 그때 전원을 분리하세요.
+> - **동쪽:** 60초에도 화면이 녹색이 아니므로 아직 두 조건이 충족되지 않았습니다. **전원을 연결한 채 기다리고**, 이후 확인에서 녹색 화면까지 확인한 뒤 전원을 분리하세요.
+>
+> 세 장비 모두 **전원을 분리한 다음에만** 복구용 microSD 카드를 꺼내세요.
