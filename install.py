@@ -1,8 +1,9 @@
-"""Install WSG directly from an extracted GitHub source archive."""
+"""Install WSG from a Git checkout or an extracted source archive."""
 
 import shutil
 import sys
 import tempfile
+from contextlib import contextmanager
 from pathlib import Path
 
 
@@ -12,7 +13,8 @@ sys.path.insert(0, str(ROOT / "src"))
 from wsg import main
 
 
-def source_install():
+@contextmanager
+def source_payload():
     # Assemble the same layout the wheel exposes, without a build backend.
     with tempfile.TemporaryDirectory() as scratch:
         payload = Path(scratch)
@@ -22,8 +24,9 @@ def source_install():
         shutil.copytree(ROOT / ".agents/skills/wsg/agents", payload / "agents")
         for name in ("commands", "skills"):
             shutil.copytree(ROOT / name, payload / ".catalog" / name)
-        main(payload)
+        yield payload
 
 
 if __name__ == "__main__":
-    source_install()
+    adapter = ROOT / ".agents/skills/wsg" if (ROOT / ".git").exists() else None
+    main(ROOT, prepare_copy=source_payload, link_source=adapter)

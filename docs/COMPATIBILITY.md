@@ -1,6 +1,6 @@
 # Host compatibility
 
-The [installation guide](../README.md#install-for-a-local-agent) installs a complete `wsg` skill for the selected host. Project scope uses the current directory. User scope uses the host's default per-user skill directory. Existing or modified installations can be kept as backups by moving the whole `wsg` directory outside the host’s discovery paths before reinstalling. To remove the skill, move it out of each host where you installed it. To remove the separate CLI, run `uv tool uninstall writing-styles-from-giants`.
+The [installation guide](../README.md#install-for-a-local-agent) covers linked and copied skills. A checkout link reads the catalog from one persistent clone. A copy includes the complete WSG catalog for the selected host. Project scope uses the current directory. User scope uses the host's default per-user skill directory. Existing or modified installations can be kept as backups by moving the whole `wsg` directory outside the host’s discovery paths before reinstalling. To remove the skill, move it out of each host where you installed it. To remove the separate CLI, run `uv tool uninstall writing-styles-from-giants`.
 
 | Surface | Project / user skill directory | Invocation and evidence |
 | --- | --- | --- |
@@ -11,7 +11,11 @@ The [installation guide](../README.md#install-for-a-local-agent) installs a comp
 | ChatGPT desktop | Local project; check **Skills** in the sidebar | When `wsg` is listed, select it with `@` and give it the same arguments. Documented surface; WSG picker and generation untested. [OpenAI skill guide](https://learn.chatgpt.com/docs/build-skills) |
 | ChatGPT web | Project **Sources** | Add one method’s files and ask ChatGPT to apply them. The [README](../README.md#chatgpt) walks through ELI5. Manual file-based use; WSG does not publish a ChatGPT directory plugin. [ChatGPT projects](https://learn.chatgpt.com/docs/projects) |
 
-The release installer requires Python 3.10 or later and uses copies. Some hosts also scan other hosts’ directories. If a picker lists multiple `wsg` entries, check their paths and keep the intended version in one discoverable location. Windows host discovery and nondefault host directories require separate verification.
+Installation requires Python 3.10 or later. In a terminal, the installer looks for `codex`, `claude`, `opencode` and `pi` on PATH and offers the detected names for selection. Specify `--host` explicitly for GUI-only installations, custom executable names or scripts. Some hosts also scan other hosts’ directories. If a picker lists multiple `wsg` entries, check their paths and keep the intended version in one discoverable location. Windows host discovery and nondefault host directories require separate verification.
+
+## Checkout link discovery · 2026-11-10
+
+On macOS arm64, isolated project directories linked their native `skills/wsg` entries to the same checkout adapter. Claude Code 2.1.228 listed `wsg` at SDK initialization. OpenCode 1.16.2 returned its instructions from `debug skill`. Pi 1.5.2 listed `skill:wsg` in RPC `get_commands`. OpenCode also discovered the adapter through `.agents/skills` and `.claude/skills`, and Pi through `.agents/skills`. Selecting a host controls where the installer writes a link; another host may also read that path. The earlier Codex user-link generation test is recorded [below](#codex-user-scope).
 
 ## Packaged skill discovery · 2026-11-10
 
@@ -19,23 +23,9 @@ On macOS 26.5.2 arm64, we installed the 0.1.0 wheel into separate project direct
 
 ## Codex user scope
 
-For contributors who edit methods in a long-lived checkout, the original live-link setup is still available. From the checkout root, link its adapter into Codex’s user skills directory. Start a new Codex chat in another project and enter `$wsg docs ko` or `$wsg auto YOUR REQUEST`. Codex follows the link to the command guide and all 22 methods.
+From a clone you intend to keep, run `python3 install.py install --host codex --global --link`. This also recognizes a link previously created by hand to the same checkout adapter. A conflicting file, copy or link stops the installation. To remove a link, unlink only the host’s `wsg` symlink.
 
-```sh
-python3 - <<'PY'
-from pathlib import Path
-
-adapter = Path(".agents/skills/wsg").resolve(strict=True)
-link = Path.home() / ".agents/skills/wsg"
-link.parent.mkdir(parents=True, exist_ok=True)
-if link.is_symlink() and link.resolve() == adapter:
-    print("WSG already points to this checkout.")
-else:
-    link.symlink_to(adapter, target_is_directory=True)
-PY
-```
-
-An existing different file, directory or link causes the command to stop. The link follows the local checkout's current files, including working edits and branch switches. When a change is only on GitHub, fast-forward the clean source checkout on `main` with `git pull --ff-only origin main`. If a running Codex session still shows an old skill listing, start a new session. Keep the checkout in place for as long as you use the link.
+Start a new Codex chat in another project and enter `$wsg docs ko` or `$wsg auto YOUR REQUEST`. The link follows the checkout’s current files, including local edits and tag or branch changes.
 
 **Verified on 2026-11-09.** Codex app-server 0.167.0 on macOS discovered one enabled `wsg` skill at user scope from a separate Git repository. That repository had its own unrelated `commands/WSG.md`. A native `$wsg docs ko` turn read the WSG checkout’s Korean catalog and returned all 22 IDs. A separate `$wsg auto` turn read ELI5’s instructions, metadata and locale in that checkout and applied `standard`. The user link and source adapter referenced the same file after the adapter was edited.
 

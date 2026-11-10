@@ -38,6 +38,24 @@ class InstallTest(unittest.TestCase):
                     self.assertEqual((target / "skills/reference.md").read_text(), "Read this reference.")
                     self.assertIn("Already installed", wsg.install(self.source, base, host, user_scope, False))
 
+    def test_link_installation_survives_retries_and_reads_checkout_edits(self):
+        target = self.base / ".claude/skills/wsg"
+        wsg.install(self.source, self.base, "claude", False, True, link=True)
+        self.assertFalse(self.base.exists())
+        wsg.install(self.source, self.base, "claude", False, False, link=True)
+        self.assertTrue(target.is_symlink())
+        self.assertTrue(target.samefile(self.source))
+        self.assertIn("Already", wsg.install(self.source, self.base, "claude", False, False, link=True))
+        (self.source / "SKILL.md").write_text("Updated router")
+        self.assertEqual((target / "SKILL.md").read_text(), "Updated router")
+        with self.assertRaisesRegex(ValueError, "Existing path"):
+            wsg.install(self.source, self.base, "claude", False, False)
+        target.unlink()
+        target.symlink_to(self.source.parent / "missing")
+        with self.assertRaisesRegex(ValueError, "Existing path"):
+            wsg.install(self.source, self.base, "claude", False, False, link=True)
+        self.assertTrue(target.is_symlink())
+
     def test_preserves_modified_copies_and_symlinks(self):
         wsg.install(self.source, self.base, "codex", False, False)
         target = self.base / ".agents/skills/wsg"

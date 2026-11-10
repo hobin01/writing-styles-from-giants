@@ -24,6 +24,8 @@ Scope each choice to the current request. Use `standard` by default. Each method
 
 ## Installation
 
-uv installs the CLI from the release wheel. The source archive’s root `install.py` assembles the same payload from the extracted catalog in a temporary directory and calls the CLI with that payload. The CLI copies an entrypoint, command guide, catalogs and complete method directories into the selected host's skill directory. The installed skill resolves its references relative to its own files. Source documents and requested outputs belong to the caller's working project.
+The checkout installer can link each selected host’s `skills/wsg` directory to the checkout’s `.agents/skills/wsg` adapter. The adapter follows its real path to read the command guide and methods from the checkout; user inputs and outputs belong to the caller’s project. Keep the clone at the same path for the life of these links.
 
-Project scope is the default. Global scope requires `--global`. A matching installation can be reused. The installer refuses a conflicting destination, including a user-edited copy or an existing link. Moving a previous copy outside the host's discovery directories lets the user preserve it before installing another version. Removing the uv tool leaves deployed skills in place. [Host-specific instructions](COMPATIBILITY.md)
+Copy installation stages the entrypoint, command guide, method directories and rights notices from the checkout or source ZIP. The wheel and dedicated offline ZIP contain that same payload. An installed copy resolves references inside its own directory.
+
+In an interactive terminal, omitting `--host` lists the supported CLI names found on PATH. The user selects the destinations. Explicit `--host` values work independently of detection. Project scope is the default; `--global` selects user scope. A multi-host operation checks all selected destinations for conflicts before writing. Completed installs can be reused on retry. The installer preserves other copies, symlinks and unrelated files. [Host-specific instructions](COMPATIBILITY.md)

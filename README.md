@@ -10,44 +10,65 @@ Every example shows the question and both answers on one page. For each question
 
 ## Install for a local agent
 
-Install the `wsg` command once from the GitHub Release using Python 3.10 or later and [uv](https://docs.astral.sh/uv/getting-started/installation/).
+### Clone the release and run `install.py`
+
+With Git and Python 3.10 or later, clone the release in a folder you intend to keep. The installer looks for agent commands on your `PATH`. At the prompt, enter one or more of the displayed names separated by spaces, for example `codex claude`. Press Enter on an empty line to cancel.
 
 ```sh
-uv tool install https://github.com/hobin01/writing-styles-from-giants/releases/download/v0.1.2/writing_styles_from_giants-0.1.2-py3-none-any.whl
+git clone --branch v0.2.0 --depth 1 https://github.com/hobin01/writing-styles-from-giants.git
+cd writing-styles-from-giants
+python3 install.py install --global --link
 ```
 
-If your shell cannot find `wsg`, run `uv tool update-shell` and open a new terminal. Choose your agent below. Run the install command in the project where you want the skill. To use it in all your projects, add `--global`, for example `wsg install --host codex --global`. Then open the agent in a new session and enter the example **in the chat**.
+`--link` places a symlink in each selected agent’s skills directory pointing to this checkout. Keep the clone at the same path. Changes you make there are visible to linked agents. Omit `--link` for an independent copy or if your system restricts symlinks.
 
-| Local agent | Install in this project | Try it |
-| --- | --- | --- |
-| Codex CLI | `wsg install --host codex` | `$wsg eli5 Explain why a bicycle slows down when I squeeze the brake.` |
-| Claude Code | `wsg install --host claude` | `/wsg auto Draft a design doc comparing a cache with direct database reads.` |
-| OpenCode | `wsg install --host opencode` | `Load the wsg skill and run: docs en` |
-| Pi | `wsg install --host pi` | `/skill:wsg feynman-technique Explain why two DNS resolvers can disagree.` |
+For a **single project**, open a terminal in that project and run the installer by its full path. The following command selects Codex explicitly, which also works in scripts or when the agent is missing from `PATH`.
 
-After selecting the skill, use `METHOD [LEVEL] REQUEST` to choose a method, `auto [LEVEL] REQUEST` to ask WSG to choose and explain its choice, or `docs en` / `docs ko` to browse. Writing defaults to `standard` on each request. Choose `light` for a lighter edit and `strict` for all applicable checks. See [host paths, tested versions and limits](docs/COMPATIBILITY.md).
+```sh
+python3 "/path/to/writing-styles-from-giants/install.py" install --host codex --link
+```
 
-### ChatGPT
+Use `--host claude`, `--host opencode` or `--host pi` to select another agent. If the destination already contains a different `wsg` installation, move it outside the agent’s skill directories before switching. [Installation paths](docs/COMPATIBILITY.md)
 
-**Desktop with a local project.** Use the Codex installation row above, open that project in the ChatGPT desktop app and check **Skills** in the sidebar. If `wsg` is listed, type `@`, select it, then enter `docs en`. [OpenAI’s skill guide](https://learn.chatgpt.com/docs/build-skills)
+### Install the release wheel with uv
 
-**Web.** Create a ChatGPT Project and add the files for the method you want to its **Sources**. For ELI5, download the [instructions](skills/eli5/SKILL.md), [method rules](skills/eli5/method.json) and [locale profile](skills/eli5/locales/en.json). In a chat inside that project, ask: “Use the uploaded ELI5 instructions and rules at standard level. Why does a bicycle slow down when I squeeze the brake?” The files stay available for later chats in that project. This manual setup works one method at a time. For other methods, include any additional reference the instructions require at your chosen level. [ChatGPT Projects](https://learn.chatgpt.com/docs/projects)
+If you use [uv](https://docs.astral.sh/uv/getting-started/installation/), you can install the release wheel to get the `wsg` terminal command. Run both commands from your target project.
 
-## Install offline
+```sh
+uv tool install https://github.com/hobin01/writing-styles-from-giants/releases/download/v0.2.0/writing_styles_from_giants-0.2.0-py3-none-any.whl
+wsg install --host codex
+```
 
-Download [Source code (zip)](https://github.com/hobin01/writing-styles-from-giants/archive/refs/tags/v0.1.2.zip), transfer it to the offline computer and extract it. Python 3.10 or later is the only installation prerequisite. From the extracted folder, install for your user with:
+Add `--global` to the second command for user-wide installation. If your shell cannot find `wsg`, run `uv tool update-shell` and open a new terminal.
+
+### Install offline
+
+Download [Source code (zip)](https://github.com/hobin01/writing-styles-from-giants/archive/refs/tags/v0.2.0.zip) on a connected computer, then transfer it to the offline computer and extract it. With Python 3.10 or later, run the same installer from the extracted folder.
 
 ```sh
 python3 install.py install --host codex --global
 ```
 
-For a single project, run the following command **from that project**, using the full path to the extracted installer. Choose a host from the table above.
+For one project, run the extracted `install.py` by its full path from the target project and omit `--global`. [Offline installation guide](docs/OFFLINE.md)
 
-```sh
-python3 "/path/to/writing-styles-from-giants-0.1.2/install.py" install --host codex
-```
+## Try it in your agent
 
-The [dedicated offline ZIP](https://github.com/hobin01/writing-styles-from-giants/releases/download/v0.1.2/wsg-offline-v0.1.2.zip) also includes an installer and has a [SHA-256 checksum](https://github.com/hobin01/writing-styles-from-giants/releases/download/v0.1.2/SHA256SUMS). [Offline installation guide](docs/OFFLINE.md)
+Open a new session after installation and enter the example **in the chat**.
+
+| Local agent | `--host` | Try it |
+| --- | --- | --- |
+| Codex CLI | `codex` | `$wsg eli5 Explain why a bicycle slows down when I squeeze the brake.` |
+| Claude Code | `claude` | `/wsg auto Draft a design doc comparing a cache with direct database reads.` |
+| OpenCode | `opencode` | `Load the wsg skill and run: docs en` |
+| Pi | `pi` | `/skill:wsg feynman-technique Explain why two DNS resolvers can disagree.` |
+
+After selecting the skill, use `METHOD [LEVEL] REQUEST` to choose a method, `auto [LEVEL] REQUEST` to ask WSG to choose and explain its choice, or `docs en` / `docs ko` to browse. Writing defaults to `standard` on each request. Choose `light` for a lighter edit and `strict` for all applicable checks. See [host paths, tested versions and limits](docs/COMPATIBILITY.md).
+
+### ChatGPT
+
+**Desktop with a local project.** Install with `--host codex`, open your target project in the ChatGPT desktop app and check **Skills** in the sidebar. If `wsg` is listed, type `@`, select it, then enter `docs en`. [OpenAI’s skill guide](https://learn.chatgpt.com/docs/build-skills)
+
+**Web.** Create a ChatGPT Project and add the files for the method you want to its **Sources**. For ELI5, download the [instructions](skills/eli5/SKILL.md), [method rules](skills/eli5/method.json) and [locale profile](skills/eli5/locales/en.json). In a chat inside that project, ask: “Use the uploaded ELI5 instructions and rules at standard level. Why does a bicycle slow down when I squeeze the brake?” The files stay available for later chats in that project. This manual setup works one method at a time. For other methods, include any additional reference the instructions require at your chosen level. [ChatGPT Projects](https://learn.chatgpt.com/docs/projects)
 
 ## Which skill should I choose?
 
