@@ -2,7 +2,7 @@
 
 Codex에서는 아래 표에서 ID를 골라 `$wsg ID 요청`으로 써 보세요. 기본값은 `standard`입니다. 필요한 부분만 가볍게 손볼 때는 `light`, 적용할 수 있는 규칙을 모두 점검할 때는 `strict`를 붙이세요. 원하는 결과는 알겠는데 방법을 고르기 어렵다면 `$wsg auto 요청`으로 시작하면 됩니다.
 
-Claude Code에서는 `/wsg ID 요청`, `/wsg:auto 요청`, `/wsg:docs ko`로 쓸 수 있습니다.
+설치한 Claude Code 스킬에서는 `/wsg`, Pi에서는 `/skill:wsg` 뒤에 같은 내용을 입력하세요. OpenCode에서는 `wsg` 스킬을 불러와 같은 요청을 처리해 달라고 하세요.
 
 ### 개념을 설명하거나 주장을 따져 보고 싶을 때
 

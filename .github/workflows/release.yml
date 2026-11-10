@@ -1,4 +1,4 @@
-name: Draft source release
+name: Draft release
 
 on:
   push:
@@ -32,20 +32,19 @@ jobs:
           python3 scripts/check_repository.py --tag "$RELEASE_TAG"
           git diff --check "$(git hash-object -t tree /dev/null)" HEAD
           test "$(git rev-parse HEAD)" = "$(git rev-parse refs/remotes/origin/main)"
-      - name: Build tracked source archive
+      - name: Build release assets
         run: |
           archive="writing-styles-from-giants-${RELEASE_TAG}.tar.gz"
           mkdir -p "$RUNNER_TEMP/source-release"
           git archive --format=tar.gz --prefix="writing-styles-from-giants-${RELEASE_TAG}/" --output="$RUNNER_TEMP/source-release/$archive" HEAD
+          python -m pip wheel --no-deps --wheel-dir "$RUNNER_TEMP/source-release" .
           cd "$RUNNER_TEMP/source-release"
-          sha256sum "$archive" > "$archive.sha256"
+          wheel="writing_styles_from_giants-${RELEASE_TAG#v}-py3-none-any.whl"
+          sha256sum "$archive" "$wheel" > SHA256SUMS
       - name: Create draft release
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
         run: |
-          archive="writing-styles-from-giants-${RELEASE_TAG}.tar.gz"
-          gh release create "$RELEASE_TAG" \
-            "$RUNNER_TEMP/source-release/$archive" \
-            "$RUNNER_TEMP/source-release/$archive.sha256" \
+          gh release create "$RELEASE_TAG" "$RUNNER_TEMP"/source-release/* \
             --draft --verify-tag --generate-notes --title "$RELEASE_TAG"

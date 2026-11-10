@@ -1,6 +1,6 @@
 # WSG writing commands
 
-Handle one leading command from the user. Keep the original request, including newlines, quotes, code and attached source. Paths below refer to this checkout. An adapter can supply the command name separately from its arguments.
+Handle one leading command from the user. Keep the original request, including newlines, quotes, code and attached source. Paths below refer to the WSG copy that contains this guide. An adapter can supply the command name separately from its arguments.
 
 | Command | Behavior |
 | --- | --- |
@@ -8,7 +8,7 @@ Handle one leading command from the user. Keep the original request, including n
 | `/wsg:auto [LEVEL] REQUEST` | Select one method and use it to produce the requested answer. |
 | `/wsg:docs [en\|ko]` | Display the [English catalog](catalog.en.md) by default or the [Korean catalog](catalog.ko.md) for `ko`. Return all entries in that language. |
 
-The Codex skill invocation `$wsg` uses the same arguments. `$wsg METHOD [LEVEL] REQUEST` selects a method, `$wsg auto [LEVEL] REQUEST` selects automatically, and `$wsg docs [en|ko]` displays the catalog. Bare `$wsg` has the same behavior as bare `/wsg`.
+When a host loads the installed `wsg` skill, use the arguments following the invocation. A method ID selects that method, `auto [LEVEL] REQUEST` selects automatically, and `docs [en|ko]` displays the catalog. This applies to Codex’s `$wsg`, Claude Code’s `/wsg`, Pi’s `/skill:wsg`, and requests to load the skill by name. An invocation with no arguments has the same behavior as bare `/wsg`. The Claude Code checkout also provides `/wsg:auto` and `/wsg:docs`.
 
 ## Read the command header
 

@@ -1,6 +1,6 @@
 # Contributing
 
-Read [AGENTS.md](AGENTS.md) and [PROJECT.md](docs/PROJECT.md). Development is solo before stable `0.0.1`; public collaboration is planned.
+Read [AGENTS.md](AGENTS.md) and [PROJECT.md](docs/PROJECT.md). External contributors can submit PRs from forks.
 
 ## Issues and PRs
 
@@ -34,9 +34,9 @@ Report checks actually run and limitations. Repository tests do not establish wr
 
 ## Review and merge
 
-While private, the owner authorizes agent squash-merges after final-diff review and passing CI. Recheck visibility and the exact PR head; record author review, results, and self-merge basis. [GitHub prevents author self-approval](https://docs.github.com/en/pull-requests/how-tos/review-pull-requests/approving-a-pull-request-with-required-reviews), so do not claim independent approval. Report blocking protections instead of bypassing or changing them.
+A repository administrator reviews the final diff and squash-merges through a PR. GitHub requires the up-to-date `foundation` check and resolution of review conversations on `main`, `release`, and `release/*`. The sole maintainer can merge their own PR after the same checks. Identify author review accurately and record any independent review received.
 
-Revisit collaboration at `0.0.1` or public intake. One independent maintainer approval remains a proposed public-stage default. Source/rights review and competent language review are still required before a method or locale becomes `reviewed`.
+Method and locale promotion to `reviewed` still requires source/rights review and competent language review.
 
 ## Community
 

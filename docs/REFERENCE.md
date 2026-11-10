@@ -22,11 +22,11 @@ On 2026-11-08 we also read [Writing for Agents](https://github.com/mattpocock/sk
 
 | Upstream pattern | This project |
 | --- | --- |
-| README purpose, installation, and linked skill index | Matching English/Korean sections with honest candidate and installation status |
+| README purpose, installation, and linked skill index | Matching English/Korean sections with method examples and versioned installation steps |
 | Per-skill directories grouped into buckets | Complete method directories; keep a flat catalog until real content needs categories |
 | Human docs separate from agent instructions | Short method summaries; steps and source evidence stay with the method |
 | Contributor/scope docs and issue forms | Focused issues/PRs; allow future community methods and contributions |
-| Version automation and plugin manifests | Existing Python checks and manual source versions; add packaging only when needed |
+| Version automation and plugin manifests | Python checks, versioned wheels and GitHub Releases |
 
 Upstream AGENTS.md links to CLAUDE.md; we retain a plain CLAUDE.md pointer to shared AGENTS.md. Its maintainer-only global-link script can replace existing directories and is not reused: our installer contract preserves unowned/modified content.
 
@@ -38,7 +38,7 @@ Anthropic's [Skill Creator](https://github.com/anthropics/skills/blob/2c5958ecac
 
 ## vercel-labs/skills
 
-Vercel. [skills README, commit d3701c1](https://github.com/vercel-labs/skills/blob/d3701c11b1101251af14c9d148f026e1a47ebe17/README.md). Accessed 2026-11-07; scope: README. Identifies an existing installer candidate with project-scoped installation and agent selection, informing the reuse-first delivery plan in [PROJECT.md](PROJECT.md) and the installation contract in [ARCHITECTURE.md](ARCHITECTURE.md). No installer integration or behavior tests have been completed; license evidence is in [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md).
+Vercel. [skills README, commit d3701c1](https://github.com/vercel-labs/skills/blob/d3701c11b1101251af14c9d148f026e1a47ebe17/README.md). Accessed 2026-11-07; scope: README. Identifies an existing installer candidate with project-scoped installation and agent selection, informing the reuse-first delivery plan in [PROJECT.md](PROJECT.md) and the installation contract in [ARCHITECTURE.md](ARCHITECTURE.md). WSG ships its own bundled command guide and method catalog using a Python wheel. The Vercel installer is recorded as a research candidate in [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md).
 
 ## Agent Skills
 
@@ -48,12 +48,18 @@ On 2026-11-09 we checked the user-scope path, symlink discovery and update behav
 
 We also inspected [OpenCode 1.16.2 command expansion](https://github.com/anomalyco/opencode/blob/v1.16.2/packages/opencode/src/session/prompt.ts#L1436-L1448) on 2026-11-08. Its handling of shell syntax after argument substitution affects whether arbitrary source text can safely pass through a native command template. That version has no WSG adapter in this checkout.
 
-Agent Skills project. [Repository README, commit 83021e2](https://github.com/agentskills/agentskills/blob/83021e2be457a9b6679148719c1f6074f0ad975e/README.md) and [skills-ref README](https://github.com/agentskills/agentskills/blob/83021e2be457a9b6679148719c1f6074f0ad975e/skills-ref/README.md). Accessed 2026-11-07; scope: those two files. Consulted for portable skill-directory structure and validation references under [ARCHITECTURE.md](ARCHITECTURE.md). The library is explicitly demonstration-only, so it is not adopted as a production dependency. Code and documentation have distinct licenses recorded in [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md). The living [format specification](https://agentskills.io/specification) was read on 2026-11-07 for directory layout, name/description frontmatter, progressive disclosure, and relative references; implementation follows a simple portable subset. No specification prose/code was copied. Host compatibility remains unverified.
+Agent Skills project. [Repository README, commit 83021e2](https://github.com/agentskills/agentskills/blob/83021e2be457a9b6679148719c1f6074f0ad975e/README.md) and [skills-ref README](https://github.com/agentskills/agentskills/blob/83021e2be457a9b6679148719c1f6074f0ad975e/skills-ref/README.md). Accessed 2026-11-07; scope: those two files. Consulted for portable skill-directory structure and validation references under [ARCHITECTURE.md](ARCHITECTURE.md). The library is explicitly demonstration-only, so it is not adopted as a production dependency. Code and documentation have distinct licenses recorded in [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md). The living [format specification](https://agentskills.io/specification) was read on 2026-11-07 for directory layout, name/description frontmatter, progressive disclosure, and relative references; implementation follows a simple portable subset. No specification prose or code was copied. See the [host checks](COMPATIBILITY.md) for discovery and invocation evidence.
 
+
+## Release installation and protection
+
+Accessed 2026-11-10. Astral’s [uv tools](https://docs.astral.sh/uv/concepts/tools/) and [installation guide](https://docs.astral.sh/uv/getting-started/installation/) document isolated tool environments, executables on PATH and uv installation for the [README](../README.md). PyPA’s [Hatch build configuration](https://hatch.pypa.io/latest/config/build/) documents the file selection and path rewriting used to bundle the original methods in the wheel. GitHub’s [available rules for rulesets](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets) and [repository rules REST API](https://docs.github.com/en/rest/repos/rules) document branch/tag restrictions and ruleset inspection for [release maintenance](RELEASING.md).
+
+For the [host installation guide](COMPATIBILITY.md), we checked standalone skills, explicit invocation and project sources in OpenAI’s [Build skills](https://learn.chatgpt.com/docs/build-skills) and [Projects](https://learn.chatgpt.com/docs/projects). We checked directory discovery and invocation in Anthropic’s [Extend Claude with skills](https://code.claude.com/docs/en/skills), [OpenCode Skills](https://opencode.ai/docs/skills/) and [Pi Skills](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/skills.md) on 2026-11-10.
 
 ## Initial catalog research sources
 
-Accessed 2026-11-07. These entries informed the [24-method assessment](INITIAL_CATALOG_RESEARCH.md) and its experimental implementations. The [initial catalog review](CATALOG_REVIEW.md) pins every original method’s source-to-rule evidence to the initial commit. The [consolidation review](CATALOG_CONSOLIDATION.md) records current representatives and retired scopes; bibliography entries for consulted but retired methods remain historical research, not active skill recommendations. Its corresponding method sections record editions, actual passages read, Korean considerations, and source-access limits. Live pages have no frozen edition unless identified there. No complete-book review is implied. Rights and candidate implementation licenses are recorded in [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md).
+Accessed 2026-11-07. These entries informed the [24-method assessment](https://github.com/hobin01/writing-styles-from-giants/blob/d98bec642144941c36100237471ff744efe63bc3/docs/INITIAL_CATALOG_RESEARCH.md) and its experimental implementations. The [initial catalog review](CATALOG_REVIEW.md) pins every original method’s source-to-rule evidence to the initial commit. The [consolidation review](CATALOG_CONSOLIDATION.md) records current representatives and retired scopes; bibliography entries for consulted but retired methods remain historical research, not active skill recommendations. Its corresponding method sections record editions, actual passages read, Korean considerations, and source-access limits. Live pages have no frozen edition unless identified there. No complete-book review is implied. Rights and candidate implementation licenses are recorded in [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md).
 
 | Source owner and work | Consulted source and read scope | Use |
 | --- | --- | --- |
@@ -96,7 +102,7 @@ Accessed 2026-11-07. These entries informed the [24-method assessment](INITIAL_C
 
 ## Additional skill implementation references
 
-Each project is recorded once below. All were accessed 2026-11-07; [comparison notes](INITIAL_CATALOG_RESEARCH.md#comparable-projects) identify exact files read, useful patterns, omissions, and whether license text was actually inspected. No implementation was adopted or run.
+Each project is recorded once below. All were accessed 2026-11-07; [comparison notes](https://github.com/hobin01/writing-styles-from-giants/blob/d98bec642144941c36100237471ff744efe63bc3/docs/INITIAL_CATALOG_RESEARCH.md#comparable-projects) identify exact files read, useful patterns, omissions, and whether license text was actually inspected. No implementation was adopted or run.
 
 | Project | Inspected revision | Use |
 | --- | --- | --- |

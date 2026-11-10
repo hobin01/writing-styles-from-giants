@@ -1,21 +1,8 @@
 # Changelog
 
-## [Unreleased]
+## [0.1.0]
 
-- Publish all 22 methods at light, standard and strict in English and Korean. Each level page contains the neutral case question, GPT-6 Luna’s answer with the skill and its answer to the same question without the skill. Each method’s example README explains its three levels. The Korean editing skill now checks that a historical caption preserves when a person was eligible and for how much.
-- Support explicit method selection, automatic matching and bilingual help from the project or a user-scope Codex link to the live checkout.
-- Add worked examples to the writing skills, including runnable HTML explanations.
-
-- Consolidate 25 skills to 22: retire standalone SCQA in favor of Minto, CTE-inspired editing in favor of ASD, and the factual Hemingway adaptation in favor of Orwell. Retain all nine cases and document how to select their replacements.
-
-- Implement 24 experimental methods and one Korean linguistic companion, with portable instructions, source-to-rule metadata, level policies, and ordinary/exception/meaning-preservation cases.
-- Exclude John von Neumann; map ASD `normal` to `standard` and distinguish strict STE-inspired checks from official compliance.
-- Validate catalog evidence and level contracts in CI; review each skill with Ponytail.
-
-- Research the initial 25 skill candidates, comparable implementations, source limitations, and unresolved scope choices; confirm English-first authoring and per-skill Ponytail review.
-- Add English/Korean project documentation, method/localization templates, and evaluation examples.
-- Add foundation checks, collaboration templates, CI, and a draft source-release workflow; Foundation CI is verified, source releases and host compatibility are not.
-- Confirm MIT for original content and prioritize compatible permissive reuse with preserved notices.
-- Keep local history, credentials, and caches ignored and rejected by repository checks; delete task-owned temporary files.
-
-Current source version: `0.0.1-dev`. No production method or runtime has been released.
+- First public release. Install the `wsg` command from the versioned GitHub wheel using uv, then choose a host and project or user scope.
+- Select one of 22 experimental writing methods, request automatic selection, or browse the English and Korean catalogs. Examples show each level beside a response to the same question without the skill.
+- Add installation and usage examples for ChatGPT, Codex CLI, Claude Code, OpenCode, and Pi. See [host compatibility](docs/COMPATIBILITY.md) for the evidence for each surface.
+- The existing live Codex checkout link remains available. An existing installation at the same location must be resolved before switching delivery paths.

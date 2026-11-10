@@ -2,7 +2,7 @@
 
 In Codex, pick an ID below and enter `$wsg ID your request`. The default level is `standard`. Add `light` for a lighter edit or `strict` for all applicable checks. If you know the result you want but not the method, use `$wsg auto your request`.
 
-In Claude Code, use `/wsg ID your request`, `/wsg:auto your request` or `/wsg:docs en`.
+Use `/wsg` in an installed Claude Code skill or `/skill:wsg` in Pi, followed by the same arguments. In OpenCode, ask it to load `wsg` and give it those arguments.
 
 ### Explain or test an idea
 

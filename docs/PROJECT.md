@@ -1,35 +1,13 @@
-# Project definition
+# Project scope
 
-## Purpose and requirements
+Writing Styles from Giants helps readers choose a documented writing or explanation method for a specific task. The host model applies the selected instructions to the user's material. Each method attributes its sources and identifies which rules the project adapted or created.
 
-Make documented writing and explanation methods usable as AI-agent skills. The [README](../README.md) records the founder's motivation and initial candidates.
+## Catalog and distribution
 
-- Draw from thinkers, historical figures, books, companies, and institutions, with source evidence and attribution.
-- Respect explicit method choice, recommendation requests, opt-out, and selected application scope.
-- Provide `light`, `standard`, and `strict` levels without changing facts or qualifications.
-- Start with English/Korean adaptations and target the six hosts in [COMPATIBILITY.md](COMPATIBILITY.md).
-- Evaluate existing installers for an `npx`-style, project/global delivery path before writing one.
-- Use MIT for original content and reuse vetted permissive implementations under the [license policy](../THIRD_PARTY_NOTICES.md).
+The catalog contains 21 methods and a Korean plain-language companion. Each method ships with its instructions, source and rights records, level policies, and test cases. English and Korean example pages show the question, the answer at the selected level and the answer generated without the skill. [English examples](../EXAMPLES.md) · [Korean examples](../EXAMPLES.ko.md)
 
-The repository is private during solo development before stable `0.0.1`, but every commit must be suitable for eventual public release. Follow [CONTRIBUTING.md](../CONTRIBUTING.md) for branch/commit/PR handling and [SECURITY.md](../SECURITY.md) for local history, credentials, caches, and cleanup.
+Install the versioned release with uv and choose a host and scope. The READMEs cover installation and usage, and the compatibility record distinguishes documented discovery paths from observed host behavior. [Installation](../README.md) · [Host compatibility](COMPATIBILITY.md)
 
-## Delivery sequence and acceptance
+## Review status
 
-1. **Complete method content.** Maintain a real `skills/<method-id>/` with source/version, read scope, rights notes, stable rules, exceptions, per-level behavior, and applicable language rules. English-first instructions and the Korean companion follow the owner’s policy. Add ordinary-use, important-exception, and meaning-preservation cases. Follow [METHOD_AUTHORING.md](METHOD_AUTHORING.md); extend existing checks with behavioral tests when catalog validation needs them.
-2. **Observed writing behavior.** Verify explicit choice, opt-out, all levels, uncertain/conditional statements, and unavailable locales in a host. Check the actual outputs against their facts, language and effective rules before publication. Recommendations must explain fit and respect overrides; add a router only when real choices need one.
-3. **Tested distribution.** Evaluate the existing [reuse candidates](../THIRD_PARTY_NOTICES.md) against [ARCHITECTURE.md](ARCHITECTURE.md). Verify complete references, scope, conflicts, durable link/copy behavior, modified files, shared roots, interrupted updates, and removal preservation. Publish installation instructions and support claims only for tested host/version/OS combinations; Windows needs its own evidence.
-4. **Source release.** Resolve semantic and ownership failures, inspect archive rights/content, and follow [RELEASING.md](RELEASING.md) for the first `0.0.1` draft. Expand methods and host coverage from evidence.
-
-The commands default to `standard` on each writing request. Codex can also use the checkout from other projects through the [user-scope link](COMPATIBILITY.md#codex-user-scope). Automatic selection is explicit. Method review, model evaluations, and host evidence are distinct from repository tests. Public CI requires no model keys; optional model evaluations use bounded cost and sanitized inputs.
-
-## Current state
-
-Present: 21 experimental methods plus a Korean-specific linguistic companion, source-to-rule metadata, per-level policies, ordinary/exception/meaning-preservation cases, per-skill Ponytail review, and catalog validation with behavioral unit tests. [CATALOG_CONSOLIDATION.md](CATALOG_CONSOLIDATION.md) records three overlap removals, retained distinctions, and migration. [CATALOG_REVIEW.md](CATALOG_REVIEW.md) documents the original per-skill content review. Existing foundation documentation, CI, and release definitions remain.
-
-The [WSG commands](../commands/WSG.md) support explicit selection, automatic matching and bilingual help. Each method has six example pages covering three levels in English and Korean. Every page shows the question and GPT-6 Luna’s answers with and without the skill. The three levels share one no-skill answer per question and language. Browse the [English](../EXAMPLES.md) or [Korean](../EXAMPLES.ko.md) gallery. [Host verification](COMPATIBILITY.md) covers tested discovery and invocation paths.
-
-Pending: installer lifecycle integration, independent native-language and reader review, repeated comparative evaluations, release workflow verification, and repository protection settings. All methods retain experimental status.
-
-## Boundaries
-
-Reuse host capabilities and existing tools. A custom runtime, CLI, adapter, or plugin needs evidence of a gap first. No dashboard, paid service, remote content upload, model hosting, arbitrary plugin execution, person impersonation, authorship detector, or certified-STE claim is planned. The ASD profile is STE-inspired; full ASD-STE100 compliance remains unverified.
+All 22 methods are experimental. Repository tests check file integrity and method contracts. The examples record individual model responses. Independent reader studies, native-language review and complete ASD-STE100 conformity remain unverified. Method versions and review status are recorded in each method's `method.json`. [Authoring and evaluation](METHOD_AUTHORING.md) · [Language review](LOCALIZATION.md)

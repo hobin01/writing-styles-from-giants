@@ -1,27 +1,13 @@
 # CI and releases
 
-Foundation CI is verified; the source-release workflow is not. Branch/tag protection and visibility remain hosting settings, not guarantees of local configuration.
+The [Foundation workflow](../.github/workflows/ci.yml) validates pull requests and the protected branches. It runs the unit tests, repository and whitespace checks, builds a wheel, installs it and compares the installed catalog with the checkout. PR jobs use a read-only token. Actions are pinned to commit SHAs and [Dependabot](../.github/dependabot.yml) checks for updates.
 
-## CI
+## Publish a version
 
-[Foundation CI](../.github/workflows/ci.yml) runs tests, repository checks, and tracked-source whitespace checks on PRs and `main`, with read-only permissions and no model keys. Actions use SHA pins; [Dependabot](../.github/dependabot.yml) proposes monthly updates. [The first main run](https://github.com/hobin01/writing-styles-from-giants/actions/runs/42237615689) passed on `6f1689d`.
+1. Update [VERSION](../VERSION), [CHANGELOG.md](../CHANGELOG.md) and both README installation URLs in a PR. The wheel takes its version from `VERSION`; each method records its own content version in `method.json`. Describe behavior changes, migration steps and known limitations.
+2. Run the [contributor checks](../CONTRIBUTING.md#validation) and `python3 scripts/check_repository.py --tag vX.Y.Z`. Review the final diff and squash-merge after CI passes.
+3. A repository administrator tags the merged `main` commit and pushes the new stable `vMAJOR.MINOR.PATCH` tag. The [release workflow](../.github/workflows/release.yml) checks the tag against `VERSION`, the changelog and the current tip of `main`. Let it finish before merging the next release.
+4. Inspect the draft on GitHub. Download the source archive, wheel and `SHA256SUMS` together. Run `sha256sum -c SHA256SUMS` (or `shasum -a 256 -c SHA256SUMS` on macOS). Test the wheel in a clean uv tool environment, check its methods and rights notices, and verify the release notes refer to the correct tag.
+5. Publish the draft. Verify the public asset URL with the README install command. GitHub locks published assets and tags. Ship corrections in a new patch release.
 
-Use the branch/PR policy in [CONTRIBUTING.md](../CONTRIBUTING.md). Configure public-stage protections from [DECISIONS.md](DECISIONS.md); do not run contributor code through privileged `pull_request_target` jobs.
-
-## Versions
-
-The first stable release is `0.0.1`; [VERSION](../VERSION) remains unreleased until preparation. Keep version and changelog changes in a PR. Before 1.0, breaking changes and additions increment minor, corrections patch; from 1.0, incompatible public changes increment major. Rule/locale changes can be behavior changes even when only Markdown/JSON changes.
-
-Method metadata carries its own content version. Record included method versions in release notes. Manual VERSION/CHANGELOG updates suffice; a runtime package or Changesets is not required.
-
-## Draft source release
-
-The [workflow](../.github/workflows/release.yml) accepts stable `vMAJOR.MINOR.PATCH` tags without leading zeros; prerelease tags are unsupported. Verify its hosted behavior before the first public release.
-
-1. Prepare a stable VERSION and matching `## [<version>]` changelog section in a reviewed PR, including limitations and migration notes. Run foundation and applicable method/host checks.
-2. Tag current `main` through an authorized maintainer. The workflow requires the tagged commit to equal `origin/main` at checkout; never move an existing release tag to work around a mismatch.
-3. The job reruns tests, tag/version/changelog and public-path checks, then creates a tracked-source `tar.gz` and SHA-256 checksum. Include required upstream licenses/notices under [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md).
-4. GitHub creates a draft with the archive, checksum, and generated notes. Inspect them before publication. The job has `contents: write`; PR CI remains read-only. No npm package is published.
-5. Inspect failed runs and existing drafts before retrying. Existing assets are not silently replaced; published corrections use a new version.
-
-`git archive` includes tracked files only, so review still matters: path checks are not a general secret scanner. Rollback selects a prior version while preserving user modifications, rather than rewriting tags or deleting user skill roots. A local change does not authorize release publication or hosting-setting changes.
+The wheel has no runtime dependencies and is distributed through GitHub Releases. The source archive contains the tracked files at the tag. CI and releases do not need model credentials.

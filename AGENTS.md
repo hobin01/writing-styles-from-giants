@@ -33,7 +33,7 @@ For an explicit `$wsg` invocation in Codex, or a leading `/wsg`, `/wsg:auto`, or
 - Keep local work history, credentials, and caches ignored under [SECURITY.md](SECURITY.md); read them only when the task needs them. Keep private content out of public fixtures, logs, commits, and releases. Delete task-owned temporary files when finished.
 - Installations default to project scope. Global writes, conflicting files, or modified installed files require explicit handling; never silently overwrite or delete them. Retain the entire skill directory and its references.
 - Preserve other contributors' work. Do not discard unrelated edits or rewrite shared branch history. Use a short-lived branch from `main`.
-- Commit validated work promptly, push, handle its PR, and delete the completed local/remote branch in the same task. Follow [CONTRIBUTING.md](CONTRIBUTING.md) for cleanup checks and owner-authorized private-stage self-merges before `0.0.1`.
+- Commit validated work promptly, push, handle its PR, and delete the completed local/remote branch in the same task. Follow [CONTRIBUTING.md](CONTRIBUTING.md) for public PR review, merge authority, and cleanup checks.
 
 ## Verify and report
 
