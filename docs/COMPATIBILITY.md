@@ -1,19 +1,25 @@
 # Host compatibility
 
-Open this checkout in your agent, or use the Codex user-scope setup below to work elsewhere. The adapters use the host's model and read the same [command guide](../commands/WSG.md).
+The [installation guide](../README.md#install-for-a-local-agent) installs a complete `wsg` skill for the selected host. Project scope uses the current directory. User scope uses the host's default per-user skill directory. Existing or modified installations can be kept as backups by moving the whole `wsg` directory outside the host’s discovery paths before reinstalling. To remove the skill, move it out of each host where you installed it. To remove the separate CLI, run `uv tool uninstall writing-styles-from-giants`.
 
-| Host | Status | Documentation starting point |
+| Surface | Project / user skill directory | Invocation and evidence |
 | --- | --- | --- |
-| Codex CLI and app-server | Smoke-tested in the checkout and via a user-scope link from an unrelated project | [Repository and user skills, directory symlinks and explicit invocation](https://learn.chatgpt.com/docs/build-skills) · [CLI slash-command menu](https://learn.chatgpt.com/docs/developer-commands?surface=cli) |
-| Claude Code | Project slash-command discovery and expansion verified: `/wsg`, `/wsg:auto`, `/wsg:docs`. Live Claude generation untested. | [Project command names and arguments](https://code.claude.com/docs/en/skills#how-a-skill-gets-its-command-name) |
-| OpenCode | No native slash adapter shipped | [Skills](https://opencode.ai/docs/skills/) and [V2 skills](https://opencode.ai/v2/docs/skills) |
-| Antigravity | planned | [Skills](https://antigravity.google/docs/skills) |
-| Pi | planned | [Skills](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/skills.md) |
-| Cline | planned | [Skills](https://docs.cline.bot/customization/skills) |
+| Codex CLI | `.agents/skills` / `~/.agents/skills` | Type `$`, select `wsg`, then supply the method ID, `auto` or `docs`. Checkout and user-link runs on 0.167.0 are recorded below. [OpenAI skill guide](https://learn.chatgpt.com/docs/build-skills) |
+| Claude Code | `.claude/skills` / `~/.claude/skills` | Installed skill: `/wsg docs en`, `/wsg auto REQUEST` or `/wsg ID REQUEST`. The checkout additionally registers colon aliases. [Anthropic skill guide](https://code.claude.com/docs/en/skills) |
+| OpenCode | `.opencode/skills` / `~/.config/opencode/skills` | Ask the agent to load the `wsg` skill and pass `docs en` or a method and request. V2 also supports the explicit mention `@wsg docs en`. Custom shell-expanding command templates are unsuitable for quoting arbitrary writing samples on 1.16.2. [OpenCode skill discovery](https://opencode.ai/docs/skills/) |
+| Pi | `.pi/skills` / `~/.pi/agent/skills` | `/skill:wsg docs en` or `/skill:wsg ID REQUEST`. Use `/reload` after installing into a running session. [Pi skill guide](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/skills.md) |
+| ChatGPT desktop | Local project; check **Skills** in the sidebar | When `wsg` is listed, select it with `@` and give it the same arguments. Documented surface; WSG picker and generation untested. [OpenAI skill guide](https://learn.chatgpt.com/docs/build-skills) |
+| ChatGPT web | Project **Sources** | Add one method’s files and ask ChatGPT to apply them. The [README](../README.md#chatgpt) walks through ELI5. Manual file-based use; WSG does not publish a ChatGPT directory plugin. [ChatGPT projects](https://learn.chatgpt.com/docs/projects) |
+
+The release installer requires Python 3.10 or later and uses copies. Some hosts also scan other hosts’ directories. If a picker lists multiple `wsg` entries, check their paths and keep the intended version in one discoverable location. Windows host discovery and nondefault host directories require separate verification.
+
+## Packaged skill discovery · 2026-11-10
+
+On macOS 26.5.2 arm64, we installed the 0.1.0 wheel into separate project directories and started each host with isolated settings. Codex CLI 0.167.0 returned the project-scoped `wsg` path from app-server `skills/list`. Claude Code 2.1.228 listed the project’s `wsg` command at SDK initialization. OpenCode 1.16.2 listed only the WSG entrypoint in `opencode debug skill`. Pi 1.5.2 returned `skill:wsg` with its project path from RPC `get_commands`. The installer tests compare the bundled catalogs and method files with the source tree. These host probes exercise discovery; the model runs for the checkout are documented below.
 
 ## Codex user scope
 
-From the root of a checkout you intend to keep, link the adapter into Codex's user skills directory. Start a new Codex chat in another project and enter `$wsg docs ko` or `$wsg auto YOUR REQUEST`. Codex follows the link to the command guide and all 22 methods.
+For contributors who edit methods in a long-lived checkout, the original live-link setup is still available. From the checkout root, link its adapter into Codex’s user skills directory. Start a new Codex chat in another project and enter `$wsg docs ko` or `$wsg auto YOUR REQUEST`. Codex follows the link to the command guide and all 22 methods.
 
 ```sh
 python3 - <<'PY'
@@ -40,18 +46,3 @@ An existing different file, directory or link causes the command to stop. The li
 - **Codex CLI generation.** Fresh `codex exec` runs on `gpt-6.1-sol` returned the English catalog by default, selected Google design docs at `standard` for a Korean cache proposal, and applied ASD's strict reference to a conditional service instruction. Sorting words produced an ordinary answer without selecting a method. A request after `--` preserved “light” and “strict” as source words at the default level. A separate `$wsg off` call returned exactly the requested two words.
 - **Claude Code 2.1.228, same OS.** SDK initialization returned the three checkout commands from [the project command directory](../.claude/commands/). Headless invocations expanded all three with their arguments. A probe with inline and newline shell-looking text preserved the original command arguments, escaped the executable syntax in the expanded prompt and created no marker file. The probe used an isolated configuration and no provider account. It verifies the native parser, not a generated Claude answer.
 - **OpenCode 1.16.2.** Its [command implementation](https://github.com/anomalyco/opencode/blob/v1.16.2/packages/opencode/src/session/prompt.ts#L1436-L1448) expands user arguments before executing inline shell substitutions. A project command template on that version would let supplied writing samples trigger shell commands, so this checkout does not register one.
-
-## Evidence levels
-
-| Status | Required evidence |
-| --- | --- |
-| `planned` | Intended target; no current verification record |
-| `docs-confirmed` | Dated source links, host/surface/version, and the documented discovery/invocation behavior |
-| `smoke-tested` | Recorded discovery, invocation, and reference-access runs on a specified host/version/OS |
-| `release-tested` | Smoke tests plus the released method set and installation/update/removal scenarios |
-
-Only the latter two support runtime claims, within the actual tested scope. A supported file format or an existing directory does not establish invocation, hook execution, symlink discovery, or equivalent permissions.
-
-For each verified delivery path, record the installer/version, host/surface/version, OS, scope, resolved destination, discovery evidence, explicit invocation, reference access, and limitations. Test global/project same-name conflicts, shared roots, paths with spaces/non-ASCII characters, existing and modified user content, link/copy behavior, interrupted updates, and removal preservation. Windows support requires its own permission and link/copy evidence.
-
-Portable content follows the [Agent Skills specification](https://agentskills.io/specification). [Agent Plugins](https://agent-plugins.org/specification) are a separate packaging surface. Host tool names, metadata, lifecycle hooks, and authorization semantics stay outside the portable core.

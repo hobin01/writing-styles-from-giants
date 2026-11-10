@@ -17,23 +17,14 @@ License/README review only; these are not installed dependencies or runtime comp
 
 | Project and inspected revision | License evidence | Intended use and limit |
 | --- | --- | --- |
-| [vercel-labs/skills, d3701c1](https://github.com/vercel-labs/skills/tree/d3701c11b1101251af14c9d148f026e1a47ebe17) | [MIT](https://github.com/vercel-labs/skills/blob/d3701c11b1101251af14c9d148f026e1a47ebe17/LICENSE) | First installer candidate; verify complete references, scope, conflicts, update/removal, and host behavior before adoption |
+| [vercel-labs/skills, d3701c1](https://github.com/vercel-labs/skills/tree/d3701c11b1101251af14c9d148f026e1a47ebe17) | [MIT](https://github.com/vercel-labs/skills/blob/d3701c11b1101251af14c9d148f026e1a47ebe17/LICENSE) | Consulted for project and user installation conventions. WSG distributes its own installer through uv. |
 | [agentskills/agentskills, 83021e2](https://github.com/agentskills/agentskills/tree/83021e2be457a9b6679148719c1f6074f0ad975e) | [Apache-2.0](https://github.com/agentskills/agentskills/blob/83021e2be457a9b6679148719c1f6074f0ad975e/LICENSE) for code; [CC BY 4.0](https://github.com/agentskills/agentskills/blob/83021e2be457a9b6679148719c1f6074f0ad975e/README.md#license) for documentation, subject to directory-specific notices | Format/validation reference; [skills-ref](https://github.com/agentskills/agentskills/blob/83021e2be457a9b6679148719c1f6074f0ad975e/skills-ref/README.md) explicitly says it is demonstration-only, not a production dependency |
-| [mattpocock/skills, 4ae2317](https://github.com/mattpocock/skills/tree/4ae2317ddb22b046e26455e4f9c9b3aaaf62212d) | [MIT](https://github.com/mattpocock/skills/blob/4ae2317ddb22b046e26455e4f9c9b3aaaf62212d/LICENSE) | Repository organization and contributor guidance; see [REFERENCE.md](docs/REFERENCE.md) |
+| [mattpocock/skills, 4ae2317](https://github.com/mattpocock/skills/tree/4ae2317ddb22b046e26455e4f9c9b3aaaf62212d) | [MIT](https://github.com/mattpocock/skills/blob/4ae2317ddb22b046e26455e4f9c9b3aaaf62212d/LICENSE) | Repository organization and contributor guidance; see [REFERENCE.md](https://github.com/hobin01/writing-styles-from-giants/blob/0de22de5aa978b0e503b3201ba0609d53a200220/docs/REFERENCE.md) |
 | [anthropics/skills, 2c5958e](https://github.com/anthropics/skills/tree/2c5958ecac7cee2b583967a2c4981d0f4a75c579/skills/skill-creator) | [Skill Creator Apache-2.0](https://github.com/anthropics/skills/blob/2c5958ecac7cee2b583967a2c4981d0f4a75c579/skills/skill-creator/LICENSE.txt) | Consulted for worked examples and matched evaluations. All trial prompts, outputs and the HTML teaching example are project material. |
-
-No upstream implementation is currently bundled. The foundation checker validates this project's public-file boundary and authoring examples; it does not replace a standard-format validator.
-
-## Writing-method sources
-
-Candidates include [Orwell's essay](https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/politics-and-the-english-language/), [GSA Plain Language materials](https://github.com/GSA/plainlanguage.gov), and [Barbara Minto's site](https://www.barbaraminto.com/). These links establish neither reuse permission nor completed source review.
-
-Books, standards, dictionaries, quotations, images, and linked references keep their own rights. An upstream code license does not relicense its sources. Author original operational summaries, attribute adaptations, and resolve rights before bundling external material. The template rules are project-original examples. Names identify sources and targets without implying endorsement or affiliation.
-
 
 ## Initial catalog research and additional candidates
 
-The [initial assessment](docs/INITIAL_CATALOG_RESEARCH.md) and [bibliography](docs/REFERENCE.md#initial-catalog-research-sources) record original summaries and links, not redistributed source documents or adopted implementations. The following license texts were inspected on 2026-11-07 at the listed revisions. These are reference candidates only; before copying files, review their file-specific notices, referenced sources, assets, and dependencies and record the actual reuse here.
+The following licenses were inspected on 2026-11-07 at the listed revisions. Before copying any files, review their specific notices, referenced sources, assets and dependencies. The bibliography records the source assessment for these candidates. [Research sources](https://github.com/hobin01/writing-styles-from-giants/blob/0de22de5aa978b0e503b3201ba0609d53a200220/docs/REFERENCE.md#initial-catalog-research-sources)
 
 | Candidate and revision | Inspected license evidence | Scope |
 | --- | --- | --- |

@@ -1,6 +1,8 @@
 [
   {
     "id": "uncertainty-en",
+    "type": "meaning-preservation",
+    "sourceIds": [],
     "method": "example-method",
     "locale": "en",
     "level": "strict",
@@ -11,6 +13,8 @@
   },
   {
     "id": "condition-ko",
+    "type": "ordinary",
+    "sourceIds": [],
     "method": "example-method",
     "locale": "ko",
     "level": "light",
@@ -21,6 +25,8 @@
   },
   {
     "id": "necessary-repetition-en",
+    "type": "exception",
+    "sourceIds": [],
     "method": "example-method",
     "locale": "en",
     "level": "strict",

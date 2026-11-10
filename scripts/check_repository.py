@@ -250,14 +250,14 @@ def validate(root, tag=None):
                 errors.append(f"Invalid JSON in {path.relative_to(root)}: {error}")
     errors.extend(catalog_errors(root, files))
     public_names = {path.relative_to(root).as_posix() for path in files}
-    example_names = {"templates/method/method.example.json", "templates/method/locales/en.json", "templates/method/locales/ko.json", "evals/cases.example.json"}
+    example_names = {"templates/method/method.example.json", "templates/method/locales/en.json", "templates/method/locales/ko.json", "templates/method/cases.json"}
     try:
         if not example_names.issubset(public_names):
             raise ValueError("Required example files are missing or outside the public boundary.")
         method = json.loads((root / "templates/method/method.example.json").read_text())
         locales = {locale: json.loads((root / f"templates/method/locales/{locale}.json").read_text()) for locale in ("en", "ko")}
-        cases = json.loads((root / "evals/cases.example.json").read_text())
-        errors.extend(example_errors(method, locales, cases))
+        cases = json.loads((root / "templates/method/cases.json").read_text())
+        errors.extend(method_errors(method, locales, cases))
     except (OSError, ValueError) as error:
         errors.append(f"Cannot load authoring examples: {error}")
     for workflow in [path for path in files if path.parent == root / ".github/workflows" and path.suffix == ".yml"]:

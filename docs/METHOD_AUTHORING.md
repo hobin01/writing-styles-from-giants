@@ -43,7 +43,7 @@ Submit source evidence, applicability, level differences, exceptions, locale sta
 
 Every method stores `cases.json` inside its portable directory, with `type` set to `ordinary`, `exception`, or `meaning-preservation` and `sourceIds` linking its metadata evidence (empty for wholly project-original rules). Every method needs cases for an ordinary use, an important exception, and a meaning-preservation failure. Cases identify relevant rule IDs and observable expectations. Use synthetic or expressly redistributable text, never private client material. Preserve uncertainty, negation, scope, conditions, quantities, citations, and code.
 
-The [example cases](../evals/cases.example.json) demonstrate expectations; they are not model run results. Apply Ponytail after completing each skill and record concrete pruning or retained boundaries in the catalog review. Keep deterministic checks separate from model-judged quality and human reader evaluation. Check factual fidelity as well as fit to the selected method.
+The [template cases](../templates/method/cases.json) demonstrate all three case types. Apply Ponytail after completing each skill and record concrete pruning or retained boundaries in the PR. Report repository checks, observed model behavior and human reader evaluations separately.
 
 ## Publish a gallery example
 

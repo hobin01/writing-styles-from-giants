@@ -3,7 +3,7 @@ name: Foundation
 on:
   pull_request:
   push:
-    branches: [main]
+    branches: [main, release, 'release/**']
 
 permissions:
   contents: read
@@ -24,3 +24,14 @@ jobs:
         run: python3 scripts/check_repository.py
       - name: Check tracked source whitespace
         run: git diff --check "$(git hash-object -t tree /dev/null)" HEAD
+      - name: Install and verify the wheel
+        run: |
+          python -m pip wheel --no-deps --wheel-dir "$RUNNER_TEMP/dist" .
+          python -m pip install --no-index "$RUNNER_TEMP"/dist/*.whl
+          cd "$RUNNER_TEMP"
+          wsg install --host codex
+          wsg install --host pi --global
+          diff -r .agents/skills/wsg "$HOME/.pi/agent/skills/wsg"
+          diff -r "$GITHUB_WORKSPACE/skills" .agents/skills/wsg/.catalog/skills
+          diff -r "$GITHUB_WORKSPACE/commands" .agents/skills/wsg/.catalog/commands
+          test "$(wsg --version)" = "$(cat "$GITHUB_WORKSPACE/VERSION")"

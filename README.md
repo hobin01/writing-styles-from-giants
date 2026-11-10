@@ -8,24 +8,30 @@ What happens when floating ice melts? Read how GPT-6 Luna answers that question 
 
 Every example shows the question and both answers on one page. For each question, you can read GPT-6 Luna’s answer without the skill and its answers at `light`, `standard` and `strict`. The same no-skill answer appears on all three pages so you can use it as a reference. English and Korean answers each came from separate sessions in that language. [English examples](EXAMPLES.md) · [한국어 예제](EXAMPLES.ko.md)
 
-## Try it in Codex
+## Install for a local agent
 
-Open this repository as your project. Copy one line into a new conversation, including the `$`.
+Install the `wsg` command once from the GitHub Release using Python 3.10 or later and [uv](https://docs.astral.sh/uv/getting-started/installation/).
 
-```text
-$wsg eli5 Explain why a bicycle wheel slows down when I squeeze the brake.
-$wsg asd-ste100 strict Edit this note: The access panel may be opened only after both lamps go out.
-$wsg auto Draft a design doc comparing a read cache with reading the database every time.
-$wsg docs en
+```sh
+uv tool install https://github.com/hobin01/writing-styles-from-giants/releases/download/v0.1.0/writing_styles_from_giants-0.1.0-py3-none-any.whl
 ```
 
-- **Know the method?** Use `$wsg METHOD [LEVEL] REQUEST`. Leaving out the level selects `standard` on every call. Choose `light` for a lighter edit or `strict` to check every applicable rule. Conditions and numbers retain their meaning at every level.
-- **Want help choosing?** Use `$wsg auto [LEVEL] REQUEST`. It selects a skill for the task and reader, tells you why it fits and uses it to answer.
-- **Want to browse?** Use `$wsg docs`. English is the default. `$wsg docs ko` explains each skill in Korean and `$wsg docs en` does so in English.
+If your shell cannot find `wsg`, run `uv tool update-shell` and open a new terminal. Choose your agent below. Run the install command in the project where you want the skill. To use it in all your projects, add `--global`, for example `wsg install --host codex --global`. Then open the agent in a new session and enter the example **in the chat**.
 
-To use `$wsg` in other projects, [link the Codex skill once at user scope](docs/COMPATIBILITY.md#codex-user-scope). The link reads this checkout, so local updates to methods and commands take effect without reinstalling.
+| Local agent | Install in this project | Try it |
+| --- | --- | --- |
+| Codex CLI | `wsg install --host codex` | `$wsg eli5 Explain why a bicycle slows down when I squeeze the brake.` |
+| Claude Code | `wsg install --host claude` | `/wsg auto Draft a design doc comparing a cache with direct database reads.` |
+| OpenCode | `wsg install --host opencode` | `Load the wsg skill and run: docs en` |
+| Pi | `wsg install --host pi` | `/skill:wsg feynman-technique Explain why two DNS resolvers can disagree.` |
 
-In Claude Code the same commands are spelled `/wsg`, `/wsg:auto` and `/wsg:docs en` inside this checkout. [Host verification](docs/COMPATIBILITY.md)
+After selecting the skill, use `METHOD [LEVEL] REQUEST` to choose a method, `auto [LEVEL] REQUEST` to ask WSG to choose and explain its choice, or `docs en` / `docs ko` to browse. Writing defaults to `standard` on each request. Choose `light` for a lighter edit and `strict` for all applicable checks. See [host paths, tested versions and limits](docs/COMPATIBILITY.md).
+
+### ChatGPT
+
+**Desktop with a local project.** Use the Codex installation row above, open that project in the ChatGPT desktop app and check **Skills** in the sidebar. If `wsg` is listed, type `@`, select it, then enter `docs en`. [OpenAI’s skill guide](https://learn.chatgpt.com/docs/build-skills)
+
+**Web.** Create a ChatGPT Project and add the files for the method you want to its **Sources**. For ELI5, download the [instructions](skills/eli5/SKILL.md), [method rules](skills/eli5/method.json) and [locale profile](skills/eli5/locales/en.json). In a chat inside that project, ask: “Use the uploaded ELI5 instructions and rules at standard level. Why does a bicycle slow down when I squeeze the brake?” The files stay available for later chats in that project. This manual setup works one method at a time. For other methods, include any additional reference the instructions require at your chosen level. [ChatGPT Projects](https://learn.chatgpt.com/docs/projects)
 
 ## Which skill should I choose?
 

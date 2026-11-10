@@ -8,24 +8,30 @@ AI한테 “쉽게 설명해 줘”라고 하면, 제가 궁금했던 부분까�
 
 각 예제에는 질문과 두 답변이 있습니다. 같은 질문에 스킬 없이 받은 답 하나와 `light`, `standard`, `strict`로 받은 답 하나씩을 실었어요. 어느 레벨을 열어도 스킬 없이 받은 답이 같아서 바로 비교할 수 있습니다. 한국어와 영어는 새 대화에서 각 언어로 직접 물었습니다. [한국어 예제](EXAMPLES.ko.md) · [영어 예제](EXAMPLES.md)
 
-## Codex에서 써 보기
+## 내 에이전트에 설치하기
 
-이 저장소를 프로젝트로 열고, 새 대화에 아래 예제 중 한 줄을 그대로 입력해 보세요. 맨 앞의 `$`도 명령의 일부입니다.
+Python 3.10 이상과 [uv](https://docs.astral.sh/uv/getting-started/installation/)로 GitHub 릴리스에서 `wsg` 명령을 한 번 설치하세요.
 
-```text
-$wsg eli5 자전거 브레이크를 잡으면 왜 바퀴가 느려지는지 설명해 줘.
-$wsg asd-ste100 strict Edit this note: The access panel may be opened only after both lamps go out.
-$wsg auto 캐시를 넣을지 결정해야 해. DB를 매번 읽는 방식과 비교하는 설계 문서 초안을 써 줘.
-$wsg docs ko
+```sh
+uv tool install https://github.com/hobin01/writing-styles-from-giants/releases/download/v0.1.0/writing_styles_from_giants-0.1.0-py3-none-any.whl
 ```
 
-- **방법을 알고 있으면** `$wsg 스킬-ID [단계] 요청`을 쓰세요. 단계를 생략하면 매번 `standard`입니다. 원문을 가볍게 손보려면 `light`, 해당 방법의 규칙을 하나씩 점검하려면 `strict`를 고르세요. 단계가 달라도 조건이나 수치의 의미는 그대로 보존합니다.
-- **고르기 어렵다면** `$wsg auto [단계] 요청`을 쓰세요. 요청의 목적과 독자에 맞는 스킬을 골라 이유를 알려 주고, 그 스킬로 답합니다.
-- **목록부터 보려면** `$wsg docs`를 쓰세요. 기본 언어는 영어입니다. `$wsg docs ko`는 한국어로, `$wsg docs en`은 영어로 각 스킬의 용도를 보여 줍니다.
+터미널에서 `wsg`를 찾을 수 없다고 나오면 `uv tool update-shell`을 실행하고 새 터미널을 여세요. 아래 표에서 사용할 도구를 고른 뒤 작업할 프로젝트 폴더에서 설치 명령을 실행하세요. 모든 프로젝트에서 쓰려면 `wsg install --host codex --global`처럼 명령 끝에 `--global`을 붙이세요. 설치한 뒤에는 에이전트에서 새 대화를 열고 **대화창에** 예제를 입력하세요.
 
-다른 프로젝트에서도 `$wsg`를 쓰려면 [Codex 전역 연결](docs/COMPATIBILITY.md#codex-user-scope)을 한 번 설정하세요. 이 저장소를 직접 가리키므로 스킬이나 명령이 로컬에서 바뀌면 다시 설치할 필요가 없습니다.
+| 도구 | 현재 프로젝트에 설치 | 대화창에 입력할 예제 |
+| --- | --- | --- |
+| Codex CLI | `wsg install --host codex` | `$wsg eli5 자전거 브레이크를 잡으면 왜 바퀴가 느려지는지 설명해 줘.` |
+| Claude Code | `wsg install --host claude` | `/wsg auto 캐시를 쓸지 결정해야 해. DB를 매번 읽는 방식과 비교하는 설계 문서 초안을 써 줘.` |
+| OpenCode | `wsg install --host opencode` | `wsg 스킬을 불러와서 docs ko를 실행해 줘.` |
+| Pi | `wsg install --host pi` | `/skill:wsg feynman-technique DNS 리졸버 두 곳의 응답이 왜 다를 수 있는지 설명해 줘.` |
 
-Claude Code에서는 이 저장소 안에서 각각 `/wsg`, `/wsg:auto`, `/wsg:docs ko`로 입력합니다. [도구별 확인 범위](docs/COMPATIBILITY.md)
+스킬을 부른 뒤 `방법-ID [단계] 요청`으로 방법을 지정하세요. `auto [단계] 요청`을 쓰면 WSG가 방법을 골라 이유와 함께 답합니다. `docs ko`는 한국어 목록, `docs en`은 영어 목록을 엽니다. 글쓰기 단계의 기본값은 매번 `standard`입니다. 가볍게 다듬으려면 `light`, 해당 규칙을 모두 점검하려면 `strict`를 쓰세요. [도구별 설치 경로와 검증 범위](docs/COMPATIBILITY.md)
+
+### ChatGPT에서 쓰기
+
+**데스크톱의 로컬 프로젝트**에서는 위 표의 Codex 설치 명령을 사용하세요. ChatGPT 데스크톱 앱에서 해당 프로젝트를 열고 사이드바의 **스킬**을 확인하세요. `wsg`가 보이면 대화창에 `@`를 입력해 선택하고 `docs ko`를 입력하세요. [OpenAI 스킬 안내](https://learn.chatgpt.com/docs/build-skills)
+
+**웹**에서는 ChatGPT 프로젝트를 만들고 **소스**에 사용할 방법의 파일을 추가하세요. ELI5라면 [지침](skills/eli5/SKILL.md), [규칙](skills/eli5/method.json), [언어 프로필](skills/eli5/locales/en.json)을 내려받아 올리세요. 프로젝트에서 새 대화를 열고 “첨부한 ELI5 지침과 규칙을 standard 단계로 적용해 줘. 자전거 브레이크를 잡으면 왜 바퀴가 느려져?”라고 물어보세요. 같은 프로젝트의 다음 대화에서도 이 파일을 쓸 수 있습니다. 이 방식은 사용할 방법을 하나씩 직접 추가합니다. 다른 방법을 쓸 때는 선택한 단계의 지침이 요구하는 참고 파일도 함께 올리세요. [ChatGPT 프로젝트 안내](https://learn.chatgpt.com/docs/projects)
 
 ## 어느 스킬을 고르면 될까?
 
