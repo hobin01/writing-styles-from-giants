@@ -13,7 +13,7 @@ Every example shows the question and both answers on one page. For each question
 Install the `wsg` command once from the GitHub Release using Python 3.10 or later and [uv](https://docs.astral.sh/uv/getting-started/installation/).
 
 ```sh
-uv tool install https://github.com/hobin01/writing-styles-from-giants/releases/download/v0.1.0/writing_styles_from_giants-0.1.0-py3-none-any.whl
+uv tool install https://github.com/hobin01/writing-styles-from-giants/releases/download/v0.1.1/writing_styles_from_giants-0.1.1-py3-none-any.whl
 ```
 
 If your shell cannot find `wsg`, run `uv tool update-shell` and open a new terminal. Choose your agent below. Run the install command in the project where you want the skill. To use it in all your projects, add `--global`, for example `wsg install --host codex --global`. Then open the agent in a new session and enter the example **in the chat**.
@@ -32,6 +32,16 @@ After selecting the skill, use `METHOD [LEVEL] REQUEST` to choose a method, `aut
 **Desktop with a local project.** Use the Codex installation row above, open that project in the ChatGPT desktop app and check **Skills** in the sidebar. If `wsg` is listed, type `@`, select it, then enter `docs en`. [OpenAI’s skill guide](https://learn.chatgpt.com/docs/build-skills)
 
 **Web.** Create a ChatGPT Project and add the files for the method you want to its **Sources**. For ELI5, download the [instructions](skills/eli5/SKILL.md), [method rules](skills/eli5/method.json) and [locale profile](skills/eli5/locales/en.json). In a chat inside that project, ask: “Use the uploaded ELI5 instructions and rules at standard level. Why does a bicycle slow down when I squeeze the brake?” The files stay available for later chats in that project. This manual setup works one method at a time. For other methods, include any additional reference the instructions require at your chosen level. [ChatGPT Projects](https://learn.chatgpt.com/docs/projects)
+
+## Install offline
+
+On a connected computer, download the [offline ZIP](https://github.com/hobin01/writing-styles-from-giants/releases/download/v0.1.1/wsg-offline-v0.1.1.zip) and [SHA256SUMS](https://github.com/hobin01/writing-styles-from-giants/releases/download/v0.1.1/SHA256SUMS). Transfer both to the offline computer, which needs Python 3.10 or newer. Match the ZIP's SHA-256 to the entry in SHA256SUMS, then extract it.
+
+From the project that should receive the skill, run the command below with the full path to the extracted installer. Choose any host from the table above. Add `--global` for all your projects. The ZIP includes the [offline instructions](docs/OFFLINE.md), including how to verify checksums on each platform.
+
+```sh
+python3 "/path/to/wsg-offline-v0.1.1/install.py" install --host codex
+```
 
 ## Which skill should I choose?
 

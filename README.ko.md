@@ -13,7 +13,7 @@ AI한테 “쉽게 설명해 줘”라고 하면, 제가 궁금했던 부분까�
 Python 3.10 이상과 [uv](https://docs.astral.sh/uv/getting-started/installation/)로 GitHub 릴리스에서 `wsg` 명령을 한 번 설치하세요.
 
 ```sh
-uv tool install https://github.com/hobin01/writing-styles-from-giants/releases/download/v0.1.0/writing_styles_from_giants-0.1.0-py3-none-any.whl
+uv tool install https://github.com/hobin01/writing-styles-from-giants/releases/download/v0.1.1/writing_styles_from_giants-0.1.1-py3-none-any.whl
 ```
 
 터미널에서 `wsg`를 찾을 수 없다고 나오면 `uv tool update-shell`을 실행하고 새 터미널을 여세요. 아래 표에서 사용할 도구를 고른 뒤 작업할 프로젝트 폴더에서 설치 명령을 실행하세요. 모든 프로젝트에서 쓰려면 `wsg install --host codex --global`처럼 명령 끝에 `--global`을 붙이세요. 설치한 뒤에는 에이전트에서 새 대화를 열고 **대화창에** 예제를 입력하세요.
@@ -32,6 +32,16 @@ uv tool install https://github.com/hobin01/writing-styles-from-giants/releases/d
 **데스크톱의 로컬 프로젝트**에서는 위 표의 Codex 설치 명령을 사용하세요. ChatGPT 데스크톱 앱에서 해당 프로젝트를 열고 사이드바의 **스킬**을 확인하세요. `wsg`가 보이면 대화창에 `@`를 입력해 선택하고 `docs ko`를 입력하세요. [OpenAI 스킬 안내](https://learn.chatgpt.com/docs/build-skills)
 
 **웹**에서는 ChatGPT 프로젝트를 만들고 **소스**에 사용할 방법의 파일을 추가하세요. ELI5라면 [지침](skills/eli5/SKILL.md), [규칙](skills/eli5/method.json), [언어 프로필](skills/eli5/locales/en.json)을 내려받아 올리세요. 프로젝트에서 새 대화를 열고 “첨부한 ELI5 지침과 규칙을 standard 단계로 적용해 줘. 자전거 브레이크를 잡으면 왜 바퀴가 느려져?”라고 물어보세요. 같은 프로젝트의 다음 대화에서도 이 파일을 쓸 수 있습니다. 이 방식은 사용할 방법을 하나씩 직접 추가합니다. 다른 방법을 쓸 때는 선택한 단계의 지침이 요구하는 참고 파일도 함께 올리세요. [ChatGPT 프로젝트 안내](https://learn.chatgpt.com/docs/projects)
+
+## 오프라인 설치
+
+인터넷에 연결된 컴퓨터에서 [오프라인 ZIP](https://github.com/hobin01/writing-styles-from-giants/releases/download/v0.1.1/wsg-offline-v0.1.1.zip)과 [SHA256SUMS](https://github.com/hobin01/writing-styles-from-giants/releases/download/v0.1.1/SHA256SUMS)를 내려받아 Python 3.10 이상이 설치된 오프라인 컴퓨터로 옮기세요. ZIP의 SHA-256 해시가 SHA256SUMS에 적힌 값과 일치하면 압축을 푸세요.
+
+스킬을 설치할 프로젝트 폴더에서 아래 예시 경로를 압축을 푼 설치 파일의 전체 경로로 바꿔 실행하세요. `--host`에는 위 표의 도구 중 하나를 넣고, 모든 프로젝트에서 쓰려면 `--global`을 붙이세요. 운영체제별 해시 확인 명령이 있는 [오프라인 설치 안내](docs/OFFLINE.md)도 ZIP 안에 들어 있습니다.
+
+```sh
+python3 "/path/to/wsg-offline-v0.1.1/install.py" install --host codex
+```
 
 ## 어느 스킬을 고르면 될까?
 

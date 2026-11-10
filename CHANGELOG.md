@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.1.1]
+
+- Add a checksum-verified offline ZIP with the full catalog, installer and English/Korean instructions. On a disconnected machine, Python 3.10+ can install it into a project or user skill directory without uv, pip or a build step.
+- To upgrade a 0.1.0 deployment, move the previous `wsg` skill directory outside the host's search paths, install the new version and rerun the host install command. This preserves existing edits as a backup.
+
 ## [0.1.0]
 
 - First public release. Install the `wsg` command from the versioned GitHub wheel using uv, then choose a host and project or user scope.
