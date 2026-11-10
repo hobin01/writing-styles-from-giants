@@ -13,7 +13,7 @@ Every example shows the question and both answers on one page. For each question
 Install the `wsg` command once from the GitHub Release using Python 3.10 or later and [uv](https://docs.astral.sh/uv/getting-started/installation/).
 
 ```sh
-uv tool install https://github.com/hobin01/writing-styles-from-giants/releases/download/v0.1.1/writing_styles_from_giants-0.1.1-py3-none-any.whl
+uv tool install https://github.com/hobin01/writing-styles-from-giants/releases/download/v0.1.2/writing_styles_from_giants-0.1.2-py3-none-any.whl
 ```
 
 If your shell cannot find `wsg`, run `uv tool update-shell` and open a new terminal. Choose your agent below. Run the install command in the project where you want the skill. To use it in all your projects, add `--global`, for example `wsg install --host codex --global`. Then open the agent in a new session and enter the example **in the chat**.
@@ -35,13 +35,19 @@ After selecting the skill, use `METHOD [LEVEL] REQUEST` to choose a method, `aut
 
 ## Install offline
 
-On a connected computer, download the [offline ZIP](https://github.com/hobin01/writing-styles-from-giants/releases/download/v0.1.1/wsg-offline-v0.1.1.zip) and [SHA256SUMS](https://github.com/hobin01/writing-styles-from-giants/releases/download/v0.1.1/SHA256SUMS). Transfer both to the offline computer, which needs Python 3.10 or newer. Match the ZIP's SHA-256 to the entry in SHA256SUMS, then extract it.
-
-From the project that should receive the skill, run the command below with the full path to the extracted installer. Choose any host from the table above. Add `--global` for all your projects. The ZIP includes the [offline instructions](docs/OFFLINE.md), including how to verify checksums on each platform.
+Download [Source code (zip)](https://github.com/hobin01/writing-styles-from-giants/archive/refs/tags/v0.1.2.zip), transfer it to the offline computer and extract it. Python 3.10 or later is the only installation prerequisite. From the extracted folder, install for your user with:
 
 ```sh
-python3 "/path/to/wsg-offline-v0.1.1/install.py" install --host codex
+python3 install.py install --host codex --global
 ```
+
+For a single project, run the following command **from that project**, using the full path to the extracted installer. Choose a host from the table above.
+
+```sh
+python3 "/path/to/writing-styles-from-giants-0.1.2/install.py" install --host codex
+```
+
+The [dedicated offline ZIP](https://github.com/hobin01/writing-styles-from-giants/releases/download/v0.1.2/wsg-offline-v0.1.2.zip) also includes an installer and has a [SHA-256 checksum](https://github.com/hobin01/writing-styles-from-giants/releases/download/v0.1.2/SHA256SUMS). [Offline installation guide](docs/OFFLINE.md)
 
 ## Which skill should I choose?
 

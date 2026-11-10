@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.1.2]
+
+- Install directly from GitHub’s **Source code (zip)** with Python 3.10+ using the root `install.py`. The source installer deploys the same catalog as the wheel and dedicated offline ZIP.
+
 ## [0.1.1]
 
 - Add a checksum-verified offline ZIP with the full catalog, installer and English/Korean instructions. On a disconnected machine, Python 3.10+ can install it into a project or user skill directory without uv, pip or a build step.

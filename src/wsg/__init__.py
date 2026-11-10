@@ -60,9 +60,9 @@ def install(source, base, host, user_scope, dry_run):
     return f"Installed at {target}"
 
 
-def main():
+def main(payload=PAYLOAD):
     parser = argparse.ArgumentParser(prog="wsg", description="Install WSG writing methods for an agent.")
-    parser.add_argument("--version", action="version", version=(PAYLOAD / "VERSION").read_text().strip())
+    parser.add_argument("--version", action="version", version=(payload / "VERSION").read_text().strip())
     commands = parser.add_subparsers(dest="command", required=True)
     command = commands.add_parser("install")
     command.add_argument("--host", choices=HOSTS, required=True)
@@ -71,6 +71,6 @@ def main():
     args = parser.parse_args()
     try:
         base = Path.home() if args.user_scope else Path.cwd()
-        print(install(PAYLOAD, base, args.host, args.user_scope, args.dry_run))
+        print(install(payload, base, args.host, args.user_scope, args.dry_run))
     except (OSError, ValueError) as error:
         sys.exit(f"wsg: {error}")

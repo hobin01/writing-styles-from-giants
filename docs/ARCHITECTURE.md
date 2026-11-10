@@ -24,6 +24,6 @@ Scope each choice to the current request. Use `standard` by default. Each method
 
 ## Installation
 
-uv installs the CLI from the release wheel. The CLI copies an entrypoint, command guide, catalogs and complete method directories into the selected host's skill directory. The installed skill resolves its references relative to its own files. Source documents and requested outputs belong to the caller's working project.
+uv installs the CLI from the release wheel. The source archive’s root `install.py` assembles the same payload from the extracted catalog in a temporary directory and calls the CLI with that payload. The CLI copies an entrypoint, command guide, catalogs and complete method directories into the selected host's skill directory. The installed skill resolves its references relative to its own files. Source documents and requested outputs belong to the caller's working project.
 
 Project scope is the default. Global scope requires `--global`. A matching installation can be reused. The installer refuses a conflicting destination, including a user-edited copy or an existing link. Moving a previous copy outside the host's discovery directories lets the user preserve it before installing another version. Removing the uv tool leaves deployed skills in place. [Host-specific instructions](COMPATIBILITY.md)
