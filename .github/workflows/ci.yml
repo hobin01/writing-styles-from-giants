@@ -43,3 +43,6 @@ jobs:
           python -I -S source/install.py install --host claude
           diff -r .agents/skills/wsg .claude/skills/wsg
           python -I -S source/install.py install --host claude
+          python -I -S "$GITHUB_WORKSPACE/install.py" install --link --host opencode
+          test .opencode/skills/wsg -ef "$GITHUB_WORKSPACE/.agents/skills/wsg"
+          if python -I -S source/install.py install --link --host opencode; then exit 1; fi
