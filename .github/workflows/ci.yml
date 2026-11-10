@@ -35,3 +35,11 @@ jobs:
           diff -r "$GITHUB_WORKSPACE/skills" .agents/skills/wsg/.catalog/skills
           diff -r "$GITHUB_WORKSPACE/commands" .agents/skills/wsg/.catalog/commands
           test "$(wsg --version)" = "$(cat "$GITHUB_WORKSPACE/VERSION")"
+      - name: Install offline from the tagged-source layout
+        working-directory: ${{ runner.temp }}
+        run: |
+          git -C "$GITHUB_WORKSPACE" archive --format=zip --prefix=source/ --output="$RUNNER_TEMP/source.zip" HEAD
+          python -m zipfile -e source.zip .
+          python -I -S source/install.py install --host claude
+          diff -r .agents/skills/wsg .claude/skills/wsg
+          python -I -S source/install.py install --host claude
