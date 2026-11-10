@@ -15,7 +15,7 @@ The release installer requires Python 3.10 or later and uses copies. Some hosts 
 
 ## Packaged skill discovery · 2026-11-10
 
-On macOS 26.5.2 arm64, we installed the 0.1.0 wheel into separate project directories and started each host with isolated settings. Codex CLI 0.167.0 returned the project-scoped `wsg` path from app-server `skills/list`. Claude Code 2.1.228 listed the project’s `wsg` command at SDK initialization. OpenCode 1.16.2 listed only the WSG entrypoint in `opencode debug skill`. Pi 1.5.2 returned `skill:wsg` with its project path from RPC `get_commands`. The installer tests compare the bundled catalogs and method files with the source tree. These host probes exercise discovery; the model runs for the checkout are documented below.
+On macOS 26.5.2 arm64, we installed the 0.1.0 wheel into separate project directories and started each host with isolated settings. Codex CLI 0.167.0 returned the project-scoped `wsg` path from app-server `skills/list`. Claude Code 2.1.228 listed the project’s `wsg` command at SDK initialization. OpenCode 1.16.2 listed only the WSG entrypoint in `opencode debug skill`. Pi 1.5.2 returned `skill:wsg` with its project path from RPC `get_commands`. The installer tests compare the bundled catalogs and method files with the source tree. In a fresh project, a read-only Codex turn using `$wsg docs ko` also read the installed command guide and Korean catalog under `.catalog/` and returned all 22 method IDs. The other three packaged-host probes exercised discovery.
 
 ## Codex user scope
 

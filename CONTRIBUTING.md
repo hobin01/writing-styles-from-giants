@@ -34,7 +34,7 @@ Report checks actually run and limitations. Repository tests do not establish wr
 
 ## Review and merge
 
-A repository administrator reviews the final diff and squash-merges through a PR. GitHub requires the up-to-date `foundation` check and resolution of review conversations on `main`, `release`, and `release/*`. The sole maintainer can merge their own PR after the same checks. Identify author review accurately and record any independent review received.
+A repository administrator reviews the final diff and squash-merges through a PR. GitHub requires the up-to-date `foundation` check and resolution of review conversations on `main`, `release`, and `release/*`. The sole maintainer can merge their own PR after the same checks. The separate maintainer-only update rule requires the administrator merge option on a PR. The CI/PR ruleset has no bypass actors. Confirm the PR head and passing checks before merging, and record any independent review received.
 
 Method and locale promotion to `reviewed` still requires source/rights review and competent language review.
 

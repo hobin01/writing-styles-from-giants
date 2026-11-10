@@ -40,7 +40,22 @@ jobs:
           python -m pip wheel --no-deps --wheel-dir "$RUNNER_TEMP/source-release" .
           cd "$RUNNER_TEMP/source-release"
           wheel="writing_styles_from_giants-${RELEASE_TAG#v}-py3-none-any.whl"
-          sha256sum "$archive" "$wheel" > SHA256SUMS
+          bundle="wsg-offline-$RELEASE_TAG"
+          stage="$RUNNER_TEMP/offline-bundle"
+          mkdir -p "$stage"
+          unzip -q "$wheel" 'wsg/*' -d "$stage/$bundle"
+          cp "$GITHUB_WORKSPACE/docs/OFFLINE.md" "$stage/$bundle/README.md"
+          printf 'from wsg import main\n\nmain()\n' > "$stage/$bundle/install.py"
+          (cd "$stage" && python -m zipfile -c "$RUNNER_TEMP/source-release/$bundle.zip" "$bundle")
+          python -m zipfile -e "$bundle.zip" "$RUNNER_TEMP/offline-check"
+          mkdir "$RUNNER_TEMP/offline-check/project"
+          (
+            cd "$RUNNER_TEMP/offline-check/project"
+            test "$(python -S "../$bundle/install.py" --version)" = "${RELEASE_TAG#v}"
+            python -S "../$bundle/install.py" install --host codex
+            diff -r "$stage/$bundle/wsg/payload" .agents/skills/wsg
+          )
+          sha256sum "$archive" "$wheel" "$bundle.zip" > SHA256SUMS
       - name: Create draft release
         env:
           GH_TOKEN: ${{ github.token }}
